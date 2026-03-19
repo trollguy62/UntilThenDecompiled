@@ -1,0 +1,300 @@
+[gd_scene load_steps=28 format=3 uid="uid://cd4773njalepm"]
+
+[ext_resource type="ArrayMesh" uid="uid://b8jeroqydwsp5" path="res://scenes/_main/ch5sc2/assets/envi/deco/piano.obj" id="1_nrmm1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="2_nu30i"]
+[ext_resource type="Texture2D" uid="uid://dalhpyn1dpx71" path="res://scenes/_main/ch5sc2/assets/envi/deco/piano.png" id="3_v8mn3"]
+[ext_resource type="ArrayMesh" uid="uid://1ef7aqtipy55" path="res://scenes/_main/ch5sc2/assets/envi/deco/piano_chair.obj" id="4_13w4i"]
+[ext_resource type="Texture2D" uid="uid://bgcm7o7immwrm" path="res://scenes/_main/ch5sc2/assets/envi/deco/piano_chair.png" id="5_pyflb"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="6_ftrrm"]
+[ext_resource type="Texture2D" uid="uid://dnbc5ycjh7umx" path="res://scenes/_main/ch5sc8/assets/characters/MarkBorja/f_sitpiano^df_default_idle/01.tres" id="7_ijxtq"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="7_j1gni"]
+[ext_resource type="Texture2D" uid="uid://c4cbt2chov8f6" path="res://scenes/_main/ch5sc8/assets/characters/MarkBorja/f_sitpiano^df_default_idle/02.tres" id="9_c6dvl"]
+[ext_resource type="Texture2D" uid="uid://clhdu2kwpaufx" path="res://scenes/_main/ch5sc8/assets/characters/MarkBorja/f_sitpiano^df_default_idle/03.tres" id="10_ksug6"]
+[ext_resource type="Texture2D" uid="uid://bmo3a7slt6yus" path="res://scenes/_main/ch5sc8/assets/characters/MarkBorja/f_sitpiano^df_default_idle/04.tres" id="11_dxkqs"]
+[ext_resource type="Texture2D" uid="uid://chj3yfw3cbwep" path="res://scenes/_main/ch5sc8/assets/characters/MarkBorja/f_sitpiano^df_default_idle/05.tres" id="12_vdcig"]
+[ext_resource type="Texture2D" uid="uid://dfk5jhm6qn2a7" path="res://scenes/_main/ch5sc8/assets/characters/MarkBorja/f_sitpiano^df_default_idle/06.tres" id="13_74e63"]
+[ext_resource type="Texture2D" uid="uid://o4j127gjswav" path="res://scenes/_main/ch5sc2/assets/characters/Justin/l_sitpianoplay^l_grin_idle/01.tres" id="14_30lu4"]
+[ext_resource type="PackedScene" uid="uid://cjv45qymp2bky" path="res://addons/motion_blur/motion_blur.tscn" id="15_irdoy"]
+
+[sub_resource type="Environment" id="Environment_1v64i"]
+background_mode = 1
+ambient_light_source = 2
+ambient_light_color = Color(0.466667, 0.619608, 0.878431, 1)
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.2
+glow_blend_mode = 1
+adjustment_enabled = true
+adjustment_brightness = 1.03
+adjustment_contrast = 1.05
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6bp3m"]
+render_priority = 0
+shader = ExtResource("2_nu30i")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3_v8mn3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u5e24"]
+render_priority = 0
+shader = ExtResource("2_nu30i")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5_pyflb")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ch4xw"]
+render_priority = 0
+shader = ExtResource("6_ftrrm")
+shader_parameter/scale = Vector3(0.5346, 1.0773, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("7_ijxtq")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_me7n0"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_ch4xw"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lrav"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_ijxtq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_c6dvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_ksug6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_dxkqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vdcig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_74e63")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3auqe"]
+render_priority = 0
+shader = ExtResource("6_ftrrm")
+shader_parameter/scale = Vector3(0.81, 1.0935, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("14_30lu4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_osujf"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_3auqe"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_prf5e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_30lu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ni1bc"]
+render_priority = 0
+shader = ExtResource("6_ftrrm")
+shader_parameter/scale = Vector3(0.81, 1.0935, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("14_30lu4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vlu73"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_ni1bc"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_udd7k"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_30lu4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_1v64i")
+
+[node name="PianoMark" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.255182, 0.13, 1.14992)
+mesh = ExtResource("1_nrmm1")
+surface_material_override/0 = SubResource("ShaderMaterial_6bp3m")
+
+[node name="PianoChair" type="MeshInstance3D" parent="PianoMark"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26, 0, 0.34)
+mesh = ExtResource("4_13w4i")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_u5e24")
+
+[node name="Front" type="MeshInstance3D" parent="PianoMark"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0227535, 0.194304)
+mesh = SubResource("ArrayMesh_me7n0")
+script = ExtResource("7_j1gni")
+texture_frames = SubResource("SpriteFrames_1lrav")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+
+[node name="Side" type="MeshInstance3D" parent="PianoMark"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.221826, -0.0158876, -0.138188)
+visible = false
+mesh = SubResource("ArrayMesh_osujf")
+script = ExtResource("7_j1gni")
+texture_frames = SubResource("SpriteFrames_prf5e")
+animation = "default"
+alias = "AnimatedPaper3D2"
+pixel_size = 0.0081
+
+[node name="PianoNicole" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 0.263924, 0.135255, -0.448899)
+mesh = ExtResource("1_nrmm1")
+surface_material_override/0 = SubResource("ShaderMaterial_6bp3m")
+
+[node name="PianoChair" type="MeshInstance3D" parent="PianoNicole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26, 0, 0.34)
+mesh = ExtResource("4_13w4i")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_u5e24")
+
+[node name="Side" type="MeshInstance3D" parent="PianoNicole"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.264954, 0.00118083, -0.176295)
+mesh = SubResource("ArrayMesh_vlu73")
+script = ExtResource("7_j1gni")
+texture_frames = SubResource("SpriteFrames_udd7k")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+
+[node name="CamFront" type="Camera3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.918604, 0.345178)
+fov = 40.0
+
+[node name="MotionBlur" parent="CamFront" instance=ExtResource("15_irdoy")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 1.06581e-14, 0, -2)
+override_linear_velocity = true
+
+[node name="CamSide" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -5.68766, 0.756144, 0.326515)
+fov = 20.0

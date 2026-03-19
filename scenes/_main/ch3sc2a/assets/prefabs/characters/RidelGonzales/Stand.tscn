@@ -1,0 +1,578 @@
+[gd_scene load_steps=115 format=3 uid="uid://dlg8xs783q0xl"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Script" path="res://data/AnimationTransition.gd" id="2"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="3"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="4"]
+[ext_resource type="Texture2D" uid="uid://bsckmjy250syq" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_talk/05.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://ctmmm1cskn4xw" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_idle/01.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://nvenyu05ksbr" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_talk/02.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dfysbccy88vil" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_talk/03.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bvv762ww3vrrq" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_talk/04.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://d2efckx08kdin" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_talk/03.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://c4ajj02bu0pmy" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_idle/04.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dbjqr235bh51i" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_talk/06.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bicof2e8c8hcf" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_smirk_idle/05.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://wvtl5cf3ohfb" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_smirk_idle/03.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://u1ywdflax2mr" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walkphonecall^lf_positive_idle/01.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://coh16itqt76se" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_talk/01.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bua26sfgh8awv" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_talk/04.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://dlah436oyx2ww" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_talk/04.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://cqplpitbx3wro" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_smirk_idle/01.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://c0s33hc2farij" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_idle/02.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://cxoci118ehod6" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_idle/05.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cim7xhhda5del" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walkphonecall^lf_positive_idle/03.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://dutcrq67hw3gb" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_talk/02.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://4u5ormgci6n8" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_smirk_idle/02.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://bkxpitsoevcul" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_talk/01.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://bbuopm1uf5446" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_talk/06.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://cmiowrlwju5ia" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_talk/02.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://btl1aoogbxyid" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_talk/02.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://cyvu1ki2b8wfa" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/05.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://c6h6t14gmg17o" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walkphonecall^lf_positive_idle/08.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://bd6s7rywljrqu" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_idle/06.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://bojkyfsvttv10" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_smirk_idle/07.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://bq5hqpn5wfid1" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_talk/03.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://c2cav6a1um4dv" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/06.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://c05rquxtnykgq" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_idle/04.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://ne42pkb2iuwh" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/05.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://ddnol71wrsmn7" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_giggle_idle/03.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://mrg5ek4075nr" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_talk/01.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://7ixxeijdux00" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/03.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://8tvoo4731q8t" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_idle/03.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://dvix38dp7eqta" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_idle/01.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://ciwpfy05cvgqv" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_idle/06.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://d2j5a4qituaa5" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/02.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://b3hkhhti8w3fy" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_giggle_idle/04.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://b3un8kyacel7d" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/04.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://b7taqul6mbfd8" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_smirk_idle/04.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://i2uiocoxf380" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_idle/03.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://dmuwuke3lgyfx" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/01.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://x14dmvftym8e" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_idle/06.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://b5hnh3aq5gcvw" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_idle/04.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://bdiyan8y6jykb" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/01.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://5l3ad6y3jj47" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_giggle_idle/02.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://b2v4yhkyci6mx" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walkphonecall^lf_positive_idle/07.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://cf4svnj3jbisb" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_giggle_idle/06.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://dbd0u6ne5480f" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_idle/05.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://dhiwwiqoqr6gq" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_smirk_idle/06.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://4ehox6tafgcg" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walkphonecall^lf_positive_idle/04.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://pedw48ndd4q0" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_giggle_idle/01.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://d2eu7e8x873vq" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/04.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://bgvrexu2nx2tk" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_talk/06.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://dfodcejdpbw7c" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_idle/01.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://r0ow2aib1v58" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walkphonecall^lf_positive_idle/02.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://bntbp3w0b1w1s" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_talk/01.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://d30i1q054fil4" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_idle/02.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://b23x3x871vk5x" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walkphonecall^lf_positive_idle/05.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://dgnxeus6af54m" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_smirk_talk/05.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://bkws30vg6d708" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_talk/03.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://yvxxkxhmtddk" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_positive_idle/03.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://dkd4vxlf4l1l8" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/06.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://b8ff7uy0arcnj" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_idle/03.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://bj1ihkrn328oa" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_talk/06.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://dvnj33avi82i" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_talk/04.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://iwuqxcaq0wvx" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/02.png" id="73"]
+[ext_resource type="Texture2D" uid="uid://cqqwbcl6g8fpr" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_idle/05.png" id="74"]
+[ext_resource type="Texture2D" uid="uid://ddpitx3uf1k7t" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walkphonecall^lf_positive_idle/06.png" id="75"]
+[ext_resource type="Texture2D" uid="uid://dav4kyuqao7ly" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_idle/01.png" id="76"]
+[ext_resource type="Texture2D" uid="uid://cb5yj8jw7wn8h" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_idle/02.png" id="77"]
+[ext_resource type="Texture2D" uid="uid://ct1cbj08538gl" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_talk/05.png" id="78"]
+[ext_resource type="Texture2D" uid="uid://bw47u40g1dfao" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_idle/04.png" id="79"]
+[ext_resource type="Texture2D" uid="uid://dtemkeclyb7kb" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_smirk_idle/08.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://bpjaaysfx7naw" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_idle/05.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://b8j5dyvg6ko0v" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/03.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://cpiyxnkdm4bq" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_idle/06.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://rc8fh8vtrftl" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_confused_idle/02.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://p1sjy4whom43" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_positive_talk/05.png" id="85"]
+[ext_resource type="Texture2D" uid="uid://b4q7mhjny68et" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphonecall^lf_giggle_idle/05.png" id="86"]
+[ext_resource type="Texture2D" uid="uid://cqriqx6uopvbk" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_talk/02.png" id="87"]
+[ext_resource type="Texture2D" uid="uid://vrbsbdndjtsr" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_talk/05.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://d12nwgb5ycuvx" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_talk/06.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://du28unxrw76ju" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_talk/03.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://dvobpqom0os44" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_idle/03.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://cd34secnwif1l" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_idle/01.png" id="92"]
+[ext_resource type="Texture2D" uid="uid://bixdpcu28rv1l" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_idle/02.png" id="93"]
+[ext_resource type="Texture2D" uid="uid://bcashnmf1x57n" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_idle/04.png" id="94"]
+[ext_resource type="Texture2D" uid="uid://pih66k6k14yv" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_idle/02.png" id="95"]
+[ext_resource type="Texture2D" uid="uid://dlsswthte5eff" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_idle/05.png" id="96"]
+[ext_resource type="Texture2D" uid="uid://bt7hwa5umvscd" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_talk/02.png" id="97"]
+[ext_resource type="Texture2D" uid="uid://bjarxvlol0cib" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_talk/04.png" id="98"]
+[ext_resource type="Texture2D" uid="uid://p48qkhhsq3uh" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_talk/06.png" id="99"]
+[ext_resource type="Texture2D" uid="uid://dgmn7ff3ox1wv" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_idle/06.png" id="100"]
+[ext_resource type="Texture2D" uid="uid://c78f10obss8aa" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_talk/05.png" id="101"]
+[ext_resource type="Texture2D" uid="uid://crgh5hdna1kkv" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_talk/01.png" id="102"]
+[ext_resource type="Texture2D" uid="uid://c1kc5fl13cxoo" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_talk/04.png" id="103"]
+[ext_resource type="Texture2D" uid="uid://din15btfmw3fh" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_talk/03.png" id="104"]
+[ext_resource type="Texture2D" uid="uid://oryvyjaamh3e" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_idle/03.png" id="105"]
+[ext_resource type="Texture2D" uid="uid://buvusybedt6md" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_idle/06.png" id="106"]
+[ext_resource type="Texture2D" uid="uid://dygjwwpf7nxrp" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_idle/01.png" id="107"]
+[ext_resource type="Texture2D" uid="uid://boa8cm6umkab7" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_idle/04.png" id="108"]
+[ext_resource type="Texture2D" uid="uid://bjwqvxlet5fi" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standexcited^lf_excited_idle/05.png" id="109"]
+[ext_resource type="Texture2D" uid="uid://cr1oj88p7hb3n" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standwavinghand^lf_positive_talk/01.png" id="110"]
+
+[sub_resource type="ShaderMaterial" id="960"]
+render_priority = 0
+shader = ExtResource("4")
+shader_parameter/scale = Vector3(0.56, 1.08, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("25")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_b0pja"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("960"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="962"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83")
+}],
+"loop": true,
+"name": &"confused_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71")
+}],
+"loop": true,
+"name": &"confused_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106")
+}],
+"loop": true,
+"name": &"excited_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("102")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99")
+}],
+"loop": true,
+"name": &"excited_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}],
+"loop": true,
+"name": &"giggle+phonecall_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}],
+"loop": true,
+"name": &"neutral_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}],
+"loop": true,
+"name": &"positive+phonecall_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}],
+"loop": true,
+"name": &"positive+phonecall_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}],
+"loop": true,
+"name": &"positive+phonecall_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("92")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100")
+}],
+"loop": true,
+"name": &"positive+wavinghand_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("110")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89")
+}],
+"loop": true,
+"name": &"positive+wavinghand_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}],
+"loop": true,
+"name": &"positive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60")
+}],
+"loop": true,
+"name": &"positive_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}],
+"loop": true,
+"name": &"smirk_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}],
+"loop": true,
+"name": &"smirk_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80")
+}],
+"loop": true,
+"name": &"smirk_walk",
+"speed": 7.0
+}]
+
+[sub_resource type="Resource" id="963"]
+script = ExtResource("2")
+anim = "trans_phone_out"
+from_anim = "neutral_idle"
+to_anim = "neutral+phone_idle"
+reversible = true
+
+[node name="Sprite" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_b0pja")
+script = ExtResource("1")
+texture_frames = SubResource("962")
+sync_all = true
+sync_all_except = Array[String](["positive+phonecall_walk", "smirk_walk"])
+animation = "positive+phonecall_talk"
+alias = "RidelGonzales"
+transitions = Array[ExtResource("2")]([SubResource("963")])
+pixel_size = 0.008
+
+[node name="SpriteController" type="Node" parent="."]
+script = ExtResource("3")
+state_container_alias = "RidelGonzales"
+fallback_idle_talk_anim = "neutral"
+standalone_anims = Array[String](["positive", "smirk_walk"])
+idle_talk_anims = Array[String](["confused", "excited", "giggle", "neutral", "positive", "smirk"])

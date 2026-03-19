@@ -1,0 +1,341 @@
+[gd_scene load_steps=26 format=3 uid="uid://upco3bj6g11j"]
+
+[ext_resource type="Script" path="res://ui/screens/FbMemberScreen/FbMemberScreen.gd" id="1"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="4"]
+[ext_resource type="FontFile" uid="uid://cs6o3l4bk2n5w" path="res://fonts/PTSans-Regular-Large.tres" id="5"]
+[ext_resource type="PackedScene" uid="uid://c2v5cy37b1mgm" path="res://ui/components/TextureRectButton/TextureRectButton.tscn" id="5_ribt7"]
+[ext_resource type="FontFile" uid="uid://oe2d2wxhekwy" path="res://fonts/PTSans-Regular-Huge.tres" id="6"]
+[ext_resource type="FontFile" uid="uid://sghb20e60wif" path="res://fonts/PTSans-Bold-Small.tres" id="7"]
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="8"]
+[ext_resource type="Texture2D" uid="uid://ri5v5u0mmeq5" path="res://assets/ui/ic_check.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://ccm6s2fxgk1sl" path="res://assets/ui/ic_calendar.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dyeaitp0bbhy4" path="res://assets/ui/ic_heart.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://ciwrhl6xkpord" path="res://assets/ui/ic_group.png" id="12"]
+[ext_resource type="Script" path="res://ui/components/PictureGrid/PictureGrid.gd" id="13"]
+[ext_resource type="PackedScene" uid="uid://cr7cbv753bex5" path="res://ui/components/FbMenuBar/FbMenuBar.tscn" id="14"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[sub_resource type="StyleBoxEmpty" id="2"]
+
+[sub_resource type="StyleBoxEmpty" id="3"]
+
+[sub_resource type="StyleBoxEmpty" id="4"]
+
+[sub_resource type="StyleBoxEmpty" id="5"]
+
+[sub_resource type="Theme" id="6"]
+VScrollBar/icons/decrement = null
+VScrollBar/icons/decrement_highlight = null
+VScrollBar/icons/increment = null
+VScrollBar/icons/increment_highlight = null
+VScrollBar/styles/grabber = SubResource("1")
+VScrollBar/styles/grabber_highlight = SubResource("2")
+VScrollBar/styles/grabber_pressed = SubResource("3")
+VScrollBar/styles/scroll = SubResource("4")
+VScrollBar/styles/scroll_focus = SubResource("5")
+
+[sub_resource type="StyleBoxEmpty" id="7"]
+
+[sub_resource type="Gradient" id="8"]
+offsets = PackedFloat32Array(0, 0.281818, 1)
+colors = PackedColorArray(0, 0, 0, 0, 0, 0, 0, 0.054902, 0, 0, 0, 0.627451)
+
+[sub_resource type="GradientTexture1D" id="9"]
+gradient = SubResource("8")
+width = 1280
+
+[sub_resource type="StyleBoxFlat" id="10"]
+content_margin_left = 2.0
+content_margin_top = 2.0
+content_margin_right = 2.0
+content_margin_bottom = 2.0
+bg_color = Color(0.909804, 0.905882, 0.898039, 1)
+
+[sub_resource type="StyleBoxFlat" id="11"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0.980469, 0.992218, 1, 0.705882)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="FbProfileScreen" type="Control" node_paths=PackedStringArray("focus_on_enter")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+persist_focus = true
+focus_on_enter = NodePath("MenuBar/BackButton")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+theme = SubResource("6")
+script = ExtResource("2")
+
+[node name="Main" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+
+[node name="Header" type="Panel" parent="ScrollContainer/Main"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("7")
+
+[node name="CoverPicture" parent="ScrollContainer/Main/Header" instance=ExtResource("5_ribt7")]
+custom_minimum_size = Vector2(40, 250)
+layout_mode = 1
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4")
+anim_hover = false
+
+[node name="Button" parent="ScrollContainer/Main/Header/CoverPicture" index="0"]
+focus_neighbor_left = NodePath("../../../../../MenuBar")
+focus_neighbor_top = NodePath("../../../../../MenuBar")
+focus_neighbor_bottom = NodePath("../../Member/DpContainer/ProfilePicture/Button")
+
+[node name="Gradient" type="TextureRect" parent="ScrollContainer/Main/Header"]
+layout_mode = 1
+anchors_preset = -1
+offset_left = 1280.0
+offset_right = 1530.0
+offset_bottom = 1280.0
+rotation = 1.5708
+mouse_filter = 2
+texture = SubResource("9")
+expand_mode = 1
+
+[node name="Member" type="HBoxContainer" parent="ScrollContainer/Main/Header"]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -120.0
+offset_right = -16.0
+offset_bottom = -16.0
+theme_override_constants/separation = 12
+
+[node name="DpContainer" type="PanelContainer" parent="ScrollContainer/Main/Header/Member"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("10")
+
+[node name="ProfilePicture" parent="ScrollContainer/Main/Header/Member/DpContainer" instance=ExtResource("5_ribt7")]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4")
+stretch_mode = 0
+
+[node name="NameContainer" type="VBoxContainer" parent="ScrollContainer/Main/Header/Member"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Remembering" type="Label" parent="ScrollContainer/Main/Header/Member/NameContainer"]
+visible = false
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 18
+text = "Remembering"
+
+[node name="Name" type="Label" parent="ScrollContainer/Main/Header/Member/NameContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("6")
+theme_override_font_sizes/font_size = 32
+text = "Name"
+text_overrun_behavior = 3
+
+[node name="Sub" type="Label" parent="ScrollContainer/Main/Header/Member/NameContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 18
+text = "Subtitle"
+autowrap_mode = 3
+
+[node name="About" type="MarginContainer" parent="ScrollContainer/Main"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 0
+
+[node name="Background" type="PanelContainer" parent="ScrollContainer/Main/About"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("11")
+
+[node name="Main" type="VBoxContainer" parent="ScrollContainer/Main/About/Background"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="ScrollContainer/Main/About/Background/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0980392, 0.105882, 0.129412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("7")
+text = "FB_MEMBER_ABOUT"
+uppercase = true
+
+[node name="Description" type="Label" parent="ScrollContainer/Main/About/Background/Main"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0.0980392, 0.105882, 0.129412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8")
+text = "Lorem ipsum this is the description son"
+autowrap_mode = 3
+
+[node name="Indicator" type="HBoxContainer" parent="ScrollContainer/Main/About/Background/Main"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/Main/About/Background/Main/Indicator"]
+modulate = Color(0.396078, 0.419608, 0.513726, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("9")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/Main/About/Background/Main/Indicator"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0980392, 0.105882, 0.129412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8")
+text = "FB_MEMBER_IND_FRIENDS"
+
+[node name="Birthdate" type="HBoxContainer" parent="ScrollContainer/Main/About/Background/Main"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/Main/About/Background/Main/Birthdate"]
+modulate = Color(0.396078, 0.419608, 0.513726, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("10")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/Main/About/Background/Main/Birthdate"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0980392, 0.105882, 0.129412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8")
+text = "November 23, 1999"
+
+[node name="RelStatus" type="HBoxContainer" parent="ScrollContainer/Main/About/Background/Main"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/Main/About/Background/Main/RelStatus"]
+modulate = Color(0.396078, 0.419608, 0.513726, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("11")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/Main/About/Background/Main/RelStatus"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0980392, 0.105882, 0.129412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8")
+text = "Single"
+
+[node name="HeadCount" type="HBoxContainer" parent="ScrollContainer/Main/About/Background/Main"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/Main/About/Background/Main/HeadCount"]
+modulate = Color(0.396078, 0.419608, 0.513726, 1)
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("12")
+expand_mode = 1
+
+[node name="Label" type="Label" parent="ScrollContainer/Main/About/Background/Main/HeadCount"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0980392, 0.105882, 0.129412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("8")
+text = "3 friends/members/likes"
+
+[node name="Pictures" type="MarginContainer" parent="ScrollContainer/Main"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="Background" type="PanelContainer" parent="ScrollContainer/Main/Pictures"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("11")
+
+[node name="Main" type="VBoxContainer" parent="ScrollContainer/Main/Pictures/Background"]
+layout_mode = 2
+theme_override_constants/separation = 6
+
+[node name="Title" type="Label" parent="ScrollContainer/Main/Pictures/Background/Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0980392, 0.105882, 0.129412, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("7")
+text = "FB_MEMBER_PHOTOS"
+uppercase = true
+
+[node name="PictureGrid" type="HBoxContainer" parent="ScrollContainer/Main/Pictures/Background/Main"]
+layout_mode = 2
+script = ExtResource("13")
+
+[node name="Col1" type="VBoxContainer" parent="ScrollContainer/Main/Pictures/Background/Main/PictureGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Col2" type="VBoxContainer" parent="ScrollContainer/Main/Pictures/Background/Main/PictureGrid"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MenuBar" parent="." instance=ExtResource("14")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+offset_right = 1280.0
+offset_bottom = 54.0
+title = ""
+disable_back_btn = true
+
+[node name="BackButton" parent="MenuBar" index="1"]
+focus_neighbor_right = NodePath("../../ScrollContainer/Main/Header/CoverPicture/Button")
+focus_neighbor_bottom = NodePath("../../ScrollContainer/Main/Header/Member/DpContainer/ProfilePicture/Button")
+
+[editable path="ScrollContainer/Main/Header/CoverPicture"]
+[editable path="ScrollContainer/Main/Header/Member/DpContainer/ProfilePicture"]
+[editable path="MenuBar"]

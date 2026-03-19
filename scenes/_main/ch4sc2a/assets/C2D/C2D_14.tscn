@@ -1,0 +1,197 @@
+[gd_scene load_steps=21 format=3 uid="uid://bcbhkpolx6epv"]
+
+[ext_resource type="Texture2D" uid="uid://bhr3mxnq30o00" path="res://scenes/_main/ch4sc2a/assets/C2D/14 - Greek Inc Tag/background.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://c52dix1ptoqdf" path="res://scenes/_main/ch4sc2a/assets/C2D/14 - Greek Inc Tag/cathy_chibi.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://crb1gu5y420rq" path="res://scenes/_main/ch4sc2a/assets/C2D/14 - Greek Inc Tag/sparkle_small.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://sp2omuhl1mer" path="res://scenes/_main/ch4sc2a/assets/C2D/14 - Greek Inc Tag/text_4.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dx3jlltq6aqvs" path="res://scenes/_main/ch4sc2a/assets/C2D/14 - Greek Inc Tag/text_1.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d4d6smbg1i7m2" path="res://scenes/_main/ch4sc2a/assets/C2D/14 - Greek Inc Tag/text_3.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://oygclefwtlh7" path="res://scenes/_main/ch4sc2a/assets/C2D/14 - Greek Inc Tag/text_2.png" id="7"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="8"]
+[ext_resource type="Script" path="res://scenes/_main/ch4sc2a/scripts/C2D_14.gd" id="9"]
+
+[sub_resource type="Environment" id="14"]
+background_mode = 3
+glow_enabled = true
+
+[sub_resource type="Animation" id="13"]
+resource_name = "C2D_14_show_cathy"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Content/CathyChibi:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(322, 182), Vector2(222, 90)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Content/CathyChibi/TextBuset:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Content/CathyChibi/TextTatawaBaKo:emitting")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Content/CathyChibi/TextAyokoNa:emitting")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Content/CathyChibi/TextAnuba:emitting")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_oq8di"]
+_data = {
+"C2D_14_show_cathy": SubResource("13")
+}
+
+[sub_resource type="Gradient" id="11"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="9"]
+gradient = SubResource("11")
+
+[sub_resource type="Curve" id="12"]
+_data = [Vector2(0, 0.502683), 0.0, 1.25862, 0, 0, Vector2(0.505905, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.2277), -3.20244, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="10"]
+curve = SubResource("12")
+
+[sub_resource type="ParticleProcessMaterial" id="8"]
+emission_shape = 1
+emission_sphere_radius = 128.0
+direction = Vector3(0, 0, 0)
+gravity = Vector3(0, 0, 0)
+scale_min = 3.0
+scale_max = 3.0
+scale_curve = SubResource("10")
+color_ramp = SubResource("9")
+
+[sub_resource type="GradientTexture1D" id="6"]
+gradient = SubResource("11")
+
+[sub_resource type="CurveTexture" id="2"]
+curve = SubResource("12")
+
+[sub_resource type="ParticleProcessMaterial" id="7"]
+particle_flag_disable_z = true
+direction = Vector3(-1, -1, 0)
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 100.0
+angular_velocity_min = 10.0
+angular_velocity_max = 20.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_min = 3.2
+scale_max = 4.0
+scale_curve = SubResource("2")
+color_ramp = SubResource("6")
+
+[node name="C2D_14" type="Node2D"]
+texture_filter = 1
+script = ExtResource("9")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("14")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_oq8di")
+}
+script = ExtResource("8")
+
+[node name="Content" type="Node2D" parent="."]
+scale = Vector2(4, 4)
+
+[node name="Background" type="Sprite2D" parent="Content"]
+texture = ExtResource("1")
+centered = false
+
+[node name="Sparkles" type="GPUParticles2D" parent="Content"]
+modulate = Color(1.5, 1.5, 1.5, 1)
+position = Vector2(160, 90)
+amount = 30
+process_material = SubResource("8")
+texture = ExtResource("3")
+
+[node name="CathyChibi" type="Sprite2D" parent="Content"]
+position = Vector2(322, 182)
+texture = ExtResource("2")
+centered = false
+
+[node name="TextBuset" type="GPUParticles2D" parent="Content/CathyChibi"]
+show_behind_parent = true
+position = Vector2(43, 39)
+emitting = false
+amount = 1
+process_material = SubResource("7")
+texture = ExtResource("5")
+lifetime = 2.0
+
+[node name="TextTatawaBaKo" type="GPUParticles2D" parent="Content/CathyChibi"]
+show_behind_parent = true
+position = Vector2(43, 39)
+emitting = false
+amount = 1
+process_material = SubResource("7")
+texture = ExtResource("6")
+lifetime = 3.0
+
+[node name="TextAyokoNa" type="GPUParticles2D" parent="Content/CathyChibi"]
+show_behind_parent = true
+position = Vector2(43, 39)
+emitting = false
+amount = 1
+process_material = SubResource("7")
+texture = ExtResource("7")
+lifetime = 4.0
+
+[node name="TextAnuba" type="GPUParticles2D" parent="Content/CathyChibi"]
+show_behind_parent = true
+position = Vector2(43, 39)
+emitting = false
+amount = 1
+process_material = SubResource("7")
+texture = ExtResource("4")
+lifetime = 5.0

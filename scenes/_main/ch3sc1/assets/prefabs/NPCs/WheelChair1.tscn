@@ -1,0 +1,91 @@
+[gd_scene load_steps=14 format=3 uid="uid://k5sn1wj0p7oh"]
+
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1_thepv"]
+[ext_resource type="Texture2D" uid="uid://cid74rc6n06vp" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_other/wheelchair_var_1_walk/01.png" id="2_vi1g1"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="3_q2xas"]
+[ext_resource type="Texture2D" uid="uid://bdlljqktq1pk1" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_other/wheelchair_var_1_walk/02.png" id="4_vcrtp"]
+[ext_resource type="Texture2D" uid="uid://cxaihxorcat65" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_other/wheelchair_var_1_walk/03.png" id="5_rm8j3"]
+[ext_resource type="Texture2D" uid="uid://ccxvmirtufn6v" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_other/wheelchair_var_1_walk/04.png" id="6_p768d"]
+[ext_resource type="Texture2D" uid="uid://dy8cmn2mfo3ss" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_other/wheelchair_var_1_walk/05.png" id="7_yrglt"]
+[ext_resource type="Texture2D" uid="uid://77ehn0wmgdym" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_other/wheelchair_var_1_walk/06.png" id="8_ctb3a"]
+[ext_resource type="Texture2D" uid="uid://bus67t7wsdxaj" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_other/wheelchair_var_1_walk/07.png" id="9_sb05q"]
+[ext_resource type="Texture2D" uid="uid://drs40u3jgt306" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_other/wheelchair_var_1_walk/08.png" id="10_cctce"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nwqd2"]
+render_priority = 0
+shader = ExtResource("1_thepv")
+shader_parameter/scale = Vector3(1.215, 1.215, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("2_vi1g1")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iyorl"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_nwqd2"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_yp1k1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vi1g1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_vcrtp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_rm8j3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_p768d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yrglt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ctb3a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_sb05q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_cctce")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="WheelChair1" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.6008, 9.32, -2.123)
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+custom_aabb = AABB(0, 0, 0, 1.215, 1.215, 0)
+mesh = SubResource("ArrayMesh_iyorl")
+script = ExtResource("3_q2xas")
+texture_frames = SubResource("SpriteFrames_yp1k1")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081

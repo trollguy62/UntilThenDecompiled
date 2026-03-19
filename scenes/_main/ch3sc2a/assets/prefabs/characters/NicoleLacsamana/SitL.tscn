@@ -1,0 +1,609 @@
+[gd_scene load_steps=121 format=3 uid="uid://bnql13bhjmd2j"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="2"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://bvcy6pomlpmdj" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_talk/03.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://clwxm7unr4xla" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_idle/06.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bw3khpuhxwy5i" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_idle/03.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dx70ktckv7o30" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_talk/05.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://clodsmm1ytxgk" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_idle/04.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cl6m5mumvytnr" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_talk/01.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://btu3r817fggo" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_talk/02.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cuspmka0fq7dy" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_talk/06.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://bpmh8608pnias" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_idle/05.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://bh2vbdyawu6cw" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_talk/04.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://cnc8iph4ruoq5" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_talk/06.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://brqba8s0vahaj" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_idle/05.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://1gkywsv35vve" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_talk/04.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://c6jx7mfrlf075" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_idle/01.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://cd2nl7fpo47b4" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_talk/06.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://dqgsj3jlxj56a" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_idle/04.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://8f4uhsdsq7nt" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_idle/02.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bhj4ml6koiam" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lb_default_idle/02.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://cw6aldl155auo" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_talk/03.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://c8dl0gwqqc21d" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_talk/01.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://c4fnxovmyhpa2" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_idle/03.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://el008lybm4uo" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_talk/03.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://c72xb704byer7" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_idle/06.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://desjoc8ouqt0m" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_idle/01.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://ucbsfpfq13yy" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_idle/03.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://e0v4n0bagi2v" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_talk/03.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://dkygf6g7a4d1y" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_idle/03.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://bxdlt568peae7" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_talk/06.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://bt8xahwl7nlqw" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_talk/02.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://cvjh3ftau30y3" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_idle/01.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://03a1cur6ryli" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_idle/03.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://lqni4677uue3" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_idle/01.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://6s1qewi1ipfb" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_talk/01.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://bch1hxqntigjs" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_talk/04.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://du4ecwdpndpnm" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_idle/05.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://bk10ag6dlsob2" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_talk/05.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://d4ih7x3y0ld00" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_idle/02.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://cegxsuid51q26" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_idle/05.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://dsc7t5s4jet41" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_idle/03.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://bxrrj1o5oswnp" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_idle/02.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://cvm3d7r5mojvc" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_idle/06.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://pnsslm8v17cp" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_talk/01.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://dwnq1ku55yxwt" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_idle/05.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://dfxt2omjktxmj" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lb_default_idle/05.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://cwbhgldd3qu84" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_idle/01.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://naep66v6bla4" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_idle/06.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://ck6emho34rw6c" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_talk/01.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://wendabfkxu0q" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_talk/06.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://cdeo4k1jumbiy" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_idle/01.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://dbhwp47vyb5xd" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_talk/04.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://ljausjsh0drj" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_talk/05.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://ei3q20uadwyc" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_idle/04.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://dex5hhbfjona0" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_talk/03.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://hq1vd2prkop2" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_idle/02.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://b6tnl35wxsiqi" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_idle/01.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://cqi3tx7v68he3" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_talk/06.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://dxt58csyx8pah" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lb_default_idle/03.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://bbjlw0bifmhqy" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_idle/06.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://tlpvd5fj5jbi" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_idle/04.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://davnmimbknqu2" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lb_default_idle/06.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://hafxh0i7w1u3" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_idle/05.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://dspytk3p3vf2e" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_default_idle/03.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://dagbr75dj3k5k" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lb_default_idle/01.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://iq2gn7em4mf3" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lb_default_idle/04.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://bjbkq4uyvby1m" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_talk/05.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://de74ngaabfdif" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_idle/04.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://pv247t24bllr" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_idle/06.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://ijupvbhvfu7r" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_talk/05.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://b2yrbup3hja25" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_idle/04.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://bp8ndroxfvntw" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_talk/02.png" id="73"]
+[ext_resource type="Texture2D" uid="uid://cyf31pgn4vpmh" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_talk/02.png" id="74"]
+[ext_resource type="Texture2D" uid="uid://15kw14p22me5" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_idle/03.png" id="75"]
+[ext_resource type="Texture2D" uid="uid://cvhiajuay8kj0" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_idle/02.png" id="76"]
+[ext_resource type="Texture2D" uid="uid://drt3lt10dc6kd" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_idle/06.png" id="77"]
+[ext_resource type="Texture2D" uid="uid://7h3c2rru4pub" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_idle/05.png" id="78"]
+[ext_resource type="Texture2D" uid="uid://sxawil8456km" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confused_talk/04.png" id="79"]
+[ext_resource type="Texture2D" uid="uid://cidye2vjq6do5" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_positive_idle/02.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://bxia1n5c2tf8h" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^l_neutral_talk/01.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://bea3rsm7f862e" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_confusedpositive_talk/02.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://ba2kpbi3x4hdf" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_talk/05.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://cqiess6qrj2c8" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_talk/04.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://dqbgx05so6666" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_idle/05.png" id="85"]
+[ext_resource type="Texture2D" uid="uid://cuqirew0m08b5" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_idle/04.png" id="86"]
+[ext_resource type="Texture2D" uid="uid://d2yc64g1olsiq" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_idle/04.png" id="87"]
+[ext_resource type="Texture2D" uid="uid://21agho3ypfmv" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_talk/06.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://dnj3mc32bss6s" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_talk/05.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://dcmr1a63hjuv4" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_talk/04.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://b5pm2vj5wcib8" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_talk/02.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://cd2uuorpitaqg" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_idle/01.png" id="92"]
+[ext_resource type="Texture2D" uid="uid://cdbes1akivbrt" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_talk/06.png" id="93"]
+[ext_resource type="Texture2D" uid="uid://bqxjwsd5cgb7r" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_talk/03.png" id="94"]
+[ext_resource type="Texture2D" uid="uid://c3e8lpxtwls36" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_talk/05.png" id="95"]
+[ext_resource type="Texture2D" uid="uid://dm7chagmrvdnt" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_talk/01.png" id="96"]
+[ext_resource type="Texture2D" uid="uid://be5c41bamck7i" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_talk/05.png" id="97"]
+[ext_resource type="Texture2D" uid="uid://dhj67t3m8pyuv" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_talk/03.png" id="98"]
+[ext_resource type="Texture2D" uid="uid://d1s1cwuuqo1re" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_idle/01.png" id="99"]
+[ext_resource type="Texture2D" uid="uid://d2p2omql4aice" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_idle/03.png" id="100"]
+[ext_resource type="Texture2D" uid="uid://b42jdw70krycm" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_talk/01.png" id="101"]
+[ext_resource type="Texture2D" uid="uid://cad3sqsfjhr5c" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_idle/02.png" id="102"]
+[ext_resource type="Texture2D" uid="uid://bfycoo17gwclr" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_talk/03.png" id="103"]
+[ext_resource type="Texture2D" uid="uid://be8n7k7l37rfc" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_idle/06.png" id="104"]
+[ext_resource type="Texture2D" uid="uid://ynddepii8y5r" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_talk/02.png" id="105"]
+[ext_resource type="Texture2D" uid="uid://ho7o5rxm0hcd" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_idle/05.png" id="106"]
+[ext_resource type="Texture2D" uid="uid://b3ddo1uv8c2y4" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_talk/02.png" id="107"]
+[ext_resource type="Texture2D" uid="uid://cathodxq58vdi" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_talk/04.png" id="108"]
+[ext_resource type="Texture2D" uid="uid://cq4hm2rumj8oe" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_talk/02.png" id="109"]
+[ext_resource type="Texture2D" uid="uid://lie4602hd1bd" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_idle/06.png" id="110"]
+[ext_resource type="Texture2D" uid="uid://cvpeoy5v4y7e3" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_talk/01.png" id="111"]
+[ext_resource type="Texture2D" uid="uid://b6apq0ewcwlux" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_talk/03.png" id="112"]
+[ext_resource type="Texture2D" uid="uid://l1xg5isly771" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_talk/04.png" id="113"]
+[ext_resource type="Texture2D" uid="uid://hl00tnt0sxkd" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_neutral=l_idle/02.png" id="114"]
+[ext_resource type="Texture2D" uid="uid://c0vetn564x7ia" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_jaded_idle/04.png" id="115"]
+[ext_resource type="Texture2D" uid="uid://dy4ikmwbolsdn" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_default_talk/06.png" id="116"]
+[ext_resource type="Texture2D" uid="uid://b2cy528gaqrky" path="res://scenes/_main/ch3sc2a/assets/characters/NicoleLacsamana/l_sit^lf_joyful_idle/02.png" id="117"]
+
+[sub_resource type="ShaderMaterial" id="970"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/scale = Vector3(1.04, 1.04, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("9")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3v3e8"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("970"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="972"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70")
+}],
+"loop": true,
+"name": &"confused_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}],
+"loop": true,
+"name": &"confused_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}],
+"loop": true,
+"name": &"confusedpositive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}],
+"loop": true,
+"name": &"confusedpositive_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63")
+}],
+"loop": true,
+"name": &"default=b_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61")
+}],
+"loop": true,
+"name": &"default=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}],
+"loop": true,
+"name": &"default=l_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("92")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104")
+}],
+"loop": true,
+"name": &"jaded_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("96")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93")
+}],
+"loop": true,
+"name": &"jaded_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}],
+"loop": true,
+"name": &"joyful_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88")
+}],
+"loop": true,
+"name": &"joyful_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}],
+"loop": true,
+"name": &"neutral=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59")
+}],
+"loop": true,
+"name": &"neutral=l_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}],
+"loop": true,
+"name": &"neutral_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": true,
+"name": &"positive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}],
+"loop": true,
+"name": &"positive_talk",
+"speed": 6.0
+}]
+
+[node name="Sprite" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_3v3e8")
+script = ExtResource("1")
+texture_frames = SubResource("972")
+sync_all = true
+animation = "positive_talk"
+alias = "NicoleLacsamana"
+pixel_size = 0.008
+
+[node name="SpriteController" type="Node" parent="."]
+script = ExtResource("2")
+state_container_alias = "NicoleLacsamana"
+fallback_idle_talk_anim = "default"
+idle_talk_anims = Array[String](["confused", "confusedpositive", "default", "jaded", "joyful", "neutral", "positive"])

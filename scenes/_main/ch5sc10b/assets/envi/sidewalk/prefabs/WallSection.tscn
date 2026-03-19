@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://boj7co3673dsh"]
+
+[ext_resource type="ArrayMesh" uid="uid://bc4ksxxvtmsv2" path="res://scenes/bonifacio_station_entrance/assets/wall_mid.obj" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://ce3478pthl2ev" path="res://scenes/bonifacio_station_entrance/assets/wall_pillar.obj" id="2"]
+[ext_resource type="Material" uid="uid://cq5cbcpr8k6ql" path="res://scenes/bonifacio_station_entrance/assets/materials/WallPillar1.tres" id="3"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="4"]
+[ext_resource type="Texture2D" uid="uid://baerhyrug2kjf" path="res://scenes/bonifacio_station_entrance/assets/wall_mid_n.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dlfy2tl3k8hl" path="res://scenes/bonifacio_station_entrance/assets/wall_mid_1.png" id="6"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("4")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 2.5
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.5
+shader_parameter/specular = 0.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6")
+shader_parameter/texture_normal = ExtResource("5")
+
+[node name="WallSection" type="MeshInstance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.08, 0, 1.86265e-08)
+material_override = SubResource("1")
+mesh = ExtResource("1")
+
+[node name="Divider" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53, 0, -1.86265e-08)
+material_override = ExtResource("3")
+mesh = ExtResource("2")
+skeleton = NodePath("../..")

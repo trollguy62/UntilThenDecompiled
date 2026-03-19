@@ -1,0 +1,564 @@
+[gd_scene load_steps=49 format=3 uid="uid://i08lh073txnf"]
+
+[ext_resource type="PackedScene" uid="uid://d1sa1gxdo85x6" path="res://scenes/_main/ch1sc8/assets/prefabs/Aircon.tscn" id="1"]
+[ext_resource type="Material" uid="uid://bekupcjbhp567" path="res://scenes/_main/ch1sc8/assets/pharmacy/materials/BldgMain.tres" id="2"]
+[ext_resource type="Material" uid="uid://c7vvovg287n0e" path="res://scenes/_main/ch1sc8/assets/pharmacy/materials/BldgRoof.tres" id="3"]
+[ext_resource type="Material" uid="uid://bkwpe3wox8p47" path="res://scenes/_main/ch1sc8/assets/pharmacy/materials/BldgCeiling.tres" id="4"]
+[ext_resource type="Material" uid="uid://vtm1lb38owts" path="res://scenes/_main/ch1sc8/assets/pharmacy/materials/BldgTiles.tres" id="5"]
+[ext_resource type="Material" uid="uid://ci44gax657rmr" path="res://scenes/_main/ch1sc8/assets/pharmacy/materials/BldgWalls.tres" id="6"]
+[ext_resource type="ArrayMesh" uid="uid://baf2iwx6ufbwv" path="res://scenes/_main/ch1sc8/assets/pharmacy/shelf_side.obj" id="7"]
+[ext_resource type="ArrayMesh" uid="uid://cf7r36g46ryr2" path="res://scenes/_main/ch1sc8/assets/pharmacy/platform.obj" id="8"]
+[ext_resource type="ArrayMesh" uid="uid://dnqoqs5y0ynih" path="res://scenes/_main/ch1sc8/assets/pharmacy/tarp.obj" id="9"]
+[ext_resource type="Texture2D" uid="uid://cojilcvv5gohm" path="res://scenes/_main/ch1sc8/assets/pharmacy/aisle_2.png" id="10"]
+[ext_resource type="ArrayMesh" uid="uid://dggmt78m8mrlq" path="res://scenes/_main/ch1sc8/assets/pharmacy/pharmacy.obj" id="11"]
+[ext_resource type="Shader" path="res://scenes/_main/ch1sc8/assets/shaders/Wind.gdshader" id="12"]
+[ext_resource type="Texture2D" uid="uid://cehe81umei8ca" path="res://scenes/_main/ch1sc8/assets/pharmacy/gate_l.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://c4j0bja2qxuj7" path="res://scenes/_main/ch1sc8/assets/pharmacy/floor_tiles_n.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://cg7lxoqcqhosd" path="res://scenes/_main/ch1sc8/assets/pharmacy/shelf_back.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dogsn1ukjm321" path="res://scenes/_main/ch1sc8/assets/pharmacy/gate_r.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://lximve8nvqis" path="res://scenes/_main/ch1sc8/assets/pharmacy/cashier.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://dtvln8yq3yp7d" path="res://scenes/_main/ch1sc8/assets/pharmacy/disp_board.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://c8f3ykc6aee5a" path="res://scenes/_main/ch1sc8/assets/pharmacy/pharmacy_glass.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://cfoqmjkm7cej1" path="res://scenes/_main/ch1sc8/assets/pharmacy/cutout_stand.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://bnendn5qvqcbl" path="res://scenes/_main/ch1sc8/assets/pharmacy/speaker.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://ddjk8riuj51dx" path="res://scenes/_main/ch1sc8/assets/pharmacy/platform_ground.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://b3480cldmv2v0" path="res://scenes/_main/ch1sc8/assets/pharmacy/floor_tiles.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://82irq2rsfkl5" path="res://scenes/_main/ch1sc8/assets/pharmacy/tarp.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://c0lt6dv2hqk82" path="res://scenes/_main/ch1sc8/assets/pharmacy/shelf_side.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://6vgwsl1sxn7b" path="res://scenes/_main/ch1sc8/assets/pharmacy/business_papers.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://w5gchhhej68d" path="res://scenes/_main/ch1sc8/assets/pharmacy/aisle_1.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://ck2rokm5by3l2" path="res://scenes/_main/ch1sc8/assets/pharmacy/disp_board_glow.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://umjh040w3bv7" path="res://assets/common/decals/dirt_4.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://bfbywb833o6sa" path="res://assets/common/decals/dirt_11.png" id="30"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialTransparent.gdshader" id="31"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="32"]
+[ext_resource type="Texture2D" uid="uid://cbk28v36qyg73" path="res://assets/common/decals/dirt_10.png" id="33"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("31")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/metallic = 0.04
+shader_parameter/roughness = 0.1
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("19")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 0.7
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.5
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("23")
+shader_parameter/texture_normal = ExtResource("14")
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("22")
+
+[sub_resource type="ShaderMaterial" id="12"]
+render_priority = 0
+shader = ExtResource("12")
+shader_parameter/use_tex_wind = false
+shader_parameter/transmission = Color(0.443137, 0.443137, 0.443137, 1)
+shader_parameter/roughness = 0.33
+shader_parameter/vertical_stiffness = 2.0
+shader_parameter/max_wind_rot = 8.0
+shader_parameter/wind_speed = 1.0
+shader_parameter/horizontal_speed = 0.5
+shader_parameter/horizontal_curl = 0.35
+shader_parameter/time_offset = 0.0
+shader_parameter/tex_albedo = ExtResource("24")
+
+[sub_resource type="ShaderMaterial" id="13"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("20")
+
+[sub_resource type="ShaderMaterial" id="14"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(1, 1, 0.86, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("18")
+shader_parameter/texture_glow = ExtResource("28")
+
+[sub_resource type="ShaderMaterial" id="15"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("21")
+
+[sub_resource type="ShaderMaterial" id="16"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("13")
+
+[sub_resource type="ShaderMaterial" id="17"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("16")
+
+[sub_resource type="ShaderMaterial" id="18"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("15")
+
+[sub_resource type="ShaderMaterial" id="19"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("17")
+
+[sub_resource type="ShaderMaterial" id="20"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("27")
+
+[sub_resource type="ShaderMaterial" id="21"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10")
+
+[sub_resource type="ShaderMaterial" id="22"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("26")
+
+[sub_resource type="ShaderMaterial" id="23"]
+render_priority = 0
+shader = ExtResource("32")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("25")
+
+[node name="Pharmacy" type="MeshInstance3D"]
+layers = 3
+mesh = ExtResource("11")
+surface_material_override/0 = ExtResource("2")
+surface_material_override/1 = ExtResource("5")
+surface_material_override/2 = ExtResource("6")
+surface_material_override/3 = ExtResource("4")
+surface_material_override/4 = ExtResource("3")
+
+[node name="Glass" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, -1.42109e-14, 0, 1, 0, 1.42109e-14, 0, 1, -2.26, 0.00999999, 0.28871)
+layers = 3
+material_override = SubResource("1")
+cast_shadow = 0
+centered = false
+texture = ExtResource("19")
+
+[node name="Platform" type="MeshInstance3D" parent="."]
+transform = Transform3D(7.54976e-08, 0, 1, 0, 1, 0, -1, 0, 7.54976e-08, -7.45058e-08, -0.05, 0)
+layers = 3
+mesh = ExtResource("8")
+surface_material_override/0 = SubResource("2")
+surface_material_override/1 = SubResource("3")
+
+[node name="Decal1" type="Decal" parent="Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0458302, -1.24)
+size = Vector3(0.2, 0.04, 0.2)
+texture_albedo = ExtResource("30")
+emission_energy = 0.0
+modulate = Color(1, 1, 1, 0.192157)
+
+[node name="Decal3" type="Decal" parent="Platform"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, -0.6, 0.0362003, -0.76)
+size = Vector3(0.2, 0.04, 0.2)
+texture_albedo = ExtResource("30")
+emission_energy = 0.0
+modulate = Color(1, 1, 1, 0.192157)
+
+[node name="Decal4" type="Decal" parent="Platform"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, -0.61, 0.0459434, -1.81)
+size = Vector3(0.2, 0.04, 0.2)
+texture_albedo = ExtResource("33")
+emission_energy = 0.0
+modulate = Color(1, 1, 1, 0.192157)
+
+[node name="Decal2" type="Decal" parent="Platform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0.0437643, -2.02)
+size = Vector3(0.195, 0.04, 0.225)
+texture_albedo = ExtResource("29")
+emission_energy = 0.0
+modulate = Color(1, 1, 1, 0.192157)
+
+[node name="Deco" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.45058e-08, 0, 0)
+
+[node name="Tarp" type="MeshInstance3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.599999, 1.38, -2.3)
+layers = 3
+material_override = SubResource("12")
+mesh = ExtResource("9")
+
+[node name="CutoutStand" type="Sprite3D" parent="Deco"]
+transform = Transform3D(-0.207912, 0, -0.978148, 0, 1, 0, 0.978148, 0, -0.207912, -0.46871, -1.49012e-08, -0.58)
+layers = 3
+material_override = SubResource("13")
+cast_shadow = 2
+centered = false
+texture = ExtResource("20")
+
+[node name="DispBoard" type="Sprite3D" parent="Deco"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.45, 1.5, -2.4)
+layers = 3
+material_override = SubResource("14")
+centered = false
+texture = ExtResource("18")
+
+[node name="Speaker" type="Sprite3D" parent="Deco"]
+transform = Transform3D(-0.0697566, 0, -0.997564, 0, 1, 0, 0.997564, 0, -0.0697566, -0.33871, -2.98023e-08, -0.79)
+layers = 3
+material_override = SubResource("15")
+cast_shadow = 2
+centered = false
+texture = ExtResource("21")
+
+[node name="GateL" type="Sprite3D" parent="Deco"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.46871, -5.96046e-08, -2.42)
+layers = 3
+material_override = SubResource("16")
+centered = false
+texture = ExtResource("13")
+
+[node name="GateR" type="Sprite3D" parent="Deco"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.46871, -5.96046e-08, -0.11)
+layers = 3
+material_override = SubResource("17")
+centered = false
+texture = ExtResource("16")
+
+[node name="Interior" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.45058e-08, 0, 0)
+
+[node name="ShelfBack" type="Sprite3D" parent="Interior"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.57129, -2.98023e-08, -2.27)
+layers = 3
+material_override = SubResource("18")
+centered = false
+texture = ExtResource("15")
+
+[node name="Cashier" type="Sprite3D" parent="Interior"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.25129, -2.98023e-08, -2.27)
+layers = 3
+material_override = SubResource("19")
+centered = false
+texture = ExtResource("17")
+
+[node name="Aisle1" type="Sprite3D" parent="Interior"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.13129, -2.98023e-08, -2.11)
+layers = 3
+material_override = SubResource("20")
+centered = false
+texture = ExtResource("27")
+
+[node name="Aisle2" type="Sprite3D" parent="Interior"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.69129, -2.98023e-08, -2.11)
+layers = 3
+material_override = SubResource("21")
+centered = false
+texture = ExtResource("10")
+
+[node name="BusinessPapers" type="Sprite3D" parent="Interior"]
+transform = Transform3D(1, 0, -1.06581e-14, 0, 1, 0, 1.06581e-14, 0, 1, 1.25129, 0.58, -2.26)
+layers = 3
+material_override = SubResource("22")
+centered = false
+texture = ExtResource("26")
+
+[node name="ShelfSide" type="MeshInstance3D" parent="Interior"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 1.22, 1.49012e-08, -0.15)
+layers = 3
+material_override = SubResource("23")
+mesh = ExtResource("7")
+
+[node name="Aircon" parent="Interior" instance=ExtResource("1")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.41, 1.18, -2.15)
+layers = 3
+
+[node name="Flap" parent="Interior/Aircon" index="0"]
+transform = Transform3D(0.948173, -0.317753, 0, 0.317753, 0.948173, 0, 0, 0, 1, 0.0435592, 0.0178312, 0.46)
+layers = 3
+
+[node name="Lighting" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -7.45058e-08, 0, 0)
+
+[node name="LightOut" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.5, 1.27, -1.23)
+light_cull_mask = 4294967294
+shadow_enabled = true
+shadow_bias = 0.04
+omni_range = 1.77
+omni_attenuation = 0.217639
+
+[node name="LightIn" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 0.57, 0.92, -1.15)
+light_cull_mask = 4294967294
+shadow_bias = 0.05
+omni_range = 1.57
+omni_attenuation = 0.90125
+
+[editable path="Interior/Aircon"]

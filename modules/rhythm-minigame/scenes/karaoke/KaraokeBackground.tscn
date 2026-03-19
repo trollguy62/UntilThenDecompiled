@@ -1,0 +1,27 @@
+[gd_scene load_steps=12 format=3 uid="uid://c86fa55byqcqr"]
+
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeBackground.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://yb6chl280qoj" path="res://modules/rhythm-minigame/assets/karaoke/screens/scenery_2.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://hdg1ki4pa74m" path="res://modules/rhythm-minigame/assets/karaoke/screens/scenery_3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bou6ve2u3j3e8" path="res://modules/rhythm-minigame/assets/karaoke/screens/sexy_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://o0i0nyhivbks" path="res://modules/rhythm-minigame/assets/karaoke/screens/cars_3.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://emv81ulxpvoo" path="res://modules/rhythm-minigame/assets/karaoke/screens/off.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://d0w5o0y7cx6a7" path="res://modules/rhythm-minigame/assets/karaoke/screens/sexy_3.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cwrgq3bytavms" path="res://modules/rhythm-minigame/assets/karaoke/screens/scenery_1.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://ctebodwnvdi6f" path="res://modules/rhythm-minigame/assets/karaoke/screens/cars_2.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bl5hv7cwywyrv" path="res://modules/rhythm-minigame/assets/karaoke/screens/cars_1.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bpi02q070rpyu" path="res://modules/rhythm-minigame/assets/karaoke/screens/sexy_1.png" id="11"]
+
+[node name="KaraokeBackground" type="Sprite2D"]
+scale = Vector2(5, 5)
+texture = ExtResource("4")
+script = ExtResource("1")
+textures = {
+"cars": [ExtResource("10"), ExtResource("9"), ExtResource("5")],
+"scenery": [ExtResource("8"), ExtResource("2"), ExtResource("3")],
+"sexy": [ExtResource("11"), ExtResource("4"), ExtResource("7")]
+}
+off_texture = ExtResource("6")
+pan_from_center = false
+
+[node name="RenewTimer" type="Timer" parent="."]

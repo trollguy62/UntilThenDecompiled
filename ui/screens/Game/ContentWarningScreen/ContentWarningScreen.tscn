@@ -1,0 +1,107 @@
+[gd_scene load_steps=12 format=3 uid="uid://dtmtno5llg3ij"]
+
+[ext_resource type="Script" path="res://ui/screens/Game/ContentWarningScreen/ContentWarningScreen.gd" id="1_mw00i"]
+[ext_resource type="FontFile" uid="uid://cgsnpibqgvabu" path="res://fonts/NunitoSans-Regular.ttf" id="1_pwygj"]
+[ext_resource type="PackedScene" uid="uid://b4mitfun6y8ot" path="res://addons/controller_icons/objects/ControllerTextureRect.tscn" id="2_webli"]
+[ext_resource type="Texture2D" uid="uid://cyvt6g1pkcqfo" path="res://addons/controller_icons/assets/key/1.png" id="3_i5esm"]
+[ext_resource type="Texture2D" uid="uid://cp0j8cw8o6wvu" path="res://addons/controller_icons/assets/key/2.png" id="4_jsf47"]
+[ext_resource type="Texture2D" uid="uid://tljp3e67878n" path="res://addons/controller_icons/assets/key/3.png" id="5_qqtwg"]
+[ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="7_egjic"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wcfcf"]
+content_margin_left = 64.0
+content_margin_right = 64.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hdc2p"]
+line_spacing = 0.0
+font = ExtResource("1_pwygj")
+font_size = 18
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqasw"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j2x6u"]
+font = ExtResource("1_pwygj")
+font_size = 24
+
+[node name="ContentWarningScreen" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_wcfcf")
+script = ExtResource("1_mw00i")
+
+[node name="Controls" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0.784314)
+layout_mode = 2
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Controls"]
+layout_mode = 2
+
+[node name="ControllerTextureRect" parent="Controls/HBoxContainer" instance=ExtResource("2_webli")]
+layout_mode = 2
+texture = ExtResource("3_i5esm")
+path = "choice_1"
+show_only = 0
+
+[node name="Label" type="Label" parent="Controls/HBoxContainer"]
+layout_mode = 2
+text = "CONTENT_WARNING_SHOW"
+label_settings = SubResource("LabelSettings_hdc2p")
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Controls"]
+layout_mode = 2
+
+[node name="ControllerTextureRect" parent="Controls/HBoxContainer2" instance=ExtResource("2_webli")]
+layout_mode = 2
+texture = ExtResource("4_jsf47")
+path = "choice_2"
+show_only = 0
+
+[node name="Label" type="Label" parent="Controls/HBoxContainer2"]
+layout_mode = 2
+text = "CONTENT_WARNING_SKIP_PERM"
+label_settings = SubResource("LabelSettings_hdc2p")
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Controls"]
+layout_mode = 2
+
+[node name="ControllerTextureRect" parent="Controls/HBoxContainer3" instance=ExtResource("2_webli")]
+layout_mode = 2
+texture = ExtResource("5_qqtwg")
+path = "choice_3"
+show_only = 0
+
+[node name="ControllerTextureRect2" parent="Controls/HBoxContainer3" instance=ExtResource("2_webli")]
+layout_mode = 2
+texture = ExtResource("7_egjic")
+path = "pause"
+show_only = 1
+force_type = 1
+
+[node name="Label" type="Label" parent="Controls/HBoxContainer3"]
+layout_mode = 2
+text = "CONTENT_WARNING_SKIP_TEMP"
+label_settings = SubResource("LabelSettings_hdc2p")
+
+[node name="Spacer1" type="PanelContainer" parent="Controls"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cqasw")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 136
+theme_override_constants/margin_right = 136
+
+[node name="Warning" type="Label" parent="MarginContainer"]
+layout_mode = 2
+text = "CONTENT_WARNING"
+label_settings = SubResource("LabelSettings_j2x6u")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+metadata/_edit_lock_ = true

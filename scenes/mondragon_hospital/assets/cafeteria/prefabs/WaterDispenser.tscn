@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://crusweqrhjr3f"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialTransparent.gdshader" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://bfnoq67vocjqr" path="res://scenes/house_mark/assets/water_dispenser.obj" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://b72q5swf86dkf" path="res://scenes/house_mark/assets/water_container.obj" id="4"]
+[ext_resource type="Texture2D" uid="uid://b57kamdjtay0v" path="res://scenes/mondragon_hospital/assets/cafeteria/water_container.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://h7r23pnxbj3o" path="res://scenes/mondragon_hospital/assets/cafeteria/water_dispenser.png" id="6"]
+
+[sub_resource type="ShaderMaterial" id="248"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6")
+
+[sub_resource type="ShaderMaterial" id="249"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 0.823529)
+shader_parameter/normal_depth = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.4
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+
+[node name="WaterDispenser" type="MeshInstance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.789, 0, -3.52)
+material_override = SubResource("248")
+mesh = ExtResource("3")
+surface_material_override/0 = null
+
+[node name="WaterContainer" type="MeshInstance" parent="."]
+transform = Transform3D(4.37114e-08, -3.82137e-15, 1, -8.74228e-08, -1, 0, 1, -8.74228e-08, -4.37114e-08, 0.140001, 1.03, 0.140001)
+material_override = SubResource("249")
+mesh = ExtResource("4")
+surface_material_override/0 = null

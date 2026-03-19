@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5u5fx7bqla8b"]
+
+[ext_resource type="Script" path="res://modules/record-replay/RecordReplay.gd" id="1_1i0ee"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oyot0"]
+bg_color = Color(0.690196, 0, 0, 1)
+
+[node name="RecordReplay" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(1, 1, 1, 0)
+script = ExtResource("1_1i0ee")
+
+[node name="ManualPrompt" type="CanvasLayer" parent="."]
+layer = 128
+
+[node name="PanelContainer" type="PanelContainer" parent="ManualPrompt"]
+offset_right = 69.0
+offset_bottom = 26.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oyot0")
+
+[node name="Label" type="Label" parent="ManualPrompt/PanelContainer"]
+layout_mode = 2
+text = "MANUAL"

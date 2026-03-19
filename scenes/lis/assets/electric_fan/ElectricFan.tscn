@@ -1,0 +1,161 @@
+[gd_scene load_steps=19 format=3 uid="uid://cfalgfemgw24a"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1"]
+[ext_resource type="Script" path="res://scenes/lis/assets/electric_fan/Motor.gd" id="2"]
+[ext_resource type="Script" path="res://scenes/lis/assets/electric_fan/Blade.gd" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://bveg0pwnmlp0f" path="res://scenes/lis/assets/electric_fan/base.obj" id="3_68q6b"]
+[ext_resource type="Texture2D" uid="uid://cerrqyqyi5s22" path="res://scenes/lis/assets/electric_fan/blade_1.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://coapghqkwd6p3" path="res://scenes/lis/assets/electric_fan/cage.png" id="5"]
+[ext_resource type="Material" uid="uid://ch3nu4vxv5mqx" path="res://scenes/lis/assets/electric_fan/Foundation.tres" id="6"]
+[ext_resource type="ArrayMesh" uid="uid://b8pcgb67oo754" path="res://scenes/lis/assets/electric_fan/neck.obj" id="6_mt4ok"]
+[ext_resource type="Script" path="res://scenes/lis/assets/electric_fan/ElectricFan.gd" id="7"]
+[ext_resource type="ArrayMesh" uid="uid://cs6am0xan8njj" path="res://scenes/lis/assets/electric_fan/motor.obj" id="7_t1e6d"]
+[ext_resource type="Texture2D" uid="uid://ddr42dwvacmfk" path="res://scenes/lis/assets/electric_fan/switch.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://dsskogosmkwuc" path="res://scenes/lis/assets/electric_fan/pull.png" id="10"]
+[ext_resource type="ArrayMesh" uid="uid://dudy5lbo38gvn" path="res://scenes/lis/assets/electric_fan/cage.obj" id="10_s3vh0"]
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10")
+
+[sub_resource type="QuadMesh" id="3"]
+size = Vector2(0.03, 0.3)
+
+[sub_resource type="ShaderMaterial" id="6"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+
+[sub_resource type="ShaderMaterial" id="8"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.45
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+
+[sub_resource type="ShaderMaterial" id="9"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("9")
+
+[node name="ElectricFan" type="Node3D"]
+transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0, 0)
+script = ExtResource("7")
+
+[node name="Base" type="MeshInstance3D" parent="."]
+material_override = ExtResource("6")
+mesh = ExtResource("3_68q6b")
+
+[node name="Pull" type="MeshInstance3D" parent="Base"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11, -0.15, 0.01)
+material_override = SubResource("2")
+mesh = SubResource("3")
+
+[node name="Neck" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.878534, -0.47768, 0, 0.47768, 0.878534, 0.0758874, 0.31, 0.136258)
+material_override = ExtResource("6")
+mesh = ExtResource("6_mt4ok")
+
+[node name="Motor" type="MeshInstance3D" parent="Neck"]
+transform = Transform3D(0.94287, -8.60002e-09, 0.333156, 0, 1, 2.58137e-08, -0.333156, -2.43391e-08, 0.94287, 0, 0.0279998, 0.0165082)
+mesh = ExtResource("7_t1e6d")
+surface_material_override/0 = ExtResource("6")
+script = ExtResource("2")
+max_angle = 35.0
+speed = 1
+
+[node name="Cage" type="MeshInstance3D" parent="Neck/Motor"]
+transform = Transform3D(1, 0, 0, 0, 0.999999, -2.98023e-08, 0, 2.98023e-08, 0.999999, 0, 0.0720004, 0.0334918)
+material_override = SubResource("6")
+mesh = ExtResource("10_s3vh0")
+
+[node name="Blade" type="Sprite3D" parent="Neck/Motor"]
+transform = Transform3D(-0.738698, -0.514128, 0, 0.514128, -0.738698, 0, 0, 0, 0.9, -0.00588751, 0.0816149, 0.0996609)
+material_override = SubResource("8")
+texture = ExtResource("4")
+script = ExtResource("3")
+speed = 23
+
+[node name="Switch" type="Sprite3D" parent="Neck/Motor"]
+transform = Transform3D(-1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0.14, -0.03)
+material_override = SubResource("9")
+texture = ExtResource("9")

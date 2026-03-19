@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://dv5p1gtqwr2bh"]
+
+[ext_resource type="Script" path="res://scenes/_main/lo2sc5/MinigameMap/Tack.gd" id="1_ftjy2"]
+[ext_resource type="Texture2D" uid="uid://cfofqpy6ycx8y" path="res://scenes/_main/lo2sc5/MinigameMap/assets/pics/1.png" id="2_q3gh3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_si6ay"]
+size = Vector2(42.6667, 25.3333)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n5lai"]
+size = Vector2(62, 28)
+
+[node name="Tack" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+monitoring = false
+script = ExtResource("1_ftjy2")
+texture = ExtResource("2_q3gh3")
+
+[node name="Collision" type="CollisionShape2D" parent="."]
+position = Vector2(0, -0.5)
+scale = Vector2(0.75, 0.75)
+shape = SubResource("RectangleShape2D_si6ay")
+
+[node name="Pickup" type="CollisionShape2D" parent="."]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_n5lai")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_q3gh3")

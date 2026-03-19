@@ -1,0 +1,129 @@
+[gd_scene load_steps=12 format=3 uid="uid://ceyrqwxk3tl4s"]
+
+[ext_resource type="Script" path="res://ui/screens/FbAlbumScreen/FbAlbumScreen.gd" id="1"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://c2v5cy37b1mgm" path="res://ui/components/TextureRectButton/TextureRectButton.tscn" id="3_jino8"]
+[ext_resource type="FontFile" uid="uid://sghb20e60wif" path="res://fonts/PTSans-Bold-Small.tres" id="5"]
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="6"]
+[ext_resource type="FontFile" uid="uid://dhcnjnvquq3am" path="res://fonts/PTSans-Regular-Small.tres" id="7"]
+[ext_resource type="PackedScene" uid="uid://buihlylwt72bs" path="res://ui/screens/FbAlbumScreen/FbAlbumStatsBar.tscn" id="8"]
+[ext_resource type="PackedScene" uid="uid://cr7cbv753bex5" path="res://ui/components/FbMenuBar/FbMenuBar.tscn" id="9"]
+[ext_resource type="Script" path="res://ui/components/CoolRichTextLabel.gd" id="10"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 1, 1, 1)
+shadow_color = Color(0, 0, 0, 0.0862745)
+shadow_size = 4
+
+[node name="FbAlbumScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+script = ExtResource("2")
+
+[node name="Margin" type="MarginContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 8
+
+[node name="Main" type="VBoxContainer" parent="Scroll/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="Header" type="PanelContainer" parent="Scroll/Margin/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("1")
+
+[node name="VBox" type="VBoxContainer" parent="Scroll/Margin/Main/Header"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 12
+
+[node name="AuthorContainer" type="MarginContainer" parent="Scroll/Margin/Main/Header/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+
+[node name="HBox" type="HBoxContainer" parent="Scroll/Margin/Main/Header/VBox/AuthorContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ProfilePicture" parent="Scroll/Margin/Main/Header/VBox/AuthorContainer/HBox" instance=ExtResource("3_jino8")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("3")
+stretch_mode = 0
+anim_hover = false
+open_alt = false
+
+[node name="VBox" type="VBoxContainer" parent="Scroll/Margin/Main/Header/VBox/AuthorContainer/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="Scroll/Margin/Main/Header/VBox/AuthorContainer/HBox/VBox"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 0
+theme_override_fonts/normal_font = ExtResource("6")
+theme_override_fonts/bold_font = ExtResource("5")
+bbcode_enabled = true
+text = "[b]Louise Ordunia[/b] feeling proud"
+meta_underlined = false
+
+[node name="Subtitle" type="Label" parent="Scroll/Margin/Main/Header/VBox/AuthorContainer/HBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.458824, 0.458824, 0.458824, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("7")
+text = "1 hr"
+
+[node name="CaptionContainer" type="MarginContainer" parent="Scroll/Margin/Main/Header/VBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="Label" type="RichTextLabel" parent="Scroll/Margin/Main/Header/VBox/CaptionContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_constants/line_separation = 0
+theme_override_fonts/normal_font = ExtResource("6")
+theme_override_fonts/bold_font = ExtResource("5")
+bbcode_enabled = true
+text = "Talino ko shet"
+meta_underlined = false
+script = ExtResource("10")
+
+[node name="FbAlbumStatsBar" parent="Scroll/Margin/Main/Header/VBox" instance=ExtResource("8")]
+layout_mode = 2
+
+[node name="MenuBar" parent="." instance=ExtResource("9")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+offset_right = 1281.0
+offset_bottom = 54.0
+title = ""

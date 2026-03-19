@@ -1,0 +1,80 @@
+[gd_scene load_steps=12 format=3 uid="uid://ckijpry501i8g"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://cdd4xjsacf5pv" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_cafeteria/03.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dteyib2x8citu" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_cafeteria/02.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dy1j7j18ardbk" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_cafeteria/06.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cy45oqlud7nj0" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_cafeteria/05.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://ccxbln2buobaq" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_cafeteria/01.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://m8ffyurdssqi" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_cafeteria/04.png" id="8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_v8y3u"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/scale = Vector3(0.15, 0.15, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("7")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jsc41"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_v8y3u"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="ClockCafeteria" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.451, 1.38, -3.117)
+mesh = SubResource("ArrayMesh_jsc41")
+script = ExtResource("1")
+texture_frames = SubResource("3")
+animation = "default"
+random_initial = true
+alias = "AnimatedPaper3D"

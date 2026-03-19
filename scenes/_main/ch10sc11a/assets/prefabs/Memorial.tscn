@@ -1,0 +1,920 @@
+[gd_scene load_steps=57 format=3 uid="uid://b0yuytih71e3e"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1_ono5n"]
+[ext_resource type="Texture2D" uid="uid://dpluek4hww6aq" path="res://scenes/_main/ch10sc11a/assets/envi/memorial/memorial.png" id="2_7yjcn"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="3_oyyul"]
+[ext_resource type="Texture2D" uid="uid://drvbfna1q0bre" path="res://scenes/_main/ch10sc11a/assets/envi/memorial/bouquet_1.png" id="4_rsrsw"]
+[ext_resource type="Texture2D" uid="uid://doh4pqmfdon2w" path="res://scenes/_main/ch10sc11a/assets/envi/memorial/bouquet_2.png" id="5_y4b5h"]
+[ext_resource type="Texture2D" uid="uid://c42mkd2sbjat3" path="res://scenes/_main/ch10sc11a/assets/envi/memorial/flower_1.png" id="6_81pt6"]
+[ext_resource type="Texture2D" uid="uid://dwreav5r6amjb" path="res://scenes/_main/ch10sc11a/assets/C3D/memorial/memorial_photo.png" id="6_gli3t"]
+[ext_resource type="Texture2D" uid="uid://dv60shkb3cedi" path="res://scenes/_main/ch10sc11a/assets/envi/memorial/flower_2.png" id="7_uovlg"]
+[ext_resource type="Texture2D" uid="uid://d3msy7oouks4y" path="res://scenes/_main/ch10sc11a/assets/C3D/memorial/flower_1.png" id="7_vfnnp"]
+[ext_resource type="Texture2D" uid="uid://dhjlnuoey5f1n" path="res://scenes/_main/ch10sc11a/assets/envi/memorial/heart.png" id="8_ibl2d"]
+[ext_resource type="Texture2D" uid="uid://c32nmc6ysm4mo" path="res://scenes/_main/ch10sc11a/assets/C3D/memorial/flower_2.png" id="8_trf70"]
+[ext_resource type="Texture2D" uid="uid://gcsn7pyl2bhh" path="res://scenes/_main/ch10sc11a/assets/envi/memorial/letter_1.png" id="9_610ut"]
+[ext_resource type="Texture2D" uid="uid://cm0f4vipa3jil" path="res://scenes/_main/ch10sc11a/assets/C3D/memorial/flower_3.png" id="9_fkfpi"]
+[ext_resource type="Texture2D" uid="uid://d3p02hpewubfb" path="res://scenes/_main/ch10sc11a/assets/C3D/memorial/flower_4.png" id="10_h7dvj"]
+[ext_resource type="Texture2D" uid="uid://de8f1bvae75pv" path="res://scenes/_main/ch10sc11a/assets/envi/memorial/letter_2.png" id="10_niwxm"]
+[ext_resource type="Texture2D" uid="uid://bu0oxpstcueqk" path="res://scenes/_main/ch10sc11a/assets/C3D/memorial/flower_5.png" id="11_mifmm"]
+[ext_resource type="Texture2D" uid="uid://c3nrx0ka8f87m" path="res://scenes/_main/ch10sc11a/assets/C3D/memorial/bouquet_2.png" id="12_8wo1e"]
+[ext_resource type="Texture2D" uid="uid://bujr6i3kycvxh" path="res://scenes/_main/ch10sc11a/assets/C3D/memorial/bouquet_1.png" id="13_42gj8"]
+[ext_resource type="Texture2D" uid="uid://wo2qlubae1qj" path="res://scenes/_main/ch10sc11a/assets/C3D/memorial/flower_6.png" id="14_18w6u"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2nbp8"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2_7yjcn")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tr051"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.25, 0.32, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_2nbp8"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 62, 10, 215, 163, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 10, 215, 163, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hr33n"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4_rsrsw")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gwerw"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.34, 0.14, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_hr33n"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 174, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 174, 62, 41, 92, 15, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 15, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wo2eo"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5_y4b5h")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q3q1t"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.33, 0.25, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_wo2eo"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 194, 245, 168, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 194, 245, 168, 62, 0, 0, 128, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a8pbo"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_81pt6")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_77eq1"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.06, 0.25, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_a8pbo"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 117, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 117, 61, 0, 0, 128, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ky4c3"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7_uovlg")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cysay"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.04, 0.18, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_ky4c3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 35, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 35, 61, 235, 81, 56, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 235, 81, 56, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ldlmy"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("8_ibl2d")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dg6o1"]
+_surfaces = [{
+"aabb": AABB(-0.04, -0.04, 0, 0.08, 0.08, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_ldlmy"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 35, 189, 10, 215, 35, 189, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 35, 61, 10, 215, 35, 189, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 35, 61, 10, 215, 35, 61, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 35, 189, 10, 215, 35, 61, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mnm3g"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("8_ibl2d")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kgoed"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("9_610ut")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_icjb6"]
+_surfaces = [{
+"aabb": AABB(-0.06, -0.085, 0, 0.12, 0.17, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_kgoed"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 117, 189, 123, 20, 174, 189, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 117, 61, 123, 20, 174, 189, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 117, 61, 123, 20, 174, 61, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 117, 189, 123, 20, 174, 61, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0nq8"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("9_610ut")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x2n5e"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10_niwxm")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2h31j"]
+_surfaces = [{
+"aabb": AABB(-0.06, -0.085, 0, 0.12, 0.17, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_x2n5e"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 117, 189, 123, 20, 174, 189, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 117, 61, 123, 20, 174, 189, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 117, 61, 123, 20, 174, 61, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 117, 189, 123, 20, 174, 61, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gkkj6"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10_niwxm")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wrlbp"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_gli3t")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q44pl"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1, 1.33, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_wrlbp"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 112, 61, 170, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 112, 61, 170, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_fqc3c"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7_vfnnp")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gsdy3"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.28, 0.25, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_fqc3c"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 143, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 143, 62, 0, 0, 128, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_whtll"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("8_trf70")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fm3u8"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.33, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_whtll"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 194, 245, 168, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 194, 245, 168, 62, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cbp5o"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("9_fkfpi")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3l0r2"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.15, 0.91, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_cbp5o"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 153, 153, 25, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 153, 153, 25, 62, 194, 245, 104, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 194, 245, 104, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nis4f"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10_h7dvj")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cx4a6"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.29, 1.02, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_nis4f"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 225, 122, 148, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 225, 122, 148, 62, 92, 143, 130, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 130, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3kma3"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("11_mifmm")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lmc5q"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.17, 0.81, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_3kma3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 46, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 46, 62, 41, 92, 79, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 79, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8thoe"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("12_8wo1e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7fjui"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.26, 0.68, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_8thoe"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 174, 71, 161, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 174, 71, 161, 63, 123, 20, 46, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 123, 20, 46, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p835l"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("13_42gj8")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_h1xbx"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.21, 0.67, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_p835l"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 71, 225, 154, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 71, 225, 154, 63, 30, 133, 43, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 30, 133, 43, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vq872"]
+render_priority = 0
+shader = ExtResource("1_ono5n")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("14_18w6u")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y68mc"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.17, 0.82, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_vq872"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 46, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 46, 62, 133, 235, 81, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 133, 235, 81, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[node name="Memorial" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.34, -0.41, 1.49)
+metadata/_edit_lock_ = true
+
+[node name="SS3D" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Paper3D" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, 0.996195, 0.0871558, 0, -0.0871558, 0.996195, 0, 0.00338382, 0.0156772)
+mesh = SubResource("ArrayMesh_tr051")
+skeleton = NodePath("../..")
+script = ExtResource("3_oyyul")
+texture = ExtResource("2_7yjcn")
+metadata/mat_opaque = SubResource("ShaderMaterial_2nbp8")
+
+[node name="Paper3D2" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 0, 0)
+mesh = SubResource("ArrayMesh_gwerw")
+script = ExtResource("3_oyyul")
+texture = ExtResource("4_rsrsw")
+metadata/mat_opaque = SubResource("ShaderMaterial_hr33n")
+
+[node name="Paper3D3" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.36, 0, 0)
+mesh = SubResource("ArrayMesh_q3q1t")
+script = ExtResource("3_oyyul")
+texture = ExtResource("5_y4b5h")
+metadata/mat_opaque = SubResource("ShaderMaterial_wo2eo")
+
+[node name="Paper3D4" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0650001, 0, -0.005)
+mesh = SubResource("ArrayMesh_77eq1")
+script = ExtResource("3_oyyul")
+texture = ExtResource("6_81pt6")
+metadata/mat_opaque = SubResource("ShaderMaterial_a8pbo")
+
+[node name="Paper3D5" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26, 0, 0.02)
+mesh = SubResource("ArrayMesh_cysay")
+script = ExtResource("3_oyyul")
+texture = ExtResource("7_uovlg")
+metadata/mat_opaque = SubResource("ShaderMaterial_ky4c3")
+
+[node name="Heart_1" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.00999999, 0.000999987, 0.17)
+mesh = SubResource("ArrayMesh_dg6o1")
+metadata/mat_opaque = SubResource("ShaderMaterial_mnm3g")
+
+[node name="Letter1_1" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.12, 0.000999987, 0.17)
+mesh = SubResource("ArrayMesh_icjb6")
+metadata/mat_opaque = SubResource("ShaderMaterial_p0nq8")
+
+[node name="Letter2_1" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.24, 0.000999987, 0.17)
+mesh = SubResource("ArrayMesh_2h31j")
+metadata/mat_opaque = SubResource("ShaderMaterial_gkkj6")
+
+[node name="Heart_2" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(-4.37114e-08, 1, 4.37114e-08, 0, -4.37114e-08, 1, 1, 4.37114e-08, 1.91069e-15, -0.17, 0.000999987, 0.24)
+mesh = SubResource("ArrayMesh_dg6o1")
+metadata/mat_opaque = SubResource("ShaderMaterial_mnm3g")
+
+[node name="Letter1_2" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(0.5, 0.866025, 3.78552e-08, 0, -4.37114e-08, 1, 0.866025, -0.5, -2.18557e-08, -0.00999999, 0.000999987, 0.34)
+mesh = SubResource("ArrayMesh_icjb6")
+metadata/mat_opaque = SubResource("ShaderMaterial_p0nq8")
+
+[node name="Heart_3" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.0799999, 0.000999987, 0.5)
+mesh = SubResource("ArrayMesh_dg6o1")
+metadata/mat_opaque = SubResource("ShaderMaterial_mnm3g")
+
+[node name="Letter1_3" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(0.258819, 0.965926, 4.2222e-08, 0, -4.37114e-08, 1, 0.965926, -0.258819, -1.13133e-08, 0.17, 0.000999987, 0.39)
+mesh = SubResource("ArrayMesh_icjb6")
+metadata/mat_opaque = SubResource("ShaderMaterial_p0nq8")
+
+[node name="Letter1_5" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(0.258819, 0.965926, 4.2222e-08, 0, -4.37114e-08, 1, 0.965926, -0.258819, -1.13133e-08, 0.25, 0.000999987, 0.56)
+mesh = SubResource("ArrayMesh_icjb6")
+metadata/mat_opaque = SubResource("ShaderMaterial_p0nq8")
+
+[node name="Letter2_3" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -0.17, 0.000999987, 0.44)
+mesh = SubResource("ArrayMesh_2h31j")
+metadata/mat_opaque = SubResource("ShaderMaterial_gkkj6")
+
+[node name="Heart_4" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(-0.258819, -0.965926, -4.2222e-08, 0, -4.37114e-08, 1, -0.965926, 0.258819, 1.13133e-08, 0.38945, 0.000999987, 0.49235)
+mesh = SubResource("ArrayMesh_dg6o1")
+metadata/mat_opaque = SubResource("ShaderMaterial_mnm3g")
+
+[node name="Heart_5" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(0.965926, -0.258819, -1.13133e-08, 0, -4.37114e-08, 1, -0.258819, -0.965926, -4.2222e-08, 0.29945, 0.000999987, 0.322351)
+mesh = SubResource("ArrayMesh_dg6o1")
+metadata/mat_opaque = SubResource("ShaderMaterial_mnm3g")
+
+[node name="Letter1_4" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(-0.258819, -0.965926, -4.2222e-08, 0, -4.37114e-08, 1, -0.965926, 0.258819, 1.13133e-08, 0.455804, 0.000999987, 0.36678)
+mesh = SubResource("ArrayMesh_icjb6")
+metadata/mat_opaque = SubResource("ShaderMaterial_p0nq8")
+
+[node name="Letter2_4" type="MeshInstance3D" parent="SS3D"]
+transform = Transform3D(-0.258819, -0.965926, -4.2222e-08, 0, -4.37114e-08, 1, -0.965926, 0.258819, 1.13133e-08, 0.444745, 0.000999987, 0.220869)
+mesh = SubResource("ArrayMesh_2h31j")
+metadata/mat_opaque = SubResource("ShaderMaterial_gkkj6")
+
+[node name="C3D" type="Node3D" parent="."]
+transform = Transform3D(0.252, 0, 0, 0, 0.251041, 0.0219632, 0, -0.0219632, 0.251041, 0, 2.19643e-05, 0.0156231)
+visible = false
+metadata/_edit_lock_ = true
+
+[node name="Paper3D" type="MeshInstance3D" parent="C3D"]
+mesh = SubResource("ArrayMesh_q44pl")
+script = ExtResource("3_oyyul")
+texture = ExtResource("6_gli3t")
+metadata/mat_opaque = SubResource("ShaderMaterial_wrlbp")
+
+[node name="Paper3D2" type="MeshInstance3D" parent="C3D"]
+script = ExtResource("3_oyyul")
+
+[node name="Paper3D3" type="MeshInstance3D" parent="C3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.72529e-08, 0, 3.72529e-08, 1, 0.19, 7.15256e-07, 1.09)
+mesh = SubResource("ArrayMesh_gsdy3")
+script = ExtResource("3_oyyul")
+texture = ExtResource("7_vfnnp")
+metadata/mat_opaque = SubResource("ShaderMaterial_fqc3c")
+
+[node name="Paper3D4" type="MeshInstance3D" parent="C3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -3.72529e-08, 0, 3.72529e-08, 1, 0.44, 2.38419e-07, 1.13)
+mesh = SubResource("ArrayMesh_fm3u8")
+script = ExtResource("3_oyyul")
+texture = ExtResource("8_trf70")
+metadata/mat_opaque = SubResource("ShaderMaterial_whtll")
+
+[node name="Paper3D5" type="MeshInstance3D" parent="C3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, -0.119997, 2.38419e-07, 0.0100002)
+mesh = SubResource("ArrayMesh_3l0r2")
+script = ExtResource("3_oyyul")
+texture = ExtResource("9_fkfpi")
+metadata/mat_opaque = SubResource("ShaderMaterial_cbp5o")
+
+[node name="Paper3D6" type="MeshInstance3D" parent="C3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0.88, 2.38419e-07, 0.0100002)
+mesh = SubResource("ArrayMesh_cx4a6")
+script = ExtResource("3_oyyul")
+texture = ExtResource("10_h7dvj")
+metadata/mat_opaque = SubResource("ShaderMaterial_nis4f")
+
+[node name="Paper3D7" type="MeshInstance3D" parent="C3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -5.96046e-08, 0, 5.96046e-08, 1, 1.22, 9.53674e-07, 0.0200038)
+mesh = SubResource("ArrayMesh_lmc5q")
+script = ExtResource("3_oyyul")
+texture = ExtResource("11_mifmm")
+metadata/mat_opaque = SubResource("ShaderMaterial_3kma3")
+
+[node name="Paper3D8" type="MeshInstance3D" parent="C3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, 0.75, 2.38419e-07, 0.600002)
+mesh = SubResource("ArrayMesh_7fjui")
+script = ExtResource("3_oyyul")
+texture = ExtResource("12_8wo1e")
+metadata/mat_opaque = SubResource("ShaderMaterial_8thoe")
+
+[node name="Paper3D9" type="MeshInstance3D" parent="C3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -9.68575e-08, 0, 9.68575e-08, 1, -1.05, -0.0625997, 0.464528)
+mesh = SubResource("ArrayMesh_h1xbx")
+script = ExtResource("3_oyyul")
+texture = ExtResource("13_42gj8")
+metadata/mat_opaque = SubResource("ShaderMaterial_p835l")
+
+[node name="Paper3D10" type="MeshInstance3D" parent="C3D"]
+transform = Transform3D(1, 0, 0, 0, 1, -2.98023e-08, 0, 2.98023e-08, 1, -0.329999, 0, 0)
+mesh = SubResource("ArrayMesh_y68mc")
+script = ExtResource("3_oyyul")
+texture = ExtResource("14_18w6u")
+metadata/mat_opaque = SubResource("ShaderMaterial_vq872")

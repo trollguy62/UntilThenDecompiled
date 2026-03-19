@@ -1,0 +1,80 @@
+[gd_scene load_steps=8 format=3 uid="uid://ckljb58p5tjs1"]
+
+[ext_resource type="ArrayMesh" uid="uid://23kn1lqfow11" path="res://scenes/lms/ch1sc7/assets/chair.obj" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://dwy0jahtctgww" path="res://scenes/lms/ch1sc7/assets/chess_table.obj" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://bdqi61dry7kow" path="res://scenes/lms/ch1sc7/assets/chair.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://jbxbya2w12l3" path="res://scenes/lms/ch1sc7/assets/chess_table.png" id="5"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+
+[node name="ChessSetPostEvent" type="Spatial"]
+
+[node name="Table" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.07, 0)
+material_override = SubResource("1")
+use_in_baked_light = true
+mesh = ExtResource("2")
+surface_material_override/0 = null
+
+[node name="ChairL" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0799999, -0.07, 0.18)
+material_override = SubResource("2")
+use_in_baked_light = true
+mesh = ExtResource("1")
+surface_material_override/0 = null
+
+[node name="ChairR" type="MeshInstance" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.67, -0.07, 0.399999)
+material_override = SubResource("2")
+use_in_baked_light = true
+mesh = ExtResource("1")
+surface_material_override/0 = null

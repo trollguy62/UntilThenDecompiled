@@ -1,0 +1,141 @@
+[gd_scene load_steps=20 format=3 uid="uid://d12nmxx058xu6"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://b7mdadg3mmg8b" path="res://scenes/_main/ch5sc10b/assets/envi/highway/road.obj" id="2"]
+[ext_resource type="Texture2D" uid="uid://chk2fnqqs44w8" path="res://scenes/_main/ch5sc10b/assets/envi/highway/road.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://3863dpnphh5" path="res://scenes/_main/ch1sc8/assets/rain_particle_splash.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bs4nxpvme5nnx" path="res://scenes/_main/ch1sc8/assets/rain_particle_ripple.png" id="5"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/ParticlesRainControllable.gd" id="6"]
+[ext_resource type="Shader" path="res://scenes/_main/ch1sc8/assets/shaders/FlipbookParticle.gdshader" id="7"]
+[ext_resource type="Texture2D" uid="uid://d26d0minij4am" path="res://scenes/_main/ch5sc10b/assets/envi/highway/road_wet.png" id="8"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc10b/scripts/MaterialOverrideRandomizer.gd" id="9"]
+[ext_resource type="Texture2D" uid="uid://dvcv0we6brvbb" path="res://scenes/_main/ch5sc10b/assets/envi/highway/road_with_pedestrian_lane.png" id="10"]
+
+[sub_resource type="FastNoiseLite" id="728"]
+seed = 12
+
+[sub_resource type="NoiseTexture2D" id="729"]
+width = 2400
+height = 800
+seamless = true
+as_normal_map = true
+bump_strength = 2.0
+noise = SubResource("728")
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.12
+shader_parameter/roughness = 0.3
+shader_parameter/specular = 0.25
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.16
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+shader_parameter/texture_normal = SubResource("729")
+shader_parameter/texture_wet = ExtResource("8")
+
+[sub_resource type="ShaderMaterial" id="732"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.12
+shader_parameter/roughness = 0.3
+shader_parameter/specular = 0.25
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.16
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10")
+shader_parameter/texture_normal = SubResource("729")
+shader_parameter/texture_wet = ExtResource("8")
+
+[sub_resource type="ParticleProcessMaterial" id="725"]
+emission_shape = 3
+emission_box_extents = Vector3(12, 0.01, 4)
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="730"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/color = Color(0.392157, 0.392157, 0.392157, 0.392157)
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.0
+shader_parameter/h_frames = 2
+shader_parameter/v_frames = 2
+shader_parameter/y_billboard = false
+shader_parameter/spritesheet = ExtResource("5")
+
+[sub_resource type="PlaneMesh" id="726"]
+material = SubResource("730")
+size = Vector2(0.05, 0.05)
+
+[sub_resource type="ShaderMaterial" id="731"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/color = Color(0.431373, 0.431373, 0.431373, 0.196078)
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.0
+shader_parameter/h_frames = 3
+shader_parameter/v_frames = 1
+shader_parameter/y_billboard = true
+shader_parameter/spritesheet = ExtResource("4")
+
+[sub_resource type="QuadMesh" id="727"]
+material = SubResource("731")
+size = Vector2(0.1, 0.1)
+
+[node name="Road" type="MeshInstance3D"]
+material_override = SubResource("1")
+mesh = ExtResource("2")
+script = ExtResource("9")
+material_options = Array[ShaderMaterial]([SubResource("1"), SubResource("732")])
+
+[node name="Particles" type="Node3D" parent="."]
+
+[node name="Circular" type="GPUParticles3D" parent="Particles"]
+cast_shadow = 0
+amount = 8000
+lifetime = 0.4
+visibility_aabb = AABB(-12.03, -4, -6.44, 24.06, 8, 12.88)
+local_coords = true
+process_material = SubResource("725")
+draw_pass_1 = SubResource("726")
+script = ExtResource("6")
+
+[node name="Upright" type="GPUParticles3D" parent="Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.049, 0)
+cast_shadow = 0
+amount = 4000
+lifetime = 0.33
+visibility_aabb = AABB(-12.06, -3.94, -6.43, 24.12, 7.88, 12.86)
+local_coords = true
+process_material = SubResource("725")
+draw_pass_1 = SubResource("727")
+script = ExtResource("6")

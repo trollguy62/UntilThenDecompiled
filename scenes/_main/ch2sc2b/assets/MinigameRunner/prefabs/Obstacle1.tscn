@@ -1,0 +1,103 @@
+[gd_scene load_steps=15 format=3 uid="uid://di83i3gvqfneg"]
+
+[ext_resource type="Texture2D" uid="uid://w6gh407wh304" path="res://scenes/_main/ch2sc2b/assets/MinigameRunner/obstacles/01/default_SS3D/01.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bt40ipbtjfkcq" path="res://scenes/_main/ch2sc2b/assets/MinigameRunner/obstacles/01/miss_SS3D/01_miss.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://c03dw0oi0olgn" path="res://scenes/_main/ch2sc2b/assets/MinigameRunner/obstacles/01/Banner_safe.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://clcdqgu750dpr" path="res://scenes/_main/ch2sc2b/assets/MinigameRunner/obstacles/01/Banner_miss.png" id="4"]
+[ext_resource type="AudioStream" uid="uid://ctakvpy754xj5" path="res://scenes/_main/ch2sc2b/assets/sfx/Banner safe.ogg" id="5"]
+[ext_resource type="AudioStream" uid="uid://m5r3jid11lsa" path="res://scenes/_main/ch2sc2b/assets/sfx/Banner miss.ogg" id="6"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="13"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="14"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="15"]
+[ext_resource type="Script" path="res://scenes/_main/ch2sc2b/scripts/MinigameRunner/Obstacle.gd" id="16"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("15")
+shader_parameter/scale = Vector3(1.56, 1.112, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("1")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_me8g8"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}],
+"loop": true,
+"name": &"miss",
+"speed": 6.0
+}]
+
+[sub_resource type="BoxShape3D" id="4"]
+
+[node name="NPC" type="Node3D"]
+script = ExtResource("16")
+reaction_dodge = ExtResource("3")
+reaction_miss = ExtResource("4")
+reaction_sfx_dodge = ExtResource("5")
+reaction_sfx_miss = ExtResource("6")
+short_action_choice = "npc1_choices"
+short_knot_dodge = "npc1_dodge"
+short_knot_miss = "npc1_miss"
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 0, 0)
+layers = 33
+mesh = SubResource("ArrayMesh_me8g8")
+script = ExtResource("14")
+texture_frames = SubResource("3")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.008
+
+[node name="SbPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.23, 0.83, 0)
+script = ExtResource("13")
+alias = "NPC1"
+orientation = 2
+force_show = true
+
+[node name="Area" type="Area3D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Area"]
+transform = Transform3D(0.374, 0, 0, 0, 0.6, 0, 0, 0, 0.45, 2.549, 0.603, 0)
+shape = SubResource("4")

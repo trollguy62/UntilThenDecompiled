@@ -1,0 +1,77 @@
+[gd_scene load_steps=14 format=3 uid="uid://bn5a7tygtev0a"]
+
+[ext_resource type="ArrayMesh" uid="uid://drcql3h7qaaw0" path="res://scenes/_main/ch4sc2b/assets/envi/enroll_billboard_tarp.obj" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://btfmkvxqtbnbf" path="res://scenes/_main/ch4sc2b/assets/envi/enroll_billboard_frame.obj" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://dk7ltr77dr6v3" path="res://scenes/_main/ch4sc2b/assets/envi/enroll_billboard_frame.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://d22d3bpxqollq" path="res://scenes/_main/ch4sc2b/assets/envi/enroll_billboard_tarp.png" id="5"]
+[ext_resource type="Shader" path="res://scenes/_main/ch4sc2b/assets/shaders/Tarp.gdshader" id="5_8i7dc"]
+[ext_resource type="Texture2D" uid="uid://bwi02qc0kj8j" path="res://scenes/_main/ch4sc2b/assets/envi/enroll_billboard_frame_em.png" id="6"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 0.909804, 0.392157, 1)
+shader_parameter/emission_energy = 2.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+shader_parameter/texture_emission = ExtResource("6")
+
+[sub_resource type="Gradient" id="Gradient_lh6je"]
+offsets = PackedFloat32Array(0, 0.531746, 0.761905)
+colors = PackedColorArray(1, 1, 1, 1, 0.317708, 0.317708, 0.317708, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0jb3e"]
+gradient = SubResource("Gradient_lh6je")
+fill = 1
+fill_from = Vector2(0.504274, 0.482906)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5vme4"]
+seed = 430
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_2psmp"]
+width = 32
+height = 32
+seamless = true
+seamless_blend_skirt = 0.234
+noise = SubResource("FastNoiseLite_5vme4")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6t76i"]
+render_priority = 0
+shader = ExtResource("5_8i7dc")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/min_influence = 0.0
+shader_parameter/max_influence = -0.1
+shader_parameter/speed = 0.4
+shader_parameter/texture_albedo = ExtResource("5")
+shader_parameter/texture_influence = SubResource("GradientTexture2D_0jb3e")
+shader_parameter/texture_noise = SubResource("NoiseTexture2D_2psmp")
+
+[node name="BillboardEnroll" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.95, 4.1, 0.13)
+layers = 3
+material_override = SubResource("1")
+mesh = ExtResource("2")
+
+[node name="Tarp" type="MeshInstance3D" parent="."]
+layers = 3
+material_override = SubResource("ShaderMaterial_6t76i")
+mesh = ExtResource("1")

@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://cv6e3m3vkjyfv"]
+
+[ext_resource type="FontFile" uid="uid://b62gu2re0t70r" path="res://fonts/NunitoSans-Light-24.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://bdtuauymlilhv" path="res://assets/pictures/scene_dir_thumbnails/default.png" id="2"]
+[ext_resource type="Script" path="res://ui/components/Game/FocusableControl.gd" id="3"]
+[ext_resource type="Script" path="res://ui/components/Game/SceneView/SceneView.gd" id="4"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 1, 1, 0.0901961)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+corner_detail = 16
+
+[sub_resource type="Shader" id="2"]
+code = "shader_type canvas_item;
+
+uniform sampler2D tex : filter_linear_mipmap;
+uniform float blur : hint_range(0.0, 8.0) = 0.0;
+uniform float dark : hint_range(0.0, 1.0) = 1.0;
+uniform bool enabled = false;
+uniform vec4 modulate = vec4(1.0);
+
+void fragment() {
+	if (enabled) {
+		vec4 t = textureLod(tex, UV, blur);
+		float c = (t.r + t.g + t.b) / 3.0 * dark;
+		COLOR = vec4(vec3(c), 1.0) * modulate;
+	} else{
+		COLOR = texture(tex, UV) * modulate;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="3"]
+shader = SubResource("2")
+shader_parameter/blur = 4.0
+shader_parameter/dark = 0.2
+shader_parameter/enabled = false
+shader_parameter/modulate = Vector4(1, 1, 1, 1)
+shader_parameter/tex = ExtResource("2")
+
+[node name="SceneView" type="PanelContainer"]
+clip_contents = true
+anchors_preset = 10
+anchor_right = 1.0
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("4")
+
+[node name="Margin" type="MarginContainer" parent="."]
+light_mask = 3
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Margin"]
+light_mask = 3
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Thumbnail" type="TextureRect" parent="Margin/HBox"]
+light_mask = 3
+texture_filter = 2
+material = SubResource("3")
+custom_minimum_size = Vector2(144, 81)
+layout_mode = 2
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="Title" type="Label" parent="Margin/HBox"]
+light_mask = 3
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 24
+text = "Awakening"
+text_overrun_behavior = 3
+
+[node name="ClickArea" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+light_mask = 3
+layout_mode = 2
+script = ExtResource("3")

@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://dngafjubf8s8y"]
+
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="1"]
+[ext_resource type="FontFile" uid="uid://sghb20e60wif" path="res://fonts/PTSans-Bold-Small.tres" id="2"]
+[ext_resource type="Script" path="res://ui/screens/EmailScreen/Attachment.gd" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 8.0
+content_margin_bottom = 8.0
+bg_color = Color(0.901961, 0.901961, 0.901961, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+shadow_color = Color(0, 0, 0, 0.0941176)
+shadow_size = 4
+
+[node name="Attachment" type="PanelContainer"]
+offset_right = 196.0
+offset_bottom = 66.0
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("3")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(180, 50)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="FileName" type="Label" parent="VBox"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.278431, 0.278431, 0.278431, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+text = "meme_bidyo.mp4"
+clip_text = true
+
+[node name="FileSize" type="Label" parent="VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.278431, 0.278431, 0.278431, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1")
+text = "231.8 MB"
+clip_text = true

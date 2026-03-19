@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://bj6pdngeskqeg"]
+
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="1"]
+[ext_resource type="AudioStream" uid="uid://5s7lgva6hq6c" path="res://ui/sfx/tick.wav" id="2"]
+[ext_resource type="PackedScene" uid="uid://dwie7iw8g2yto" path="res://ui/screens/ChatScreen/ChoiceTextFieldHint.tscn" id="3"]
+[ext_resource type="Script" path="res://ui/screens/ChatScreen/ChoiceTextField.gd" id="4"]
+[ext_resource type="Script" path="res://ui/screens/ChatScreen/ChoiceList.gd" id="5"]
+[ext_resource type="AudioStream" uid="uid://dedem4eg3o8pg" path="res://ui/sfx/chat_choice.wav" id="6"]
+[ext_resource type="Texture2D" uid="uid://c4y7axo3qbyxe" path="res://assets/ui/ic_send.png" id="7"]
+[ext_resource type="Script" path="res://ui/screens/ChatScreen/SendButton.gd" id="8"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+content_margin_left = 0.0
+content_margin_top = 0.0
+content_margin_right = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0, 0, 0, 0.12549)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.12549)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(1, 1, 1, 0.705882)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="ChoiceTextField" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 44.0
+focus_mode = 2
+script = ExtResource("4")
+
+[node name="Panel" type="PanelContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("1")
+
+[node name="Margin" type="MarginContainer" parent="Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 18
+theme_override_constants/margin_top = 14
+theme_override_constants/margin_right = 18
+theme_override_constants/margin_bottom = 14
+
+[node name="VBox" type="VBoxContainer" parent="Panel/Margin"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Label" type="Label" parent="Panel/Margin/VBox"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1")
+text = "Label"
+autowrap_mode = 3
+
+[node name="ChoiceList" type="VBoxContainer" parent="Panel/Margin/VBox"]
+clip_contents = true
+layout_mode = 2
+theme_override_constants/separation = 2
+script = ExtResource("5")
+
+[node name="Hint" parent="Panel" instance=ExtResource("3")]
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="SendContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 6
+
+[node name="SendButton" type="TextureButton" parent="SendContainer"]
+modulate = Color(1, 1, 1, 0.313726)
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+focus_mode = 1
+disabled = true
+texture_normal = ExtResource("7")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("8")
+
+[node name="SoundType" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2")
+bus = &"UI"
+
+[node name="SoundChatChoice" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
+bus = &"UI"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="SingleKeystrokeTimer" type="Timer" parent="."]
+wait_time = 0.4
+one_shot = true
+
+[node name="HoldDelayTimer" type="Timer" parent="."]
+wait_time = 0.8
+one_shot = true

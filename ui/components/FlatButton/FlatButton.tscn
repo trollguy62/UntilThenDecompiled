@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://i8b3fudxxx58"]
+
+[ext_resource type="Script" path="res://ui/components/FlatButton/FlatButton.gd" id="1"]
+[ext_resource type="Script" path="res://ui/components/Clickable.gd" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 1, 1, 0)
+
+[node name="FlatButton" type="PanelContainer"]
+light_mask = 2
+focus_mode = 2
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("1")
+
+[node name="Content" type="MarginContainer" parent="."]
+light_mask = 2
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Clickable" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 2
+focus_mode = 2
+script = ExtResource("2")

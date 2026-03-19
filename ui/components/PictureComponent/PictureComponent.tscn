@@ -1,0 +1,40 @@
+[gd_scene load_steps=5 format=3 uid="uid://cbmmyidgbhbyf"]
+
+[ext_resource type="Script" path="res://ui/components/PictureComponent/PictureComponent.gd" id="1_811bn"]
+[ext_resource type="Script" path="res://ui/screens/PictureScreen/TextureRect.gd" id="2_0vrnc"]
+[ext_resource type="Texture2D" uid="uid://dtwh1xs1bxn58" path="res://assets/ui/spinner_1.png" id="3_a2bmu"]
+[ext_resource type="Script" path="res://ui/components/Spinner.gd" id="4_wsur8"]
+
+[node name="PictureComponent" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_811bn")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("2_0vrnc")
+
+[node name="Spinner" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -24.0
+offset_right = 24.0
+offset_bottom = 24.0
+pivot_offset = Vector2(24, 24)
+texture = ExtResource("3_a2bmu")
+expand_mode = 1
+script = ExtResource("4_wsur8")

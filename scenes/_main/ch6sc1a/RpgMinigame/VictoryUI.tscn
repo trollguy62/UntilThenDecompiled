@@ -1,0 +1,211 @@
+[gd_scene load_steps=9 format=3 uid="uid://b5ldmqwdjsvbj"]
+
+[ext_resource type="Texture2D" uid="uid://dpk587sbvff5x" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/Mark/LOM_Mark.png" id="1"]
+[ext_resource type="PackedScene" uid="uid://colm1ue0251kx" path="res://scenes/_main/ch6sc1a/RpgMinigame/HUD_HP.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://drv72m8jei76m" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/UI_victory.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dxae3geaslojo" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/Nicole/LOM_Nicole.png" id="4"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/VictoryUI.gd" id="5"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkFade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-1237, -683)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkBust:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-301, 1050)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, 1e-05)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NicoleBust:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(599, 406)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NicoleBust:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "enter"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarkFade:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-1237, -683), Vector2(-1237, -683), Vector2(7, -223)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarkBust:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.4, 1.1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-301, 1050), Vector2(-301, 1050), Vector2(498, 381)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.1, 3.2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(4, 1e-05), Vector2(4, 1e-05), Vector2(4, 4)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("NicoleBust:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.1, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(599, 406), Vector2(599, 406), Vector2(2311, -751)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("NicoleBust:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.1, 3.4),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 0.0, 17.2002]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1ggl2"]
+_data = {
+"RESET": SubResource("1"),
+"enter": SubResource("2")
+}
+
+[node name="VictoryUI" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5")
+
+[node name="P1_HP" parent="." instance=ExtResource("2")]
+player_name = "MG_RPG_PLAYER_MARK"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(1280, 720)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1280.0
+offset_bottom = 720.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.0627451)
+
+[node name="MarkFade" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0.145098)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -1237.0
+offset_top = -683.0
+offset_right = -1170.0
+offset_bottom = -606.0
+scale = Vector2(16, 16)
+texture = ExtResource("1")
+
+[node name="MarkBust" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -301.0
+offset_top = 1050.0
+offset_right = -234.0
+offset_bottom = 1127.0
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 523.0
+offset_top = 212.0
+offset_right = 756.0
+offset_bottom = 265.0
+scale = Vector2(4, 1e-05)
+pivot_offset = Vector2(116, 26)
+texture = ExtResource("3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "RESET"
+libraries = {
+"": SubResource("AnimationLibrary_1ggl2")
+}
+
+[node name="NicoleBust" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 599.0
+offset_top = 406.0
+offset_right = 679.0
+offset_bottom = 491.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(40, 42.5)
+texture = ExtResource("4")

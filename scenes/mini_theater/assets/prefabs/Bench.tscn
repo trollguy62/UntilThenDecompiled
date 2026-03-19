@@ -1,0 +1,111 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbwblfs7pg5ht"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://cc6ur3grk7da5" path="res://scenes/mini_theater/assets/bench_foam_v_1.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bfw0fqxojs7jh" path="res://scenes/mini_theater/assets/bench_foam_h_1.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bx167pjmew7j7" path="res://scenes/mini_theater/assets/bench_base.png" id="5"]
+[ext_resource type="ArrayMesh" uid="uid://csq2wsb1ssmhp" path="res://scenes/mini_theater/assets/bench_base.obj" id="6"]
+[ext_resource type="ArrayMesh" uid="uid://y2ru7d4ykeky" path="res://scenes/mini_theater/assets/bench_foam_h.obj" id="7"]
+[ext_resource type="ArrayMesh" uid="uid://c78hw8qlmldh3" path="res://scenes/mini_theater/assets/bench_foam_v.obj" id="8"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+
+[node name="Bench" type="MeshInstance"]
+material_override = SubResource("1")
+use_in_baked_light = true
+mesh = ExtResource("6")
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="FoamH" type="MeshInstance" parent="."]
+material_override = SubResource("2")
+use_in_baked_light = true
+mesh = ExtResource("7")
+skeleton = NodePath("../..")
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FoamV" type="MeshInstance" parent="."]
+material_override = SubResource("3")
+use_in_baked_light = true
+mesh = ExtResource("8")
+skeleton = NodePath("../..")
+__meta__ = {
+"_edit_lock_": true
+}

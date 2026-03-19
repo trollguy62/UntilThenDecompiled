@@ -1,0 +1,185 @@
+[gd_scene load_steps=19 format=3 uid="uid://bwhjfy1ubdb6g"]
+
+[ext_resource type="Shader" path="res://assets/shaders/FoliageDistort.gdshader" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="2"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://c3yn5syx64cs" path="res://scenes/house_nicole/assets/exterior/tree_3_leaves_front.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bbrwkyidhh73m" path="res://scenes/house_nicole/assets/exterior/tree_3_trunk.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://7vwbjowkt66a" path="res://scenes/house_nicole/assets/exterior/tree_3_leaves_back.png" id="6"]
+
+[sub_resource type="FastNoiseLite" id="1"]
+
+[sub_resource type="NoiseTexture2D" id="2"]
+width = 1024
+height = 1024
+seamless = true
+noise = SubResource("1")
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/speed = Vector2(-0.42, -0.47)
+shader_parameter/uniformity = Vector2(1, 1)
+shader_parameter/strength = Vector2(5, 1)
+shader_parameter/damping = 2.0
+shader_parameter/time_offset = 1.236
+shader_parameter/tex_albedo = ExtResource("6")
+shader_parameter/tex_noise = SubResource("2")
+
+[sub_resource type="ShaderMaterial" id="11"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6")
+
+[sub_resource type="ArrayMesh" id="12"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 2.9, 2.46, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("11"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 191, 121, 0, 0, 0, 153, 153, 57, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 191, 101, 0, 0, 0, 153, 153, 57, 64, 164, 112, 29, 64, 0, 0, 0, 0, 255, 255, 255, 191, 116, 0, 0, 0, 0, 0, 0, 0, 164, 112, 29, 64, 0, 0, 0, 0, 255, 255, 255, 191, 164, 112, 29, 64)
+}]
+
+[sub_resource type="ShaderMaterial" id="13"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+
+[sub_resource type="ArrayMesh" id="14"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 2.9, 2.46, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("13"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 191, 121, 0, 0, 0, 153, 153, 57, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 191, 101, 0, 0, 0, 153, 153, 57, 64, 164, 112, 29, 64, 0, 0, 0, 0, 255, 255, 255, 191, 116, 0, 0, 0, 0, 0, 0, 0, 164, 112, 29, 64, 0, 0, 0, 0, 255, 255, 255, 191, 164, 112, 29, 64)
+}]
+
+[sub_resource type="FastNoiseLite" id="8"]
+
+[sub_resource type="NoiseTexture2D" id="9"]
+width = 1024
+height = 1024
+seamless = true
+noise = SubResource("8")
+
+[sub_resource type="ShaderMaterial" id="10"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/speed = Vector2(0.4, 0.4)
+shader_parameter/uniformity = Vector2(1, 1)
+shader_parameter/strength = Vector2(5, 1)
+shader_parameter/damping = 2.0
+shader_parameter/time_offset = 0.0
+shader_parameter/tex_albedo = ExtResource("4")
+shader_parameter/tex_noise = SubResource("9")
+
+[sub_resource type="ShaderMaterial" id="15"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+
+[sub_resource type="ArrayMesh" id="16"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 2.9, 2.46, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("15"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 191, 121, 0, 0, 0, 153, 153, 57, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 255, 255, 191, 101, 0, 0, 0, 153, 153, 57, 64, 164, 112, 29, 64, 0, 0, 0, 0, 255, 255, 255, 191, 116, 0, 0, 0, 0, 0, 0, 0, 164, 112, 29, 64, 0, 0, 0, 0, 255, 255, 255, 191, 164, 112, 29, 64)
+}]
+
+[node name="Tree3" type="Spatial"]
+transform = Transform3D(-1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -3.357, -0.264, -2.121)
+
+[node name="LeavesBack" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.002)
+material_override = SubResource("3")
+mesh = SubResource("12")
+surface_material_override/0 = null
+script = ExtResource("3")
+texture = ExtResource("6")
+
+[node name="Trunk" type="MeshInstance" parent="."]
+mesh = SubResource("14")
+surface_material_override/0 = null
+script = ExtResource("3")
+texture = ExtResource("5")
+
+[node name="LeavesFront" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.002)
+material_override = SubResource("10")
+mesh = SubResource("16")
+surface_material_override/0 = null
+script = ExtResource("3")
+texture = ExtResource("4")

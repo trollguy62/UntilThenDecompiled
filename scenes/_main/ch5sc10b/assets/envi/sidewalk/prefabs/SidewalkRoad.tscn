@@ -1,0 +1,84 @@
+[gd_scene load_steps=12 format=3 uid="uid://pudl8dahhxo6"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1"]
+[ext_resource type="Texture2D" uid="uid://bd80kmal8wegy" path="res://scenes/bonifacio_station_entrance/assets/ground/road_1.png" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://p6ue5qo0n4bx" path="res://scenes/bonifacio_station_entrance/assets/ground/road.obj" id="3"]
+[ext_resource type="Texture2D" uid="uid://b85wbkjkjbx6l" path="res://scenes/bonifacio_station_entrance/assets/ground/sidewalk_mid_1_n.png" id="4"]
+[ext_resource type="ArrayMesh" uid="uid://dbpie6xmevgml" path="res://scenes/bonifacio_station_entrance/assets/ground/sidewalk_mid.obj" id="5"]
+[ext_resource type="Texture2D" uid="uid://d4lhflky8csdx" path="res://scenes/bonifacio_station_entrance/assets/ground/sidewalk_mid_1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://budyv70afimfe" path="res://scenes/bonifacio_station_entrance/assets/ground/road_1_n.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dlgjojgkkv4x2" path="res://scenes/_main/ch5sc10b/assets/envi/sidewalk/sidewalk_mid_1_wet.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://b5vl61je4qkfp" path="res://scenes/_main/ch5sc10b/assets/envi/sidewalk/road_1_wet.png" id="9"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 0.4
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.15
+shader_parameter/roughness = 0.35
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 0.7, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0.29, 0)
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6")
+shader_parameter/texture_normal = ExtResource("4")
+shader_parameter/texture_wet = ExtResource("8")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 0.4
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.2
+shader_parameter/roughness = 0.2
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+shader_parameter/texture_normal = ExtResource("7")
+shader_parameter/texture_wet = ExtResource("9")
+
+[node name="SidewalkRoad" type="Spatial"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.28, 0, 0.9)
+
+[node name="Sidewalk" type="MeshInstance" parent="."]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("1")
+mesh = ExtResource("5")
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Road" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.19209e-07, 0, -2.38419e-06)
+material_override = SubResource("2")
+mesh = ExtResource("3")
+__meta__ = {
+"_edit_lock_": true
+}

@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://b6afkw6yc5kfr"]
+
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1_skp37"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eager/03.tres" id="2_1msw1"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="3_l3y5f"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eager/01.tres" id="4_ymmai"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eager/02.tres" id="5_2q7qq"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eager/04.tres" id="6_5ms3s"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bmwex"]
+render_priority = 0
+shader = ExtResource("1_skp37")
+shader_parameter/scale = Vector3(1.215, 0.81, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("4_ymmai")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yvay3"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_bmwex"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k1cr6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ymmai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2q7qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1msw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5ms3s")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="DogEager" type="Node3D"]
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_yvay3")
+script = ExtResource("3_l3y5f")
+texture_frames = SubResource("SpriteFrames_k1cr6")
+sync_all = true
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081

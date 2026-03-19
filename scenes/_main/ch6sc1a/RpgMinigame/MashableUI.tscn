@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://dvi3nevcdp24v"]
+
+[ext_resource type="Texture2D" uid="uid://bcvysdu0ujomo" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/ui/pre_match_mash_01.png" id="1_o2mql"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/MashableUI.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://whcm3gukph1f" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/ui/pre_match_mash_02.png" id="2_34g8f"]
+[ext_resource type="Texture2D" uid="uid://cov4cjhxa6718" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/ui/pre_match_ready_01.png" id="3_cdlid"]
+[ext_resource type="Texture2D" uid="uid://bicqn1ic60s1k" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/ui/pre_match_ready_02.png" id="4_m0xhd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c7ggw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_o2mql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_34g8f")
+}],
+"loop": true,
+"name": &"mash",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_cdlid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_m0xhd")
+}],
+"loop": true,
+"name": &"ready",
+"speed": 6.0
+}]
+
+[node name="Mash" type="AnimatedSprite2D"]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_c7ggw")
+animation = &"mash"
+autoplay = "mash"
+script = ExtResource("2")
+
+[node name="AutoMashTimer" type="Timer" parent="."]
+wait_time = 0.2

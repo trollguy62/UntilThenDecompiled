@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://dn1fgocr20pj6"]
+
+[ext_resource type="Texture2D" uid="uid://bl1ixkxw7m6gs" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/Nicole/beam_repeatable.png" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/3DTexture/Beam.gd" id="2"]
+[ext_resource type="Shader" path="res://scenes/_main/ch6sc1a/RpgMinigame/3DTexture/Beam.gdshader" id="3"]
+
+[sub_resource type="QuadMesh" id="2"]
+size = Vector2(0.95, 0.27)
+center_offset = Vector3(0.475, 0, 0)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_br4f1"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/flip = false
+shader_parameter/animated = false
+shader_parameter/animation_scale = 0.3
+shader_parameter/tex = ExtResource("1")
+
+[node name="Beam" type="MeshInstance3D"]
+mesh = SubResource("2")
+surface_material_override/0 = SubResource("ShaderMaterial_br4f1")
+script = ExtResource("2")
+texture = ExtResource("1")

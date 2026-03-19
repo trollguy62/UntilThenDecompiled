@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://qw8rcaqngakx"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch6sc7a/minigame/BaryaStatic.gd" id="1_u1a2a"]
+[ext_resource type="Texture2D" uid="uid://bmvbpdmy0wnfh" path="res://scenes/_main/ch6sc7a/minigame/assets/coin/01.png" id="2_3u8mc"]
+[ext_resource type="Texture2D" uid="uid://drgxjvc10ucca" path="res://scenes/_main/ch6sc7a/minigame/assets/coin/02.png" id="3_32res"]
+[ext_resource type="Texture2D" uid="uid://drgk2eq46l87e" path="res://scenes/_main/ch6sc7a/minigame/assets/coin/03.png" id="4_t7ief"]
+[ext_resource type="Texture2D" uid="uid://d0l8vsd5hxsh8" path="res://scenes/_main/ch6sc7a/minigame/assets/coin/04.png" id="5_gk01w"]
+[ext_resource type="Texture2D" uid="uid://57a5fc2jhf5t" path="res://scenes/_main/ch6sc7a/minigame/assets/coin/05.png" id="6_i8r02"]
+[ext_resource type="Texture2D" uid="uid://cowjd20b4tc41" path="res://scenes/_main/ch6sc7a/minigame/assets/coin/static_coin.png" id="7_0kykr"]
+
+[sub_resource type="SpriteFrames" id="16"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_3u8mc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_32res")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_t7ief")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gk01w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i8r02")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0kykr")
+}],
+"loop": true,
+"name": &"static",
+"speed": 6.0
+}]
+
+[node name="Barya" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_u1a2a")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("16")
+animation = &"static"

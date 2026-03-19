@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cjmpn5vwe8msr"]
+
+[ext_resource type="PackedScene" uid="uid://dn1fgocr20pj6" path="res://scenes/_main/ch6sc1a/RpgMinigame/3DTexture/Beam.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://bl1ixkxw7m6gs" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/Nicole/beam_repeatable.png" id="2_akx3f"]
+
+[sub_resource type="StandardMaterial3D" id="1"]
+albedo_color = Color(0.827451, 0.164706, 0.164706, 1)
+
+[sub_resource type="Shader" id="Shader_4ib1n"]
+code = "shader_type spatial;
+render_mode cull_disabled;
+
+uniform sampler2D tex : filter_nearest;
+uniform vec2 scale = vec2(1.0f);
+uniform bool flip = false;
+uniform bool animated = false;
+uniform float animation_scale = .3;
+
+void fragment() {
+	vec2 uv = UV;
+	float t = mod(TIME, 20.0);
+	uv.x = flip ? 1.0 - UV.x : UV.x;
+	uv.x -= t * animation_scale;
+
+	vec4 tex_t = texture(tex, vec2(scale.x * (uv.x), scale.y * UV.y));
+	ALBEDO = tex_t.rgb;
+	ALPHA = tex_t.a;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_apjye"]
+render_priority = 0
+shader = SubResource("Shader_4ib1n")
+shader_parameter/scale = Vector2(1, 1)
+shader_parameter/flip = false
+shader_parameter/animated = false
+shader_parameter/animation_scale = 0.3
+shader_parameter/tex = ExtResource("2_akx3f")
+
+[node name="Spatial" type="Node3D"]
+
+[node name="CSGBox" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.57046)
+size = Vector3(10, 10, 1)
+material = SubResource("1")
+
+[node name="MeshInstance" parent="." instance=ExtResource("1")]
+transform = Transform3D(0.897904, 0, 0, 0, 1, 0, 0, 0, 1, 0.631119, 0.177929, 3.20708)
+surface_material_override/0 = SubResource("ShaderMaterial_apjye")
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 5.71012)

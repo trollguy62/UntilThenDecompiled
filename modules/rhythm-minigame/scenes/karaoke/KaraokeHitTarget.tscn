@@ -1,0 +1,108 @@
+[gd_scene load_steps=16 format=3 uid="uid://bqef2lenf01xv"]
+
+[ext_resource type="Texture2D" uid="uid://5rq2grb3u25x" path="res://modules/rhythm-minigame/assets/karaoke/arrows/arrow_left.png" id="1"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeHitTarget.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://dvkvpp1hvgtw2" path="res://modules/rhythm-minigame/scenes/karaoke/HoldLine.tscn" id="3"]
+[ext_resource type="AudioStream" uid="uid://b1xhxuw4ejv3b" path="res://modules/rhythm-minigame/assets/sfx/hit_perfect.ogg" id="4"]
+[ext_resource type="Texture2D" uid="uid://be2modc7jfqxl" path="res://modules/rhythm-minigame/assets/karaoke/arrows/arrow_down.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dikf45c0y30eg" path="res://modules/rhythm-minigame/assets/karaoke/arrows/arrow_right.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://t2kyb3c4lxkh" path="res://modules/rhythm-minigame/assets/karaoke/arrows/arrow_up.png" id="7"]
+[ext_resource type="AudioStream" uid="uid://b1bc8drom83w6" path="res://modules/rhythm-minigame/assets/sfx/hit_great.ogg" id="8"]
+[ext_resource type="PackedScene" uid="uid://2odamsvbqm14" path="res://modules/rhythm-minigame/assets/effects/Great.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://2wtwjre68lir" path="res://modules/rhythm-minigame/assets/effects/Perfect.tscn" id="10"]
+[ext_resource type="AudioStream" uid="uid://c27l3p5brpwen" path="res://modules/rhythm-minigame/assets/sfx/hold_loop.ogg" id="11"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.545098, 0.717647, 0.345098, 1)
+corner_radius_top_left = 40
+corner_radius_top_right = 40
+corner_radius_bottom_right = 40
+corner_radius_bottom_left = 40
+
+[sub_resource type="Animation" id="3"]
+length = 0.35
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.35),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(0.5, 0.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.35),
+"transitions": PackedFloat32Array(1, 0.366021),
+"update": 0,
+"values": [Color(1, 1, 1, 0.94902), Color(1, 1, 1, 0.498039)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qv2ja"]
+_data = {
+"degenerate": SubResource("3")
+}
+
+[node name="KaraokeHitTarget" type="Panel"]
+modulate = Color(1, 1, 1, 0.94902)
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -12.0
+offset_right = 24.0
+offset_bottom = 12.0
+pivot_offset = Vector2(12, 12)
+mouse_filter = 2
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("2")
+hold_line_scene = ExtResource("3")
+style_normal = SubResource("1")
+style_hold = SubResource("2")
+textures = {
+"down": ExtResource("5"),
+"left": ExtResource("1"),
+"right": ExtResource("6"),
+"up": ExtResource("7")
+}
+effects = {
+2: ExtResource("9"),
+3: ExtResource("10")
+}
+hit_sfxs = {
+2: ExtResource("8"),
+3: ExtResource("4")
+}
+hold_sfx = ExtResource("11")
+
+[node name="HitTargetSprite" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("1")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qv2ja")
+}
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"SFX"

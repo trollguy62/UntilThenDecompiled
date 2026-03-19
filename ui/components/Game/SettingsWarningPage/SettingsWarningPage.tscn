@@ -1,0 +1,102 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpsjiel1w23l5"]
+
+[ext_resource type="Script" path="res://ui/components/Game/SettingsWarningPage/SettingsWarningPage.gd" id="1_eg5o2"]
+[ext_resource type="FontFile" uid="uid://d3frmrpnov6pr" path="res://fonts/NunitoSans-Light.ttf" id="2_ip63p"]
+[ext_resource type="PackedScene" uid="uid://pbb13vhi2ohf" path="res://ui/components/Game/FocusableButton/FocusableButton.tscn" id="3_c0l7r"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("2_ip63p")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[node name="SettingsWarningPage" type="VBoxContainer" node_paths=PackedStringArray("focus_on_enter")]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -130.5
+offset_top = -64.5
+offset_right = 130.5
+offset_bottom = 64.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 32
+script = ExtResource("1_eg5o2")
+focus_on_enter = NodePath("HBox/OkBtn")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 0
+
+[node name="MessageLabel" type="Label" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 5
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_CONFIRM"
+horizontal_alignment = 1
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 64
+
+[node name="OkBtn" parent="HBox" instance=ExtResource("3_c0l7r")]
+layout_mode = 2
+theme_override_styles/normal = SubResource("4")
+theme_override_styles/hover = SubResource("2")
+theme_override_styles/pressed = SubResource("3")
+theme_override_styles/focus = SubResource("2")
+text = "TVM_BUTTON_SUCCESS_OK"

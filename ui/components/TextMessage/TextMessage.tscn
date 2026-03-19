@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpdq8l00qwt3y"]
+
+[ext_resource type="Script" path="res://ui/components/TextMessage/TextMessage.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="2"]
+[ext_resource type="StyleBox" uid="uid://djserfwoi8mnr" path="res://ui/components/TextMessage/TextMessage.tres" id="3"]
+[ext_resource type="PackedScene" uid="uid://hgqvko0wyw6c" path="res://ui/components/CoolLabel/CoolLabel.tscn" id="4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bsp6d"]
+
+[node name="TextMessage" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+script = ExtResource("1")
+font = ExtResource("2")
+background_style = ExtResource("3")
+
+[node name="LabelContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+mouse_filter = 2
+
+[node name="Label" parent="LabelContainer" instance=ExtResource("4")]
+clip_contents = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+
+[node name="Spacer" type="Panel" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bsp6d")

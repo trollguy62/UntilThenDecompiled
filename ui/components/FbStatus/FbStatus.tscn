@@ -1,0 +1,336 @@
+[gd_scene load_steps=20 format=3 uid="uid://b5a5trbmhc8k2"]
+
+[ext_resource type="Script" path="res://ui/components/FbStatus/FbStatus.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://sghb20e60wif" path="res://fonts/PTSans-Bold-Small.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://c2v5cy37b1mgm" path="res://ui/components/TextureRectButton/TextureRectButton.tscn" id="4_vp87p"]
+[ext_resource type="FontFile" uid="uid://dhcnjnvquq3am" path="res://fonts/PTSans-Regular-Small.tres" id="6"]
+[ext_resource type="Script" path="res://ui/components/CoolRichTextLabel.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://b74dw2gc18ajp" path="res://assets/ui/ic_thumb_up.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://n6tyimtoryoj" path="res://assets/ui/ic_comment.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://014gon64djih" path="res://assets/ui/ic_share.png" id="11"]
+[ext_resource type="PackedScene" uid="uid://biptd76fegjnr" path="res://ui/components/FbCommentList/FbCommentList.tscn" id="12"]
+[ext_resource type="Script" path="res://ui/components/FbActionToggleButton.gd" id="13"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 1, 1, 1)
+shadow_color = Color(0, 0, 0, 0.0862745)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(1, 1, 1, 1)
+border_width_bottom = 1
+border_color = Color(0.929412, 0.929412, 0.929412, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vac6x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_d6h7i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ig5fd"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cf5bq"]
+
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0.980392, 0.980392, 0.980392, 1)
+border_width_top = 1
+border_width_bottom = 1
+border_color = Color(0.929412, 0.929412, 0.929412, 1)
+
+[node name="FbStatus" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("1")
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 11
+
+[node name="MetaContainer" type="PanelContainer" parent="Main"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Margin" type="MarginContainer" parent="Main/MetaContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 10
+
+[node name="Meta" type="RichTextLabel" parent="Main/MetaContainer/Margin"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3")
+theme_override_fonts/bold_font = ExtResource("2")
+bbcode_enabled = true
+text = "[b]Mike Borja[/b] and [b]4 others[/b] commented."
+fit_content = true
+meta_underlined = false
+
+[node name="AuthorContainer" type="MarginContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="HBox" type="HBoxContainer" parent="Main/AuthorContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ProfilePicture" parent="Main/AuthorContainer/HBox" instance=ExtResource("4_vp87p")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4")
+stretch_mode = 0
+anim_hover = false
+
+[node name="VBox" type="VBoxContainer" parent="Main/AuthorContainer/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Title" type="RichTextLabel" parent="Main/AuthorContainer/HBox/VBox"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3")
+theme_override_fonts/bold_font = ExtResource("2")
+bbcode_enabled = true
+text = "[b]Louise Ordunia[/b] feeling proud"
+fit_content = true
+scroll_active = false
+meta_underlined = false
+
+[node name="Subtitle" type="Label" parent="Main/AuthorContainer/HBox/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.458824, 0.458824, 0.458824, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("6")
+text = "1 hr"
+
+[node name="CaptionContainer" type="MarginContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="Label" type="RichTextLabel" parent="Main/CaptionContainer"]
+clip_contents = false
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3")
+theme_override_fonts/bold_font = ExtResource("2")
+bbcode_enabled = true
+text = "Si [b]idol[/b] pala [b]'to[/b] eh
+"
+scroll_active = false
+meta_underlined = false
+script = ExtResource("7")
+max_lines_visible = 8
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="Main/CaptionContainer"]
+rect = Rect2(0, 0, 20, 20)
+
+[node name="ReadMoreContainer" type="MarginContainer" parent="Main"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = -8
+theme_override_constants/margin_right = 12
+
+[node name="Label" type="Label" parent="Main/ReadMoreContainer"]
+show_behind_parent = true
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 2
+size_flags_horizontal = 0
+theme_override_colors/font_color = Color(0.462, 0.378, 0.63, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+text = "FB_STATUS_CONTINUE_READING"
+
+[node name="Button" type="Button" parent="Main/ReadMoreContainer/Label"]
+custom_minimum_size = Vector2(0, 18)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/normal = SubResource("StyleBoxEmpty_vac6x")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_d6h7i")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_ig5fd")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_cf5bq")
+
+[node name="ContentContainer" type="MarginContainer" parent="Main"]
+visible = false
+layout_mode = 2
+
+[node name="StatsContainer" type="MarginContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="Stats" type="HBoxContainer" parent="Main/StatsContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="Likes" type="Label" parent="Main/StatsContainer/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.54902, 0.572549, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+text = "420 likes"
+
+[node name="Comments" type="Label" parent="Main/StatsContainer/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.54902, 0.572549, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+text = "69 comments"
+
+[node name="Shares" type="Label" parent="Main/StatsContainer/Stats"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54902, 0.54902, 0.572549, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+text = "2 shares"
+
+[node name="StatsBtn" type="Button" parent="Main/StatsContainer"]
+layout_mode = 2
+flat = true
+
+[node name="ActionsContainer" type="PanelContainer" parent="Main"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/panel = SubResource("4")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main/ActionsContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 1
+theme_override_constants/margin_top = 1
+theme_override_constants/margin_right = 1
+theme_override_constants/margin_bottom = 1
+
+[node name="Main" type="HBoxContainer" parent="Main/ActionsContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="LikeButton" type="Button" parent="Main/ActionsContainer/MarginContainer/Main"]
+modulate = Color(0.607843, 0.619608, 0.639216, 0.639216)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+script = ExtResource("13")
+color_inactive = Color(0.619608, 0.607843, 0.639216, 0.639216)
+
+[node name="Like" type="HBoxContainer" parent="Main/ActionsContainer/MarginContainer/Main/LikeButton"]
+modulate = Color(0.607843, 0.619608, 0.639216, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Main/ActionsContainer/MarginContainer/Main/LikeButton/Like"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("9")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Main/ActionsContainer/MarginContainer/Main/LikeButton/Like"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.768627, 0.768627, 0.768627, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+text = "FB_STATUS_CONTINUE_LIKE"
+
+[node name="CommentButton" type="Button" parent="Main/ActionsContainer/MarginContainer/Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+
+[node name="Comment" type="HBoxContainer" parent="Main/ActionsContainer/MarginContainer/Main/CommentButton"]
+modulate = Color(0.607843, 0.619608, 0.639216, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Main/ActionsContainer/MarginContainer/Main/CommentButton/Comment"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("10")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Main/ActionsContainer/MarginContainer/Main/CommentButton/Comment"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.768627, 0.768627, 0.768627, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+text = "FB_STATUS_CONTINUE_COMMENT"
+
+[node name="ShareButton" type="Button" parent="Main/ActionsContainer/MarginContainer/Main"]
+modulate = Color(0.607843, 0.619608, 0.639216, 0.639216)
+layout_mode = 2
+size_flags_horizontal = 3
+flat = true
+script = ExtResource("13")
+action_code = 1
+color_inactive = Color(0.619608, 0.607843, 0.639216, 0.639216)
+
+[node name="Share" type="HBoxContainer" parent="Main/ActionsContainer/MarginContainer/Main/ShareButton"]
+modulate = Color(0.607843, 0.619608, 0.639216, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 6
+alignment = 1
+
+[node name="Icon" type="TextureRect" parent="Main/ActionsContainer/MarginContainer/Main/ShareButton/Share"]
+custom_minimum_size = Vector2(20, 20)
+layout_mode = 2
+texture = ExtResource("11")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Main/ActionsContainer/MarginContainer/Main/ShareButton/Share"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.768627, 0.768627, 0.768627, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+text = "FB_STATUS_CONTINUE_SHARE"
+
+[node name="CommentsContainer" type="MarginContainer" parent="Main"]
+visible = false
+layout_mode = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_right = 12
+
+[node name="FbCommentList" parent="Main/CommentsContainer" instance=ExtResource("12")]
+layout_mode = 2

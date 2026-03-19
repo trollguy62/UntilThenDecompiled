@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://gmvclmbwvkp3"]
+
+[ext_resource type="Script" path="res://ui/screens/Game/SplashScreen/SplashScreen.gd" id="1_21qmt"]
+[ext_resource type="Texture2D" uid="uid://b1tl3r8r5scig" path="res://scenes/_cutscenes/credits/assets/polychroma_games.png" id="2_1xxvb"]
+[ext_resource type="Texture2D" uid="uid://b1gnp7opmy2uk" path="res://scenes/_cutscenes/credits/assets/Maximum_Entertainment_Logo_Stacked_Wht_Color.png" id="2_fism7"]
+[ext_resource type="FontFile" uid="uid://cgsnpibqgvabu" path="res://fonts/NunitoSans-Regular.ttf" id="4_7k8xi"]
+[ext_resource type="Texture2D" uid="uid://bqw82amq7psr6" path="res://scenes/_cutscenes/credits/assets/fmod.png" id="4_h8t55"]
+[ext_resource type="Texture2D" uid="uid://4716eomw6wk2" path="res://scenes/_cutscenes/credits/assets/notice.png" id="5_7awla"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_be8xo"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_mrphi"]
+font_size = 11
+font_color = Color(0.501961, 0.501961, 0.501961, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ovvvl"]
+font = ExtResource("4_7k8xi")
+font_size = 24
+
+[node name="SplashScreen" type="Panel"]
+texture_filter = 4
+offset_right = 1280.0
+offset_bottom = 720.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_be8xo")
+script = ExtResource("1_21qmt")
+textures = Array[Texture]([ExtResource("2_fism7"), ExtResource("2_1xxvb"), ExtResource("4_h8t55"), ExtResource("5_7awla")])
+legal_lines = Array[String](["©2024 Maximum Entertainment. All rights reserved. Maximum Entertainment™ and the Maximum Entertainment™ logo are trademarks of Maximum Entertainment, LLC. All rights reserved. All other trademarks or registered trademarks belong to their respective owners.", "", "", "©2024 Polychroma Games. ©2024 FMOD Studio. FMOD™ and the FMOD™ logo are trademarks of Firelight Technologies Pty, Ltd. ©2024 Maximum Entertainment. Maximum Entertainment™ and the Maximum Entertainment™ logo are trademarks of Maximum Entertainment, LLC. All other trademarks or registered trademarks belong to their respective owners. All rights reserved."])
+disclaimers = Array[String](["SPLASH_DISCLAIMER", "SEIZURE_WARNING"])
+display_duration = 2.0
+disclaimer_duration = 7.0
+metadata/_edit_lock_ = true
+
+[node name="Content" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="TextureRect" type="TextureRect" parent="Content"]
+custom_minimum_size = Vector2(720, 360)
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 280.0
+offset_top = -180.0
+offset_right = -280.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(360, 180)
+texture = ExtResource("2_1xxvb")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="LegalLine" type="Label" parent="Content"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 190.0
+offset_top = 599.0
+offset_right = -190.0
+offset_bottom = -21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "©2024 Maximum Entertainment. All rights reserved. Maximum Entertainment™ and the Maximum Entertainment™ logo are trademarks of Maximum Entertainment, LLC. All rights reserved. All other trademarks or registered trademarks belong to their respective owners."
+label_settings = SubResource("LabelSettings_mrphi")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+uppercase = true
+metadata/_edit_lock_ = true
+
+[node name="Disclaimer" type="Label" parent="Content"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -437.0
+offset_top = -231.0
+offset_right = 438.0
+offset_bottom = 234.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "SPLASH_DISCLAIMER"
+label_settings = SubResource("LabelSettings_ovvvl")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+clip_text = true
+metadata/_edit_lock_ = true

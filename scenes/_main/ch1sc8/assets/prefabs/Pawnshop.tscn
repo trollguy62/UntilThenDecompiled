@@ -1,0 +1,251 @@
+[gd_scene load_steps=26 format=3 uid="uid://crtkcy26fjar0"]
+
+[ext_resource type="Texture2D" uid="uid://d157teptxptdt" path="res://scenes/_main/ch1sc8/assets/pawnshop/disp_stand_board_rm.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://bwaw4kib5tsk1" path="res://scenes/_main/ch1sc8/assets/pawnshop/tarp_sale.png" id="2"]
+[ext_resource type="Material" uid="uid://h4ov4wjgwjxv" path="res://scenes/_main/ch1sc8/assets/pawnshop/materials/BldgPlatformSide.tres" id="3"]
+[ext_resource type="Material" uid="uid://o8l4r8fr7063" path="res://scenes/_main/ch1sc8/assets/pawnshop/materials/BldgMain.tres" id="4"]
+[ext_resource type="Material" uid="uid://db0yqhhuu505g" path="res://scenes/_main/ch1sc8/assets/pawnshop/materials/BldgTiles.tres" id="5"]
+[ext_resource type="Material" uid="uid://dxj12e42ayune" path="res://scenes/_main/ch1sc8/assets/pawnshop/materials/BldgRoof.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://dpnawf48wtaej" path="res://scenes/_main/ch1sc8/assets/pawnshop/disp_stand_board_n.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bxn5vl6hl5a3u" path="res://scenes/_main/ch1sc8/assets/pawnshop/disp_stand_board.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cwk1nlh4gc7eq" path="res://scenes/_main/ch1sc8/assets/pawnshop/disp_board.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cbmsjrcm1kbag" path="res://scenes/_main/ch1sc8/assets/pawnshop/gate_r.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://4fmnsbopf7j" path="res://scenes/_main/ch1sc8/assets/pawnshop/disp_stand_frame.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dosj26kjgutyr" path="res://scenes/_main/ch1sc8/assets/pawnshop/gate_l.png" id="12"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="13"]
+[ext_resource type="Shader" path="res://scenes/_main/ch1sc8/assets/shaders/Wind.gdshader" id="14"]
+[ext_resource type="ArrayMesh" uid="uid://ctrwmbxtve7bb" path="res://scenes/_main/ch1sc8/assets/pawnshop/pawnshop.obj" id="15"]
+[ext_resource type="ArrayMesh" uid="uid://7c8ltjpcojk7" path="res://scenes/_main/ch1sc8/assets/pawnshop/tarp_sale.obj" id="16"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/PawnshopDispBoard.gd" id="17"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("13")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("12")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("13")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10")
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("13")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.7
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("11")
+
+[sub_resource type="ShaderMaterial" id="4"]
+render_priority = 0
+shader = ExtResource("13")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("8")
+shader_parameter/texture_normal = ExtResource("7")
+shader_parameter/texture_roughness_metallic = ExtResource("1")
+
+[sub_resource type="ShaderMaterial" id="5"]
+render_priority = 0
+shader = ExtResource("14")
+shader_parameter/use_tex_wind = false
+shader_parameter/transmission = Color(0.490196, 0.490196, 0.490196, 1)
+shader_parameter/roughness = 0.2
+shader_parameter/vertical_stiffness = 2.0
+shader_parameter/max_wind_rot = 2.3
+shader_parameter/wind_speed = 2.0
+shader_parameter/horizontal_speed = 1.3
+shader_parameter/horizontal_curl = 0.4
+shader_parameter/time_offset = 0.0
+shader_parameter/tex_albedo = ExtResource("2")
+
+[sub_resource type="ShaderMaterial" id="6"]
+render_priority = 0
+shader = ExtResource("13")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.05
+shader_parameter/roughness = 0.5
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("9")
+
+[sub_resource type="StandardMaterial3D" id="7"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="8"]
+size = Vector2(2.527, 2)
+
+[node name="Pawnshop" type="MeshInstance"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+use_in_baked_light = true
+mesh = ExtResource("15")
+surface_material_override/0 = ExtResource("4")
+surface_material_override/1 = ExtResource("6")
+surface_material_override/2 = ExtResource("5")
+surface_material_override/3 = ExtResource("3")
+
+[node name="Deco" type="Spatial" parent="."]
+
+[node name="GateL" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.42, 0, 0.35)
+material_override = SubResource("1")
+use_in_baked_light = true
+centered = false
+texture = ExtResource("12")
+
+[node name="GateR_1" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68, 0, 0.35)
+material_override = SubResource("2")
+use_in_baked_light = true
+centered = false
+texture = ExtResource("10")
+
+[node name="GateR_2" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.24, 0, 0.35)
+material_override = SubResource("2")
+use_in_baked_light = true
+centered = false
+texture = ExtResource("10")
+
+[node name="GateR_3" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8, 0, 0.35)
+material_override = SubResource("2")
+use_in_baked_light = true
+centered = false
+texture = ExtResource("10")
+
+[node name="GateR_4" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.09, 0, 0.35)
+material_override = SubResource("2")
+use_in_baked_light = true
+centered = false
+texture = ExtResource("10")
+
+[node name="DispStand" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.81, -0.05, 0.655256)
+material_override = SubResource("3")
+use_in_baked_light = true
+centered = false
+texture = ExtResource("11")
+
+[node name="Board" type="Sprite3D" parent="Deco/DispStand"]
+transform = Transform3D(1, 0, 0, 0, 0.999973, 0.00743999, 0, -0.00743999, 0.999973, 0.03, 0.521, -0.000999928)
+material_override = SubResource("4")
+use_in_baked_light = true
+centered = false
+offset = Vector2(0, -43)
+texture = ExtResource("8")
+script = ExtResource("17")
+speed = 1.25
+amplitude_degrees = 5.0
+
+[node name="TarpSale" type="MeshInstance" parent="Deco"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.33, 1.4, 0.600001)
+material_override = SubResource("5")
+cast_shadow = 0
+use_in_baked_light = true
+mesh = ExtResource("16")
+surface_material_override/0 = null
+
+[node name="Sprite3D" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.91, 1.48, 0.49)
+material_override = SubResource("6")
+use_in_baked_light = true
+centered = false
+texture = ExtResource("9")
+
+[node name="Blockade" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.2, 0.72, -0.22)
+material_override = SubResource("7")
+mesh = SubResource("8")
+surface_material_override/0 = null

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://c7yhmurrkaxal"]
+
+[ext_resource type="ArrayMesh" uid="uid://dtnqhd8itmm48" path="res://scenes/mondragon_hospital/assets/cafeteria/utensil_holder.obj" id="1"]
+[ext_resource type="Texture2D" uid="uid://otwexlsqwdvn" path="res://scenes/mondragon_hospital/assets/cafeteria/utensil_holder.png" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="3"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.2
+shader_parameter/roughness = 0.5
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+
+[node name="UtensilHolder" type="MeshInstance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.75, 0.49, 0.64)
+material_override = SubResource("1")
+mesh = ExtResource("1")
+surface_material_override/0 = null

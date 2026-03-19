@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://bd2necpdnnlnx"]
+
+[ext_resource type="Shader" path="res://scenes/bonifacio_station_entrance/assets/shaders/SinCosDistortion.gdshader" id="1"]
+[ext_resource type="Texture2D" uid="uid://jg5s5hhrvec7" path="res://scenes/bonifacio_station_entrance/assets/tree_shadow.png" id="2"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/alpha_scissor = 0.2
+shader_parameter/speed = Vector2(1, 1.25)
+shader_parameter/frequency = Vector2(2, 8)
+shader_parameter/amplitude = Vector2(0.001, 0.006)
+shader_parameter/tex_shadow = ExtResource("2")

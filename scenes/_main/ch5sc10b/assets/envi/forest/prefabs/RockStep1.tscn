@@ -1,0 +1,64 @@
+[gd_scene load_steps=8 format=3 uid="uid://dasuutwfg37gf"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://sjxvjn1iwhhb" path="res://scenes/_main/ch5sc10b/assets/envi/forest/rock_step.obj" id="2"]
+[ext_resource type="Texture2D" uid="uid://daa18vxul80ea" path="res://scenes/_main/ch5sc10b/assets/envi/forest/rock_step_1.png" id="3"]
+
+[sub_resource type="FastNoiseLite" id="1"]
+
+[sub_resource type="NoiseTexture2D" id="2"]
+width = 46
+height = 46
+seamless = true
+bump_strength = 2.0
+noise = SubResource("1")
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.75
+shader_parameter/specular = 0.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+shader_parameter/texture_normal = SubResource("2")
+
+[sub_resource type="BoxShape3D" id="4"]
+size = Vector3(0.498, 0.104, 0.15)
+
+[node name="RockStep1" type="MeshInstance"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.048, 0.132, 0.539)
+material_override = SubResource("3")
+mesh = ExtResource("2")
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="."]
+__meta__ = {
+"_edit_group_": true,
+"_edit_lock_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.053, 0)
+shape = SubResource("4")
+__meta__ = {
+"_edit_lock_": true
+}

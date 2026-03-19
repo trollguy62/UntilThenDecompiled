@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtyl0t6y5f0mh"]
+
+[ext_resource type="Script" path="res://ui/components/PictureMessage/PictureMessage.gd" id="1"]
+[ext_resource type="Shader" path="res://ui/components/PictureMessage/RoundedCorners.gdshader" id="2_1fjsl"]
+[ext_resource type="PackedScene" uid="uid://c2v5cy37b1mgm" path="res://ui/components/TextureRectButton/TextureRectButton.tscn" id="2_kswxu"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8pexl"]
+shader = ExtResource("2_1fjsl")
+shader_parameter/radius = 0.2
+shader_parameter/size = Vector2(1, 1)
+
+[node name="PictureMessage" type="PanelContainer"]
+light_mask = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("1")
+
+[node name="Picture" parent="." instance=ExtResource("2_kswxu")]
+material = SubResource("ShaderMaterial_8pexl")
+layout_mode = 2

@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://dwip5igxy5jk"]
+
+[ext_resource type="Script" path="res://ui/screens/GedditScreen/GedditScreen.gd" id="1_mjix3"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="2_4jskj"]
+[ext_resource type="PackedScene" uid="uid://dyjpla5bera8e" path="res://ui/components/BackButton/BackButton.tscn" id="3_hxg0p"]
+[ext_resource type="FontFile" uid="uid://ikda10be3tkj" path="res://fonts/NunitoSans-Bold-18.tres" id="4_qag3e"]
+
+[sub_resource type="StyleBoxEmpty" id="3"]
+
+[sub_resource type="StyleBoxEmpty" id="4"]
+
+[sub_resource type="StyleBoxFlat" id="2"]
+content_margin_left = 6.0
+content_margin_top = 8.0
+content_margin_right = 6.0
+content_margin_bottom = 8.0
+bg_color = Color(0.976471, 0.976471, 0.976471, 1)
+shadow_color = Color(0, 0, 0, 0.215686)
+shadow_size = 6
+
+[node name="GedditScreen" type="PanelContainer" node_paths=PackedStringArray("focus_on_enter")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("3")
+script = ExtResource("1_mjix3")
+focus_on_enter = NodePath("MenuBar/HBoxContainer/BackButton")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("2_4jskj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="PanelContainer" type="PanelContainer" parent="ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 55)
+layout_mode = 2
+theme_override_styles/panel = SubResource("4")
+
+[node name="PostContainer" type="MarginContainer" parent="ScrollContainer/VBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 0
+
+[node name="MenuBar" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_styles/panel = SubResource("2")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MenuBar"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="BackButton" parent="MenuBar/HBoxContainer" instance=ExtResource("3_hxg0p")]
+modulate = Color(0.368627, 0.368627, 0.368627, 1)
+layout_mode = 2
+size_flags_horizontal = 0
+disabled = true
+
+[node name="SubgedditLabel" type="Label" parent="MenuBar/HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("4_qag3e")
+text = "r/dankmemes"
+vertical_alignment = 1

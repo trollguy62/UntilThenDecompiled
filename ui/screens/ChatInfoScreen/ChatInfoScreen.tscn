@@ -1,0 +1,117 @@
+[gd_scene load_steps=13 format=3 uid="uid://gdp4c0hv5xun"]
+
+[ext_resource type="Script" path="res://ui/screens/ChatInfoScreen/ChatInfoScreen.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="2"]
+[ext_resource type="FontFile" uid="uid://dlxdxcvfgn8t5" path="res://fonts/PTSans-Bold.tres" id="3"]
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="4"]
+[ext_resource type="PackedScene" uid="uid://i8b3fudxxx58" path="res://ui/components/FlatButton/FlatButton.tscn" id="5"]
+[ext_resource type="FontFile" uid="uid://cs6o3l4bk2n5w" path="res://fonts/PTSans-Regular-Large.tres" id="6"]
+[ext_resource type="PackedScene" uid="uid://c0akflks2desm" path="res://ui/components/CoolVScrollContainer/CoolVScrollContainer.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://dyjpla5bera8e" path="res://ui/components/BackButton/BackButton.tscn" id="8"]
+[ext_resource type="Script" path="res://ui/components/CircularPicture/CircularPicture.gd" id="9"]
+[ext_resource type="Shader" path="res://ui/components/CircularPicture/CircularMask.gdshader" id="10"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sw6me"]
+shader = ExtResource("10")
+shader_parameter/tex = ExtResource("2")
+
+[node name="ChatInfoScreen" type="Panel" node_paths=PackedStringArray("focus_on_enter")]
+light_mask = 2
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = -16.0
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("1")
+focus_on_enter = NodePath("BackButton")
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+
+[node name="Picture" type="TextureRect" parent="Main"]
+light_mask = 524290
+material = SubResource("ShaderMaterial_sw6me")
+custom_minimum_size = Vector2(80, 80)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 0
+texture = ExtResource("2")
+expand_mode = 1
+script = ExtResource("9")
+
+[node name="NameContainer" type="MarginContainer" parent="Main"]
+light_mask = 2
+layout_mode = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 0
+
+[node name="Name" type="Label" parent="Main/NameContainer"]
+light_mask = 2
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 20
+text = "Nicole Lacsamana"
+horizontal_alignment = 1
+
+[node name="SubtitleContainer" type="MarginContainer" parent="Main"]
+light_mask = 2
+layout_mode = 2
+theme_override_constants/margin_bottom = 16
+
+[node name="Subtitle" type="Label" parent="Main/SubtitleContainer"]
+light_mask = 2
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4")
+text = "CHAT_ACTIVE_NOW"
+horizontal_alignment = 1
+
+[node name="HeaderContainer" type="MarginContainer" parent="Main"]
+light_mask = 2
+layout_mode = 2
+
+[node name="Header" type="Label" parent="Main/HeaderContainer"]
+light_mask = 2
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 20
+text = "Header"
+
+[node name="ViewProfile" parent="Main" instance=ExtResource("5")]
+layout_mode = 2
+content_margin_right = 16
+content_margin_top = 16
+content_margin_left = 16
+content_margin_bottom = 16
+
+[node name="Label" type="Label" parent="Main/ViewProfile"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("6")
+text = "CHAT_INFO_VIEW_PROFILE"
+
+[node name="VScroll" parent="Main" instance=ExtResource("7")]
+visible = false
+light_mask = 2
+layout_mode = 2
+padding_top = 4
+
+[node name="MemberList" type="VBoxContainer" parent="Main/VScroll"]
+light_mask = 2
+layout_mode = 0
+theme_override_constants/separation = 4
+
+[node name="BackButton" parent="." instance=ExtResource("8")]
+layout_mode = 0
+offset_top = 16.0
+offset_bottom = 40.0

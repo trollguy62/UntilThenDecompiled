@@ -1,0 +1,75 @@
+[gd_scene load_steps=17 format=3 uid="uid://pc41f70e2xe6"]
+
+[ext_resource type="Texture2D" uid="uid://bq3if47or606" path="res://scenes/_main/ch3sc2b/MinigameDart/assets/bg_stall_small.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cexswyauc5lwj" path="res://scenes/_main/ch3sc2b/MinigameDart/assets/crosshair.png" id="2"]
+[ext_resource type="BankAsset" uid="uid://cp6fis5lilveu" path="res://addons/fmod/editor/resources/banks/{622d1d82-7ff3-4348-8717-24abaca6ed85}.tres" id="2_tt3vy"]
+[ext_resource type="Texture2D" uid="uid://dh33ysstd44ih" path="res://scenes/_main/ch3sc2b/MinigameDart/assets/dart_board.png" id="3"]
+[ext_resource type="EventAsset" uid="uid://7xnivi4vy1vj" path="res://addons/fmod/editor/resources/events/{94e6ffd3-6788-4a08-b064-a128bea9940e}.tres" id="3_ukljm"]
+[ext_resource type="Texture2D" uid="uid://crvxna3tcqw3i" path="res://scenes/_main/ch3sc2b/MinigameDart/assets/meter.png" id="4"]
+[ext_resource type="EventAsset" uid="uid://d3ifrar67jffv" path="res://addons/fmod/editor/resources/events/{63231d17-3dfa-4076-ac28-b3d026256bc4}.tres" id="4_0tk0g"]
+[ext_resource type="Texture2D" uid="uid://cdu8dqdn1vrtn" path="res://scenes/_main/ch3sc2b/MinigameDart/assets/bg_stall_long.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://r6nydohhpggk" path="res://scenes/_main/ch3sc2b/MinigameDart/assets/meter_indicator.png" id="6"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameDart/scripts/Crosshair.gd" id="7"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameDart/MinigameDart.gd" id="8"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameDart/scripts/Meter.gd" id="9"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameDart/scripts/Board.gd" id="10"]
+[ext_resource type="Texture2D" uid="uid://dfgs0hjdre5ev" path="res://scenes/_main/ch3sc2b/MinigameDart/assets/dart_board_score_map.png" id="11"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameDart/scripts/AIController.gd" id="15"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="17"]
+
+[node name="MinigameDart" type="Node2D"]
+texture_filter = 1
+script = ExtResource("8")
+
+[node name="AudioBankLoader" type="StudioBankLoader" parent="."]
+num_banks = 1
+bank_0 = ExtResource("2_tt3vy")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="DartThrow" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("3_ukljm")
+
+[node name="SetPosition" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("4_0tk0g")
+
+[node name="Focus" type="Node" parent="."]
+script = ExtResource("17")
+focus_name = "MinigameDart"
+
+[node name="BackgroundStallLong" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(3.87879, 3.78947)
+texture = ExtResource("5")
+
+[node name="BackgroundStallSmall" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(640, 360)
+scale = Vector2(3.87879, 3.78947)
+texture = ExtResource("1")
+
+[node name="Board" type="Sprite2D" parent="."]
+position = Vector2(728, 360)
+scale = Vector2(3.77778, 3.77778)
+texture = ExtResource("3")
+script = ExtResource("10")
+score_map = ExtResource("11")
+
+[node name="Meter" type="Sprite2D" parent="."]
+position = Vector2(1200, 368)
+scale = Vector2(4, 4)
+texture = ExtResource("4")
+script = ExtResource("9")
+
+[node name="Indicator" type="Sprite2D" parent="Meter"]
+position = Vector2(-9.059, 42.1409)
+texture = ExtResource("6")
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+position = Vector2(680.504, 378.235)
+scale = Vector2(4, 4)
+texture = ExtResource("2")
+script = ExtResource("7")
+
+[node name="AIController" type="Node" parent="."]
+script = ExtResource("15")

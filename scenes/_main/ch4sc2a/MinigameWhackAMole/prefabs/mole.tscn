@@ -1,0 +1,100 @@
+[gd_scene load_steps=13 format=3 uid="uid://dot67vj0el435"]
+
+[ext_resource type="SpriteFrames" uid="uid://00jbgw5w8yvx" path="res://scenes/_main/ch4sc2a/MinigameWhackAMole/resources/NormalMole.tres" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch4sc2a/MinigameWhackAMole/scripts/Mole.gd" id="2"]
+[ext_resource type="Resource" uid="uid://clqjmfegtfl8o" path="res://scenes/_main/ch4sc2a/MinigameWhackAMole/resources/NormalMoleData.tres" id="3"]
+[ext_resource type="Resource" uid="uid://crw23kahjkyw4" path="res://scenes/_main/ch4sc2a/MinigameWhackAMole/resources/RichMoleData.tres" id="4"]
+[ext_resource type="Resource" uid="uid://bda4dufl8iilh" path="res://scenes/_main/ch4sc2a/MinigameWhackAMole/resources/CursedMoleData.tres" id="5"]
+
+[sub_resource type="CapsuleShape2D" id="24"]
+radius = 57.37
+height = 162.15
+
+[sub_resource type="Animation" id="25"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="26"]
+resource_name = "hit"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.150783),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(100, 100, 100, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4xev8"]
+_data = {
+"RESET": SubResource("25"),
+"hit": SubResource("26")
+}
+
+[sub_resource type="EventAsset" id="EventAsset_bejtf"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Ch4/Sc2a/SFX/WhackAMole/Pop"
+guid = "{38ef1ea1-f0eb-4474-8cce-701bd7765746}"
+name = "Pop"
+
+[sub_resource type="EventAsset" id="EventAsset_152rw"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Ch4/Sc2a/SFX/WhackAMole/Whack"
+guid = "{7080b1d3-a033-435d-9813-2dded76d5e7b}"
+name = "Whack"
+
+[sub_resource type="EventAsset" id="EventAsset_otxjy"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Ch4/Sc2a/SFX/WhackAMole/Boing"
+guid = "{c86943f4-da79-4c8b-a88f-ea147e03d836}"
+name = "Boing"
+
+[node name="Mole" type="Area2D"]
+script = ExtResource("2")
+mole_type = Array[Resource]([ExtResource("5"), ExtResource("3"), ExtResource("4")])
+
+[node name="MoleSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4.125, 4.125)
+sprite_frames = ExtResource("1")
+animation = &"hide"
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7, 0)
+shape = SubResource("24")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_4xev8")
+}
+
+[node name="Pop" type="StudioEventEmitter2D" parent="."]
+event = SubResource("EventAsset_bejtf")
+
+[node name="Whack" type="StudioEventEmitter2D" parent="."]
+event = SubResource("EventAsset_152rw")
+
+[node name="Boing" type="StudioEventEmitter2D" parent="."]
+event = SubResource("EventAsset_otxjy")

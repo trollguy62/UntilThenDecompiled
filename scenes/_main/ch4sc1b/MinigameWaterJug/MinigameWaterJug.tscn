@@ -1,0 +1,31 @@
+[gd_scene load_steps=4 format=3 uid="uid://cpi3vekjadraf"]
+
+[ext_resource type="Script" path="res://components/StateDictVisibilityController.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c4g8suwwulx0w" path="res://scenes/_main/ch4sc1b/MinigameWaterJug/assets/Water jug_2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b2wgknrle74dl" path="res://scenes/_main/ch4sc1b/MinigameWaterJug/assets/Water jug_1.png" id="4"]
+
+[node name="MinigameWaterJug" type="Node2D"]
+
+[node name="Front" type="Sprite" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("4")
+
+[node name="VisibilityController" type="Node" parent="Front"]
+script = ExtResource("1")
+state_container_alias = "scene"
+dict_values = {
+"water_jug_back": false
+}
+
+[node name="Back" type="Sprite" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(3.5, 3.5)
+texture = ExtResource("3")
+
+[node name="VisibilityController" type="Node" parent="Back"]
+script = ExtResource("1")
+state_container_alias = "scene"
+dict_values = {
+"water_jug_back": true
+}

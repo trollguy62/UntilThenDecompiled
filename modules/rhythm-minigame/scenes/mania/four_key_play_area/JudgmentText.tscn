@@ -1,0 +1,51 @@
+[gd_scene load_steps=5 format=3 uid="uid://bqqwduiorfhk1"]
+
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/mania/four_key_play_area/JudgmentText.gd" id="1"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_g43el"]
+line_spacing = 0.0
+font_color = Color(0.745098, 1, 0.670588, 1)
+shadow_size = 8
+shadow_color = Color(0.701961, 1, 0.611765, 0.219608)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_hr7er"]
+line_spacing = 0.0
+font_color = Color(1, 0.980392, 0.458824, 1)
+shadow_size = 8
+shadow_color = Color(1, 0.980392, 0.458824, 0.2)
+shadow_offset = Vector2(0, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_2xcnd"]
+line_spacing = 0.0
+font_color = Color(1, 0.611765, 0.611765, 1)
+shadow_size = 8
+shadow_color = Color(1, 0.611765, 0.611765, 0.231373)
+shadow_offset = Vector2(0, 2)
+
+[node name="JudgmentText" type="Label"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -896.0
+offset_top = -395.0
+offset_right = -384.0
+offset_bottom = -325.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "MG_RHYTHM_JUDG_PERFECT"
+label_settings = SubResource("LabelSettings_g43el")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+script = ExtResource("1")
+perfect_label = SubResource("LabelSettings_g43el")
+great_label = SubResource("LabelSettings_hr7er")
+miss_label = SubResource("LabelSettings_2xcnd")
+
+[node name="HideTimer" type="Timer" parent="."]
+wait_time = 0.67
+one_shot = true

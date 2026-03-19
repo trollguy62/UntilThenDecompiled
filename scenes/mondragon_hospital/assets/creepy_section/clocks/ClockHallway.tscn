@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://p70ndskys5uk"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://c87es6qul4cn" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_hallway/03.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://c2ygfp2j2c8t7" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_hallway/02.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b0si7vobgcpsd" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_hallway/06.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bl5esnrd4kfoh" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_hallway/04.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://u7a5tx7okvtb" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_hallway/05.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://cpf33qakg8jyt" path="res://scenes/mondragon_hospital/assets/creepy_section/clocks/clock_hallway/01.png" id="7"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="8"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("8")
+shader_parameter/scale = Vector3(0.15, 0.15, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("3")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4vxpi"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="ClockHallway" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.74997, 1.42767, -2.10991)
+mesh = SubResource("ArrayMesh_4vxpi")
+script = ExtResource("1")
+texture_frames = SubResource("3")
+animation = "default"
+frame = 1
+playing = false
+alias = "AnimatedPaper3D"

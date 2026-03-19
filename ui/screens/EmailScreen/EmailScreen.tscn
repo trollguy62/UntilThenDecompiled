@@ -1,0 +1,121 @@
+[gd_scene load_steps=12 format=3 uid="uid://d01rvg5x53hrg"]
+
+[ext_resource type="Script" path="res://ui/screens/EmailScreen/EmailScreen.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bg7gb3pfg735n" path="res://ui/components/EmailContent/EmailContent.tscn" id="2"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://dnaxsrsu8msbw" path="res://assets/ui/ic_mail_outline.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://caunogdv2fj5g" path="res://assets/ui/ic_back.png" id="5"]
+[ext_resource type="PackedScene" uid="uid://i8b3fudxxx58" path="res://ui/components/FlatButton/FlatButton.tscn" id="6"]
+[ext_resource type="Script" path="res://ui/components/Spinner.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://dtwh1xs1bxn58" path="res://assets/ui/spinner_1.png" id="8"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 0.384314, 0.262745, 1)
+shadow_color = Color(0, 0, 0, 0.231373)
+shadow_size = 4
+
+[sub_resource type="StyleBoxEmpty" id="2"]
+
+[sub_resource type="StyleBoxEmpty" id="3"]
+
+[node name="EmailScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Panel" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 0
+anchor_right = 1.0
+theme_override_styles/panel = SubResource("1")
+
+[node name="Icon" type="TextureRect" parent="Panel"]
+modulate = Color(1, 0.976471, 0.933333, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("4")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+layout_mode = 2
+
+[node name="Spacer1" type="PanelContainer" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Prev" parent="Panel/HBoxContainer" instance=ExtResource("6")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+idle_alpha = 0.2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/Prev"]
+layout_mode = 2
+texture = ExtResource("5")
+expand_mode = 1
+
+[node name="PanelContainer" type="PanelContainer" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("3")
+
+[node name="Next" parent="Panel/HBoxContainer" instance=ExtResource("6")]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_vertical = 4
+idle_alpha = 0.2
+
+[node name="TextureRect" type="TextureRect" parent="Panel/HBoxContainer/Next"]
+layout_mode = 2
+texture = ExtResource("5")
+expand_mode = 1
+flip_h = true
+
+[node name="Spacer2" type="PanelContainer" parent="Panel/HBoxContainer"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 54.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="EmailContent" parent="ScrollContainer/MarginContainer" instance=ExtResource("2")]
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="Spinner" type="MarginContainer" parent="ScrollContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 32
+
+[node name="TextureRect" type="TextureRect" parent="ScrollContainer/MarginContainer/Spinner"]
+modulate = Color(0.380392, 0.380392, 0.380392, 1)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("8")
+expand_mode = 1
+script = ExtResource("7")

@@ -1,0 +1,72 @@
+[gd_scene load_steps=9 format=3 uid="uid://wkr0073ynwsw"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch5sc3/scripts/Water/BuoyancyProbe.gd" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc3/scripts/Water/BuoyantBody.gd" id="2"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc3/scripts/Water/DroppableRigidBody.gd" id="3"]
+
+[sub_resource type="StandardMaterial3D" id="4101"]
+albedo_color = Color(1, 0.796078, 0, 1)
+roughness = 0.53
+
+[sub_resource type="CapsuleMesh" id="4500"]
+radius = 0.006
+height = 0.025
+radial_segments = 8
+rings = 1
+
+[sub_resource type="Shader" id="4496"]
+code = "shader_type spatial;
+render_mode unshaded;
+
+uniform float speed;
+
+void fragment() {
+	ALBEDO = vec3(speed, 0, 0);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="4497"]
+render_priority = 0
+shader = SubResource("4496")
+shader_parameter/speed = 1.0
+
+[sub_resource type="CapsuleShape3D" id="4499"]
+radius = 0.006
+height = 0.025
+
+[node name="Pellet" type="RigidBody3D"]
+mass = 2.0
+gravity_scale = 0.1
+can_sleep = false
+script = ExtResource("2")
+buoyancy = 10.0
+water_node_path = NodePath("../Water")
+water_height_offset = 0.049
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+material_override = SubResource("4101")
+mesh = SubResource("4500")
+
+[node name="CollisionMesh" type="MeshInstance3D" parent="."]
+layers = 32768
+material_override = SubResource("4497")
+mesh = SubResource("4500")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+shape = SubResource("4499")
+
+[node name="Probes" type="Node3D" parent="."]
+
+[node name="BuoyancyProbe1" type="Marker3D" parent="Probes"]
+script = ExtResource("1")
+
+[node name="BuoyancyProbe2" type="Marker3D" parent="Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.01)
+script = ExtResource("1")
+
+[node name="BuoyancyProbe3" type="Marker3D" parent="Probes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.01)
+script = ExtResource("1")
+
+[node name="DroppableRigidBody" type="Node" parent="."]
+script = ExtResource("3")

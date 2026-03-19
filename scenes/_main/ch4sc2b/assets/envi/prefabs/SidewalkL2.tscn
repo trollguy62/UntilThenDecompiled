@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dhav8dv1u1iyn"]
+
+[ext_resource type="Texture2D" uid="uid://m2kdurvw3w2s" path="res://scenes/_main/ch4sc2b/assets/envi/sidewalk_L2.png" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://dwoy3i74droa8" path="res://scenes/_main/ch4sc2b/assets/envi/sidewalk_L2.obj" id="3"]
+[ext_resource type="Texture2D" uid="uid://bdwffj0nn2dmg" path="res://scenes/_main/ch4sc2b/assets/envi/sidewalk_L2_n.png" id="4"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("1")
+shader_parameter/texture_normal = ExtResource("4")
+
+[sub_resource type="ConcavePolygonShape3D" id="2"]
+data = PackedVector3Array(0, 0, -0.728, 0.049, 0, -0.728, 0.049, 0.05, -0.679, 0.049, 0.05, -0.049, 1.949, 0, 0, 0.049, 0, 0, 1.949, 0.05, -0.679, 0.049, 0.05, -0.049, 0.049, 0.05, -0.679, 1.9, 0, -0.679, 1.949, 0.05, -2.379, 1.949, 0.05, -0.679, 1.949, 0.05, -0.679, 2.579, 0.05, -0.049, 1.949, 0.05, -0.049, 1.949, 0.05, -0.049, 2.579, 0, 0, 1.949, 0, 0, 1.949, 0.05, -0.679, 2.579, 0.05, -2.379, 2.579, 0.05, -0.679, 2.579, 0.05, -0.679, 2.628, 0, -2.379, 2.628, 0, -0.679, 0.049, 0.05, -0.679, 0, 0, -0.049, 0, 0, -0.679, 0.049, 0, 0, 0, 0, 0, 0.049, 0.05, -0.049, 1.949, 0.05, -0.679, 0.049, 0, -0.728, 1.949, 0, -0.728, 0, 0, -0.049, 0.049, 0.05, -0.049, 0, 0, 0, 0, 0, -0.728, 0.049, 0.05, -0.679, 0, 0, -0.679, 1.949, 0.05, -0.049, 1.949, 0, 0, 0.049, 0.05, -0.049, 1.949, 0.05, -0.049, 0.049, 0.05, -0.049, 1.949, 0.05, -0.679, 1.9, 0, -2.379, 1.949, 0.05, -2.379, 1.9, 0, -0.679, 2.579, 0.05, -0.679, 2.579, 0.05, -0.049, 1.949, 0.05, -0.679, 2.579, 0.05, -0.049, 2.579, 0, 0, 1.949, 0.05, -0.049, 1.949, 0.05, -2.379, 2.579, 0.05, -2.379, 1.949, 0.05, -0.679, 2.579, 0.05, -2.379, 2.628, 0, -2.379, 2.579, 0.05, -0.679, 0.049, 0.05, -0.049, 0, 0, -0.049, 0.049, 0.05, -0.679, 0.049, 0.05, -0.679, 0.049, 0, -0.728, 1.949, 0.05, -0.679)
+
+[node name="SidewalkL2" type="MeshInstance"]
+mesh = ExtResource("3")
+surface_material_override/0 = SubResource("1")
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource("2")

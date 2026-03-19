@@ -1,0 +1,167 @@
+[gd_scene load_steps=19 format=3 uid="uid://cnx4uvrhllutg"]
+
+[ext_resource type="Texture2D" uid="uid://csglmtj75x1nm" path="res://scenes/_main/ch2sc4/assets/C2D/42 - Box of Secrets/background.png" id="1"]
+[ext_resource type="Script" path="res://components/ClickableArea2D.gd" id="7"]
+[ext_resource type="Script" path="res://scenes/_main/ch2sc4/scripts/_minor/C2D_42_ObjectHandler.gd" id="8"]
+[ext_resource type="Texture2D" uid="uid://csjn45coay2ry" path="res://scenes/_main/ch2sc4/assets/C2D/42 - Box of Secrets/picture_frame_2_full.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cnb7gvogyiodq" path="res://scenes/_main/ch2sc4/assets/C2D/42 - Box of Secrets/medal.png" id="10_8xeit"]
+[ext_resource type="Texture2D" uid="uid://bahhpr3djj0i4" path="res://scenes/_main/ch2sc4/assets/C2D/42 - Box of Secrets/trophy_2_full.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cw5ibi002mb2c" path="res://scenes/_main/ch2sc4/assets/C2D/42 - Box of Secrets/picture_frame_1_full.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://nw0a81o8v58h" path="res://scenes/_main/ch2sc4/assets/C2D/42 - Box of Secrets/trophy_1_full.png" id="13"]
+[ext_resource type="AudioStream" uid="uid://cpeyclnwqqbv4" path="res://scenes/_main/ch2sc4/assets/sfx/Paper Filler 5.ogg" id="14"]
+[ext_resource type="AudioStream" uid="uid://c3rfpyaycuiun" path="res://scenes/_main/ch2sc4/assets/sfx/Paper Filler 4.ogg" id="15"]
+[ext_resource type="AudioStream" uid="uid://dm5paljhtl6tq" path="res://scenes/_main/ch2sc4/assets/sfx/Paper Filler 10.ogg" id="16"]
+[ext_resource type="AudioStream" uid="uid://dfe3d4i6ped0m" path="res://scenes/_main/ch2sc4/assets/sfx/Paper Filler 8.ogg" id="17"]
+[ext_resource type="AudioStream" uid="uid://cjg7gaktoeden" path="res://scenes/_main/ch2sc4/assets/sfx/Paper Filler 6.ogg" id="18"]
+[ext_resource type="PackedScene" uid="uid://cng5pa21vpc74" path="res://ui/components/Pointer/Pointer.tscn" id="18_mfw08"]
+[ext_resource type="AudioStream" uid="uid://b7c0mkfmpo8g7" path="res://scenes/_main/ch2sc4/assets/sfx/Paper Filler 1.ogg" id="19"]
+[ext_resource type="AudioStream" uid="uid://ccxjcj3iuu3o5" path="res://scenes/_main/ch2sc4/assets/sfx/Paper Filler 2.ogg" id="20"]
+[ext_resource type="AudioStream" uid="uid://csvyoykqvaet1" path="res://scenes/_main/ch2sc4/assets/sfx/Paper Filler 3.ogg" id="21"]
+[ext_resource type="AudioStream" uid="uid://b4qkwi1woqfx1" path="res://scenes/_main/ch2sc4/assets/sfx/Paper Filler 7.ogg" id="22"]
+
+[node name="42" type="Node2D"]
+scale = Vector2(4, 4)
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+centered = false
+
+[node name="Trophy1" type="Node2D" parent="."]
+position = Vector2(103, 43)
+rotation = 0.518234
+scale = Vector2(0.309924, 0.309924)
+script = ExtResource("8")
+full_texture = ExtResource("13")
+short_knot = "bof_trophy_1"
+
+[node name="SFXPickup" type="AudioStreamPlayer" parent="Trophy1"]
+stream = ExtResource("19")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="SFXDrop" type="AudioStreamPlayer" parent="Trophy1"]
+stream = ExtResource("20")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="Trophy1"]
+script = ExtResource("7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trophy1/Area2D"]
+polygon = PackedVector2Array(14.7307, 84.4577, 5.92825, 82.0484, -12.4402, 36.8079, -47.6498, 27.1708, -55.2477, 20.3602, -88.8116, -38.5013, -91.5908, -62.9166, -86.7722, -80.5215, -64.3488, -93.3078, -36.3432, -83.277, -16.3528, -61.2472, -0.369965, -33.2179, 19.6442, -37.2017, 34.8398, -23.5807, 47.626, -1.15728, 54.8065, 24.4627, 39.5634, 62.869)
+
+[node name="Trophy2" type="Node2D" parent="."]
+position = Vector2(215, 132)
+rotation = 0.144799
+scale = Vector2(0.311796, 0.311796)
+script = ExtResource("8")
+full_texture = ExtResource("11")
+short_knot = "bof_trophy_2"
+
+[node name="SFXPickup" type="AudioStreamPlayer" parent="Trophy2"]
+stream = ExtResource("21")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="SFXDrop" type="AudioStreamPlayer" parent="Trophy2"]
+stream = ExtResource("15")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="Trophy2"]
+script = ExtResource("7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trophy2/Area2D"]
+polygon = PackedVector2Array(-136.928, -138.849, -140.168, -161.065, -138.845, -174.222, -129.324, -175.611, -105.852, -214.686, -107.703, -227.381, -102.281, -234.653, -73.7181, -238.819, 4.30084, -237.231, 36.8314, -280.868, 59.047, -284.107, 112.14, -275.644, 119.875, -267.048, 112.205, -252.965, 90.9152, -243.378, 76.8981, -228.37, 79.6747, -209.328, 71.2768, -133.557, 56.334, -124.896, -32.9912, -115.112, -51.5704, -109.161, -89.6544, -103.608, -117.82, -118.948)
+
+[node name="Trophy3" type="Node2D" parent="."]
+position = Vector2(106, 74)
+rotation = -0.359647
+scale = Vector2(0.359637, 0.359637)
+script = ExtResource("8")
+full_texture = ExtResource("10_8xeit")
+short_knot = "bof_trophy_3"
+
+[node name="SFXPickup" type="AudioStreamPlayer" parent="Trophy3"]
+stream = ExtResource("14")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="SFXDrop" type="AudioStreamPlayer" parent="Trophy3"]
+stream = ExtResource("18")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="Trophy3"]
+position = Vector2(294.963, 210.309)
+rotation = 0.504446
+scale = Vector2(0.866973, 0.866973)
+script = ExtResource("7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Trophy3/Area2D"]
+position = Vector2(-372.771, -133.629)
+rotation = -0.504446
+scale = Vector2(1.15344, 1.15344)
+polygon = PackedVector2Array(12.3568, 44.8629, -14.3467, 64.5288, -20.234, 97.9628, 6.41223, 143.629, -1.17197, 163.8, -14.7371, 138.648, -40.6025, 130.408, -74.2188, 146.732, -83.755, 166.169, -79.065, 199.124, -55.7241, 210.128, -33.0132, 197.13, -3.6185, 170.307, 28.4153, 102.887, 18.2701, 74.5647, 32.9283, 59.2818, 36.6814, 47.325)
+
+[node name="PictureFrame1" type="Node2D" parent="."]
+position = Vector2(156, 29)
+rotation = -0.161066
+scale = Vector2(0.334163, 0.334163)
+script = ExtResource("8")
+full_texture = ExtResource("12")
+short_knot = "bof_picture_frame_1"
+
+[node name="SFXPickup" type="AudioStreamPlayer" parent="PictureFrame1"]
+stream = ExtResource("22")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="SFXDrop" type="AudioStreamPlayer" parent="PictureFrame1"]
+stream = ExtResource("17")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="PictureFrame1"]
+position = Vector2(124.844, 332.559)
+rotation = 0.305865
+scale = Vector2(0.933065, 0.933065)
+script = ExtResource("7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PictureFrame1/Area2D"]
+position = Vector2(-234.913, -299.583)
+rotation = -0.305865
+scale = Vector2(1.07174, 1.07174)
+polygon = PackedVector2Array(-20.0014, 403.009, -51.6821, 355.416, -24.6922, 338.579, -16.9393, 309.521, -4.16422, 305.533, 8.68518, 319.748, 127.5, 260.226, 145.223, 263.105, 163.574, 299.436, 161.655, 311.251, 138.653, 340.864, 49.7816, 384.029)
+
+[node name="PictureFrame2" type="Node2D" parent="."]
+position = Vector2(134, 148)
+rotation = 0.429237
+scale = Vector2(0.31629, 0.31629)
+script = ExtResource("8")
+full_texture = ExtResource("9")
+short_knot = "bof_picture_frame_2"
+
+[node name="SFXPickup" type="AudioStreamPlayer" parent="PictureFrame2"]
+stream = ExtResource("16")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="SFXDrop" type="AudioStreamPlayer" parent="PictureFrame2"]
+stream = ExtResource("19")
+volume_db = -14.667
+bus = &"SFX"
+
+[node name="Area2D" type="Area2D" parent="PictureFrame2"]
+position = Vector2(211.809, -152.578)
+rotation = -0.284438
+scale = Vector2(0.985791, 0.985791)
+script = ExtResource("7")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PictureFrame2/Area2D"]
+position = Vector2(-249.662, 88.2642)
+rotation = 0.284438
+scale = Vector2(1.01441, 1.01441)
+polygon = PackedVector2Array(-165.793, -362.232, -178.951, -390.98, -174.517, -396.487, -163.017, -401.75, 34.7174, -433.142, 51.823, -395.769, 44.0278, -374.815, -44.8494, -341.091, -118.379, -342.207, -146.398, -350.246)
+
+[node name="Pointer" parent="." instance=ExtResource("18_mfw08")]

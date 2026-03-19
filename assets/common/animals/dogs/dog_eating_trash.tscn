@@ -1,0 +1,99 @@
+[gd_scene load_steps=16 format=3 uid="uid://iiobcshjal2x"]
+
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1_ohe1d"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/04.tres" id="2_pff7r"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="3_5vww0"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/01.tres" id="4_3e83w"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/02.tres" id="5_0iods"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/03.tres" id="6_l6ilp"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/05.tres" id="7_gp6bx"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/06.tres" id="8_20xb4"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/07.tres" id="9_q821c"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/08.tres" id="10_3s76m"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/09.tres" id="11_w6p6p"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_eating_trash/10.tres" id="12_g0jti"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u4v61"]
+render_priority = 0
+shader = ExtResource("1_ohe1d")
+shader_parameter/scale = Vector3(1.5, 1, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("2_pff7r")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7ybfi"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_u4v61"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rfnk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_3e83w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_0iods")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_l6ilp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_pff7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_gp6bx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_20xb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_q821c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_3s76m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_w6p6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_g0jti")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="DogEatingTrash" type="Node3D"]
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0, 0, 0)
+custom_aabb = AABB(0, 0, 0, 1.5, 1, 0)
+mesh = SubResource("ArrayMesh_7ybfi")
+script = ExtResource("3_5vww0")
+texture_frames = SubResource("SpriteFrames_rfnk8")
+animation = "default"
+frame = 3
+alias = "AnimatedPaper3D"

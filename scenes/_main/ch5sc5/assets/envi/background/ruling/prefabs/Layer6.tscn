@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://b322ynciqbxnv"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dqdkcg6n7crn4" path="res://scenes/_main/ch5sc5/assets/envi/background/ruling/layer_6.png" id="3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mvh2v"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3m0mo"]
+_surfaces = [{
+"aabb": AABB(-2.395, -2.135, 0, 4.79001, 4.27, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("ShaderMaterial_mvh2v"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(174, 71, 25, 64, 215, 163, 8, 192, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 174, 71, 25, 192, 215, 163, 8, 192, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 174, 71, 25, 64, 215, 163, 8, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 174, 71, 25, 192, 215, 163, 8, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[node name="Layer6" type="MeshInstance3D"]
+transform = Transform3D(-0.98058, 0.196117, -1.48064e-07, 0.196117, 0.98058, 2.96129e-08, 1.50996e-07, 0, -1, 3.23775, 1.65131, 5.49253)
+mesh = SubResource("ArrayMesh_3m0mo")
+script = ExtResource("2")
+texture = ExtResource("3")
+centered = true
+metadata/mat_opaque = SubResource("ShaderMaterial_mvh2v")

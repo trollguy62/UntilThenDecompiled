@@ -1,0 +1,2833 @@
+[gd_scene load_steps=408 format=3 uid="uid://cl5i75c7vq7oi"]
+
+[ext_resource type="Script" path="res://components/Scene.gd" id="1_65wet"]
+[ext_resource type="Environment" uid="uid://dn6ppacrkm8d8" path="res://scenes/_main/ch5sc11/EnvironmentTheater.tres" id="4_h34yj"]
+[ext_resource type="BankAsset" uid="uid://d3563bw0y887o" path="res://addons/fmod/editor/resources/banks/{b1df801f-ae68-4878-bb1a-c8627a26a7b4}.tres" id="5_x5h6s"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="6_5ykum"]
+[ext_resource type="Script" path="res://components/audio/CommandAudioTrigger.gd" id="6_48dgt"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="8_fe86o"]
+[ext_resource type="Texture2D" uid="uid://idh8vr0pstsh" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_idle/01.tres" id="9_tmha0"]
+[ext_resource type="Texture2D" uid="uid://tpak57q7qno5" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_idle/01.tres" id="11_5tyah"]
+[ext_resource type="Texture2D" uid="uid://ca3obolmww5vj" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_idle/02.tres" id="12_leluh"]
+[ext_resource type="Texture2D" uid="uid://bs21g2571s3mn" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_idle/03.tres" id="13_cyd1n"]
+[ext_resource type="Texture2D" uid="uid://bh840lpntlc51" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_idle/04.tres" id="14_mn5gk"]
+[ext_resource type="Texture2D" uid="uid://dpri7fw7voy5y" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_idle/05.tres" id="15_b5bf5"]
+[ext_resource type="Texture2D" uid="uid://dsareo0e4kqee" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_idle/06.tres" id="16_3yjou"]
+[ext_resource type="Texture2D" uid="uid://chg2ij2g2d425" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_talk/01.tres" id="17_8w0mv"]
+[ext_resource type="Texture2D" uid="uid://dh3bip4lj2nm5" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_talk/02.tres" id="18_amm5o"]
+[ext_resource type="Texture2D" uid="uid://bh75w4qvpaqq4" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_talk/03.tres" id="19_nainj"]
+[ext_resource type="Texture2D" uid="uid://0eummvse1qk0" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_talk/04.tres" id="20_ratu0"]
+[ext_resource type="Texture2D" uid="uid://b45glee7x66rd" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_talk/05.tres" id="21_m30e1"]
+[ext_resource type="Texture2D" uid="uid://cxsfemji7i0ao" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_bothered_talk/06.tres" id="22_356lb"]
+[ext_resource type="Texture2D" uid="uid://wityod6edjae" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_idle/01.tres" id="23_254l2"]
+[ext_resource type="Texture2D" uid="uid://c600kf4xprx3s" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_idle/02.tres" id="24_k0fvf"]
+[ext_resource type="Texture2D" uid="uid://u1x2pdllumiv" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_idle/03.tres" id="25_qfmgl"]
+[ext_resource type="Texture2D" uid="uid://bjyle6bqog2m1" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_idle/04.tres" id="26_wmp2y"]
+[ext_resource type="Texture2D" uid="uid://dvgtdghrts1t1" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_idle/05.tres" id="27_7pxhj"]
+[ext_resource type="Texture2D" uid="uid://ceoptdwlfnv27" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_idle/06.tres" id="28_teich"]
+[ext_resource type="Texture2D" uid="uid://bk46mfgyu7yfl" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_talk/01.tres" id="29_5fukr"]
+[ext_resource type="Texture2D" uid="uid://nd4yvm03alw5" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_talk/02.tres" id="30_nf1eh"]
+[ext_resource type="Texture2D" uid="uid://cifxqyspbsuo3" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_talk/03.tres" id="31_j7x3i"]
+[ext_resource type="Texture2D" uid="uid://yts4rkhallnr" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_talk/04.tres" id="32_edign"]
+[ext_resource type="Texture2D" uid="uid://c8s831dw5opkt" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_talk/05.tres" id="33_1jves"]
+[ext_resource type="Script" path="res://components/ShotVisibilityController.gd" id="33_fp0go"]
+[ext_resource type="Texture2D" uid="uid://cog88wxi745tc" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_bothered_talk/06.tres" id="34_35vsp"]
+[ext_resource type="Texture2D" uid="uid://m8h8pfcyl5tj" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_idle/01.tres" id="35_3j3qp"]
+[ext_resource type="Texture2D" uid="uid://dra7n434vvoss" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_idle/02.tres" id="36_vscw0"]
+[ext_resource type="Texture2D" uid="uid://u20t0ntea02a" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_idle/03.tres" id="37_rlpei"]
+[ext_resource type="Texture2D" uid="uid://ckxighvqqdel5" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_idle/04.tres" id="38_ypi1i"]
+[ext_resource type="Texture2D" uid="uid://itxrjejjg3im" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_idle/05.tres" id="39_36ke3"]
+[ext_resource type="Texture2D" uid="uid://gewotci6owxb" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_idle/06.tres" id="40_f7one"]
+[ext_resource type="Texture2D" uid="uid://b1xpy2mcdlu0e" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_talk/01.tres" id="41_gr2bw"]
+[ext_resource type="Texture2D" uid="uid://dub5yg42jrrrn" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_talk/02.tres" id="42_us011"]
+[ext_resource type="Texture2D" uid="uid://cjnws22sqelr0" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_talk/03.tres" id="43_p8x07"]
+[ext_resource type="Texture2D" uid="uid://bwtfgp64x2a3o" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_talk/04.tres" id="44_vi1fx"]
+[ext_resource type="Texture2D" uid="uid://bmc0mnhwgq2i3" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_talk/05.tres" id="45_unjdh"]
+[ext_resource type="Texture2D" uid="uid://bu5hesxp5621e" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_bothered_talk/06.tres" id="46_pg4yy"]
+[ext_resource type="Texture2D" uid="uid://ss1gtqno8go0" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_idle/01.tres" id="47_ol58j"]
+[ext_resource type="Texture2D" uid="uid://gj4l41csabmu" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_idle/02.tres" id="48_jcj3u"]
+[ext_resource type="Texture2D" uid="uid://c8hm1e2xefo6x" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_idle/03.tres" id="49_j6dcq"]
+[ext_resource type="Texture2D" uid="uid://dd4weec8v3bat" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_idle/04.tres" id="50_dnqwj"]
+[ext_resource type="Texture2D" uid="uid://bsmbktjklxry8" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_idle/05.tres" id="51_xvqyp"]
+[ext_resource type="Texture2D" uid="uid://ds7yippy5dwa4" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_idle/06.tres" id="52_h7uuc"]
+[ext_resource type="Texture2D" uid="uid://c7i3vw30fety2" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_talk/01.tres" id="53_okvlk"]
+[ext_resource type="Texture2D" uid="uid://c5h0rh5b8kyf7" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_talk/02.tres" id="54_7mwmm"]
+[ext_resource type="Texture2D" uid="uid://djjsvu5ficpnn" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_talk/03.tres" id="55_2dukq"]
+[ext_resource type="Texture2D" uid="uid://cjixcyjwcgw5s" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_talk/04.tres" id="56_qs6tq"]
+[ext_resource type="Texture2D" uid="uid://byyveypw5nqiu" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_talk/05.tres" id="57_asww4"]
+[ext_resource type="Texture2D" uid="uid://mftulqjh4oy4" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_dazed_talk/06.tres" id="58_ywuh2"]
+[ext_resource type="Texture2D" uid="uid://dv6iwcblf5kkr" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_idle/01.tres" id="59_voo01"]
+[ext_resource type="Texture2D" uid="uid://bonma7gy8lq8h" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_idle/02.tres" id="60_027rw"]
+[ext_resource type="Texture2D" uid="uid://bjhqtvv6g3lmm" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_idle/03.tres" id="61_hrwbh"]
+[ext_resource type="Texture2D" uid="uid://d203phyu134rh" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_idle/04.tres" id="62_kvb06"]
+[ext_resource type="Texture2D" uid="uid://svps3wt6kea6" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_idle/05.tres" id="63_6n7xh"]
+[ext_resource type="Texture2D" uid="uid://bdb22l8a54xms" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_idle/06.tres" id="64_ysrpq"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="65_as48o"]
+[ext_resource type="Texture2D" uid="uid://c4recdkee0ia7" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_talk/01.tres" id="65_wmjnc"]
+[ext_resource type="Script" path="res://components/CameraEffects.gd" id="66_4l8eu"]
+[ext_resource type="Texture2D" uid="uid://d4d5bl6g42acn" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_talk/02.tres" id="66_pg8db"]
+[ext_resource type="Texture2D" uid="uid://chwtnr7n8vhgr" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_talk/03.tres" id="67_w8tud"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="68_6d37e"]
+[ext_resource type="Texture2D" uid="uid://dg02wt1dkb830" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_talk/04.tres" id="68_bca0u"]
+[ext_resource type="Texture2D" uid="uid://hdqeu35paiow" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_talk/05.tres" id="69_e308d"]
+[ext_resource type="Texture2D" uid="uid://bvbruacd0hnbv" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_dazed_talk/06.tres" id="70_dg7hr"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="70_fru4f"]
+[ext_resource type="Texture2D" uid="uid://c4jbvndbs0e85" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_idle/01.tres" id="71_si175"]
+[ext_resource type="Texture2D" uid="uid://b13m6nyp16saw" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_idle/02.tres" id="72_730um"]
+[ext_resource type="Texture2D" uid="uid://b646gb8fmyvkx" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_idle/03.tres" id="73_ipx3x"]
+[ext_resource type="Texture2D" uid="uid://7hp7r804w7k3" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_idle/04.tres" id="74_h0uoo"]
+[ext_resource type="Texture2D" uid="uid://ccjikmmiyk1eh" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_idle/05.tres" id="75_8pn42"]
+[ext_resource type="Texture2D" uid="uid://bxsax5yatuqly" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_idle/06.tres" id="76_h0xc8"]
+[ext_resource type="Texture2D" uid="uid://c46wcj4yv3i3" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_talk/01.tres" id="77_rvrfw"]
+[ext_resource type="Texture2D" uid="uid://b5a0o7cpeph7l" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_talk/02.tres" id="78_t56l2"]
+[ext_resource type="Texture2D" uid="uid://dchdvbw7hcbat" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_talk/03.tres" id="79_ne742"]
+[ext_resource type="Texture2D" uid="uid://bocvhbumy1a2j" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_talk/04.tres" id="80_tmy2q"]
+[ext_resource type="Texture2D" uid="uid://by6nd3whe2uao" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_talk/05.tres" id="81_tcnpc"]
+[ext_resource type="Texture2D" uid="uid://ddjhkqhld0kt3" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^df_default_talk/06.tres" id="82_io07d"]
+[ext_resource type="Texture2D" uid="uid://d227df7xhsq5m" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_idle/01.tres" id="83_h5x1d"]
+[ext_resource type="Texture2D" uid="uid://dqy1w2wal8tjv" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_idle/02.tres" id="84_fewbd"]
+[ext_resource type="Texture2D" uid="uid://d4n0mpcdcqh55" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_idle/03.tres" id="85_8d1ap"]
+[ext_resource type="Texture2D" uid="uid://dvthbh40xpxmm" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_idle/04.tres" id="86_0cijr"]
+[ext_resource type="Texture2D" uid="uid://tx0s8o5uim3i" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_idle/05.tres" id="87_xcus6"]
+[ext_resource type="Texture2D" uid="uid://bgnx2sefctqf7" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_idle/06.tres" id="88_y66te"]
+[ext_resource type="Texture2D" uid="uid://1qwluhro5i3b" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_talk/01.tres" id="89_51dw4"]
+[ext_resource type="Texture2D" uid="uid://v0gkcvtp1yab" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_talk/02.tres" id="90_cgs7y"]
+[ext_resource type="Texture2D" uid="uid://bpbi4y5fu2yq7" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_talk/03.tres" id="91_h441n"]
+[ext_resource type="Texture2D" uid="uid://ci0p65d14s43e" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_talk/04.tres" id="92_bpx04"]
+[ext_resource type="Texture2D" uid="uid://cn8apsgpbqpt6" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_talk/05.tres" id="93_5uweh"]
+[ext_resource type="Texture2D" uid="uid://bwiqd35fk0xfj" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_default_idle/01.png" id="93_kffbn"]
+[ext_resource type="Texture2D" uid="uid://chmssf8yy1rjg" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_default_idle/02.png" id="94_6sspc"]
+[ext_resource type="Texture2D" uid="uid://c10mqymqgom66" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_default_talk/06.tres" id="94_rh0tt"]
+[ext_resource type="Texture2D" uid="uid://buk4dasc7raha" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_idle/02.tres" id="95_b7v7i"]
+[ext_resource type="Texture2D" uid="uid://ckwfk5ig74a18" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_default_idle/03.png" id="95_kd4d8"]
+[ext_resource type="Texture2D" uid="uid://clbx7cv1ixxik" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_default_idle/04.png" id="96_dbopm"]
+[ext_resource type="Texture2D" uid="uid://dvt0msyxltdor" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_idle/03.tres" id="96_xm8oc"]
+[ext_resource type="Texture2D" uid="uid://ld0revb3l316" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_default_idle/05.png" id="97_4nky5"]
+[ext_resource type="Texture2D" uid="uid://bi7lb62xrht5k" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_idle/04.tres" id="97_qpfpm"]
+[ext_resource type="Texture2D" uid="uid://dfff0uwk7otfo" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_default_idle/06.png" id="98_fttws"]
+[ext_resource type="Texture2D" uid="uid://b2e2eiepai6vg" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_idle/05.tres" id="98_siod7"]
+[ext_resource type="Texture2D" uid="uid://o4en8ubtpfh5" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_default_idle/07.png" id="99_2opaw"]
+[ext_resource type="Texture2D" uid="uid://c8krqssxkw1t3" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_idle/06.tres" id="99_hfehk"]
+[ext_resource type="Texture2D" uid="uid://cvtgvx0xyfqbt" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_walk^lf_default_idle/08.png" id="100_21cel"]
+[ext_resource type="Texture2D" uid="uid://dw7437o143k0s" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_talk/01.tres" id="100_cswa4"]
+[ext_resource type="Texture2D" uid="uid://cqofke0sel616" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_talk/02.tres" id="101_eohkw"]
+[ext_resource type="Texture2D" uid="uid://bdiyan8y6jykb" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/01.png" id="101_xolxc"]
+[ext_resource type="Texture2D" uid="uid://iwuqxcaq0wvx" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/02.png" id="102_ouvsa"]
+[ext_resource type="Texture2D" uid="uid://dvel1kd1su8c4" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_talk/03.tres" id="102_pcgmu"]
+[ext_resource type="Texture2D" uid="uid://7ixxeijdux00" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/03.png" id="103_15ioq"]
+[ext_resource type="Texture2D" uid="uid://i0p0gvks2ou1" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_talk/04.tres" id="103_fqokg"]
+[ext_resource type="Texture2D" uid="uid://by8lkmgtgobg6" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_talk/05.tres" id="104_b3ykt"]
+[ext_resource type="Texture2D" uid="uid://d2eu7e8x873vq" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/04.png" id="104_hixvr"]
+[ext_resource type="Texture2D" uid="uid://bcggwhk5p8a6f" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_default_talk/06.tres" id="105_dlqje"]
+[ext_resource type="Texture2D" uid="uid://cyvu1ki2b8wfa" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/05.png" id="105_n2m4i"]
+[ext_resource type="Texture2D" uid="uid://igp3h77weld" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_idle/01.tres" id="106_di5s4"]
+[ext_resource type="Texture2D" uid="uid://dkd4vxlf4l1l8" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/06.png" id="106_kwi8w"]
+[ext_resource type="Texture2D" uid="uid://d23iucpgefevh" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_idle/02.tres" id="107_ch8ms"]
+[ext_resource type="Texture2D" uid="uid://dfo4anmespnsx" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_idle/03.tres" id="108_m670b"]
+[ext_resource type="Texture2D" uid="uid://bban4da3d4r6p" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_idle/04.tres" id="109_sf4f3"]
+[ext_resource type="Texture2D" uid="uid://dvbgltilxlu67" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_idle/05.tres" id="110_sr0yr"]
+[ext_resource type="Texture2D" uid="uid://cu2c06ivm2srn" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_idle/06.tres" id="111_jysgp"]
+[ext_resource type="Texture2D" uid="uid://cj81tqljwbuwx" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_talk/01.tres" id="112_coseb"]
+[ext_resource type="Texture2D" uid="uid://phfkkblc4hiv" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_talk/02.tres" id="113_qi1c3"]
+[ext_resource type="Texture2D" uid="uid://lsg722162gok" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_talk/03.tres" id="114_cixk8"]
+[ext_resource type="Texture2D" uid="uid://b5ifmdno7l8b3" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_talk/04.tres" id="115_jy0q0"]
+[ext_resource type="Texture2D" uid="uid://4u74dhlovq5x" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_talk/05.tres" id="116_fbiv3"]
+[ext_resource type="Texture2D" uid="uid://cpktvav4ykwb" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^rf_frown_talk/06.tres" id="117_2mss4"]
+[ext_resource type="Texture2D" uid="uid://b0yux4ej3osqy" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_idle/01.tres" id="118_n1xhg"]
+[ext_resource type="Texture2D" uid="uid://wr5xnspiim5y" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_idle/02.tres" id="119_2tdxs"]
+[ext_resource type="Texture2D" uid="uid://buvdo7xsi8oos" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_idle/03.tres" id="120_ckdme"]
+[ext_resource type="Texture2D" uid="uid://bxgk5i2i288st" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_idle/04.tres" id="121_rg165"]
+[ext_resource type="Texture2D" uid="uid://e3rr2btuvcuf" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_idle/05.tres" id="122_umbmn"]
+[ext_resource type="Texture2D" uid="uid://docpn47hxs86i" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_idle/06.tres" id="123_a7nyx"]
+[ext_resource type="Texture2D" uid="uid://06r6pa5d87k8" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_talk/01.tres" id="124_ygwuu"]
+[ext_resource type="Texture2D" uid="uid://bq60aqowog6an" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_talk/02.tres" id="125_813kk"]
+[ext_resource type="Texture2D" uid="uid://nq6eencijxws" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_talk/03.tres" id="126_1gei2"]
+[ext_resource type="Texture2D" uid="uid://bwe8p20hfa6gh" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_talk/04.tres" id="127_emr15"]
+[ext_resource type="Texture2D" uid="uid://eh85jpw2a1pd" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_talk/05.tres" id="128_5h4j4"]
+[ext_resource type="Texture2D" uid="uid://bffricy85bm5u" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/f_sit^f_frown_talk/06.tres" id="129_v8nxo"]
+[ext_resource type="Texture2D" uid="uid://d3csq718gr36k" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^b_default_idle/01.tres" id="132_30wq5"]
+[ext_resource type="Texture2D" uid="uid://cp6v3nyxqqr7x" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^lb_default_idle/01.tres" id="133_ah5r7"]
+[ext_resource type="Texture2D" uid="uid://qcqn8h7ru7ak" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^lb_default_idle/02.tres" id="134_ps5uv"]
+[ext_resource type="Texture2D" uid="uid://bhl84rhfkwenf" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^lb_default_idle/03.tres" id="135_sh0e0"]
+[ext_resource type="Texture2D" uid="uid://dxq8ao3ealfve" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^lb_default_idle/04.tres" id="136_7xa1s"]
+[ext_resource type="Texture2D" uid="uid://cjvcet10q4btf" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^lb_default_idle/05.tres" id="137_6qoo0"]
+[ext_resource type="Texture2D" uid="uid://crt5jv7xnv1sx" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^lb_default_idle/06.tres" id="138_r7nny"]
+[ext_resource type="Texture2D" uid="uid://b3ei643lhg6j4" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^b_default_idle/02.tres" id="139_tv46n"]
+[ext_resource type="Texture2D" uid="uid://q5mjuypkq3y0" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^b_default_idle/03.tres" id="140_kt8nb"]
+[ext_resource type="Texture2D" uid="uid://c7f3qp0m6g5gp" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^b_default_idle/04.tres" id="141_wek5i"]
+[ext_resource type="Texture2D" uid="uid://cf4hmoirkc215" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^b_default_idle/05.tres" id="142_31qie"]
+[ext_resource type="Texture2D" uid="uid://c1sxdgn8vfw47" path="res://scenes/_main/ch10sc11c/assets/characters/MarkBorja/b_sit^b_default_idle/06.tres" id="143_spyer"]
+[ext_resource type="Texture2D" uid="uid://c37t4xom8vk3m" path="res://scenes/_main/ch10sc11c/assets/C2D/cathy_idle/01.png" id="148_3iwof"]
+[ext_resource type="Texture2D" uid="uid://bjscwq8at0ya6" path="res://scenes/_main/ch10sc11c/assets/C2D/cathy_talk/01.png" id="149_l2scu"]
+[ext_resource type="Texture2D" uid="uid://dnv83fkkj7ong" path="res://scenes/_main/ch10sc11c/assets/C2D/cathy_talk/02.png" id="150_c16ta"]
+[ext_resource type="Texture2D" uid="uid://xuxe3qwbnoh4" path="res://scenes/_main/ch10sc11c/assets/C2D/cathy_talk/03.png" id="151_kja16"]
+[ext_resource type="Texture2D" uid="uid://omb8clqs4178" path="res://scenes/_main/ch10sc11c/assets/C2D/cathy_talk/04.png" id="152_agaex"]
+[ext_resource type="Script" path="res://scenes/_main/ch10sc11c/scripts/Film.gd" id="155_df2hs"]
+[ext_resource type="Script" path="res://components/Skit/SkitContainer.gd" id="162_iiu17"]
+[ext_resource type="Script" path="res://components/Skit/SkitExternalRef.gd" id="163_t5qqm"]
+[ext_resource type="Texture2D" uid="uid://c51slf570b4oy" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_idle/01.tres" id="164_iou3m"]
+[ext_resource type="Texture2D" uid="uid://b76la0t6l2eq6" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_idle/01.tres" id="165_vrf8x"]
+[ext_resource type="Texture2D" uid="uid://dmnh1c1yyf5t5" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_idle/02.tres" id="166_plyqm"]
+[ext_resource type="Texture2D" uid="uid://bqt3ijjojkngn" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_idle/03.tres" id="167_v5qna"]
+[ext_resource type="Texture2D" uid="uid://cqrt3dj50se8t" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_idle/04.tres" id="168_glukr"]
+[ext_resource type="Texture2D" uid="uid://fyp0id5uk8vd" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_idle/05.tres" id="169_0nid8"]
+[ext_resource type="Texture2D" uid="uid://bop2p5bhaia2k" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_idle/06.tres" id="170_7e8kv"]
+[ext_resource type="Texture2D" uid="uid://dvutcgvrcw3t4" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_talk/01.tres" id="171_yc1vp"]
+[ext_resource type="Texture2D" uid="uid://etj6ayncxhq6" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_talk/02.tres" id="172_6tyvr"]
+[ext_resource type="Texture2D" uid="uid://12rygvna6tl6" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_talk/03.tres" id="173_fwcji"]
+[ext_resource type="Texture2D" uid="uid://u46vk5qvby8" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_talk/04.tres" id="174_awuhs"]
+[ext_resource type="Texture2D" uid="uid://bjt2vbjvoqap0" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_talk/05.tres" id="175_wrtuh"]
+[ext_resource type="Texture2D" uid="uid://21psnavuemqp" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_angry_talk/06.tres" id="176_novuf"]
+[ext_resource type="Texture2D" uid="uid://crnpebjtg33aj" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_idle/01.tres" id="177_fylsq"]
+[ext_resource type="Texture2D" uid="uid://dc0k3ted5arpk" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_idle/02.tres" id="178_o1xfb"]
+[ext_resource type="Texture2D" uid="uid://c5rgo163p1yo6" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_idle/03.tres" id="179_qigd8"]
+[ext_resource type="Texture2D" uid="uid://c4bji6ik4glif" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_idle/04.tres" id="180_8gg7f"]
+[ext_resource type="Texture2D" uid="uid://52g18fly64q4" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_idle/05.tres" id="181_m7ro0"]
+[ext_resource type="Texture2D" uid="uid://fv20k2iskvai" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_idle/06.tres" id="182_xhakj"]
+[ext_resource type="Texture2D" uid="uid://bqtkoc61ekne0" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_talk/01.tres" id="183_l0pac"]
+[ext_resource type="Texture2D" uid="uid://bhlpedlihk86h" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_talk/02.tres" id="184_4msfh"]
+[ext_resource type="Texture2D" uid="uid://cml1nvdae4x2m" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_talk/03.tres" id="185_hwl3b"]
+[ext_resource type="Texture2D" uid="uid://bpif5fkgoic24" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_talk/04.tres" id="186_b5hog"]
+[ext_resource type="Texture2D" uid="uid://crgo4cqfor1g2" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_talk/05.tres" id="187_p0t53"]
+[ext_resource type="Texture2D" uid="uid://xfhndqci25x2" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_angry_talk/06.tres" id="188_o06xd"]
+[ext_resource type="Texture2D" uid="uid://32qtfxcbp06u" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_idle/01.tres" id="189_g6fi5"]
+[ext_resource type="Texture2D" uid="uid://d4f4dnijwq3ib" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_idle/02.tres" id="190_plqfn"]
+[ext_resource type="Texture2D" uid="uid://ohe4fbsd7gpw" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_idle/03.tres" id="191_6bjrk"]
+[ext_resource type="Texture2D" uid="uid://4tamdaqcfoc" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_idle/04.tres" id="192_friy7"]
+[ext_resource type="Texture2D" uid="uid://dqnj17antwbmi" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_idle/05.tres" id="193_g3k3b"]
+[ext_resource type="Texture2D" uid="uid://ba02lh84ma0km" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_idle/06.tres" id="194_sqxsm"]
+[ext_resource type="Texture2D" uid="uid://c4i0dscsul3ip" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_talk/01.tres" id="195_hvec5"]
+[ext_resource type="Texture2D" uid="uid://bpjsmagx107cq" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_talk/02.tres" id="196_s0uhc"]
+[ext_resource type="Texture2D" uid="uid://dkh1jjxypppuy" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_talk/03.tres" id="197_xxevw"]
+[ext_resource type="Texture2D" uid="uid://dbgttccg0l2fw" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_talk/04.tres" id="198_63ein"]
+[ext_resource type="Texture2D" uid="uid://d1dxhwbykiyvi" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_talk/05.tres" id="199_b03n2"]
+[ext_resource type="Texture2D" uid="uid://nqbvju2yfqf1" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_concerned_talk/06.tres" id="200_omcxg"]
+[ext_resource type="Texture2D" uid="uid://bt6b0qo6l1dcn" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_idle/01.tres" id="201_47fd1"]
+[ext_resource type="Texture2D" uid="uid://b2j8nsnv2ole2" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_idle/02.tres" id="202_1c3yb"]
+[ext_resource type="Texture2D" uid="uid://cwr14vnts7s7k" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_idle/03.tres" id="203_nrvja"]
+[ext_resource type="Texture2D" uid="uid://mh2pjr7ecfca" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_idle/04.tres" id="204_dry6n"]
+[ext_resource type="Texture2D" uid="uid://bv1201jtkdolg" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_idle/05.tres" id="205_3smuv"]
+[ext_resource type="Texture2D" uid="uid://b4fjj3qi51ax4" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_idle/06.tres" id="206_5gpl4"]
+[ext_resource type="Texture2D" uid="uid://cc7jxtgu5lvkj" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_talk/01.tres" id="207_p485b"]
+[ext_resource type="Texture2D" uid="uid://cxwpmui3qxr5l" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_talk/02.tres" id="208_53dk7"]
+[ext_resource type="Texture2D" uid="uid://di2gqyovx8fwc" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_talk/03.tres" id="209_w00xt"]
+[ext_resource type="Texture2D" uid="uid://58xiks8l45nc" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_talk/04.tres" id="210_x4dok"]
+[ext_resource type="Texture2D" uid="uid://d1lli15ukw5rd" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_talk/05.tres" id="211_xcdim"]
+[ext_resource type="Texture2D" uid="uid://ci47vqld6acsg" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_concerned_talk/06.tres" id="212_bg7ou"]
+[ext_resource type="Texture2D" uid="uid://be7b2igt3m8v5" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_idle/01.tres" id="213_6xky2"]
+[ext_resource type="Texture2D" uid="uid://ycpfmavaunw4" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_idle/02.tres" id="214_osr5j"]
+[ext_resource type="Texture2D" uid="uid://v70xyba6203q" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_idle/03.tres" id="215_nwgk6"]
+[ext_resource type="Texture2D" uid="uid://b537rw7hmkf1n" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_idle/04.tres" id="216_wi6ye"]
+[ext_resource type="Texture2D" uid="uid://cays4jcg57xnq" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_idle/05.tres" id="217_ria6y"]
+[ext_resource type="Texture2D" uid="uid://ctwjm5vchjhm1" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_idle/06.tres" id="218_excji"]
+[ext_resource type="Texture2D" uid="uid://dngxh078xan8x" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_talk/01.tres" id="219_h276i"]
+[ext_resource type="Texture2D" uid="uid://cvo6k6r0y2bmb" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_talk/02.tres" id="220_2dqcd"]
+[ext_resource type="Texture2D" uid="uid://bdedymw13cp74" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_talk/03.tres" id="221_hwibi"]
+[ext_resource type="Texture2D" uid="uid://by7lqppek8wsm" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_talk/04.tres" id="222_fxamr"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="222_plxvk"]
+[ext_resource type="Texture2D" uid="uid://bqee7rduqx167" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_talk/05.tres" id="223_374ho"]
+[ext_resource type="Texture2D" uid="uid://cq6ttb8jssl1q" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_concerned_talk/06.tres" id="224_gwp5e"]
+[ext_resource type="Texture2D" uid="uid://dxr7u1ctb3xrc" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_idle/01.tres" id="225_ipxyq"]
+[ext_resource type="Texture2D" uid="uid://dj1mlxpqrmvoh" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_idle/02.tres" id="226_kgyva"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="226_mhuys"]
+[ext_resource type="Texture2D" uid="uid://hqxc416pvlie" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_idle/03.tres" id="227_wxu5l"]
+[ext_resource type="Texture2D" uid="uid://ju7wpr7npv0p" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_idle/04.tres" id="228_vyood"]
+[ext_resource type="Texture2D" uid="uid://7ujofvja1s8v" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_idle/05.tres" id="229_fjhde"]
+[ext_resource type="Texture2D" uid="uid://cckcyjmcipbo4" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_idle/06.tres" id="230_d8luj"]
+[ext_resource type="Texture2D" uid="uid://cxtrtg15hjr0f" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_talk/01.tres" id="231_hrtf1"]
+[ext_resource type="Texture2D" uid="uid://bbdns33ioiip6" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_talk/02.tres" id="232_amnu8"]
+[ext_resource type="Texture2D" uid="uid://cg74q6koc4mep" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_talk/03.tres" id="233_kccra"]
+[ext_resource type="Texture2D" uid="uid://cspbkgbl2dnh6" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_talk/04.tres" id="234_reg63"]
+[ext_resource type="Texture2D" uid="uid://dw54xdou2d522" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_talk/05.tres" id="235_rofyv"]
+[ext_resource type="Texture2D" uid="uid://3050eq6kjcp3" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_frown_talk/06.tres" id="236_ikn01"]
+[ext_resource type="Texture2D" uid="uid://d3tqcpj6jwxpx" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_idle/01.tres" id="237_p41jh"]
+[ext_resource type="Texture2D" uid="uid://bvej3elu3v6fw" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_idle/02.tres" id="238_ul85t"]
+[ext_resource type="Texture2D" uid="uid://c3tgxobkpyr6y" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_idle/03.tres" id="239_ufqi8"]
+[ext_resource type="Texture2D" uid="uid://bs6dejfvqxpv2" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_idle/04.tres" id="240_eaytq"]
+[ext_resource type="Texture2D" uid="uid://de71gj6cbo4q3" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_idle/05.tres" id="241_8yaxi"]
+[ext_resource type="Texture2D" uid="uid://ds2d1nh2vytd2" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_idle/06.tres" id="242_cwlkd"]
+[ext_resource type="Texture2D" uid="uid://bkjrsffapk102" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_talk/01.tres" id="243_653lr"]
+[ext_resource type="Texture2D" uid="uid://dgyuwuqfqfu21" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_talk/02.tres" id="244_v34ga"]
+[ext_resource type="Texture2D" uid="uid://qlnk8jrkubk1" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_talk/03.tres" id="245_cxdky"]
+[ext_resource type="Texture2D" uid="uid://bvtd8g34kau8w" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_talk/04.tres" id="246_1gg5r"]
+[ext_resource type="Texture2D" uid="uid://c853mngoie7gg" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_talk/05.tres" id="247_tbrc2"]
+[ext_resource type="Texture2D" uid="uid://de05j2ib0uk1x" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_frown_talk/06.tres" id="248_xknjj"]
+[ext_resource type="Texture2D" uid="uid://w3knsu25y270" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_idle/01.tres" id="249_u4rjn"]
+[ext_resource type="Texture2D" uid="uid://q2i33bp8v3rm" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_idle/02.tres" id="250_57qwp"]
+[ext_resource type="Texture2D" uid="uid://bx7bstyvbc78i" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_idle/03.tres" id="251_srnu8"]
+[ext_resource type="Texture2D" uid="uid://dbfiw1uumurd5" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_idle/04.tres" id="252_0sock"]
+[ext_resource type="Texture2D" uid="uid://byepvfak7ppit" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_idle/05.tres" id="253_6vb2i"]
+[ext_resource type="Texture2D" uid="uid://day23vng28hq3" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_idle/06.tres" id="254_ipjxh"]
+[ext_resource type="Texture2D" uid="uid://d1qq374r3dvr8" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_talk/01.tres" id="255_yoihx"]
+[ext_resource type="Texture2D" uid="uid://cyo0gmlbn3t08" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_talk/02.tres" id="256_ef78i"]
+[ext_resource type="Texture2D" uid="uid://vlkj3eyk5kjk" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_talk/03.tres" id="257_lw34v"]
+[ext_resource type="Texture2D" uid="uid://bmovmqqxg3yoh" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_talk/04.tres" id="258_nt3l8"]
+[ext_resource type="Texture2D" uid="uid://dpjd3cylfeyex" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_talk/05.tres" id="259_jsj1o"]
+[ext_resource type="Texture2D" uid="uid://1oj3ydaxrxck" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^df_neutral_talk/06.tres" id="260_a5ppl"]
+[ext_resource type="Texture2D" uid="uid://i3bvwfrleoni" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_idle/01.tres" id="261_4lri2"]
+[ext_resource type="Texture2D" uid="uid://d0i3xlwqh3xhl" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_idle/02.tres" id="262_2358c"]
+[ext_resource type="Texture2D" uid="uid://ch1xkj867sh0i" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_idle/03.tres" id="263_6u2um"]
+[ext_resource type="Texture2D" uid="uid://d0odiet05lbj7" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_idle/04.tres" id="264_sfq4l"]
+[ext_resource type="Texture2D" uid="uid://dttuy3m7bcxe6" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_idle/05.tres" id="265_ixbj8"]
+[ext_resource type="Texture2D" uid="uid://drdb1xp3f146e" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_idle/06.tres" id="266_ckiyp"]
+[ext_resource type="Texture2D" uid="uid://bwk0r07ig805f" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_talk/01.tres" id="267_yg42c"]
+[ext_resource type="Texture2D" uid="uid://d4mj732ojrbk8" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_talk/02.tres" id="268_uecvp"]
+[ext_resource type="Texture2D" uid="uid://bjocnxtf08ol7" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_talk/03.tres" id="269_xkcfa"]
+[ext_resource type="Texture2D" uid="uid://bb1vvkftpg6ta" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_talk/04.tres" id="270_4g6yf"]
+[ext_resource type="Texture2D" uid="uid://c1uvp58m7wouv" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_talk/05.tres" id="271_4ra3b"]
+[ext_resource type="Texture2D" uid="uid://cwn7ux8htxy2x" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^lf_neutral_talk/06.tres" id="272_fd7ij"]
+[ext_resource type="Texture2D" uid="uid://6ale1id2gqi8" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_idle/02.tres" id="273_c5jhs"]
+[ext_resource type="Texture2D" uid="uid://rq8sr8trb73k" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_idle/03.tres" id="274_i0m4k"]
+[ext_resource type="Texture2D" uid="uid://46i0va80etfj" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_idle/04.tres" id="275_xlo33"]
+[ext_resource type="Texture2D" uid="uid://bxqa4pvekd0o7" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_idle/05.tres" id="276_fsier"]
+[ext_resource type="Texture2D" uid="uid://dnk34rpvvo06l" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_idle/06.tres" id="277_di413"]
+[ext_resource type="Texture2D" uid="uid://3cxdtb2jllcn" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_talk/01.tres" id="278_l6bwp"]
+[ext_resource type="Texture2D" uid="uid://bobfc3q7j5cg3" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_talk/02.tres" id="279_1n03q"]
+[ext_resource type="Texture2D" uid="uid://bj2g66uypjttv" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_talk/03.tres" id="280_u815d"]
+[ext_resource type="Texture2D" uid="uid://ddm7batxkuw8p" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_talk/04.tres" id="281_pxgri"]
+[ext_resource type="Texture2D" uid="uid://835i6ooc48c1" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_talk/05.tres" id="282_1j76j"]
+[ext_resource type="Texture2D" uid="uid://mk2rpjmdlpwc" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/f_sit^f_neutral_talk/06.tres" id="283_8v1tc"]
+[ext_resource type="Texture2D" uid="uid://cnjxtoawwkg3s" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^b_default_idle/01.tres" id="284_g5qu3"]
+[ext_resource type="Texture2D" uid="uid://ckuijf04uvbyw" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^rb_default_idle/01.tres" id="285_wvcpy"]
+[ext_resource type="Texture2D" uid="uid://b6lyutp70wmyd" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^b_default_idle/02.tres" id="286_6v33l"]
+[ext_resource type="Texture2D" uid="uid://4bwvqrh1k4r1" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^rb_default_idle/02.tres" id="286_uml0y"]
+[ext_resource type="Texture2D" uid="uid://coq2neqyku66v" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^b_default_idle/03.tres" id="287_s31pm"]
+[ext_resource type="Texture2D" uid="uid://yabv52ikxauf" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^rb_default_idle/03.tres" id="287_uglr5"]
+[ext_resource type="Texture2D" uid="uid://c20i0j15cnp5m" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^rb_default_idle/04.tres" id="288_7e34j"]
+[ext_resource type="Texture2D" uid="uid://0y74t3noa3dd" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^b_default_idle/04.tres" id="288_m5taa"]
+[ext_resource type="Texture2D" uid="uid://w0e1lf6151k1" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^rb_default_idle/05.tres" id="289_8311p"]
+[ext_resource type="Texture2D" uid="uid://dbeu801cqwng5" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^b_default_idle/05.tres" id="289_kgd07"]
+[ext_resource type="Texture2D" uid="uid://qh814mftrump" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^b_default_idle/06.tres" id="290_ckqi2"]
+[ext_resource type="Texture2D" uid="uid://c3xfdi2qyvj8q" path="res://scenes/_main/ch10sc11c/assets/characters/RidelGonzales/b_sit^rb_default_idle/06.tres" id="290_j1h03"]
+[ext_resource type="Texture2D" uid="uid://cyc7ydg1jfwil" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/b_sit^b_default_idle/01.tres" id="305_3q201"]
+[ext_resource type="Texture2D" uid="uid://fbbjdwwn8dfk" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/b_sit^b_default_idle/02.tres" id="306_wbabm"]
+[ext_resource type="Texture2D" uid="uid://d0nwrfomcxmoj" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/b_sit^b_default_idle/03.tres" id="307_d8y7n"]
+[ext_resource type="Texture2D" uid="uid://dob1om4i7e4on" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/b_sit^b_default_idle/04.tres" id="308_pw64w"]
+[ext_resource type="Texture2D" uid="uid://bmooeu6tbxrho" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/b_sit^b_default_idle/05.tres" id="309_efi2h"]
+[ext_resource type="Texture2D" uid="uid://dpo234lwastkn" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/b_sit^b_default_idle/06.tres" id="310_jcmjd"]
+[ext_resource type="Texture2D" uid="uid://b53s8bu07go60" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_idle/01.tres" id="311_7pvgy"]
+[ext_resource type="Texture2D" uid="uid://cebdvstppfovf" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_idle/01.tres" id="312_p6b3c"]
+[ext_resource type="Texture2D" uid="uid://cbmsgf1j04xgv" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_idle/02.tres" id="313_sptwu"]
+[ext_resource type="Texture2D" uid="uid://cmg2uwmjnjgvs" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_idle/03.tres" id="314_88ntc"]
+[ext_resource type="Texture2D" uid="uid://d32ic5h3b6g8f" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_idle/04.tres" id="315_e2pxb"]
+[ext_resource type="Texture2D" uid="uid://dq0tcqhq4g6tv" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_idle/05.tres" id="316_ritov"]
+[ext_resource type="Texture2D" uid="uid://fnfidt3gi4ne" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_idle/06.tres" id="317_16np8"]
+[ext_resource type="Texture2D" uid="uid://dp1hyrnxun3rh" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_talk/01.tres" id="318_55ida"]
+[ext_resource type="Texture2D" uid="uid://cl3mgmfr78eqd" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_talk/02.tres" id="319_4xjid"]
+[ext_resource type="Texture2D" uid="uid://brh37482s30c" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_talk/03.tres" id="320_nh22e"]
+[ext_resource type="Texture2D" uid="uid://cahj4secvfg76" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_talk/04.tres" id="321_7kjon"]
+[ext_resource type="Texture2D" uid="uid://dqkxpprdh3p0d" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_talk/05.tres" id="322_k3yf5"]
+[ext_resource type="Texture2D" uid="uid://cxp20ephpp3vn" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_neutral_talk/06.tres" id="323_04lti"]
+[ext_resource type="Texture2D" uid="uid://dk7nd6ln8lg3v" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_idle/02.tres" id="324_r42cf"]
+[ext_resource type="Texture2D" uid="uid://dnbvh27o2krap" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_idle/03.tres" id="325_1lt0r"]
+[ext_resource type="Texture2D" uid="uid://i86yp4w7jjoi" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_idle/04.tres" id="326_5s8oq"]
+[ext_resource type="Texture2D" uid="uid://cesh2xtxw6h1t" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_idle/05.tres" id="327_vk2io"]
+[ext_resource type="Texture2D" uid="uid://b5ncgk3kjsrso" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_idle/06.tres" id="328_cfre7"]
+[ext_resource type="Texture2D" uid="uid://c7e0j2jw5legg" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_talk/01.tres" id="329_8gcvm"]
+[ext_resource type="Texture2D" uid="uid://3xw7o6b8h77" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_talk/02.tres" id="330_frq8j"]
+[ext_resource type="Texture2D" uid="uid://d7u2d5lou4bu" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_talk/03.tres" id="331_ryobo"]
+[ext_resource type="Texture2D" uid="uid://di6jprq46b5he" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_talk/04.tres" id="332_1by25"]
+[ext_resource type="Texture2D" uid="uid://b8rtgda7docd4" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_talk/05.tres" id="333_kh2au"]
+[ext_resource type="Texture2D" uid="uid://dvtki2g2w18fa" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_neutral_talk/06.tres" id="334_to0op"]
+[ext_resource type="Texture2D" uid="uid://dr8v57mj5x8g" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_idle/01.tres" id="335_frgip"]
+[ext_resource type="Texture2D" uid="uid://cx1skh28k1kaf" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_idle/02.tres" id="336_cn12f"]
+[ext_resource type="Texture2D" uid="uid://dcbwc548x47co" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_idle/03.tres" id="337_ex6al"]
+[ext_resource type="Texture2D" uid="uid://cs2bblstg7qpq" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_idle/04.tres" id="338_unr4g"]
+[ext_resource type="Texture2D" uid="uid://cousolk8t00q3" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_idle/05.tres" id="339_fy5pr"]
+[ext_resource type="Texture2D" uid="uid://fefrjmib26c6" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_idle/06.tres" id="340_q5id3"]
+[ext_resource type="Texture2D" uid="uid://cgpgcka0npbeg" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_talk/01.tres" id="341_vv5bc"]
+[ext_resource type="Texture2D" uid="uid://c32aj2e7dk27a" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_talk/02.tres" id="342_jfh4y"]
+[ext_resource type="Texture2D" uid="uid://bh6lwvdttrgb8" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_talk/03.tres" id="343_yyqba"]
+[ext_resource type="Texture2D" uid="uid://clsp5lic1yqvo" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_talk/04.tres" id="344_bwpdy"]
+[ext_resource type="Texture2D" uid="uid://d23rf0j2oeg0o" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_talk/05.tres" id="345_bw13a"]
+[ext_resource type="Texture2D" uid="uid://5v6fwy8phhcj" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^df_serious_talk/06.tres" id="346_j14pv"]
+[ext_resource type="Texture2D" uid="uid://dn4oxg7dc6y7d" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_idle/01.tres" id="347_y6af3"]
+[ext_resource type="Texture2D" uid="uid://s50swoscosgh" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_idle/02.tres" id="348_qq7n4"]
+[ext_resource type="Texture2D" uid="uid://bjsoujelfoj6t" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_idle/03.tres" id="349_q2oca"]
+[ext_resource type="Texture2D" uid="uid://b8a2fogcgg02g" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_idle/04.tres" id="350_1qb5s"]
+[ext_resource type="Texture2D" uid="uid://bbx8bpfih1ngl" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_idle/05.tres" id="351_go7y8"]
+[ext_resource type="Texture2D" uid="uid://jiqde1017qg1" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_idle/06.tres" id="352_5ooq1"]
+[ext_resource type="Texture2D" uid="uid://dh4x7bh3qhp20" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_talk/01.tres" id="353_s0ycn"]
+[ext_resource type="Texture2D" uid="uid://dxoco0exj3oru" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_talk/02.tres" id="354_crqtd"]
+[ext_resource type="Texture2D" uid="uid://c1tabanu6oxwa" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_talk/03.tres" id="355_mnpmv"]
+[ext_resource type="Texture2D" uid="uid://dp61pa6mh8ih4" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_talk/04.tres" id="356_n64f2"]
+[ext_resource type="Texture2D" uid="uid://fvm36poy0pkd" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_talk/05.tres" id="357_u5x7c"]
+[ext_resource type="Texture2D" uid="uid://bxns0rk2sbckg" path="res://scenes/_main/ch10sc11c/assets/characters/AndrewPortillo/f_sit^f_serious_talk/06.tres" id="358_3bkpa"]
+[ext_resource type="VoxelGIData" uid="uid://7jp36dyaexqm" path="res://scenes/_main/ch5sc11/GIProbeDataMiniTheater.res" id="485_4p4ho"]
+[ext_resource type="PackedScene" uid="uid://dg2s5chxo6eg5" path="res://scenes/mini_theater/Scene.tscn" id="486_c5fm8"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc11/scripts/MovieScreen.gd" id="487_8fhlx"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc11/scripts/MovieCredits.gd" id="490_lu0ja"]
+[ext_resource type="PackedScene" uid="uid://bhs6xkx6s6t84" path="res://scenes/_main/ch5sc11/assets/prefabs/CreditLine.tscn" id="491_58ywn"]
+[ext_resource type="EventAsset" uid="uid://bjxt6hrp357mj" path="res://addons/fmod/editor/resources/events/{a9502b69-b47f-4c55-8945-ee69283e5bf1}.tres" id="552_ei6xr"]
+[ext_resource type="EventAsset" uid="uid://dt7ib4tqayucu" path="res://addons/fmod/editor/resources/events/{f20f69b9-5cef-4e4d-87de-dcdcc3da3591}.tres" id="565_ib7ir"]
+[ext_resource type="EventAsset" uid="uid://def00c2pyw4wi" path="res://addons/fmod/editor/resources/events/{77852918-f02e-4ece-8457-16a5cb4bc99c}.tres" id="566_b4jh7"]
+[ext_resource type="Script" path="res://components/SceneManager.gd" id="567_6vgli"]
+[ext_resource type="Script" path="res://components/DialogueHandler.gd" id="569_0k0fa"]
+[ext_resource type="Script" path="res://components/InteractiveAreaHandler.gd" id="570_iujfu"]
+[ext_resource type="Script" path="res://components/PlayerTarget.gd" id="571_5o0ec"]
+[ext_resource type="PackedScene" uid="uid://da0ppgkx2d538" path="res://components/Vignette.tscn" id="572_yrj06"]
+[ext_resource type="PackedScene" uid="uid://e3hu5waf2v3u" path="res://components/ThoughtBubble/ThoughtBubble.tscn" id="573_yqxl1"]
+[ext_resource type="PackedScene" uid="uid://chdnp28a5y0ad" path="res://components/Presenter/Presenter.tscn" id="574_r16th"]
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_op2a3"]
+
+[sub_resource type="EventAsset" id="EventAsset_moi6e"]
+is_3d = true
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/Ch5/Sc11/TheaterDoor"
+guid = "{a2d9ff0f-836c-4516-ae36-228d003cfbf7}"
+name = "TheaterDoor"
+
+[sub_resource type="ShaderMaterial" id="1138"]
+render_priority = 0
+shader = ExtResource("68_6d37e")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("83_h5x1d")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yca5b"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1138"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o4tk8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_5tyah")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_leluh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_cyd1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_mn5gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_b5bf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_3yjou")
+}],
+"loop": true,
+"name": &"bothered=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_8w0mv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_amm5o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_nainj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ratu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m30e1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_356lb")
+}],
+"loop": true,
+"name": &"bothered=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_254l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_k0fvf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_qfmgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wmp2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_7pxhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_teich")
+}],
+"loop": true,
+"name": &"bothered=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("29_5fukr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_nf1eh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_j7x3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_edign")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_1jves")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_35vsp")
+}],
+"loop": true,
+"name": &"bothered=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_3j3qp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vscw0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_rlpei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ypi1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_36ke3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_f7one")
+}],
+"loop": true,
+"name": &"bothered_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_gr2bw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_us011")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_p8x07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_vi1fx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_unjdh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_pg4yy")
+}],
+"loop": true,
+"name": &"bothered_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47_ol58j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_jcj3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_j6dcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_dnqwj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_xvqyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_h7uuc")
+}],
+"loop": true,
+"name": &"dazed=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_okvlk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_7mwmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_2dukq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_qs6tq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_asww4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ywuh2")
+}],
+"loop": true,
+"name": &"dazed=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_voo01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_027rw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_hrwbh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_kvb06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_6n7xh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_ysrpq")
+}],
+"loop": true,
+"name": &"dazed_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_wmjnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_pg8db")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_w8tud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_bca0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_e308d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_dg7hr")
+}],
+"loop": true,
+"name": &"dazed_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_si175")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_730um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_ipx3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_h0uoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_8pn42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_h0xc8")
+}],
+"loop": true,
+"name": &"default=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_rvrfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_t56l2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_ne742")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_tmy2q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_tcnpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_io07d")
+}],
+"loop": true,
+"name": &"default=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("83_h5x1d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_fewbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_8d1ap")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_0cijr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_xcus6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_y66te")
+}],
+"loop": true,
+"name": &"default=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_51dw4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_cgs7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_h441n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_bpx04")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_5uweh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_rh0tt")
+}],
+"loop": true,
+"name": &"default=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_tmha0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_b7v7i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_xm8oc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_qpfpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_siod7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_hfehk")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("100_cswa4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_eohkw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_pcgmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_fqokg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_b3ykt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_dlqje")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("106_di5s4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_ch8ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_m670b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_sf4f3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110_sr0yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_jysgp")
+}],
+"loop": true,
+"name": &"frown=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("112_coseb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_qi1c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_cixk8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_jy0q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116_fbiv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_2mss4")
+}],
+"loop": true,
+"name": &"frown=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("118_n1xhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_2tdxs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_ckdme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_rg165")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_umbmn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_a7nyx")
+}],
+"loop": true,
+"name": &"frown_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("124_ygwuu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_813kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_1gei2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_emr15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_5h4j4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_v8nxo")
+}],
+"loop": true,
+"name": &"frown_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="1140"]
+render_priority = 0
+shader = ExtResource("68_6d37e")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("133_ah5r7")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6xmdg"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1140"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="166"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("133_ah5r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_ps5uv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_sh0e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_7xa1s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_6qoo0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_r7nny")
+}],
+"loop": true,
+"name": &"default=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("132_30wq5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_tv46n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_kt8nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_wek5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_31qie")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_spyer")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}]
+
+[sub_resource type="Shader" id="808"]
+code = "shader_type spatial;
+
+uniform float albedo_fac : hint_range(0, 1) = 0.5;
+uniform float emission_fac : hint_range(0, 1) = 0.5;
+uniform sampler2D texture_albedo : source_color;
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+void fragment() {
+	vec2 px_size = 1.0f / vec2(textureSize(texture_albedo, 0));
+	vec3 albedo = texturePointSmooth(texture_albedo, UV, px_size).rgb;
+
+	ALBEDO = albedo * albedo_fac;
+	EMISSION = albedo * emission_fac;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="76"]
+render_priority = 0
+shader = SubResource("808")
+shader_parameter/albedo_fac = 0.8
+shader_parameter/emission_fac = 0.2
+
+[sub_resource type="QuadMesh" id="77"]
+size = Vector2(2.62, 1.473)
+
+[sub_resource type="StyleBoxFlat" id="1038"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qre3s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("148_3iwof")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("149_l2scu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150_c16ta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151_kja16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_agaex")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="812"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Film:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="813"]
+resource_name = "roll_movie_credits"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Credits:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Credits")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(4),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"start"
+}]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Film:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xr1qu"]
+_data = {
+"RESET": SubResource("812"),
+"roll_movie_credits": SubResource("813")
+}
+
+[sub_resource type="Shader" id="692"]
+code = "shader_type canvas_item;
+
+uniform sampler2D input : source_color;
+uniform int grid_size_samples = 4;
+
+void fragment() {
+	vec3 sum = vec3(0);
+	float n = float(grid_size_samples + 1);
+
+	for (int i = 1; i <= grid_size_samples; i++) {
+		for (int j = 1; j <= grid_size_samples; j++) {
+			vec2 uv = vec2(float(i), float(j)) / n;
+			sum += texture(input, uv).rgb;
+		}
+	}
+
+	vec3 avg = sum / float(grid_size_samples * grid_size_samples);
+	COLOR = vec4(avg, 1);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="693"]
+shader = SubResource("692")
+shader_parameter/grid_size_samples = 64
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1kp5o"]
+emission_enabled = true
+emission = Color(0.207843, 1, 0.945098, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_ikv5k"]
+size = Vector3(0.5, 0.02, 0.001)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_nmvl7"]
+emission_enabled = true
+emission = Color(1, 0.607843, 0.192157, 1)
+emission_energy_multiplier = 16.0
+
+[sub_resource type="BoxMesh" id="BoxMesh_fgpt4"]
+size = Vector3(1, 0.01, 0.001)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_knndt"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.0
+dof_blur_far_transition = 2.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 3.076
+dof_blur_near_transition = 0.5
+dof_blur_amount = 0.12
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_xglw1"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 1.0
+dof_blur_near_distance = 2.586
+dof_blur_amount = 0.06
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fms3h"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 0.01
+dof_blur_near_distance = 2.586
+dof_blur_amount = 0.12
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_e2pyb"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 0.01
+dof_blur_near_distance = 2.586
+dof_blur_amount = 0.12
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_umhw4"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.0
+dof_blur_far_transition = 2.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 3.076
+dof_blur_near_transition = 0.5
+dof_blur_amount = 0.12
+
+[sub_resource type="ShaderMaterial" id="1142"]
+render_priority = 0
+shader = ExtResource("68_6d37e")
+shader_parameter/scale = Vector3(0.936, 1.44, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("164_iou3m")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ugv3h"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1142"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_jil87"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("165_vrf8x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_plyqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_v5qna")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_glukr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_0nid8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_7e8kv")
+}],
+"loop": true,
+"name": &"angry=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("171_yc1vp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_6tyvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_fwcji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_awuhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_wrtuh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_novuf")
+}],
+"loop": true,
+"name": &"angry=l_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("177_fylsq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_o1xfb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_qigd8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_8gg7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_m7ro0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_xhakj")
+}],
+"loop": true,
+"name": &"angry_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("183_l0pac")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_4msfh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_hwl3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_b5hog")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_p0t53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_o06xd")
+}],
+"loop": true,
+"name": &"angry_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("189_g6fi5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_plqfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_6bjrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_friy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_g3k3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_sqxsm")
+}],
+"loop": true,
+"name": &"concerned=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("195_hvec5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_s0uhc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_xxevw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_63ein")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_b03n2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_omcxg")
+}],
+"loop": true,
+"name": &"concerned=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("201_47fd1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_1c3yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_nrvja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_dry6n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_3smuv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_5gpl4")
+}],
+"loop": true,
+"name": &"concerned=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("207_p485b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_53dk7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_w00xt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_x4dok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_xcdim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_bg7ou")
+}],
+"loop": true,
+"name": &"concerned=l_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("213_6xky2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_osr5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_nwgk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_wi6ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_ria6y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_excji")
+}],
+"loop": true,
+"name": &"concerned_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("219_h276i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_2dqcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_hwibi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_fxamr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_374ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_gwp5e")
+}],
+"loop": true,
+"name": &"concerned_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("225_ipxyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_kgyva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_wxu5l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_vyood")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_fjhde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230_d8luj")
+}],
+"loop": true,
+"name": &"frown=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("231_hrtf1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_amnu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_kccra")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_reg63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_rofyv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_ikn01")
+}],
+"loop": true,
+"name": &"frown=l_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("237_p41jh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_ul85t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_ufqi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_eaytq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_8yaxi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_cwlkd")
+}],
+"loop": true,
+"name": &"frown_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("243_653lr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_v34ga")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_cxdky")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_1gg5r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_tbrc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_xknjj")
+}],
+"loop": true,
+"name": &"frown_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("249_u4rjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_57qwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_srnu8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_0sock")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_6vb2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_ipjxh")
+}],
+"loop": true,
+"name": &"neutral=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("255_yoihx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_ef78i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_lw34v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_nt3l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_jsj1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("260_a5ppl")
+}],
+"loop": true,
+"name": &"neutral=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("261_4lri2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262_2358c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("263_6u2um")
+}, {
+"duration": 1.0,
+"texture": ExtResource("264_sfq4l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("265_ixbj8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("266_ckiyp")
+}],
+"loop": true,
+"name": &"neutral=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("267_yg42c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("268_uecvp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("269_xkcfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("270_4g6yf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("271_4ra3b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("272_fd7ij")
+}],
+"loop": true,
+"name": &"neutral=l_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("164_iou3m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("273_c5jhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("274_i0m4k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("275_xlo33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("276_fsier")
+}, {
+"duration": 1.0,
+"texture": ExtResource("277_di413")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("278_l6bwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("279_1n03q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("280_u815d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("281_pxgri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("282_1j76j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("283_8v1tc")
+}],
+"loop": true,
+"name": &"neutral_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="1144"]
+render_priority = 0
+shader = ExtResource("68_6d37e")
+shader_parameter/scale = Vector3(0.936, 1.44, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("284_g5qu3")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_thwa4"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1144"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="172"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("285_wvcpy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("286_uml0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("287_uglr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("288_7e34j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("289_8311p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("290_j1h03")
+}],
+"loop": true,
+"name": &"default=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("284_g5qu3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("286_6v33l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("287_s31pm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("288_m5taa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("289_kgd07")
+}, {
+"duration": 1.0,
+"texture": ExtResource("290_ckqi2")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93_kffbn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_6sspc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_kd4d8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_dbopm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_4nky5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_fttws")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_2opaw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_21cel")
+}],
+"loop": true,
+"name": &"default_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101_xolxc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_ouvsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_15ioq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_hixvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_n2m4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_kwi8w")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1m11s"]
+render_priority = 0
+shader = ExtResource("68_6d37e")
+shader_parameter/scale = Vector3(1.458, 1.458, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("311_7pvgy")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v6us5"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_1m11s"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lhifc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("312_p6b3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("313_sptwu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("314_88ntc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("315_e2pxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("316_ritov")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317_16np8")
+}],
+"loop": true,
+"name": &"neutral=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("318_55ida")
+}, {
+"duration": 1.0,
+"texture": ExtResource("319_4xjid")
+}, {
+"duration": 1.0,
+"texture": ExtResource("320_nh22e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("321_7kjon")
+}, {
+"duration": 1.0,
+"texture": ExtResource("322_k3yf5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("323_04lti")
+}],
+"loop": true,
+"name": &"neutral=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("311_7pvgy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("324_r42cf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("325_1lt0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("326_5s8oq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("327_vk2io")
+}, {
+"duration": 1.0,
+"texture": ExtResource("328_cfre7")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("329_8gcvm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("330_frq8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("331_ryobo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("332_1by25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("333_kh2au")
+}, {
+"duration": 1.0,
+"texture": ExtResource("334_to0op")
+}],
+"loop": true,
+"name": &"neutral_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("335_frgip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("336_cn12f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("337_ex6al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("338_unr4g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("339_fy5pr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("340_q5id3")
+}],
+"loop": true,
+"name": &"serious=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("341_vv5bc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("342_jfh4y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("343_yyqba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("344_bwpdy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("345_bw13a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("346_j14pv")
+}],
+"loop": true,
+"name": &"serious=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("347_y6af3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("348_qq7n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("349_q2oca")
+}, {
+"duration": 1.0,
+"texture": ExtResource("350_1qb5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("351_go7y8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("352_5ooq1")
+}],
+"loop": true,
+"name": &"serious_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("353_s0ycn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("354_crqtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("355_mnpmv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("356_n64f2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("357_u5x7c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("358_3bkpa")
+}],
+"loop": true,
+"name": &"serious_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqtqp"]
+render_priority = 0
+shader = ExtResource("68_6d37e")
+shader_parameter/scale = Vector3(1.458, 1.458, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("305_3q201")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_emwbg"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_iqtqp"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_05p64"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("305_3q201")
+}, {
+"duration": 1.0,
+"texture": ExtResource("306_wbabm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("307_d8y7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("308_pw64w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("309_efi2h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("310_jcmjd")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}]
+
+[node name="Root" type="Node3D"]
+script = ExtResource("1_65wet")
+fade_in_duration = 3.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Audio")
+libraries = {
+"": SubResource("AnimationLibrary_op2a3")
+}
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("4_h34yj")
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="Audio"]
+num_banks = 1
+bank_0 = ExtResource("5_x5h6s")
+
+[node name="MovieEndingMusicLoop" type="StudioEventEmitter3D" parent="Audio"]
+play_event = 4
+event = ExtResource("565_ib7ir")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.76408, -0.769331)
+
+[node name="Aircon" type="StudioEventEmitter3D" parent="Audio"]
+play_event = 4
+event = ExtResource("566_b4jh7")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.99636, -3.28794)
+
+[node name="TheaterDoor" type="StudioEventEmitter3D" parent="Audio"]
+stop_event = 0
+event = SubResource("EventAsset_moi6e")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.23014, 0.563301, -0.827748)
+
+[node name="CommandAudioTrigger" type="Node" parent="Audio/TheaterDoor"]
+script = ExtResource("6_48dgt")
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="MarkBorja" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/MarkBorja"]
+script = ExtResource("6_5ykum")
+alias = "MarkBorja"
+
+[node name="Front" type="Node3D" parent="Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589, 0, -1.89)
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/Front"]
+script = ExtResource("33_fp0go")
+visible_on_shots = Array[String](["CamFront", "CamFrontMark"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja/Front"]
+mesh = SubResource("ArrayMesh_yca5b")
+skeleton = NodePath("")
+script = ExtResource("70_fru4f")
+texture_frames = SubResource("SpriteFrames_o4tk8")
+sync_all = true
+animation = "default=r_idle"
+random_initial = true
+alias = "MarkBorja"
+pixel_size = 0.008
+debug_add_anim_str = "(bothered=d/dazed=d/default=d/bothered/dazed/default/frown/bothered=r/default=r/frown=r)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Characters/MarkBorja/Front/Sprite"]
+script = ExtResource("222_plxvk")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "neutral"
+standalone_anims = Array[String](["default"])
+idle_talk_anims = Array[String](["bothered", "dazed", "default", "frown"])
+
+[node name="SbPivot" type="Marker3D" parent="Characters/MarkBorja/Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115298, 0.750387, -0.00631821)
+script = ExtResource("226_mhuys")
+alias = "MarkBorja"
+orientation = 2
+
+[node name="Back" type="Node3D" parent="Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.079, 0, -1.905)
+visible = false
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/Back"]
+script = ExtResource("33_fp0go")
+visible_on_shots = Array[String](["CamBack", "CamBackWide"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja/Back"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_6xmdg")
+skeleton = NodePath("")
+script = ExtResource("70_fru4f")
+texture_frames = SubResource("166")
+sync_all = true
+animation = "default=l_idle"
+random_initial = true
+alias = "MarkBorja"
+pixel_size = 0.008
+
+[node name="SpriteController" type="Node" parent="Characters/MarkBorja/Back/Sprite"]
+script = ExtResource("222_plxvk")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "default"
+idle_talk_anims = Array[String](["default", "neutral"])
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Characters/MarkBorja/Back/Sprite"]
+event = ExtResource("552_ei6xr")
+
+[node name="SbPivot" type="Marker3D" parent="Characters/MarkBorja/Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.257196, 0.9323, 0)
+script = ExtResource("226_mhuys")
+alias = "MarkBorja"
+
+[node name="CathyPortillo" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/CathyPortillo"]
+script = ExtResource("6_5ykum")
+alias = "CathyPortillo"
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="GIProbe" type="VoxelGI" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.97, -2.7)
+size = Vector3(5, 2.5, 6)
+data = ExtResource("485_4p4ho")
+
+[node name="MiniTheater" parent="World" instance=ExtResource("486_c5fm8")]
+
+[node name="MovieScreen" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 1.15, -0.002)
+layers = 3
+material_override = SubResource("76")
+mesh = SubResource("77")
+skeleton = NodePath("")
+script = ExtResource("487_8fhlx")
+display_viewport_path = NodePath("Video")
+light_paths = Array[NodePath]([NodePath("../../Lighting/Projector/SpotLight"), NodePath("../../Lighting/Projector/BounceLight"), NodePath("../../Lighting/Projector/SourceLight")])
+light_energy = 2.0
+max_saturation = 1.0
+min_value = 0.4
+
+[node name="Video" type="SubViewport" parent="World/MovieScreen"]
+handle_input_locally = false
+size = Vector2i(320, 180)
+render_target_update_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="World/MovieScreen/Video"]
+custom_minimum_size = Vector2(320, 180)
+offset_right = 40.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 1)
+
+[node name="Credits" type="PanelContainer" parent="World/MovieScreen/Video"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(320, 180)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("1038")
+script = ExtResource("490_lu0ja")
+loop_infinite = true
+credits = Array[String](["directed by|Ridel Gonzales", "produced by|Diana Umali", "screenplay by|Ced Jeff Manabat
+story by|Ridel Gonzales", "director of photography|Erick Venosa", "production designer|Sean Lumbaga", "edited by|Julius Bryan Manlapaz,Bhenly Tye Villegas", "music by|Angelo Yabut", "|Michael Pangan", "|Cal Hidalgo", "|Ralph Ali Llagas", "|Jared Yabut", "|Japo the Dog"])
+
+[node name="MarginContainer" type="MarginContainer" parent="World/MovieScreen/Video/Credits"]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 32
+
+[node name="CreditLines" type="VBoxContainer" parent="World/MovieScreen/Video/Credits/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 24
+
+[node name="CreditLine" parent="World/MovieScreen/Video/Credits/MarginContainer/CreditLines" instance=ExtResource("491_58ywn")]
+layout_mode = 2
+
+[node name="Film" type="AnimatedSprite2D" parent="World/MovieScreen/Video" node_paths=PackedStringArray("state_container")]
+position = Vector2(0, 20)
+sprite_frames = SubResource("SpriteFrames_qre3s")
+animation = &"talk"
+frame_progress = 0.738672
+centered = false
+script = ExtResource("155_df2hs")
+state_container = NodePath("../../../../Characters/CathyPortillo/State")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="World/MovieScreen/Video"]
+libraries = {
+"": SubResource("AnimationLibrary_xr1qu")
+}
+script = ExtResource("8_fe86o")
+
+[node name="AverageCalc" type="SubViewport" parent="World/MovieScreen"]
+size = Vector2i(2, 2)
+render_target_update_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="World/MovieScreen/AverageCalc"]
+material = SubResource("693")
+custom_minimum_size = Vector2(1, 1)
+offset_right = 1.0
+offset_bottom = 1.0
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="Projector" type="Node3D" parent="Lighting"]
+
+[node name="SpotLight" type="SpotLight3D" parent="Lighting/Projector"]
+transform = Transform3D(1, 0, 0, 0, -0.999993, -0.00382211, 0, 0.00382211, -0.999993, 0.03, 1.12901, -3.07944)
+layers = 3
+light_cull_mask = 4294967294
+spot_angle = 27.0
+spot_angle_attenuation = 0.450626
+
+[node name="BounceLight" type="OmniLight3D" parent="Lighting/Projector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.03, 1.42, -0.33)
+light_energy = 0.06
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+omni_attenuation = 0.7
+
+[node name="SourceLight" type="OmniLight3D" parent="Lighting/Projector"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0623231, 1.654, -5.29)
+light_volumetric_fog_energy = 0.0
+omni_range = 0.1
+
+[node name="Accent" type="Node3D" parent="Lighting"]
+
+[node name="StepLights" type="Node3D" parent="Lighting/Accent"]
+
+[node name="StepLight1" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03, 0.07, -2.24)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="StepLight2" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03, 0.15, -2.86)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="StepLight3" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03, 0.23, -3.48)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="StepLight4" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03, 0.31, -4.1)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="StepLight5" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.03, 0.39, -4.72)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="StepLight6" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01, 0.07, -2.24)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="StepLight7" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01, 0.16, -2.86)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="StepLight8" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01, 0.23, -3.48)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="StepLight9" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01, 0.31, -4.1)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="StepLight10" type="MeshInstance3D" parent="Lighting/Accent/StepLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.01, 0.39, -4.72)
+material_override = SubResource("StandardMaterial3D_1kp5o")
+mesh = SubResource("BoxMesh_ikv5k")
+skeleton = NodePath("../../../../Characters")
+
+[node name="LightRods" type="Node3D" parent="Lighting/Accent"]
+transform = Transform3D(-4.37114e-08, 4.37114e-08, 1, 1, -4.37114e-08, 4.37114e-08, 4.37114e-08, 1, -4.37114e-08, 2.26, 0.98, -2.288)
+
+[node name="LightRod1" type="MeshInstance3D" parent="Lighting/Accent/LightRods"]
+transform = Transform3D(0.923879, 0.382683, -2.3227e-14, -0.382683, 0.923879, -1.06581e-14, 3.55271e-14, 3.55271e-14, 1, 0.0995026, -0.285481, 0.00900006)
+material_override = SubResource("StandardMaterial3D_nmvl7")
+mesh = SubResource("BoxMesh_fgpt4")
+skeleton = NodePath("../../../../Characters")
+
+[node name="LightRod2" type="MeshInstance3D" parent="Lighting/Accent/LightRods"]
+transform = Transform3D(0.923879, 0.382683, 1.64203e-15, -0.382683, 0.923879, 0, 1.77636e-14, 1.77636e-14, 1, 0.259503, -1.51548, 0.00900269)
+material_override = SubResource("StandardMaterial3D_nmvl7")
+mesh = SubResource("BoxMesh_fgpt4")
+skeleton = NodePath("../../../../Characters")
+
+[node name="LightRod3" type="MeshInstance3D" parent="Lighting/Accent/LightRods"]
+transform = Transform3D(0.923879, 0.382683, -1.91069e-15, -0.382683, 0.923879, -7.10543e-15, -1.42109e-14, 2.4869e-14, 1, 0.419503, -2.76548, 0.00900197)
+material_override = SubResource("StandardMaterial3D_nmvl7")
+mesh = SubResource("BoxMesh_fgpt4")
+skeleton = NodePath("../../../../Characters")
+
+[node name="LightRod4" type="MeshInstance3D" parent="Lighting/Accent/LightRods"]
+transform = Transform3D(0.923879, 0.382683, -2.3227e-14, -0.382683, 0.923879, -1.06581e-14, 8.88178e-14, 8.88178e-14, 1, 0.0995029, -0.28548, -4.526)
+material_override = SubResource("StandardMaterial3D_nmvl7")
+mesh = SubResource("BoxMesh_fgpt4")
+skeleton = NodePath("../../../../Characters")
+
+[node name="LightRod5" type="MeshInstance3D" parent="Lighting/Accent/LightRods"]
+transform = Transform3D(0.923879, 0.382683, 1.64203e-15, -0.382683, 0.923879, 0, 7.10543e-14, 7.10543e-14, 1, 0.259505, -1.51548, -4.526)
+material_override = SubResource("StandardMaterial3D_nmvl7")
+mesh = SubResource("BoxMesh_fgpt4")
+skeleton = NodePath("../../../../Characters")
+
+[node name="LightRod6" type="MeshInstance3D" parent="Lighting/Accent/LightRods"]
+transform = Transform3D(0.923879, 0.382683, -1.91069e-15, -0.382683, 0.923879, -7.10543e-15, -6.75016e-14, 7.81597e-14, 1, 0.419503, -2.76548, -4.526)
+material_override = SubResource("StandardMaterial3D_nmvl7")
+mesh = SubResource("BoxMesh_fgpt4")
+skeleton = NodePath("../../../../Characters")
+
+[node name="SubtleBackLight" type="OmniLight3D" parent="Lighting/Accent"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.38419e-07, 1.54213, -4.90696)
+light_energy = 0.05
+light_volumetric_fog_energy = 0.0
+shadow_bias = 0.02
+omni_range = 10.0
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="CamBackWide" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.115, -5.113)
+attributes = SubResource("CameraAttributesPractical_knndt")
+current = true
+fov = 40.0
+script = ExtResource("65_as48o")
+
+[node name="CameraEffects" type="Node" parent="Cameras/CamBackWide"]
+script = ExtResource("66_4l8eu")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.0
+dof_blur_far_transition = 2.0
+dof_blur_far_amount = 0.14
+dof_blur_near_enabled = true
+dof_blur_near_distance = 3.076
+dof_blur_near_transition = 0.5
+
+[node name="CamFront" type="Camera3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.781, -0.294)
+attributes = SubResource("CameraAttributesPractical_xglw1")
+current = true
+fov = 60.0
+script = ExtResource("65_as48o")
+
+[node name="CameraEffects" type="Node" parent="Cameras/CamFront"]
+script = ExtResource("66_4l8eu")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 1.0
+dof_blur_far_amount = 0.06
+dof_blur_near_distance = 2.586
+dof_blur_near_transition = 1.0
+
+[node name="CamFrontMark" type="Camera3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.498369, 0.774989, -0.337155)
+attributes = SubResource("CameraAttributesPractical_fms3h")
+current = true
+fov = 20.0
+script = ExtResource("65_as48o")
+
+[node name="CameraEffects" type="Node" parent="Cameras/CamFrontMark"]
+script = ExtResource("66_4l8eu")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 0.01
+dof_blur_far_amount = 0.12
+dof_blur_near_distance = 2.586
+dof_blur_near_transition = 1.0
+
+[node name="CamFrontRidel" type="Camera3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.491986, 0.774989, -0.337155)
+attributes = SubResource("CameraAttributesPractical_e2pyb")
+current = true
+fov = 20.0
+script = ExtResource("65_as48o")
+
+[node name="CameraEffects" type="Node" parent="Cameras/CamFrontRidel"]
+script = ExtResource("66_4l8eu")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 0.01
+dof_blur_far_amount = 0.12
+dof_blur_near_distance = 2.586
+dof_blur_near_transition = 1.0
+
+[node name="CamFrontAndrew" type="Camera3D" parent="Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.491986, 0.774989, -0.337155)
+attributes = SubResource("CameraAttributesPractical_e2pyb")
+current = true
+fov = 20.0
+script = ExtResource("65_as48o")
+
+[node name="CameraEffects" type="Node" parent="Cameras/CamFrontAndrew"]
+script = ExtResource("66_4l8eu")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 0.01
+dof_blur_far_amount = 0.12
+dof_blur_near_distance = 2.586
+dof_blur_near_transition = 1.0
+
+[node name="CamBack" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 1.02422, -5.06908)
+attributes = SubResource("CameraAttributesPractical_umhw4")
+current = true
+fov = 27.5
+script = ExtResource("65_as48o")
+
+[node name="CameraEffects" type="Node" parent="Cameras/CamBack"]
+script = ExtResource("66_4l8eu")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.0
+dof_blur_far_transition = 2.0
+dof_blur_far_amount = 0.14
+dof_blur_near_enabled = true
+dof_blur_near_distance = 3.076
+dof_blur_near_transition = 0.5
+
+[node name="Main" type="Node3D" parent="."]
+
+[node name="Services" type="Node" parent="Main"]
+
+[node name="$SceneManager" type="Node" parent="Main/Services"]
+script = ExtResource("567_6vgli")
+scene_id = "10.11c"
+
+[node name="$SceneState" type="Node" parent="Main/Services"]
+script = ExtResource("6_5ykum")
+alias = "scene"
+initial_dict = {
+"envi": "Cemetery"
+}
+
+[node name="$DialogueHandler" type="Node" parent="Main/Services"]
+script = ExtResource("569_0k0fa")
+
+[node name="$InteractiveAreaHandler" type="Node" parent="Main/Services"]
+script = ExtResource("570_iujfu")
+
+[node name="$PlayerTarget" type="Node3D" parent="Main/Services"]
+script = ExtResource("571_5o0ec")
+
+[node name="Vignette" parent="Main" instance=ExtResource("572_yrj06")]
+
+[node name="$ThoughtBubble" parent="Main" instance=ExtResource("573_yqxl1")]
+
+[node name="$Presenter" parent="Main" instance=ExtResource("574_r16th")]
+
+[node name="Skits" type="Node3D" parent="."]
+
+[node name="MarkRidelConvo" type="Node3D" parent="Skits"]
+script = ExtResource("162_iiu17")
+id = "MarkRidelConvo"
+entrypoint = "10.11c.MarkRidelConvo"
+
+[node name="AnimationPlayer" type="Node" parent="Skits/MarkRidelConvo"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../World/MovieScreen/Video/AnimationPlayer")
+
+[node name="TheaterDoor" type="Node" parent="Skits/MarkRidelConvo"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../Audio/TheaterDoor")
+extra_coverage = 1
+
+[node name="Camera" type="Node3D" parent="Skits/MarkRidelConvo"]
+
+[node name="CamBackWide" type="Node" parent="Skits/MarkRidelConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamBackWide")
+
+[node name="CamFront" type="Node" parent="Skits/MarkRidelConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamFront")
+
+[node name="CamFrontMark" type="Node" parent="Skits/MarkRidelConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamFrontMark")
+
+[node name="CamFrontRidel" type="Node" parent="Skits/MarkRidelConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamFrontRidel")
+
+[node name="CamFrontAndrew" type="Node" parent="Skits/MarkRidelConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamFrontAndrew")
+
+[node name="CamBack" type="Node" parent="Skits/MarkRidelConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamBack")
+
+[node name="Characters" type="Node3D" parent="Skits/MarkRidelConvo"]
+
+[node name="RidelGonzales" type="Node3D" parent="Skits/MarkRidelConvo/Characters"]
+
+[node name="State" type="Node" parent="Skits/MarkRidelConvo/Characters/RidelGonzales"]
+script = ExtResource("6_5ykum")
+alias = "RidelGonzales"
+
+[node name="Front" type="Node3D" parent="Skits/MarkRidelConvo/Characters/RidelGonzales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0978987, 0, -1.90165)
+visible = false
+
+[node name="VisibilityController" type="Node" parent="Skits/MarkRidelConvo/Characters/RidelGonzales/Front"]
+script = ExtResource("33_fp0go")
+visible_on_shots = Array[String](["CamFront", "CamFrontRidel"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/MarkRidelConvo/Characters/RidelGonzales/Front"]
+mesh = SubResource("ArrayMesh_ugv3h")
+skeleton = NodePath("")
+script = ExtResource("70_fru4f")
+texture_frames = SubResource("SpriteFrames_jil87")
+sync_all = true
+animation = "neutral_idle"
+random_initial = true
+alias = "RidelGonzales"
+pixel_size = 0.008
+debug_add_anim_str = "(concerned=d/neutral=d/angry/concerned/frown/neutral/angry=l/concerned=l/frown=l/neutral=l)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Skits/MarkRidelConvo/Characters/RidelGonzales/Front/Sprite"]
+script = ExtResource("222_plxvk")
+state_container_alias = "RidelGonzales"
+fallback_idle_talk_anim = "neutral"
+idle_talk_anims = Array[String](["angry", "concerned", "frown", "neutral"])
+
+[node name="SbPivot" type="Marker3D" parent="Skits/MarkRidelConvo/Characters/RidelGonzales/Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.594976, 0.777, 0)
+script = ExtResource("226_mhuys")
+alias = "RidelGonzales"
+orientation = 6
+
+[node name="Back" type="Node3D" parent="Skits/MarkRidelConvo/Characters/RidelGonzales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.107807, 0, -1.90225)
+
+[node name="VisibilityController" type="Node" parent="Skits/MarkRidelConvo/Characters/RidelGonzales/Back"]
+script = ExtResource("33_fp0go")
+visible_on_shots = Array[String](["CamBack", "CamBackWide"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/MarkRidelConvo/Characters/RidelGonzales/Back"]
+mesh = SubResource("ArrayMesh_thwa4")
+skeleton = NodePath("")
+script = ExtResource("70_fru4f")
+texture_frames = SubResource("172")
+sync_all = true
+animation = "default_idle"
+random_initial = true
+alias = "RidelGonzales"
+pixel_size = 0.008
+debug_add_anim_str = "(default/default=r)_(idle)"
+
+[node name="SpriteController" type="Node" parent="Skits/MarkRidelConvo/Characters/RidelGonzales/Back/Sprite"]
+script = ExtResource("222_plxvk")
+state_container_alias = "RidelGonzales"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["default_walk"])
+idle_talk_anims = Array[String](["default", "neutral"])
+
+[node name="SbPivot" type="Marker3D" parent="Skits/MarkRidelConvo/Characters/RidelGonzales/Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.484, 0.944, 0)
+script = ExtResource("226_mhuys")
+alias = "RidelGonzales"
+
+[node name="CathyPortillo" type="Node3D" parent="Skits/MarkRidelConvo/Characters"]
+
+[node name="State" type="Node" parent="Skits/MarkRidelConvo/Characters/CathyPortillo"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../../Characters/CathyPortillo/State")
+
+[node name="SbPivot" type="Marker3D" parent="Skits/MarkRidelConvo/Characters/CathyPortillo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.54465, 0.312014)
+script = ExtResource("226_mhuys")
+alias = "CathyPortillo"
+force_show = true
+
+[node name="MarkBorja" type="Node3D" parent="Skits/MarkRidelConvo/Characters"]
+
+[node name="State" type="Node" parent="Skits/MarkRidelConvo/Characters/MarkBorja"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Front" type="Node3D" parent="Skits/MarkRidelConvo/Characters/MarkBorja"]
+
+[node name="SbPivot" type="Node" parent="Skits/MarkRidelConvo/Characters/MarkBorja/Front"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../../../Characters/MarkBorja/Front/SbPivot")
+
+[node name="Back" type="Node3D" parent="Skits/MarkRidelConvo/Characters/MarkBorja"]
+
+[node name="SbPivot" type="Node" parent="Skits/MarkRidelConvo/Characters/MarkBorja/Back"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../../../Characters/MarkBorja/Back/SbPivot")
+
+[node name="MarkAndrewConvo" type="Node3D" parent="Skits"]
+visible = false
+script = ExtResource("162_iiu17")
+id = "MarkAndrewConvo"
+entrypoint = "10.11c.MarkAndrewConvo"
+
+[node name="TheaterDoor" type="Node" parent="Skits/MarkAndrewConvo"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../Audio/TheaterDoor")
+extra_coverage = 1
+
+[node name="Camera" type="Node3D" parent="Skits/MarkAndrewConvo"]
+
+[node name="CamBackWide" type="Node" parent="Skits/MarkAndrewConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamBackWide")
+
+[node name="CamFront" type="Node" parent="Skits/MarkAndrewConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamFront")
+
+[node name="CamFrontMark" type="Node" parent="Skits/MarkAndrewConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamFrontMark")
+
+[node name="CamFrontRidel" type="Node" parent="Skits/MarkAndrewConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamFrontRidel")
+
+[node name="CamFrontAndrew" type="Node" parent="Skits/MarkAndrewConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamFrontAndrew")
+
+[node name="CamBack" type="Node" parent="Skits/MarkAndrewConvo/Camera"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../Cameras/CamBack")
+
+[node name="Characters" type="Node3D" parent="Skits/MarkAndrewConvo"]
+
+[node name="AndrewPortillo" type="Node3D" parent="Skits/MarkAndrewConvo/Characters"]
+
+[node name="State" type="Node" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo"]
+script = ExtResource("6_5ykum")
+alias = "AndrewPortillo"
+
+[node name="Front" type="Node3D" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.359074, 0, -1.91626)
+
+[node name="VisibilityController" type="Node" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo/Front"]
+script = ExtResource("33_fp0go")
+visible_on_shots = Array[String](["CamFrontAndrew", "CamFront", "CamFrontMark"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo/Front"]
+mesh = SubResource("ArrayMesh_v6us5")
+script = ExtResource("70_fru4f")
+texture_frames = SubResource("SpriteFrames_lhifc")
+sync_all = true
+animation = "neutral_idle"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+debug_add_anim_str = "(neutral=d/serious=d/neutral/serious)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo/Front/Sprite"]
+script = ExtResource("222_plxvk")
+state_container_alias = "AndrewPortillo"
+fallback_idle_talk_anim = "neutral"
+idle_talk_anims = Array[String](["neutral", "serious"])
+
+[node name="SbPivot" type="Marker3D" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo/Front"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900784, 0.793531, 0)
+script = ExtResource("226_mhuys")
+alias = "AndrewPortillo"
+orientation = 6
+force_show = true
+
+[node name="Back" type="Node3D" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.368392, -0.0191146, -1.92115)
+visible = false
+
+[node name="VisibilityController" type="Node" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo/Back"]
+script = ExtResource("33_fp0go")
+visible_on_shots = Array[String](["CamBack", "CamBackWide"])
+
+[node name="SbPivot" type="Marker3D" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo/Back"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.751398, 1.00904, 0)
+script = ExtResource("226_mhuys")
+alias = "AndrewPortillo"
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo/Back"]
+mesh = SubResource("ArrayMesh_emwbg")
+script = ExtResource("70_fru4f")
+texture_frames = SubResource("SpriteFrames_05p64")
+animation = "default_idle"
+alias = "AndrewPortillo"
+pixel_size = 0.0081
+
+[node name="SpriteController" type="Node" parent="Skits/MarkAndrewConvo/Characters/AndrewPortillo/Back/Sprite"]
+script = ExtResource("222_plxvk")
+state_container_alias = "AndrewPortillo"
+fallback_idle_talk_anim = "default"
+idle_talk_anims = Array[String](["default"])
+
+[node name="MarkBorja" type="Node3D" parent="Skits/MarkAndrewConvo/Characters"]
+
+[node name="State" type="Node" parent="Skits/MarkAndrewConvo/Characters/MarkBorja"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Front" type="Node3D" parent="Skits/MarkAndrewConvo/Characters/MarkBorja"]
+
+[node name="SbPivot" type="Node" parent="Skits/MarkAndrewConvo/Characters/MarkBorja/Front"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../../../Characters/MarkBorja/Front/SbPivot")
+
+[node name="Back" type="Node3D" parent="Skits/MarkAndrewConvo/Characters/MarkBorja"]
+
+[node name="SbPivot" type="Node" parent="Skits/MarkAndrewConvo/Characters/MarkBorja/Back"]
+script = ExtResource("163_t5qqm")
+reference = NodePath("../../../../../../Characters/MarkBorja/Back/SbPivot")

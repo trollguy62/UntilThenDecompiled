@@ -1,0 +1,59 @@
+[gd_scene load_steps=6 format=3 uid="uid://l46skqig2dvs"]
+
+[ext_resource type="Script" path="res://ui/components/SettingsButtonBlock/SettingsButtonBlock.gd" id="1_adhu7"]
+[ext_resource type="FontFile" uid="uid://b62gu2re0t70r" path="res://fonts/NunitoSans-Light-24.tres" id="2_viwig"]
+[ext_resource type="PackedScene" uid="uid://pbb13vhi2ohf" path="res://ui/components/Game/FocusableButton/FocusableButton.tscn" id="3_qsdvv"]
+[ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="4_ivb53"]
+[ext_resource type="Texture2D" uid="uid://d284wkmo0vqfk" path="res://addons/controller_icons/assets/xbox360/a.png" id="4_rmoaf"]
+
+[node name="SettingsButtonBlock" type="HBoxContainer"]
+offset_right = 291.0
+offset_bottom = 37.0
+alignment = 1
+script = ExtResource("1_adhu7")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_viwig")
+theme_override_font_sizes/font_size = 24
+text = "Confirm"
+vertical_alignment = 1
+
+[node name="Button" parent="." instance=ExtResource("3_qsdvv")]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+theme_override_font_sizes/font_size = 24
+toggle_mode = true
+text = "Enter"
+
+[node name="CButton" parent="." instance=ExtResource("3_qsdvv")]
+custom_minimum_size = Vector2(100, 32)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+toggle_mode = true
+text = ""
+
+[node name="TextureRect" type="TextureRect" parent="CButton"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -22.5
+offset_right = 20.0
+offset_bottom = 22.5
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_rmoaf")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("4_ivb53")
+path = "ui_accept"
+force_type = 2

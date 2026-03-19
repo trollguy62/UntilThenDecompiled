@@ -1,0 +1,168 @@
+[gd_scene load_steps=23 format=3 uid="uid://bop08emxnw5cy"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch4sc2a/scripts/C2D_24.gd" id="1"]
+[ext_resource type="Script" path="res://components/ClickableArea2D.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bllq22c54cltv" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/box_circle.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b0fguntulh6br" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/box_smiley.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dcejjoe8kypv0" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/box_heart.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bij1vic7451m8" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/arrow_small1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bcxqb508aqbj8" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/cashier2.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://khfgid4wh7ri" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/arrow_small2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://yis0ouxxewlq" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/cashier7.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://c2thgy0a2leq1" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/arrow_small4.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://r511gwjntkaq" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/arrow_small3.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://efinjug41747" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/cashier6.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://de2v6uduc78jn" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/cashier8.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://bb0mcyee2xfii" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/selection_glow.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://c5k5u35nto63n" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/cashier5.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dvwcs4in2q3n4" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/cashier1.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bv5a0fo514lhg" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/cashier3.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://b3xh2p5obwci5" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/cashier4.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://r8ct77o2y1ok" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/background/bg.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://dl7x8vkl24ml3" path="res://scenes/_main/ch4sc2a/assets/C2D/24 - Cookies/background/table.png" id="20"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="C2D_24" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1")
+selection_enabled = true
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("19")
+centered = false
+
+[node name="Cashier" type="AnimatedSprite2D" parent="."]
+position = Vector2(316, 0)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("1")
+frame = 5
+centered = false
+
+[node name="SelectionGlow" type="Sprite2D" parent="."]
+position = Vector2(636, 408)
+scale = Vector2(4, 4)
+texture = ExtResource("14")
+
+[node name="SelectionGlowPos" type="Node2D" parent="."]
+scale = Vector2(4, 4)
+
+[node name="Circle" type="Marker2D" parent="SelectionGlowPos"]
+position = Vector2(62, 102)
+
+[node name="Heart" type="Marker2D" parent="SelectionGlowPos"]
+position = Vector2(159, 102)
+
+[node name="Smiley" type="Marker2D" parent="SelectionGlowPos"]
+position = Vector2(256, 102)
+
+[node name="Table" type="Sprite2D" parent="."]
+position = Vector2(0, 316)
+scale = Vector2(4, 4)
+texture = ExtResource("20")
+centered = false
+
+[node name="CookieBoxCircle" type="Sprite2D" parent="."]
+position = Vector2(12, 32)
+scale = Vector2(4, 4)
+texture = ExtResource("3")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="CookieBoxCircle"]
+script = ExtResource("2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CookieBoxCircle/Area2D"]
+polygon = PackedVector2Array(63, 6, 60.8, 6, 58, 8.8, 60, 7.8, 60, 11.5, 62.2, 16, 58.6, 16, 53, 20, 53, 21, 55.7, 26.7, 59.9, 20, 65.4, 20, 67.8, 27, 65.2, 27, 57, 42.5, 57, 53, 58.5, 53, 64, 49.7, 66, 50.8, 66, 51.6, 68.7, 52.5, 79.1, 41, 81.6, 41, 83.1, 42, 90, 34.3, 90, 32.6, 95.6, 18, 100.8, 18, 102.2, 29.5, 105, 27.1, 105, 26, 100.4, 8, 106.1, 8, 109.5, 13, 110.2, 5, 112.7, 5, 118, 3.2, 118, 18.7, 111.3, 35, 109.9, 35, 103.9, 42, 96.8, 42, 88, 52.7, 92, 53, 97.8, 48.7, 100, 49.8, 100, 53, 108, 53, 108, 80.2, 95.7, 145, 59.2, 145, 52, 145.8, 48.2, 149, 43, 149, 39.2, 145, 0, 145, 0, 106.5, 0.8, 97, 0, 95.5, 0, 88, 1, 88, 12, 85.5, 8.6, 68, 10, 68, 10, 63, 11.9, 63, 17, 54.5, 17, 49.3, 15.2, 44, 18.5, 44, 26, 41, 26, 44.1, 34.5, 51.7, 39.5, 46.6, 42, 47.7, 42, 49.6, 43.4, 53, 47, 53, 47, 45.6, 50.4, 36.2, 43, 24.6, 43, 12, 44.5, 12, 46.4, 4, 48.3, 4, 53, 0.1, 63, 0)
+
+[node name="CookieBoxHeart" type="Sprite2D" parent="."]
+position = Vector2(448, 16)
+scale = Vector2(4, 4)
+texture = ExtResource("5")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="CookieBoxHeart"]
+script = ExtResource("2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CookieBoxHeart/Area2D"]
+polygon = PackedVector2Array(61, 0.9, 61, 2.8, 65, 0.8, 65, 4.2, 67.4, 6.5, 66.8, 7.8, 69, 8.7, 69, 11.5, 70.1, 13.7, 72.2, 10.7, 74.6, 11.4, 76.4, 4, 81, 4, 81, 9.9, 82.9, 7, 85.8, 7, 89, 10.2, 89, 13, 74.5, 24.8, 81.2, 26.5, 80.9, 29.2, 82.7, 27.6, 85, 28.7, 85, 30.7, 86.8, 36, 83.1, 36, 81.9, 38, 85.8, 38, 88, 40.2, 88, 43.4, 79, 46.8, 78.2, 57, 81.4, 57, 84.9, 54.7, 87, 55.8, 87, 57.5, 90, 63.5, 90, 72, 95, 106.9, 95, 149, 0, 149, 0, 117.6, 7, 73.7, 7, 73, 5.8, 60, 7.8, 60, 9.8, 56, 12.1, 56, 24, 56.9, 24, 56.2, 26.1, 54.1, 24, 53.4, 24, 50.4, 24.3, 50, 21, 46.8, 21, 45, 19, 45, 19, 41.4, 16.8, 37, 21.5, 37, 24, 38.3, 24, 34.6, 28, 35.4, 28, 33.9, 28.7, 33.4, 20.6, 24.4, 21.7, 22, 24.6, 22, 25, 19.8, 27.2, 18.7, 28.7, 19.8, 27.8, 18.2, 23, 19.8, 23, 16.6, 20.7, 13.1, 21.8, 11, 22.9, 11, 27.2, 4.7, 30, 5.5, 30, 7.6, 31.6, 15, 32.9, 15, 35, 17.3, 36.5, 15.9, 32, 14.4, 32, 10.6, 34.4, 9.7, 30.7, 4.1, 31.8, 2, 34.4, 2, 37.9, 3.4, 44.6, 0, 47, 0, 47, 4.6, 45.3, 7, 51, 7, 51, 8, 54, 0.6, 54, 0, 59.6, 0)
+
+[node name="CookieBoxSmiley" type="Sprite2D" parent="."]
+position = Vector2(840, 4)
+scale = Vector2(4, 4)
+texture = ExtResource("4")
+centered = false
+
+[node name="Area2D" type="Area2D" parent="CookieBoxSmiley"]
+script = ExtResource("2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CookieBoxSmiley/Area2D"]
+polygon = PackedVector2Array(56, 18, 56, 23.3, 62, 31.3, 62, 34.6, 60.9, 36.2, 72, 49.3, 72, 53.3, 75, 51.8, 75, 55.3, 81, 62.3, 81, 66, 81.7, 70, 87, 75.2, 87, 78.7, 91.5, 93, 97, 98.2, 97, 102.9, 101.9, 99.7, 103, 100.3, 103, 115, 102.3, 115, 103, 116.1, 103, 150, 8.9, 150, 0, 80.8, 0, 60, 18.9, 60, 17.8, 50, 20, 50, 22.1, 47, 21, 47, 21, 36, 18.4, 36, 16.6, 27, 18.5, 27, 23.9, 7.4, 21, 6.4, 21, 0.8, 22.6, 0, 33, 0)
+
+[node name="SelectionArrow" type="AnimatedSprite2D" parent="."]
+position = Vector2(640, 140)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("2")
+frame = 3
+
+[node name="SelectionArrowPos" type="Node2D" parent="."]
+scale = Vector2(4, 4)
+
+[node name="Circle" type="Marker2D" parent="SelectionArrowPos"]
+position = Vector2(70, 35)
+
+[node name="Heart" type="Marker2D" parent="SelectionArrowPos"]
+position = Vector2(160, 35)
+
+[node name="Smiley" type="Marker2D" parent="SelectionArrowPos"]
+position = Vector2(252, 35)

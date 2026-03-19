@@ -1,0 +1,1310 @@
+[gd_scene load_steps=191 format=3 uid="uid://b44sfehiwbtml"]
+
+[ext_resource type="PackedScene" uid="uid://dv1rxxe2mn301" path="res://scenes/lis/library/Scene.tscn" id="1"]
+[ext_resource type="Environment" uid="uid://buyomrc71sal1" path="res://scenes/_main/ch1sc3/Environment.tres" id="2_i14lm"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="3"]
+[ext_resource type="Script" path="res://components/DialogueHandler.gd" id="4"]
+[ext_resource type="VoxelGIData" uid="uid://comqdjedk2bt4" path="res://scenes/_main/ch1sc3/GIProbeData.res" id="4_6l8uw"]
+[ext_resource type="Script" path="res://components/Scene.gd" id="5"]
+[ext_resource type="Script" path="res://components/SceneManager.gd" id="6"]
+[ext_resource type="PackedScene" uid="uid://e3hu5waf2v3u" path="res://components/ThoughtBubble/ThoughtBubble.tscn" id="7"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="8"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="9"]
+[ext_resource type="AudioStream" uid="uid://d1c51mjl1mfbx" path="res://scenes/_main/ch1sc3/assets/music/music.ogg" id="9_nbsiq"]
+[ext_resource type="Texture2D" uid="uid://b7gatbm4tn7lc" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_idle/04.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://dpgs0qlgpn45c" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_talk/04.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://dyuuom82q1ds0" path="res://scenes/_main/ch1sc3/characters/MarkBorja/thinking_idle/01.png" id="12"]
+[ext_resource type="AudioStream" uid="uid://drw108fksl7kp" path="res://scenes/_main/ch1sc4/assets/sfx/School-Grounds-Active-2.ogg" id="12_5iswe"]
+[ext_resource type="Texture2D" uid="uid://c3sruffw63dnb" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_talk/06.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://bkvro2w8ufp1g" path="res://scenes/_main/ch1sc3/characters/MarkBorja/relief_idle/01.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://dbp6wdxrbot6m" path="res://scenes/_main/ch1sc3/characters/MarkBorja/thinking_idle/03.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://cy6yecdqwrwla" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingfurious_idle/02.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://djun68j4cf3i" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_talk/05.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://cn3cxxi83ffgr" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/panic_idle/02.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://bec1fcxjwo1gk" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_talk/06.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://d2mllq2n8ytvs" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_idle/05.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://cycrr43r1i0mb" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_talk/01.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://c5d6cmfeclrdm" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/panic_idle/01.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://c2ctie4uvbl6g" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_talk/03.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://dc8y602pgeeu2" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/02.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://dlfhwja70ap7e" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/09.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://pqkxvwwa5ekh" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/03.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://dckkga8j1py8r" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/01.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://bbnpg1s8tutxa" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/01.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://ds848wisguxmo" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/04.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://cqefpmxutquu2" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/06.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://cxiuxuilk6ryu" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/03.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://bkgx3un7k3y8" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/14.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://dc8k411jehx1v" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/03.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://c0270fgurl7e" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/02.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://bu2eautmi0xw1" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/13.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://bkpxmn3420yvi" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/05.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://cj5vrvvtc7nnr" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/06.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://bcsa5qgxh2n3j" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/08.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://4dcag6ywtjsy" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/10.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://dg2wbp7oc82q8" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/04.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://bfral40ylfgwc" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/04.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://pnrr87s53ypf" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/01.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://dapknbdlw40hc" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/02.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://dko5xetb0adew" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/11.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://br4k1yruolg8c" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/15.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://b8tsxokvjrv06" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/06.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://82ic1agbpett" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/05.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://coaelreug7xi2" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/07.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://7t7svjelj6in" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/05.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://dcbob3eaxgw3p" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/leave/12.png" id="50"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="51"]
+[ext_resource type="AudioStream" uid="uid://5p8dauidpa1" path="res://scenes/_main/ch1sc3/assets/sfx/keyboard_type.ogg" id="52"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="53"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="54"]
+[ext_resource type="Texture2D" uid="uid://b1i7vherywrd5" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingfurious_idle/03.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://dtf53uba551gr" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/open_laptop/01.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://ipefc5gvjial" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_talk/02.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://bgiwqs2tbgtge" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_talk/03.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://bln635g5ymwlh" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_idle/01.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://c2noqu1841j88" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_idle/05.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://cl51iu67bw27c" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_idle/03.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://cmgubkaoavfgd" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingfurious_idle/01.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://kcgw8fc0x71k" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_idle/01.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://qdw17f3y0f7c" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_idle/06.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://bl4gmb6mxpixq" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_talk/04.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://b18gcfb12x4st" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_idle/02.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://b50eojitpn3bu" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_idle/05.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://dtjhgp82ihfr0" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_idle/04.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://by42altrdcsbc" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_talk/04.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://c5oid7c5tty1r" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_talk/05.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://dk2jsaufei48d" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_talk/01.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://c1yl1eqoe02lu" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/default_idle/06.png" id="73"]
+[ext_resource type="Texture2D" uid="uid://d4el2s706dvwv" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/panic_idle/03.png" id="74"]
+[ext_resource type="Texture2D" uid="uid://dn1jsok8t46ou" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_talk/05.png" id="75"]
+[ext_resource type="Texture2D" uid="uid://bnqcuwvnhbn1s" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_talk/06.png" id="76"]
+[ext_resource type="Texture2D" uid="uid://bmvm0tmbqiim7" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_talk/05.png" id="77"]
+[ext_resource type="Texture2D" uid="uid://b210g1opvgl34" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_idle/02.png" id="78"]
+[ext_resource type="Texture2D" uid="uid://bxps6vsjcps4t" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_idle/04.png" id="79"]
+[ext_resource type="Texture2D" uid="uid://i58kxighwulw" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_talk/06.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://bm5ajhsxyb7a" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_idle/01.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://1hiq6xasx0wp" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_idle/04.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://dxos18r1g3i3r" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_idle/02.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://dh0qvuihxsop3" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_talk/03.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://bowp7gqgdh4kg" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_talk/04.png" id="85"]
+[ext_resource type="Texture2D" uid="uid://bhq77ll4ovuyb" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/relief_idle/01.png" id="86"]
+[ext_resource type="Texture2D" uid="uid://dacet781v5j78" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_idle/01.png" id="87"]
+[ext_resource type="Texture2D" uid="uid://dr8nkcy843c7e" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_talk/01.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://d0tqt3d7f1xsg" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_idle/06.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://b657qt0yfoeek" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_talk/03.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://c6bsf4eb4aoh0" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_idle/03.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://c3n4wpsj8aybj" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_talk/06.png" id="92"]
+[ext_resource type="Texture2D" uid="uid://du8fbkun2328r" path="res://scenes/_main/ch1sc3/characters/MarkBorja/thinking_idle/02.png" id="93"]
+[ext_resource type="Texture2D" uid="uid://genob7ualwer" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_idle/02.png" id="94"]
+[ext_resource type="Texture2D" uid="uid://bfosb8udm1oha" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_talk/04.png" id="95"]
+[ext_resource type="Texture2D" uid="uid://cn1lqc8nei73b" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_talk/02.png" id="96"]
+[ext_resource type="Texture2D" uid="uid://b8yog1ohck6kl" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_idle/05.png" id="97"]
+[ext_resource type="Texture2D" uid="uid://blu0bqqck2aqk" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/relief_idle/02.png" id="98"]
+[ext_resource type="Texture2D" uid="uid://cfv7fdl6618om" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/relief_idle/03.png" id="99"]
+[ext_resource type="Texture2D" uid="uid://jgpi3kxtf4yq" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/nervous_idle/03.png" id="100"]
+[ext_resource type="Texture2D" uid="uid://bnl6rjupbbf3h" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_talk/01.png" id="101"]
+[ext_resource type="Texture2D" uid="uid://k26samiowbs8" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_talk/05.png" id="102"]
+[ext_resource type="Texture2D" uid="uid://c5r1u8ue5q0m5" path="res://scenes/_main/ch1sc3/characters/MarkBorja/relief_idle/02.png" id="103"]
+[ext_resource type="Texture2D" uid="uid://cea22bwafikab" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_idle/03.png" id="104"]
+[ext_resource type="Texture2D" uid="uid://qr8eqkptl422" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/relief_idle/04.png" id="105"]
+[ext_resource type="Texture2D" uid="uid://wa8ghv0xdncl" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/open_laptop/02.png" id="106"]
+[ext_resource type="Texture2D" uid="uid://cfh3k7qi0w730" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_idle/03.png" id="107"]
+[ext_resource type="Texture2D" uid="uid://cj23ecfrry21p" path="res://scenes/_main/ch1sc3/characters/MarkBorja/relief_idle/04.png" id="108"]
+[ext_resource type="Texture2D" uid="uid://csx6ykclps1rt" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_idle/02.png" id="109"]
+[ext_resource type="Texture2D" uid="uid://b4pmco082gfkl" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/open_laptop/03.png" id="110"]
+[ext_resource type="Texture2D" uid="uid://dhmo46jlb3bhg" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_talk/01.png" id="111"]
+[ext_resource type="Texture2D" uid="uid://c4mhltnxpfqoh" path="res://scenes/_main/ch1sc3/characters/MarkBorja/relief_idle/03.png" id="112"]
+[ext_resource type="Texture2D" uid="uid://cudjo7e3on85b" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_idle/01.png" id="113"]
+[ext_resource type="Texture2D" uid="uid://dt08b4urwhbnj" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_idle/06.png" id="114"]
+[ext_resource type="Texture2D" uid="uid://c8uosmd5ady3" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_talk/03.png" id="115"]
+[ext_resource type="Texture2D" uid="uid://dqiy1vbn5cche" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_idle/04.png" id="116"]
+[ext_resource type="Texture2D" uid="uid://c7vck7cul8w54" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_idle/05.png" id="117"]
+[ext_resource type="Texture2D" uid="uid://bk0b44r6ccbrb" path="res://scenes/_main/ch1sc3/characters/MarkBorja/default_talk/02.png" id="118"]
+[ext_resource type="Texture2D" uid="uid://cq1mcaejifyxt" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/open_laptop/04.png" id="119"]
+[ext_resource type="Texture2D" uid="uid://db26bbtf58fro" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_idle/06.png" id="120"]
+[ext_resource type="Texture2D" uid="uid://b3883s7igg0on" path="res://scenes/_main/ch1sc3/characters/MarkBorja/nervous=r_talk/02.png" id="121"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="122"]
+[ext_resource type="Material" uid="uid://l1gh1qhriggb" path="res://assets/shaders/BokehParticle.tres" id="123"]
+[ext_resource type="Texture2D" uid="uid://5nvyiw68g00j" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/typingcalm_talk/02.png" id="124"]
+[ext_resource type="Texture2D" uid="uid://baln0ds0pliwd" path="res://scenes/_main/ch1sc3/characters/RyanSoriano/open_laptop/05.png" id="125"]
+[ext_resource type="Texture2D" uid="uid://bnwxqhrp8xgyl" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/09.png" id="126"]
+[ext_resource type="Texture2D" uid="uid://bmrogl4xgj0cg" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/16.png" id="127"]
+[ext_resource type="Texture2D" uid="uid://c6u760qp475jb" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/15.png" id="128"]
+[ext_resource type="Texture2D" uid="uid://b4qr2kqomoaql" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/07.png" id="129"]
+[ext_resource type="Texture2D" uid="uid://bgg1lfhkslgou" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/08.png" id="130"]
+[ext_resource type="Texture2D" uid="uid://cjvipre3gsu63" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/14.png" id="131"]
+[ext_resource type="Texture2D" uid="uid://c2w58r3h40qfr" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/10.png" id="132"]
+[ext_resource type="Texture2D" uid="uid://b6kfp6cjxga2i" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/13.png" id="133"]
+[ext_resource type="Texture2D" uid="uid://bs02r5mrr0vjs" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/15.png" id="134"]
+[ext_resource type="Texture2D" uid="uid://cx4ss6mylgl7w" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/16.png" id="135"]
+[ext_resource type="Texture2D" uid="uid://cy0cmfft5ltid" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/07.png" id="136"]
+[ext_resource type="Texture2D" uid="uid://5yu40dut6l6q" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/08.png" id="137"]
+[ext_resource type="Texture2D" uid="uid://ppicdgbggkr1" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/11.png" id="138"]
+[ext_resource type="Texture2D" uid="uid://eu8qe4gj1cll" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/09.png" id="139"]
+[ext_resource type="Texture2D" uid="uid://csudu8p514oi2" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/11.png" id="140"]
+[ext_resource type="Texture2D" uid="uid://bju7rhnw5qd7p" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/14.png" id="141"]
+[ext_resource type="Texture2D" uid="uid://hnewoxef2bek" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/13.png" id="142"]
+[ext_resource type="Texture2D" uid="uid://ub3dbmy5wyok" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/10.png" id="143"]
+[ext_resource type="Texture2D" uid="uid://chdxdqd8f6uwh" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_idle/12.png" id="144"]
+[ext_resource type="Texture2D" uid="uid://j35hsxq58ahf" path="res://scenes/_main/ch1sc3/characters/LouiseOrdunia/default_talk/12.png" id="145"]
+[ext_resource type="PackedScene" uid="uid://da0ppgkx2d538" path="res://components/Vignette.tscn" id="146"]
+[ext_resource type="Script" path="res://components/CameraEffects.gd" id="148"]
+[ext_resource type="Script" path="res://components/AudioStreamPlayer.gd" id="159"]
+[ext_resource type="AudioStream" uid="uid://eka11nfmm688" path="res://scenes/_main/lo2sc2/assets/sfx/ringtone_ryan.ogg" id="160"]
+[ext_resource type="AudioStream" uid="uid://dg5c2sg7mwyjj" path="res://assets/sfx/bird_chirps_2.ogg" id="161"]
+[ext_resource type="AudioStream" uid="uid://ctsbthomw6s3y" path="res://scenes/_main/ch1sc1c/assets/sfx/footsteps_tiles.ogg" id="163"]
+[ext_resource type="AudioStream" uid="uid://bdkw6qgxcdfvd" path="res://assets/sfx/clothes_slow_1.ogg" id="164"]
+[ext_resource type="AudioStream" uid="uid://clyakd54libh8" path="res://assets/sfx/leaves_shuffle.ogg" id="165"]
+[ext_resource type="AudioStream" uid="uid://h45f74ohoy1d" path="res://scenes/_main/lo2sc2/assets/sfx/keyboard_mash__freesound_cc_pfranzen.ogg" id="166"]
+[ext_resource type="AudioStream" uid="uid://c7gbjkoor2r4m" path="res://scenes/_main/ch1sc1b/assets/sfx/traffic.ogg" id="167"]
+[ext_resource type="AudioStream" uid="uid://8w5ajfwijnox" path="res://scenes/_main/lo2sc2/assets/sfx/phone_vibrate.ogg" id="170"]
+[ext_resource type="AudioStream" uid="uid://8ixxugvad3av" path="res://assets/sfx/wind_burst_1.ogg" id="171"]
+
+[sub_resource type="Animation" id="31"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cameras/MarkRyan:wiggle_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.004, 0.001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cameras/MarkRyan:wiggle_speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="32"]
+resource_name = "stop_cam_shake"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cameras/MarkRyan:wiggle_offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.004, 0.001)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cameras/MarkRyan:wiggle_speed")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [2.0, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ckgyx"]
+_data = {
+"RESET": SubResource("31"),
+"stop_cam_shake": SubResource("32")
+}
+
+[sub_resource type="Animation" id="1"]
+resource_name = "player"
+length = 30.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 7, 16, 23),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_wieko"]
+_data = {
+"player": SubResource("1")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_43nkp"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.8
+dof_blur_far_transition = 1.0
+dof_blur_near_distance = 1.46
+dof_blur_near_transition = 0.01
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_8whjv"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.0
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.0
+dof_blur_near_transition = 0.1
+dof_blur_amount = 0.105
+
+[sub_resource type="StandardMaterial3D" id="4"]
+emission_enabled = true
+emission = Color(1, 0.988235, 0.878431, 1)
+emission_energy_multiplier = 2.3
+
+[sub_resource type="BoxMesh" id="5"]
+size = Vector3(0.738, 0.02, 0.379)
+
+[sub_resource type="BoxMesh" id="6"]
+size = Vector3(0.486, 0.02, 0.842)
+
+[sub_resource type="StandardMaterial3D" id="7"]
+emission_enabled = true
+emission = Color(1, 0.984314, 0.866667, 1)
+emission_energy_multiplier = 1.75
+
+[sub_resource type="BoxMesh" id="8"]
+size = Vector3(0.633, 0.02, 0.079)
+
+[sub_resource type="StandardMaterial3D" id="9"]
+emission_enabled = true
+emission = Color(1, 0.976471, 0.788235, 1)
+emission_energy_multiplier = 2.0
+
+[sub_resource type="BoxMesh" id="10"]
+size = Vector3(1.482, 0.02, 0.15)
+
+[sub_resource type="BoxMesh" id="11"]
+size = Vector3(0.836, 0.02, 0.15)
+
+[sub_resource type="PlaneMesh" id="12"]
+size = Vector2(10, 2)
+
+[sub_resource type="Gradient" id="Gradient_1qptj"]
+offsets = PackedFloat32Array(0, 0.142132, 0.690355, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_bwql4"]
+gradient = SubResource("Gradient_1qptj")
+width = 64
+
+[sub_resource type="ParticleProcessMaterial" id="13"]
+emission_shape = 3
+emission_box_extents = Vector3(1, 1, 1)
+direction = Vector3(0.3, -0.66, 1)
+spread = 20.0
+gravity = Vector3(0, -0.1, 0)
+initial_velocity_max = 0.5
+scale_min = 0.5
+color = Color(1, 0.972549, 0.811765, 1)
+color_ramp = SubResource("GradientTexture1D_bwql4")
+turbulence_noise_strength = 0.01
+turbulence_noise_scale = 1.0
+
+[sub_resource type="QuadMesh" id="14"]
+
+[sub_resource type="ShaderMaterial" id="35"]
+render_priority = 0
+shader = ExtResource("53")
+shader_parameter/scale = Vector3(1.07, 0.92, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("113")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sd3wp"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("35"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="17"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("113")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91")
+}, {
+"duration": 1.0,
+"texture": ExtResource("116")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120")
+}],
+"loop": true,
+"name": &"nervous_idle",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92")
+}],
+"loop": true,
+"name": &"nervous_talk",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108")
+}],
+"loop": true,
+"name": &"relief",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}],
+"loop": true,
+"name": &"think",
+"speed": 3.0
+}]
+
+[sub_resource type="ShaderMaterial" id="37"]
+render_priority = 0
+shader = ExtResource("53")
+shader_parameter/scale = Vector3(1.51, 0.98, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("57")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_js0aa"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("37"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="20"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114")
+}],
+"loop": true,
+"name": &"calm_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80")
+}],
+"loop": true,
+"name": &"calm_talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65")
+}],
+"loop": true,
+"name": &"nervous_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76")
+}],
+"loop": true,
+"name": &"nervous_talk",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125")
+}],
+"loop": false,
+"name": &"open_laptop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74")
+}],
+"loop": true,
+"name": &"panic",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105")
+}],
+"loop": true,
+"name": &"relief",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56")
+}],
+"loop": true,
+"name": &"type",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="39"]
+render_priority = 0
+shader = ExtResource("53")
+shader_parameter/scale = Vector3(0.95, 1.59, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("27")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t3chp"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("39"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="23"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}],
+"loop": false,
+"name": &"leave",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="24"]
+resource_name = "Louise_leave"
+length = 3.57143
+step = 0.142857
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["leave"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 14]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Footsteps:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.571429, 3.57143),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Footsteps:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.571429, 3.57143),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(362, 355), Vector2(-206, 355)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_k4tfh"]
+_data = {
+"Louise_leave": SubResource("24")
+}
+
+[node name="Root" type="Node3D"]
+script = ExtResource("5")
+fade_in_duration = 0.5
+fade_in_delay = 0.5
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_i14lm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ckgyx")
+}
+script = ExtResource("51")
+
+[node name="GIProbe" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42567, 0.843626, 2.5217)
+size = Vector3(9.56, 2.55874, 5.20248)
+data = ExtResource("4_6l8uw")
+
+[node name="Vignette" parent="." instance=ExtResource("146")]
+
+[node name="Main" type="Node3D" parent="."]
+
+[node name="Services" type="Node" parent="Main"]
+
+[node name="$SceneManager" type="Node" parent="Main/Services"]
+script = ExtResource("6")
+scene_id = "1.3"
+shot = "MarkRyan"
+
+[node name="$DialogueHandler" type="Node" parent="Main/Services"]
+script = ExtResource("4")
+
+[node name="$ThoughtBubble" parent="Main" instance=ExtResource("7")]
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="Main" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("9_nbsiq")
+volume_db = 2.0
+bus = &"Music"
+script = ExtResource("159")
+
+[node name="OutdoorTraffic" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("167")
+volume_db = 2.0
+autoplay = true
+bus = &"FarOut"
+
+[node name="CrowdTalking" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("12_5iswe")
+volume_db = 4.0
+autoplay = true
+bus = &"NearOut"
+
+[node name="BirdChirps" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("161")
+volume_db = -2.5
+autoplay = true
+bus = &"SFX"
+
+[node name="LeavesShuffle" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("165")
+volume_db = -10.0
+autoplay = true
+bus = &"SFX"
+
+[node name="RandomFootsteps" type="AudioStreamPlayer2D" parent="Audio"]
+position = Vector2(2014, 394)
+stream = ExtResource("163")
+pitch_scale = 0.7
+bus = &"NearOut"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Audio/RandomFootsteps"]
+autoplay = "player"
+libraries = {
+"": SubResource("AnimationLibrary_wieko")
+}
+
+[node name="ClothesSlow1" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("164")
+bus = &"SFX"
+script = ExtResource("159")
+
+[node name="KeyboardMash" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("166")
+volume_db = -10.0
+bus = &"SFX"
+script = ExtResource("159")
+
+[node name="KeyboardType" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("52")
+volume_db = -4.0
+bus = &"SFX"
+script = ExtResource("159")
+
+[node name="WindBurst" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("171")
+volume_db = -6.0
+bus = &"SFX"
+script = ExtResource("159")
+
+[node name="PhoneVibrate" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("170")
+volume_db = -12.0
+bus = &"SFX"
+script = ExtResource("159")
+
+[node name="RingtoneRyan" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("160")
+volume_db = -5.0
+bus = &"SFX"
+script = ExtResource("159")
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="MarkRyan" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.173648, 0.0858317, -0.98106, 0, 0.996195, 0.0871558, 0.984808, -0.0151344, 0.172987, 0.626169, 0.962004, 1.13082)
+attributes = SubResource("CameraAttributesPractical_43nkp")
+current = true
+fov = 40.0
+script = ExtResource("3")
+wiggle_offset = Vector2(0.004, 0.001)
+wiggle_speed = 2.0
+
+[node name="CameraEffects" type="Node" parent="Cameras/MarkRyan"]
+script = ExtResource("148")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.8
+dof_blur_far_transition = 1.0
+dof_blur_near_distance = 1.46
+dof_blur_near_transition = 0.01
+dof_blur_near_amount = 1.0
+
+[node name="Louise" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, -1, 1.65, 0.84, 2.42)
+attributes = SubResource("CameraAttributesPractical_8whjv")
+fov = 45.0
+script = ExtResource("3")
+
+[node name="CameraEffects" type="Node" parent="Cameras/Louise"]
+script = ExtResource("148")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.0
+dof_blur_far_transition = 1.0
+dof_blur_far_amount = 0.11
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.0
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.910727, -0.211132, -0.354965, -2.80048e-07, -0.85946, 0.511203, -0.413009, -0.465566, -0.782733, 2.11, 2.77, -2.67)
+light_color = Color(1, 0.945098, 0.854902, 1)
+light_energy = 2.3
+light_indirect_energy = 0.4
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.01
+directional_shadow_mode = 0
+directional_shadow_blend_splits = true
+directional_shadow_max_distance = 30.0
+
+[node name="GIFakes" type="Node3D" parent="Lighting"]
+visible = false
+
+[node name="Door1" type="MeshInstance3D" parent="Lighting/GIFakes"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 1.78, 0.18, 3.16)
+material_override = SubResource("4")
+mesh = SubResource("5")
+
+[node name="Door2" type="MeshInstance3D" parent="Lighting/GIFakes"]
+transform = Transform3D(1, 0, 0, 0, -1.78814e-07, -1, 0, 1, -1.78814e-07, 1.74, 0.8, 3.37)
+material_override = SubResource("4")
+mesh = SubResource("6")
+
+[node name="Door3" type="MeshInstance3D" parent="Lighting/GIFakes"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 1.73, 1.62, 3.29)
+material_override = SubResource("7")
+mesh = SubResource("8")
+
+[node name="Window1" type="MeshInstance3D" parent="Lighting/GIFakes"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 1.57, 1.63, 0.13)
+material_override = SubResource("9")
+mesh = SubResource("10")
+
+[node name="Window2" type="MeshInstance3D" parent="Lighting/GIFakes"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 4.49, 1.63, 0.13)
+material_override = SubResource("9")
+mesh = SubResource("10")
+
+[node name="Window3" type="MeshInstance3D" parent="Lighting/GIFakes"]
+transform = Transform3D(1, 0, 0, 0, 0.866025, -0.5, 0, 0.5, 0.866025, 7.39, 1.63, 0.13)
+material_override = SubResource("9")
+mesh = SubResource("10")
+
+[node name="Window4" type="MeshInstance3D" parent="Lighting/GIFakes"]
+transform = Transform3D(-4.37114e-08, -0.5, -0.866025, 0, 0.866025, -0.5, 1, -2.18557e-08, -3.78552e-08, 8.8, 1.63, 0.86)
+material_override = SubResource("9")
+mesh = SubResource("10")
+
+[node name="Window5" type="MeshInstance3D" parent="Lighting/GIFakes"]
+transform = Transform3D(-4.37114e-08, -0.5, -0.866025, 0, 0.866025, -0.5, 1, -2.18557e-08, -3.78552e-08, 8.8, 1.63, 2.31)
+material_override = SubResource("9")
+mesh = SubResource("11")
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Library" parent="World" instance=ExtResource("1")]
+
+[node name="LightOccluder" type="MeshInstance3D" parent="World/Library"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.52369, 2.04039, 3.52701)
+mesh = SubResource("12")
+
+[node name="Particles" type="Node3D" parent="World"]
+
+[node name="DustParticles1" type="GPUParticles3D" parent="World/Particles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.63139, 0.983406, 0.0510052)
+material_override = ExtResource("123")
+amount = 64
+lifetime = 14.0
+preprocess = 14.0
+speed_scale = 0.5
+fixed_fps = 0
+process_material = SubResource("13")
+draw_pass_1 = SubResource("14")
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="MarkBorja" type="Node3D" parent="Characters"]
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja"]
+transform = Transform3D(-1.96701e-08, 0, -0.45, 0, 0.45, 0, 0.45, 0, -1.96701e-08, 1.85, 0.506, 1)
+layers = 129
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_sd3wp")
+script = ExtResource("9")
+texture_frames = SubResource("17")
+sync_all = true
+animation = "default_idle"
+alias = "MarkBorja"
+
+[node name="SbPivot" type="Marker3D" parent="Characters/MarkBorja/Sprite"]
+transform = Transform3D(-9.71363e-08, 0, 2.22222, 0, 2.22222, 0, -2.22222, 0, -9.71363e-08, 0.466666, 0.955556, 0)
+script = ExtResource("122")
+alias = "MarkBorja"
+
+[node name="State" type="Node" parent="Characters/MarkBorja"]
+script = ExtResource("8")
+alias = "MarkBorja"
+
+[node name="SpriteController" type="Node" parent="Characters/MarkBorja"]
+script = ExtResource("54")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["relief", "think"])
+idle_talk_anims = Array[String](["default", "nervous"])
+
+[node name="RyanSoriano" type="Node3D" parent="Characters"]
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/RyanSoriano"]
+transform = Transform3D(-1.96701e-08, 0, -0.45, 0, 0.45, 0, 0.45, 0, -1.96701e-08, 1.786, 0.517, 0.6)
+layers = 65
+mesh = SubResource("ArrayMesh_js0aa")
+script = ExtResource("9")
+texture_frames = SubResource("20")
+sync_all = true
+animation = "open_laptop"
+playing = false
+alias = "RyanSoriano"
+
+[node name="SbPivot" type="Marker3D" parent="Characters/RyanSoriano/Sprite"]
+transform = Transform3D(-9.71363e-08, 0, 2.22222, 0, 2.22222, 0, -2.22222, 0, -9.71363e-08, 0.555556, 1, 0)
+script = ExtResource("122")
+alias = "RyanSoriano"
+
+[node name="State" type="Node" parent="Characters/RyanSoriano"]
+script = ExtResource("8")
+alias = "RyanSoriano"
+
+[node name="SpriteController" type="Node" parent="Characters/RyanSoriano"]
+script = ExtResource("54")
+state_container_alias = "RyanSoriano"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["open_laptop", "panic", "relief", "type", "test"])
+idle_talk_anims = Array[String](["calm", "default", "nervous"])
+
+[node name="LouiseOrdunia" type="Node3D" parent="Characters"]
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/LouiseOrdunia"]
+transform = Transform3D(-0.45, 0, 3.93403e-08, 0, 0.45, 0, -3.93403e-08, 0, -0.45, 2.06, 0.387, 3.408)
+layers = 65
+mesh = SubResource("ArrayMesh_t3chp")
+script = ExtResource("9")
+texture_frames = SubResource("23")
+sync_all = true
+sync_all_except = Array[String](["leave"])
+animation = "default_idle"
+alias = "LouiseOrdunia"
+
+[node name="State" type="Node" parent="Characters/LouiseOrdunia"]
+script = ExtResource("8")
+alias = "LouiseOrdunia"
+
+[node name="SpriteController" type="Node" parent="Characters/LouiseOrdunia"]
+script = ExtResource("54")
+state_container_alias = "LouiseOrdunia"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["leave"])
+idle_talk_anims = Array[String](["default"])
+
+[node name="SbPivot" type="Marker3D" parent="Characters/LouiseOrdunia"]
+transform = Transform3D(1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, 1.765, 0.977, 3.411)
+script = ExtResource("122")
+alias = "LouiseOrdunia"
+orientation = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Characters/LouiseOrdunia"]
+libraries = {
+"": SubResource("AnimationLibrary_k4tfh")
+}
+script = ExtResource("51")
+
+[node name="Footsteps" type="AudioStreamPlayer2D" parent="Characters/LouiseOrdunia"]
+position = Vector2(-206, 355)
+stream = ExtResource("163")
+volume_db = 6.0
+pitch_scale = 0.6
+bus = &"SFX"

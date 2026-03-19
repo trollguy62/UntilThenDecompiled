@@ -1,0 +1,351 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxrnubx042te8"]
+
+[ext_resource type="Script" path="res://components/FreeLookCam/FreeLookCam.gd" id="1_ewwfe"]
+[ext_resource type="Script" path="res://components/FreeLookCam/Menu.gd" id="2_q6ant"]
+[ext_resource type="Script" path="res://components/FreeLookCam/SliderLabel.gd" id="3_to0cj"]
+
+[sub_resource type="Environment" id="2"]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_od850"]
+
+[sub_resource type="Theme" id="Theme_kotdv"]
+default_font_size = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ory06"]
+content_margin_left = 8.0
+content_margin_top = 2.0
+content_margin_right = 8.0
+content_margin_bottom = 2.0
+bg_color = Color(0.180392, 0.180392, 0.180392, 0.87451)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xaf0t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_sqwp6"]
+
+[node name="FreeLookCam" type="Camera3D"]
+process_mode = 3
+environment = SubResource("2")
+attributes = SubResource("CameraAttributesPractical_od850")
+script = ExtResource("1_ewwfe")
+
+[node name="Menu" type="TabContainer" parent="."]
+offset_left = 12.0
+offset_top = 12.0
+offset_right = 343.0
+offset_bottom = 222.0
+theme = SubResource("Theme_kotdv")
+theme_override_styles/panel = SubResource("StyleBoxFlat_ory06")
+script = ExtResource("2_q6ant")
+
+[node name="Camera" type="GridContainer" parent="Menu"]
+layout_mode = 2
+columns = 3
+
+[node name="LockRotLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "Lock rotation"
+
+[node name="LockRotCheckBox" type="CheckBox" parent="Menu/Camera"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Empty1" type="Panel" parent="Menu/Camera"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_xaf0t")
+
+[node name="FovLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "FOV"
+
+[node name="FovHSlider" type="HSlider" parent="Menu/Camera"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 1.0
+max_value = 179.0
+value = 70.0
+
+[node name="FovValueLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "70"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../FovHSlider")
+
+[node name="MoveSpeedLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "Move speed"
+
+[node name="MoveSpeedHSlider" type="HSlider" parent="Menu/Camera"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 4.0
+step = 0.01
+value = 1.0
+
+[node name="MoveSpeedValueLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "1.00"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../MoveSpeedHSlider")
+dec_place = 2
+
+[node name="PanSpeedLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "Pan speed"
+
+[node name="PanSpeedHSlider" type="HSlider" parent="Menu/Camera"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.5
+
+[node name="PanSpeedValueLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "0.50"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../PanSpeedHSlider")
+dec_place = 2
+
+[node name="MouseSensLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "Mouse sens."
+
+[node name="MouseSensHSlider" type="HSlider" parent="Menu/Camera"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 0.25
+
+[node name="MouseSensValueLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "0.25"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../MouseSensHSlider")
+dec_place = 2
+
+[node name="NearClipLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "Near clip"
+
+[node name="NearClipHSlider" type="HSlider" parent="Menu/Camera"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 128.0
+step = 0.001
+value = 0.05
+exp_edit = true
+
+[node name="NearClipValueLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "0.05"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../NearClipHSlider")
+dec_place = 2
+
+[node name="FarClipLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "Far clip"
+
+[node name="FarClipHSlider" type="HSlider" parent="Menu/Camera"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.1
+max_value = 1024.0
+step = 0.01
+value = 100.0
+exp_edit = true
+
+[node name="FarClipValueLabel" type="Label" parent="Menu/Camera"]
+layout_mode = 2
+text = "100"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../FarClipHSlider")
+
+[node name="Graphics" type="GridContainer" parent="Menu"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+columns = 3
+
+[node name="SsrLabel" type="Label" parent="Menu/Graphics"]
+layout_mode = 2
+text = "SSR"
+
+[node name="SsrCheckBox" type="CheckBox" parent="Menu/Graphics"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Empty1" type="Panel" parent="Menu/Graphics"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sqwp6")
+
+[node name="SsaoLabel" type="Label" parent="Menu/Graphics"]
+layout_mode = 2
+text = "SSAO"
+
+[node name="SsaoCheckBox" type="CheckBox" parent="Menu/Graphics"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Empty2" type="Panel" parent="Menu/Graphics"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sqwp6")
+
+[node name="GlowLabel" type="Label" parent="Menu/Graphics"]
+layout_mode = 2
+text = "Glow"
+
+[node name="GlowCheckBox" type="CheckBox" parent="Menu/Graphics"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Empty3" type="Panel" parent="Menu/Graphics"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sqwp6")
+
+[node name="GlowFacLabel" type="Label" parent="Menu/Graphics"]
+layout_mode = 2
+text = "Glow fac."
+
+[node name="GlowFacHSlider" type="HSlider" parent="Menu/Graphics"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 8.0
+step = 0.01
+value = 0.8
+
+[node name="GlowFacValueLabel" type="Label" parent="Menu/Graphics"]
+layout_mode = 2
+text = "0.8"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../GlowFacHSlider")
+dec_place = 1
+
+[node name="DoF" type="GridContainer" parent="Menu"]
+visible = false
+layout_mode = 2
+columns = 3
+
+[node name="NearLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "Near"
+
+[node name="NearCheckBox" type="CheckBox" parent="Menu/DoF"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Empty1" type="Panel" parent="Menu/DoF"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sqwp6")
+
+[node name="NearDistLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "Near dist."
+
+[node name="NearDistHSlider" type="HSlider" parent="Menu/DoF"]
+layout_mode = 2
+min_value = 0.01
+max_value = 8.0
+step = 0.01
+value = 1.0
+
+[node name="NearDistValueLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "1.00"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../NearDistHSlider")
+dec_place = 2
+
+[node name="NearTransLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "Near trans."
+
+[node name="NearTransHSlider" type="HSlider" parent="Menu/DoF"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 8.0
+step = 0.01
+value = 1.0
+
+[node name="NearTransValueLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "1.00"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../NearTransHSlider")
+dec_place = 2
+
+[node name="FarLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "Far"
+
+[node name="FarCheckBox" type="CheckBox" parent="Menu/DoF"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Empty2" type="Panel" parent="Menu/DoF"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_sqwp6")
+
+[node name="FarDistLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "Far dist."
+
+[node name="FarDistHSlider" type="HSlider" parent="Menu/DoF"]
+layout_mode = 2
+min_value = 0.01
+max_value = 8.0
+step = 0.01
+value = 1.0
+
+[node name="FarDistValueLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "1.00"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../FarDistHSlider")
+dec_place = 2
+
+[node name="FarTransLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "Far trans."
+
+[node name="FarTransHSlider" type="HSlider" parent="Menu/DoF"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.01
+max_value = 8.0
+step = 0.01
+value = 1.0
+
+[node name="FarTransValueLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "1.00"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../FarTransHSlider")
+dec_place = 2
+
+[node name="AmountLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "Amount"
+
+[node name="AmountHSlider" type="HSlider" parent="Menu/DoF"]
+layout_mode = 2
+size_flags_horizontal = 3
+min_value = 0.001
+max_value = 1.0
+step = 0.001
+value = 0.1
+
+[node name="AmountValueLabel" type="Label" parent="Menu/DoF"]
+layout_mode = 2
+text = "1.00"
+script = ExtResource("3_to0cj")
+slider_path = NodePath("../AmountHSlider")
+dec_place = 3

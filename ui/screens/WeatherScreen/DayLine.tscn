@@ -1,0 +1,66 @@
+[gd_scene load_steps=10 format=3 uid="uid://bdjkeyee4hvxi"]
+
+[ext_resource type="FontFile" uid="uid://8w5jqmqliqqd" path="res://fonts/Quicksand-Bold-20.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://di5iebobysn6" path="res://ui/screens/WeatherScreen/icons/wi_cloudy.png" id="2"]
+[ext_resource type="Script" path="res://ui/screens/WeatherScreen/DayLine.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://dixxktfcx6moy" path="res://ui/screens/WeatherScreen/icons/wi_cloud.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cgiy0a56vmal1" path="res://ui/screens/WeatherScreen/icons/wi_cloudy_gusts.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cdiyrjuvtfhkh" path="res://ui/screens/WeatherScreen/icons/wi_day_sunny.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dw0m27lk4kkqp" path="res://ui/screens/WeatherScreen/icons/wi_day_cloudy.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bo1hlusj044do" path="res://ui/screens/WeatherScreen/icons/wi_rainy.png" id="8"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[node name="DayLine" type="MarginContainer"]
+custom_minimum_size = Vector2(0, 42)
+offset_top = 57.0
+offset_right = 1280.0
+offset_bottom = 99.0
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_right = 30
+script = ExtResource("3")
+weather_icons = Array[Texture2D]([ExtResource("4"), ExtResource("2"), ExtResource("5"), ExtResource("7"), ExtResource("6"), ExtResource("8")])
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="DayOfWeek" type="Label" parent="HBox"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1")
+text = "Sunday"
+
+[node name="Spacer1" type="PanelContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("1")
+
+[node name="Icon" type="TextureRect" parent="HBox"]
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+texture = ExtResource("2")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Spacer2" type="PanelContainer" parent="HBox"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
+
+[node name="TempDay" type="Label" parent="HBox"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1")
+text = "24°"
+horizontal_alignment = 1
+
+[node name="TempNight" type="Label" parent="HBox"]
+custom_minimum_size = Vector2(48, 0)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 0.807843)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1")
+text = "30°"
+horizontal_alignment = 1

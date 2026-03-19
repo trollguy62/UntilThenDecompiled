@@ -1,0 +1,20 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=3 uid="uid://44cn8k3lacx3"]
+
+[ext_resource type="Shader" path="res://assets/shaders/HorizSpeedLines.gdshader" id="1_6f68w"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_8t0dm"]
+noise_type = 0
+frequency = 0.0782
+fractal_octaves = 1
+fractal_lacunarity = 2.831
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_eavbo"]
+width = 48
+height = 670
+seamless = true
+noise = SubResource("FastNoiseLite_8t0dm")
+
+[resource]
+shader = ExtResource("1_6f68w")
+shader_parameter/speed = 1.0
+shader_parameter/tex_noise = SubResource("NoiseTexture2D_eavbo")

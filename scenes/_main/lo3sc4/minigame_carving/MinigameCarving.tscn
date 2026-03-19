@@ -1,0 +1,113 @@
+[gd_scene load_steps=16 format=3 uid="uid://dwr0qw3ghfykx"]
+
+[ext_resource type="Shader" path="res://scenes/_main/lo3sc4/minigame_carving/assets/Tree.gdshader" id="1_fjf0t"]
+[ext_resource type="Texture2D" uid="uid://bpih2cxxnn4rr" path="res://scenes/_main/lo3sc4/minigame_carving/assets/carved_texture.png" id="2_i5i6g"]
+[ext_resource type="Texture2D" uid="uid://ck65fo832enlh" path="res://scenes/_main/lo3sc4/minigame_carving/assets/tree.png" id="2_vgetp"]
+[ext_resource type="Script" path="res://scenes/_main/lo3sc4/minigame_carving/scripts/Mask.gd" id="4_8q74i"]
+[ext_resource type="Texture2D" uid="uid://du3nyqsmmdqre" path="res://scenes/_main/lo3sc4/minigame_carving/assets/knife.png" id="5_c8lq2"]
+[ext_resource type="Shader" path="res://scenes/_main/lo3sc4/minigame_carving/assets/Mask.gdshader" id="5_xmkmm"]
+[ext_resource type="Script" path="res://scenes/_main/lo3sc4/minigame_carving/scripts/Knife.gd" id="6_gne18"]
+[ext_resource type="Texture2D" uid="uid://c8yi46qhbsx5k" path="res://scenes/_main/lo3sc4/minigame_carving/assets/bark_chip_1.png" id="7_iv1sn"]
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_5m2o7"]
+viewport_path = NodePath("SubViewportContainer/Mask")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekaph"]
+resource_local_to_scene = true
+shader = ExtResource("1_fjf0t")
+shader_parameter/modulate = Color(0.290196, 0.313726, 0.458824, 1)
+shader_parameter/tex_tree = ExtResource("2_vgetp")
+shader_parameter/tex_carved = ExtResource("2_i5i6g")
+shader_parameter/tex_mask = SubResource("ViewportTexture_5m2o7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2dseb"]
+shader = ExtResource("5_xmkmm")
+shader_parameter/brush_pos = Vector2(0, 0)
+shader_parameter/brush_size = 0.006
+
+[sub_resource type="Gradient" id="Gradient_3e4t5"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_63mr3"]
+gradient = SubResource("Gradient_3e4t5")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_thqxj"]
+emission_shape = 1
+emission_sphere_radius = 2.0
+particle_flag_disable_z = true
+spread = 180.0
+gravity = Vector3(0, 98, 0)
+initial_velocity_max = 39.5
+angular_velocity_max = 360.0
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+angle_max = 180.0
+scale_max = 2.0
+color_ramp = SubResource("GradientTexture1D_63mr3")
+attractor_interaction_enabled = false
+
+[sub_resource type="EventAsset" id="EventAsset_ifpd0"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT3/Lo3/Sc4/TreeCarving"
+guid = "{3a859585-9a02-49af-b000-c7cd14f4b278}"
+name = "TreeCarving"
+
+[node name="MinigameCarving" type="Node2D"]
+texture_filter = 1
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Tree" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_ekaph")
+scale = Vector2(4, 4)
+texture = ExtResource("2_vgetp")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+offset_right = 320.0
+offset_bottom = 180.0
+scale = Vector2(4, 4)
+metadata/_edit_lock_ = true
+
+[node name="Mask" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(320, 180)
+render_target_update_mode = 4
+script = ExtResource("4_8q74i")
+
+[node name="ColorRect" type="ColorRect" parent="SubViewportContainer/Mask"]
+offset_right = 320.0
+offset_bottom = 180.0
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="MaskRenderer" type="Sprite2D" parent="SubViewportContainer/Mask"]
+material = SubResource("ShaderMaterial_2dseb")
+texture = ExtResource("2_vgetp")
+centered = false
+metadata/_edit_lock_ = true
+
+[node name="Knife" type="Sprite2D" parent="." node_paths=PackedStringArray("mask", "tree")]
+modulate = Color(0.290196, 0.313726, 0.458824, 1)
+position = Vector2(182, 381)
+scale = Vector2(4, 4)
+texture = ExtResource("5_c8lq2")
+centered = false
+offset = Vector2(-0.5, -61.5)
+script = ExtResource("6_gne18")
+mask = NodePath("../SubViewportContainer/Mask")
+tree = NodePath("../Tree")
+
+[node name="BarkChippings" type="GPUParticles2D" parent="Knife"]
+show_behind_parent = true
+emitting = false
+process_material = SubResource("ParticleProcessMaterial_thqxj")
+texture = ExtResource("7_iv1sn")
+lifetime = 2.0
+metadata/_edit_lock_ = true
+
+[node name="SfxTreeCarving" type="StudioEventEmitter2D" parent="Knife"]
+event = SubResource("EventAsset_ifpd0")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=5 format=3 uid="uid://bhexi86bur1ac"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="1_w4lgp"]
+[ext_resource type="Texture2D" uid="uid://dounslcp71e6k" path="res://scenes/stage_nicole/assets/audio_equip_box_2.png" id="2_fb7vs"]
+[ext_resource type="ArrayMesh" uid="uid://k1k5dc0c70th" path="res://scenes/stage_nicole/assets/audio_equip_box_2.obj" id="3_n5tiw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cji1k"]
+render_priority = 0
+shader = ExtResource("1_w4lgp")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2_fb7vs")
+
+[node name="AudioEquipBox2" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.91, 0, 1.52)
+material_override = SubResource("ShaderMaterial_cji1k")
+mesh = ExtResource("3_n5tiw")
+skeleton = NodePath("../../../..")

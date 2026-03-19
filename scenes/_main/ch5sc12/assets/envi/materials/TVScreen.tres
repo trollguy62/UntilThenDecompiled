@@ -1,0 +1,53 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://ecprv5xb1eky"]
+
+[sub_resource type="Shader" id="173"]
+code = "shader_type spatial;
+
+const float ASPECT_RATIO = 1.3333333; // 4:3
+const float CENTER_ASPECT = -0.16666667; // (-4/3 * 0.5) + 0.5
+const vec3 LUM = vec3(0.299, 0.587, 0.114);
+
+uniform sampler2D input : source_color;
+
+vec4 textureSrgb(sampler2D s, vec2 uv) {
+	vec4 t = texture(input, uv);
+	t.rgb = mix(pow((t.rgb + vec3(0.055)) * (1.0 / (1.0 + 0.055)), vec3(2.4)), t.rgb.rgb * (1.0 / 12.92), lessThan(t.rgb,vec3(0.04045)));
+	return t;
+}
+
+float lum(vec3 c) {
+	return dot(c, LUM);
+}
+
+void fragment() {
+	vec2 uv = vec2(UV.x, 1. - UV.y);
+	float deinterlace = sin(uv.y * 800. + TIME * 100.) * 0.0005;
+	uv.x = uv.x * ASPECT_RATIO + CENTER_ASPECT + deinterlace;
+
+	vec3 albedo = vec3(0);
+
+	if (uv.x >= 0. && uv.x <= 1.) {
+		albedo = vec3(
+			textureSrgb(input, uv + vec2(0.0014, 0)).r,
+			textureSrgb(input, uv).g,
+			textureSrgb(input, uv - vec2(0.0014, 0)).b
+		);
+	}
+
+	float l = lum(albedo);
+	float r = length(UV - vec2(0.5));
+
+	ALBEDO = albedo * 0.5;
+
+	EMISSION = mix(
+		albedo * 0.18,
+		vec3(r) * 0.1,
+		(1. - l) * pow(r, 6.9)
+	) + (vec3(1, 0.8, 0.6) * 0.0042);
+}
+"
+
+[resource]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("173")

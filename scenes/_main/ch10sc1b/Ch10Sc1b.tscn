@@ -1,0 +1,3866 @@
+[gd_scene load_steps=445 format=3 uid="uid://cyich7nv05hxq"]
+
+[ext_resource type="Script" path="res://components/Scene.gd" id="1_1sopm"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="2_k8332"]
+[ext_resource type="PackedScene" uid="uid://q1bv2hg2nag5" path="res://scenes/stage_nicole/Scene.tscn" id="2_s0d8x"]
+[ext_resource type="Environment" uid="uid://di6k7dm0nc851" path="res://scenes/_main/ch10sc1b/Environment.tres" id="3_151h1"]
+[ext_resource type="Script" path="res://components/CameraEffects.gd" id="3_y7e53"]
+[ext_resource type="VoxelGIData" uid="uid://cfyx3flp183r8" path="res://scenes/_main/ch10sc1b/VoxelGIData.res" id="4_tgq6f"]
+[ext_resource type="BankAsset" uid="uid://do0pal58a0r0l" path="res://addons/fmod/editor/resources/banks/{8fc33aa6-afb2-42b1-9bea-552666a9d3cb}.tres" id="5_o4p8j"]
+[ext_resource type="PackedScene" uid="uid://d2u3nma1tnqca" path="res://scenes/_main/ch10sc1b/assets/prefabs/Lighting.tscn" id="5_q8gbk"]
+[ext_resource type="EventAsset" uid="uid://ubtynidly6fi" path="res://addons/fmod/editor/resources/events/{d83b7ad8-4d5f-44cb-912a-4e00affd545f}.tres" id="6_0tt2t"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="6_joq23"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="7_05dkk"]
+[ext_resource type="EventAsset" uid="uid://5ynmvuuq8tih" path="res://addons/fmod/editor/resources/events/{035827f9-d3a3-4b37-a311-79cffc601f7a}.tres" id="7_uws7p"]
+[ext_resource type="EventAsset" uid="uid://dw17uxfav5wce" path="res://addons/fmod/editor/resources/events/{a80bc965-2b61-4a24-ab9a-85650f1971c7}.tres" id="8_0pkte"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="8_2o4ha"]
+[ext_resource type="Texture2D" uid="uid://dyon5gfbhwjcf" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_idle/01.tres" id="9_xqkei"]
+[ext_resource type="Script" path="res://components/SceneManager.gd" id="11_dvnq8"]
+[ext_resource type="Texture2D" uid="uid://cay17eoc1h6j5" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactivelightnod^dlf_concerned_idle/01.tres" id="11_w6xd0"]
+[ext_resource type="Texture2D" uid="uid://b5dd0dsyqb03t" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactivelightnod^dlf_concerned_idle/02.tres" id="12_ew0tn"]
+[ext_resource type="Script" path="res://components/DialogueHandler.gd" id="12_khjh8"]
+[ext_resource type="Texture2D" uid="uid://dv5dl4dhmauvv" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactivelightnod^dlf_concerned_idle/03.tres" id="13_8fhde"]
+[ext_resource type="Script" path="res://components/InteractiveAreaHandler.gd" id="13_o6jqp"]
+[ext_resource type="Texture2D" uid="uid://dsg7aw8no8p0b" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactivelightnod^dlf_concerned_idle/04.tres" id="14_2twq6"]
+[ext_resource type="Script" path="res://components/PlayerTarget.gd" id="14_v7k2f"]
+[ext_resource type="Texture2D" uid="uid://yukxjdmtuq1n" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactivelightnod^dlf_concerned_idle/05.tres" id="15_gw37d"]
+[ext_resource type="PackedScene" uid="uid://da0ppgkx2d538" path="res://components/Vignette.tscn" id="15_snrn1"]
+[ext_resource type="PackedScene" uid="uid://e3hu5waf2v3u" path="res://components/ThoughtBubble/ThoughtBubble.tscn" id="16_2nmm4"]
+[ext_resource type="Texture2D" uid="uid://byc5et2j8y58f" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactivelightnod^dlf_concerned_idle/06.tres" id="16_51p2w"]
+[ext_resource type="Texture2D" uid="uid://c7tananefx31f" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactivelightnod^dlf_concerned_idle/07.tres" id="17_5cva8"]
+[ext_resource type="Texture2D" uid="uid://bmia3r6vxaw1k" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_idle/01.tres" id="18_11mtu"]
+[ext_resource type="Script" path="res://components/ShotVisibilityController.gd" id="18_imr1h"]
+[ext_resource type="Script" path="res://components/Skit/SkitContainer.gd" id="18_o2pxt"]
+[ext_resource type="Script" path="res://components/Skit/SkitExternalRef.gd" id="19_bj8jg"]
+[ext_resource type="Texture2D" uid="uid://ccj4csdgaqnwj" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_idle/02.tres" id="19_i7xi8"]
+[ext_resource type="Texture2D" uid="uid://cq4l43j5s064n" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_idle/03.tres" id="20_nyfoh"]
+[ext_resource type="Texture2D" uid="uid://dyxr3xr2fpl1d" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_idle/04.tres" id="21_ifnbx"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="21_uoipl"]
+[ext_resource type="Texture2D" uid="uid://djan4asu4l1n2" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_idle/05.tres" id="22_cor8u"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="23_0dwjs"]
+[ext_resource type="Texture2D" uid="uid://cqp7lk31wxfoq" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_idle/06.tres" id="23_volay"]
+[ext_resource type="Texture2D" uid="uid://by1kgerew8yon" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_talk/01.tres" id="24_q0koc"]
+[ext_resource type="Texture2D" uid="uid://yf32ijubri8p" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_talk/02.tres" id="25_bb18d"]
+[ext_resource type="Texture2D" uid="uid://e7ikytjw0w8l" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_talk/03.tres" id="26_ggao1"]
+[ext_resource type="Texture2D" uid="uid://2nbu5yrojtio" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_talk/04.tres" id="27_l6crw"]
+[ext_resource type="Texture2D" uid="uid://c2xo1yidn0ni2" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_talk/05.tres" id="28_j112s"]
+[ext_resource type="Texture2D" uid="uid://cautdftw575wl" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_concerned_talk/06.tres" id="29_hfjhc"]
+[ext_resource type="Texture2D" uid="uid://dutb2x8emrt52" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_idle/01.tres" id="30_e123b"]
+[ext_resource type="Texture2D" uid="uid://b5t6xv0hbjjhu" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_idle/02.tres" id="31_wlb06"]
+[ext_resource type="Texture2D" uid="uid://dw6yn2xwg3l26" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_idle/03.tres" id="32_3kgri"]
+[ext_resource type="Texture2D" uid="uid://cr1dvb7h30ebm" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_idle/04.tres" id="33_u0yg3"]
+[ext_resource type="Texture2D" uid="uid://byiev6vrd1lkl" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_idle/05.tres" id="34_odx8i"]
+[ext_resource type="Texture2D" uid="uid://cy6b3do7lw1eo" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_idle/06.tres" id="35_01cyg"]
+[ext_resource type="Texture2D" uid="uid://cakaeqj5nbwa3" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_talk/01.tres" id="36_rg8so"]
+[ext_resource type="Script" path="res://components/Pivot.gd" id="37_j5fpq"]
+[ext_resource type="Texture2D" uid="uid://dpd6ran01b4kj" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_talk/02.tres" id="37_mlpvs"]
+[ext_resource type="Texture2D" uid="uid://ce3xsablwyas6" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_talk/03.tres" id="38_ht2w1"]
+[ext_resource type="Texture2D" uid="uid://dt2crtwwvp2ue" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_talk/04.tres" id="39_6ely2"]
+[ext_resource type="Texture2D" uid="uid://cuwssy8c5q2c6" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^l_neutral_idle/01.tres" id="39_s4t1v"]
+[ext_resource type="Texture2D" uid="uid://bn3lhts3u4s5y" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^l_neutral_idle/02.tres" id="40_svil7"]
+[ext_resource type="Texture2D" uid="uid://7fnfe5s0y5g5" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_talk/05.tres" id="40_wcu8y"]
+[ext_resource type="Texture2D" uid="uid://clcg8jknfh4in" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^ulf_concerned_talk/06.tres" id="41_cksg3"]
+[ext_resource type="Texture2D" uid="uid://b66eat5mxlei0" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_idle/01.tres" id="41_lq07h"]
+[ext_resource type="Texture2D" uid="uid://cuqe2glao32pk" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_idle/01.tres" id="42_3re14"]
+[ext_resource type="Texture2D" uid="uid://dntuaes2r2n1a" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_idle/02.tres" id="42_gqrji"]
+[ext_resource type="Texture2D" uid="uid://djb3qkmhofvcd" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_talk/01.tres" id="43_8wqv5"]
+[ext_resource type="Texture2D" uid="uid://ymj2t6lsjho5" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_idle/02.tres" id="43_ev1t2"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="43_qu4n0"]
+[ext_resource type="Texture2D" uid="uid://c3o3iucxighku" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_talk/02.tres" id="44_f8vpc"]
+[ext_resource type="Texture2D" uid="uid://kwmw0v0q4d7w" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_idle/03.tres" id="44_wavvn"]
+[ext_resource type="Texture2D" uid="uid://j72m8gtlinra" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_idle/04.tres" id="45_eg1yy"]
+[ext_resource type="Texture2D" uid="uid://do045yaqt4hpc" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_idle/01.tres" id="45_twvoh"]
+[ext_resource type="Texture2D" uid="uid://dwrx0abvku3hk" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_idle/01.tres" id="46_erx5p"]
+[ext_resource type="Texture2D" uid="uid://lbm40medslvv" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_idle/05.tres" id="46_qlf1k"]
+[ext_resource type="Texture2D" uid="uid://cx2muyeg2e87h" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_idle/02.tres" id="47_1182y"]
+[ext_resource type="Texture2D" uid="uid://btsnvwvl422f2" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_idle/06.tres" id="47_qi1au"]
+[ext_resource type="Texture2D" uid="uid://b20mkiths5yd6" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_talk/01.tres" id="48_ft732"]
+[ext_resource type="Texture2D" uid="uid://c48oduff0baim" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_talk/01.tres" id="48_l36nx"]
+[ext_resource type="Texture2D" uid="uid://beg4vb708hjm5" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_talk/02.tres" id="49_4agrj"]
+[ext_resource type="Texture2D" uid="uid://biwtr56uj85or" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_talk/02.tres" id="49_nqqxo"]
+[ext_resource type="Texture2D" uid="uid://d4lxcw7thi6go" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_talk/03.tres" id="50_o23kj"]
+[ext_resource type="Texture2D" uid="uid://cdbfk55ia7t62" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lb_neutral_idle/01.tres" id="50_vf27d"]
+[ext_resource type="Texture2D" uid="uid://brdv5aktiql7" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_talk/04.tres" id="51_1ily3"]
+[ext_resource type="Texture2D" uid="uid://c4454su06y4h1" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lb_neutral_idle/02.tres" id="51_5sfmm"]
+[ext_resource type="Texture2D" uid="uid://lh828oph8w6p" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_idle/02.tres" id="52_c37s1"]
+[ext_resource type="Texture2D" uid="uid://jtpwi7vdylhi" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_talk/05.tres" id="52_eepqn"]
+[ext_resource type="Texture2D" uid="uid://dvwe7a0syjple" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_talk/01.tres" id="53_13q8p"]
+[ext_resource type="Texture2D" uid="uid://daju6ohkcd84q" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_concerned_talk/06.tres" id="53_dwhu7"]
+[ext_resource type="Texture2D" uid="uid://bheaax2abuihm" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_talk/02.tres" id="54_d74gk"]
+[ext_resource type="Texture2D" uid="uid://k55gdug5nled" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_walk^lf_concerned_idle/01.tres" id="54_mycnc"]
+[ext_resource type="Texture2D" uid="uid://55hwp6uu35km" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^l_positive_idle/01.tres" id="55_gqpb0"]
+[ext_resource type="Texture2D" uid="uid://bx4ufd70spt15" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_walk^lf_concerned_idle/02.tres" id="55_wqfsj"]
+[ext_resource type="Texture2D" uid="uid://dg2h2n78fcmbb" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_walk^lf_concerned_idle/03.tres" id="56_e3jh0"]
+[ext_resource type="Texture2D" uid="uid://ctq1rg3jb2nyn" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^l_positive_idle/02.tres" id="56_ew4wm"]
+[ext_resource type="Texture2D" uid="uid://b4v55m1v7oo4n" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_idle/01.tres" id="57_3qgvh"]
+[ext_resource type="Texture2D" uid="uid://dnf0bptfnbo54" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_walk^lf_concerned_idle/04.tres" id="57_ewfw5"]
+[ext_resource type="Texture2D" uid="uid://bj2paa18cnuu8" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_walk^lf_concerned_idle/05.tres" id="58_15801"]
+[ext_resource type="Texture2D" uid="uid://c12r5luvej3kp" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_idle/02.tres" id="58_gmi0b"]
+[ext_resource type="Texture2D" uid="uid://b002q01g6k4iq" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_walk^lf_concerned_idle/06.tres" id="59_gcajw"]
+[ext_resource type="Texture2D" uid="uid://b7up151qww678" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_talk/01.tres" id="59_safri"]
+[ext_resource type="Texture2D" uid="uid://kjeb4w6mq6xt" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_walk^lf_concerned_idle/07.tres" id="60_g1pr8"]
+[ext_resource type="Texture2D" uid="uid://n3kh52mf56s2" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_talk/02.tres" id="60_vow80"]
+[ext_resource type="Texture2D" uid="uid://ruimiocb0k6" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_walk^lf_concerned_idle/08.tres" id="61_1r4kg"]
+[ext_resource type="Texture2D" uid="uid://fodja21p17sp" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standtyingtie^dlb_default_idle/01.tres" id="61_k5tud"]
+[ext_resource type="Texture2D" uid="uid://3ccjepxh52ee" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standholdingtie^rb_default_idle/01.tres" id="62_ny355"]
+[ext_resource type="Texture2D" uid="uid://cjpiul3swe28x" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_idle/02.tres" id="62_tbnno"]
+[ext_resource type="Texture2D" uid="uid://dgxrhnbtiuwst" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_idle/03.tres" id="63_henin"]
+[ext_resource type="Texture2D" uid="uid://d3rbdkc8fqpl0" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_idle/04.tres" id="64_t3x3u"]
+[ext_resource type="Texture2D" uid="uid://b65byor3eud46" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_idle/05.tres" id="65_0lt7k"]
+[ext_resource type="Texture2D" uid="uid://ds1m1tsqy64ng" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_idle/06.tres" id="66_q6kfq"]
+[ext_resource type="Texture2D" uid="uid://ceos4mpbmycs6" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_talk/01.tres" id="67_g2hpl"]
+[ext_resource type="Texture2D" uid="uid://bru0ukabf2qe0" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_talk/02.tres" id="68_2dh1v"]
+[ext_resource type="Texture2D" uid="uid://bqqpk2k1xeyo4" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_talk/03.tres" id="69_rgbu0"]
+[ext_resource type="Texture2D" uid="uid://c67e10u2qttrf" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_talk/04.tres" id="70_rhl88"]
+[ext_resource type="Texture2D" uid="uid://cxne4jt6on6x3" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_talk/05.tres" id="71_amene"]
+[ext_resource type="Texture2D" uid="uid://basl6ljhcool8" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_neutral_talk/06.tres" id="72_5l4l6"]
+[ext_resource type="Texture2D" uid="uid://c3upx7544haio" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_idle/01.tres" id="73_mpy1j"]
+[ext_resource type="Texture2D" uid="uid://udyarblqlwct" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_idle/02.tres" id="74_74x1n"]
+[ext_resource type="Texture2D" uid="uid://bdj3fhunjr0sc" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_idle/03.tres" id="75_vjoic"]
+[ext_resource type="Texture2D" uid="uid://wgi2g5cks57g" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_idle/04.tres" id="76_2l7d1"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/scripts/PlayerController.gd" id="77_7c0gq"]
+[ext_resource type="Texture2D" uid="uid://4wf1pf6t2df2" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_idle/05.tres" id="77_v7rae"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="78_fs4n5"]
+[ext_resource type="Texture2D" uid="uid://xyogi7xyswpp" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_idle/06.tres" id="78_lkvcw"]
+[ext_resource type="Texture2D" uid="uid://cucomn10f08v2" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_talk/01.tres" id="79_xv1q4"]
+[ext_resource type="Texture2D" uid="uid://d3orm2hpu3rlj" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_talk/02.tres" id="80_b85l8"]
+[ext_resource type="Script" path="res://components/PathGrounder.gd" id="80_pyekb"]
+[ext_resource type="Texture2D" uid="uid://d117y13os2j5n" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_talk/03.tres" id="81_mvh4i"]
+[ext_resource type="Texture2D" uid="uid://bnmt1db4hrj1q" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_talk/04.tres" id="82_3qdxa"]
+[ext_resource type="Texture2D" uid="uid://cecxovk28wbe8" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_talk/05.tres" id="83_2qjci"]
+[ext_resource type="Texture2D" uid="uid://1y35fqkmdu8j" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^dlf_persuasive_talk/06.tres" id="84_p2q2w"]
+[ext_resource type="Texture2D" uid="uid://jw6uiify5kmi" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_idle/01.tres" id="85_y23ia"]
+[ext_resource type="Texture2D" uid="uid://dyts1b02qiieu" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_idle/02.tres" id="86_u845b"]
+[ext_resource type="Texture2D" uid="uid://dgjv5vtbj8hap" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_idle/03.tres" id="87_q6pn0"]
+[ext_resource type="Texture2D" uid="uid://bi2t71shgb0jf" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_idle/04.tres" id="88_0cpvs"]
+[ext_resource type="Texture2D" uid="uid://fjfruwct3lik" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_idle/05.tres" id="89_8g2a8"]
+[ext_resource type="Texture2D" uid="uid://c3nd81cn6ajmn" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_idle/06.tres" id="90_3oref"]
+[ext_resource type="Texture2D" uid="uid://cqdtmm3c02gv3" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_talk/01.tres" id="91_ph3cx"]
+[ext_resource type="Texture2D" uid="uid://dglucl16dw6gj" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_talk/02.tres" id="92_6bi4f"]
+[ext_resource type="Texture2D" uid="uid://ubqh8im2aci0" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_talk/03.tres" id="93_s0ell"]
+[ext_resource type="Texture2D" uid="uid://bckc88ghtwqp8" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_talk/04.tres" id="94_f7qpe"]
+[ext_resource type="Texture2D" uid="uid://dcn5p5j02k1c" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_talk/05.tres" id="95_2cc1p"]
+[ext_resource type="Texture2D" uid="uid://jjh40mdj5sp4" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive=r_talk/06.tres" id="96_we5c3"]
+[ext_resource type="Texture2D" uid="uid://cd72af31df63y" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_idle/01.tres" id="97_2jdr0"]
+[ext_resource type="Texture2D" uid="uid://dy573xhywqrrq" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_idle/02.tres" id="98_wnih4"]
+[ext_resource type="Texture2D" uid="uid://dux4604721jud" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_idle/03.tres" id="99_g67s6"]
+[ext_resource type="Texture2D" uid="uid://ccw8m7nnqdh3e" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_idle/04.tres" id="100_e5kc2"]
+[ext_resource type="Texture2D" uid="uid://dtqdchbelhgd3" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_idle/05.tres" id="101_7dxfv"]
+[ext_resource type="Texture2D" uid="uid://b21bbxe0nx5ko" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_idle/06.tres" id="102_ebebl"]
+[ext_resource type="Texture2D" uid="uid://bsbpiwl1vc4xt" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_talk/01.tres" id="103_bwyyu"]
+[ext_resource type="Texture2D" uid="uid://bhj5bl6wdfl1q" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_talk/02.tres" id="104_8ue71"]
+[ext_resource type="Texture2D" uid="uid://driyyks1xsf5l" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_talk/03.tres" id="105_dee8d"]
+[ext_resource type="Texture2D" uid="uid://dwonjis7o53vp" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_talk/04.tres" id="106_s6317"]
+[ext_resource type="Texture2D" uid="uid://1ia6h1ycbixd" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_talk/05.tres" id="107_jburw"]
+[ext_resource type="Texture2D" uid="uid://dbrgevkf2nu7t" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleLacsamana/lf_standactive^lf_persuasive_talk/06.tres" id="108_7ay7l"]
+[ext_resource type="Texture2D" uid="uid://dhalgguwo6yfg" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^l_neutral_idle/03.tres" id="121_n5oe6"]
+[ext_resource type="Texture2D" uid="uid://pdpc6ab06kfl" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^l_neutral_idle/04.tres" id="122_f380f"]
+[ext_resource type="Texture2D" uid="uid://nxfn5qvcalds" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^l_neutral_idle/05.tres" id="123_bhd7l"]
+[ext_resource type="Texture2D" uid="uid://c46sho61osv05" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^l_neutral_idle/06.tres" id="124_j21gr"]
+[ext_resource type="Texture2D" uid="uid://bh4xv81353ga7" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_idle/03.tres" id="127_ljn85"]
+[ext_resource type="Texture2D" uid="uid://d3mhygffakg5j" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_idle/04.tres" id="128_rosr5"]
+[ext_resource type="Texture2D" uid="uid://bjx7fck0re1b" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_idle/05.tres" id="129_xhkin"]
+[ext_resource type="Texture2D" uid="uid://fa0et5y8c7we" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_idle/06.tres" id="130_g17is"]
+[ext_resource type="Texture2D" uid="uid://c680qcgeh2lr7" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_talk/03.tres" id="133_tbavb"]
+[ext_resource type="Texture2D" uid="uid://s6dg5hemr62f" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_talk/04.tres" id="134_grog7"]
+[ext_resource type="Texture2D" uid="uid://b7hy56vaskti4" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_talk/05.tres" id="135_t8ln5"]
+[ext_resource type="Texture2D" uid="uid://dp6trh1y0frja" path="res://scenes/_main/ch10sc1b/assets/characters/MaleAdult/l_sit^lf_neutral_talk/06.tres" id="136_s30ig"]
+[ext_resource type="Texture2D" uid="uid://o8q4ldqggyes" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_idle/03.tres" id="140_5md15"]
+[ext_resource type="Texture2D" uid="uid://dwlnndxweemav" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_idle/04.tres" id="141_me8j6"]
+[ext_resource type="Texture2D" uid="uid://bv8eaacb7x5xl" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_idle/05.tres" id="142_k38kq"]
+[ext_resource type="Texture2D" uid="uid://boa66yjb5u3f4" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_idle/06.tres" id="143_pudmq"]
+[ext_resource type="Texture2D" uid="uid://du1atohycu0d7" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_talk/03.tres" id="146_aryjw"]
+[ext_resource type="Texture2D" uid="uid://cecwg5xugexkg" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_talk/04.tres" id="147_av25w"]
+[ext_resource type="Texture2D" uid="uid://b1y2ts568rs41" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_talk/05.tres" id="148_mxfjb"]
+[ext_resource type="Texture2D" uid="uid://r1m4qrrg8jvn" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sitadjustingglasses^lf_neutral_talk/06.tres" id="149_amj2g"]
+[ext_resource type="Texture2D" uid="uid://dc37vnby14su8" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_positive_idle/01.tres" id="151_cnp2o"]
+[ext_resource type="Texture2D" uid="uid://d3s7aulxig3c1" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_persuasive Copy_idle/01.tres" id="151_wc71t"]
+[ext_resource type="Texture2D" uid="uid://cy5dm58kh6qah" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand to kneel^lf_persuasive_idle/01.tres" id="152_5yn0x"]
+[ext_resource type="Texture2D" uid="uid://blkq7sightqrd" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lb_neutral_idle/03.tres" id="152_7s2g0"]
+[ext_resource type="Texture2D" uid="uid://shcd1tq5k5e2" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lb_neutral_idle/04.tres" id="153_1r3rk"]
+[ext_resource type="Texture2D" uid="uid://dr7frffmpf0gn" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand to kneel^lf_persuasive_idle/02.tres" id="153_qrtr6"]
+[ext_resource type="Texture2D" uid="uid://b25r2cnxrpw8i" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand to kneel^lf_persuasive_idle/03.tres" id="154_2oalq"]
+[ext_resource type="Texture2D" uid="uid://chj4ax27tlvys" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lb_neutral_idle/05.tres" id="154_66pfa"]
+[ext_resource type="Texture2D" uid="uid://y8qr2eaqljym" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand to kneel^lf_persuasive_idle/04.tres" id="155_0qc2p"]
+[ext_resource type="Texture2D" uid="uid://b71u5og00ch2j" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lb_neutral_idle/06.tres" id="155_fwdmg"]
+[ext_resource type="Texture2D" uid="uid://f6jor47240u1" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand to kneel^lf_persuasive_idle/05.tres" id="156_h7xn3"]
+[ext_resource type="Texture2D" uid="uid://vr1t1bscr6rs" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand to kneel^lf_persuasive_idle/06.tres" id="157_ybk57"]
+[ext_resource type="Texture2D" uid="uid://xdjd52nqyx53" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_idle/01.tres" id="158_b5lk1"]
+[ext_resource type="Texture2D" uid="uid://buosctt0uf77x" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_idle/03.tres" id="158_h7tt3"]
+[ext_resource type="Texture2D" uid="uid://crh142a1fqajo" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_idle/04.tres" id="159_3mfyh"]
+[ext_resource type="Texture2D" uid="uid://1x47eclpgtbu" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_idle/02.tres" id="159_xm0yr"]
+[ext_resource type="Texture2D" uid="uid://qatvn6a3dtvd" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_idle/05.tres" id="160_25cbi"]
+[ext_resource type="Texture2D" uid="uid://dqb13p4ou6ded" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_idle/03.tres" id="160_olkx2"]
+[ext_resource type="Texture2D" uid="uid://b8h3unn5th2vi" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_idle/04.tres" id="161_8abb0"]
+[ext_resource type="Texture2D" uid="uid://ceoy47y8hlso6" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_idle/06.tres" id="161_udv6k"]
+[ext_resource type="Texture2D" uid="uid://1b300wk40vpl" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_idle/05.tres" id="162_ivtib"]
+[ext_resource type="Texture2D" uid="uid://cw6sklowp1m5i" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_idle/06.tres" id="163_6oset"]
+[ext_resource type="Texture2D" uid="uid://tfnimraqqr2v" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_talk/01.tres" id="164_2u5j2"]
+[ext_resource type="Texture2D" uid="uid://cdobrvxhjdubg" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_talk/03.tres" id="164_114c6"]
+[ext_resource type="Texture2D" uid="uid://bfie1ttsm8gvg" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_talk/04.tres" id="165_5ug0y"]
+[ext_resource type="Texture2D" uid="uid://cpd124uqrp8k8" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_talk/02.tres" id="165_56je8"]
+[ext_resource type="Texture2D" uid="uid://ch6ib1dvo4yvf" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_talk/05.tres" id="166_7u5v5"]
+[ext_resource type="Texture2D" uid="uid://3oa0b3jk38a0" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_talk/03.tres" id="166_ul0kj"]
+[ext_resource type="Texture2D" uid="uid://bhq0joscgt8de" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_talk/04.tres" id="167_mh8n8"]
+[ext_resource type="Texture2D" uid="uid://bvve8fyum082l" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_neutral_talk/06.tres" id="167_owjcq"]
+[ext_resource type="Texture2D" uid="uid://cujlqslurt4wn" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_talk/05.tres" id="168_whxuq"]
+[ext_resource type="Texture2D" uid="uid://bkwnhkstv8rnv" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive=r_talk/06.tres" id="169_agv2s"]
+[ext_resource type="Texture2D" uid="uid://cd3i2plafoilj" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^l_positive_idle/03.tres" id="169_qvl34"]
+[ext_resource type="Texture2D" uid="uid://dfcksrb3ohwys" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_idle/01.tres" id="170_jlciq"]
+[ext_resource type="Texture2D" uid="uid://gyqwc2w6706" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^l_positive_idle/04.tres" id="170_okc3j"]
+[ext_resource type="PackedScene" uid="uid://b1myvkwvnotwi" path="res://components/InteractiveArea/InteractiveArea.tscn" id="171_8dlmw"]
+[ext_resource type="Texture2D" uid="uid://d2ioxg55k2g7t" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_idle/02.tres" id="171_j8jab"]
+[ext_resource type="Texture2D" uid="uid://b2a48i1cand1c" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^l_positive_idle/05.tres" id="171_sm2va"]
+[ext_resource type="Texture2D" uid="uid://dcimhng3yftgr" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_idle/03.tres" id="172_24ixw"]
+[ext_resource type="Texture2D" uid="uid://cdjj8063u8ffq" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^l_positive_idle/06.tres" id="172_et43f"]
+[ext_resource type="Texture2D" uid="uid://csexqyo6tipa5" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_idle/04.tres" id="173_4fh58"]
+[ext_resource type="Texture2D" uid="uid://c5c80jerui1nw" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_idle/05.tres" id="174_se0lh"]
+[ext_resource type="Texture2D" uid="uid://u0jg21ho5ls3" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_idle/06.tres" id="175_iha8y"]
+[ext_resource type="Texture2D" uid="uid://5ojntoo2s1o6" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_idle/03.tres" id="175_vm2wu"]
+[ext_resource type="Texture2D" uid="uid://bsedouns5p4e3" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_idle/04.tres" id="176_1u0p6"]
+[ext_resource type="Texture2D" uid="uid://cly3ghfvcxurl" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_talk/01.tres" id="176_xtthk"]
+[ext_resource type="Texture2D" uid="uid://cgcrw44q1l3q4" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_talk/02.tres" id="177_gnq37"]
+[ext_resource type="Texture2D" uid="uid://o7bku8d7wbfp" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_idle/05.tres" id="177_lh5vd"]
+[ext_resource type="Texture2D" uid="uid://cxvrny4al5rhf" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_idle/06.tres" id="178_05lt0"]
+[ext_resource type="Texture2D" uid="uid://cc43m66hq56g1" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_talk/03.tres" id="178_uu75j"]
+[ext_resource type="Texture2D" uid="uid://cngur7trcosdm" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_talk/04.tres" id="179_aqbgl"]
+[ext_resource type="Texture2D" uid="uid://idcvsixtdmvi" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_talk/05.tres" id="180_iu640"]
+[ext_resource type="Script" path="res://components/TriggerArea.gd" id="181_3uskb"]
+[ext_resource type="Texture2D" uid="uid://c0n3ajgenjbkw" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_talk/03.tres" id="181_8hecl"]
+[ext_resource type="Texture2D" uid="uid://llvkand0hs5v" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_persuasive_talk/06.tres" id="181_f5fr2"]
+[ext_resource type="Texture2D" uid="uid://cchfcbxwymcfw" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_idle/01.tres" id="182_5n3by"]
+[ext_resource type="Script" path="res://components/StateDictVisibilityController.gd" id="182_djynu"]
+[ext_resource type="Texture2D" uid="uid://d2pj5onlgvgvi" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_talk/04.tres" id="182_lr4d2"]
+[ext_resource type="Texture2D" uid="uid://c804n14aokxgd" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_talk/05.tres" id="183_6huph"]
+[ext_resource type="Script" path="res://components/PlayerTargetPosition.gd" id="183_aowjq"]
+[ext_resource type="Texture2D" uid="uid://c8fhr44jd8fes" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_idle/02.tres" id="183_u5fu7"]
+[ext_resource type="Texture2D" uid="uid://dcwht50h8d2i4" path="res://scenes/_main/ch10sc1b/assets/characters/Grandma/l_sit^lf_positive_talk/06.tres" id="184_7iyac"]
+[ext_resource type="Texture2D" uid="uid://bggg21n50ooml" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_idle/03.tres" id="184_in3oj"]
+[ext_resource type="Texture2D" uid="uid://b7652l8khwvo8" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_idle/04.tres" id="185_tokaq"]
+[ext_resource type="Texture2D" uid="uid://c8hws2tgvjgmn" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_idle/05.tres" id="186_6ew1h"]
+[ext_resource type="Texture2D" uid="uid://c6ixy32howjvf" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_idle/06.tres" id="187_erbby"]
+[ext_resource type="Texture2D" uid="uid://btqte5l4iyxgo" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standholdingtie^rb_default_idle/02.tres" id="187_kv4u1"]
+[ext_resource type="Texture2D" uid="uid://d1e5qngs3k862" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standholdingtie^rb_default_idle/03.tres" id="188_6dpun"]
+[ext_resource type="Texture2D" uid="uid://cuvjupdgtnwqx" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_talk/01.tres" id="188_h3ggq"]
+[ext_resource type="Texture2D" uid="uid://chuwno24nyq8r" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_talk/02.tres" id="189_6pbcx"]
+[ext_resource type="Texture2D" uid="uid://bylmnyroidygi" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standholdingtie^rb_default_idle/04.tres" id="189_x4xem"]
+[ext_resource type="Texture2D" uid="uid://c24f1rtssh7hb" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standholdingtie^rb_default_idle/05.tres" id="190_r2m53"]
+[ext_resource type="Texture2D" uid="uid://c6q4ubbawdf6c" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_talk/03.tres" id="190_su8e7"]
+[ext_resource type="Texture2D" uid="uid://b1sc5yumi6jhj" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standholdingtie^rb_default_idle/06.tres" id="191_u5lkd"]
+[ext_resource type="Texture2D" uid="uid://bafapvesrhsnv" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_talk/04.tres" id="191_x6o37"]
+[ext_resource type="Texture2D" uid="uid://c7vvfh08e5ask" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_talk/05.tres" id="192_k74ho"]
+[ext_resource type="Texture2D" uid="uid://btfnkh6fn1fv3" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standtyingtie^dlb_default_idle/02.tres" id="192_rmqll"]
+[ext_resource type="Texture2D" uid="uid://cmjx6rxe51ldf" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_persuasive_talk/06.tres" id="193_0dan3"]
+[ext_resource type="Texture2D" uid="uid://b8vng4xothpn4" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standtyingtie^dlb_default_idle/03.tres" id="193_fc2ib"]
+[ext_resource type="Texture2D" uid="uid://bkbuxn3w36eoo" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standtyingtie^dlb_default_idle/04.tres" id="194_b8sle"]
+[ext_resource type="Texture2D" uid="uid://38qgk34168dw" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_idle/01.tres" id="194_ltlar"]
+[ext_resource type="Texture2D" uid="uid://b4xvhs4f8xx3v" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standtyingtie^dlb_default_idle/05.tres" id="195_0286g"]
+[ext_resource type="Texture2D" uid="uid://cytumnqt7nenm" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_idle/02.tres" id="195_lu28j"]
+[ext_resource type="Texture2D" uid="uid://dkryh6rpg2mq5" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_idle/03.tres" id="196_2efgs"]
+[ext_resource type="Texture2D" uid="uid://cdyr1p7itke2l" path="res://scenes/_main/ch10sc1b/assets/characters/Jakelookalike/lb_standtyingtie^dlb_default_idle/06.tres" id="196_e66gt"]
+[ext_resource type="Texture2D" uid="uid://dw2wfq6cutn7e" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_idle/04.tres" id="197_ead1o"]
+[ext_resource type="Texture2D" uid="uid://byp8p2q2nc073" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_idle/01.tres" id="197_mil6v"]
+[ext_resource type="Texture2D" uid="uid://db30nccsmaq2s" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_idle/02.tres" id="198_5w47t"]
+[ext_resource type="Texture2D" uid="uid://cggbnvowc6o33" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_idle/05.tres" id="198_cybyr"]
+[ext_resource type="Texture2D" uid="uid://bk8uh3lrvj0wu" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_idle/03.tres" id="199_ix5hn"]
+[ext_resource type="Texture2D" uid="uid://dpsjv0bauom8y" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_idle/06.tres" id="199_snld3"]
+[ext_resource type="Texture2D" uid="uid://chp3qcrwc4o5r" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_talk/01.tres" id="200_1j6dh"]
+[ext_resource type="Texture2D" uid="uid://d0l75qv5n72j2" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_idle/04.tres" id="200_ghdwe"]
+[ext_resource type="Texture2D" uid="uid://y0tbgvs3b4pj" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_idle/05.tres" id="201_5t6o6"]
+[ext_resource type="Texture2D" uid="uid://bob3blsggojso" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_talk/02.tres" id="201_owwxn"]
+[ext_resource type="Texture2D" uid="uid://bebjlsewgws2h" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_talk/03.tres" id="202_cy62g"]
+[ext_resource type="Texture2D" uid="uid://dyffwo3oqgpx" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_idle/06.tres" id="202_ynyi1"]
+[ext_resource type="Texture2D" uid="uid://2uf08hq73w58" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_talk/01.tres" id="203_in5yi"]
+[ext_resource type="Texture2D" uid="uid://cdv7tbvykptrf" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_talk/04.tres" id="203_krmmu"]
+[ext_resource type="Texture2D" uid="uid://doxqm0mv8h88x" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_talk/02.tres" id="204_qphtt"]
+[ext_resource type="Texture2D" uid="uid://j7a4fqqop0ma" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_talk/05.tres" id="204_qsenu"]
+[ext_resource type="Texture2D" uid="uid://dmqqofcucxegg" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_persuasive_talk/06.tres" id="205_mtvu4"]
+[ext_resource type="Texture2D" uid="uid://i3eh4kwsc276" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_talk/03.tres" id="205_xok66"]
+[ext_resource type="Texture2D" uid="uid://cb5cho8vnyn05" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_idle/01.tres" id="206_6b06v"]
+[ext_resource type="Texture2D" uid="uid://cr61hq5005gjw" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_persuasive Copy_idle/02.tres" id="206_441mn"]
+[ext_resource type="Texture2D" uid="uid://dh0amqo8ntmnm" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_talk/04.tres" id="206_g8p0g"]
+[ext_resource type="Texture2D" uid="uid://bvpsqbaacpeny" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_idle/02.tres" id="207_kej2v"]
+[ext_resource type="Texture2D" uid="uid://bld767bww0qyu" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_talk/05.tres" id="207_p8r2n"]
+[ext_resource type="Texture2D" uid="uid://dbmkgw0byn318" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_persuasive Copy_idle/03.tres" id="207_q6x77"]
+[ext_resource type="Texture2D" uid="uid://drm784dsrou33" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_idle/03.tres" id="208_2ngwt"]
+[ext_resource type="Texture2D" uid="uid://c4cajsi0h2f40" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_persuasive Copy_idle/04.tres" id="208_g72wa"]
+[ext_resource type="Texture2D" uid="uid://sj6pmm1mjukb" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_neutral_talk/06.tres" id="208_yyml4"]
+[ext_resource type="Texture2D" uid="uid://d30n8k0gr6wh6" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_idle/01.tres" id="209_liprd"]
+[ext_resource type="Texture2D" uid="uid://ddlkjxxyogiix" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_idle/04.tres" id="209_ovid6"]
+[ext_resource type="Texture2D" uid="uid://crispoyfy4cpa" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_persuasive Copy_idle/05.tres" id="209_q80sk"]
+[ext_resource type="Texture2D" uid="uid://qdnjlbduiof1" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_persuasive Copy_idle/06.tres" id="210_mahai"]
+[ext_resource type="Texture2D" uid="uid://bb3k4x3x82xxm" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_idle/05.tres" id="210_rhr2l"]
+[ext_resource type="Texture2D" uid="uid://dexu0fitklqpl" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_idle/02.tres" id="210_rlssq"]
+[ext_resource type="Texture2D" uid="uid://d11hp08r1l2nq" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_idle/06.tres" id="211_6j8tb"]
+[ext_resource type="Texture2D" uid="uid://d34qk3jhn7oni" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_idle/03.tres" id="211_n7y7e"]
+[ext_resource type="Texture2D" uid="uid://cdhdmojrrmm70" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_persuasive Copy_idle/07.tres" id="211_nip8a"]
+[ext_resource type="Texture2D" uid="uid://81moetp253du" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_persuasive Copy_idle/08.tres" id="212_lbky3"]
+[ext_resource type="Texture2D" uid="uid://irrwilbu6tq1" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_idle/04.tres" id="212_oeybb"]
+[ext_resource type="Texture2D" uid="uid://cv2o07m6dfbjt" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_talk/01.tres" id="212_x74pa"]
+[ext_resource type="Texture2D" uid="uid://c7x53ljroty87" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_talk/02.tres" id="213_2p3yb"]
+[ext_resource type="Texture2D" uid="uid://dpehftlnuidp0" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_idle/05.tres" id="213_ojhl8"]
+[ext_resource type="Texture2D" uid="uid://ieracafg7s4r" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_talk/03.tres" id="214_bkw71"]
+[ext_resource type="Texture2D" uid="uid://gnqcq8ndx7tq" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_idle/06.tres" id="214_jad5y"]
+[ext_resource type="Texture2D" uid="uid://pf44vf8ykm28" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_talk/01.tres" id="215_8f88t"]
+[ext_resource type="Texture2D" uid="uid://b04dn6xlqbmho" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_talk/04.tres" id="215_b6spd"]
+[ext_resource type="Texture2D" uid="uid://bl0h2fkepooty" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_talk/02.tres" id="216_07ac0"]
+[ext_resource type="Texture2D" uid="uid://bk0eofobvga3g" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_talk/05.tres" id="216_y70nw"]
+[ext_resource type="Texture2D" uid="uid://blq7gwuulqo5w" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_talk/03.tres" id="217_otsrm"]
+[ext_resource type="Texture2D" uid="uid://cg0aebpg7orox" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive=r_talk/06.tres" id="217_vm1ed"]
+[ext_resource type="Texture2D" uid="uid://beufwoepecl02" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_idle/01.tres" id="218_i60bs"]
+[ext_resource type="Texture2D" uid="uid://c460ngattswql" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_talk/04.tres" id="218_ydei1"]
+[ext_resource type="Texture2D" uid="uid://dttr58ugxrlq0" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_idle/02.tres" id="219_kpxod"]
+[ext_resource type="Texture2D" uid="uid://bsnlbur5xrd57" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_talk/05.tres" id="219_y7ax4"]
+[ext_resource type="Texture2D" uid="uid://v3t6ahatsvvb" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^lf_persuasive_talk/06.tres" id="220_a8k52"]
+[ext_resource type="Texture2D" uid="uid://bntp8ydogq6ek" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_idle/03.tres" id="220_y22yu"]
+[ext_resource type="Texture2D" uid="uid://cpkca1ptmvnml" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_idle/04.tres" id="221_rbgxk"]
+[ext_resource type="Texture2D" uid="uid://curi6bnx40iom" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^l_positive_idle/01.tres" id="221_sd3r5"]
+[ext_resource type="Texture2D" uid="uid://cn4fmxmrsjxe2" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^l_positive_idle/02.tres" id="222_7kept"]
+[ext_resource type="Texture2D" uid="uid://beh714w34jtnv" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_idle/05.tres" id="222_nq2fg"]
+[ext_resource type="Texture2D" uid="uid://c2ttgwhch47xm" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_idle/06.tres" id="223_3jap2"]
+[ext_resource type="Texture2D" uid="uid://ba47vrcbf04rg" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^l_positive_idle/03.tres" id="223_rdasu"]
+[ext_resource type="Texture2D" uid="uid://cwfsdm1f36vkm" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^l_positive_idle/04.tres" id="224_3nmq0"]
+[ext_resource type="Texture2D" uid="uid://dnhos4pgofejt" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_talk/01.tres" id="224_76tho"]
+[ext_resource type="Texture2D" uid="uid://b44c0s38yhiww" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_talk/02.tres" id="225_6wn6d"]
+[ext_resource type="Texture2D" uid="uid://bq7wye2me0ypx" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^l_positive_idle/05.tres" id="225_lhyny"]
+[ext_resource type="Texture2D" uid="uid://chw2hd03imbh0" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_talk/03.tres" id="226_gckkn"]
+[ext_resource type="Texture2D" uid="uid://cw36732rl2ajm" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MotherBaby/l_sit^l_positive_idle/06.tres" id="226_vcbn8"]
+[ext_resource type="Texture2D" uid="uid://p3g1ydrwewpg" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_talk/04.tres" id="227_50vvi"]
+[ext_resource type="Texture2D" uid="uid://j0hyy2bu2vfd" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/JudgeFemaleAdult/l_sitphonecall^l_angry_talk/01.tres" id="227_gu0o7"]
+[ext_resource type="Texture2D" uid="uid://cbv8kg6fjjxgx" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_talk/05.tres" id="228_6iqbt"]
+[ext_resource type="Texture2D" uid="uid://bxdktgldp6ojk" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/JudgeFemaleAdult/l_sitphonecall^l_angry_talk/02.tres" id="228_wdaxg"]
+[ext_resource type="Texture2D" uid="uid://d2if7shovp38m" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_kneel^lf_positive_talk/06.tres" id="229_ivbg5"]
+[ext_resource type="Texture2D" uid="uid://cbgf4g6h3j4f0" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/JudgeFemaleAdult/l_sitphonecall^l_angry_talk/03.tres" id="229_jhvyu"]
+[ext_resource type="Texture2D" uid="uid://kgryirsxcpvc" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/JudgeFemaleAdult/l_sitphonecall^l_angry_talk/04.tres" id="230_5iyds"]
+[ext_resource type="Texture2D" uid="uid://d3tw4vu5e4rd4" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_idle/01.tres" id="230_hyeaj"]
+[ext_resource type="Texture2D" uid="uid://dqvxv34twmj4b" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/JudgeFemaleAdult/l_sitphonecall^l_angry_talk/05.tres" id="231_ce8gw"]
+[ext_resource type="Texture2D" uid="uid://dm7d8818esdqq" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_idle/02.tres" id="231_ekeke"]
+[ext_resource type="Texture2D" uid="uid://c1cc6keb5nyj2" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_idle/03.tres" id="232_h4c27"]
+[ext_resource type="Texture2D" uid="uid://bg8ggayfst61" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/JudgeFemaleAdult/l_sitphonecall^l_angry_talk/06.tres" id="232_qpx6d"]
+[ext_resource type="Script" path="res://scenes/_main/ch10sc1b/script/WalkingNPC.gd" id="233_k6i7i"]
+[ext_resource type="Texture2D" uid="uid://ehtpr6t13vor" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleTeenPianist/lf_walk^lf_nervous_idle/01.tres" id="233_qik77"]
+[ext_resource type="Texture2D" uid="uid://de748bbv0h0as" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_idle/04.tres" id="233_yaru8"]
+[ext_resource type="Texture2D" uid="uid://b6led6nx1qcm6" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleTeenPianist/lf_walk^lf_nervous_idle/02.tres" id="234_04mk0"]
+[ext_resource type="Texture2D" uid="uid://cxe28ohgdkcte" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_idle/05.tres" id="234_wcc1t"]
+[ext_resource type="Texture2D" uid="uid://2rl102cokosu" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleTeenPianist/lf_walk^lf_nervous_idle/03.tres" id="235_hlw8t"]
+[ext_resource type="Texture2D" uid="uid://c3fqt625g1oo6" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_idle/06.tres" id="235_qjqul"]
+[ext_resource type="Texture2D" uid="uid://divyba6vr1xjf" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleTeenPianist/lf_walk^lf_nervous_idle/04.tres" id="236_337c1"]
+[ext_resource type="Texture2D" uid="uid://d3x2y0vw6nisj" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_talk/01.tres" id="236_dbh0t"]
+[ext_resource type="Texture2D" uid="uid://dcqk5ri62ltn0" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleTeenPianist/lf_walk^lf_nervous_idle/05.tres" id="237_3laj6"]
+[ext_resource type="Texture2D" uid="uid://yyn5jkmn1o3x" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_talk/02.tres" id="237_rt3ue"]
+[ext_resource type="Texture2D" uid="uid://bw51j10jgkrfg" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_talk/03.tres" id="238_afm1y"]
+[ext_resource type="Texture2D" uid="uid://bpjk3tobuvr1m" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleTeenPianist/lf_walk^lf_nervous_idle/06.tres" id="238_rxkr7"]
+[ext_resource type="Texture2D" uid="uid://b0j5ovt3itisy" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_talk/04.tres" id="239_s7dg1"]
+[ext_resource type="Texture2D" uid="uid://bnae21jdvjpg4" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleKidFlutist/lf_walk+flute^lf_positive_idle/01.tres" id="240_84tsv"]
+[ext_resource type="Texture2D" uid="uid://bpwueci0a6t6k" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_talk/05.tres" id="240_kpo1x"]
+[ext_resource type="Texture2D" uid="uid://224v4ach48wc" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^dlf_positive_talk/06.tres" id="241_i68fc"]
+[ext_resource type="Texture2D" uid="uid://bbb0exl1q8b0c" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleKidFlutist/lf_walk+flute^lf_positive_idle/02.tres" id="241_tc0ni"]
+[ext_resource type="Texture2D" uid="uid://cq2kmq1075use" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_idle/01.tres" id="242_4hc2k"]
+[ext_resource type="Texture2D" uid="uid://cdka2jjrlw5d3" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleKidFlutist/lf_walk+flute^lf_positive_idle/03.tres" id="242_4x7ja"]
+[ext_resource type="Texture2D" uid="uid://bcg4rc867xghw" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleKidFlutist/lf_walk+flute^lf_positive_idle/04.tres" id="243_ktaym"]
+[ext_resource type="Texture2D" uid="uid://biyisnyxv2orh" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_idle/02.tres" id="243_ur4ql"]
+[ext_resource type="Texture2D" uid="uid://dsdbpl1kts332" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleKidFlutist/lf_walk+flute^lf_positive_idle/05.tres" id="244_1mwp4"]
+[ext_resource type="Texture2D" uid="uid://dmrk1kordpj57" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_idle/03.tres" id="244_jlmy5"]
+[ext_resource type="Texture2D" uid="uid://cujl6bgvkjyq1" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_idle/04.tres" id="245_e13qh"]
+[ext_resource type="Texture2D" uid="uid://bxq1in3cf3xva" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/FemaleKidFlutist/lf_walk+flute^lf_positive_idle/06.tres" id="245_eh13u"]
+[ext_resource type="Texture2D" uid="uid://3p7r05itmruq" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MaleViolinist/lf_walk+violin^lf_positive_idle/01.tres" id="246_dn72x"]
+[ext_resource type="Texture2D" uid="uid://bb52evngmoq7k" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_idle/05.tres" id="246_r8d0i"]
+[ext_resource type="Texture2D" uid="uid://ogry7l5otu6c" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MaleViolinist/lf_walk+violin^lf_positive_idle/02.tres" id="247_e1qjx"]
+[ext_resource type="Texture2D" uid="uid://xv34686s2u5h" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_idle/06.tres" id="247_vfx8x"]
+[ext_resource type="Texture2D" uid="uid://bgqnicmcrviqa" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_talk/01.tres" id="248_foipa"]
+[ext_resource type="Texture2D" uid="uid://bry282vbu5inr" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MaleViolinist/lf_walk+violin^lf_positive_idle/03.tres" id="248_j6h68"]
+[ext_resource type="Texture2D" uid="uid://dufdv7rptbmp4" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MaleViolinist/lf_walk+violin^lf_positive_idle/04.tres" id="249_7jl8v"]
+[ext_resource type="Texture2D" uid="uid://boityvi4dlv1m" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_talk/02.tres" id="249_7t2d5"]
+[ext_resource type="Texture2D" uid="uid://b1yy7qx4xdqjb" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_talk/03.tres" id="250_7ep6t"]
+[ext_resource type="Texture2D" uid="uid://bowkf3bqxd6rs" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MaleViolinist/lf_walk+violin^lf_positive_idle/05.tres" id="250_bgh6u"]
+[ext_resource type="Texture2D" uid="uid://dh8cart1qumab" path="res://scenes/_main/ch10sc1b/assets/characters/NPC/MaleViolinist/lf_walk+violin^lf_positive_idle/06.tres" id="251_n441j"]
+[ext_resource type="Texture2D" uid="uid://dg4mi6nr3g851" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_talk/04.tres" id="251_r23vc"]
+[ext_resource type="Texture2D" uid="uid://ry8rlhy6w1wr" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_talk/05.tres" id="252_pnmg2"]
+[ext_resource type="Texture2D" uid="uid://bj3g0c4v1ajlq" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_stand^lf_positive_talk/06.tres" id="253_hlk6r"]
+[ext_resource type="Texture2D" uid="uid://dpv8n6f31iaf8" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_positive_idle/02.tres" id="254_h2fu5"]
+[ext_resource type="Texture2D" uid="uid://c1jbbbv4pmj3p" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_positive_idle/03.tres" id="255_ljkby"]
+[ext_resource type="Texture2D" uid="uid://dya6b16l0vvts" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_positive_idle/04.tres" id="256_kd38m"]
+[ext_resource type="Texture2D" uid="uid://dqh7nu0ntf7me" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_positive_idle/05.tres" id="257_rjy05"]
+[ext_resource type="Texture2D" uid="uid://dxqp0h2g0ru5r" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_positive_idle/06.tres" id="258_67ktg"]
+[ext_resource type="Texture2D" uid="uid://btxct2to66eug" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_positive_idle/07.tres" id="259_ae7rc"]
+[ext_resource type="Texture2D" uid="uid://c8t05yyjrtoht" path="res://scenes/_main/ch10sc1b/assets/characters/NicoleMom/lf_walk^lf_positive_idle/08.tres" id="260_qn35k"]
+[ext_resource type="Script" path="res://data/AnimationTransition.gd" id="264_110uy"]
+
+[sub_resource type="EventAsset" id="EventAsset_6ueqn"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1b/DoorOpenClose"
+guid = "{54fcd3f7-834f-4665-b6e6-b40bf76ea6c7}"
+name = "DoorOpenClose"
+
+[sub_resource type="EventAsset" id="EventAsset_pwndg"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1b/CrowdFootsteps"
+guid = "{3153044f-535b-475c-a589-6b37149f2259}"
+name = "CrowdFootsteps"
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_a7eiv"]
+dof_blur_near_enabled = true
+dof_blur_near_transition = 0.1
+dof_blur_amount = 0.2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_35ulb"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.81, 1.053, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("42_3re14")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kjdln"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_35ulb"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wr84o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_w6xd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ew0tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8fhde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2twq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gw37d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_51p2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5cva8")
+}],
+"loop": false,
+"name": &"concerned+nod_idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_11mtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i7xi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nyfoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ifnbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cor8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_volay")
+}],
+"loop": true,
+"name": &"concerned=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_q0koc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_bb18d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ggao1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_l6crw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_j112s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hfjhc")
+}],
+"loop": true,
+"name": &"concerned=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_e123b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_wlb06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_3kgri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_u0yg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_odx8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_01cyg")
+}],
+"loop": true,
+"name": &"concerned=u_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_rg8so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_mlpvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ht2w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_6ely2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_wcu8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_cksg3")
+}],
+"loop": true,
+"name": &"concerned=u_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_3re14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ev1t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_wavvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_eg1yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_qlf1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_qi1au")
+}],
+"loop": true,
+"name": &"concerned_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_l36nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_nqqxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_o23kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_1ily3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_eepqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_dwhu7")
+}],
+"loop": true,
+"name": &"concerned_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_mycnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_wqfsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_e3jh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ewfw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_15801")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_gcajw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_g1pr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_1r4kg")
+}],
+"loop": true,
+"name": &"concerned_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_xqkei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_tbnno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_henin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_t3x3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_0lt7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_q6kfq")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("67_g2hpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_2dh1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_rgbu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_rhl88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_amene")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_5l4l6")
+}],
+"loop": true,
+"name": &"neutral_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_mpy1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_74x1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_vjoic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_2l7d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_v7rae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_lkvcw")
+}],
+"loop": true,
+"name": &"persuasive=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("79_xv1q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_b85l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_mvh4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_3qdxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_2qjci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_p2q2w")
+}],
+"loop": true,
+"name": &"persuasive=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_y23ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_u845b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_q6pn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_0cpvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_8g2a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_3oref")
+}],
+"loop": true,
+"name": &"persuasive=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("91_ph3cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_6bi4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_s0ell")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_f7qpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_2cc1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_we5c3")
+}],
+"loop": true,
+"name": &"persuasive=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("97_2jdr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_wnih4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_g67s6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_e5kc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_7dxfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_ebebl")
+}],
+"loop": true,
+"name": &"persuasive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("103_bwyyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_8ue71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_dee8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_s6317")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_jburw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_7ay7l")
+}],
+"loop": true,
+"name": &"persuasive_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="EventAsset" id="EventAsset_ceqw2"]
+is_3d = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1b/Footsteps"
+guid = "{a80f1cb4-db5b-4933-b44c-a0c24303e73c}"
+name = "Footsteps"
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_et4of"]
+size = Vector3(0.323975, 1.05999, 0.02)
+
+[sub_resource type="ShaderMaterial" id="5450"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.56, 0.896, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("39_s4t1v")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_do7h4"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("5450"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_i4cvg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39_s4t1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_svil7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_n5oe6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122_f380f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_bhd7l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_j21gr")
+}],
+"loop": true,
+"name": &"neutral=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_lq07h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_gqrji")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_ljn85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_rosr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_xhkin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_g17is")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_8wqv5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_f8vpc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133_tbavb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_grog7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_t8ln5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_s30ig")
+}],
+"loop": true,
+"name": &"neutral_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="5460"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.56, 1.152, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("55_gqpb0")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lnfcq"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("5460"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_64lds"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46_erx5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_1182y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_5md15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141_me8j6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_k38kq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_pudmq")
+}],
+"loop": true,
+"name": &"neutral+glasses_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_ft732")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_4agrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_ft732")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_4agrj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_aryjw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147_av25w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148_mxfjb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149_amj2g")
+}],
+"loop": true,
+"name": &"neutral+glasses_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_vf27d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_5sfmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152_7s2g0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_1r3rk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_66pfa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_fwdmg")
+}],
+"loop": true,
+"name": &"neutral=b_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("45_twvoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_c37s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_h7tt3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_3mfyh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_25cbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_udv6k")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("53_13q8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_d74gk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_114c6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_5ug0y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_7u5v5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_owjcq")
+}],
+"loop": true,
+"name": &"neutral_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55_gqpb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_ew4wm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_qvl34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_okc3j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_sm2va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_et43f")
+}],
+"loop": true,
+"name": &"positive=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_3qgvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_gmi0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_vm2wu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_1u0p6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_lh5vd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_05lt0")
+}],
+"loop": true,
+"name": &"positive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("59_safri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_vow80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_8hecl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182_lr4d2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_6huph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_7iyac")
+}],
+"loop": true,
+"name": &"positive_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xf646"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.6075, 1.1664, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("61_k5tud")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jwr4m"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_xf646"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ncgy4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_ny355")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_kv4u1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188_6dpun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_x4xem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_r2m53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_u5lkd")
+}],
+"loop": true,
+"name": &"holding_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("61_k5tud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_rmqll")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_fc2ib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194_b8sle")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_0286g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_e66gt")
+}],
+"loop": true,
+"name": &"tying_idle",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgmwm"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.567, 1.1664, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("197_mil6v")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rm00d"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_bgmwm"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wldvr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("197_mil6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_5w47t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_ix5hn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200_ghdwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_5t6o6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_ynyi1")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("203_in5yi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_qphtt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_xok66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_g8p0g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_p8r2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_yyml4")
+}],
+"loop": true,
+"name": &"neutral_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("209_liprd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_rlssq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_n7y7e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_oeybb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_ojhl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_jad5y")
+}],
+"loop": true,
+"name": &"persuasive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("215_8f88t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_07ac0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_otsrm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218_ydei1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_y7ax4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_a8k52")
+}],
+"loop": true,
+"name": &"persuasive_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("221_sd3r5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_7kept")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_rdasu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224_3nmq0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_lhyny")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_vcbn8")
+}],
+"loop": true,
+"name": &"positive_idle",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_aa8v2"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.567, 1.1745, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("227_gu0o7")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vs865"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_aa8v2"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7rj7d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("227_gu0o7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_wdaxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_jhvyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230_5iyds")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231_ce8gw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_qpx6d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve3D" id="Curve3D_su46m"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -0.505, 0, 0, 0, 0, 0, 0, 0, 0, -5.195, 0, 0, 0, 0, 0, 0, 1.15, 0, -5.985, 0, 0, 0, 0, 0, 0, 1.15, 0, -7.145),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7re42"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.567, 1.1664, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("233_qik77")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_722e1"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_7re42"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4u32x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("233_qik77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_04mk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_hlw8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236_337c1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_3laj6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_rxkr7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8uwhj"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.567, 1.1745, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("240_84tsv")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uri3g"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_8uwhj"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1w13w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("240_84tsv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_tc0ni")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242_4x7ja")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_ktaym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_1mwp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_eh13u")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_15eq2"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.567, 1.1664, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("246_dn72x")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mc4ov"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_15eq2"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oum76"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("246_dn72x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_e1qjx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248_j6h68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_7jl8v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_bgh6u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_n441j")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_w8oqo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/NicoleLacsamana/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.51401, 0, 8.288)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/Mom/Stand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.33416, 0, 8.52677)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite/Footsteps:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Characters/Mom/Stand/Sprite/Footsteps:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_cqgyo"]
+resource_name = "intro_walk"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/NicoleLacsamana/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(5.51401, 0, 8.288), Vector3(5.9881, 0, 8.02856), Vector3(6, 0, 7.348)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/Mom/Stand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(5.33416, 0, 8.52677), Vector3(6.1, 0, 7.7)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["concerned_walk", "concerned_idle"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Characters/Mom/Stand/Sprite:animation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["positive_walk", "positive_idle"]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite/Footsteps:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Characters/Mom/Stand/Sprite/Footsteps:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, true, false]
+}
+
+[sub_resource type="Animation" id="Animation_fs71r"]
+resource_name = "mom_walk_away"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/Mom/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(6.1, 0, 7.7), Vector3(5.94242, 0, 5.2578)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/Mom/Stand/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["persuasive_walk", "positive_idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/Mom/Stand/Sprite/Footsteps:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xfkp1"]
+_data = {
+"RESET": SubResource("Animation_w8oqo"),
+"intro_walk": SubResource("Animation_cqgyo"),
+"mom_walk_away": SubResource("Animation_fs71r")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6lmaq"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.81, 1.053, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("54_mycnc")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u8pvj"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_6lmaq"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4ck6i"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_w6xd0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ew0tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_8fhde")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_2twq6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_gw37d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_51p2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_5cva8")
+}],
+"loop": true,
+"name": &"concerned+nod_idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_11mtu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_i7xi8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_nyfoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ifnbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cor8u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_volay")
+}],
+"loop": true,
+"name": &"concerned=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_q0koc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_bb18d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ggao1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_l6crw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_j112s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_hfjhc")
+}],
+"loop": true,
+"name": &"concerned=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30_e123b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_wlb06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_3kgri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_u0yg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_odx8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_01cyg")
+}],
+"loop": true,
+"name": &"concerned=u_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36_rg8so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_mlpvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ht2w1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_6ely2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_wcu8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_cksg3")
+}],
+"loop": true,
+"name": &"concerned=u_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("42_3re14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ev1t2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_wavvn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_eg1yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_qlf1k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_qi1au")
+}],
+"loop": true,
+"name": &"concerned_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_l36nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_nqqxo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_o23kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_1ily3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_eepqn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_dwhu7")
+}],
+"loop": true,
+"name": &"concerned_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("54_mycnc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_wqfsj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_e3jh0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_ewfw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_15801")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_gcajw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_g1pr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_1r4kg")
+}],
+"loop": true,
+"name": &"concerned_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_xqkei")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_tbnno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_henin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_t3x3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_0lt7k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_q6kfq")
+}],
+"loop": true,
+"name": &"neutral_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("67_g2hpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_2dh1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_rgbu0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_rhl88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_amene")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_5l4l6")
+}],
+"loop": true,
+"name": &"neutral_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("73_mpy1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_74x1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_vjoic")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_2l7d1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_v7rae")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_lkvcw")
+}],
+"loop": true,
+"name": &"persuasive=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("79_xv1q4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_b85l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_mvh4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_3qdxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_2qjci")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_p2q2w")
+}],
+"loop": true,
+"name": &"persuasive=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85_y23ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_u845b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_q6pn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_0cpvs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_8g2a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_3oref")
+}],
+"loop": true,
+"name": &"persuasive=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("91_ph3cx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_6bi4f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_s0ell")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_f7qpe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_2cc1p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96_we5c3")
+}],
+"loop": true,
+"name": &"persuasive=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("97_2jdr0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_wnih4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_g67s6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_e5kc2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_7dxfv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_ebebl")
+}],
+"loop": true,
+"name": &"persuasive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("103_bwyyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_8ue71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_dee8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_s6317")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_jburw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_7ay7l")
+}],
+"loop": true,
+"name": &"persuasive_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wl7vn"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.5346, 1.1016, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("151_wc71t")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_alctr"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_wl7vn"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_32jwa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("152_5yn0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("153_qrtr6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154_2oalq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155_0qc2p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156_h7xn3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157_ybk57")
+}],
+"loop": true,
+"name": &"_stand_to_kneel",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("158_b5lk1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_xm0yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_olkx2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_8abb0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_ivtib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_6oset")
+}],
+"loop": true,
+"name": &"persuasive+kneel=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("164_2u5j2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165_56je8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_ul0kj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_mh8n8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_whxuq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_agv2s")
+}],
+"loop": true,
+"name": &"persuasive+kneel=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("170_jlciq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_j8jab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_24ixw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_4fh58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_se0lh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_iha8y")
+}],
+"loop": true,
+"name": &"persuasive+kneel_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("176_xtthk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_gnq37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_uu75j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_aqbgl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180_iu640")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181_f5fr2")
+}],
+"loop": true,
+"name": &"persuasive+kneel_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("182_5n3by")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183_u5fu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184_in3oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185_tokaq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186_6ew1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187_erbby")
+}],
+"loop": true,
+"name": &"persuasive=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("188_h3ggq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189_6pbcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190_su8e7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("191_x6o37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192_k74ho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193_0dan3")
+}],
+"loop": true,
+"name": &"persuasive=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("194_ltlar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195_lu28j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("196_2efgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197_ead1o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198_cybyr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199_snld3")
+}],
+"loop": true,
+"name": &"persuasive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("200_1j6dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201_owwxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202_cy62g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203_krmmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204_qsenu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205_mtvu4")
+}],
+"loop": true,
+"name": &"persuasive_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("151_wc71t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206_441mn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_q6x77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_g72wa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_q80sk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_mahai")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_nip8a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212_lbky3")
+}],
+"loop": true,
+"name": &"persuasive_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("206_6b06v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207_kej2v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208_2ngwt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209_ovid6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210_rhr2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211_6j8tb")
+}],
+"loop": true,
+"name": &"positive+kneel=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("212_x74pa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213_2p3yb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214_bkw71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215_b6spd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216_y70nw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217_vm1ed")
+}],
+"loop": true,
+"name": &"positive+kneel=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("218_i60bs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219_kpxod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220_y22yu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221_rbgxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222_nq2fg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223_3jap2")
+}],
+"loop": true,
+"name": &"positive+kneel_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("224_76tho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225_6wn6d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226_gckkn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227_50vvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228_6iqbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229_ivbg5")
+}],
+"loop": true,
+"name": &"positive+kneel_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("230_hyeaj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231_ekeke")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232_h4c27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233_yaru8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234_wcc1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235_qjqul")
+}],
+"loop": true,
+"name": &"positive=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("236_dbh0t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237_rt3ue")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238_afm1y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239_s7dg1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("240_kpo1x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241_i68fc")
+}],
+"loop": true,
+"name": &"positive=d_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("242_4hc2k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243_ur4ql")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244_jlmy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245_e13qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246_r8d0i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247_vfx8x")
+}],
+"loop": true,
+"name": &"positive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("248_foipa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249_7t2d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250_7ep6t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251_r23vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252_pnmg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253_hlk6r")
+}],
+"loop": true,
+"name": &"positive_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("151_cnp2o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254_h2fu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255_ljkby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256_kd38m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257_rjy05")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258_67ktg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259_ae7rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("260_qn35k")
+}],
+"loop": true,
+"name": &"positive_walk",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="Animation_70tnr"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Characters/NicoleLacsamana/Roam/CamPivotBasis/CamPivot:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_exwps"]
+resource_name = "start_explore"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Characters/NicoleLacsamana/Roam/CamPivotBasis/CamPivot:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0, 0), Vector3(0, 0, -0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_q3crl"]
+_data = {
+"RESET": SubResource("Animation_70tnr"),
+"start_explore": SubResource("Animation_exwps")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_lhuy7"]
+dof_blur_near_enabled = true
+dof_blur_near_distance = 3.0
+dof_blur_near_transition = 0.1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_qf5uv"]
+size = Vector3(0.2, 1, 0.2)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_xubyx"]
+size = Vector3(0.2, 1, 0.4)
+
+[sub_resource type="Curve3D" id="Curve3D_fcns8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -5.462),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Animation" id="Animation_yar2s"]
+resource_name = "CamDoor_zoom"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Cameras/CamDoor:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(5.08215, 0.895858, 8.19088), Vector3(4.9162, 0.89147, 8.4207)]
+}
+
+[sub_resource type="Animation" id="Animation_4yh6d"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/Mom/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(6, 0, 3)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../../Cameras/CamDoor:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(5.08215, 0.895858, 8.19088)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/Mom/Stand/Sprite/Footsteps:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_k772i"]
+resource_name = "mom_walk_closer"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/Mom/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(6, 0, 5.5), Vector3(6, 0, 5.69)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/Mom/Stand/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["persuasive_walk", "persuasive_idle"]
+}
+
+[sub_resource type="Animation" id="Animation_5im4p"]
+resource_name = "mom_walk_to_nicole"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/Mom/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(6, 0, 3), Vector3(6, 0, 5.5)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/Mom/Stand/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["positive_walk", "persuasive_idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/Mom/Stand/Sprite/Footsteps:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_d2c4d"]
+_data = {
+"CamDoor_zoom": SubResource("Animation_yar2s"),
+"RESET": SubResource("Animation_4yh6d"),
+"mom_walk_closer": SubResource("Animation_k772i"),
+"mom_walk_to_nicole": SubResource("Animation_5im4p")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_yuaox"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 0.1
+dof_blur_near_transition = 0.1
+dof_blur_amount = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ocgb5"]
+render_priority = 0
+shader = ExtResource("21_uoipl")
+shader_parameter/scale = Vector3(0.5346, 1.1016, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("194_ltlar")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1ss0s"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_ocgb5"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="Resource" id="Resource_n25v6"]
+script = ExtResource("264_110uy")
+anim = "_stand_to_kneel"
+from_anim = "persuasive_idle"
+to_anim = "persuasive+kneel_idle"
+reversible = false
+
+[node name="Root" type="Node"]
+script = ExtResource("1_1sopm")
+fade_in_duration = 0.0
+fade_out_duration = 2.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("3_151h1")
+
+[node name="World" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="VoxelGI" type="VoxelGI" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.23663, 2.06315, 3.52218)
+subdiv = 2
+size = Vector3(12.25, 4.76, 12.55)
+data = ExtResource("4_tgq6f")
+metadata/_edit_lock_ = true
+
+[node name="Stage" parent="World" instance=ExtResource("2_s0d8x")]
+metadata/_edit_lock_ = true
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="Audio"]
+preload_sample_data = true
+num_banks = 1
+bank_0 = ExtResource("5_o4p8j")
+
+[node name="EventStarter" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = ExtResource("6_0tt2t")
+
+[node name="PhoneNotifications" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = ExtResource("7_uws7p")
+
+[node name="Crowd" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = ExtResource("8_0pkte")
+
+[node name="DoorOpenClose" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_6ueqn")
+
+[node name="CrowdFootsteps" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_pwndg")
+
+[node name="Lighting" parent="." instance=ExtResource("5_q8gbk")]
+
+[node name="Cameras" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CamDoor" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.810716, -0.0110517, 0.585335, -0.00245647, 0.999877, 0.0154763, -0.585434, 0.0111091, -0.810644, 5.08215, 0.895858, 8.19088)
+fov = 60.0
+script = ExtResource("6_joq23")
+
+[node name="CamMain" type="InterpolatedCamera3D" parent="Cameras"]
+target = NodePath("../../Characters/NicoleLacsamana/Roam/CamPivotBasis/CamPivot")
+enabled = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 9.087, 0.649, 7.897)
+attributes = SubResource("CameraAttributesPractical_a7eiv")
+fov = 36.0
+near = 1.0
+script = ExtResource("6_joq23")
+
+[node name="CameraEffects" type="Node" parent="Cameras/CamMain"]
+script = ExtResource("3_y7e53")
+dof_blur_far_amount = 0.4
+dof_blur_near_enabled = true
+dof_blur_near_amount = 0.2
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="NicoleLacsamana" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/NicoleLacsamana"]
+script = ExtResource("7_05dkk")
+alias = "NicoleLacsamana"
+
+[node name="Roam" type="Node3D" parent="Characters/NicoleLacsamana"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6, 0, 5.86)
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/NicoleLacsamana/Roam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.477898, 0, 0)
+mesh = SubResource("ArrayMesh_kjdln")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_wr84o")
+sync_all = true
+animation = "concerned_idle"
+alias = "NicoleLacsamana"
+pixel_size = 0.0081
+
+[node name="SpriteController" type="Node" parent="Characters/NicoleLacsamana/Roam/Sprite"]
+script = ExtResource("43_qu4n0")
+state_container_alias = "NicoleLacsamana"
+fallback_idle_talk_anim = "concerned"
+standalone_anims = Array[String](["concerned_walk"])
+idle_talk_anims = Array[String](["concerned", "neutral", "persuasive"])
+
+[node name="SbPivotMain" type="Marker3D" parent="Characters/NicoleLacsamana/Roam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0790753, 0.881401, 0)
+script = ExtResource("8_2o4ha")
+alias = "NicoleLacsamana"
+
+[node name="VisibilityController" type="Node" parent="Characters/NicoleLacsamana/Roam/SbPivotMain"]
+script = ExtResource("18_imr1h")
+visible_on_shots = Array[String](["CamMain"])
+
+[node name="SbPivotWorry" type="Marker3D" parent="Characters/NicoleLacsamana/Roam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0912557, 0.832232, 0)
+script = ExtResource("8_2o4ha")
+alias = "NicoleLacsamana"
+orientation = 1
+
+[node name="VisibilityController" type="Node" parent="Characters/NicoleLacsamana/Roam/SbPivotWorry"]
+script = ExtResource("18_imr1h")
+visible_on_shots = Array[String](["CamWorry"])
+
+[node name="PlayerController" type="Node3D" parent="Characters/NicoleLacsamana/Roam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.477898, 0, 0)
+script = ExtResource("77_7c0gq")
+flip_h = true
+avoid_disabling_collider = true
+
+[node name="Focus" type="Node" parent="Characters/NicoleLacsamana/Roam/PlayerController"]
+script = ExtResource("78_fs4n5")
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Characters/NicoleLacsamana/Roam/PlayerController"]
+play_event = 1
+event = SubResource("EventAsset_ceqw2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.420497, 0, -1.43051e-06)
+
+[node name="PathGrounder" type="Node" parent="Characters/NicoleLacsamana/Roam"]
+script = ExtResource("80_pyekb")
+path_node = NodePath("../../../../Skits/Explore/Misc/NicolePath")
+path_offset = 1.05
+
+[node name="Area" type="Area3D" parent="Characters/NicoleLacsamana/Roam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0276766, 0.0879993, 0)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Characters/NicoleLacsamana/Roam/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_et4of")
+
+[node name="CamPivotBasis" type="Marker3D" parent="Characters/NicoleLacsamana/Roam"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.54881, 0.649, -3.08665)
+
+[node name="CamPivot" type="Node3D" parent="Characters/NicoleLacsamana/Roam/CamPivotBasis"]
+script = ExtResource("37_j5fpq")
+min_position = Vector3(-9999, -9999, 0)
+max_position = Vector3(9999, 9999, 8.5)
+
+[node name="VisibilityController" type="Node" parent="Characters/NicoleLacsamana/Roam"]
+script = ExtResource("182_djynu")
+state_container_alias = "NicoleLacsamana"
+dict_values = {
+"roam": true
+}
+
+[node name="Mom" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/Mom"]
+script = ExtResource("7_05dkk")
+alias = "NicoleMom"
+
+[node name="NPC" type="Node3D" parent="Characters"]
+
+[node name="NPCMale" type="Node3D" parent="Characters/NPC"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.69047, -0.00333723, 7.16044)
+
+[node name="State" type="Node" parent="Characters/NPC/NPCMale"]
+script = ExtResource("7_05dkk")
+alias = "NPC_Male"
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/NPC/NPCMale"]
+mesh = SubResource("ArrayMesh_do7h4")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_i4cvg")
+sync_all = true
+animation = "neutral=l_idle"
+alias = "NPC_Male"
+pixel_size = 0.008
+debug_add_anim_str = "(neutral/neutral=l)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Characters/NPC/NPCMale/Sprite"]
+script = ExtResource("43_qu4n0")
+state_container_alias = "NPC_Male"
+fallback_idle_talk_anim = "neutral"
+idle_talk_anims = Array[String](["neutral"])
+
+[node name="SbPivot" type="Marker3D" parent="Characters/NPC/NPCMale"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.396386, 0.852, 0)
+script = ExtResource("8_2o4ha")
+alias = "NPC_Male"
+orientation = 1
+force_show = true
+
+[node name="NPCGranny" type="Node3D" parent="Characters/NPC"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.74267, 0.0307339, 6.10918)
+
+[node name="State" type="Node" parent="Characters/NPC/NPCGranny"]
+script = ExtResource("7_05dkk")
+alias = "NPC_Granny"
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/NPC/NPCGranny"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0, 0, 0)
+mesh = SubResource("ArrayMesh_lnfcq")
+skeleton = NodePath("../..")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_64lds")
+sync_all = true
+animation = "positive=l_idle"
+random_initial = true
+alias = "NPC_Granny"
+pixel_size = 0.008
+debug_add_anim_str = "(neutral/positive/positive=l/neutral=b/neutral+glasses)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Characters/NPC/NPCGranny/Sprite"]
+script = ExtResource("43_qu4n0")
+state_container_alias = "NPC_Granny"
+fallback_idle_talk_anim = "neutral"
+idle_talk_anims = Array[String](["neutral", "positive"])
+
+[node name="SbPivot" type="Marker3D" parent="Characters/NPC/NPCGranny"]
+transform = Transform3D(0.9, 0, 0, 0, 0.9, 0, 0, 0, 0.9, 0.379446, 0.7227, 0)
+script = ExtResource("8_2o4ha")
+alias = "NPC_Granny"
+orientation = 1
+force_show = true
+
+[node name="Jake" type="Node3D" parent="Characters/NPC"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 6.65961, 0, 3.62683)
+
+[node name="State" type="Node" parent="Characters/NPC/Jake"]
+script = ExtResource("7_05dkk")
+alias = "Jake"
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/NPC/Jake"]
+mesh = SubResource("ArrayMesh_jwr4m")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_ncgy4")
+sync_all = true
+animation = "tying_idle"
+alias = "Jake"
+pixel_size = 0.0081
+debug_add_anim_str = "(holding/tying)_idle"
+
+[node name="SpriteController" type="Node" parent="Characters/NPC/Jake/Sprite"]
+script = ExtResource("43_qu4n0")
+state_container_alias = "Jake"
+idle_talk_anims = Array[String](["holding", "tying"])
+
+[node name="SbPivot" type="Marker3D" parent="Characters/NPC/Jake"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.295619, 0.920534, 0)
+script = ExtResource("8_2o4ha")
+alias = "Jake"
+
+[node name="Mother" type="Node3D" parent="Characters/NPC"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.02679, 0, 6.62358)
+
+[node name="State" type="Node" parent="Characters/NPC/Mother"]
+script = ExtResource("7_05dkk")
+alias = "MotherBaby"
+
+[node name="AnimatedPaper3D" type="MeshInstance3D" parent="Characters/NPC/Mother"]
+mesh = SubResource("ArrayMesh_rm00d")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_wldvr")
+sync_all = true
+animation = "neutral_idle"
+alias = "MotherBaby"
+pixel_size = 0.0081
+debug_add_anim_str = "(neutral/persuasive/positive)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Characters/NPC/Mother/AnimatedPaper3D"]
+script = ExtResource("43_qu4n0")
+state_container_alias = "MotherBaby"
+idle_talk_anims = Array[String](["neutral", "persuasive", "positive"])
+
+[node name="SbPivot" type="Marker3D" parent="Characters/NPC/Mother"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.331914, 0.920534, 0)
+script = ExtResource("8_2o4ha")
+alias = "MotherBaby"
+
+[node name="Judge" type="MeshInstance3D" parent="Characters/NPC"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.26817, 0, 3.9124)
+mesh = SubResource("ArrayMesh_vs865")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_7rj7d")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+
+[node name="Walking" type="Node3D" parent="Characters/NPC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46963, 0.0182188, 3.32557)
+
+[node name="Path3D" type="Path3D" parent="Characters/NPC/Walking"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.493483, 0, 5.73768)
+curve = SubResource("Curve3D_su46m")
+
+[node name="Pianist" type="PathFollow3D" parent="Characters/NPC/Walking/Path3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 0, -0.505)
+rotation_mode = 0
+use_model_front = true
+loop = false
+tilt_enabled = false
+script = ExtResource("233_k6i7i")
+min_interval = 5.0
+max_interval = 20.0
+speed = 1.1
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/NPC/Walking/Path3D/Pianist"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.286234)
+mesh = SubResource("ArrayMesh_722e1")
+skeleton = NodePath("../../..")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_4u32x")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Characters/NPC/Walking/Path3D/Pianist"]
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Characters/NPC/Walking/Path3D/Pianist"]
+aabb = AABB(-0.295, -1, -0.05, 0.545, 2, 0.22)
+
+[node name="Flutist" type="PathFollow3D" parent="Characters/NPC/Walking/Path3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 0, -0.505)
+rotation_mode = 0
+use_model_front = true
+loop = false
+tilt_enabled = false
+script = ExtResource("233_k6i7i")
+min_interval = 5.0
+max_interval = 20.0
+speed = 1.1
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/NPC/Walking/Path3D/Flutist"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.286234)
+mesh = SubResource("ArrayMesh_uri3g")
+skeleton = NodePath("")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_1w13w")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Characters/NPC/Walking/Path3D/Flutist"]
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Characters/NPC/Walking/Path3D/Flutist"]
+aabb = AABB(-0.295, -1, -0.05, 0.545, 2, 0.22)
+
+[node name="Violinist" type="PathFollow3D" parent="Characters/NPC/Walking/Path3D"]
+transform = Transform3D(0.999999, 0, 0, 0, 1, 0, 0, 0, 0.999995, 0, 0, -0.505)
+rotation_mode = 0
+use_model_front = true
+loop = false
+tilt_enabled = false
+script = ExtResource("233_k6i7i")
+min_interval = 5.0
+max_interval = 20.0
+speed = 1.1
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/NPC/Walking/Path3D/Violinist"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0.286234)
+mesh = SubResource("ArrayMesh_mc4ov")
+skeleton = NodePath("")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_oum76")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="Timer" type="Timer" parent="Characters/NPC/Walking/Path3D/Violinist"]
+
+[node name="VisibleOnScreenNotifier3D" type="VisibleOnScreenNotifier3D" parent="Characters/NPC/Walking/Path3D/Violinist"]
+aabb = AABB(-0.295, -1, -0.05, 0.545, 2, 0.22)
+
+[node name="Main" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Services" type="Node" parent="Main"]
+
+[node name="$SceneManager" type="Node" parent="Main/Services"]
+script = ExtResource("11_dvnq8")
+scene_id = "10.1b"
+shot = "CamBedroom"
+
+[node name="$DialogueHandler" type="Node" parent="Main/Services"]
+script = ExtResource("12_khjh8")
+
+[node name="$SceneState" type="Node" parent="Main/Services"]
+script = ExtResource("7_05dkk")
+alias = "scene"
+initial_dict = {
+"news_report": false,
+"pickup_bucket_1": false,
+"pickup_bucket_2": false,
+"pickup_bucket_3": false,
+"pickup_bucket_4": false,
+"rain_leaks": false,
+"show_book": false
+}
+
+[node name="$InteractiveAreaHandler" type="Node" parent="Main/Services"]
+script = ExtResource("13_o6jqp")
+
+[node name="$PlayerTarget" type="Node3D" parent="Main/Services"]
+script = ExtResource("14_v7k2f")
+
+[node name="Vignette" parent="Main" instance=ExtResource("15_snrn1")]
+metadata/_edit_lock_ = true
+
+[node name="$ThoughtBubble" parent="Main" instance=ExtResource("16_2nmm4")]
+metadata/_edit_lock_ = true
+
+[node name="Skits" type="Node3D" parent="."]
+
+[node name="Entrance" type="Node3D" parent="Skits"]
+script = ExtResource("18_o2pxt")
+id = "Entrance"
+entrypoint = "10.1b.Entrance"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/Entrance"]
+libraries = {
+"": SubResource("AnimationLibrary_xfkp1")
+}
+script = ExtResource("2_k8332")
+
+[node name="Audio" type="Node3D" parent="Skits/Entrance"]
+
+[node name="Camera" type="Node3D" parent="Skits/Entrance"]
+
+[node name="CamDoor" type="Node" parent="Skits/Entrance/Camera"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../Cameras/CamDoor")
+
+[node name="CamMain" type="Node" parent="Skits/Entrance/Camera"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../Cameras/CamMain")
+
+[node name="Characters" type="Node3D" parent="Skits/Entrance"]
+
+[node name="NicoleLacsamana" type="Node3D" parent="Skits/Entrance/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Entrance/Characters/NicoleLacsamana"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/State")
+
+[node name="Stand" type="Node3D" parent="Skits/Entrance/Characters/NicoleLacsamana"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.51401, 0, 8.288)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/Entrance/Characters/NicoleLacsamana/Stand"]
+mesh = SubResource("ArrayMesh_u8pvj")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_4ck6i")
+sync_all = true
+animation = "concerned_walk"
+alias = "NicoleLacsamana"
+pixel_size = 0.0081
+debug_add_anim_str = "(concerned+nod/concerned=d/persuasive=d/concerned/neutral/persuasive/persuasive=r/concerned=u/walk)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Skits/Entrance/Characters/NicoleLacsamana/Stand/Sprite"]
+script = ExtResource("43_qu4n0")
+state_container_alias = "NicoleLacsamana"
+standalone_anims = Array[String](["concerned_walk"])
+idle_talk_anims = Array[String](["concerned", "neutral", "persuasive"])
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Skits/Entrance/Characters/NicoleLacsamana/Stand/Sprite"]
+play_event = 1
+event = SubResource("EventAsset_ceqw2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.420497, 0, -1.43051e-06)
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Entrance/Characters/NicoleLacsamana/Stand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.401595, 0.875656, 0)
+script = ExtResource("8_2o4ha")
+alias = "NicoleLacsamana"
+
+[node name="Mom" type="Node3D" parent="Skits/Entrance/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Entrance/Characters/Mom"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/Mom/State")
+
+[node name="Stand" type="Node3D" parent="Skits/Entrance/Characters/Mom"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 5.33416, 0, 8.52677)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/Entrance/Characters/Mom/Stand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.164807, 0, 0)
+mesh = SubResource("ArrayMesh_alctr")
+skeleton = NodePath("../../../NicoleLacsamana")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_32jwa")
+sync_all = true
+animation = "persuasive_walk"
+alias = "NicoleMom"
+pixel_size = 0.0081
+debug_add_anim_str = "(positive/positive=d/persuasive/persuasive=d)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Skits/Entrance/Characters/Mom/Stand/Sprite"]
+script = ExtResource("43_qu4n0")
+state_container_alias = "NicoleMom"
+standalone_anims = Array[String](["positive_walk"])
+idle_talk_anims = Array[String](["persuasive", "positive"])
+debug_auto_list_anims = true
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Skits/Entrance/Characters/Mom/Stand/Sprite"]
+play_event = 1
+event = SubResource("EventAsset_ceqw2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27689, 0, -1.43051e-06)
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Entrance/Characters/Mom/Stand"]
+transform = Transform3D(0.999999, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 0.999999, 0.43714, 1.049, 0)
+script = ExtResource("8_2o4ha")
+alias = "NicoleMom"
+
+[node name="NPCMale" type="Node3D" parent="Skits/Entrance/Characters"]
+
+[node name="State" type="Node" parent="Skits/Entrance/Characters/NPCMale"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/NPCMale/State")
+
+[node name="NPCGranny" type="Node3D" parent="Skits/Entrance/Characters"]
+
+[node name="State" type="Node" parent="Skits/Entrance/Characters/NPCGranny"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/NPCGranny/State")
+
+[node name="Jake" type="Node3D" parent="Skits/Entrance/Characters"]
+
+[node name="State" type="Node" parent="Skits/Entrance/Characters/Jake"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/Jake/State")
+
+[node name="Node2D" type="Node2D" parent="Skits/Entrance"]
+
+[node name="BlackOverlay" type="ColorRect" parent="Skits/Entrance/Node2D"]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+color = Color(0, 0, 0, 1)
+
+[node name="VisibilityController" type="Node" parent="Skits/Entrance/Node2D/BlackOverlay"]
+script = ExtResource("18_imr1h")
+visible_on_shots = Array[String](["intro"])
+
+[node name="Explore" type="Node3D" parent="Skits"]
+visible = false
+script = ExtResource("18_o2pxt")
+id = "Explore"
+entrypoint = "10.1b.Explore"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/Explore"]
+libraries = {
+"": SubResource("AnimationLibrary_q3crl")
+}
+script = ExtResource("2_k8332")
+
+[node name="Audio" type="Node3D" parent="Skits/Explore"]
+
+[node name="Camera" type="Node3D" parent="Skits/Explore"]
+
+[node name="CamStage" type="Camera3D" parent="Skits/Explore/Camera"]
+transform = Transform3D(0.990093, 0.00124423, -0.140406, 0.00560517, 0.998813, 0.0483767, 0.1403, -0.0486844, 0.988911, 3.59213, 1.71766, 4.44373)
+attributes = SubResource("CameraAttributesPractical_lhuy7")
+current = true
+fov = 42.0
+script = ExtResource("6_joq23")
+
+[node name="CameraEffects" type="Node" parent="Skits/Explore/Camera/CamStage"]
+script = ExtResource("3_y7e53")
+dof_blur_near_enabled = true
+dof_blur_near_distance = 3.0
+
+[node name="CamMain" type="Node" parent="Skits/Explore/Camera"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../Cameras/CamMain")
+
+[node name="Characters" type="Node3D" parent="Skits/Explore"]
+
+[node name="NicoleLacsamana" type="Node3D" parent="Skits/Explore/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Explore/Characters/NicoleLacsamana"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/State")
+
+[node name="Sprite" type="Node" parent="Skits/Explore/Characters/NicoleLacsamana"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/Roam/Sprite")
+
+[node name="SbPivot" type="Node" parent="Skits/Explore/Characters/NicoleLacsamana"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/Roam/SbPivotMain")
+
+[node name="NPCMale" type="Node3D" parent="Skits/Explore/Characters"]
+
+[node name="SbPivot" type="Node" parent="Skits/Explore/Characters/NPCMale"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/NPCMale/SbPivot")
+
+[node name="State" type="Node" parent="Skits/Explore/Characters/NPCMale"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/NPCMale/State")
+
+[node name="NPCGranny" type="Node3D" parent="Skits/Explore/Characters"]
+
+[node name="SbPivot" type="Node" parent="Skits/Explore/Characters/NPCGranny"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/NPCGranny/SbPivot")
+
+[node name="State" type="Node" parent="Skits/Explore/Characters/NPCGranny"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/NPCGranny/State")
+
+[node name="Jake" type="Node3D" parent="Skits/Explore/Characters"]
+
+[node name="SbPivot" type="Node" parent="Skits/Explore/Characters/Jake"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/Jake/SbPivot")
+
+[node name="State" type="Node" parent="Skits/Explore/Characters/Jake"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/Jake/State")
+
+[node name="Sprite" type="Node" parent="Skits/Explore/Characters/Jake"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NPC/Jake/Sprite")
+
+[node name="Misc" type="Node3D" parent="Skits/Explore"]
+
+[node name="Interactives" type="Node3D" parent="Skits/Explore/Misc"]
+
+[node name="IaNPCGranny" parent="Skits/Explore/Misc/Interactives" instance=ExtResource("171_8dlmw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01634, 0.00344765, 5.93478)
+collision_mask = 2
+max_interact_count = 1
+preset = 3
+short_knot = "npc_granny"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Explore/Misc/Interactives/IaNPCGranny"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_qf5uv")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Explore/Misc/Interactives/IaNPCGranny"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.316, 0.883055, 0.43)
+
+[node name="IaNPCMale" parent="Skits/Explore/Misc/Interactives" instance=ExtResource("171_8dlmw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01634, 0.00344765, 7.04872)
+collision_mask = 2
+max_interact_count = 1
+preset = 3
+short_knot = "npc_male"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Explore/Misc/Interactives/IaNPCMale"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_qf5uv")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Explore/Misc/Interactives/IaNPCMale"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.315758, 0.934356, 0.440152)
+
+[node name="IaJake" parent="Skits/Explore/Misc/Interactives" instance=ExtResource("171_8dlmw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01634, 0.00344765, 4.10686)
+collision_mask = 2
+max_interact_count = 1
+preset = 3
+short_knot = "npc_jake"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Explore/Misc/Interactives/IaJake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_qf5uv")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Explore/Misc/Interactives/IaJake"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.643648, 0.97309, -0.242344)
+
+[node name="IaStage" parent="Skits/Explore/Misc/Interactives" instance=ExtResource("171_8dlmw")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01634, 0.00344765, 3.3888)
+collision_mask = 2
+preset = 2
+short_knot = "stage"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Explore/Misc/Interactives/IaStage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_qf5uv")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Explore/Misc/Interactives/IaStage"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.94478, -0.264722)
+
+[node name="TaMomReturns" type="Area3D" parent="Skits/Explore/Misc/Interactives"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01634, 0.00344765, 5.8561)
+collision_mask = 2
+script = ExtResource("181_3uskb")
+max_trigger_count = 1
+story_signal = "mom_returns"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Explore/Misc/Interactives/TaMomReturns"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_xubyx")
+
+[node name="VisibilityController" type="Node" parent="Skits/Explore/Misc/Interactives/TaMomReturns"]
+script = ExtResource("182_djynu")
+state_container_alias = "scene"
+dict_values = {
+"interaction_done": true
+}
+
+[node name="NicolePath" type="Path3D" parent="Skits/Explore/Misc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 8.877)
+curve = SubResource("Curve3D_fcns8")
+
+[node name="PlayerTargets" type="Node3D" parent="Skits/Explore/Misc"]
+
+[node name="PtMale" type="Marker3D" parent="Skits/Explore/Misc/PlayerTargets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 6.935)
+script = ExtResource("183_aowjq")
+
+[node name="PtGranny" type="Marker3D" parent="Skits/Explore/Misc/PlayerTargets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5.82)
+script = ExtResource("183_aowjq")
+
+[node name="PtJake" type="Marker3D" parent="Skits/Explore/Misc/PlayerTargets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 4.13)
+script = ExtResource("183_aowjq")
+
+[node name="MomReturns" type="Node3D" parent="Skits"]
+script = ExtResource("18_o2pxt")
+id = "MomReturns"
+entrypoint = "10.1b.MomReturns"
+free_on_finish = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/MomReturns"]
+libraries = {
+"": SubResource("AnimationLibrary_d2c4d")
+}
+script = ExtResource("2_k8332")
+
+[node name="Audio" type="Node3D" parent="Skits/MomReturns"]
+
+[node name="Camera" type="Node3D" parent="Skits/MomReturns"]
+
+[node name="CamWorry" type="Camera3D" parent="Skits/MomReturns/Camera"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 7.8294, 0.761059, 6.13128)
+attributes = SubResource("CameraAttributesPractical_yuaox")
+fov = 20.0
+script = ExtResource("6_joq23")
+
+[node name="CameraEffects" type="Node" parent="Skits/MomReturns/Camera/CamWorry"]
+script = ExtResource("3_y7e53")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 0.1
+dof_blur_far_amount = 0.3
+
+[node name="CamDoor" type="Node" parent="Skits/MomReturns/Camera"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../Cameras/CamDoor")
+
+[node name="CamMain" type="Node" parent="Skits/MomReturns/Camera"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../Cameras/CamMain")
+
+[node name="Characters" type="Node3D" parent="Skits/MomReturns"]
+
+[node name="NicoleLacsamana" type="Node3D" parent="Skits/MomReturns/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/MomReturns/Characters/NicoleLacsamana"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/State")
+
+[node name="Sprite" type="Node" parent="Skits/MomReturns/Characters/NicoleLacsamana"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/Roam/Sprite")
+
+[node name="SbPivotMain" type="Node" parent="Skits/MomReturns/Characters/NicoleLacsamana"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/Roam/SbPivotMain")
+
+[node name="SbPivotWorry" type="Node" parent="Skits/MomReturns/Characters/NicoleLacsamana"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/Roam/SbPivotWorry")
+
+[node name="Mom" type="Node3D" parent="Skits/MomReturns/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/MomReturns/Characters/Mom"]
+script = ExtResource("19_bj8jg")
+reference = NodePath("../../../../../Characters/Mom/State")
+
+[node name="Stand" type="Node3D" parent="Skits/MomReturns/Characters/Mom"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 6, 0, 3)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/MomReturns/Characters/Mom/Stand"]
+mesh = SubResource("ArrayMesh_1ss0s")
+script = ExtResource("23_0dwjs")
+texture_frames = SubResource("SpriteFrames_32jwa")
+sync_all = true
+animation = "persuasive_idle"
+alias = "NicoleMom"
+transitions = Array[ExtResource("264_110uy")]([SubResource("Resource_n25v6")])
+pixel_size = 0.0081
+debug_add_anim_str = "(persuasive+kneel=r/persuasive+kneel/positive+kneel/positive+kneel=r)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Skits/MomReturns/Characters/Mom/Stand/Sprite"]
+script = ExtResource("43_qu4n0")
+state_container_alias = "NicoleMom"
+standalone_anims = Array[String](["_stand_to_kneel", "positive_walk"])
+idle_talk_anims = Array[String](["persuasive", "positive"])
+debug_auto_list_anims = true
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Skits/MomReturns/Characters/Mom/Stand/Sprite"]
+play_event = 1
+event = SubResource("EventAsset_ceqw2")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.241208, 0, -1.43051e-06)
+
+[node name="SbPivot" type="Marker3D" parent="Skits/MomReturns/Characters/Mom/Stand"]
+transform = Transform3D(0.999999, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 0.999999, 0.349939, 1.04863, 9.53674e-07)
+script = ExtResource("8_2o4ha")
+alias = "NicoleMom"
+orientation = 7
+force_show = true
+
+[node name="VisibilityController" type="Node" parent="Skits/MomReturns/Characters/Mom/Stand/SbPivot"]
+script = ExtResource("182_djynu")
+state_container_alias = "NicoleMom"
+dict_values = {
+"kneel": false
+}
+
+[node name="SbPivotKneel" type="Marker3D" parent="Skits/MomReturns/Characters/Mom/Stand"]
+transform = Transform3D(0.999999, 0, 1.42109e-14, 0, 1, 0, -1.42109e-14, 0, 0.999999, 0.349939, 0.658916, 1.90735e-06)
+script = ExtResource("8_2o4ha")
+alias = "NicoleMom"
+orientation = 7
+
+[node name="VisibilityController" type="Node" parent="Skits/MomReturns/Characters/Mom/Stand/SbPivotKneel"]
+script = ExtResource("182_djynu")
+state_container_alias = "NicoleMom"
+dict_values = {
+"kneel": true
+}
+
+[node name="VisibilityController" type="Node" parent="Skits/MomReturns/Characters/Mom/Stand"]
+script = ExtResource("18_imr1h")
+visible_on_shots = Array[String](["CamMain"])
+
+[node name="Worry" type="Node3D" parent="Skits/MomReturns/Characters/Mom"]
+
+[node name="SbPivot" type="Marker3D" parent="Skits/MomReturns/Characters/Mom/Worry"]
+transform = Transform3D(-4.37114e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37114e-08, 6, 0.984264, 5.59832)
+script = ExtResource("8_2o4ha")
+alias = "NicoleMom"
+orientation = 3
+force_show = true
+
+[node name="VisibilityController" type="Node" parent="Skits/MomReturns/Characters/Mom/Worry/SbPivot"]
+script = ExtResource("182_djynu")
+state_container_alias = "NicoleMom"
+dict_values = {
+"kneel": false
+}
+
+[node name="SbPivotKneel" type="Marker3D" parent="Skits/MomReturns/Characters/Mom/Worry"]
+transform = Transform3D(-4.37114e-08, 0, 0.999999, 0, 1, 0, -0.999999, 0, -4.37114e-08, 6, 0.501121, 5.58923)
+script = ExtResource("8_2o4ha")
+alias = "NicoleMom"
+orientation = 2
+force_show = true
+
+[node name="VisibilityController" type="Node" parent="Skits/MomReturns/Characters/Mom/Worry/SbPivotKneel"]
+script = ExtResource("182_djynu")
+state_container_alias = "NicoleMom"
+dict_values = {
+"kneel": true
+}
+
+[node name="VisibilityController" type="Node" parent="Skits/MomReturns/Characters/Mom/Worry"]
+script = ExtResource("18_imr1h")
+visible_on_shots = Array[String](["CamWorry"])
+
+[node name="Presenter" type="Node3D" parent="Skits/MomReturns/Characters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.97261, 2.10996, 1.44269)
+
+[node name="SbPivot" type="Marker3D" parent="Skits/MomReturns/Characters/Presenter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.03407, 0)
+script = ExtResource("8_2o4ha")
+alias = "Presenter"
+orientation = 2
+force_show = true
+
+[node name="Misc" type="Node3D" parent="Skits/MomReturns"]
+
+[node name="PtMomReturns" type="Marker3D" parent="Skits/MomReturns/Misc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6, 0, 5.8599)
+script = ExtResource("183_aowjq")

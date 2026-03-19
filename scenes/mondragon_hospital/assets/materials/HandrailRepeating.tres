@@ -1,0 +1,74 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://d4lr3qw8xxkxs"]
+
+[ext_resource type="Texture2D" uid="uid://ooxwj5n7jmr1" path="res://scenes/mondragon_hospital/assets/handrail.png" id="1"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type spatial;
+render_mode diffuse_burley, specular_schlick_ggx, cull_back;
+
+uniform sampler2D texture_albedo : source_color;
+
+varying vec3 position;
+varying vec3 world_normal;
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+void vertex() {
+	position = VERTEX.xyz;
+	world_normal = (MODEL_MATRIX * vec4(NORMAL, 0.0)).xyz;
+}
+
+void fragment() {
+	vec2 px_size = 1.0 / vec2(textureSize(texture_albedo, 0));
+	vec2 px_uv_size = px_size * 100.0;
+
+	vec2 uv_right = (position.xy + vec2(-0.05, 0.04)) * px_uv_size * vec2(-1.0, -1.0);
+	vec2 uv_left = (position.xy + vec2(0.0, 0.04)) * px_uv_size * vec2(-1.0, 1.0);
+	vec2 uv_up = (position.xz + vec2(0.0, 0.04)) * px_uv_size * vec2(-1.0, -1.0);
+	vec2 uv_down = (position.xz + vec2(0.05, 0.04)) * px_uv_size * vec2(-1.0, 1.0);
+	vec2 uv_front = (position.xy + vec2(0.0, 0.04)) * px_uv_size * vec2(-1.0, 1.0);
+	vec2 uv_back = (position.xy + vec2(0.0, 0.04)) * px_uv_size * vec2(-1.0, 1.0);
+
+	float dot_x = dot(vec3(1, 0, 0), world_normal);
+	float dot_y = dot(vec3(0, 1, 0), world_normal);
+	float dot_z = dot(vec3(0, 0, 1), world_normal);
+
+	float absdot_right = max(dot_x, 0);
+	float absdot_left = max(-dot_x, 0);
+	float absdot_up = max(dot_y, 0);
+	float absdot_down = max(-dot_y, 0);
+	float absdot_front = max(dot_z, 0);
+	float absdot_back = max(-dot_z, 0);
+
+	vec4 c = vec4(0);
+	c += texturePointSmooth(texture_albedo, uv_right, px_size) * absdot_right;
+	c += texturePointSmooth(texture_albedo, uv_left, px_size) * absdot_left;
+	c += texturePointSmooth(texture_albedo, uv_up, px_size) * absdot_up;
+	c += texturePointSmooth(texture_albedo, uv_down, px_size) * absdot_down;
+	c += texturePointSmooth(texture_albedo, uv_front, px_size) * absdot_front;
+	c += texturePointSmooth(texture_albedo, uv_back, px_size) * absdot_back;
+
+	ALBEDO = c.rgb;
+
+	ROUGHNESS = 0.2;
+	ROUGHNESS = 0.2;
+	METALLIC = 0.25;
+	SPECULAR = 0.5;
+}"
+
+[resource]
+render_priority = 0
+shader = SubResource("1")
+shader_parameter/texture_albedo = ExtResource("1")

@@ -1,0 +1,151 @@
+[gd_scene load_steps=15 format=3 uid="uid://dcf450t5sev78"]
+
+[ext_resource type="Texture2D" uid="uid://cknqk2hx6txxk" path="res://scenes/_main/ch5sc9/assets/TVContent/02 News Ruling Eu/animatic/02.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://bqmf20n12bav0" path="res://scenes/_main/ch5sc9/assets/TVContent/NewsHeadline.tscn" id="3"]
+[ext_resource type="Texture2D" uid="uid://c8y78qiu4tga2" path="res://scenes/_main/ch5sc9/assets/TVContent/02 News Ruling Eu/animatic/03.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dgmt5ursrc28e" path="res://scenes/_main/ch5sc9/assets/TVContent/02 News Ruling Eu/animatic/01.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cwdbyjyfkktud" path="res://scenes/_main/ch5sc9/assets/TVContent/02 News Ruling Eu/graphics/text/01.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c44e2xxdr2x8y" path="res://scenes/_main/ch5sc9/assets/TVContent/02 News Ruling Eu/graphics/text/02.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://2hnj0lwboqxd" path="res://scenes/_main/ch5sc9/assets/TVContent/02 News Ruling Eu/graphics/logo/01.png" id="8"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc9/assets/TVContent/shared/Ticker.gd" id="9"]
+[ext_resource type="Texture2D" uid="uid://bplymbera6shl" path="res://scenes/_main/ch5sc9/assets/TVContent/02 News Ruling Eu/graphics/base.png" id="10"]
+
+[sub_resource type="SpriteFrames" id="4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.33
+}]
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type canvas_item;
+
+uniform vec2 px_size = vec2(10., 1.);
+uniform float density : hint_range(0, 1) = 0.6;
+uniform vec4 color : source_color = vec4(1);
+uniform float speed = 1.0;
+
+float rand(vec2 c){
+	return fract(sin(dot(c.xy ,vec2(12.9898,78.233))) * 43758.5453);
+}
+
+float noise(vec2 p, float freq ){
+	float unit = 1./freq;
+	vec2 ij = floor(p/unit);
+	vec2 xy = mod(p,unit)/unit;
+	//xy = 3.*xy*xy-2.*xy*xy*xy;
+	xy = .5*(1.-cos(PI*xy));
+	float a = rand((ij+vec2(0.,0.)));
+	float b = rand((ij+vec2(1.,0.)));
+	float c = rand((ij+vec2(0.,1.)));
+	float d = rand((ij+vec2(1.,1.)));
+	float x1 = mix(a, b, xy.x);
+	float x2 = mix(c, d, xy.x);
+	return mix(x1, x2, xy.y);
+}
+
+float pNoise(vec2 p, int res){
+	float persistance = 0.001;
+	float n = 0.23;
+	float normK = 0.1;
+	float f = 100.0;
+	float amp = 1.;
+	int iCount = 0;
+	for (int i = 0; i<50; i++){
+		n+=amp*noise(p, f);
+		f*=2.;
+		normK+=amp;
+		amp*=persistance;
+		if (iCount == res) break;
+		iCount++;
+	}
+	float nf = n/normK;
+	return nf*nf*nf*nf;
+}
+
+void fragment() {
+	float px_w = float(px_size.x);
+	float px_h = float(px_size.y);
+
+	vec2 uv = UV;
+	uv *= vec2(px_w / px_h, 1);
+	float t = mod(TIME * 8.0 * speed, 3600.);
+	uv += vec2(floor(t) / px_h, 0);
+	uv = floor(uv * px_h) / px_h;
+
+	float k = pNoise(uv, 20);
+	k = step(1. - density, k);
+	COLOR = vec4(color.rgb, k * color.a);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("1")
+shader_parameter/px_size = Vector2(112, 1)
+shader_parameter/density = 0.6
+shader_parameter/color = Color(0.78, 0.820333, 1, 1)
+shader_parameter/speed = 1.0
+
+[node name="Screen" type="Node2D"]
+texture_filter = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("4")
+autoplay = "default"
+centered = false
+
+[node name="Graphics" type="Node2D" parent="."]
+position = Vector2(-2, 62)
+
+[node name="Base" type="Sprite2D" parent="Graphics"]
+position = Vector2(11, 6)
+texture = ExtResource("10")
+centered = false
+
+[node name="Logo" type="AnimatedSprite2D" parent="Graphics/Base"]
+position = Vector2(128, 0)
+sprite_frames = SubResource("3")
+centered = false
+
+[node name="Ticker" type="Sprite2D" parent="Graphics"]
+material = SubResource("2")
+position = Vector2(27, 22)
+scale = Vector2(1.75, 0.015625)
+texture = ExtResource("2")
+centered = false
+script = ExtResource("9")
+color = Color(0.78, 0.820333, 1, 1)
+
+[node name="Headline" parent="Graphics" instance=ExtResource("3")]
+offset_left = 30.0
+offset_right = 139.0
+offset_bottom = 20.0
+texts = Array[Texture]([ExtResource("6"), ExtResource("7")])
+local_pos_enter = Vector2(110, 3)
+local_pos_show = Vector2(4, 3)
+local_pos_exit = Vector2(110, 3)
+cycle_interval_max = 6.0
+move_duration = 1.0
+tween_trans = 4

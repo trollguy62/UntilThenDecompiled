@@ -1,0 +1,84 @@
+[gd_scene load_steps=11 format=3 uid="uid://b0sscpdaomf40"]
+
+[ext_resource type="ArrayMesh" uid="uid://s26lv1r1sv8i" path="res://scenes/lis/cafeteria/assets/table_feet.obj" id="1"]
+[ext_resource type="Texture2D" uid="uid://c58mpjlbc2nxs" path="res://scenes/lis/cafeteria/assets/tablecloth_1.png" id="2"]
+[ext_resource type="Material" uid="uid://dhnm1fl62wlq6" path="res://scenes/lis/cafeteria/assets/materials/Table.tres" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://d1cyuhdv2wn6i" path="res://scenes/lis/cafeteria/assets/table_top.obj" id="4"]
+[ext_resource type="ArrayMesh" uid="uid://di558vld4athx" path="res://scenes/lis/cafeteria/assets/bench.obj" id="5"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="6"]
+[ext_resource type="ArrayMesh" uid="uid://bty1nr63xjcbj" path="res://scenes/lis/cafeteria/assets/tablecloth_1.obj" id="7"]
+[ext_resource type="Texture2D" uid="uid://gqelmk0st2r7" path="res://scenes/lis/cafeteria/assets/bench.png" id="9"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("6")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.05
+shader_parameter/roughness = 0.1
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0.576471, 0.576471, 0.576471, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("6")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("9")
+
+[node name="TableSet" type="Node3D"]
+
+[node name="TableTop" type="MeshInstance3D" parent="."]
+material_override = ExtResource("3")
+mesh = ExtResource("4")
+
+[node name="TableFeet" type="MeshInstance3D" parent="."]
+material_override = ExtResource("3")
+mesh = ExtResource("1")
+
+[node name="TableCloth" type="MeshInstance3D" parent="."]
+material_override = SubResource("1")
+mesh = ExtResource("7")
+
+[node name="BenchL" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24, 0, 0.0699999)
+material_override = SubResource("2")
+mesh = ExtResource("5")
+
+[node name="BenchR" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.75, 0, 0.0699999)
+material_override = SubResource("2")
+mesh = ExtResource("5")

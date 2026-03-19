@@ -1,0 +1,73 @@
+[gd_scene load_steps=7 format=3 uid="uid://b5gbaddbkfpxi"]
+
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://bww3wcyihgscy" path="res://scenes/_main/ch5sc10b/assets/envi/construction/deco/light_floor.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dvqc1802ge7tb" path="res://scenes/_main/ch5sc10b/assets/envi/construction/deco/light_floor_em.png" id="4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1xws"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 0.968627, 0.905882, 1)
+shader_parameter/emission_energy = 1.5
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+shader_parameter/texture_emission = ExtResource("4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_isri3"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.25001, 0.15, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("ShaderMaterial_j1xws"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 62, 153, 153, 25, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 153, 153, 25, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[node name="LightFloor1" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.8, 0, -1.08)
+mesh = SubResource("ArrayMesh_isri3")
+script = ExtResource("1")
+texture = ExtResource("3")
+emission = Color(1, 0.968627, 0.905882, 1)
+emission_texture = ExtResource("4")
+emission_energy = 1.5
+emission_blend_add = false
+metadata/mat_opaque = SubResource("ShaderMaterial_j1xws")
+
+[node name="SpotLight" type="SpotLight3D" parent="."]
+transform = Transform3D(-0.965926, 0, -0.258819, -0.0449435, 0.984808, 0.167731, 0.254887, 0.173648, -0.951251, 0.135, 0.184, 0.00999999)
+light_color = Color(1, 0.968627, 0.905882, 1)
+light_energy = 3.0
+shadow_enabled = true
+shadow_bias = 0.04
+spot_angle = 40.0
+
+[node name="OmniLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.13, 0.19)
+light_color = Color(1, 0.976471, 0.921569, 1)
+light_energy = 0.5
+light_specular = 0.0
+omni_range = 1.0
+omni_attenuation = 2.3

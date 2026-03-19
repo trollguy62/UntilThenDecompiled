@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://df01ue3es1q6k"]
+
+[ext_resource type="Texture2D" uid="uid://bl35feylosreb" path="res://scenes/lms/prom_outside/assets/waiting_shed_roof_ro.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://wrfsu2tjj67r" path="res://scenes/lms/prom_outside/assets/waiting_shed_roof.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://pt4x61pvv3w1" path="res://scenes/lms/prom_outside/assets/waiting_shed_roof_wet.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://v0simqu5tjmj" path="res://scenes/lms/prom_outside/assets/waiting_shed_roof_mtl.png" id="4"]
+[ext_resource type="Shader" path="res://assets/shaders/Wet.gdshader" id="5"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("5")
+shader_parameter/albedo_mult = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/global_wet_roughness = 0.5
+shader_parameter/normal_smooth_sampling = false
+shader_parameter/distort = 0.1
+shader_parameter/max_normal_depth = 1.0
+shader_parameter/tex_albedo = ExtResource("2")
+shader_parameter/tex_roughness = ExtResource("1")
+shader_parameter/tex_wetmap = ExtResource("3")
+shader_parameter/tex_metallic = ExtResource("4")

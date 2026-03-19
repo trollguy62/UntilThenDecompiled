@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://bt8kg3jlxbqup"]
+
+[ext_resource type="Script" path="res://components/PathGrounder.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://bebjsb818n5jt" path="res://components/Npc/NpcBasic.tscn" id="2"]
+[ext_resource type="Script" path="res://components/Npc/NpcPathFollow.gd" id="4"]
+
+[node name="NpcPathFollow" type="Node3D"]
+script = ExtResource("4")
+
+[node name="NpcBasic" parent="." instance=ExtResource("2")]
+
+[node name="PathGrounder" type="Node" parent="."]
+script = ExtResource("1")
+path_node = NodePath("../../Path_NPC_1")
+
+[node name="RayCastL" type="RayCast3D" parent="."]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 1, 0.06, 0.29, 0)
+
+[node name="RayCastR" type="RayCast3D" parent="."]
+transform = Transform3D(0.73, 0, 0, 0, 0.73, 0, 0, 0, 1, 0.42, 0.29, 0)

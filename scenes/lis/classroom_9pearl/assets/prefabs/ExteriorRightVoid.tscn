@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://qh7jy65d71w1"]
+
+[ext_resource type="Texture2D" uid="uid://bbipuwrh4bqeu" path="res://scenes/lis/classroom_9pearl/assets/ext/grounds_floor.png" id="1"]
+[ext_resource type="PackedScene" uid="uid://ci8ijb6iekdn8" path="res://scenes/lis/bldg_2/BuildingOptimized.tscn" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueNoShadows.gdshader" id="3"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(0.545098, 0.545098, 0.545098, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(2.667, 1, 1.067)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("1")
+
+[sub_resource type="PlaneMesh" id="2"]
+
+[node name="RightVoid" type="Node3D"]
+
+[node name="BuildingOptimized1" parent="." instance=ExtResource("2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 6.27, -0.41, 24.13)
+
+[node name="BuildingOptimized2" parent="." instance=ExtResource("2")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 25.89, -0.41, 24.13)
+
+[node name="BuildingOptimized3" parent="." instance=ExtResource("2")]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 25.16, -0.41, 5.56)
+
+[node name="BuildingOptimized4" parent="." instance=ExtResource("2")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.244, -0.41, 24.543)
+
+[node name="GroundsFloor" type="MeshInstance3D" parent="."]
+transform = Transform3D(20, 0, 0, 0, 1, 0, 0, 0, 8, 6.03, -0.41, 14.87)
+material_override = SubResource("1")
+cast_shadow = 0
+mesh = SubResource("2")

@@ -1,0 +1,60 @@
+[gd_scene load_steps=10 format=3 uid="uid://diajutu4gnuvh"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://b2k084onlxoog" path="res://scenes/_main/ch5sc9/assets/envi/tv.obj" id="2"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc9/scripts/TV.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://2r8j2kk0gdcq" path="res://scenes/_main/ch5sc9/assets/envi/tv_screen.png" id="4"]
+[ext_resource type="Shader" path="res://scenes/_main/ch5sc9/assets/shaders/TV.gdshader" id="4_2vcp8"]
+[ext_resource type="Texture2D" uid="uid://csgf70kqml74m" path="res://scenes/_main/ch5sc9/assets/envi/tv.png" id="5"]
+
+[sub_resource type="ShaderMaterial" id="191"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.6
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+
+[sub_resource type="ViewportTexture" id="159"]
+viewport_path = NodePath("Main/TV_Viewports/News02")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_icxml"]
+resource_local_to_scene = true
+render_priority = 0
+shader = ExtResource("4_2vcp8")
+shader_parameter/power = 1.0
+shader_parameter/static_blend = 0.08
+shader_parameter/display = SubResource("159")
+shader_parameter/display_off = ExtResource("4")
+
+[node name="TV" type="MeshInstance3D"]
+mesh = ExtResource("2")
+surface_material_override/0 = SubResource("191")
+surface_material_override/1 = SubResource("ShaderMaterial_icxml")
+script = ExtResource("3")
+static_blend = 0.08
+
+[node name="Light" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.267504, 0.000416249)
+light_energy = 4.0
+light_specular = 0.0
+omni_range = 0.258
+
+[node name="Tween" type="Threen" parent="."]

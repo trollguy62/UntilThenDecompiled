@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://dyjpla5bera8e"]
+
+[ext_resource type="FontFile" uid="uid://b3em6sgelnc8c" path="res://fonts/NunitoSans-Regular-32.tres" id="1_432qp"]
+[ext_resource type="Texture2D" uid="uid://caunogdv2fj5g" path="res://assets/ui/ic_back.png" id="3"]
+[ext_resource type="Script" path="res://ui/components/BackButton/BackButton.gd" id="3_vhtra"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dxb0p"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fv7xd"]
+bg_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iginm"]
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_60v4q"]
+bg_color = Color(1, 1, 1, 0.188235)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(24, 24)
+offset_right = 24.0
+offset_bottom = 24.0
+focus_neighbor_right = NodePath("../InfoButton")
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_constants/icon_max_width = 24
+theme_override_fonts/font = ExtResource("1_432qp")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_dxb0p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fv7xd")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_iginm")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_dxb0p")
+theme_override_styles/focus = SubResource("StyleBoxFlat_60v4q")
+shortcut_in_tooltip = false
+icon = ExtResource("3")
+icon_alignment = 1
+expand_icon = true
+script = ExtResource("3_vhtra")

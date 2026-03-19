@@ -1,0 +1,44 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctihvy1a6hu7o"]
+
+[ext_resource type="Script" path="res://ui/screens/FbFeedScreen/FbFeedScreen.gd" id="1"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cr7cbv753bex5" path="res://ui/components/FbMenuBar/FbMenuBar.tscn" id="3"]
+
+[node name="FbFeedScreen" type="Control" node_paths=PackedStringArray("focus_on_enter")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+focus_on_enter = NodePath("MenuBar")
+
+[node name="Scroll" type="ScrollContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 50.0
+script = ExtResource("2")
+enable_improved_follow_focus = true
+
+[node name="Margin" type="MarginContainer" parent="Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 8
+
+[node name="StatusList" type="VBoxContainer" parent="Scroll/Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="MenuBar" parent="." instance=ExtResource("3")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+offset_right = 1280.0
+offset_bottom = 54.0
+focus_mode = 2
+title = "FB_FEED_TITLE"

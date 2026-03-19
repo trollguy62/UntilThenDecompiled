@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://bxjf66npdjyh3"]
+
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/SongPreview.gd" id="2"]
+[ext_resource type="FontVariation" uid="uid://creygg1hordty" path="res://modules/rhythm-minigame/assets/fonts/Noto_Sans_JP/NotoSans.tres" id="2_tvm7h"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/game_states/Sing.gd" id="3_16gwc"]
+
+[node name="SongPreview" type="Container"]
+clip_contents = true
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.5
+offset_top = -119.5
+offset_right = 178.5
+offset_bottom = 119.5
+script = ExtResource("2")
+
+[node name="RefreshInterval" type="Timer" parent="."]
+wait_time = 15.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Header" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.113725, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_tvm7h")
+theme_override_font_sizes/font_size = 24
+text = "MG_KARAOKE_POPULAR_SONGS"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+
+[node name="Spacer" type="Control" parent="HBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(30, 0)
+layout_mode = 2
+script = ExtResource("3_16gwc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Preview" type="Label" parent="HBoxContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.113725, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("2_tvm7h")
+theme_override_font_sizes/font_size = 20
+text = "8080 - Dahil Sa'yo"

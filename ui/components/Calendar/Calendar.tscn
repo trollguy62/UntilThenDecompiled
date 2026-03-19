@@ -1,0 +1,250 @@
+[gd_scene load_steps=7 format=3 uid="uid://bm3tef688a671"]
+
+[ext_resource type="Script" path="res://ui/components/Calendar/Calendar.gd" id="1_md2po"]
+[ext_resource type="Texture2D" uid="uid://caunogdv2fj5g" path="res://assets/ui/ic_back.png" id="2_dqa16"]
+[ext_resource type="Texture2D" uid="uid://cwnxm2t1406ql" path="res://assets/ui/ic_forward.png" id="3_6mry5"]
+[ext_resource type="Script" path="res://ui/components/Calendar/WeekdayLabel.gd" id="4_e1qmn"]
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_4etpf"]
+allow_unpress = true
+
+[sub_resource type="LabelSettings" id="LabelSettings_2q3ka"]
+font_size = 28
+
+[node name="Calendar" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -992.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_neighbor_left = NodePath("MonthContainer/Back")
+focus_neighbor_right = NodePath("MonthContainer/Forward")
+focus_mode = 2
+theme_override_constants/separation = 8
+script = ExtResource("1_md2po")
+
+[node name="YearLabel" type="Label" parent="."]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MonthContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Back" type="Button" parent="MonthContainer"]
+modulate = Color(1, 0.976471, 0.933333, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+icon = ExtResource("2_dqa16")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="MonthLabel" type="Label" parent="MonthContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 28
+text = "MONTH_JAN"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Forward" type="Button" parent="MonthContainer"]
+modulate = Color(1, 0.976471, 0.933333, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+icon = ExtResource("3_6mry5")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="WeekdaysContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 5
+
+[node name="Su" type="Button" parent="MarginContainer/WeekdaysContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4etpf")
+flat = true
+clip_text = true
+script = ExtResource("4_e1qmn")
+
+[node name="Label" type="Label" parent="MarginContainer/WeekdaysContainer/Su"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -262.0
+offset_top = -21.0
+offset_right = 262.0
+offset_bottom = 21.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CALENDAR_WEEKDAY_SHORT_SUNDAY"
+label_settings = SubResource("LabelSettings_2q3ka")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="M" type="Button" parent="MarginContainer/WeekdaysContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4etpf")
+flat = true
+script = ExtResource("4_e1qmn")
+max_width = 50
+
+[node name="Label" type="Label" parent="MarginContainer/WeekdaysContainer/M"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CALENDAR_WEEKDAY_SHORT_MONDAY"
+label_settings = SubResource("LabelSettings_2q3ka")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="T" type="Button" parent="MarginContainer/WeekdaysContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4etpf")
+flat = true
+script = ExtResource("4_e1qmn")
+
+[node name="Label" type="Label" parent="MarginContainer/WeekdaysContainer/T"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CALENDAR_WEEKDAY_SHORT_TUESDAY"
+label_settings = SubResource("LabelSettings_2q3ka")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="W" type="Button" parent="MarginContainer/WeekdaysContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4etpf")
+flat = true
+script = ExtResource("4_e1qmn")
+
+[node name="Label" type="Label" parent="MarginContainer/WeekdaysContainer/W"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CALENDAR_WEEKDAY_SHORT_WEDNESDAY"
+label_settings = SubResource("LabelSettings_2q3ka")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Th" type="Button" parent="MarginContainer/WeekdaysContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4etpf")
+flat = true
+script = ExtResource("4_e1qmn")
+
+[node name="Label" type="Label" parent="MarginContainer/WeekdaysContainer/Th"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CALENDAR_WEEKDAY_SHORT_THURSDAY"
+label_settings = SubResource("LabelSettings_2q3ka")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="F" type="Button" parent="MarginContainer/WeekdaysContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4etpf")
+flat = true
+script = ExtResource("4_e1qmn")
+
+[node name="Label" type="Label" parent="MarginContainer/WeekdaysContainer/F"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CALENDAR_WEEKDAY_SHORT_FRIDAY"
+label_settings = SubResource("LabelSettings_2q3ka")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sa" type="Button" parent="MarginContainer/WeekdaysContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 0
+mouse_filter = 2
+theme_override_font_sizes/font_size = 28
+toggle_mode = true
+button_group = SubResource("ButtonGroup_4etpf")
+flat = true
+script = ExtResource("4_e1qmn")
+
+[node name="Label" type="Label" parent="MarginContainer/WeekdaysContainer/Sa"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "CALENDAR_WEEKDAY_SHORT_SATURDAY"
+label_settings = SubResource("LabelSettings_2q3ka")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Grid" type="GridContainer" parent="."]
+layout_mode = 2
+columns = 7

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://nrgb1jh15w7t"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/LogContainer.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cn8j6btqiwv0i" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/beam_collision.png" id="9"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/MatchScreen.gd" id="10"]
+[ext_resource type="PackedScene" uid="uid://0x4y5ygtuh7m" path="res://scenes/_main/ch6sc1a/RpgMinigame/ItemMenu.tscn" id="12"]
+[ext_resource type="Texture2D" uid="uid://cc46ntqhnqe4w" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/ref.png" id="13"]
+
+[node name="MatchScreen" type="Node2D"]
+script = ExtResource("10")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="LogContainer" type="VBoxContainer" parent="CanvasLayer"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+alignment = 2
+script = ExtResource("3")
+
+[node name="Log" type="Label" parent="CanvasLayer/LogContainer"]
+layout_mode = 2
+text = "ilovesuckinglemons dealt x damage."
+
+[node name="Log2" type="Label" parent="CanvasLayer/LogContainer"]
+layout_mode = 2
+text = "ilovesuckinglemons dealt x damage."
+
+[node name="Log3" type="Label" parent="CanvasLayer/LogContainer"]
+layout_mode = 2
+text = "Player has disconnected."
+
+[node name="_g" type="CanvasLayer" parent="."]
+
+[node name="_guide" type="TextureRect" parent="_g"]
+self_modulate = Color(1, 1, 1, 0.160784)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("13")
+expand_mode = 1
+
+[node name="BeamCollision" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("9")
+
+[node name="ItemMenu" parent="." instance=ExtResource("12")]
+
+[node name="DebugTimer" type="Timer" parent="."]
+wait_time = 0.25
+
+[node name="Label" type="Label" parent="."]

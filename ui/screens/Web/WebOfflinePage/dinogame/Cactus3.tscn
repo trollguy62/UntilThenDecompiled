@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://b0odnlsdcjdpv"]
+
+[ext_resource type="Texture2D" uid="uid://dnndoxrqxvds0" path="res://ui/screens/Web/WebOfflinePage/dinogame/assets/cactus_3.png" id="1"]
+[ext_resource type="Script" path="res://ui/screens/Web/WebOfflinePage/dinogame/Obstacle.gd" id="2"]
+
+[node name="Cactus3" type="Sprite"]
+position = Vector2(-6, 0)
+texture = ExtResource("1")
+centered = false
+offset = Vector2(0, -24)
+script = ExtResource("2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Collider" type="CollisionPolygon2D" parent="Area2D"]
+position = Vector2(6, -12)
+polygon = PackedVector2Array(-2, 12, 2, 12, 2, 4, 4, 4, 6, 2, 6, -6, 2, -6, 2, -12, -2, -12, -2, -8, -6, -8, -6, 1, -2, 1)

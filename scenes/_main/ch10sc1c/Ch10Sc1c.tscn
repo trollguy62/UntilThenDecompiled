@@ -1,0 +1,3112 @@
+[gd_scene load_steps=282 format=3 uid="uid://xgb6dflg434i"]
+
+[ext_resource type="Script" path="res://components/Scene.gd" id="1_jxsss"]
+[ext_resource type="PackedScene" uid="uid://b700tqt8gqm3n" path="res://scenes/house_mark_og/Scene.tscn" id="2_5ssyq"]
+[ext_resource type="Environment" uid="uid://cyh4ociukasxa" path="res://scenes/_main/ch10sc1c/Environment.tres" id="2_daxsd"]
+[ext_resource type="VoxelGIData" uid="uid://baamxu3p27jlr" path="res://scenes/_main/ch10sc1c/VoxelGIData.tres" id="2_soac7"]
+[ext_resource type="Script" path="res://scenes/_main/ch10sc1c/scripts/Thunder.gd" id="3_hkvot"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="3_yoqrw"]
+[ext_resource type="Texture2D" uid="uid://dl8gxlj4jlco6" path="res://scenes/house_mark_og/assets/deco/paper_1.png" id="4_ywc1d"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="5_qlbhr"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="6_ykokm"]
+[ext_resource type="Texture2D" uid="uid://dgb561fnf8mjw" path="res://scenes/house_mark_og/assets/book_1.png" id="7_so5d4"]
+[ext_resource type="ArrayMesh" uid="uid://tb0qw1r3gnl4" path="res://scenes/house_mark_og/assets/book.obj" id="8_nq8ll"]
+[ext_resource type="Texture2D" uid="uid://uvi4u6lkm3bv" path="res://scenes/house_mark_og/assets/deco/bucket_2.png" id="9_ndiwm"]
+[ext_resource type="Texture2D" uid="uid://diruv5gihwq1l" path="res://scenes/house_mark_og/assets/deco/bucket_3.png" id="10_15f86"]
+[ext_resource type="Script" path="res://components/CameraEffects.gd" id="11_qt00u"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="14_r2jv0"]
+[ext_resource type="Script" path="res://components/StateDictVisibilityController.gd" id="14_rmc1i"]
+[ext_resource type="Texture2D" uid="uid://bjkq31d0pynr5" path="res://scenes/_main/ch10sc1c/assets/props/pot_warming/pot_warming1.png" id="15_i1uce"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="15_ntc5f"]
+[ext_resource type="Texture2D" uid="uid://dwhoxletm0ilr" path="res://scenes/_main/ch10sc1c/assets/props/pot_warming/pot_warming2.png" id="16_uc64g"]
+[ext_resource type="Texture2D" uid="uid://cv7f8qwfcy64b" path="res://scenes/_main/ch10sc1c/assets/props/pot_warming/pot_warming3.png" id="17_74nl4"]
+[ext_resource type="PackedScene" uid="uid://b2s08f12e1jax" path="res://scenes/_main/ch10sc1c/assets/prefabs/Lighting.tscn" id="17_l6l3g"]
+[ext_resource type="Texture2D" uid="uid://b3tmk5k11kmj" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_default_idle/01.tres" id="17_n0h6r"]
+[ext_resource type="Script" path="res://components/Skit/SkitContainer.gd" id="17_uf2fn"]
+[ext_resource type="Texture2D" uid="uid://bjge1kv0qyw7e" path="res://scenes/_main/ch10sc1c/assets/props/pot_warming/pot_warming4.png" id="18_llfh8"]
+[ext_resource type="Script" path="res://components/Skit/SkitExternalRef.gd" id="18_wocxm"]
+[ext_resource type="Texture2D" uid="uid://dlmwngkft7pus" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_default_idle/02.tres" id="19_0bimq"]
+[ext_resource type="Texture2D" uid="uid://bbo2m7fknby48" path="res://scenes/_main/ch10sc1c/assets/props/pot_warming/pot_warming5.png" id="19_85728"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="19_mkrsf"]
+[ext_resource type="Texture2D" uid="uid://dfobdlpav8bhv" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_frownclosedeyes_idle/01.tres" id="19_puudw"]
+[ext_resource type="Texture2D" uid="uid://bcacp4oirslsb" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^df_default_idle/01.tres" id="20_6c1yw"]
+[ext_resource type="Texture2D" uid="uid://0g346n2y16x" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_frownclosedeyes_idle/02.tres" id="20_scncp"]
+[ext_resource type="Texture2D" uid="uid://47mh74qg4wxg" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_default_idle/03.tres" id="20_ve5hv"]
+[ext_resource type="Texture2D" uid="uid://bxn2b2dhh46d1" path="res://scenes/_main/ch10sc1c/assets/props/fire_med/fire_med1.png" id="20_vpyib"]
+[ext_resource type="Texture2D" uid="uid://df17y42c5cu2w" path="res://scenes/_main/ch10sc1c/assets/props/fire_med/fire_med2.png" id="21_2esdn"]
+[ext_resource type="Texture2D" uid="uid://blmdt26tt5d2w" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_frownclosedeyes_idle/03.tres" id="21_m1pit"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="21_o614f"]
+[ext_resource type="Texture2D" uid="uid://cvgcj5lrt5vii" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_default_idle/04.tres" id="21_v2wmu"]
+[ext_resource type="Texture2D" uid="uid://xwhc1okru3hr" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^drf_confused_idle/01.tres" id="22_0ugw1"]
+[ext_resource type="Texture2D" uid="uid://b1p8bwruqk828" path="res://scenes/_main/ch10sc1c/assets/props/fire_med/fire_med3.png" id="22_q0kvt"]
+[ext_resource type="Texture2D" uid="uid://oscrfeoxx1c8" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_default_idle/05.tres" id="22_s8xfj"]
+[ext_resource type="Texture2D" uid="uid://toe5knmcoeyh" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_frownclosedeyes_idle/04.tres" id="22_xd5j5"]
+[ext_resource type="Texture2D" uid="uid://d33qshe2bfbc" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_frownclosedeyes_idle/05.tres" id="23_10b4b"]
+[ext_resource type="Texture2D" uid="uid://5r1khy0d1mes" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_default_idle/06.tres" id="23_10wu7"]
+[ext_resource type="Texture2D" uid="uid://6vt2qxjpt0dw" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^drf_confused_idle/02.tres" id="23_ql5hb"]
+[ext_resource type="Texture2D" uid="uid://bsc2jvg2m37qb" path="res://scenes/_main/ch10sc1c/assets/props/fire_med/fire_med4.png" id="23_vl8d3"]
+[ext_resource type="Texture2D" uid="uid://brwqmhspl06ku" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^drf_confused_idle/03.tres" id="24_hyk5j"]
+[ext_resource type="Texture2D" uid="uid://jmbvr7372gi5" path="res://scenes/_main/ch10sc1c/assets/props/fire_med/fire_med5.png" id="24_lhd73"]
+[ext_resource type="Texture2D" uid="uid://dc6yipw765g5b" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_frownclosedeyes_idle/06.tres" id="24_teoey"]
+[ext_resource type="Texture2D" uid="uid://d0yo6tbyr72kj" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_confused_idle/01.tres" id="25_8n7fk"]
+[ext_resource type="Texture2D" uid="uid://3n8y0uupoyy6" path="res://scenes/_main/ch10sc1c/assets/props/fire_med/fire_med6.png" id="25_iufpv"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/scripts/PlayerController.gd" id="25_r65ie"]
+[ext_resource type="Texture2D" uid="uid://dfqebsryr72ha" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^drf_confused_idle/04.tres" id="25_s3lvr"]
+[ext_resource type="Texture2D" uid="uid://btflydtesaw42" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^drf_confused_idle/05.tres" id="26_3dh6m"]
+[ext_resource type="Texture2D" uid="uid://dac00ifih3sjl" path="res://scenes/_main/ch10sc1c/assets/props/fire_high/fire_high1.png" id="26_23yuk"]
+[ext_resource type="Texture2D" uid="uid://c5be23i8ksbd6" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_confused_idle/02.tres" id="26_huqr1"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="26_n8ygu"]
+[ext_resource type="Texture2D" uid="uid://2woj3478u1nc" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_confused_idle/03.tres" id="27_4inb4"]
+[ext_resource type="Texture2D" uid="uid://doko5qxfdscws" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^drf_confused_idle/06.tres" id="27_mn0x8"]
+[ext_resource type="Texture2D" uid="uid://b7c6p67yk6o8b" path="res://scenes/_main/ch10sc1c/assets/props/fire_high/fire_high2.png" id="27_tigr7"]
+[ext_resource type="Texture2D" uid="uid://3r8iijdhqy5b" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_confused_idle/04.tres" id="28_ebl10"]
+[ext_resource type="Texture2D" uid="uid://rhtip4jr8xb6" path="res://scenes/_main/ch10sc1c/assets/props/fire_high/fire_high3.png" id="28_pd3cs"]
+[ext_resource type="Script" path="res://components/PathGrounder.gd" id="28_uokod"]
+[ext_resource type="Texture2D" uid="uid://debhq2yuad8wk" path="res://scenes/_main/ch10sc1c/assets/props/fire_high/fire_high4.png" id="29_aq4cm"]
+[ext_resource type="Texture2D" uid="uid://baq73rgif3hla" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_confused_idle/05.tres" id="29_v4nn0"]
+[ext_resource type="Texture2D" uid="uid://dgv1og6ukeiic" path="res://scenes/_main/ch10sc1c/assets/props/fire_high/fire_high5.png" id="30_3b16g"]
+[ext_resource type="Texture2D" uid="uid://dy5ho4wqyctl" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^uf_confused_idle/06.tres" id="30_c4t4p"]
+[ext_resource type="Texture2D" uid="uid://ckjkwrgvc0ev7" path="res://scenes/_main/ch10sc1c/assets/props/fire_high/fire_high6.png" id="31_6xbdr"]
+[ext_resource type="Texture2D" uid="uid://b8o7ngmta4um1" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_confused_idle/01.tres" id="31_eklp3"]
+[ext_resource type="Texture2D" uid="uid://d0stjd05rvflj" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_confused_idle/02.tres" id="32_jji7u"]
+[ext_resource type="Texture2D" uid="uid://cp302axe3rgbm" path="res://scenes/_main/ch10sc1c/assets/props/pot_smoking/pot_smoking1.png" id="32_l8te3"]
+[ext_resource type="Texture2D" uid="uid://dd5t2wjvccyjb" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_confused_idle/03.tres" id="33_s5n8n"]
+[ext_resource type="Texture2D" uid="uid://laidysu82uf8" path="res://scenes/_main/ch10sc1c/assets/props/pot_smoking/pot_smoking2.png" id="33_sc858"]
+[ext_resource type="Texture2D" uid="uid://owfeqtf6lluq" path="res://scenes/_main/ch10sc1c/assets/props/pot_smoking/pot_smoking3.png" id="34_cgrdq"]
+[ext_resource type="Texture2D" uid="uid://dqea7e7esjt11" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_confused_idle/04.tres" id="34_r1f7y"]
+[ext_resource type="Texture2D" uid="uid://bdu04142klf1b" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_confused_idle/01.tres" id="34_wvtc5"]
+[ext_resource type="Texture2D" uid="uid://c8tpklcic6olx" path="res://scenes/_main/ch10sc1c/assets/props/pot_smoking/pot_smoking4.png" id="35_64g3h"]
+[ext_resource type="Texture2D" uid="uid://mlw522ud1oym" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_confused_idle/02.tres" id="35_kngwq"]
+[ext_resource type="Texture2D" uid="uid://y03aboqh5j2h" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_confused_idle/05.tres" id="35_yo2lm"]
+[ext_resource type="Texture2D" uid="uid://h0mk6p216qpi" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_confused_idle/06.tres" id="36_3lvnd"]
+[ext_resource type="Texture2D" uid="uid://b65c8l5j6t7ys" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_confused_idle/03.tres" id="36_gy850"]
+[ext_resource type="Texture2D" uid="uid://cob377egvaftc" path="res://scenes/_main/ch10sc1c/assets/props/pot_smoking/pot_smoking5.png" id="36_o6vla"]
+[ext_resource type="Texture2D" uid="uid://dw1lstyjvxq7a" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^dlf_default_idle/01.tres" id="37_mf70q"]
+[ext_resource type="Texture2D" uid="uid://b3lfqo25w3f57" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_confused_idle/04.tres" id="37_snbcu"]
+[ext_resource type="Texture2D" uid="uid://dxf8tvvtcc7av" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_confused_idle/05.tres" id="38_e0p5q"]
+[ext_resource type="Texture2D" uid="uid://dd0bgsq0y4prt" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^dlf_default_idle/02.tres" id="38_rq7wg"]
+[ext_resource type="Texture2D" uid="uid://bsjhtw4jrgqyj" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_confused_idle/06.tres" id="39_53q8d"]
+[ext_resource type="Texture2D" uid="uid://bb05hbcw2x003" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^dlf_default_idle/03.tres" id="39_nabyg"]
+[ext_resource type="Texture2D" uid="uid://b8qa75smf78tl" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^dlf_default_idle/04.tres" id="40_mfpdm"]
+[ext_resource type="Texture2D" uid="uid://bfll81x2laku" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^dlf_default_idle/05.tres" id="41_ase7r"]
+[ext_resource type="Texture2D" uid="uid://t7t2aireaem2" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^dlf_default_idle/06.tres" id="42_qdhwp"]
+[ext_resource type="Texture2D" uid="uid://bx1mw4jk7cetq" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_default_idle/01.tres" id="43_625d6"]
+[ext_resource type="Texture2D" uid="uid://13330r3kfdd5" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_default_idle/02.tres" id="44_4o803"]
+[ext_resource type="Texture2D" uid="uid://rf5rqd150a4i" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_default_idle/03.tres" id="45_y1rns"]
+[ext_resource type="Texture2D" uid="uid://dby540c8740vf" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_default_idle/04.tres" id="46_fvvkp"]
+[ext_resource type="Texture2D" uid="uid://bn7amsrv2wg10" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^df_default_idle/02.tres" id="46_k4mxd"]
+[ext_resource type="Texture2D" uid="uid://kjx116iw8w4f" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_default_idle/05.tres" id="47_a2scx"]
+[ext_resource type="Texture2D" uid="uid://xsb1nyo3o8bv" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^df_default_idle/03.tres" id="47_tww6k"]
+[ext_resource type="Texture2D" uid="uid://cwbvm8id0htrj" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_default_idle/06.tres" id="48_31oqc"]
+[ext_resource type="Texture2D" uid="uid://6w52k4glrtln" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^df_default_idle/04.tres" id="48_an27p"]
+[ext_resource type="Texture2D" uid="uid://bxtwxvgtt7fgp" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^df_default_idle/05.tres" id="49_4exri"]
+[ext_resource type="Texture2D" uid="uid://dpop4lupmgtfn" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_default_idle/01.tres" id="49_dllsx"]
+[ext_resource type="Texture2D" uid="uid://duhw2lnhq4dru" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^df_default_idle/06.tres" id="50_5fapj"]
+[ext_resource type="Texture2D" uid="uid://chts4gyhw63df" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_default_idle/02.tres" id="50_vfbuw"]
+[ext_resource type="Texture2D" uid="uid://dmf0rs0dkuaiu" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_default_idle/03.tres" id="51_fykwd"]
+[ext_resource type="Texture2D" uid="uid://ocn3ckenqxsx" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_surprised_idle/01.tres" id="51_orr7g"]
+[ext_resource type="Texture2D" uid="uid://bxied3gpaqjbo" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_surprised_idle/02.tres" id="52_iugik"]
+[ext_resource type="Texture2D" uid="uid://cl6ncml37n6c7" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_default_idle/04.tres" id="52_lrrjh"]
+[ext_resource type="Texture2D" uid="uid://cj86461y68cts" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_surprised_idle/03.tres" id="53_8pe5f"]
+[ext_resource type="Texture2D" uid="uid://d3mylifx2fd2w" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_default_idle/05.tres" id="53_dtj88"]
+[ext_resource type="Texture2D" uid="uid://dmtem5y1ffkxo" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_default_idle/06.tres" id="54_31ygl"]
+[ext_resource type="Texture2D" uid="uid://djsld7rxaaajk" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_surprised_idle/04.tres" id="54_fi0vh"]
+[ext_resource type="Texture2D" uid="uid://dmju0qqur2ir" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_default_idle/07.tres" id="55_mbgy7"]
+[ext_resource type="Texture2D" uid="uid://b6gvi4pckd306" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_surprised_idle/05.tres" id="55_wlxff"]
+[ext_resource type="Texture2D" uid="uid://n6p4aye6466a" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_default_idle/08.tres" id="56_8376s"]
+[ext_resource type="Texture2D" uid="uid://nfd4xed2tlja" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/f_sitcross+book^urf_surprised_idle/06.tres" id="56_gm75q"]
+[ext_resource type="Texture2D" uid="uid://cdkshej5kd68j" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^dlf_default_idle/01.tres" id="57_h1aw1"]
+[ext_resource type="Texture2D" uid="uid://brciig3r7raml" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^dlf_default_idle/02.tres" id="58_wror4"]
+[ext_resource type="Texture2D" uid="uid://c8srgmb6ibhig" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^dlf_default_idle/03.tres" id="59_bcuyg"]
+[ext_resource type="Texture2D" uid="uid://djwnixfxm2mq8" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^dlf_default_idle/04.tres" id="60_0dj4i"]
+[ext_resource type="Texture2D" uid="uid://cscxg4yd3e5kd" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^dlf_default_idle/05.tres" id="61_4d1sq"]
+[ext_resource type="Texture2D" uid="uid://cfpa48pj7n5d1" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^dlf_default_idle/06.tres" id="62_q7afw"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="63_6mbyh"]
+[ext_resource type="Script" path="res://components/SceneManager.gd" id="64_svgb3"]
+[ext_resource type="Script" path="res://components/DialogueHandler.gd" id="65_yqs6j"]
+[ext_resource type="PackedScene" uid="uid://da0ppgkx2d538" path="res://components/Vignette.tscn" id="66_5xx3h"]
+[ext_resource type="PackedScene" uid="uid://e3hu5waf2v3u" path="res://components/ThoughtBubble/ThoughtBubble.tscn" id="67_btgnd"]
+[ext_resource type="Texture2D" uid="uid://0epclgf0y568" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_default_idle/01.tres" id="68_auwpx"]
+[ext_resource type="Texture2D" uid="uid://det6p71vwe7r1" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_default_idle/02.tres" id="69_pkdqt"]
+[ext_resource type="Texture2D" uid="uid://ccihtpsqia8mi" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_default_idle/03.tres" id="70_7ph8i"]
+[ext_resource type="Texture2D" uid="uid://cal5p7x4g8o8i" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_default_idle/04.tres" id="71_ejmrf"]
+[ext_resource type="Texture2D" uid="uid://dvxrk1ew8lluy" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_default_idle/05.tres" id="72_k4cxg"]
+[ext_resource type="Texture2D" uid="uid://nei2yhcoptoq" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_default_idle/06.tres" id="73_cjuk5"]
+[ext_resource type="Texture2D" uid="uid://cl1ps6288ox37" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_default_idle/07.tres" id="74_ke820"]
+[ext_resource type="Texture2D" uid="uid://b2ikv45xb7xic" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_default_idle/08.tres" id="75_68ra2"]
+[ext_resource type="Texture2D" uid="uid://davwhfiyusjde" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_frown_idle/01.tres" id="76_anylm"]
+[ext_resource type="Texture2D" uid="uid://m02givbre2ho" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_frown_idle/02.tres" id="77_3djba"]
+[ext_resource type="Texture2D" uid="uid://dg77mxnkhiv3n" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_frown_idle/03.tres" id="78_3a733"]
+[ext_resource type="Texture2D" uid="uid://cvu6wr3lcd288" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_frown_idle/04.tres" id="79_ytc1i"]
+[ext_resource type="Texture2D" uid="uid://56yf1lcdo5wn" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_frown_idle/05.tres" id="80_7kd4d"]
+[ext_resource type="Texture2D" uid="uid://wpgamjwb0hsu" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand+bucket^lf_frown_idle/06.tres" id="81_ayv21"]
+[ext_resource type="Texture2D" uid="uid://bxm8pgqdrxmks" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_frown_idle/01.tres" id="82_olvr4"]
+[ext_resource type="Texture2D" uid="uid://b0c4qrwvdbd1u" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_frown_idle/02.tres" id="83_o562s"]
+[ext_resource type="Texture2D" uid="uid://c2qojc220v1e" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_frown_idle/03.tres" id="84_oyc7q"]
+[ext_resource type="Texture2D" uid="uid://brcaelvslwy7h" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_frown_idle/04.tres" id="85_vx24m"]
+[ext_resource type="Texture2D" uid="uid://biccehjreshwo" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_frown_idle/05.tres" id="86_31jig"]
+[ext_resource type="Texture2D" uid="uid://d1k8tfg11qpaq" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_frown_idle/06.tres" id="87_2ga8h"]
+[ext_resource type="Texture2D" uid="uid://boks428nvkbmm" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_frown_idle/07.tres" id="88_r35m8"]
+[ext_resource type="Texture2D" uid="uid://bvv50w0851k5o" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk+bucket^lf_frown_idle/08.tres" id="89_wcaxv"]
+[ext_resource type="Texture2D" uid="uid://ba8yb0tmsbx6a" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_frown_idle/01.tres" id="90_oyuht"]
+[ext_resource type="Texture2D" uid="uid://h5156cnotkjf" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_frown_idle/02.tres" id="91_2sfr5"]
+[ext_resource type="Texture2D" uid="uid://byvpa13x8bd72" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_frown_idle/03.tres" id="92_n7snw"]
+[ext_resource type="Texture2D" uid="uid://cw407bwft3ckh" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_frown_idle/04.tres" id="93_af1ts"]
+[ext_resource type="Texture2D" uid="uid://dcr7daaongnyg" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_frown_idle/05.tres" id="94_jbtr3"]
+[ext_resource type="Texture2D" uid="uid://d1weorkqpkis5" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_stand^lf_frown_idle/06.tres" id="95_o5110"]
+[ext_resource type="Texture2D" uid="uid://ba71yl2shntau" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_frown_idle/01.tres" id="96_v84yh"]
+[ext_resource type="Texture2D" uid="uid://dqn8s768lc6t7" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_frown_idle/02.tres" id="97_l4tfw"]
+[ext_resource type="Texture2D" uid="uid://b4y5uk87c6pdf" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_frown_idle/03.tres" id="98_gs2x4"]
+[ext_resource type="Texture2D" uid="uid://bjpi7dv7ejbdw" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_frown_idle/04.tres" id="99_88fwa"]
+[ext_resource type="Texture2D" uid="uid://dy42gjuu6cl33" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_frown_idle/05.tres" id="100_k17d0"]
+[ext_resource type="Texture2D" uid="uid://p2qvghvctckb" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_frown_idle/06.tres" id="101_kxgs8"]
+[ext_resource type="Texture2D" uid="uid://bsgou4vf4b8ct" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_frown_idle/07.tres" id="102_mjaj1"]
+[ext_resource type="Texture2D" uid="uid://c5a7ggsw3sxba" path="res://scenes/_main/ch10sc1c/characters/MarkBorja/lf_walk^lf_frown_idle/08.tres" id="103_xk82h"]
+[ext_resource type="Script" path="res://components/ShotVisibilityController.gd" id="109_6y1wq"]
+[ext_resource type="AudioStream" uid="uid://5vpnrb2spjsb" path="res://scenes/_main/ch2sc5a/assets/sfx/Footsteps_Tiles_Barefoot_Walking.ogg" id="111_53fed"]
+[ext_resource type="Script" path="res://components/Pivot.gd" id="112_dflbm"]
+[ext_resource type="Script" path="res://components/TriggerArea.gd" id="139_u20g8"]
+[ext_resource type="Script" path="res://components/InteractiveAreaHandler.gd" id="140_bgl3j"]
+[ext_resource type="Script" path="res://components/PlayerTargetPosition.gd" id="140_ui1q3"]
+[ext_resource type="Script" path="res://components/PlayerTarget.gd" id="141_xtahm"]
+[ext_resource type="PackedScene" uid="uid://b1myvkwvnotwi" path="res://components/InteractiveArea/InteractiveArea.tscn" id="142_kl30n"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3DTransparent.gdshader" id="148_sc2en"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="152_kkhxx"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="153_ce56f"]
+[ext_resource type="Script" path="res://components/audio/CommandAudioTrigger.gd" id="156_n1a7h"]
+[ext_resource type="Texture2D" uid="uid://b0qlwkwk88cts" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_talk/01.tres" id="156_titpq"]
+[ext_resource type="Texture2D" uid="uid://bnqftueenywxh" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazed_head/01.tres" id="157_425v1"]
+[ext_resource type="Texture2D" uid="uid://bwpjnifb46j4u" path="res://scenes/_main/ch10sc1c/assets/props/TV/News/tv_screen_5.png" id="158_rfa02"]
+[ext_resource type="Texture2D" uid="uid://coyprtfmcstml" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazed_head/02.tres" id="158_w71o8"]
+[ext_resource type="Texture2D" uid="uid://cxn355i6ienm" path="res://scenes/_main/ch10sc1c/assets/props/TV/News/tv_screen_6.png" id="159_4sq7b"]
+[ext_resource type="Texture2D" uid="uid://dmtxwtkknpjha" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazed_head/03.tres" id="159_v0c1u"]
+[ext_resource type="Texture2D" uid="uid://cus24482a5qtd" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazed_head/04.tres" id="160_kaq77"]
+[ext_resource type="Texture2D" uid="uid://dx27gcn5wihco" path="res://scenes/_main/ch10sc1c/assets/props/TV/News/tv_screen_7.png" id="160_qeol6"]
+[ext_resource type="Texture2D" uid="uid://b8noi24msh2cx" path="res://scenes/_main/ch10sc1c/assets/props/TV/News/tv_screen_8.png" id="161_x0hki"]
+[ext_resource type="Texture2D" uid="uid://d1i4jqh5y7nrk" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazed_head/05.tres" id="161_x6bkh"]
+[ext_resource type="Texture2D" uid="uid://dq211y1dskjb4" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazed_head/06.tres" id="162_h10u2"]
+[ext_resource type="Texture2D" uid="uid://cq4gb61ruwgps" path="res://scenes/_main/ch10sc1c/assets/props/TV/News/tv_screen_9.png" id="162_m6js7"]
+[ext_resource type="Texture2D" uid="uid://qyio142w731h" path="res://scenes/_main/ch10sc1c/assets/props/TV/News/tv_screen_10.png" id="163_nmlvk"]
+[ext_resource type="Texture2D" uid="uid://b12ct8xs0rykq" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazed_head/07.tres" id="163_q81it"]
+[ext_resource type="PackedScene" uid="uid://sc3775ffbjfx" path="res://scenes/_main/ch10sc1c/assets/prefabs/RainLeak.tscn" id="163_wcxtv"]
+[ext_resource type="Texture2D" uid="uid://qookcyjbv7i5" path="res://scenes/_main/ch10sc1c/assets/props/TV/News/tv_screen_4.png" id="164_3e5fb"]
+[ext_resource type="Texture2D" uid="uid://pelkb51i2h8c" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazed_head/08.tres" id="164_6jgjr"]
+[ext_resource type="Texture2D" uid="uid://c61g0g253gc3l" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_3.png" id="165_ew5nb"]
+[ext_resource type="Texture2D" uid="uid://dxg1bbch381u8" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_head/01.tres" id="165_io5xg"]
+[ext_resource type="Texture2D" uid="uid://cobxds63na0pu" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_head/02.tres" id="166_7w5ug"]
+[ext_resource type="Texture2D" uid="uid://cnnnvh1qa24rj" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_4.png" id="166_xh62l"]
+[ext_resource type="Texture2D" uid="uid://bclm1wmql6vbg" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_5.png" id="167_4acv3"]
+[ext_resource type="Texture2D" uid="uid://cku0bhbi4ewwl" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_head/03.tres" id="167_ckdh8"]
+[ext_resource type="Texture2D" uid="uid://djww8auihsluy" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_6.png" id="168_gh4qu"]
+[ext_resource type="Texture2D" uid="uid://dh2c2vujhyulo" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_head/04.tres" id="168_yy17m"]
+[ext_resource type="Texture2D" uid="uid://bjyldyoudji7e" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_7.png" id="169_76qbp"]
+[ext_resource type="Texture2D" uid="uid://dgl2lxm416i73" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_head/05.tres" id="169_hxd7g"]
+[ext_resource type="Texture2D" uid="uid://bll5uncbem0we" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_head/06.tres" id="170_0bfuw"]
+[ext_resource type="Texture2D" uid="uid://dxsmpqt4dvemr" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_8.png" id="170_vswxp"]
+[ext_resource type="Texture2D" uid="uid://ck0ceo8rf5fbc" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_9.png" id="171_t0ngp"]
+[ext_resource type="Texture2D" uid="uid://dkde510vvndf6" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_head/07.tres" id="171_u77tw"]
+[ext_resource type="Texture2D" uid="uid://b4mqwrskmfyke" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_head/08.tres" id="172_jvxs5"]
+[ext_resource type="Texture2D" uid="uid://3gkpqs882lh5" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_10.png" id="172_yirea"]
+[ext_resource type="Texture2D" uid="uid://dne70xp5eg05a" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_talk/02.tres" id="173_0pcoq"]
+[ext_resource type="Texture2D" uid="uid://cnm7ogwvkxyxj" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_11.png" id="173_these"]
+[ext_resource type="Texture2D" uid="uid://8i2cusferhif" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_talk/03.tres" id="174_7ms4b"]
+[ext_resource type="Texture2D" uid="uid://desxge12w3rtw" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_12.png" id="174_834al"]
+[ext_resource type="Texture2D" uid="uid://b06nbdh0vn5og" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_13.png" id="175_4busd"]
+[ext_resource type="Texture2D" uid="uid://dnk2q73abkyhe" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_talk/04.tres" id="175_6dyf8"]
+[ext_resource type="Texture2D" uid="uid://f5m1lp2wevyb" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_talk/05.tres" id="176_8y6ng"]
+[ext_resource type="Texture2D" uid="uid://5nt5g8sx3e4r" path="res://scenes/_main/ch10sc1c/assets/props/TV/Weather/tv_screen_14.png" id="176_kwt2e"]
+[ext_resource type="Texture2D" uid="uid://c3mdiisra3u0i" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_talk/06.tres" id="177_8ynqt"]
+[ext_resource type="Texture2D" uid="uid://f8ygsmxhtqmi" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_talk/07.tres" id="178_6ths8"]
+[ext_resource type="Texture2D" uid="uid://bvrwk3jmq5vy3" path="res://scenes/_main/ch10sc1c/characters/C3D/Mark_dazedquivering_talk/08.tres" id="179_1pxb8"]
+
+[sub_resource type="EventAsset" id="EventAsset_rooh4"]
+is_3d = true
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1c/Ambience/Thunder"
+guid = "{76ef55bc-a7ff-491b-9986-b7b94d137f85}"
+name = "Thunder"
+
+[sub_resource type="Shader" id="Shader_h1vd6"]
+code = "shader_type spatial;
+render_mode depth_draw_opaque, diffuse_burley, specular_schlick_ggx, cull_disabled;
+
+uniform float power : hint_range(0., 1.) = 1.0;
+uniform float metallic : hint_range(0., 1.) = 0.1;
+uniform float roughness : hint_range(0., 1.) = 0.2;
+
+uniform sampler2D tex_background : source_color;
+
+float sin_bounded(float x, float a, float b) {
+	float n = (b - a) / 2.;
+	return n * sin(x) + n + a;
+}
+
+float scanline(float t, vec2 uv) {
+	float c = 1. - pow(abs(0.5 - uv.y), power);
+	c *= sin_bounded(t * 15. + uv.y * 200., 0.7, 1.0);
+	return c;
+}
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+void fragment() {
+	vec2 px_size = 1.0f / vec2(textureSize(tex_background, 0));
+	vec2 uv = UV;
+
+	vec4 bg = texturePointSmooth(tex_background, uv, px_size);
+	float sl = scanline(TIME, uv);
+
+	ALBEDO = bg.rgb * sl;
+	EMISSION = bg.rgb * 1.5 * sl;
+
+	METALLIC = metallic;
+	ROUGHNESS = roughness;
+}
+"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_v3ndx"]
+viewport_path = NodePath("Main/C2D/TV/Viewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vjv76"]
+resource_local_to_scene = true
+render_priority = 0
+shader = SubResource("Shader_h1vd6")
+shader_parameter/power = 0.645
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.25
+shader_parameter/tex_background = SubResource("ViewportTexture_v3ndx")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o3lee"]
+render_priority = 0
+shader = ExtResource("3_yoqrw")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4_ywc1d")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u1kn2"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.1377, 0.162, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_o3lee"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 59, 1, 13, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 59, 1, 13, 62, 84, 227, 37, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 84, 227, 37, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_if4aq"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_btif2"]
+width = 52
+height = 38
+seamless = true
+seamless_blend_skirt = 0.494
+as_normal_map = true
+noise = SubResource("FastNoiseLite_if4aq")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yrahv"]
+render_priority = 0
+shader = ExtResource("6_ykokm")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 0.311
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7_so5d4")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_btif2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_8jfww"]
+size = Vector3(7, 0.09, 6.02)
+
+[sub_resource type="Curve3D" id="Curve3D_5f085"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -6.78301e-05, -0.00227258, 0.00195098, 0, 0, 0, 0, 0, 0, 0.385704, 0.0159574, 0.0750906, 0, 0, 0, 0, 0, 0, 0.653159, -0.00999668, 0.258415, 0, 0, 0, 0, 0, 0, 0.820176, 0.0160779, 0.67172, 0, 0, 0, 0, 0, 0, 1.16244, -0.0236484, 0.725928),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0)
+}
+point_count = 5
+
+[sub_resource type="Curve3D" id="Curve3D_5ko00"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0.056, 0, 0.1, 0, 0, 0, 0, 0, 0, 3.367, 0, 0.1),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_x5sa2"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -0.053, 0, -0.112, 0, 0, 0, 0, 0, 0, -0.053, 0, -2.487),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="Curve3D_lqyn8"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, -0.707, 0, 0, 0, 0, 0, 0, 0, 0, 0.408),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x5v8g"]
+render_priority = 0
+shader = ExtResource("3_yoqrw")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10_15f86")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ugak6"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.25, 0.32, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_x5v8g"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 62, 10, 215, 163, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 10, 215, 163, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_via0l"]
+render_priority = 0
+shader = ExtResource("3_yoqrw")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("9_ndiwm")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_485pr"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.25, 0.35, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_via0l"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 62, 51, 51, 179, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 51, 51, 179, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_agjmd"]
+size = Vector3(0.2, 1, 0.2)
+
+[sub_resource type="BankAsset" id="BankAsset_76jmi"]
+file_path = "res://assets/soundbanks/Desktop/Ch10Sc1c.bank"
+modified_time = 1719042258
+path = "bank:/PT2/Ch10Sc1c"
+guid = "{90fa48ff-5d99-43ff-9309-b60529750a48}"
+name = "Ch10Sc1c"
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_ID" id="FMOD_STUDIO_PARAMETER_ID_p8d2m"]
+data1 = 2674439120
+data2 = 3646875925
+
+[sub_resource type="FMOD_STUDIO_PARAMETER_DESCRIPTION" id="FMOD_STUDIO_PARAMETER_DESCRIPTION_oe3pr"]
+name = "Intensity"
+id = SubResource("FMOD_STUDIO_PARAMETER_ID_p8d2m")
+maximum = 1.0
+guid = "{3591fa08-a580-4e9a-af10-8f5de6ca5a00}"
+
+[sub_resource type="ParameterAsset" id="ParameterAsset_rmf7d"]
+parameter_description = SubResource("FMOD_STUDIO_PARAMETER_DESCRIPTION_oe3pr")
+path = "parameter:/Intensity"
+guid = "{3591fa08-a580-4e9a-af10-8f5de6ca5a00}"
+name = "Intensity"
+
+[sub_resource type="EventAsset" id="EventAsset_pxcwy"]
+is_3d = true
+min_distance = 1.0
+max_distance = 90.0
+parameters = {
+"{3591fa08-a580-4e9a-af10-8f5de6ca5a00}": SubResource("ParameterAsset_rmf7d")
+}
+path = "event:/PT2/Ch10/Sc1c/Ambience/Rain"
+guid = "{e445de85-2a59-4365-8e6f-0c4ccb985011}"
+name = "Rain"
+
+[sub_resource type="EventAsset" id="EventAsset_pmxv3"]
+is_3d = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1c/Ambience/Fan"
+guid = "{9fe3f534-7d6d-4eaf-b2a9-a59b76d8c902}"
+name = "Fan"
+
+[sub_resource type="EventAsset" id="EventAsset_uoa6q"]
+is_3d = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1c/Specific/BoilingRice"
+guid = "{606649c4-5597-454d-b407-06f9ce958803}"
+name = "BoilingRice"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ujtal"]
+render_priority = 0
+shader = ExtResource("19_mkrsf")
+shader_parameter/scale = Vector3(0.5346, 1.0773, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("17_n0h6r")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1avjg"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_ujtal"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_agt73"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_puudw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_scncp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_m1pit")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_xd5j5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_10b4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_teoey")
+}],
+"loop": true,
+"name": &"closedeyes_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_8n7fk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_huqr1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_4inb4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_ebl10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_v4nn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_c4t4p")
+}],
+"loop": true,
+"name": &"confused=u_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_eklp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_jji7u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_s5n8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_r1f7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_yo2lm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_3lvnd")
+}],
+"loop": true,
+"name": &"confused_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_mf70q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_rq7wg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_nabyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_mfpdm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_ase7r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_qdhwp")
+}],
+"loop": true,
+"name": &"default+bucket=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_625d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_4o803")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_y1rns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_fvvkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_a2scx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_31oqc")
+}],
+"loop": true,
+"name": &"default+bucket_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_dllsx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_vfbuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_fykwd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_lrrjh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_dtj88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_31ygl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_mbgy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_8376s")
+}],
+"loop": true,
+"name": &"default+bucket_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_h1aw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_wror4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_bcuyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_0dj4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_4d1sq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_q7afw")
+}],
+"loop": true,
+"name": &"default=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_n0h6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_0bimq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ve5hv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_v2wmu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_s8xfj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_10wu7")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("68_auwpx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_pkdqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_7ph8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ejmrf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_k4cxg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_cjuk5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_ke820")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_68ra2")
+}],
+"loop": true,
+"name": &"default_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76_anylm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_3djba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_3a733")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_ytc1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_7kd4d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_ayv21")
+}],
+"loop": true,
+"name": &"frown+bucket_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("82_olvr4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_o562s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_oyc7q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_vx24m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_31jig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_2ga8h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_r35m8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_wcaxv")
+}],
+"loop": true,
+"name": &"frown+bucket_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("90_oyuht")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_2sfr5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_n7snw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_af1ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_jbtr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95_o5110")
+}],
+"loop": true,
+"name": &"frown_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("96_v84yh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_l4tfw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_gs2x4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_88fwa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_k17d0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_kxgs8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102_mjaj1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_xk82h")
+}],
+"loop": true,
+"name": &"frown_walk",
+"speed": 7.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_df5df"]
+size = Vector3(0.323975, 1.05999, 0.02)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_doixn"]
+render_priority = 0
+shader = ExtResource("19_mkrsf")
+shader_parameter/scale = Vector3(0.5346, 1.0773, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("17_n0h6r")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wphp1"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_doixn"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qqh07"]
+render_priority = 0
+shader = ExtResource("19_mkrsf")
+shader_parameter/scale = Vector3(0.5346, 1.0773, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("17_n0h6r")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6j8k2"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_qqh07"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bxyyv"]
+render_priority = 0
+shader = ExtResource("19_mkrsf")
+shader_parameter/scale = Vector3(0.5346, 1.0773, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("43_625d6")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7f12k"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_bxyyv"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sl2bh"]
+render_priority = 0
+shader = ExtResource("19_mkrsf")
+shader_parameter/scale = Vector3(0.5346, 1.0773, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("51_orr7g")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_723x8"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_sl2bh"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gbxfw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_0ugw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ql5hb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_hyk5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_s3lvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3dh6m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_mn0x8")
+}],
+"loop": true,
+"name": &"confused=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_wvtc5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_kngwq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_gy850")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_snbcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_e0p5q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_53q8d")
+}],
+"loop": true,
+"name": &"confused_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_6c1yw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_k4mxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_tww6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_an27p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_4exri")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_5fapj")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_orr7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_iugik")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_8pe5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_fi0vh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_wlxff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_gm75q")
+}],
+"loop": true,
+"name": &"surprised_idle",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j1reb"]
+render_priority = 0
+shader = ExtResource("19_mkrsf")
+shader_parameter/scale = Vector3(0.1215, 0.0324, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 1.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("26_23yuk")
+shader_parameter/texture_emission = ExtResource("26_23yuk")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8o6wu"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_j1reb"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2l5d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_23yuk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_tigr7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_pd3cs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_aq4cm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_3b16g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_6xbdr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_elx4i"]
+render_priority = 0
+shader = ExtResource("148_sc2en")
+shader_parameter/scale = Vector3(0.5832, 0.8019, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("32_l8te3")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ejn0q"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_elx4i"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fo04t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_l8te3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_sc858")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_cgrdq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_64g3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_o6vla")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_snlpw"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../WorldEnvironment:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_h8uxp"]
+resource_name = "thunder"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../WorldEnvironment:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lrr2t"]
+_data = {
+"RESET": SubResource("Animation_snlpw"),
+"thunder": SubResource("Animation_h8uxp")
+}
+
+[sub_resource type="EventAsset" id="EventAsset_oycax"]
+is_3d = true
+min_distance = 1.0
+max_distance = 8.0
+path = "event:/PT2/Ch10/Sc1c/Specific/TvWeatherReport"
+guid = "{89c1a97a-088c-4a8c-9d49-1e9d1243c323}"
+name = "TvWeatherReport"
+
+[sub_resource type="EventAsset" id="EventAsset_o0ed8"]
+is_3d = true
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1c/Specific/AngryKnock"
+guid = "{adb249ef-cd98-4830-bfb1-02eb8848d10f}"
+name = "AngryKnock"
+
+[sub_resource type="EventAsset" id="EventAsset_hq1g1"]
+is_3d = true
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1c/Specific/BucketPlace"
+guid = "{95e63cad-2faf-433e-a259-b6550f1c485c}"
+name = "BucketPlace"
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_wrbfx"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.5
+dof_blur_far_transition = 1.0
+dof_blur_near_transition = 0.1
+dof_blur_amount = 0.4
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_27p3b"]
+render_priority = 0
+shader = ExtResource("19_mkrsf")
+shader_parameter/scale = Vector3(1.944, 1.0935, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("156_titpq")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gd86w"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_27p3b"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qaldn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("157_425v1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_w71o8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_v0c1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_kaq77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_x6bkh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_h10u2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_q81it")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_6jgjr")
+}],
+"loop": true,
+"name": &"dazed_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("165_io5xg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_7w5ug")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_ckdh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_yy17m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_hxd7g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_0bfuw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_u77tw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_jvxs5")
+}],
+"loop": true,
+"name": &"quivering_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("156_titpq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_0pcoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_7ms4b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_6dyf8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_8y6ng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177_8ynqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178_6ths8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179_1pxb8")
+}],
+"loop": true,
+"name": &"quivering_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bg1vr"]
+render_priority = 0
+shader = ExtResource("19_mkrsf")
+shader_parameter/scale = Vector3(0.1215, 0.0162, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 1.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("20_vpyib")
+shader_parameter/texture_emission = ExtResource("20_vpyib")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_535va"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_bg1vr"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fg55d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_vpyib")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2esdn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_q0kvt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vl8d3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_lhd73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_iufpv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tkggk"]
+render_priority = 0
+shader = ExtResource("148_sc2en")
+shader_parameter/scale = Vector3(0.4455, 0.5508, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("15_i1uce")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uuok0"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_tkggk"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qoomc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15_i1uce")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_uc64g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_74nl4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_llfh8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_85728")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3iwbm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("165_ew5nb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166_xh62l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167_4acv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168_gh4qu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169_76qbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170_vswxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171_t0ngp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172_yirea")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173_these")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174_834al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175_4busd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176_kwt2e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gfiwg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("158_rfa02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_4sq7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_qeol6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_x0hki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_m6js7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_nmlvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_rfa02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_4sq7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_qeol6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_x0hki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_m6js7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_nmlvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158_rfa02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159_4sq7b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160_qeol6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161_x0hki")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162_m6js7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163_nmlvk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164_3e5fb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Root" type="Node"]
+script = ExtResource("1_jxsss")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_daxsd")
+script = ExtResource("3_hkvot")
+random_interval_min = 20.0
+random_interval_max = 50.0
+
+[node name="Thunder" type="StudioEventEmitter2D" parent="WorldEnvironment"]
+event = SubResource("EventAsset_rooh4")
+
+[node name="World" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="VoxelGI" type="VoxelGI" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.77, 0.9, -0.82)
+subdiv = 2
+size = Vector3(6.95, 2.1, 5.87)
+data = ExtResource("2_soac7")
+metadata/_edit_lock_ = true
+
+[node name="MarkHouse" parent="World" instance=ExtResource("2_5ssyq")]
+
+[node name="CRT_TV" parent="World/MarkHouse/LivingRoom/Divider" index="0"]
+surface_material_override/1 = SubResource("ShaderMaterial_vjv76")
+
+[node name="Blade" parent="World/MarkHouse/LivingRoom/FanTall/FanMain" index="0"]
+transform = Transform3D(0.616099, 0, 0, 0, 0.616099, 0, 0, 0, 0.66, 0, 0.045, 0.07)
+
+[node name="Paper1_1" type="MeshInstance3D" parent="World/MarkHouse/Bedroom/Mattress2" index="1"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.04, 0.101, 0.04)
+mesh = SubResource("ArrayMesh_u1kn2")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("4_ywc1d")
+pixel_size = 0.0081
+metadata/mat_opaque = SubResource("ShaderMaterial_o3lee")
+
+[node name="Paper1_2" type="MeshInstance3D" parent="World/MarkHouse/Bedroom/Mattress2" index="2"]
+transform = Transform3D(-0.866025, 0.5, 2.18557e-08, 0, -4.37114e-08, 1, 0.5, 0.866025, 3.78552e-08, -0.11, 0.101, -0.11)
+mesh = SubResource("ArrayMesh_u1kn2")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("4_ywc1d")
+pixel_size = 0.0081
+metadata/mat_opaque = SubResource("ShaderMaterial_o3lee")
+
+[node name="Blade" parent="World/MarkHouse/Bedroom/FanSmall/FanHead/FanMain" index="0"]
+transform = Transform3D(0.708417, 0, 0, 0, 0.708417, 0, 0, 0, 0.66, 0, 0.045, 0.0699999)
+
+[node name="Book" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-0.270476, 0, -0.580037, 0, 0.64, 0, 0.580037, 0, -0.270476, -1.24, 0.101, 1.25)
+material_override = SubResource("ShaderMaterial_yrahv")
+mesh = ExtResource("8_nq8ll")
+skeleton = NodePath("../../..")
+
+[node name="VisibilityController" type="Node" parent="World/Book"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"show_book": true
+}
+
+[node name="Floor" type="StaticBody3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.778198, -0.0449536, -0.850988)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/Floor"]
+shape = SubResource("BoxShape3D_8jfww")
+
+[node name="Paths" type="Node3D" parent="World"]
+
+[node name="BedroomPath" type="Path3D" parent="World/Paths"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51059, 0.0446997, 0.32821)
+curve = SubResource("Curve3D_5f085")
+
+[node name="LivingRoomPath" type="Path3D" parent="World/Paths"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.260835, 0, 1.03847)
+curve = SubResource("Curve3D_5ko00")
+
+[node name="KitchenPath" type="Path3D" parent="World/Paths"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.723225, 0, -0.205925)
+curve = SubResource("Curve3D_x5sa2")
+
+[node name="BathroomPath" type="Path3D" parent="World/Paths"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.565416, 0, -0.765801)
+curve = SubResource("Curve3D_lqyn8")
+
+[node name="Buckets" type="Node3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.560193, 0, -0.850606)
+
+[node name="Bucket_1" type="MeshInstance3D" parent="World/Buckets"]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, 0.210193, 0, -0.559154)
+mesh = SubResource("ArrayMesh_ugak6")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("10_15f86")
+metadata/mat_opaque = SubResource("ShaderMaterial_x5v8g")
+
+[node name="VisibilityController" type="Node" parent="World/Buckets/Bucket_1"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"pickup_bucket_1": false
+}
+
+[node name="Bucket_2" type="MeshInstance3D" parent="World/Buckets"]
+transform = Transform3D(-3.0598e-08, 0, 0.7, 0, 0.7, 0, -0.7, 0, -3.0598e-08, -0.369807, 0, -0.233449)
+mesh = SubResource("ArrayMesh_485pr")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("9_ndiwm")
+metadata/mat_opaque = SubResource("ShaderMaterial_via0l")
+
+[node name="VisibilityController" type="Node" parent="World/Buckets/Bucket_2"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"pickup_bucket_2": false
+}
+
+[node name="Bucket_3" type="MeshInstance3D" parent="World/Buckets"]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -0.329807, 0, 0.164266)
+mesh = SubResource("ArrayMesh_485pr")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("9_ndiwm")
+metadata/mat_opaque = SubResource("ShaderMaterial_via0l")
+
+[node name="VisibilityController" type="Node" parent="World/Buckets/Bucket_3"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"pickup_bucket_3": false
+}
+
+[node name="Bucket_4" type="MeshInstance3D" parent="World/Buckets"]
+transform = Transform3D(-3.0598e-08, 0, -0.7, 0, 0.7, 0, 0.7, 0, -3.0598e-08, -0.199807, 0, 0.450606)
+mesh = SubResource("ArrayMesh_ugak6")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("10_15f86")
+metadata/mat_opaque = SubResource("ShaderMaterial_x5v8g")
+
+[node name="VisibilityController" type="Node" parent="World/Buckets/Bucket_4"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"pickup_bucket_4": false
+}
+
+[node name="RainLeaks" type="Node3D" parent="World"]
+
+[node name="RainLeak1" type="Node3D" parent="World/RainLeaks"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, -0.933907, 0, 0.334973)
+
+[node name="RainLeak" parent="World/RainLeaks/RainLeak1" instance=ExtResource("163_wcxtv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.849, 0)
+skeleton = NodePath("../../../../Skits/RoofLeak/Misc")
+
+[node name="Bucket" type="MeshInstance3D" parent="World/RainLeaks/RainLeak1"]
+transform = Transform3D(-0.7, 1.05697e-07, 0, -1.05697e-07, -0.7, 0, 0, 0, 0.7, 0.129, 1.42109e-14, 0.0163549)
+mesh = SubResource("ArrayMesh_485pr")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("9_ndiwm")
+metadata/mat_opaque = SubResource("ShaderMaterial_via0l")
+
+[node name="VisibilityController" type="Node" parent="World/RainLeaks/RainLeak1/Bucket"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"place_bucket_1": true
+}
+
+[node name="InteractiveArea" parent="World/RainLeaks/RainLeak1" instance=ExtResource("142_kl30n")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+collision_mask = 2
+max_interact_count = 1
+short_knot = "place_bucket_1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/RainLeaks/RainLeak1/InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="World/RainLeaks/RainLeak1/InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="VisibilityController" type="Node" parent="World/RainLeaks/RainLeak1/InteractiveArea"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "MarkBorja"
+dict_values = {
+"with": "bucket"
+}
+
+[node name="RainLeak2" type="Node3D" parent="World/RainLeaks"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 1.64119, 0, 1.09529)
+
+[node name="RainLeak" parent="World/RainLeaks/RainLeak2" instance=ExtResource("163_wcxtv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.849, 0)
+skeleton = NodePath("../../../../Skits/RoofLeak/Misc")
+
+[node name="Bucket" type="MeshInstance3D" parent="World/RainLeaks/RainLeak2"]
+transform = Transform3D(-0.7, 1.05697e-07, 0, -1.05697e-07, -0.7, 0, 0, 0, 0.7, 0.134, -0.004, 0.00999999)
+mesh = SubResource("ArrayMesh_485pr")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("9_ndiwm")
+metadata/mat_opaque = SubResource("ShaderMaterial_via0l")
+
+[node name="VisibilityController" type="Node" parent="World/RainLeaks/RainLeak2/Bucket"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"place_bucket_2": true
+}
+
+[node name="InteractiveArea" parent="World/RainLeaks/RainLeak2" instance=ExtResource("142_kl30n")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+collision_mask = 2
+max_interact_count = 1
+short_knot = "place_bucket_2"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/RainLeaks/RainLeak2/InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="World/RainLeaks/RainLeak2/InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="VisibilityController" type="Node" parent="World/RainLeaks/RainLeak2/InteractiveArea"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "MarkBorja"
+dict_values = {
+"with": "bucket"
+}
+
+[node name="RainLeak3" type="Node3D" parent="World/RainLeaks"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 3.415, 0, 1.095)
+
+[node name="RainLeak" parent="World/RainLeaks/RainLeak3" instance=ExtResource("163_wcxtv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.849, 0)
+skeleton = NodePath("../../../../Skits/RoofLeak/Misc")
+
+[node name="Bucket" type="MeshInstance3D" parent="World/RainLeaks/RainLeak3"]
+transform = Transform3D(-0.7, 1.05697e-07, 0, -1.05697e-07, -0.7, 0, 0, 0, 0.7, 0.129, 0, 0.01)
+mesh = SubResource("ArrayMesh_485pr")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("9_ndiwm")
+metadata/mat_opaque = SubResource("ShaderMaterial_via0l")
+
+[node name="VisibilityController" type="Node" parent="World/RainLeaks/RainLeak3/Bucket"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"place_bucket_3": true
+}
+
+[node name="InteractiveArea" parent="World/RainLeaks/RainLeak3" instance=ExtResource("142_kl30n")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+collision_mask = 2
+max_interact_count = 1
+short_knot = "place_bucket_3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/RainLeaks/RainLeak3/InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="World/RainLeaks/RainLeak3/InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="VisibilityController" type="Node" parent="World/RainLeaks/RainLeak3/InteractiveArea"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "MarkBorja"
+dict_values = {
+"with": "bucket"
+}
+
+[node name="RainLeak4" type="Node3D" parent="World/RainLeaks"]
+transform = Transform3D(4.37114e-08, 3.82137e-15, 1, 8.74228e-08, -1, 0, 1, 8.74228e-08, -4.37114e-08, 0.470586, 0, -2.77663)
+
+[node name="RainLeak" parent="World/RainLeaks/RainLeak4" instance=ExtResource("163_wcxtv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.849, 0)
+skeleton = NodePath("../../../../Skits/RoofLeak/Misc")
+
+[node name="Bucket" type="MeshInstance3D" parent="World/RainLeaks/RainLeak4"]
+transform = Transform3D(-0.7, 1.05697e-07, -1.38215e-29, -1.05697e-07, -0.7, 1.581e-22, 1.00509e-29, 1.581e-22, 0.7, 0.128631, -1.12453e-08, 0.105721)
+mesh = SubResource("ArrayMesh_485pr")
+skeleton = NodePath("")
+script = ExtResource("5_qlbhr")
+texture = ExtResource("9_ndiwm")
+metadata/mat_opaque = SubResource("ShaderMaterial_via0l")
+
+[node name="VisibilityController" type="Node" parent="World/RainLeaks/RainLeak4/Bucket"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"place_bucket_4": true
+}
+
+[node name="InteractiveArea" parent="World/RainLeaks/RainLeak4" instance=ExtResource("142_kl30n")]
+transform = Transform3D(-1, -8.74228e-08, 0, 8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0.191408)
+collision_mask = 2
+max_interact_count = 1
+short_knot = "place_bucket_4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="World/RainLeaks/RainLeak4/InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="World/RainLeaks/RainLeak4/InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, 0)
+
+[node name="VisibilityController" type="Node" parent="World/RainLeaks/RainLeak4/InteractiveArea"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "MarkBorja"
+dict_values = {
+"with": "bucket"
+}
+
+[node name="VisibilityController" type="Node" parent="World/RainLeaks"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"rain_leaks": true
+}
+
+[node name="Lighting" parent="." instance=ExtResource("17_l6l3g")]
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="Audio"]
+preload_sample_data = true
+num_banks = 1
+bank_0 = SubResource("BankAsset_76jmi")
+
+[node name="Rain" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_pxcwy")
+parameter_Intensity = 0.4
+
+[node name="CommandAudioTrigger" type="Node" parent="Audio/Rain"]
+script = ExtResource("156_n1a7h")
+
+[node name="Fan1" type="StudioEventEmitter3D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_pmxv3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.96381, 0.317367, 0.293447)
+
+[node name="Fan2" type="StudioEventEmitter3D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_pmxv3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.15949, 0.6979, 1.37677)
+
+[node name="BoilingRice" type="StudioEventEmitter3D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_uoa6q")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.291637, 0.739532, -3.04621)
+
+[node name="CommandAudioTrigger" type="Node" parent="Audio/BoilingRice"]
+script = ExtResource("156_n1a7h")
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="MarkBorja" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/MarkBorja"]
+script = ExtResource("14_r2jv0")
+alias = "MarkBorja"
+
+[node name="Bedroom" type="Node3D" parent="Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.50846, -0.00253616, 0.399653)
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja/Bedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.231088, 0, 0)
+mesh = SubResource("ArrayMesh_1avjg")
+skeleton = NodePath("")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_agt73")
+sync_all = true
+animation = "default_idle"
+alias = "MarkBorja"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="SpriteController" type="Node" parent="Characters/MarkBorja/Bedroom/Sprite"]
+script = ExtResource("63_6mbyh")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["default", "default_walk", "frown", "frown_walk"])
+idle_talk_anims = Array[String](["closedeyes", "confused", "default", "frown"])
+
+[node name="PlayerController" type="Node3D" parent="Characters/MarkBorja/Bedroom"]
+script = ExtResource("25_r65ie")
+avoid_disabling_collider = true
+nonlinear = true
+
+[node name="Focus" type="Node" parent="Characters/MarkBorja/Bedroom/PlayerController"]
+script = ExtResource("26_n8ygu")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Characters/MarkBorja/Bedroom/PlayerController"]
+stream = ExtResource("111_53fed")
+volume_db = -2.5
+pitch_scale = 0.9
+bus = &"SFX"
+
+[node name="PathGrounder" type="Node" parent="Characters/MarkBorja/Bedroom"]
+script = ExtResource("28_uokod")
+path_node = NodePath("../../../../World/Paths/BedroomPath")
+global_offset = Vector3(0, -0.055, 0)
+
+[node name="Area" type="Area3D" parent="Characters/MarkBorja/Bedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0221782, 0.0884541, 0)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Characters/MarkBorja/Bedroom/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_df5df")
+
+[node name="RayCast" type="RayCast3D" parent="Characters/MarkBorja/Bedroom"]
+transform = Transform3D(1, -2.04128e-08, 3.19093e-08, 1.1943e-15, 1, 4.27007e-08, -3.19092e-08, -4.27005e-08, 1, 0.0205132, 0.292746, 0)
+collision_mask = 2147483649
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/Bedroom"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamBedroom"])
+
+[node name="LivingRoom" type="Node3D" parent="Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.232329, -0.00253616, 1.07726)
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja/LivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.231088, 0, 0)
+mesh = SubResource("ArrayMesh_wphp1")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_agt73")
+sync_all = true
+animation = "default_idle"
+alias = "MarkBorja"
+pixel_size = 0.0081
+flip_h = true
+debug_add_anim_str = "(confused/confused=u/closedeyes)_(idle)"
+
+[node name="SpriteController" type="Node" parent="Characters/MarkBorja/LivingRoom/Sprite"]
+script = ExtResource("63_6mbyh")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["default", "default_walk", "frown", "frown_walk"])
+idle_talk_anims = Array[String](["closedeyes", "confused", "default", "frown"])
+debug_auto_list_anims = true
+
+[node name="PlayerController" type="Node3D" parent="Characters/MarkBorja/LivingRoom"]
+script = ExtResource("25_r65ie")
+avoid_disabling_collider = true
+nonlinear = true
+
+[node name="Focus" type="Node" parent="Characters/MarkBorja/LivingRoom/PlayerController"]
+script = ExtResource("26_n8ygu")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Characters/MarkBorja/LivingRoom/PlayerController"]
+stream = ExtResource("111_53fed")
+volume_db = -2.5
+pitch_scale = 0.9
+bus = &"SFX"
+
+[node name="PathGrounder" type="Node" parent="Characters/MarkBorja/LivingRoom"]
+script = ExtResource("28_uokod")
+path_node = NodePath("../../../../World/Paths/LivingRoomPath")
+global_offset = Vector3(0, -0.055, 0)
+path_unit_offset = 0.05
+
+[node name="Area" type="Area3D" parent="Characters/MarkBorja/LivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0221782, 0.0884541, 0)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Characters/MarkBorja/LivingRoom/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_df5df")
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/LivingRoom"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamLivingRoom"])
+
+[node name="RayCast" type="RayCast3D" parent="Characters/MarkBorja/LivingRoom"]
+transform = Transform3D(1, -2.04128e-08, 3.19093e-08, 1.1943e-15, 1, 4.27007e-08, -3.19092e-08, -4.27005e-08, 1, 0.0205132, 0.292746, 0)
+collision_mask = 2147483649
+
+[node name="CamPivotBasis" type="Marker3D" parent="Characters/MarkBorja/LivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.385, 0.9, 2.87)
+
+[node name="CamPivot" type="Node3D" parent="Characters/MarkBorja/LivingRoom/CamPivotBasis"]
+script = ExtResource("112_dflbm")
+min_position = Vector3(1.69, -9999, -9999)
+max_position = Vector3(2.32, 9999, 9999)
+
+[node name="Kitchen" type="Node3D" parent="Characters/MarkBorja"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.758457, -0.00253616, -0.170555)
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.231088, 0, 0)
+mesh = SubResource("ArrayMesh_6j8k2")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_agt73")
+sync_all = true
+animation = "default_idle"
+alias = "MarkBorja"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="SpriteController" type="Node" parent="Characters/MarkBorja/Kitchen/Sprite"]
+script = ExtResource("63_6mbyh")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["default", "default_walk", "frown", "frown_walk"])
+idle_talk_anims = Array[String](["closedeyes", "confused", "default", "frown"])
+
+[node name="PlayerController" type="Node3D" parent="Characters/MarkBorja/Kitchen"]
+script = ExtResource("25_r65ie")
+avoid_disabling_collider = true
+
+[node name="Focus" type="Node" parent="Characters/MarkBorja/Kitchen/PlayerController"]
+script = ExtResource("26_n8ygu")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Characters/MarkBorja/Kitchen/PlayerController"]
+stream = ExtResource("111_53fed")
+volume_db = -2.5
+pitch_scale = 0.9
+bus = &"SFX"
+
+[node name="PathGrounder" type="Node" parent="Characters/MarkBorja/Kitchen"]
+script = ExtResource("28_uokod")
+path_node = NodePath("../../../../World/Paths/KitchenPath")
+global_offset = Vector3(0, -0.055, 0)
+path_unit_offset = 0.1
+
+[node name="Area" type="Area3D" parent="Characters/MarkBorja/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0221782, 0.0884541, 0)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Characters/MarkBorja/Kitchen/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_df5df")
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/Kitchen"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamKitchen"])
+
+[node name="RayCast" type="RayCast3D" parent="Characters/MarkBorja/Kitchen"]
+transform = Transform3D(1, -2.04128e-08, 3.19093e-08, 1.1943e-15, 1, 4.27007e-08, -3.19092e-08, -4.27005e-08, 1, 0.0205132, 0.292746, 0)
+collision_mask = 2147483649
+
+[node name="CamPivotBasis" type="Marker3D" parent="Characters/MarkBorja/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.21444, 0.773536, 2.41454)
+
+[node name="CamPivot" type="Node3D" parent="Characters/MarkBorja/Kitchen/CamPivotBasis"]
+transform = Transform3D(1, 0, 3.55271e-15, 0, 1, 0, -3.55271e-15, 0, 1, 0, 0, 0)
+script = ExtResource("112_dflbm")
+min_position = Vector3(-9999, -9999, -2.1)
+max_position = Vector3(9999, 9999, -1.435)
+
+[node name="Bathroom" type="Node3D" parent="Characters/MarkBorja"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.537817, -0.00253616, -0.819944)
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja/Bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.231088, 0, -5.96046e-08)
+mesh = SubResource("ArrayMesh_7f12k")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_agt73")
+sync_all = true
+animation = "default+bucket_idle"
+alias = "MarkBorja"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="SpriteController" type="Node" parent="Characters/MarkBorja/Bathroom/Sprite"]
+script = ExtResource("63_6mbyh")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "default"
+idle_talk_anims = Array[String](["closedeyes", "confused", "default", "frown"])
+
+[node name="PlayerController" type="Node3D" parent="Characters/MarkBorja/Bathroom"]
+script = ExtResource("25_r65ie")
+flip_h = true
+avoid_disabling_collider = true
+
+[node name="Focus" type="Node" parent="Characters/MarkBorja/Bathroom/PlayerController"]
+script = ExtResource("26_n8ygu")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Characters/MarkBorja/Bathroom/PlayerController"]
+stream = ExtResource("111_53fed")
+volume_db = -2.5
+pitch_scale = 0.9
+bus = &"SFX"
+
+[node name="PathGrounder" type="Node" parent="Characters/MarkBorja/Bathroom"]
+script = ExtResource("28_uokod")
+path_node = NodePath("../../../../World/Paths/BathroomPath")
+global_offset = Vector3(0, -0.055, 0)
+path_unit_offset = 0.5
+
+[node name="Area" type="Area3D" parent="Characters/MarkBorja/Bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0221782, 0.0884541, 0)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Characters/MarkBorja/Bathroom/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.45, 0)
+shape = SubResource("BoxShape3D_df5df")
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/Bathroom"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamBathroom"])
+
+[node name="RayCast" type="RayCast3D" parent="Characters/MarkBorja/Bathroom"]
+transform = Transform3D(1, -2.04128e-08, 3.19093e-08, 1.1943e-15, 1, 4.27007e-08, -3.19092e-08, -4.27005e-08, 1, 0.0205132, 0.292746, 0)
+collision_mask = 2147483649
+
+[node name="Cameras" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CamBedroomSit" type="Camera3D" parent="Cameras"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -1.22873, 0.682606, 3.40365)
+fov = 45.0
+script = ExtResource("15_ntc5f")
+
+[node name="CamBedroom" type="Camera3D" parent="Cameras"]
+transform = Transform3D(1, 0, 1.74846e-07, 0, 1, 0, -1.74846e-07, 0, 1, -1.22873, 0.682606, 3.40365)
+fov = 45.0
+script = ExtResource("15_ntc5f")
+
+[node name="CamKitchen2" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.173, 0.771, -1.915)
+fov = 45.0
+script = ExtResource("15_ntc5f")
+
+[node name="CamKitchen" type="InterpolatedCamera3D" parent="Cameras"]
+target = NodePath("../../Characters/MarkBorja/Kitchen/CamPivotBasis/CamPivot")
+enabled = true
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 3.173, 0.771, -1.385)
+fov = 45.0
+script = ExtResource("15_ntc5f")
+
+[node name="CamBathroom" type="Camera3D" parent="Cameras"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -2.62473, 0.618606, -1.14235)
+fov = 45.0
+script = ExtResource("15_ntc5f")
+
+[node name="CamLivingRoom" type="InterpolatedCamera3D" parent="Cameras"]
+target = NodePath("../../Characters/MarkBorja/LivingRoom/CamPivotBasis/CamPivot")
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.617, 1, 3.947)
+fov = 45.0
+script = ExtResource("15_ntc5f")
+
+[node name="Skits" type="Node3D" parent="."]
+
+[node name="Bedroom" type="Node3D" parent="Skits"]
+script = ExtResource("17_uf2fn")
+id = "Bedroom"
+entrypoint = "10.1c.Bedroom"
+
+[node name="Audio" type="Node3D" parent="Skits/Bedroom"]
+
+[node name="Camera" type="Node3D" parent="Skits/Bedroom"]
+
+[node name="CamBedroom" type="Node" parent="Skits/Bedroom/Camera"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../Cameras/CamBedroom")
+
+[node name="CamKitchen" type="Node" parent="Skits/Bedroom/Camera"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../Cameras/CamKitchen2")
+
+[node name="CamLivingRoom" type="Node" parent="Skits/Bedroom/Camera"]
+script = ExtResource("18_wocxm")
+reference = NodePath(".")
+
+[node name="CamBathroom" type="Node" parent="Skits/Bedroom/Camera"]
+script = ExtResource("18_wocxm")
+reference = NodePath(".")
+
+[node name="Characters" type="Node3D" parent="Skits/Bedroom"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/Bedroom/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Bedroom/Characters/MarkBorja"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Sit" type="Node3D" parent="Skits/Bedroom/Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61235, 0.0996943, 0.851376)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/Bedroom/Characters/MarkBorja/Sit"]
+mesh = SubResource("ArrayMesh_723x8")
+skeleton = NodePath("../../../../../..")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_gbxfw")
+sync_all = true
+animation = "surprised_idle"
+alias = "MarkBorja"
+pixel_size = 0.0081
+
+[node name="SpriteController" type="Node" parent="Skits/Bedroom/Characters/MarkBorja/Sit/Sprite"]
+script = ExtResource("63_6mbyh")
+state_container_alias = "MarkBorja"
+idle_talk_anims = Array[String](["confused", "default", "surprised"])
+
+[node name="VisibilityController" type="Node" parent="Skits/Bedroom/Characters/MarkBorja/Sit"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamBedroomSit"])
+
+[node name="Misc" type="Node3D" parent="Skits/Bedroom"]
+
+[node name="Bedroom" type="Node3D" parent="Skits/Bedroom/Misc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03987, 0, 1.02526)
+
+[node name="VisibilityController" type="Node" parent="Skits/Bedroom/Misc/Bedroom"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamBedroom"])
+
+[node name="IaToLivingRoom" parent="Skits/Bedroom/Misc/Bedroom" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.698244, 0.00322425, 0.0110015)
+collision_mask = 2
+max_interact_count = 1
+preset = 7
+short_knot = "go_to_living_room"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Bedroom/Misc/Bedroom/IaToLivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Bedroom/Misc/Bedroom/IaToLivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384, 0.6, 0.029)
+
+[node name="LivingRoom" type="Node3D" parent="Skits/Bedroom/Misc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88287, -0.0894709, 1.06767)
+
+[node name="VisibilityController" type="Node" parent="Skits/Bedroom/Misc/LivingRoom"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamLivingRoom"])
+
+[node name="IaToKitchen" parent="Skits/Bedroom/Misc/LivingRoom" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99995, 0.0926952, 0.047087)
+collision_mask = 2
+max_interact_count = 1
+preset = 4
+short_knot = "go_to_kitchen"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Bedroom/Misc/LivingRoom/IaToKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Bedroom/Misc/LivingRoom/IaToKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, 0.6, 0.055)
+
+[node name="TaBlockBedroom" type="Area3D" parent="Skits/Bedroom/Misc/LivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7472, 0.093, 0.0470001)
+collision_mask = 2
+script = ExtResource("139_u20g8")
+short_knot = "wrong_way"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Bedroom/Misc/LivingRoom/TaBlockBedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="TaBlockTV" type="Area3D" parent="Skits/Bedroom/Misc/LivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.115684, 0.093, 0.0470001)
+collision_mask = 2
+script = ExtResource("139_u20g8")
+short_knot = "wrong_way_tv"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Bedroom/Misc/LivingRoom/TaBlockTV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="PtReturn" type="Marker3D" parent="Skits/Bedroom/Misc/LivingRoom/TaBlockTV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.467138, 0, 0)
+script = ExtResource("140_ui1q3")
+
+[node name="Kitchen" type="Node3D" parent="Skits/Bedroom/Misc"]
+
+[node name="VisibilityController" type="Node" parent="Skits/Bedroom/Misc/Kitchen"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamKitchen"])
+
+[node name="TaBlockLivingRoom" type="Area3D" parent="Skits/Bedroom/Misc/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.708023, 0.093, -0.166098)
+collision_mask = 2
+script = ExtResource("139_u20g8")
+short_knot = "wrong_way"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Bedroom/Misc/Kitchen/TaBlockLivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="IaPot" parent="Skits/Bedroom/Misc/Kitchen" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.662292, 0.00322425, -2.90948)
+collision_mask = 2
+max_interact_count = 1
+story_signal = "interact_pot"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Bedroom/Misc/Kitchen/IaPot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Bedroom/Misc/Kitchen/IaPot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, 0.922484, -0.0109146)
+
+[node name="PotHigh" type="Node3D" parent="Skits/Bedroom/Misc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276017, 0.620975, -3.05179)
+
+[node name="Fire" type="MeshInstance3D" parent="Skits/Bedroom/Misc/PotHigh"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.005, -0.005, 0.057)
+mesh = SubResource("ArrayMesh_8o6wu")
+skeleton = NodePath("../..")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_w2l5d")
+emission_frames = SubResource("SpriteFrames_w2l5d")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+emission_strength = 1.0
+
+[node name="Pot" type="MeshInstance3D" parent="Skits/Bedroom/Misc/PotHigh"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.005, 0, 0.441)
+mesh = SubResource("ArrayMesh_ejn0q")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_fo04t")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+transparent = true
+
+[node name="RoofLeak" type="Node3D" parent="Skits"]
+script = ExtResource("17_uf2fn")
+id = "RoofLeak"
+entrypoint = "10.1c.RoofLeak"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/RoofLeak"]
+libraries = {
+"": SubResource("AnimationLibrary_lrr2t")
+}
+script = ExtResource("152_kkhxx")
+
+[node name="Audio" type="Node3D" parent="Skits/RoofLeak"]
+
+[node name="TvWeatherReport" type="StudioEventEmitter3D" parent="Skits/RoofLeak/Audio"]
+event = SubResource("EventAsset_oycax")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.13672, 0.768671, 0.575016)
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/RoofLeak/Audio/TvWeatherReport"]
+script = ExtResource("156_n1a7h")
+
+[node name="AngryKnock" type="StudioEventEmitter3D" parent="Skits/RoofLeak/Audio"]
+event = SubResource("EventAsset_o0ed8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.93003, 0.768671, 1.24135)
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/RoofLeak/Audio/AngryKnock"]
+script = ExtResource("156_n1a7h")
+
+[node name="BucketPlace" type="StudioEventEmitter2D" parent="Skits/RoofLeak/Audio"]
+event = SubResource("EventAsset_hq1g1")
+position = Vector2(3.93003, 0.768671)
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/RoofLeak/Audio/BucketPlace"]
+script = ExtResource("156_n1a7h")
+
+[node name="BoilingRice" type="Node" parent="Skits/RoofLeak/Audio"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../Audio/BoilingRice")
+extra_coverage = 1
+
+[node name="Camera" type="Node3D" parent="Skits/RoofLeak"]
+
+[node name="CamC3D_Mark" type="Camera3D" parent="Skits/RoofLeak/Camera"]
+transform = Transform3D(0.459456, 0.00545855, 0.888184, 0, 0.999981, -0.00614563, -0.8882, 0.00282365, 0.459448, 2.611, 0.8, 1.127)
+attributes = SubResource("CameraAttributesPractical_wrbfx")
+fov = 28.8
+script = ExtResource("15_ntc5f")
+
+[node name="CameraEffects" type="Node" parent="Skits/RoofLeak/Camera/CamC3D_Mark"]
+script = ExtResource("11_qt00u")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 0.5
+dof_blur_far_transition = 1.0
+dof_blur_far_amount = 0.4
+
+[node name="CamBedroom" type="Node" parent="Skits/RoofLeak/Camera"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../Cameras/CamBedroom")
+
+[node name="CamKitchen" type="Node" parent="Skits/RoofLeak/Camera"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../Cameras/CamKitchen2")
+
+[node name="CamLivingRoom" type="Node" parent="Skits/RoofLeak/Camera"]
+script = ExtResource("18_wocxm")
+reference = NodePath(".")
+
+[node name="CamBathroom" type="Node" parent="Skits/RoofLeak/Camera"]
+script = ExtResource("18_wocxm")
+reference = NodePath(".")
+
+[node name="Characters" type="Node3D" parent="Skits/RoofLeak"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/RoofLeak/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/RoofLeak/Characters/MarkBorja"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Bedroom" type="Node3D" parent="Skits/RoofLeak/Characters/MarkBorja"]
+
+[node name="Sprite" type="Node" parent="Skits/RoofLeak/Characters/MarkBorja/Bedroom"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../../../Characters/MarkBorja/Bedroom/Sprite")
+
+[node name="LivingRoom" type="Node3D" parent="Skits/RoofLeak/Characters/MarkBorja"]
+
+[node name="Sprite" type="Node" parent="Skits/RoofLeak/Characters/MarkBorja/LivingRoom"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../../../Characters/MarkBorja/LivingRoom/Sprite")
+
+[node name="Kitchen" type="Node3D" parent="Skits/RoofLeak/Characters/MarkBorja"]
+
+[node name="Sprite" type="Node" parent="Skits/RoofLeak/Characters/MarkBorja/Kitchen"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../../../Characters/MarkBorja/Kitchen/Sprite")
+
+[node name="Bathroom" type="Node3D" parent="Skits/RoofLeak/Characters/MarkBorja"]
+
+[node name="Sprite" type="Node" parent="Skits/RoofLeak/Characters/MarkBorja/Bathroom"]
+script = ExtResource("18_wocxm")
+reference = NodePath("../../../../../../Characters/MarkBorja/Bathroom/Sprite")
+
+[node name="C3D" type="Node3D" parent="Skits/RoofLeak/Characters/MarkBorja"]
+transform = Transform3D(0.459462, -4.75496e-05, 0.888197, 0.00523595, 0.999983, -0.00265501, -0.888182, 0.00587043, 0.459455, 2.383, 0.746, 1.117)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/RoofLeak/Characters/MarkBorja/C3D"]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_gd86w")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_qaldn")
+sync_all = true
+animation = "quivering_talk"
+alias = "MarkBorja"
+pixel_size = 0.0081
+debug_add_anim_str = "(dazed/quivering)_(idle/talk)"
+
+[node name="SpriteController" type="Node" parent="Skits/RoofLeak/Characters/MarkBorja/C3D/Sprite"]
+script = ExtResource("63_6mbyh")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "dazed"
+idle_talk_anims = Array[String](["dazed", "quivering"])
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Characters/MarkBorja/C3D"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamC3D_Mark"])
+
+[node name="SbPivot" type="Marker3D" parent="Skits/RoofLeak/Characters/MarkBorja/C3D"]
+transform = Transform3D(1, 7.91624e-09, 1.19209e-07, -8.84756e-09, 0.999999, -2.32831e-10, 1.78814e-07, -4.19095e-09, 0.999998, 0.11015, 0.0512006, 0.0049541)
+script = ExtResource("153_ce56f")
+alias = "MarkBorja"
+orientation = 5
+force_show = true
+
+[node name="TV" type="Node3D" parent="Skits/RoofLeak/Characters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.19568, 0.428547, 0.558581)
+
+[node name="SbPivot" type="Marker3D" parent="Skits/RoofLeak/Characters/TV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.613915, 0)
+script = ExtResource("153_ce56f")
+alias = "TV"
+force_show = true
+
+[node name="Unknown" type="Node3D" parent="Skits/RoofLeak/Characters"]
+
+[node name="SbPivot" type="Marker3D" parent="Skits/RoofLeak/Characters/Unknown"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0629, 0.712328, 1.11758)
+script = ExtResource("153_ce56f")
+alias = "Unknown"
+orientation = 6
+force_show = true
+
+[node name="Misc" type="Node3D" parent="Skits/RoofLeak"]
+
+[node name="Bedroom" type="Node3D" parent="Skits/RoofLeak/Misc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.03987, 0, 1.02526)
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/Bedroom"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamBedroom"])
+
+[node name="IaToLivingRoom" parent="Skits/RoofLeak/Misc/Bedroom" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.698244, 0.00322425, 0.0110015)
+collision_mask = 2
+preset = 7
+short_knot = "go_to_living_room"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/Bedroom/IaToLivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/Bedroom/IaToLivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.384, 0.6, 0.029)
+
+[node name="PtRainLeak" type="Marker3D" parent="Skits/RoofLeak/Misc/Bedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0915583, 0, -0.496746)
+script = ExtResource("140_ui1q3")
+
+[node name="LivingRoom" type="Node3D" parent="Skits/RoofLeak/Misc"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88287, -0.0894709, 1.06767)
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/LivingRoom"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamLivingRoom"])
+
+[node name="IaToBedroomEventTrigger" parent="Skits/RoofLeak/Misc/LivingRoom" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76398, 0.0926952, 0.047087)
+collision_mask = 2
+max_interact_count = 1
+preset = 6
+story_signal = "bedroom_event"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/LivingRoom/IaToBedroomEventTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/LivingRoom/IaToBedroomEventTrigger"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0318672, 0.6, 0.029)
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/LivingRoom/IaToBedroomEventTrigger"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"rain_leaks": false
+}
+
+[node name="IaToBedroom" parent="Skits/RoofLeak/Misc/LivingRoom" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76398, 0.0926952, 0.047087)
+collision_mask = 2
+preset = 6
+short_knot = "go_to_bedroom"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/LivingRoom/IaToBedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/LivingRoom/IaToBedroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0318672, 0.6, 0.029)
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/LivingRoom/IaToBedroom"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"rain_leaks": true
+}
+
+[node name="IaToKitchen" parent="Skits/RoofLeak/Misc/LivingRoom" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.99995, 0.0926952, 0.047087)
+collision_mask = 2
+preset = 4
+short_knot = "go_to_kitchen"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/LivingRoom/IaToKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/LivingRoom/IaToKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.225, 0.6, 0.055)
+
+[node name="TaTVNews" type="Area3D" parent="Skits/RoofLeak/Misc/LivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.486688, 0.093, 0.0470001)
+collision_mask = 2
+script = ExtResource("139_u20g8")
+max_trigger_count = 1
+story_signal = "tv_reached"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/LivingRoom/TaTVNews"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/LivingRoom/TaTVNews"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"news_report": true
+}
+
+[node name="Kitchen" type="Node3D" parent="Skits/RoofLeak/Misc"]
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/Kitchen"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamKitchen"])
+
+[node name="IaToLivingRoom" parent="Skits/RoofLeak/Misc/Kitchen" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.725061, 0.00322425, -0.198246)
+collision_mask = 2
+preset = 6
+short_knot = "go_to_living_room"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/Kitchen/IaToLivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/Kitchen/IaToLivingRoom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.6, -0.0742966)
+
+[node name="IaToBathroom" parent="Skits/RoofLeak/Misc/Kitchen" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.662292, 0.00322425, -0.767095)
+collision_mask = 2
+preset = 4
+short_knot = "go_to_bathroom"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/Kitchen/IaToBathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/Kitchen/IaToBathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, 0.6, -0.227117)
+
+[node name="PotMed" type="Node3D" parent="Skits/RoofLeak/Misc/Kitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.276017, 0.620975, -3.05179)
+
+[node name="Fire" type="MeshInstance3D" parent="Skits/RoofLeak/Misc/Kitchen/PotMed"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.001, -0.01, 0.06)
+mesh = SubResource("ArrayMesh_535va")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_fg55d")
+emission_frames = SubResource("SpriteFrames_fg55d")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+emission_strength = 1.0
+
+[node name="Pot" type="MeshInstance3D" parent="Skits/RoofLeak/Misc/Kitchen/PotMed"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0.005, 0.309)
+mesh = SubResource("ArrayMesh_uuok0")
+script = ExtResource("21_o614f")
+texture_frames = SubResource("SpriteFrames_qoomc")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+transparent = true
+
+[node name="Bathroom" type="Node3D" parent="Skits/RoofLeak/Misc"]
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/Bathroom"]
+script = ExtResource("109_6y1wq")
+visible_on_shots = Array[String](["CamBathroom"])
+
+[node name="IaToKitchen" parent="Skits/RoofLeak/Misc/Bathroom" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.524903, 0.00322425, -0.839651)
+collision_mask = 2
+preset = 4
+short_knot = "go_to_kitchen"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/Bathroom/IaToKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/Bathroom/IaToKitchen"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.057, 0.6, -0.028)
+
+[node name="Buckets" type="Node3D" parent="Skits/RoofLeak/Misc/Bathroom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.554075, 0, -0.740354)
+
+[node name="IaBucket_1" parent="Skits/RoofLeak/Misc/Bathroom/Buckets" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291724, 0.00322425, -0.768037)
+collision_mask = 2
+max_interact_count = 1
+short_knot = "pickup_bucket_1"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.355332, 0.0438734)
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_1"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "MarkBorja"
+invert = true
+dict_values = {
+"with": "bucket"
+}
+
+[node name="IaBucket_2" parent="Skits/RoofLeak/Misc/Bathroom/Buckets" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291724, 0.00322425, -0.41547)
+collision_mask = 2
+max_interact_count = 1
+short_knot = "pickup_bucket_2"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.535, 0.355, -0.014)
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_2"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "MarkBorja"
+invert = true
+dict_values = {
+"with": "bucket"
+}
+
+[node name="IaBucket_3" parent="Skits/RoofLeak/Misc/Bathroom/Buckets" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291724, 0.00322425, 0.197327)
+collision_mask = 2
+max_interact_count = 1
+short_knot = "pickup_bucket_3"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.51, 0.355, -0.097)
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_3"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "MarkBorja"
+invert = true
+dict_values = {
+"with": "bucket"
+}
+
+[node name="IaBucket_4" parent="Skits/RoofLeak/Misc/Bathroom/Buckets" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0291724, 0.00322425, 0.525998)
+collision_mask = 2
+max_interact_count = 1
+short_knot = "pickup_bucket_4"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.487, 0.355, -0.21)
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/Bathroom/Buckets/IaBucket_4"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "MarkBorja"
+invert = true
+dict_values = {
+"with": "bucket"
+}
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/Bathroom/Buckets"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"rain_leaks": true
+}
+
+[node name="OtherInteractives" type="Node3D" parent="Skits/RoofLeak/Misc"]
+
+[node name="IaDadUniform" parent="Skits/RoofLeak/Misc/OtherInteractives" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.54685, 0.00322425, 0.27578)
+collision_mask = 2
+max_interact_count = 1
+preset = 2
+short_knot = "construction_uniform"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/OtherInteractives/IaDadUniform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/OtherInteractives/IaDadUniform"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.160045, 1.38217, 0.029)
+
+[node name="IaTextbooks" parent="Skits/RoofLeak/Misc/OtherInteractives" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.78556, 0.00322425, 0.6493)
+collision_mask = 2
+max_interact_count = 1
+preset = 2
+short_knot = "textbooks"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/OtherInteractives/IaTextbooks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/OtherInteractives/IaTextbooks"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.567689, 0.0916773, 0.029)
+
+[node name="IaTV" parent="Skits/RoofLeak/Misc/OtherInteractives" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.79846, 0.00322425, 1.11283)
+collision_mask = 2
+max_interact_count = 1
+preset = 2
+short_knot = "tv"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/OtherInteractives/IaTV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/OtherInteractives/IaTV"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203203, 0.834151, 0.029)
+
+[node name="IaEmbroidery" parent="Skits/RoofLeak/Misc/OtherInteractives" instance=ExtResource("142_kl30n")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.649742, 0.00322425, -2.35982)
+collision_mask = 2
+max_interact_count = 1
+preset = 2
+short_knot = "embroidery"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/RoofLeak/Misc/OtherInteractives/IaEmbroidery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_agjmd")
+
+[node name="Anchor" type="Marker3D" parent="Skits/RoofLeak/Misc/OtherInteractives/IaEmbroidery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.203203, 0.800272, 0.010756)
+
+[node name="VisibilityController" type="Node" parent="Skits/RoofLeak/Misc/OtherInteractives"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"enable_interactives": true
+}
+
+[node name="Main" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Services" type="Node" parent="Main"]
+
+[node name="$SceneManager" type="Node" parent="Main/Services"]
+script = ExtResource("64_svgb3")
+scene_id = "10.1c"
+shot = "CamBedroom"
+
+[node name="$DialogueHandler" type="Node" parent="Main/Services"]
+script = ExtResource("65_yqs6j")
+
+[node name="$SceneState" type="Node" parent="Main/Services"]
+script = ExtResource("14_r2jv0")
+alias = "scene"
+initial_dict = {
+"news_report": false,
+"pickup_bucket_1": false,
+"pickup_bucket_2": false,
+"pickup_bucket_3": false,
+"pickup_bucket_4": false,
+"rain_leaks": false,
+"show_book": false
+}
+
+[node name="$InteractiveAreaHandler" type="Node" parent="Main/Services"]
+script = ExtResource("140_bgl3j")
+
+[node name="$PlayerTarget" type="Node3D" parent="Main/Services"]
+script = ExtResource("141_xtahm")
+
+[node name="Vignette" parent="Main" instance=ExtResource("66_5xx3h")]
+metadata/_edit_lock_ = true
+
+[node name="$ThoughtBubble" parent="Main" instance=ExtResource("67_btgnd")]
+metadata/_edit_lock_ = true
+
+[node name="C2D" type="Node2D" parent="Main"]
+
+[node name="TV" type="SubViewportContainer" parent="Main/C2D"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 40.0
+offset_bottom = 40.0
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="Main/C2D/TV"]
+handle_input_locally = false
+size = Vector2i(1280, 720)
+render_target_update_mode = 4
+
+[node name="Weather" type="Node2D" parent="Main/C2D/TV/Viewport"]
+texture_filter = 3
+scale = Vector2(31.11, 23.205)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Main/C2D/TV/Viewport/Weather"]
+position = Vector2(20.615, 15.425)
+sprite_frames = SubResource("SpriteFrames_3iwbm")
+autoplay = "default"
+frame_progress = 0.658786
+
+[node name="VisibilityController" type="Node" parent="Main/C2D/TV/Viewport/Weather"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"news_report": false
+}
+defer_update_on_ready = true
+
+[node name="NewsReport" type="Node2D" parent="Main/C2D/TV/Viewport"]
+visible = false
+texture_filter = 3
+scale = Vector2(31.11, 23.205)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Main/C2D/TV/Viewport/NewsReport"]
+position = Vector2(20.615, 15.425)
+sprite_frames = SubResource("SpriteFrames_gfiwg")
+autoplay = "default"
+frame_progress = 0.661472
+
+[node name="VisibilityController" type="Node" parent="Main/C2D/TV/Viewport/NewsReport"]
+script = ExtResource("14_rmc1i")
+state_container_alias = "scene"
+dict_values = {
+"news_report": true
+}
+defer_update_on_ready = true
+
+[editable path="World/MarkHouse"]

@@ -1,0 +1,262 @@
+[gd_scene load_steps=26 format=3 uid="uid://cvyck70qpqo5o"]
+
+[ext_resource type="PackedScene" uid="uid://c6ggg0pq4yy8a" path="res://scenes/_main/ch5sc12/racing-minigame/prefabs/PlayerCar.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dlg8w0mfxbcqk" path="res://scenes/_main/ch5sc12/racing-minigame/assets/sky.png" id="2"]
+[ext_resource type="BankAsset" uid="uid://cs812aax378yo" path="res://addons/fmod/editor/resources/banks/{a39baa14-412a-4470-9528-7dc03e17d840}.tres" id="2_ih430"]
+[ext_resource type="EventAsset" uid="uid://djn7spv438on8" path="res://addons/fmod/editor/resources/events/{17df2983-8228-4223-8059-ad56d59828b9}.tres" id="3_3mnxm"]
+[ext_resource type="BankAsset" uid="uid://drsnfhrl02ykc" path="res://addons/fmod/editor/resources/banks/{011f14a0-db06-48c4-b737-4ab94bf6e848}.tres" id="3_4nfoe"]
+[ext_resource type="PackedScene" uid="uid://dylqsg0cwbu8m" path="res://scenes/_main/ch5sc12/racing-minigame/prefabs/PlayerPathProjector.tscn" id="4"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc12/racing-minigame/scripts/CarCamera.gd" id="5"]
+[ext_resource type="EventAsset" uid="uid://dcnkcwer5h42l" path="res://addons/fmod/editor/resources/events/{e7b898ed-23d1-4d2b-86b8-3701d772f98f}.tres" id="5_1l5xs"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc12/racing-minigame/scripts/RacingManager.gd" id="6"]
+[ext_resource type="Resource" uid="uid://s2shwkqroi2a" path="res://scenes/_main/ch5sc12/racing-minigame/replays/CarReplay_CPU1.tres" id="7"]
+[ext_resource type="PackedScene" uid="uid://b4tdtp4fslvrp" path="res://scenes/_main/ch5sc12/racing-minigame/assets/envi/envi.scn" id="8"]
+[ext_resource type="PackedScene" uid="uid://dm4qsqdhk5t8y" path="res://scenes/_main/ch5sc12/racing-minigame/assets/envi/road.scn" id="8_dbnyt"]
+[ext_resource type="PackedScene" uid="uid://dx11opvvpxpuq" path="res://scenes/_main/ch5sc12/racing-minigame/prefabs/ReplayControlledCar.tscn" id="9"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc12/racing-minigame/scripts/RacingMinigame.gd" id="10"]
+[ext_resource type="Resource" uid="uid://d1qocvcv02jt3" path="res://scenes/_main/ch5sc12/racing-minigame/replays/CarReplay_CPU2.tres" id="11"]
+[ext_resource type="Curve3D" uid="uid://ngy53kbxbu5e" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Track1.tres" id="12"]
+[ext_resource type="AudioStream" uid="uid://bln1actx306h7" path="res://scenes/_main/ch5sc12/racing-minigame/assets/audio/timeout/Timeout Music.ogg" id="13"]
+[ext_resource type="PackedScene" uid="uid://chwvu12crxeao" path="res://scenes/_main/ch5sc12/racing-minigame/prefabs/HUD.tscn" id="14"]
+[ext_resource type="Resource" uid="uid://ovayof3rd8aq" path="res://scenes/_main/ch5sc12/racing-minigame/replays/CarReplay_CPU3.tres" id="15"]
+[ext_resource type="Resource" uid="uid://bg8as4bh4mnng" path="res://scenes/_main/ch5sc12/racing-minigame/replays/CarReplay_CTH.tres" id="16"]
+[ext_resource type="Resource" uid="uid://b832gule5r7mw" path="res://scenes/_main/ch5sc12/racing-minigame/replays/CarReplay_CPU4.tres" id="17"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_8bhnd"]
+panorama = ExtResource("2")
+filter = false
+
+[sub_resource type="Sky" id="16"]
+sky_material = SubResource("PanoramaSkyMaterial_8bhnd")
+radiance_size = 2
+
+[sub_resource type="Environment" id="17"]
+background_mode = 2
+sky = SubResource("16")
+sky_rotation = Vector3(0, -1.74533, 0)
+ambient_light_color = Color(0.901961, 1, 0.92549, 1)
+
+[sub_resource type="BoxShape3D" id="13"]
+size = Vector3(16.7944, 6.3035, 2.23484)
+
+[node name="RacingMinigame" type="Node3D"]
+script = ExtResource("10")
+laps = 2
+lap_time_limit = 80
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="AudioBankLoader" type="StudioBankLoader" parent="Audio"]
+num_banks = 2
+bank_0 = ExtResource("2_ih430")
+bank_1 = ExtResource("3_4nfoe")
+editor_description = "Ch5Sc12"
+
+[node name="RacingMain" type="StudioEventEmitter3D" parent="Audio"]
+event = ExtResource("3_3mnxm")
+editor_description = "event:/Ch5/Sc12/RacingGame/Main"
+
+[node name="CathyDrift" type="StudioEventEmitter3D" parent="Audio"]
+event = ExtResource("5_1l5xs")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("17")
+
+[node name="Splitscreen" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Splitscreen"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="Mark" type="PanelContainer" parent="Splitscreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="Splitscreen/VBoxContainer/Mark"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+stretch_shrink = 3
+
+[node name="Viewport" type="SubViewport" parent="Splitscreen/VBoxContainer/Mark/ViewportContainer"]
+handle_input_locally = false
+size = Vector2i(426, 119)
+render_target_update_mode = 4
+
+[node name="Camera" type="Camera3D" parent="Splitscreen/VBoxContainer/Mark/ViewportContainer/Viewport"]
+transform = Transform3D(1, 0, 0, 0, 0.927073, 0.374882, 0, -0.374882, 0.927073, -0.271732, 2.78213, 15.0202)
+current = true
+fov = 70.0
+far = 100.0
+script = ExtResource("5")
+lerp_speed = 24.0
+target_path = NodePath("../../../../../../RacingManager/Players/MRK")
+offset = Vector3(0, 4, 6)
+
+[node name="HUD" parent="Splitscreen/VBoxContainer/Mark" instance=ExtResource("14")]
+layout_mode = 2
+
+[node name="Cathy" type="PanelContainer" parent="Splitscreen/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="Splitscreen/VBoxContainer/Cathy"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+stretch = true
+stretch_shrink = 3
+
+[node name="Viewport" type="SubViewport" parent="Splitscreen/VBoxContainer/Cathy/ViewportContainer"]
+handle_input_locally = false
+size = Vector2i(426, 119)
+render_target_update_mode = 4
+
+[node name="Camera" type="Camera3D" parent="Splitscreen/VBoxContainer/Cathy/ViewportContainer/Viewport"]
+transform = Transform3D(1, 0, 0, 0, 0.939693, 0.34202, 0, -0.34202, 0.939693, 2.781, 2.782, 0.832639)
+current = true
+fov = 70.0
+far = 100.0
+script = ExtResource("5")
+lerp_speed = 24.0
+target_path = NodePath("../../../../../../RacingManager/Players/CTH")
+offset = Vector3(0, 4, 6)
+
+[node name="HUD" parent="Splitscreen/VBoxContainer/Cathy" instance=ExtResource("14")]
+layout_mode = 2
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="envi" parent="World" instance=ExtResource("8")]
+
+[node name="light" parent="World/envi" index="56"]
+transform = Transform3D(2.45521, 0.999942, -1.88042e-05, -6.6402, 0.000313636, -630.732, -227.89, 0.0107639, 18.3781, -124.597, 7.79274, -3.31298)
+
+[node name="road" parent="World" instance=ExtResource("8_dbnyt")]
+
+[node name="FinishLine" type="Area3D" parent="."]
+transform = Transform3D(0.588787, 0, 0.808288, 0, 1, 0, -0.808288, 0, 0.588787, -118.73, 9.75656, -8.3007)
+
+[node name="CollisionShape" type="CollisionShape3D" parent="FinishLine"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.46928, 0)
+shape = SubResource("13")
+
+[node name="RacingManager" type="Node3D" parent="."]
+script = ExtResource("6")
+
+[node name="PathProjectors" type="Path3D" parent="RacingManager"]
+curve = ExtResource("12")
+
+[node name="MRK" parent="RacingManager/PathProjectors" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.844, 6.06545, -9.51437)
+player_node_path = NodePath("../../Players/MRK")
+player_name = "MRK"
+
+[node name="CTH" parent="RacingManager/PathProjectors" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.844, 6.06545, -9.51437)
+player_node_path = NodePath("../../Players/CTH")
+player_name = "CTH"
+
+[node name="CPU1" parent="RacingManager/PathProjectors" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.844, 6.06545, -9.51437)
+player_node_path = NodePath("../../Players/CPU1")
+player_name = "CPU1"
+
+[node name="CPU2" parent="RacingManager/PathProjectors" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.844, 6.06545, -9.51437)
+player_node_path = NodePath("../../Players/CPU2")
+player_name = "CPU2"
+
+[node name="CPU3" parent="RacingManager/PathProjectors" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.844, 6.06545, -9.51437)
+player_node_path = NodePath("../../Players/CPU3")
+player_name = "CPU3"
+
+[node name="CPU4" parent="RacingManager/PathProjectors" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -120.844, 6.06545, -9.51437)
+player_node_path = NodePath("../../Players/CPU4")
+player_name = "CPU4"
+
+[node name="Players" type="Node3D" parent="RacingManager"]
+
+[node name="MRK" parent="RacingManager/Players" instance=ExtResource("1")]
+transform = Transform3D(0.580788, 0.110212, 0.80656, 0, 0.990793, -0.135387, -0.814055, 0.0786311, 0.575441, -96.8205, 4.73145, 12.034)
+color_variation = 0
+label_text = "MRK"
+
+[node name="CTH" parent="RacingManager/Players" instance=ExtResource("9")]
+transform = Transform3D(0.555686, 0.0967829, 0.82574, 0, 0.993201, -0.116411, -0.831392, 0.0646878, 0.551908, -96.0934, 4.84815, 3.2336)
+replay_data = ExtResource("16")
+ghost_mode = true
+car_model = 2
+label_text = "CTH"
+
+[node name="CPU1" parent="RacingManager/Players" instance=ExtResource("9")]
+transform = Transform3D(0.583881, 0, 0.811839, 0, 1, 0, -0.811839, 0, 0.583881, -111.88, 6.27476, -8.20443)
+replay_data = ExtResource("7")
+ghost_mode = true
+random_car = true
+color_variation = 2
+
+[node name="CPU2" parent="RacingManager/Players" instance=ExtResource("9")]
+transform = Transform3D(0.587757, 0, 0.809038, 0, 1, 0, -0.809038, 0, 0.587757, -112.55, 6.15557, 0.765688)
+replay_data = ExtResource("11")
+ghost_mode = true
+random_car = true
+color_variation = 2
+
+[node name="CPU3" parent="RacingManager/Players" instance=ExtResource("9")]
+transform = Transform3D(0.594724, 0, 0.80393, 0, 1, 0, -0.80393, 0, 0.594724, -104.133, 5.49335, -2.60429)
+replay_data = ExtResource("15")
+ghost_mode = true
+random_car = true
+color_variation = 2
+
+[node name="CPU4" parent="RacingManager/Players" instance=ExtResource("9")]
+transform = Transform3D(0.580788, 0, 0.814055, 0, 1, 0, -0.814055, 0, 0.580788, -104.634, 5.43421, 6.45945)
+replay_data = ExtResource("17")
+ghost_mode = true
+random_car = true
+color_variation = 2
+
+[node name="RankingUpdateTimer" type="Timer" parent="RacingManager"]
+wait_time = 0.1
+autostart = true
+
+[node name="CSGPolygon" type="CSGPolygon3D" parent="RacingManager"]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 15.7547, -1.91233, 1.90628)
+visible = false
+polygon = PackedVector2Array(0.704956, -0.854473, 0, 1, 1, 1, 1, 0)
+mode = 2
+path_node = NodePath("../PathProjectors")
+path_interval_type = 0
+path_interval = 1.0
+path_simplify_angle = 8.4
+path_rotation = 2
+path_local = false
+path_continuous_u = true
+path_u_distance = 1.0
+path_joined = false
+
+[node name="CountdownTimer" type="Timer" parent="."]
+
+[node name="TimeoutSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13")
+volume_db = -6.0
+
+[editable path="World/envi"]

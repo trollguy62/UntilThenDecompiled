@@ -1,0 +1,179 @@
+[gd_scene load_steps=30 format=3 uid="uid://f04banij8gln"]
+
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1_e24nf"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/03.tres" id="2_xakg0"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="3_lny33"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/01.tres" id="4_5dg2n"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/02.tres" id="5_nmpig"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/04.tres" id="6_rfyar"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/05.tres" id="7_n3tqi"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/06.tres" id="8_nbgg4"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/07.tres" id="9_imoim"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_barking/07.tres" id="10_cekng"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/08.tres" id="10_l3eyg"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_barking/08.tres" id="11_0ph6w"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/09.tres" id="11_7110x"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_barking/09.tres" id="12_26lxa"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/10.tres" id="12_jwttf"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_idle/11.tres" id="13_6vph6"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_barking/10.tres" id="13_l36mt"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_barking/11.tres" id="14_qjjal"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_barking/12.tres" id="15_dtnoc"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/dogs/dogs_dog_barking/13.tres" id="16_he242"]
+[ext_resource type="Script" path="res://components/Animals/AnimalAudioTrigger.gd" id="24_bycmt"]
+[ext_resource type="AudioStream" uid="uid://hdxo1xplv461" path="res://scenes/_main/ch1sc1b/assets/sfx/Dog-Bark-1.ogg" id="25_7xxsa"]
+[ext_resource type="AudioStream" uid="uid://bheihgcbwv357" path="res://scenes/_main/ch1sc1b/assets/sfx/Dog-Bark-2.ogg" id="26_tu03l"]
+[ext_resource type="AudioStream" uid="uid://bq61xpbwtpcrq" path="res://scenes/_main/ch1sc1b/assets/sfx/Dog-Bark-3.ogg" id="27_11qx1"]
+[ext_resource type="Script" path="res://components/Animals/AnimalAnimationController.gd" id="27_fkc0y"]
+[ext_resource type="AudioStream" uid="uid://bg6642beqdepu" path="res://scenes/_main/ch1sc1b/assets/sfx/Dog-Bark-4.ogg" id="28_fbtk0"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tcd7g"]
+render_priority = 0
+shader = ExtResource("1_e24nf")
+shader_parameter/scale = Vector3(1.215, 0.81, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("10_cekng")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g2ssx"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_tcd7g"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_48yxy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_cekng")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_0ph6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_26lxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_l36mt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_qjjal")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dtnoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_he242")
+}],
+"loop": true,
+"name": &"bark",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_5dg2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nmpig")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_xakg0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rfyar")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_n3tqi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_nbgg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_imoim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_l3eyg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7110x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_jwttf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6vph6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}]
+
+[node name="DogIdle" type="Node3D"]
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_g2ssx")
+script = ExtResource("3_lny33")
+texture_frames = SubResource("SpriteFrames_48yxy")
+sync_all = true
+animation = "bark"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+
+[node name="Animation" type="Node3D" parent="Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.574724, 0, 0)
+script = ExtResource("27_fkc0y")
+min_interval = 1.5
+max_interval = 4.5
+animations = Array[String](["idle", "bark"])
+randomize_animation = true
+
+[node name="Bark" type="Node3D" parent="Sprite/Animation"]
+script = ExtResource("24_bycmt")
+animation_trigger = "bark"
+
+[node name="DogBark_1" type="AudioStreamPlayer3D" parent="Sprite/Animation/Bark"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574724, 0, 0)
+stream = ExtResource("25_7xxsa")
+unit_size = 3.0
+bus = &"SFX"
+
+[node name="DogBark_2" type="AudioStreamPlayer3D" parent="Sprite/Animation/Bark"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574724, 0, 0)
+stream = ExtResource("26_tu03l")
+unit_size = 3.0
+bus = &"SFX"
+
+[node name="DogBark_3" type="AudioStreamPlayer3D" parent="Sprite/Animation/Bark"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574724, 0, 0)
+stream = ExtResource("27_11qx1")
+unit_size = 3.0
+bus = &"SFX"
+
+[node name="DogBark_4" type="AudioStreamPlayer3D" parent="Sprite/Animation/Bark"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.574724, 0, 0)
+stream = ExtResource("28_fbtk0")
+unit_size = 3.0
+bus = &"SFX"
+
+[node name="Timer" type="Timer" parent="Sprite/Animation/Bark"]

@@ -1,0 +1,181 @@
+[gd_scene load_steps=19 format=3 uid="uid://c5rcm5xou2lrk"]
+
+[ext_resource type="Texture2D" uid="uid://ewaktciqc2s1" path="res://scenes/_main/ch5sc5/assets/sky.png" id="2_mmmvb"]
+[ext_resource type="BankAsset" uid="uid://d3563bw0y887o" path="res://addons/fmod/editor/resources/banks/{b1df801f-ae68-4878-bb1a-c8627a26a7b4}.tres" id="3_8vijl"]
+[ext_resource type="EventAsset" uid="uid://b5kn8nfmhcmv" path="res://addons/fmod/editor/resources/events/{9a2fa804-f7ca-412f-9208-c022493f0090}.tres" id="4_aygax"]
+[ext_resource type="EventAsset" uid="uid://cpuwvcre4tl7s" path="res://addons/fmod/editor/resources/events/{1f2137f9-25fb-48b5-86a1-e5a5d66bf916}.tres" id="5_mlwmd"]
+[ext_resource type="EventAsset" uid="uid://bhujfv7vquxf1" path="res://addons/fmod/editor/resources/events/{eeb16823-e6b7-4b2a-8340-8c5b22714d7f}.tres" id="6_fj6c8"]
+[ext_resource type="PackedScene" uid="uid://bgp0edkm55xb0" path="res://scenes/cemetery/Scene.tscn" id="8_3d1ar"]
+[ext_resource type="PackedScene" uid="uid://n6e165rmvqst" path="res://scenes/cemetery/assets/prefabs/Pew.tscn" id="9_i7010"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="12_1kj5q"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="103_7bjqn"]
+[ext_resource type="Texture2D" uid="uid://du5onka6b62pb" path="res://scenes/_main/lopost/assets/envi/bouquet.png" id="104_14vcg"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="105_x7xiv"]
+[ext_resource type="PackedScene" uid="uid://da0ppgkx2d538" path="res://components/Vignette.tscn" id="174_72o5v"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_vkxrq"]
+panorama = ExtResource("2_mmmvb")
+filter = false
+
+[sub_resource type="Sky" id="14"]
+sky_material = SubResource("PanoramaSkyMaterial_vkxrq")
+
+[sub_resource type="Environment" id="Environment_mqmok"]
+background_mode = 2
+background_energy_multiplier = 2.0
+sky = SubResource("14")
+sky_rotation = Vector3(0, 3.735, 0)
+ambient_light_color = Color(0.811765, 0.901961, 1, 1)
+ambient_light_sky_contribution = 0.5
+tonemap_mode = 2
+ssr_max_steps = 80
+ssao_enabled = true
+ssao_radius = 0.75
+glow_enabled = true
+glow_levels/1 = 1.0
+glow_levels/2 = 1.0
+glow_levels/4 = 1.0
+glow_strength = 0.89
+glow_blend_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.490196, 0.615686, 0.741176, 1)
+fog_density = 0.012
+fog_sky_affect = 0.1
+volumetric_fog_density = 0.0096
+adjustment_enabled = true
+adjustment_saturation = 1.1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vae40"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 8.0
+dof_blur_far_transition = 20.0
+dof_blur_near_enabled = true
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_l3ldd"]
+render_priority = 0
+shader = ExtResource("103_7bjqn")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("104_14vcg")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gqs8v"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.4, 0.19, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_l3ldd"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 204, 204, 204, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 204, 204, 204, 62, 92, 143, 66, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 66, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[node name="Background" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_mqmok")
+
+[node name="Audio" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="Audio"]
+num_banks = 1
+bank_0 = ExtResource("3_8vijl")
+
+[node name="SFX" type="Node3D" parent="Audio"]
+
+[node name="Wind" type="StudioEventEmitter3D" parent="Audio/SFX"]
+play_event = 4
+event = ExtResource("4_aygax")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.90953, 0.669368, -2.78659)
+
+[node name="LightTraffic" type="StudioEventEmitter3D" parent="Audio/SFX"]
+play_event = 4
+event = ExtResource("5_mlwmd")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.629, 0, 3.47883)
+
+[node name="LeavesRustlingL" type="StudioEventEmitter3D" parent="Audio/SFX"]
+play_event = 4
+event = ExtResource("6_fj6c8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.95795, 0.669368, -2.67992)
+
+[node name="LeavesRustlingR" type="StudioEventEmitter3D" parent="Audio/SFX"]
+play_event = 4
+event = ExtResource("6_fj6c8")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.862, 0.669369, -2.62991)
+
+[node name="Cameras" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="CamMain" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.999944, -0.000468404, -0.0105359, 0, 0.999013, -0.044414, 0.0105463, 0.0444115, 0.998958, -1.589, 0.551, 3.953)
+attributes = SubResource("CameraAttributesPractical_vae40")
+current = true
+fov = 50.0
+script = ExtResource("12_1kj5q")
+decorative = true
+
+[node name="World" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Cemetery" parent="World" instance=ExtResource("8_3d1ar")]
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Paper3D34" parent="World/Cemetery/Field/Ground/Deco" index="15"]
+visible = false
+
+[node name="Decal" parent="World/Cemetery/Field/Ground" index="6"]
+size = Vector3(0.33, 0.01, 0.45)
+
+[node name="Decal2" parent="World/Cemetery/Field/Ground" index="7"]
+size = Vector3(0.1, 0.01, 0.12)
+
+[node name="Decal3" parent="World/Cemetery/Field/Ground" index="8"]
+size = Vector3(0.4, 0.01, 0.36)
+
+[node name="Pew1" parent="World/Cemetery" instance=ExtResource("9_i7010")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.32, -0.195, 0.08)
+skeleton = NodePath("../../../WorldEnvironment")
+
+[node name="Pew2" parent="World/Cemetery" instance=ExtResource("9_i7010")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.71, -0.195, -0.05)
+skeleton = NodePath("../../../WorldEnvironment")
+
+[node name="Bouquet" type="MeshInstance3D" parent="World/Cemetery"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.845, 0.00583467, -4.77)
+mesh = SubResource("ArrayMesh_gqs8v")
+script = ExtResource("105_x7xiv")
+texture = ExtResource("104_14vcg")
+metadata/mat_opaque = SubResource("ShaderMaterial_l3ldd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(-0.360459, -0.852288, 0.379045, -0.793551, 0.493774, 0.355618, -0.490251, -0.172606, -0.854319, 0, 3.17, 0)
+shadow_enabled = true
+shadow_bias = 0.01
+shadow_blur = 0.6
+directional_shadow_blend_splits = true
+
+[node name="Vignette" parent="." instance=ExtResource("174_72o5v")]
+metadata/_edit_lock_ = true
+
+[editable path="World/Cemetery"]

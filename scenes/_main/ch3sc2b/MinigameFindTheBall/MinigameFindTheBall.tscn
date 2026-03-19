@@ -1,0 +1,184 @@
+[gd_scene load_steps=21 format=3 uid="uid://d4kscnj1sy5r8"]
+
+[ext_resource type="Texture2D" uid="uid://2pq5xfmsnkbc" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/assets/background.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://7yj2ebjnueqe" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/assets/ball.png" id="2"]
+[ext_resource type="BankAsset" uid="uid://cpund7brv7xfh" path="res://addons/fmod/editor/resources/banks/{53eecc52-7708-455a-9bc3-35b773b05d5b}.tres" id="2_6j6j3"]
+[ext_resource type="PackedScene" uid="uid://b47xyqc8dn8ys" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/prefabs/PaperCup.tscn" id="3"]
+[ext_resource type="EventAsset" uid="uid://27ua3bd1ma75" path="res://addons/fmod/editor/resources/events/{cfe14d7b-67ab-422f-a4f7-64705ca5a25d}.tres" id="3_pbcox"]
+[ext_resource type="Texture2D" uid="uid://cd0pvtjccigq4" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/assets/light_shaft.png" id="4"]
+[ext_resource type="EventAsset" uid="uid://dfr04e48ij6yb" path="res://addons/fmod/editor/resources/events/{3a242f4d-d341-424c-ab15-23318f6384de}.tres" id="4_48kye"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/MinigameFindTheBall.gd" id="5"]
+[ext_resource type="EventAsset" uid="uid://cwy4myeul46m7" path="res://addons/fmod/editor/resources/events/{56e53a44-eabe-46cf-8d8b-338a27bf3e1c}.tres" id="5_2yebv"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="6"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/scripts/ButtonsAnchor.gd" id="11_b01pr"]
+[ext_resource type="PackedScene" uid="uid://b4mitfun6y8ot" path="res://addons/controller_icons/objects/ControllerTextureRect.tscn" id="11_nvdf2"]
+[ext_resource type="Texture2D" uid="uid://cyvt6g1pkcqfo" path="res://addons/controller_icons/assets/key/1.png" id="12_b6w2l"]
+[ext_resource type="Texture2D" uid="uid://cp0j8cw8o6wvu" path="res://addons/controller_icons/assets/key/2.png" id="13_dv4tn"]
+[ext_resource type="Texture2D" uid="uid://tljp3e67878n" path="res://addons/controller_icons/assets/key/3.png" id="14_l2aik"]
+
+[sub_resource type="Animation" id="Animation_p6h7l"]
+resource_name = "fade_in"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.4),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_oxmxv"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_7x13d"]
+resource_name = "fade_out"
+length = 0.15
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Anchor:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.15),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2iarf"]
+_data = {
+"RESET": SubResource("Animation_oxmxv"),
+"fade_in": SubResource("Animation_p6h7l"),
+"fade_out": SubResource("Animation_7x13d")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2hl76"]
+
+[node name="MinigameFindTheBall" type="Node2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+script = ExtResource("5")
+cup_swap_y_trans_peak = 20.0
+cup_focused_modulate_color = Color(0, 1, 0.717647, 1)
+cup_reveal_delay_duration = 1.5
+
+[node name="AudioBankLoader" type="StudioBankLoader" parent="."]
+num_banks = 1
+bank_0 = ExtResource("2_6j6j3")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="CorrectChoice" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("3_pbcox")
+
+[node name="WrongChoice" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("4_48kye")
+
+[node name="CupSwap" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("5_2yebv")
+
+[node name="Focus" type="Node" parent="."]
+script = ExtResource("6")
+focus_name = "MinigameFindBall"
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+centered = false
+
+[node name="LightShaft" type="Sprite2D" parent="."]
+position = Vector2(160, 97.5)
+texture = ExtResource("4")
+
+[node name="Ball" type="Sprite2D" parent="."]
+position = Vector2(160, 67)
+scale = Vector2(0.84, 0.84)
+texture = ExtResource("2")
+offset = Vector2(0, 22)
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(65, 58.6165)
+scale = Vector2(0.6, 0.6)
+
+[node name="PaperCupA" parent="Node2D" instance=ExtResource("3")]
+position = Vector2(59, 100)
+
+[node name="PaperCupB" parent="Node2D" instance=ExtResource("3")]
+position = Vector2(159, 100)
+
+[node name="PaperCupC" parent="Node2D" instance=ExtResource("3")]
+position = Vector2(259, 100)
+
+[node name="Anchor" type="Control" parent="."]
+modulate = Color(1, 1, 1, 0)
+top_level = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("11_b01pr")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Anchor"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_2iarf")
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Anchor"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -64.0
+offset_top = 262.0
+offset_right = 64.0
+offset_bottom = 302.0
+grow_horizontal = 2
+theme_override_constants/separation = 188
+
+[node name="InputHint1" parent="Anchor/HBoxContainer" instance=ExtResource("11_nvdf2")]
+material = SubResource("ShaderMaterial_2hl76")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("12_b6w2l")
+path = "choice_1"
+show_only = 0
+max_width = 50
+prioritize_controller = true
+
+[node name="InputHint2" parent="Anchor/HBoxContainer" instance=ExtResource("11_nvdf2")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("13_dv4tn")
+path = "choice_2"
+show_only = 0
+max_width = 50
+prioritize_controller = true
+
+[node name="InputHint3" parent="Anchor/HBoxContainer" instance=ExtResource("11_nvdf2")]
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+texture = ExtResource("14_l2aik")
+path = "choice_3"
+show_only = 0
+max_width = 50
+prioritize_controller = true

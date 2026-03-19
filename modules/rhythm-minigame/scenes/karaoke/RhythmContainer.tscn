@@ -1,0 +1,108 @@
+[gd_scene load_steps=10 format=3 uid="uid://bs3xl11844rb6"]
+
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/InputHandler.gd" id="1"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/RhythmContainer.gd" id="2"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/RhythmLine.gd" id="3"]
+[ext_resource type="FontFile" uid="uid://dc3c5fb1j687x" path="res://modules/rhythm-minigame/assets/fonts/Noto_Sans_JP/NotoSansJP-Medium.otf" id="4"]
+[ext_resource type="PackedScene" uid="uid://u6o5i3v0frgf" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeLyrics.tscn" id="5"]
+[ext_resource type="PackedScene" uid="uid://ccsuasxle5deu" path="res://modules/rhythm-minigame/scenes/karaoke/Caret.tscn" id="6"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/HitTargetContainer.gd" id="7"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 1, 1, 0.501961)
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("4")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+
+[node name="RhythmContainer" type="VBoxContainer"]
+offset_left = -5.66968
+offset_top = -14.4891
+offset_right = 313.33
+offset_bottom = 29.5109
+script = ExtResource("2")
+
+[node name="RhythmLine" type="Panel" parent="."]
+custom_minimum_size = Vector2(319, 5)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("3")
+
+[node name="ExtrasContainer" type="Control" parent="RhythmLine"]
+anchors_preset = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -21.0
+offset_right = 40.0
+offset_bottom = 19.0
+
+[node name="HitTargetContainerUp" type="Control" parent="RhythmLine"]
+anchors_preset = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+script = ExtResource("7")
+column = 2
+
+[node name="HitTargetContainerLeft" type="Control" parent="RhythmLine"]
+anchors_preset = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+script = ExtResource("7")
+column = 0
+
+[node name="HitTargetContainerRight" type="Control" parent="RhythmLine"]
+anchors_preset = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+script = ExtResource("7")
+column = 3
+
+[node name="HitTargetContainerDown" type="Control" parent="RhythmLine"]
+anchors_preset = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -20.0
+offset_right = 40.0
+offset_bottom = 20.0
+script = ExtResource("7")
+
+[node name="Caret" parent="RhythmLine" instance=ExtResource("6")]
+visible = false
+modulate = Color(1, 1, 1, 0.85098)
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_right = 8.0
+
+[node name="Lyrics" parent="." instance=ExtResource("5")]
+show_behind_parent = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = SubResource("2")
+
+[node name="InputHandler" type="Node" parent="."]
+script = ExtResource("1")

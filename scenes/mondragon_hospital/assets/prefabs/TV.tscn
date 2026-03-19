@@ -1,0 +1,310 @@
+[gd_scene load_steps=37 format=3 uid="uid://b22wbwrv5i73o"]
+
+[ext_resource type="Texture2D" uid="uid://di50pp04l0bow" path="res://scenes/mondragon_hospital/assets/tv_n.png" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://igvrxskena8g" path="res://scenes/mondragon_hospital/assets/tv.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dhr5xutruvemo" path="res://scenes/mondragon_hospital/assets/tv_wall_holder.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://nljjuxvo2kq7" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/11.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cpwkso3jutphp" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/02.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dm3vnpsc12f2g" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/09.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bue7xymuulx73" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/07.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://gnuny6pmdovr" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/06.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bxa75ke46ksy1" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/01.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://ddkufoc6yqbod" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/12.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://c8b8sjx1iadl0" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/03.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://3s1q2tuf3wmd" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/05.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://cpc1gpcjan6mu" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/10.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://h174r385p7jw" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/04.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://3omur34dseem" path="res://scenes/mondragon_hospital/assets/tv_anims/disaster_2/08.png" id="16"]
+[ext_resource type="Texture2D" path="res://scenes/mondragon_hospital/assets/tv_anims/Disaster3.tres" id="17"]
+[ext_resource type="Texture2D" path="res://scenes/mondragon_hospital/assets/tv_anims/Weather1.tres" id="18"]
+[ext_resource type="Texture2D" path="res://scenes/mondragon_hospital/assets/tv_anims/Disaster2.tres" id="19"]
+[ext_resource type="Texture2D" path="res://scenes/mondragon_hospital/assets/tv_anims/Weather2.tres" id="20"]
+[ext_resource type="Texture2D" path="res://scenes/mondragon_hospital/assets/tv_anims/Disaster1.tres" id="21"]
+[ext_resource type="Script" path="res://scenes/mondragon_hospital/scripts/TV.gd" id="23"]
+[ext_resource type="EventAsset" uid="uid://b107qllmm7fga" path="res://addons/fmod/editor/resources/events/{6b4bf185-84fe-41c5-ae01-9474322ebe94}.tres" id="23_jhpy6"]
+[ext_resource type="EventAsset" uid="uid://dwl7jqao03erh" path="res://addons/fmod/editor/resources/events/{1aa32c9f-22f6-400b-b4ec-a07672b4fb76}.tres" id="24_5gym3"]
+[ext_resource type="EventAsset" uid="uid://dcag2kpmov6lu" path="res://addons/fmod/editor/resources/events/{57c0befa-6413-4f1c-a8b8-23a683b0a57c}.tres" id="25_nbcqf"]
+
+[sub_resource type="Animation" id="16"]
+resource_name = "cycle"
+length = 12.0
+loop_mode = 1
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel/Display:material_override:shader_parameter/texture_albedo")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 4, 6, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("21"), ExtResource("19"), ExtResource("17"), ExtResource("18"), ExtResource("20")]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3fxb8"]
+_data = {
+"cycle": SubResource("16")
+}
+
+[sub_resource type="ShaderMaterial" id="17"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jpyrv"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.09001, 0.18, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("17"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(236, 81, 184, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 236, 81, 184, 61, 236, 81, 56, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 236, 81, 56, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ShaderMaterial" id="19"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.25
+shader_parameter/roughness = 0.25
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+shader_parameter/texture_normal = ExtResource("1")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_y2gde"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.65001, 0.36, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(102, 102, 38, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 38, 63, 236, 81, 184, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 236, 81, 184, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="Shader" id="6"]
+code = "shader_type spatial;
+render_mode diffuse_burley, specular_schlick_ggx, cull_back;
+
+uniform sampler2D texture_albedo : source_color;
+uniform float static_blend : hint_range(0, 1) = 0.;
+
+
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+float rand(vec2 co) {
+    return fract(sin(dot(co, vec2(12.9898, 78.233))) * 43758.5453);
+}
+
+vec2 sigmoid(vec2 x, vec2 p) {
+	return 1. / (vec2(1.) + pow(vec2(E), -p * x));
+}
+
+float static(vec2 px_size, vec2 uv, float t, float interval, float p) {
+	vec2 half_px_size = px_size / 2.0;
+
+	t = sqrt(interval * floor(t / interval));
+	uv += px_size * 69.;
+
+	vec2 uv_q1 = px_size * floor((uv - half_px_size * vec2(1, -1)) / px_size);
+	vec2 uv_q2 = px_size * floor((uv - half_px_size * vec2(-1, -1)) / px_size);
+	vec2 uv_q3 = px_size * floor((uv - half_px_size * vec2(-1, 1)) / px_size);
+	vec2 uv_q4 = px_size * floor((uv - half_px_size * vec2(1, 1)) / px_size);
+
+	vec2 sig_x = fract((uv - half_px_size) / px_size) - vec2(0.5);
+	vec2 blend = sigmoid(sig_x, vec2(p));
+
+	float c = mix(
+		mix(rand(uv_q4 * t), rand(uv_q1 * t), blend.y),
+		mix(rand(uv_q3 * t), rand(uv_q2 * t), blend.y),
+		blend.x
+	);
+
+	return clamp(pow(c, 2.0), 0.1, 0.3);
+}
+
+void fragment() {
+	vec2 px_size = 1.0 / vec2(58, 30);
+
+	float static_aa = 100. / pow(length(VIEW), 2.);
+	float static = static(px_size, UV, TIME, 1. / 23., static_aa);
+
+	vec3 c = mix(
+		texturePointSmooth(texture_albedo, UV, px_size).rgb,
+		vec3(static),
+		vec3(pow(static_blend, 4.))
+	);
+
+	ALBEDO = c;
+	EMISSION = pow(c * 1.4, vec3(1.4));
+}
+"
+
+[sub_resource type="ShaderMaterial" id="12"]
+render_priority = 0
+shader = SubResource("6")
+shader_parameter/static_blend = 0.4
+shader_parameter/texture_albedo = ExtResource("21")
+
+[sub_resource type="AnimatedTexture" id="13"]
+frames = 12
+frame_0/texture = ExtResource("10")
+frame_1/texture = ExtResource("6")
+frame_1/duration = 1.0
+frame_2/texture = ExtResource("12")
+frame_2/duration = 1.0
+frame_3/texture = ExtResource("15")
+frame_3/duration = 1.0
+frame_4/texture = ExtResource("13")
+frame_4/duration = 1.0
+frame_5/texture = ExtResource("9")
+frame_5/duration = 1.0
+frame_6/texture = ExtResource("8")
+frame_6/duration = 1.0
+frame_7/texture = ExtResource("16")
+frame_7/duration = 1.0
+frame_8/texture = ExtResource("7")
+frame_8/duration = 1.0
+frame_9/texture = ExtResource("14")
+frame_9/duration = 1.0
+frame_10/texture = ExtResource("5")
+frame_10/duration = 1.0
+frame_11/texture = ExtResource("11")
+frame_11/duration = 1.0
+
+[sub_resource type="ShaderMaterial" id="14"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = SubResource("13")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ey1wj"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.58001, 0.3, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("14"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(225, 122, 20, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 225, 122, 20, 63, 154, 153, 153, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 154, 153, 153, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[node name="TV" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0199986, 0.94, -0.409)
+script = ExtResource("23")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "cycle"
+libraries = {
+"": SubResource("AnimationLibrary_3fxb8")
+}
+
+[node name="Holder" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_jpyrv")
+
+[node name="Panel" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.984808, -0.173648, 0, 0.173648, 0.984808, -0.28, 0.08, 0.00999999)
+material_override = SubResource("19")
+mesh = SubResource("ArrayMesh_y2gde")
+
+[node name="Display" type="MeshInstance3D" parent="Panel"]
+transform = Transform3D(0.983, 0, 0, 0, 1, -7.45058e-08, 0, 7.45058e-08, 1, 0.04, 0.03, 0.0010004)
+material_override = SubResource("12")
+mesh = SubResource("ArrayMesh_ey1wj")
+
+[node name="SFX" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.23, 0.03)
+
+[node name="TvTyphoon" type="StudioEventEmitter3D" parent="SFX"]
+event = ExtResource("23_jhpy6")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0194182, 0, 0)
+
+[node name="TvWeatherReport" type="StudioEventEmitter3D" parent="SFX"]
+event = ExtResource("24_5gym3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0149027, 0, 0)
+
+[node name="TvStatic" type="StudioEventEmitter3D" parent="SFX"]
+play_event = 2
+event = ExtResource("25_nbcqf")
+volume = 0.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0107893, 0, 0)

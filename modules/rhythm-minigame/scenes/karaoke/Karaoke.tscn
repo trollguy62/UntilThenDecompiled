@@ -1,0 +1,485 @@
+[gd_scene load_steps=60 format=3 uid="uid://cy1qtfsm54uxa"]
+
+[ext_resource type="Texture2D" uid="uid://pixg2us1k1a1" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/5_1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://n4gj4aiqr5hl" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/4_1.png" id="2"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/LED.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://cwng73ilijr10" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeDisplay.tscn" id="4"]
+[ext_resource type="Texture2D" uid="uid://33rntc6bmevk" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_machine.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cc481ca7tsghu" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/2_1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://chkltkieojnvq" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/0_1.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cleca30vrxn35" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/5_2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://bqdvak3jqj5iq" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/9_1.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://c4d7r62kl8n6k" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/3_1.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://b41mfasbdqqdi" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/6_2.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://b6bekpo03hdsj" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/8_2.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dhuclh5oja0as" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/4_2.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://c4wb558eogprq" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/7_2.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://c4xgiqd0ts360" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/1_1.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://dw5t63qk040wi" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/3_2.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://kwqgr2ryk44t" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/0_2.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://cu1kujbi0kwh2" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/1_2.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://be7g0m8c6dlh5" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/6_1.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://c64xlpo8qsy1h" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/8_1.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://dfgo8op6hnprn" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/7_1.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://b2yw2wwmprcuq" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/2_2.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://ckci3701utwg3" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/9_2.png" id="24"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/Karaoke.gd" id="25"]
+[ext_resource type="AudioStream" uid="uid://bv3jp3r506j8y" path="res://modules/rhythm-minigame/assets/sfx/Clap.ogg" id="26"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeButtons.gd" id="27"]
+[ext_resource type="Texture2D" uid="uid://c287vu5255q11" path="res://modules/rhythm-minigame/assets/karaoke/bg_wall.png" id="42"]
+[ext_resource type="FontFile" uid="uid://33b81iamvjij" path="res://modules/rhythm-minigame/assets/fonts/Alarm Clock/alarm clock.ttf" id="46"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/classes/state_machine/KStateMachine.gd" id="50"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/game_states/Idle.gd" id="51"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/game_states/Sing.gd" id="52"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/game_states/Score.gd" id="53"]
+[ext_resource type="AudioStream" uid="uid://6m48n7o0bhc8" path="res://modules/rhythm-minigame/assets/sfx/Fanfare.ogg" id="55"]
+[ext_resource type="PackedScene" uid="uid://cng5pa21vpc74" path="res://ui/components/Pointer/Pointer.tscn" id="55_008l2"]
+[ext_resource type="PackedScene" uid="uid://bqef2lenf01xv" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeHitTarget.tscn" id="56"]
+[ext_resource type="Texture2D" uid="uid://ifucckxxkdau" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/clap_2.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://b0qggvgni2aic" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/stop_1.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://rxo63f70a8pb" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/horn_2.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://wdc0v6jiwu7c" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/play_2.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://bgj3c4kfyesw6" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/stop_2.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://deyo6tfcq5ym7" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/play_1.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://duuvqh85tqp8e" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/clap_1.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://dyujwqragsgcy" path="res://modules/rhythm-minigame/assets/karaoke/karaoke_buttons/horn_1.png" id="64"]
+[ext_resource type="AudioStream" uid="uid://broaq7u6ioad7" path="res://modules/rhythm-minigame/assets/sfx/Horn.ogg" id="65"]
+[ext_resource type="AudioStream" uid="uid://5f1lphyg080q" path="res://modules/rhythm-minigame/assets/sfx/Button Press.ogg" id="66"]
+[ext_resource type="AudioStream" uid="uid://da3yyk2s2plvk" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-5.ogg" id="67"]
+[ext_resource type="AudioStream" uid="uid://bthpuwgonsivt" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-3.ogg" id="68"]
+[ext_resource type="AudioStream" uid="uid://deaedmkf84sqi" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-7.ogg" id="69"]
+[ext_resource type="AudioStream" uid="uid://fltwndoerkox" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-8.ogg" id="70"]
+[ext_resource type="AudioStream" uid="uid://u6mfrjo0mksa" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-4.ogg" id="71"]
+[ext_resource type="AudioStream" uid="uid://d1emm6m36tg1u" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-6.ogg" id="72"]
+[ext_resource type="AudioStream" uid="uid://x30l4xff82iw" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-9.ogg" id="73"]
+[ext_resource type="AudioStream" uid="uid://cus6bvmgewj2c" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-2.ogg" id="74"]
+[ext_resource type="AudioStream" uid="uid://c2hk17vuhmvkq" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-0.ogg" id="75"]
+[ext_resource type="AudioStream" uid="uid://out8iip8kb1w" path="res://modules/rhythm-minigame/assets/sfx/Karaoke-Voice-1.ogg" id="76"]
+
+[sub_resource type="Shader" id="Shader_3yxj8"]
+code = "shader_type canvas_item;
+
+uniform sampler2D texture_display;
+
+vec2 warp(vec2 uv){
+	vec2 delta = uv - 0.5;
+	float delta2 = dot(delta.xy, delta.xy);
+	float delta4 = delta2 * delta2;
+	float delta_offset = delta4 * 0.16;
+	return uv + delta * delta_offset;
+}
+
+float vignette(vec2 uv) {
+	return smoothstep(1.0, 0.45, distance(uv, vec2(0.5, 0.5)));
+}
+
+float scanlines(vec2 uv, float t) {
+	float c = 0.5 * (sin(uv.y * 500. + t * 10.) + 1.);
+	c = 1. - pow(c, 6.);
+	c = 1. - (0.06 * (1. - c)) * 0.5;
+	return c;
+}
+
+void fragment() {
+	vec2 uv = warp(UV);
+	COLOR = texture(texture_display, uv);
+	COLOR.rgb *= vignette(UV) * scanlines(uv, TIME);
+	COLOR.rgb *= 1.08;
+}"
+
+[sub_resource type="ViewportTexture" id="2"]
+viewport_path = NodePath("Viewport")
+
+[sub_resource type="ShaderMaterial" id="3"]
+resource_local_to_scene = true
+shader = SubResource("Shader_3yxj8")
+shader_parameter/texture_display = SubResource("2")
+
+[sub_resource type="FontFile" id="4"]
+fallbacks = Array[Font]([ExtResource("46")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/36/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/34/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/36/0/ascent = 0.0
+cache/0/36/0/descent = 0.0
+cache/0/36/0/underline_position = 0.0
+cache/0/36/0/underline_thickness = 0.0
+cache/0/36/0/scale = 1.0
+cache/0/36/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/36/0/kerning_overrides/36/0 = Vector2(0, 0)
+cache/0/36/0/kerning_overrides/34/0 = Vector2(0, 0)
+cache/0/36/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/34/0/ascent = 0.0
+cache/0/34/0/descent = 0.0
+cache/0/34/0/underline_position = 0.0
+cache/0/34/0/underline_thickness = 0.0
+cache/0/34/0/scale = 1.0
+cache/0/34/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/34/0/kerning_overrides/36/0 = Vector2(0, 0)
+cache/0/34/0/kerning_overrides/34/0 = Vector2(0, 0)
+cache/0/34/0/kerning_overrides/35/0 = Vector2(0, 0)
+cache/0/35/0/ascent = 0.0
+cache/0/35/0/descent = 0.0
+cache/0/35/0/underline_position = 0.0
+cache/0/35/0/underline_thickness = 0.0
+cache/0/35/0/scale = 1.0
+cache/0/35/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/36/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/34/0 = Vector2(0, 0)
+cache/0/35/0/kerning_overrides/35/0 = Vector2(0, 0)
+
+[node name="Karaoke" type="Node2D"]
+texture_filter = 1
+script = ExtResource("25")
+
+[node name="Viewport" type="SubViewport" parent="."]
+physics_object_picking = true
+size = Vector2i(496, 368)
+render_target_update_mode = 3
+
+[node name="KaraokeDisplay" parent="Viewport" instance=ExtResource("4")]
+
+[node name="Anchor" type="Node2D" parent="."]
+
+[node name="Wall" type="Sprite2D" parent="Anchor"]
+scale = Vector2(4, 4)
+texture = ExtResource("42")
+centered = false
+
+[node name="KaraokeDisplay" type="Panel" parent="Anchor"]
+material = SubResource("3")
+custom_minimum_size = Vector2(496, 368)
+offset_left = 392.0
+offset_top = 28.0
+offset_right = 888.0
+offset_bottom = 396.0
+
+[node name="KaraokeMachine" type="Sprite2D" parent="Anchor"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("5")
+
+[node name="KaraokeButtons" type="Node2D" parent="Anchor"]
+script = ExtResource("27")
+voice_streams = Array[AudioStream]([ExtResource("75"), ExtResource("76"), ExtResource("74"), ExtResource("68"), ExtResource("71"), ExtResource("67"), ExtResource("72"), ExtResource("69"), ExtResource("70"), ExtResource("73")])
+
+[node name="VoicePlayer" type="AudioStreamPlayer" parent="Anchor/KaraokeButtons"]
+bus = &"SFX"
+
+[node name="Button0" type="TextureButton" parent="Anchor/KaraokeButtons"]
+custom_minimum_size = Vector2(12, 10)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 735.095
+offset_top = 648.447
+offset_right = 747.095
+offset_bottom = 658.447
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("7")
+texture_pressed = ExtResource("17")
+stretch_mode = 4
+
+[node name="Button1" type="TextureButton" parent="Anchor/KaraokeButtons"]
+anchors_preset = -1
+anchor_left = 0.396813
+anchor_top = 0.845026
+anchor_right = 1.39681
+anchor_bottom = 1.84503
+offset_left = 508.294
+offset_top = 603.609
+offset_right = 519.294
+offset_bottom = 612.609
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("15")
+texture_pressed = ExtResource("18")
+stretch_mode = 4
+
+[node name="Button2" type="TextureButton" parent="Anchor/KaraokeButtons"]
+anchors_preset = -1
+anchor_left = 0.396813
+anchor_top = 0.845026
+anchor_right = 1.39681
+anchor_bottom = 1.84503
+offset_left = 567.174
+offset_top = 604.131
+offset_right = 577.174
+offset_bottom = 613.131
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("6")
+texture_pressed = ExtResource("22")
+stretch_mode = 4
+
+[node name="Button3" type="TextureButton" parent="Anchor/KaraokeButtons"]
+anchors_preset = -1
+anchor_left = 0.396813
+anchor_top = 0.845026
+anchor_right = 1.39681
+anchor_bottom = 1.84503
+offset_left = 620.423
+offset_top = 604.609
+offset_right = 630.423
+offset_bottom = 613.609
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("10")
+texture_pressed = ExtResource("16")
+stretch_mode = 4
+
+[node name="Button4" type="TextureButton" parent="Anchor/KaraokeButtons"]
+anchors_preset = -1
+anchor_left = 0.396813
+anchor_top = 0.845026
+anchor_right = 1.39681
+anchor_bottom = 1.84503
+offset_left = 673.819
+offset_top = 604.944
+offset_right = 683.819
+offset_bottom = 613.944
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("2")
+texture_pressed = ExtResource("13")
+stretch_mode = 4
+
+[node name="Button5" type="TextureButton" parent="Anchor/KaraokeButtons"]
+anchors_preset = -1
+anchor_left = 0.396813
+anchor_top = 0.845026
+anchor_right = 1.39681
+anchor_bottom = 1.84503
+offset_left = 728.212
+offset_top = 604.942
+offset_right = 739.212
+offset_bottom = 613.942
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("1")
+texture_pressed = ExtResource("8")
+stretch_mode = 4
+
+[node name="Button6" type="TextureButton" parent="Anchor/KaraokeButtons"]
+anchors_preset = -1
+anchor_left = 0.396813
+anchor_top = 0.845026
+anchor_right = 1.39681
+anchor_bottom = 1.84503
+offset_left = 495.617
+offset_top = 648.664
+offset_right = 507.617
+offset_bottom = 658.664
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("19")
+texture_pressed = ExtResource("11")
+stretch_mode = 4
+
+[node name="Button7" type="TextureButton" parent="Anchor/KaraokeButtons"]
+anchors_preset = -1
+anchor_left = 0.396813
+anchor_top = 0.845026
+anchor_right = 1.39681
+anchor_bottom = 1.84503
+offset_left = 556.194
+offset_top = 648.33
+offset_right = 568.194
+offset_bottom = 658.33
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("21")
+texture_pressed = ExtResource("14")
+stretch_mode = 4
+
+[node name="Button8" type="TextureButton" parent="Anchor/KaraokeButtons"]
+anchors_preset = -1
+anchor_left = 0.396813
+anchor_top = 0.845026
+anchor_right = 1.39681
+anchor_bottom = 1.84503
+offset_left = 616.421
+offset_top = 648.329
+offset_right = 628.421
+offset_bottom = 658.329
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("20")
+texture_pressed = ExtResource("12")
+stretch_mode = 4
+
+[node name="Button9" type="TextureButton" parent="Anchor/KaraokeButtons"]
+anchors_preset = -1
+anchor_left = 0.396813
+anchor_top = 0.845026
+anchor_right = 1.39681
+anchor_bottom = 1.84503
+offset_left = 677.151
+offset_top = 648.329
+offset_right = 689.151
+offset_bottom = 658.329
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("9")
+texture_pressed = ExtResource("24")
+stretch_mode = 4
+
+[node name="ExtraButtons" type="Node2D" parent="Anchor"]
+
+[node name="Clap" type="TextureButton" parent="Anchor/ExtraButtons"]
+custom_minimum_size = Vector2(12, 10)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 446.095
+offset_top = 602.447
+offset_right = 458.095
+offset_bottom = 612.447
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("63")
+texture_pressed = ExtResource("57")
+stretch_mode = 4
+
+[node name="Horn" type="TextureButton" parent="Anchor/ExtraButtons"]
+custom_minimum_size = Vector2(12, 10)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 434.0
+offset_top = 648.0
+offset_right = 446.0
+offset_bottom = 658.0
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("64")
+texture_pressed = ExtResource("59")
+stretch_mode = 4
+
+[node name="Play" type="TextureButton" parent="Anchor/ExtraButtons"]
+custom_minimum_size = Vector2(12, 10)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 800.095
+offset_top = 648.447
+offset_right = 812.095
+offset_bottom = 658.447
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("62")
+texture_pressed = ExtResource("60")
+stretch_mode = 4
+
+[node name="Stop" type="TextureButton" parent="Anchor/ExtraButtons"]
+custom_minimum_size = Vector2(12, 10)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 791.095
+offset_top = 602.447
+offset_right = 803.095
+offset_bottom = 612.447
+scale = Vector2(4, 4)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+focus_mode = 1
+texture_normal = ExtResource("58")
+texture_pressed = ExtResource("61")
+stretch_mode = 4
+
+[node name="Soundboard" type="Node2D" parent="Anchor"]
+
+[node name="Clap" type="AudioStreamPlayer" parent="Anchor/Soundboard"]
+stream = ExtResource("26")
+bus = &"SFX"
+
+[node name="Horn" type="AudioStreamPlayer" parent="Anchor/Soundboard"]
+stream = ExtResource("65")
+bus = &"SFX"
+
+[node name="SFX" type="Node2D" parent="Anchor"]
+
+[node name="ButtonPress" type="AudioStreamPlayer" parent="Anchor/SFX"]
+stream = ExtResource("66")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="LED" type="Label" parent="Anchor"]
+offset_left = 599.68
+offset_top = 539.554
+offset_right = 677.68
+offset_bottom = 578.554
+theme_override_colors/font_color = Color(0.835294, 0.219608, 0.105882, 1)
+theme_override_fonts/font = SubResource("4")
+theme_override_font_sizes/font_size = 35
+text = "0000"
+script = ExtResource("3")
+
+[node name="IdleTimer" type="Timer" parent="Anchor/LED"]
+wait_time = 3.0
+one_shot = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"Music"
+
+[node name="InputTimeout" type="Timer" parent="."]
+wait_time = 10.0
+autostart = true
+
+[node name="SelectionTimeout" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[node name="InitialPlaybackDelayTimer" type="Timer" parent="."]
+
+[node name="KStateMachine" type="Node" parent="."]
+script = ExtResource("50")
+target_node = NodePath("..")
+target_initial_state = NodePath("Idle")
+
+[node name="Idle" type="Node" parent="KStateMachine"]
+script = ExtResource("51")
+
+[node name="Sing" type="Node" parent="KStateMachine"]
+script = ExtResource("52")
+kht_scene = ExtResource("56")
+
+[node name="Scoring" type="Node" parent="KStateMachine"]
+script = ExtResource("53")
+celebratory_sfx = ExtResource("55")
+
+[node name="Pointer" parent="." instance=ExtResource("55_008l2")]

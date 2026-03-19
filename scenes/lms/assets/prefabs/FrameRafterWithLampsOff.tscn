@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://c42wco1xekdt0"]
+
+[ext_resource type="Material" uid="uid://dttubmiar207j" path="res://scenes/lms/assets/materials/FrameRafter.tres" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://cbajcgu6oswdj" path="res://scenes/lms/assets/frame_rafter.obj" id="2"]
+[ext_resource type="Material" uid="uid://b8o6neeom2pg0" path="res://scenes/lms/assets/materials/LampOff.tres" id="4"]
+
+[sub_resource type="CompressedTexture2D" id="1"]
+
+[node name="FrameRafter" type="MeshInstance"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -4.02, 2.1, 11.17)
+material_override = ExtResource("1")
+use_in_baked_light = true
+mesh = ExtResource("2")
+surface_material_override/0 = null
+
+[node name="Lamp1" type="Sprite3D" parent="."]
+transform = Transform3D(-1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -1.64, 1.8, 0.0400019)
+material_override = ExtResource("4")
+use_in_baked_light = true
+texture = SubResource("1")
+
+[node name="Lamp2" type="Sprite3D" parent="."]
+transform = Transform3D(-1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -5, 2.1, 0.0400019)
+material_override = ExtResource("4")
+use_in_baked_light = true
+texture = SubResource("1")
+
+[node name="Lamp3" type="Sprite3D" parent="."]
+transform = Transform3D(-1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -9.09, 2.1, 0.0400019)
+material_override = ExtResource("4")
+use_in_baked_light = true
+texture = SubResource("1")

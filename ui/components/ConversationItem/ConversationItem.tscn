@@ -1,0 +1,112 @@
+[gd_scene load_steps=12 format=3 uid="uid://b5m8ajo1p5nxo"]
+
+[ext_resource type="Script" path="res://ui/components/CircularPicture/CircularPicture.gd" id="1"]
+[ext_resource type="Script" path="res://ui/components/ConversationItem/ConversationItem.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://pbb13vhi2ohf" path="res://ui/components/Game/FocusableButton/FocusableButton.tscn" id="3_kdf6y"]
+[ext_resource type="FontFile" uid="uid://dhcnjnvquq3am" path="res://fonts/PTSans-Regular-Small.tres" id="6"]
+[ext_resource type="FontFile" uid="uid://sghb20e60wif" path="res://fonts/PTSans-Bold-Small.tres" id="7"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6hgpl"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nywwh"]
+bg_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rlp2t"]
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yide7"]
+bg_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+
+[node name="ConversationItem" type="PanelContainer"]
+custom_minimum_size = Vector2(0, 66)
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 66.0
+grow_horizontal = 2
+size_flags_vertical = 0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 0
+
+[node name="HBox" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="Picture" type="TextureRect" parent="MarginContainer/HBox"]
+light_mask = 2
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture = ExtResource("3")
+expand_mode = 1
+script = ExtResource("1")
+
+[node name="Info" type="VBoxContainer" parent="MarginContainer/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="MarginContainer/HBox/Info"]
+light_mask = 2
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("7")
+text = "Louise Ordunia"
+text_overrun_behavior = 3
+max_lines_visible = 1
+
+[node name="Subtitle" type="Label" parent="MarginContainer/HBox/Info"]
+light_mask = 2
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("6")
+text = "labyu <333"
+text_overrun_behavior = 3
+max_lines_visible = 1
+
+[node name="Button" parent="." instance=ExtResource("3_kdf6y")]
+layout_mode = 2
+size_flags_horizontal = 1
+theme_override_styles/normal = SubResource("StyleBoxFlat_6hgpl")
+theme_override_styles/hover = SubResource("StyleBoxFlat_nywwh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_rlp2t")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_6hgpl")
+theme_override_styles/focus = SubResource("StyleBoxFlat_yide7")
+text = ""

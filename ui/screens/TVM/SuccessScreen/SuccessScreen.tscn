@@ -1,0 +1,229 @@
+[gd_scene load_steps=18 format=3 uid="uid://dfkyem51ketdx"]
+
+[ext_resource type="Script" path="res://ui/screens/TVM/SuccessScreen/SuccessScreen.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://bio1jfwy8q4r" path="res://fonts/DejaVuSans-Bold.ttf" id="2_rrq2d"]
+[ext_resource type="FontFile" uid="uid://mnqw5d1komab" path="res://fonts/DejaVuSans.ttf" id="3_5osko"]
+[ext_resource type="Texture2D" uid="uid://bqp0yr6nshss3" path="res://ui/screens/TVM/SuccessScreen/change.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dbw7pq17u0nva" path="res://ui/screens/TVM/SuccessScreen/ticket.png" id="7"]
+[ext_resource type="PackedScene" uid="uid://todv5gh6eieu" path="res://ui/screens/TVM/WindowsButton.tscn" id="8"]
+
+[sub_resource type="FontVariation" id="FontVariation_1w8j4"]
+base_font = ExtResource("2_rrq2d")
+
+[sub_resource type="FontVariation" id="FontVariation_e5j60"]
+base_font = ExtResource("3_5osko")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_46opm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iqusb"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_color = Color(0.054902, 0.105882, 0.439216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2oqjq"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.054902, 0.105882, 0.439216, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_0ayys"]
+base_font = ExtResource("3_5osko")
+
+[sub_resource type="FontVariation" id="FontVariation_gh5ae"]
+base_font = ExtResource("3_5osko")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p0wg8"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_color = Color(0.054902, 0.105882, 0.439216, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1u0r7"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.054902, 0.105882, 0.439216, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_p0xbg"]
+base_font = ExtResource("3_5osko")
+
+[sub_resource type="FontVariation" id="FontVariation_focjj"]
+base_font = ExtResource("3_5osko")
+
+[node name="SuccessScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+offset_left = 64.0
+offset_right = -64.0
+offset_bottom = 624.0
+theme_override_constants/separation = 0
+
+[node name="Heading" type="Label" parent="Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_1w8j4")
+theme_override_font_sizes/font_size = 36
+text = "TVM_LABEL_SUCCESS_HEADING"
+horizontal_alignment = 1
+
+[node name="Subheading" type="Label" parent="Main"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_e5j60")
+theme_override_font_sizes/font_size = 32
+text = "TVM_LABEL_SUCCESS_SUBHEADING"
+horizontal_alignment = 1
+
+[node name="Spacer" type="PanelContainer" parent="Main"]
+custom_minimum_size = Vector2(0, 4)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_46opm")
+
+[node name="Info" type="HBoxContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="ChangeGiven" type="VBoxContainer" parent="Main/Info"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+theme_override_constants/separation = 0
+
+[node name="ImageContainer" type="PanelContainer" parent="Main/Info/ChangeGiven"]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_iqusb")
+
+[node name="Image" type="TextureRect" parent="Main/Info/ChangeGiven/ImageContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AmountContainer" type="PanelContainer" parent="Main/Info/ChangeGiven"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_2oqjq")
+
+[node name="Margin" type="MarginContainer" parent="Main/Info/ChangeGiven/AmountContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="Main/Info/ChangeGiven/AmountContainer/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Title" type="Label" parent="Main/Info/ChangeGiven/AmountContainer/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_0ayys")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_CHANGE"
+horizontal_alignment = 1
+
+[node name="Change" type="Label" parent="Main/Info/ChangeGiven/AmountContainer/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_gh5ae")
+theme_override_font_sizes/font_size = 80
+text = "P0.00"
+horizontal_alignment = 1
+
+[node name="TicketsIssued" type="VBoxContainer" parent="Main/Info"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+theme_override_constants/separation = 0
+
+[node name="ImageContainer" type="PanelContainer" parent="Main/Info/TicketsIssued"]
+custom_minimum_size = Vector2(0, 256)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p0wg8")
+
+[node name="Image" type="TextureRect" parent="Main/Info/TicketsIssued/ImageContainer"]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("7")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="AmountContainer" type="PanelContainer" parent="Main/Info/TicketsIssued"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_1u0r7")
+
+[node name="Margin" type="MarginContainer" parent="Main/Info/TicketsIssued/AmountContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="Main/Info/TicketsIssued/AmountContainer/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Title" type="Label" parent="Main/Info/TicketsIssued/AmountContainer/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_p0xbg")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_TICKETS_ISSUED"
+horizontal_alignment = 1
+
+[node name="Tickets" type="Label" parent="Main/Info/TicketsIssued/AmountContainer/Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_focjj")
+theme_override_font_sizes/font_size = 80
+text = "1"
+horizontal_alignment = 1
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -92.0
+offset_right = -64.0
+offset_bottom = -32.0
+
+[node name="ReceiptBtn" parent="Buttons" instance=ExtResource("8")]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+disabled = true
+text = "TVM_BUTTON_SUCCESS_RECEIPT"
+metadata/_edit_lock_ = true
+
+[node name="Spacer" type="PanelContainer" parent="Buttons"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+
+[node name="OkBtn" parent="Buttons" instance=ExtResource("8")]
+custom_minimum_size = Vector2(150, 60)
+layout_mode = 2
+text = "TVM_BUTTON_SUCCESS_OK"

@@ -1,0 +1,977 @@
+[gd_scene load_steps=64 format=3 uid="uid://cr7gyt32oiye4"]
+
+[ext_resource type="PackedScene" path="res://scenes/krt2/train/assets/prefabs/Seat2.tscn" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://c2bv27c0yj7c4" path="res://scenes/krt2/train/assets/cart.obj" id="2"]
+[ext_resource type="Material" uid="uid://cyftpy8qhf5lc" path="res://scenes/krt2/train/assets/materials/CartFloor.tres" id="3"]
+[ext_resource type="Material" uid="uid://3ao67amsejcy" path="res://scenes/krt2/train/assets/materials/CartMain.tres" id="4"]
+[ext_resource type="Material" uid="uid://nyl7qudnmogx" path="res://scenes/krt2/train/assets/materials/CartCeiling.tres" id="5"]
+[ext_resource type="Material" uid="uid://dwaoskdt4k2ks" path="res://scenes/krt2/train/assets/materials/CartBridge.tres" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/krt2/train/assets/prefabs/CartCeilingLight.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/krt2/train/assets/prefabs/Seat3.tscn" id="8"]
+[ext_resource type="Texture2D" uid="uid://onc8o4mjnodh" path="res://scenes/krt2/train/assets/railing_side.png" id="8_dgxio"]
+[ext_resource type="PackedScene" uid="uid://cmapwiovy7j0e" path="res://scenes/krt2/train/assets/prefabs/TV.tscn" id="9"]
+[ext_resource type="PackedScene" uid="uid://c3b818celaug5" path="res://scenes/krt2/train/assets/prefabs/RailingSide.tscn" id="10"]
+[ext_resource type="Texture2D" uid="uid://bcho5q01ymj6j" path="res://scenes/krt2/train/assets/handle_1.png" id="11"]
+[ext_resource type="PackedScene" path="res://scenes/krt2/train/assets/prefabs/SmudgesD1.tscn" id="12"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="17"]
+[ext_resource type="PackedScene" path="res://scenes/krt2/train/assets/prefabs/SmudgesW2.tscn" id="18"]
+[ext_resource type="PackedScene" path="res://scenes/krt2/train/assets/prefabs/SmudgesW1.tscn" id="19"]
+[ext_resource type="Script" path="res://components/LinearInstancer.gd" id="20"]
+[ext_resource type="PackedScene" path="res://scenes/krt2/train/assets/prefabs/SmudgesD2.tscn" id="21"]
+[ext_resource type="PackedScene" path="res://scenes/krt2/train/assets/prefabs/Seat1.tscn" id="22"]
+[ext_resource type="Texture2D" uid="uid://cwgxbbdojaiuc" path="res://scenes/krt2/train/assets/railing_poles.png" id="24"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("17")
+shader_parameter/albedo = Color(0.886275, 0.886275, 0.929412, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("8_dgxio")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wb322"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.03001, 0.44, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 131, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 131, 63, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7tg4v"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.03001, 0.44, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 131, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 131, 63, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v4t3g"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.03001, 0.44, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 131, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 131, 63, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m0ggw"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.03001, 0.44, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 131, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 131, 63, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oqxut"]
+render_priority = 0
+shader = ExtResource("17")
+shader_parameter/albedo = Color(0.886275, 0.886275, 0.929412, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("24")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ydehi"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 11.13, 1.68, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("ShaderMaterial_oqxut"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(123, 20, 50, 65, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 50, 65, 61, 10, 215, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 61, 10, 215, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("17")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("11")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eeajr"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bn8i0"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kijo7"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6j5hv"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1tjwu"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_q58ya"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_6l0fh"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cp330"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_1a5ya"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vj287"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4xig5"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wcmf1"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ltmco"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rbgny"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tm8km"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_f4j01"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_oofil"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nb3ys"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lpx4b"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_oxfp3"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j6cka"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_orkv7"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vni1q"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_v5xc6"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ar4lh"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ksust"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tiv7v"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.12001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("3"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(143, 194, 245, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 245, 61, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_44dqi"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.03001, 0.44, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 131, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 131, 63, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_crpbj"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.03001, 0.44, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 131, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 131, 63, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_myg51"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.03001, 0.44, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 131, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 131, 63, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hxkeb"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.03001, 0.44, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 131, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 131, 63, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hvg38"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.03001, 0.44, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 131, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 131, 63, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="StandardMaterial3D" id="5"]
+transparency = 1
+albedo_color = Color(0.576471, 0.85098, 1, 0.384314)
+
+[sub_resource type="QuadMesh" id="6"]
+size = Vector2(11, 1)
+
+[sub_resource type="BoxShape3D" id="7"]
+size = Vector3(11.59, 0.02, 1.82)
+
+[node name="Cart" type="MeshInstance3D"]
+mesh = ExtResource("2")
+surface_material_override/0 = ExtResource("4")
+surface_material_override/1 = ExtResource("3")
+surface_material_override/2 = ExtResource("5")
+surface_material_override/3 = ExtResource("6")
+
+[node name="Railing" type="Node3D" parent="."]
+
+[node name="SideBack" type="Node3D" parent="Railing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.45)
+
+[node name="RailingSide1" parent="Railing/SideBack" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 0.43, 1.26, 8.9407e-08)
+
+[node name="RailingSide2" parent="Railing/SideBack" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 2.75, 1.26, 1.19209e-07)
+mesh = SubResource("ArrayMesh_wb322")
+
+[node name="RailingSide3" parent="Railing/SideBack" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 5.05, 1.26, 1.19209e-07)
+mesh = SubResource("ArrayMesh_7tg4v")
+
+[node name="RailingSide4" parent="Railing/SideBack" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 7.36, 1.26, 1.19209e-07)
+mesh = SubResource("ArrayMesh_v4t3g")
+
+[node name="RailingSide5" parent="Railing/SideBack" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 9.66, 1.26, 1.19209e-07)
+mesh = SubResource("ArrayMesh_m0ggw")
+
+[node name="Poles" type="MeshInstance3D" parent="Railing"]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 0, 0, 0.86)
+mesh = SubResource("ArrayMesh_ydehi")
+
+[node name="Handlebar1_1" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.600001, 1.03, 0.00100058)
+mesh = SubResource("ArrayMesh_eeajr")
+
+[node name="Handlebar1_2" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.900002, 1.03, 0.00100082)
+mesh = SubResource("ArrayMesh_bn8i0")
+
+[node name="Handlebar1_3" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 1.03, 0.00100094)
+mesh = SubResource("ArrayMesh_kijo7")
+
+[node name="Handlebar1_4" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.74001, 1.03, 0.00100094)
+mesh = SubResource("ArrayMesh_6j5hv")
+
+[node name="Handlebar1_5" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.04001, 1.03, 0.00100118)
+mesh = SubResource("ArrayMesh_1tjwu")
+
+[node name="Handlebar1_6" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.34001, 1.03, 0.0010013)
+mesh = SubResource("ArrayMesh_q58ya")
+
+[node name="Handlebar1_7" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.92001, 1.03, 0.00100094)
+mesh = SubResource("ArrayMesh_6l0fh")
+
+[node name="Handlebar1_8" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.22001, 1.03, 0.00100118)
+mesh = SubResource("ArrayMesh_cp330")
+
+[node name="Handlebar1_9" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.52001, 1.03, 0.0010013)
+mesh = SubResource("ArrayMesh_1a5ya")
+
+[node name="Handlebar1_10" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.06002, 1.03, 0.0010013)
+mesh = SubResource("ArrayMesh_vj287")
+
+[node name="Handlebar1_11" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.36002, 1.03, 0.00100154)
+mesh = SubResource("ArrayMesh_4xig5")
+
+[node name="Handlebar1_12" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.66002, 1.03, 0.00100166)
+mesh = SubResource("ArrayMesh_wcmf1")
+
+[node name="Handlebar1_13" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.23002, 1.03, 0.0010013)
+mesh = SubResource("ArrayMesh_ltmco")
+
+[node name="Handlebar1_14" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.53002, 1.03, 0.00100154)
+mesh = SubResource("ArrayMesh_rbgny")
+
+[node name="Handlebar1_15" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.83003, 1.03, 0.00100166)
+mesh = SubResource("ArrayMesh_tm8km")
+
+[node name="Handlebar1_16" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.37003, 1.03, 0.00100166)
+mesh = SubResource("ArrayMesh_f4j01")
+
+[node name="Handlebar1_17" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.67003, 1.03, 0.00100189)
+mesh = SubResource("ArrayMesh_oofil")
+
+[node name="Handlebar1_18" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.97003, 1.03, 0.00100201)
+mesh = SubResource("ArrayMesh_nb3ys")
+
+[node name="Handlebar1_19" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.55003, 1.03, 0.00100154)
+mesh = SubResource("ArrayMesh_lpx4b")
+
+[node name="Handlebar1_20" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.85003, 1.03, 0.00100178)
+mesh = SubResource("ArrayMesh_oxfp3")
+
+[node name="Handlebar1_21" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.15004, 1.03, 0.00100189)
+mesh = SubResource("ArrayMesh_j6cka")
+
+[node name="Handlebar1_22" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.69004, 1.03, 0.00100189)
+mesh = SubResource("ArrayMesh_orkv7")
+
+[node name="Handlebar1_23" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.99004, 1.03, 0.00100213)
+mesh = SubResource("ArrayMesh_vni1q")
+
+[node name="Handlebar1_24" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.29004, 1.03, 0.00100225)
+mesh = SubResource("ArrayMesh_v5xc6")
+
+[node name="Handlebar1_25" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.86005, 1.03, 0.00100178)
+mesh = SubResource("ArrayMesh_ar4lh")
+
+[node name="Handlebar1_26" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.16, 1.03, 0.00100201)
+mesh = SubResource("ArrayMesh_ksust")
+
+[node name="Handlebar1_27" type="MeshInstance3D" parent="Railing/Poles"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.46, 1.03, 0.00100213)
+mesh = SubResource("ArrayMesh_tiv7v")
+
+[node name="SideFront" type="Node3D" parent="Railing"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.63)
+
+[node name="RailingSide1" parent="Railing/SideFront" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 0.43, 1.26, 1.19209e-07)
+mesh = SubResource("ArrayMesh_44dqi")
+
+[node name="RailingSide2" parent="Railing/SideFront" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 2.75, 1.26, 1.19209e-07)
+mesh = SubResource("ArrayMesh_crpbj")
+
+[node name="RailingSide3" parent="Railing/SideFront" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 5.05, 1.26, 1.19209e-07)
+mesh = SubResource("ArrayMesh_myg51")
+
+[node name="RailingSide4" parent="Railing/SideFront" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 7.36, 1.26, 1.19209e-07)
+mesh = SubResource("ArrayMesh_hxkeb")
+
+[node name="RailingSide5" parent="Railing/SideFront" instance=ExtResource("10")]
+transform = Transform3D(0.999996, 0, 0, 0, 0.999996, 0, 0, 0, 0.999996, 9.66, 1.26, 1.19209e-07)
+mesh = SubResource("ArrayMesh_hvg38")
+
+[node name="Seats" type="Node3D" parent="."]
+
+[node name="Seat1_1" parent="Seats" instance=ExtResource("22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.353714, 0.254285, 0)
+
+[node name="Seat2_1" parent="Seats" instance=ExtResource("1")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.67371, 0.254285, 0)
+
+[node name="Seat1_2" parent="Seats" instance=ExtResource("22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.98371, 0.254285, 0)
+
+[node name="Seat3_1" parent="Seats" instance=ExtResource("8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.29371, 0.254285, 0)
+
+[node name="Seat1_3" parent="Seats" instance=ExtResource("22")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.59371, 0.254285, 0)
+
+[node name="CeilingLights" type="Node3D" parent="."]
+
+[node name="Back" type="Node3D" parent="CeilingLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19, 1.68, 0.47)
+script = ExtResource("20")
+objects = Array[PackedScene]([ExtResource("7")])
+count = 14
+offset = Vector3(0.8, 0, 0)
+size_mult = Vector3(0, 0, 0)
+
+[node name="CeilingLight" parent="CeilingLights/Back" instance=ExtResource("7")]
+
+[node name="CeilingLight2" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+
+[node name="CeilingLight3" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, 0)
+
+[node name="CeilingLight4" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
+
+[node name="CeilingLight5" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 0)
+
+[node name="CeilingLight6" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CeilingLight7" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 0)
+
+[node name="CeilingLight8" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 0)
+
+[node name="CeilingLight9" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 0)
+
+[node name="CeilingLight10" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 0)
+
+[node name="CeilingLight11" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="CeilingLight12" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 0)
+
+[node name="CeilingLight13" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 0, 0)
+
+[node name="CeilingLight14" parent="CeilingLights/Back" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4, 0, 0)
+
+[node name="Front" type="Node3D" parent="CeilingLights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.19, 1.68, 1.35)
+script = ExtResource("20")
+objects = Array[PackedScene]([ExtResource("7")])
+count = 14
+offset = Vector3(0.8, 0, 0)
+size_mult = Vector3(0, 0, 0)
+
+[node name="CeilingLight" parent="CeilingLights/Front" instance=ExtResource("7")]
+
+[node name="CeilingLight2" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.8, 0, 0)
+
+[node name="CeilingLight3" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0, 0)
+
+[node name="CeilingLight4" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.4, 0, 0)
+
+[node name="CeilingLight5" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.2, 0, 0)
+
+[node name="CeilingLight6" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4, 0, 0)
+
+[node name="CeilingLight7" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.8, 0, 0)
+
+[node name="CeilingLight8" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.6, 0, 0)
+
+[node name="CeilingLight9" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.4, 0, 0)
+
+[node name="CeilingLight10" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.2, 0, 0)
+
+[node name="CeilingLight11" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0, 0)
+
+[node name="CeilingLight12" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.8, 0, 0)
+
+[node name="CeilingLight13" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.6, 0, 0)
+
+[node name="CeilingLight14" parent="CeilingLights/Front" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.4, 0, 0)
+
+[node name="Deco" type="Node3D" parent="."]
+
+[node name="TV1" parent="Deco" instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 0.83, 1.52, 0.13)
+
+[node name="TV2" parent="Deco" instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 5.39, 1.52, 0.13)
+
+[node name="TV3" parent="Deco" instance=ExtResource("9")]
+transform = Transform3D(1, 0, 0, 0, 0.906308, -0.422618, 0, 0.422618, 0.906308, 10.07, 1.52, 0.13)
+
+[node name="Glass" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.56, 0.88, -0.002)
+material_override = SubResource("5")
+mesh = SubResource("6")
+
+[node name="SmudgesW1_1" parent="Glass" instance=ExtResource("19")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.05, -0.16, -0.002)
+
+[node name="SmudgesD1_1" parent="Glass" instance=ExtResource("12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.89, -0.26, -0.002)
+
+[node name="SmudgesD2_1" parent="Glass" instance=ExtResource("21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.42, -0.26, -0.002)
+
+[node name="SmudgesW2_1" parent="Glass" instance=ExtResource("18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.73, -0.16, -0.002)
+
+[node name="SmudgesD1_2" parent="Glass" instance=ExtResource("12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.56, -0.26, -0.002)
+
+[node name="SmudgesD2_2" parent="Glass" instance=ExtResource("21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.1, -0.26, -0.002)
+
+[node name="SmudgesW1_2" parent="Glass" instance=ExtResource("19")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43, -0.16, -0.002)
+
+[node name="SmudgesD1_3" parent="Glass" instance=ExtResource("12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.739999, -0.26, -0.002)
+
+[node name="SmudgesD2_3" parent="Glass" instance=ExtResource("21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, -0.26, -0.002)
+
+[node name="SmudgesW2_2" parent="Glass" instance=ExtResource("18")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.88, -0.16, -0.002)
+
+[node name="SmudgesD1_4" parent="Glass" instance=ExtResource("12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.05, -0.26, -0.002)
+
+[node name="SmudgesD2_4" parent="Glass" instance=ExtResource("21")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.51, -0.26, -0.002)
+
+[node name="SmudgesW1_3" parent="Glass" instance=ExtResource("19")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.18, -0.16, -0.002)
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.77, 0.84, 0.9)
+intensity = 0.6
+size = Vector3(11.66, 1.7, 1.88)
+origin_offset = Vector3(0, -0.23, -2.23517e-10)
+box_projection = true
+enable_shadows = true
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.795, -0.01, 0.91)
+shape = SubResource("7")

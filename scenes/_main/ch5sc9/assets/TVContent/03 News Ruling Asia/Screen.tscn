@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://dlncgmqrsdgbu"]
+
+[ext_resource type="PackedScene" uid="uid://bpep0b6opveb8" path="res://scenes/_main/ch5sc9/assets/TVContent/shared/GraphicsBNN.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://co77xyrd34ww1" path="res://scenes/_main/ch5sc9/assets/TVContent/03 News Ruling Asia/animatic/01.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b55df6lmwjiym" path="res://scenes/_main/ch5sc9/assets/TVContent/03 News Ruling Asia/graphics/text2.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dr1ome630vqvg" path="res://scenes/_main/ch5sc9/assets/TVContent/03 News Ruling Asia/animatic/02.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b8gx4v0e751m0" path="res://scenes/_main/ch5sc9/assets/TVContent/03 News Ruling Asia/animatic/03.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dtmuack4ds3vf" path="res://scenes/_main/ch5sc9/assets/TVContent/shared/BNN/logo/01.png" id="5_jja6c"]
+[ext_resource type="Texture2D" uid="uid://vkopy55vvie4" path="res://scenes/_main/ch5sc9/assets/TVContent/03 News Ruling Asia/graphics/text1.png" id="6"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.25
+}]
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_jja6c")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Screen" type="Node2D"]
+texture_filter = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("1")
+autoplay = "default"
+frame = 2
+centered = false
+
+[node name="GraphicsBNN" parent="." instance=ExtResource("1")]
+position = Vector2(0, 62)
+
+[node name="Logo" parent="GraphicsBNN" index="1"]
+sprite_frames = SubResource("3")
+
+[node name="Headline" parent="GraphicsBNN" index="3"]
+texts = Array[Texture]([ExtResource("6"), ExtResource("3")])
+
+[editable path="GraphicsBNN"]

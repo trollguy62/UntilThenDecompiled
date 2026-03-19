@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://bwal24bmx7gdf"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1_iqyfy"]
+[ext_resource type="Texture2D" uid="uid://ci8gt37eshkpx" path="res://scenes/_main/ch6sc1c/assets/envi/train_divider_ad_1.png" id="2_7221o"]
+[ext_resource type="Texture2D" uid="uid://uojt60wfau7m" path="res://scenes/_main/ch1sc1c/assets/train_divider_ad_1.png" id="2_ip2j8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oi3b8"]
+render_priority = 0
+shader = ExtResource("1_iqyfy")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2_7221o")
+
+[node name="DividerAd1" type="Sprite3D"]
+transform = Transform3D(1.327, 0, 0, 0, 1.327, 0, 0, 0, 1, -12.1861, 0.242, -2.144)
+material_override = SubResource("ShaderMaterial_oi3b8")
+centered = false
+texture = ExtResource("2_ip2j8")
+
+[node name="SpotLight" type="SpotLight3D" parent="."]
+transform = Transform3D(0.753579, 0, 0, 0, 0.753579, 0, 0, 0, 1, 1.01722, 0.720918, 0.398203)
+light_color = Color(0.611765, 0.952941, 1, 1)
+light_energy = 1.5
+spot_range = 2.5
+spot_angle = 89.99

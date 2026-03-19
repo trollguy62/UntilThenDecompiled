@@ -1,0 +1,310 @@
+[gd_scene load_steps=29 format=3 uid="uid://dqrkdx8bbksat"]
+
+[ext_resource type="Texture2D" uid="uid://1k3r1rbj2kkj" path="res://scenes/_main/ch4sc1b/MinigameLabBoard/assets/background.png" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch4sc1b/MinigameLabBoard/MinigameLabBoard.gd" id="2"]
+[ext_resource type="BankAsset" uid="uid://c3vwstsyvms28" path="res://addons/fmod/editor/resources/banks/{bd0116b4-9999-4609-a162-09eb86b6ba01}.tres" id="2_isr0b"]
+[ext_resource type="Texture2D" uid="uid://bwo1yqw7kkt6h" path="res://scenes/_main/ch4sc1b/MinigameLabBoard/assets/paper_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://ddse1fde4fu75" path="res://scenes/_main/ch4sc1b/MinigameLabBoard/assets/paper_3.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://be1mf8724siqh" path="res://scenes/_main/ch4sc1b/MinigameLabBoard/assets/paper_5.png" id="6"]
+[ext_resource type="EventAsset" uid="uid://dsmr3f1wg2bo0" path="res://addons/fmod/editor/resources/events/{b9dbdee9-f9ca-4cb9-a798-96c3edff0c58}.tres" id="6_13w8u"]
+[ext_resource type="Texture2D" uid="uid://1woampwa350k" path="res://scenes/_main/ch4sc1b/MinigameLabBoard/assets/paper_4.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dv07jxi241tsp" path="res://scenes/_main/ch4sc1b/MinigameLabBoard/assets/paper_1.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cbrdcidx4cg85" path="res://scenes/_main/ch4sc1b/MinigameLabBoard/assets/paper_6.png" id="9"]
+[ext_resource type="PackedScene" uid="uid://bap5fu7ijddy1" path="res://scenes/_main/ch1sc5a/minigame_bulletin_board/prefabs/Pin.tscn" id="10"]
+[ext_resource type="Texture2D" uid="uid://u0i7tnk3sv0b" path="res://scenes/_main/ch1sc5a/minigame_bulletin_board/assets/pin_yellow.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://betulfcinwb7u" path="res://scenes/_main/ch1sc5a/minigame_bulletin_board/assets/pin_red.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://kc7ohb2234sn" path="res://scenes/_main/ch1sc5a/minigame_bulletin_board/assets/pin_green.png" id="13"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="14"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc5a/minigame_bulletin_board/scripts/PaperButton.gd" id="15"]
+[ext_resource type="Script" path="res://scenes/_main/ch4sc1b/MinigameLabBoard/scripts/PapersController.gd" id="16"]
+[ext_resource type="PackedScene" uid="uid://cng5pa21vpc74" path="res://ui/components/Pointer/Pointer.tscn" id="18_53y35"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(440, 308.508)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(209, 310)
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(250, 200)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_elfq1"]
+radius = 30.5843
+height = 117.193
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_pw7fv"]
+radius = 32.8931
+height = 131.053
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(232.341, 343.485)
+
+[sub_resource type="RectangleShape2D" id="5"]
+size = Vector2(270, 390.02)
+
+[sub_resource type="RectangleShape2D" id="6"]
+size = Vector2(640, 31.0429)
+
+[sub_resource type="RectangleShape2D" id="7"]
+size = Vector2(36.5054, 1046.82)
+
+[sub_resource type="RectangleShape2D" id="8"]
+size = Vector2(32, 1035.81)
+
+[node name="MinigameLabBoard" type="Node2D"]
+z_index = -50
+texture_filter = 1
+script = ExtResource("2")
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="."]
+num_banks = 1
+bank_0 = ExtResource("2_isr0b")
+
+[node name="Focus" type="Node" parent="."]
+script = ExtResource("14")
+focus_name = "MinigameLabBoard"
+
+[node name="Board" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+centered = false
+
+[node name="Papers" type="Node2D" parent="Board"]
+scale = Vector2(0.25, 0.25)
+script = ExtResource("16")
+
+[node name="PaperCollision" type="StudioEventEmitter2D" parent="Board/Papers"]
+event = ExtResource("6_13w8u")
+
+[node name="Paper4" type="RigidBody2D" parent="Board/Papers"]
+position = Vector2(689, 380)
+collision_mask = 2
+gravity_scale = 4.0
+contact_monitor = true
+can_sleep = false
+
+[node name="Sprite" type="Sprite2D" parent="Board/Papers/Paper4"]
+position = Vector2(-45, 230)
+scale = Vector2(4, 4)
+texture = ExtResource("7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Papers/Paper4"]
+position = Vector2(15, -73.2343)
+shape = SubResource("1")
+
+[node name="Paper1" type="RigidBody2D" parent="Board/Papers"]
+position = Vector2(515, 525.333)
+collision_mask = 2
+gravity_scale = 4.0
+contact_monitor = true
+can_sleep = false
+
+[node name="Sprite" type="Sprite2D" parent="Board/Papers/Paper1"]
+position = Vector2(125, 79.6666)
+scale = Vector2(4, 4)
+texture = ExtResource("8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Papers/Paper1"]
+position = Vector2(1.5, -10.3334)
+shape = SubResource("2")
+
+[node name="Button" type="Button" parent="Board/Papers/Paper1"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -100.0
+offset_top = -160.333
+offset_right = 100.0
+offset_bottom = 134.667
+script = ExtResource("15")
+story_signal = "lab_board_trophy"
+
+[node name="Paper2" type="RigidBody2D" parent="Board/Papers"]
+position = Vector2(550, 1020)
+collision_mask = 2
+gravity_scale = 4.0
+contact_monitor = true
+can_sleep = false
+
+[node name="Sprite" type="Sprite2D" parent="Board/Papers/Paper2"]
+position = Vector2(90, -410)
+scale = Vector2(4, 4)
+texture = ExtResource("4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Papers/Paper2"]
+shape = SubResource("3")
+
+[node name="Paper5" type="RigidBody2D" parent="Board/Papers"]
+position = Vector2(425, 210)
+collision_mask = 2
+gravity_scale = 4.0
+contact_monitor = true
+can_sleep = false
+
+[node name="Sprite" type="Sprite2D" parent="Board/Papers/Paper5"]
+position = Vector2(289.719, 369.471)
+scale = Vector2(4, 4)
+texture = ExtResource("6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Papers/Paper5"]
+position = Vector2(-17, 13)
+rotation = -0.942463
+shape = SubResource("CapsuleShape2D_elfq1")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Board/Papers/Paper5"]
+position = Vector2(12, -9)
+rotation = 0.261477
+shape = SubResource("CapsuleShape2D_pw7fv")
+
+[node name="Paper6" type="RigidBody2D" parent="Board/Papers"]
+position = Vector2(780, 775.782)
+collision_mask = 2
+gravity_scale = 4.0
+contact_monitor = true
+can_sleep = false
+
+[node name="Sprite" type="Sprite2D" parent="Board/Papers/Paper6"]
+position = Vector2(-140, -170.782)
+scale = Vector2(4, 4)
+texture = ExtResource("9")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Papers/Paper6"]
+position = Vector2(-0.0524902, -9.03125)
+rotation = -0.0700247
+shape = SubResource("4")
+
+[node name="Button" type="Button" parent="Board/Papers/Paper6"]
+modulate = Color(1, 0, 0, 0)
+offset_left = -115.0
+offset_top = -175.782
+offset_right = 115.0
+offset_bottom = 154.218
+script = ExtResource("15")
+story_signal = "lab_board_sign_ups"
+
+[node name="Paper3" type="RigidBody2D" parent="Board/Papers"]
+position = Vector2(745, 793.16)
+collision_mask = 2
+gravity_scale = 4.0
+contact_monitor = true
+can_sleep = false
+
+[node name="Sprite" type="Sprite2D" parent="Board/Papers/Paper3"]
+position = Vector2(-105, -188.16)
+scale = Vector2(4, 4)
+texture = ExtResource("5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Papers/Paper3"]
+position = Vector2(0.020813, 8.83978)
+rotation = -0.0104079
+shape = SubResource("5")
+
+[node name="Pins" type="Node2D" parent="Board"]
+scale = Vector2(0.25, 0.25)
+
+[node name="Pin9" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(895.883, 698.811)
+texture = ExtResource("13")
+
+[node name="Pin7" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(600, 480)
+rotation = 3.14159
+scale = Vector2(4, -4)
+
+[node name="Pin8" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(660, 695)
+rotation = 3.14159
+scale = Vector2(4, -4)
+
+[node name="Pin" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(855, 164)
+texture = ExtResource("11")
+
+[node name="Pin10" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(454.6, 247.313)
+texture = ExtResource("11")
+
+[node name="Pin2" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(492.179, 220.42)
+scale = Vector2(-4, 4)
+texture = ExtResource("12")
+
+[node name="Pin4" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(440.099, 382.704)
+scale = Vector2(-4, 4)
+
+[node name="Pin6" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(625, 930)
+scale = Vector2(-4, 4)
+
+[node name="Pin5" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(455, 915)
+scale = Vector2(-4, 4)
+texture = ExtResource("11")
+
+[node name="Pin3" parent="Board/Pins" instance=ExtResource("10")]
+position = Vector2(376, 177)
+scale = Vector2(-4, 4)
+texture = ExtResource("13")
+
+[node name="BoardFrame" type="StaticBody2D" parent="Board"]
+position = Vector2(45, 30)
+scale = Vector2(0.25, 0.25)
+collision_layer = 2
+
+[node name="ColliderTop" type="CollisionShape2D" parent="Board/BoardFrame"]
+position = Vector2(460.741, -5.78293)
+shape = SubResource("6")
+
+[node name="ColliderBottom" type="CollisionShape2D" parent="Board/BoardFrame"]
+position = Vector2(461.557, 1058.52)
+shape = SubResource("6")
+
+[node name="ColliderLeft" type="CollisionShape2D" parent="Board/BoardFrame"]
+position = Vector2(153.422, 533.042)
+shape = SubResource("7")
+
+[node name="ColliderRight" type="CollisionShape2D" parent="Board/BoardFrame"]
+position = Vector2(765, 524)
+shape = SubResource("8")
+
+[node name="Camera" type="Camera2D" parent="."]
+anchor_mode = 0
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Buttons" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="BtnScrollUp" type="Button" parent="Control/Buttons"]
+self_modulate = Color(1, 0.690196, 0, 0.160784)
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 490.0
+offset_right = 1260.0
+offset_bottom = 570.0
+mouse_default_cursor_shape = 2
+
+[node name="BtnScrollDown" type="Button" parent="Control/Buttons"]
+self_modulate = Color(1, 0.690196, 0, 0.160784)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = 600.0
+offset_right = 1260.0
+offset_bottom = 680.0
+mouse_default_cursor_shape = 2
+
+[node name="InputBlocker" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 1280.0
+offset_bottom = 720.0
+
+[node name="Pointer" parent="." instance=ExtResource("18_53y35")]

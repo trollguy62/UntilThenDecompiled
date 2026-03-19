@@ -1,0 +1,161 @@
+[gd_scene load_steps=13 format=3 uid="uid://cd16b0w8y17i2"]
+
+[ext_resource type="Material" uid="uid://dwl1mfofke213" path="res://scenes/_main/ch1sc1c/assets/materials/TicketBoothInteriorPadding.tres" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://cdnijm2hhwo4t" path="res://scenes/_main/ch1sc1c/assets/ticket_booth.obj" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="3"]
+[ext_resource type="Material" uid="uid://dkg2ut4of7mmm" path="res://scenes/_main/ch1sc1c/assets/materials/TicketBoothGlass.tres" id="4"]
+[ext_resource type="Material" uid="uid://bcbscooh3a41m" path="res://scenes/_main/ch1sc1c/assets/materials/TicketBoothBase.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://dgf47w3xoa655" path="res://scenes/_main/ch1sc1c/assets/cctv.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://b7d6n0v6s28ls" path="res://scenes/_main/ch1sc1c/assets/ticket_booth_drawer.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bqp7cuekyppt5" path="res://scenes/_main/ch1sc1c/assets/ticket_booth_desk.png" id="8"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7")
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7")
+
+[sub_resource type="ShaderMaterial" id="4"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("8")
+
+[node name="TicketBooth" type="MeshInstance3D"]
+mesh = ExtResource("2")
+surface_material_override/0 = ExtResource("5")
+surface_material_override/1 = ExtResource("4")
+surface_material_override/2 = ExtResource("1")
+
+[node name="Deco" type="Node3D" parent="."]
+
+[node name="CCTV" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08411, 1.36937, 0.114436)
+material_override = SubResource("1")
+texture = ExtResource("6")
+
+[node name="DrawerL" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.10864, -0.00458549, 0.0608104)
+material_override = SubResource("2")
+centered = false
+texture = ExtResource("7")
+
+[node name="DrawerR" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.657856, -0.00458549, 0.0608104)
+material_override = SubResource("3")
+centered = false
+texture = ExtResource("7")
+
+[node name="Desk" type="Sprite3D" parent="Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.57029, 0, 0.201122)
+material_override = SubResource("4")
+centered = false
+texture = ExtResource("8")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="OmniLight1" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66815, 1.25922, 0.222888)
+light_color = Color(0.888984, 0.886719, 1, 1)
+light_energy = 0.6
+shadow_enabled = true
+shadow_bias = 0.01
+omni_range = 2.0
+omni_attenuation = 0.450625
+
+[node name="OmniLight2" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.557084, 1.25922, 0.222888)
+light_color = Color(0.888984, 0.886719, 1, 1)
+light_energy = 0.6
+shadow_enabled = true
+shadow_bias = 0.01
+omni_range = 2.0
+omni_attenuation = 0.450625

@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://mhc4tfcvsqv1"]
+
+[ext_resource type="Script" path="res://ui/components/FbCommentChoiceBox/FbCommentChoiceBox.gd" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 1, 1, 1)
+border_width_top = 1
+border_color = Color(0.92549, 0.92549, 0.92549, 1)
+shadow_color = Color(0, 0, 0, 0.0862745)
+shadow_size = 4
+
+[node name="FbCommentChoiceBox" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("2")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 8
+
+[node name="Main" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+theme_override_constants/separation = 0

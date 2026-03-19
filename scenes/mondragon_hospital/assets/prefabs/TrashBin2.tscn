@@ -1,0 +1,37 @@
+[gd_scene load_steps=5 format=3 uid="uid://c25rbthyyar5w"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1"]
+[ext_resource type="Texture2D" uid="uid://dr7l74en78076" path="res://scenes/mondragon_hospital/assets/trash_bin_2.png" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://d4kcwwgh57nol" path="res://scenes/mondragon_hospital/assets/trash_bin.obj" id="3"]
+
+[sub_resource type="ShaderMaterial" id="764"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+
+[node name="TrashBin2" type="MeshInstance"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.0589991, -2.79397e-08, -1.29)
+material_override = SubResource("764")
+use_in_baked_light = true
+mesh = ExtResource("3")
+surface_material_override/0 = null

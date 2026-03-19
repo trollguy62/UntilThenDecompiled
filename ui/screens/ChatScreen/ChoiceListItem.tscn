@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://bbbc1p1wbpv03"]
+
+[ext_resource type="PackedScene" uid="uid://c2eb30hey8rce" path="res://ui/components/FlatLabelButton/FlatLabelButton.tscn" id="1"]
+[ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="3"]
+[ext_resource type="Script" path="res://ui/screens/ChatScreen/ChoiceListItem.gd" id="4"]
+
+[sub_resource type="StyleBoxEmpty" id="4"]
+
+[sub_resource type="StyleBoxEmpty" id="5"]
+
+[node name="ChoiceListItem" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+script = ExtResource("4")
+
+[node name="KeyHintContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("4")
+
+[node name="KeyHint" type="PanelContainer" parent="KeyHintContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("5")
+
+[node name="ControllerTextureRect" type="TextureRect" parent="KeyHintContainer/KeyHint"]
+texture_filter = 2
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+mouse_filter = 2
+expand_mode = 1
+script = ExtResource("3")
+
+[node name="FlatLabelButton" parent="." instance=ExtResource("1")]
+layout_mode = 2
+size_flags_horizontal = 3

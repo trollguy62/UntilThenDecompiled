@@ -1,0 +1,737 @@
+[gd_scene load_steps=76 format=3 uid="uid://000ryf4amck3"]
+
+[ext_resource type="Script" path="res://components/Animals/FlockController.gd" id="1_xsqqi"]
+[ext_resource type="Script" path="res://components/Animals/Bird.gd" id="2_ok3mc"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="3_lm7ew"]
+[ext_resource type="Texture2D" uid="uid://bpx1cw125m0on" path="res://assets/common/animals/birds/birds_bird1_bird1_hop/05.tres" id="4_xrmcu"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="5_2ueu4"]
+[ext_resource type="Texture2D" uid="uid://3nccb6sn1dlg" path="res://assets/common/animals/birds/birds_bird1_bird1_fly/04.tres" id="6_7gwin"]
+[ext_resource type="Texture2D" uid="uid://dh5uoltf6iucw" path="res://assets/common/animals/birds/birds_bird1_bird1_fly/05.tres" id="7_0vjgk"]
+[ext_resource type="Texture2D" uid="uid://bpo5f7djbim8c" path="res://assets/common/animals/birds/birds_bird1_bird1_fly/06.tres" id="8_qhkbi"]
+[ext_resource type="Texture2D" uid="uid://bq8kthg5qn8o5" path="res://assets/common/animals/birds/birds_bird1_bird1_fly/07.tres" id="9_7mkad"]
+[ext_resource type="Texture2D" uid="uid://du4yuq02lfq74" path="res://assets/common/animals/birds/birds_bird1_bird1_fly/08.tres" id="10_lo2h1"]
+[ext_resource type="Texture2D" uid="uid://bgw0ydqxnnc0x" path="res://assets/common/animals/birds/birds_bird1_bird1_fly/09.tres" id="11_6b78r"]
+[ext_resource type="Texture2D" uid="uid://cfre1yeviyqhp" path="res://assets/common/animals/birds/birds_bird1_bird1_fly/10.tres" id="12_qjap1"]
+[ext_resource type="Texture2D" uid="uid://swy3kbpb56na" path="res://assets/common/animals/birds/birds_bird1_bird1_fly/11.tres" id="13_p6j0u"]
+[ext_resource type="Texture2D" uid="uid://bbfyrd6aypr87" path="res://assets/common/animals/birds/birds_bird1_bird1_hop/01.tres" id="14_cdy1c"]
+[ext_resource type="Texture2D" uid="uid://d2pwl2hj72oqf" path="res://assets/common/animals/birds/birds_bird1_bird1_hop/02.tres" id="15_5dahv"]
+[ext_resource type="Texture2D" uid="uid://btiwubufbvmdq" path="res://assets/common/animals/birds/birds_bird1_bird1_hop/03.tres" id="16_u1d7f"]
+[ext_resource type="Texture2D" uid="uid://dy5ljo0vl17lb" path="res://assets/common/animals/birds/birds_bird1_bird1_hop/04.tres" id="17_jyp3u"]
+[ext_resource type="Texture2D" uid="uid://clv8gm4b731vq" path="res://assets/common/animals/birds/birds_bird1_bird1_hop/06.tres" id="18_u38tp"]
+[ext_resource type="Texture2D" uid="uid://d37u2p5xu8sgf" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/01.tres" id="19_k0u2x"]
+[ext_resource type="Texture2D" uid="uid://bhfod3rl660b8" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/02.tres" id="20_gp71w"]
+[ext_resource type="Texture2D" uid="uid://50asdfgfhc4" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/03.tres" id="21_ufhb1"]
+[ext_resource type="Texture2D" uid="uid://dylguw2sa2rx4" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/04.tres" id="22_pbb1v"]
+[ext_resource type="Texture2D" uid="uid://bjqqcmhx1lh6m" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/05.tres" id="23_a7f86"]
+[ext_resource type="Texture2D" uid="uid://bnlvo148ru8qy" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/06.tres" id="24_ggvxb"]
+[ext_resource type="Texture2D" uid="uid://btjd72mqysq61" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/07.tres" id="25_kh2q0"]
+[ext_resource type="Texture2D" uid="uid://cpnnq3vq8dbje" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/08.tres" id="26_ecuxj"]
+[ext_resource type="Texture2D" uid="uid://c5atux7hiyvvy" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/09.tres" id="27_6vww0"]
+[ext_resource type="Texture2D" uid="uid://ceu22keoa2ra0" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/10.tres" id="28_w4yos"]
+[ext_resource type="Texture2D" uid="uid://cso3322xeoaie" path="res://assets/common/animals/birds/birds_bird1_bird1_idle/11.tres" id="29_dd4es"]
+[ext_resource type="Script" path="res://components/Animals/AnimalAnimationController.gd" id="30_aqhc8"]
+[ext_resource type="Texture2D" uid="uid://tiysvthcn7d7" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/05.tres" id="31_qeuu2"]
+[ext_resource type="Texture2D" uid="uid://d1c2pocjd5qqe" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/01.tres" id="32_vgd3l"]
+[ext_resource type="Texture2D" uid="uid://btg85hiiitbsl" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/02.tres" id="33_xpwhh"]
+[ext_resource type="Texture2D" uid="uid://ckkabv0566k1s" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/03.tres" id="34_hkbjs"]
+[ext_resource type="Texture2D" uid="uid://ddjaaisaglejy" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/04.tres" id="35_cf7rc"]
+[ext_resource type="Texture2D" uid="uid://b3diif34guqie" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/05.tres" id="36_byf3w"]
+[ext_resource type="Texture2D" uid="uid://diskfrmr2at8d" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/06.tres" id="37_4lwg2"]
+[ext_resource type="Texture2D" uid="uid://csgl5xdojouhw" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/07.tres" id="38_u2i26"]
+[ext_resource type="Texture2D" uid="uid://b235q8152y23d" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/08.tres" id="39_kraxp"]
+[ext_resource type="Texture2D" uid="uid://b7c1rbnpeylt" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/09.tres" id="40_qtt7v"]
+[ext_resource type="Texture2D" uid="uid://dn8pg3mncnggx" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/10.tres" id="41_jhpmc"]
+[ext_resource type="Texture2D" uid="uid://bns4kqwk7f8c6" path="res://assets/common/animals/birds/birds_bird2_bird2_fly/11.tres" id="42_2jpx6"]
+[ext_resource type="Texture2D" uid="uid://c3lrut3eolikk" path="res://assets/common/animals/birds/birds_bird2_bird2_hop/01.tres" id="43_jvfjn"]
+[ext_resource type="Texture2D" uid="uid://dud3u6kcbwibt" path="res://assets/common/animals/birds/birds_bird2_bird2_hop/02.tres" id="44_tr86i"]
+[ext_resource type="Texture2D" uid="uid://cd6m6s6dqoy1c" path="res://assets/common/animals/birds/birds_bird2_bird2_hop/03.tres" id="45_1tg1b"]
+[ext_resource type="Texture2D" uid="uid://dxqf6g63u8l1y" path="res://assets/common/animals/birds/birds_bird2_bird2_hop/04.tres" id="46_q7mwe"]
+[ext_resource type="Texture2D" uid="uid://j7cfup35i0j6" path="res://assets/common/animals/birds/birds_bird2_bird2_hop/05.tres" id="47_5v3ta"]
+[ext_resource type="Texture2D" uid="uid://disrxjbh0lbhy" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/01.tres" id="48_d1jp4"]
+[ext_resource type="Texture2D" uid="uid://c0xj0fnv3de6t" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/02.tres" id="49_xgjdv"]
+[ext_resource type="Texture2D" uid="uid://bqdo4c55kxqqy" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/03.tres" id="50_won0b"]
+[ext_resource type="Texture2D" uid="uid://crqesly8mwmvo" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/04.tres" id="51_p0goc"]
+[ext_resource type="Texture2D" uid="uid://dtkyl184crs14" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/06.tres" id="52_6m8p3"]
+[ext_resource type="Texture2D" uid="uid://cpgfond6fv57a" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/07.tres" id="53_vpjpl"]
+[ext_resource type="Texture2D" uid="uid://ceiqh0h1lp2dp" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/08.tres" id="54_jlc4m"]
+[ext_resource type="Texture2D" uid="uid://ccrjou8mhl0vc" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/09.tres" id="55_vciry"]
+[ext_resource type="Texture2D" uid="uid://dxeh1g1yc344g" path="res://assets/common/animals/birds/birds_bird2_bird2_idle/10.tres" id="56_fqle6"]
+
+[sub_resource type="Curve3D" id="Curve3D_uvhtu"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -3.395, 1.785, 0.54),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4vok6"]
+render_priority = 0
+shader = ExtResource("3_lm7ew")
+shader_parameter/scale = Vector3(1.215, 0.81, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("4_xrmcu")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_wwapb"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_4vok6"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_2eh68"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7gwin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0vjgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qhkbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7mkad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lo2h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6b78r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qjap1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_p6j0u")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_cdy1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5dahv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_u1d7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jyp3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xrmcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u38tp")
+}],
+"loop": true,
+"name": &"hop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_k0u2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gp71w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ufhb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_pbb1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_a7f86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ggvxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_kh2q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ecuxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_6vww0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_w4yos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dd4es")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve3D" id="Curve3D_2fyb0"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2.09, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sr6l1"]
+render_priority = 0
+shader = ExtResource("3_lm7ew")
+shader_parameter/scale = Vector3(1.215, 0.81, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("23_a7f86")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hrnm5"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_sr6l1"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_vm376"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7gwin")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_0vjgk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qhkbi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_7mkad")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_lo2h1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_6b78r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_qjap1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_p6j0u")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_cdy1c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5dahv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_u1d7f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_jyp3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xrmcu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_u38tp")
+}],
+"loop": true,
+"name": &"hop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_k0u2x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_gp71w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_ufhb1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_pbb1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_a7f86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ggvxb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_kh2q0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_ecuxj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_6vww0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_w4yos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_dd4es")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="Curve3D" id="Curve3D_gm6ra"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, -2.115, 2.305, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y40kf"]
+render_priority = 0
+shader = ExtResource("3_lm7ew")
+shader_parameter/scale = Vector3(1.215, 0.81, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("29_dd4es")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jteph"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_y40kf"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="Curve3D" id="Curve3D_tkd3c"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 9.675, 12.725, 0),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_41nh2"]
+render_priority = 0
+shader = ExtResource("3_lm7ew")
+shader_parameter/scale = Vector3(1.215, 0.81, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("20_gp71w")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mx0cx"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_41nh2"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="Curve3D" id="Curve3D_7c4qf"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1.815, 2.03, 2.64),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lkgiy"]
+render_priority = 0
+shader = ExtResource("3_lm7ew")
+shader_parameter/scale = Vector3(1.215, 0.81, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("31_qeuu2")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_5fuwl"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_lkgiy"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o2h5a"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_vgd3l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xpwhh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_hkbjs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_cf7rc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_byf3w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_4lwg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_u2i26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_kraxp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_qtt7v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_jhpmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_2jpx6")
+}],
+"loop": true,
+"name": &"flying",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_jvfjn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_tr86i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_1tg1b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_q7mwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_5v3ta")
+}],
+"loop": true,
+"name": &"hop",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("48_d1jp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_xgjdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_won0b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_p0goc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_qeuu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_6m8p3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_vpjpl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_jlc4m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_vciry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_fqle6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_7a2oq"]
+size = Vector3(0.745753, 1, 0.653281)
+
+[node name="BirdFlock" type="Node3D" node_paths=PackedStringArray("birds")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9304, 0, 0.80644)
+script = ExtResource("1_xsqqi")
+birds = [NodePath(""), NodePath(""), NodePath(""), NodePath(""), NodePath("")]
+
+[node name="Bird_1" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0936651, 0, 0)
+curve = SubResource("Curve3D_uvhtu")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Bird_1"]
+rotation_mode = 0
+loop = false
+tilt_enabled = false
+
+[node name="Bird" type="Node3D" parent="Bird_1/PathFollow3D"]
+script = ExtResource("2_ok3mc")
+fly_animations = Array[String](["flying"])
+speed = 0.01
+idle_animations = Array[String](["idle"])
+move_animations = Array[String](["hop"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Bird_1/PathFollow3D/Bird"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.602249, 0, 0)
+custom_aabb = AABB(0, 0, 0, 1.215, 0.81, 0)
+mesh = SubResource("ArrayMesh_wwapb")
+script = ExtResource("5_2ueu4")
+texture_frames = SubResource("SpriteFrames_2eh68")
+animation = "hop"
+frame = 4
+random_initial = true
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="AnimalAnimation" type="Node" parent="Bird_1/PathFollow3D/Bird/Sprite"]
+script = ExtResource("30_aqhc8")
+min_interval = 3.0
+max_interval = 5.0
+animations = Array[String](["idle", "hop"])
+
+[node name="Bird_2" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.229232, 0, -0.0173077)
+curve = SubResource("Curve3D_2fyb0")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Bird_2"]
+rotation_mode = 0
+loop = false
+
+[node name="Bird" type="Node3D" parent="Bird_2/PathFollow3D"]
+script = ExtResource("2_ok3mc")
+fly_animations = Array[String](["flying"])
+speed = 0.01
+idle_animations = Array[String](["idle"])
+move_animations = Array[String](["hop"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Bird_2/PathFollow3D/Bird"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.662313, 0, 0)
+custom_aabb = AABB(0, 0, 0, 1.215, 0.81, 0)
+mesh = SubResource("ArrayMesh_hrnm5")
+script = ExtResource("5_2ueu4")
+texture_frames = SubResource("SpriteFrames_vm376")
+animation = "idle"
+frame = 4
+random_initial = true
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="AnimalAnimation" type="Node" parent="Bird_2/PathFollow3D/Bird/Sprite"]
+script = ExtResource("30_aqhc8")
+min_interval = 3.0
+max_interval = 5.0
+animations = Array[String](["idle", "hop"])
+
+[node name="Bird_3" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.589658, 0, -0.146852)
+curve = SubResource("Curve3D_gm6ra")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Bird_3"]
+rotation_mode = 0
+loop = false
+
+[node name="Bird" type="Node3D" parent="Bird_3/PathFollow3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00550365, 0, 0)
+script = ExtResource("2_ok3mc")
+fly_animations = Array[String](["flying"])
+speed = 0.01
+idle_animations = Array[String](["idle"])
+move_animations = Array[String](["hop"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Bird_3/PathFollow3D/Bird"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.662313, 0, 0)
+custom_aabb = AABB(0, 0, 0, 1.215, 0.81, 0)
+mesh = SubResource("ArrayMesh_jteph")
+script = ExtResource("5_2ueu4")
+texture_frames = SubResource("SpriteFrames_vm376")
+animation = "idle"
+frame = 10
+random_initial = true
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+
+[node name="AnimalAnimation" type="Node" parent="Bird_3/PathFollow3D/Bird/Sprite"]
+script = ExtResource("30_aqhc8")
+min_interval = 3.0
+max_interval = 5.0
+animations = Array[String](["idle", "hop"])
+
+[node name="Bird_4" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155081, 0, -0.254856)
+curve = SubResource("Curve3D_tkd3c")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Bird_4"]
+rotation_mode = 0
+loop = false
+
+[node name="Bird" type="Node3D" parent="Bird_4/PathFollow3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00550365, 0, 0)
+script = ExtResource("2_ok3mc")
+fly_animations = Array[String](["flying"])
+speed = 0.01
+idle_animations = Array[String](["idle"])
+move_animations = Array[String](["hop"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Bird_4/PathFollow3D/Bird"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.558588, 0, 0)
+custom_aabb = AABB(0, 0, 0, 1.215, 0.81, 0)
+mesh = SubResource("ArrayMesh_mx0cx")
+script = ExtResource("5_2ueu4")
+texture_frames = SubResource("SpriteFrames_vm376")
+animation = "idle"
+frame = 1
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="AnimalAnimation" type="Node" parent="Bird_4/PathFollow3D/Bird/Sprite"]
+script = ExtResource("30_aqhc8")
+min_interval = 3.0
+max_interval = 5.0
+animations = Array[String](["idle", "hop"])
+
+[node name="Bird_5" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.366823, 0, -0.303328)
+curve = SubResource("Curve3D_7c4qf")
+
+[node name="PathFollow3D" type="PathFollow3D" parent="Bird_5"]
+rotation_mode = 0
+loop = false
+
+[node name="Bird" type="Node3D" parent="Bird_5/PathFollow3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00550365, 0, 0)
+script = ExtResource("2_ok3mc")
+fly_animations = Array[String](["flying"])
+speed = 0.01
+idle_animations = Array[String](["idle"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Bird_5/PathFollow3D/Bird"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.558588, 0, 0)
+custom_aabb = AABB(0, 0, 0, 1.215, 0.81, 0)
+mesh = SubResource("ArrayMesh_5fuwl")
+script = ExtResource("5_2ueu4")
+texture_frames = SubResource("SpriteFrames_o2h5a")
+animation = "idle"
+frame = 4
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+
+[node name="AnimalAnimation" type="Node" parent="Bird_5/PathFollow3D/Bird/Sprite"]
+script = ExtResource("30_aqhc8")
+min_interval = 3.0
+max_interval = 5.0
+animations = Array[String](["idle"])
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_7a2oq")
+
+[node name="Timer" type="Timer" parent="."]

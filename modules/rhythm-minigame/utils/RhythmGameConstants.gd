@@ -1,0 +1,10 @@
+extends RefCounted
+
+enum COLUMN { LEFT, DOWN, UP, RIGHT }
+
+const ENUM_HINT: Dictionary = {
+	"COLUMN_LEFT": COLUMN.LEFT,
+	"COLUMN_DOWN": COLUMN.DOWN,
+	"COLUMN_UP": COLUMN.UP,
+	"COLUMN_RIGHT": COLUMN.RIGHT
+}

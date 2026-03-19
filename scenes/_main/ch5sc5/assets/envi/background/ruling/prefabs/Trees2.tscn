@@ -1,0 +1,52 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvwg7nx4vvlhy"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cfhxt3krk54xy" path="res://scenes/_main/ch5sc5/assets/envi/background/ruling/trees_2.png" id="3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kriui"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_yw5al"]
+_surfaces = [{
+"aabb": AABB(-3.335, -1.195, 0, 6.67001, 2.39, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("ShaderMaterial_kriui"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(164, 112, 85, 64, 194, 245, 152, 191, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 164, 112, 85, 192, 194, 245, 152, 191, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 164, 112, 85, 64, 194, 245, 152, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 164, 112, 85, 192, 194, 245, 152, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[node name="Trees2" type="MeshInstance3D"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 10.3044, 1.18786, 0.690455)
+mesh = SubResource("ArrayMesh_yw5al")
+script = ExtResource("2")
+texture = ExtResource("3")
+centered = true
+metadata/mat_opaque = SubResource("ShaderMaterial_kriui")

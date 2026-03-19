@@ -1,0 +1,170 @@
+[gd_resource type="ShaderMaterial" load_steps=13 format=3 uid="uid://dgj5g7dt3pjrh"]
+
+[ext_resource type="Texture2D" uid="uid://7uknwlkld3hq" path="res://scenes/_main/ch5sc5/assets/envi/background/field/palay_adult_3.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ct65ciodlwud1" path="res://scenes/_main/ch5sc5/assets/envi/background/field/palay_adult_1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://casuccbifsg45" path="res://scenes/_main/ch5sc5/assets/envi/background/field/palay_teen_3.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cep2gqmnycjop" path="res://scenes/_main/ch5sc5/assets/envi/background/field/palay_teen_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dh1rvwgulhd03" path="res://scenes/_main/ch5sc5/assets/envi/background/field/palay_baby_2.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://ix4vc5x4ub7d" path="res://scenes/_main/ch5sc5/assets/envi/background/field/palay_baby_1.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bshqkjkec3gyu" path="res://scenes/_main/ch5sc5/assets/envi/background/field/palay_baby_3.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://0ke32j3yq3wu" path="res://scenes/_main/ch5sc5/assets/envi/background/field/palay_adult_2.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://dscnwhn55tjja" path="res://scenes/_main/ch5sc5/assets/envi/background/field/palay_teen_1.png" id="9"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type spatial;
+render_mode diffuse_burley, specular_schlick_ggx, depth_prepass_alpha, cull_disabled;
+
+
+
+const int GROUP_COUNT = 3;
+const int VARIANT_COUNT = 3;
+
+uniform float speed = 1.0;
+uniform float strength : hint_range(0, 16.0) = 1.0;
+uniform float damping : hint_range(0.01, 16.0) = 2.0;
+uniform float vertical_exp : hint_range(0.01, 16.0) = 3.0;
+
+uniform sampler2D variant_a1 : source_color, filter_linear;
+uniform sampler2D variant_a2 : source_color, filter_linear;
+uniform sampler2D variant_a3 : source_color, filter_linear;
+
+uniform sampler2D variant_b1 : source_color, filter_linear;
+uniform sampler2D variant_b2 : source_color, filter_linear;
+uniform sampler2D variant_b3 : source_color, filter_linear;
+
+uniform sampler2D variant_c1 : source_color, filter_linear;
+uniform sampler2D variant_c2 : source_color, filter_linear;
+uniform sampler2D variant_c3 : source_color, filter_linear;
+
+uniform sampler2D noise_wind_x : hint_default_black;
+uniform sampler2D noise_wind_y : hint_default_black;
+
+varying flat float inst_id;
+varying flat float variant_id;
+varying flat vec2 tex_px_size;
+varying flat float lightness;
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+mat4 rotationX(in float angle) {
+	mat4 M = mat4(1);
+	M[1][1] = M[2][2] = cos(angle);
+	M[2][1] = sin(angle);
+	M[1][2] = -M[2][1];
+	return M;
+}
+
+vec2 variantTexSize(int id) {
+	switch (id % (GROUP_COUNT * VARIANT_COUNT)) {
+		case 0: return vec2(textureSize(variant_a1, 0));
+		case 1: return vec2(textureSize(variant_a2, 0));
+		case 2: return vec2(textureSize(variant_a3, 0));
+		case 3: return vec2(textureSize(variant_b1, 0));
+		case 4: return vec2(textureSize(variant_b2, 0));
+		case 5: return vec2(textureSize(variant_b3, 0));
+		case 6: return vec2(textureSize(variant_c1, 0));
+		case 7: return vec2(textureSize(variant_c2, 0));
+		case 8: return vec2(textureSize(variant_c3, 0));
+	}
+}
+
+vec4 variantTex(int id, vec2 uv, vec2 px_size) {
+	switch (id % (GROUP_COUNT * VARIANT_COUNT)) {
+		case 0: return texturePointSmooth(variant_a1, uv, px_size);
+		case 1: return texturePointSmooth(variant_a2, uv, px_size);
+		case 2: return texturePointSmooth(variant_a3, uv, px_size);
+		case 3: return texturePointSmooth(variant_b1, uv, px_size);
+		case 4: return texturePointSmooth(variant_b2, uv, px_size);
+		case 5: return texturePointSmooth(variant_b3, uv, px_size);
+		case 6: return texturePointSmooth(variant_c1, uv, px_size);
+		case 7: return texturePointSmooth(variant_c2, uv, px_size);
+		case 8: return texturePointSmooth(variant_c3, uv, px_size);
+	}
+}
+
+int variantId(int group, int idx) {
+	return ((group % GROUP_COUNT) * GROUP_COUNT) + (idx % VARIANT_COUNT);
+}
+
+void vertex() {
+	inst_id = float(INSTANCE_ID);
+
+	int variant_group = int(floor(INSTANCE_CUSTOM.r * float(GROUP_COUNT)));
+	variant_id = float(variantId(variant_group, INSTANCE_ID));
+
+	lightness = INSTANCE_CUSTOM.g;
+	tex_px_size = 1. / variantTexSize(int(variant_id));
+
+	VERTEX -= vec3(0, 0, 0.005);
+	VERTEX /= vec3(tex_px_size.x, 1., tex_px_size.y);
+	VERTEX = (vec4(VERTEX, 1) * rotationX(PI / 2.)).xyz;
+
+	vec3 world_pos = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz;
+	vec2 wind_dir_p = fract(world_pos * 0.05 + vec3(TIME * speed * 0.1)).xz;
+	vec2 wind_dir = vec2(
+		texture(noise_wind_x, wind_dir_p).r,
+		texture(noise_wind_y, wind_dir_p).r
+	);
+	vec2 wind_dir_d = pow(abs(2. * wind_dir - vec2(1.)), vec2(damping));
+	wind_dir = mix(vec2(-1), vec2(1), step(wind_dir, vec2(0.5))) * wind_dir_d;
+
+	vec2 wind_fac = wind_dir * strength * pow(1. - UV.y, vertical_exp);
+	VERTEX += (vec4(wind_fac.x, 0, wind_fac.y, 1) * MODEL_MATRIX).xyz;
+
+	NORMAL = INV_VIEW_MATRIX[3].xyz; // idk
+}
+
+void fragment() {
+	vec4 tex = variantTex(int(variant_id), UV, tex_px_size);
+
+	ALBEDO = tex.rgb * lightness * 0.9;
+	ALPHA = tex.a;
+	ALPHA_SCISSOR_THRESHOLD = 0.5;
+	BACKLIGHT = vec3(0.2);
+}
+"
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mq4vd"]
+seed = 5
+frequency = 0.0326
+fractal_octaves = 6
+fractal_lacunarity = 2.585
+fractal_weighted_strength = 0.21
+
+[sub_resource type="NoiseTexture2D" id="3"]
+width = 128
+height = 128
+generate_mipmaps = false
+seamless = true
+noise = SubResource("FastNoiseLite_mq4vd")
+
+[resource]
+render_priority = 0
+shader = SubResource("1")
+shader_parameter/speed = 0.6
+shader_parameter/strength = 0.5
+shader_parameter/damping = 2.0
+shader_parameter/vertical_exp = 3.0
+shader_parameter/variant_a1 = ExtResource("6")
+shader_parameter/variant_a2 = ExtResource("5")
+shader_parameter/variant_a3 = ExtResource("7")
+shader_parameter/variant_b1 = ExtResource("9")
+shader_parameter/variant_b2 = ExtResource("4")
+shader_parameter/variant_b3 = ExtResource("3")
+shader_parameter/variant_c1 = ExtResource("2")
+shader_parameter/variant_c2 = ExtResource("8")
+shader_parameter/variant_c3 = ExtResource("1")
+shader_parameter/noise_wind_x = SubResource("3")
+shader_parameter/noise_wind_y = SubResource("3")

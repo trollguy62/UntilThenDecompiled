@@ -1,0 +1,250 @@
+[gd_scene load_steps=25 format=3 uid="uid://df8xj5sr05ldw"]
+
+[ext_resource type="PackedScene" path="res://scenes/_main/ch3sc2b/MinigameBalloon/prefabs/Green.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://binnttgg35kvw" path="res://scenes/_main/ch3sc2b/MinigameBalloon/assets/balloons.png" id="2"]
+[ext_resource type="BankAsset" uid="uid://b815s1af424g6" path="res://addons/fmod/editor/resources/banks/{64f0da70-572e-43a1-a534-41ce07386eb7}.tres" id="2_lorlf"]
+[ext_resource type="PackedScene" uid="uid://dn121raeolxv6" path="res://scenes/_main/ch3sc2b/MinigameBalloon/prefabs/Brown.tscn" id="3"]
+[ext_resource type="EventAsset" uid="uid://b8bjwkynw8fbq" path="res://addons/fmod/editor/resources/events/{b91c0591-32f6-4c29-9e96-0268c2e6ad26}.tres" id="3_6asoe"]
+[ext_resource type="PackedScene" path="res://scenes/_main/ch3sc2b/MinigameBalloon/prefabs/Pink.tscn" id="4"]
+[ext_resource type="EventAsset" uid="uid://curenbaevldg0" path="res://addons/fmod/editor/resources/events/{371fef36-9c5e-4134-829e-330e0a556a79}.tres" id="4_x47xg"]
+[ext_resource type="PackedScene" path="res://scenes/_main/ch3sc2b/MinigameBalloon/prefabs/White.tscn" id="5"]
+[ext_resource type="EventAsset" uid="uid://cxn7t6w4nodlk" path="res://addons/fmod/editor/resources/events/{0050a502-2208-4723-aacc-a3a0126c61ff}.tres" id="5_oxihd"]
+[ext_resource type="Texture2D" uid="uid://ce2e2rvjea1ia" path="res://scenes/_main/ch3sc2b/MinigameBalloon/assets/background.png" id="6"]
+[ext_resource type="EventAsset" uid="uid://qh4aeht7b8mn" path="res://addons/fmod/editor/resources/events/{c0c8fc81-d5cf-428d-872a-001e57ea8d37}.tres" id="6_ii7dg"]
+[ext_resource type="PackedScene" path="res://scenes/_main/ch3sc2b/MinigameBalloon/prefabs/Maroon.tscn" id="7"]
+[ext_resource type="PackedScene" path="res://scenes/_main/ch3sc2b/MinigameBalloon/prefabs/Orange.tscn" id="8"]
+[ext_resource type="PackedScene" path="res://scenes/_main/ch3sc2b/MinigameBalloon/prefabs/Blue.tscn" id="9"]
+[ext_resource type="Texture2D" uid="uid://ceomghl4d47jx" path="res://scenes/_main/ch3sc2b/MinigameBalloon/assets/foreground.png" id="10"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameBalloon/scripts/Crosshair.gd" id="11"]
+[ext_resource type="Texture2D" uid="uid://c0rrdx3wy45vo" path="res://scenes/_main/ch3sc2b/MinigameBalloon/assets/ai_crosshair.png" id="12"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameBalloon/MinigameBalloon.gd" id="13"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameBalloon/scripts/AIController.gd" id="14"]
+[ext_resource type="Texture2D" uid="uid://cwryl3sxlu1kv" path="res://scenes/_main/ch3sc2b/MinigameBalloon/assets/crosshair.png" id="15"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="17"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type canvas_item;
+
+uniform sampler2D tex : filter_nearest;
+uniform bool flash = false;
+
+void fragment() {
+	vec4 c = texture(tex, UV);
+
+	if (c.a > 0.5) {
+		COLOR = flash ? vec4(1) : c;
+	} else {
+		COLOR = vec4(0);
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("1")
+shader_parameter/flash = false
+shader_parameter/tex = ExtResource("15")
+
+[sub_resource type="CircleShape2D" id="3"]
+radius = 1.75
+
+[node name="MinigameBalloon" type="Node2D"]
+texture_filter = 1
+script = ExtResource("13")
+player_crosshair_tug_duration = 0.2
+
+[node name="AudioBankLoader" type="StudioBankLoader" parent="."]
+num_banks = 1
+bank_0 = ExtResource("2_lorlf")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="BalloonPop" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("3_6asoe")
+
+[node name="GunReload" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("4_x47xg")
+
+[node name="GunShot" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("5_oxihd")
+
+[node name="PelletHitsWood" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("6_ii7dg")
+
+[node name="Focus" type="Node" parent="."]
+script = ExtResource("17")
+focus_name = "MinigameBalloon"
+
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("6")
+centered = false
+
+[node name="BalloonsPlaceholder" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(25, 125)
+scale = Vector2(4, 4)
+texture = ExtResource("2")
+centered = false
+
+[node name="Balloons" type="Node2D" parent="."]
+
+[node name="Pink" parent="Balloons" instance=ExtResource("4")]
+position = Vector2(118, 204)
+score = 20
+
+[node name="Pink2" parent="Balloons" instance=ExtResource("4")]
+position = Vector2(630, 188)
+score = 20
+
+[node name="Pink3" parent="Balloons" instance=ExtResource("4")]
+position = Vector2(894, 428)
+score = 20
+
+[node name="Pink4" parent="Balloons" instance=ExtResource("4")]
+position = Vector2(286, 524)
+score = 20
+
+[node name="Pink5" parent="Balloons" instance=ExtResource("4")]
+position = Vector2(574, 308)
+score = 20
+
+[node name="Blue" parent="Balloons" instance=ExtResource("9")]
+position = Vector2(374, 188)
+score = 5
+
+[node name="Blue2" parent="Balloons" instance=ExtResource("9")]
+position = Vector2(510, 188)
+score = 5
+
+[node name="Blue3" parent="Balloons" instance=ExtResource("9")]
+position = Vector2(750, 180)
+score = 5
+
+[node name="Blue4" parent="Balloons" instance=ExtResource("9")]
+position = Vector2(100, 420)
+score = 5
+
+[node name="Blue5" parent="Balloons" instance=ExtResource("9")]
+position = Vector2(374, 412)
+score = 5
+
+[node name="Blue6" parent="Balloons" instance=ExtResource("9")]
+position = Vector2(752, 429)
+score = 5
+
+[node name="Blue7" parent="Balloons" instance=ExtResource("9")]
+position = Vector2(222, 644)
+score = 5
+
+[node name="Blue8" parent="Balloons" instance=ExtResource("9")]
+position = Vector2(734, 644)
+score = 5
+
+[node name="Blue9" parent="Balloons" instance=ExtResource("9")]
+position = Vector2(878, 644)
+score = 5
+
+[node name="Green" parent="Balloons" instance=ExtResource("1")]
+position = Vector2(102, 652)
+score = 30
+
+[node name="Green2" parent="Balloons" instance=ExtResource("1")]
+position = Vector2(254, 196)
+score = 30
+
+[node name="Green3" parent="Balloons" instance=ExtResource("1")]
+position = Vector2(622, 420)
+score = 30
+
+[node name="Green4" parent="Balloons" instance=ExtResource("1")]
+position = Vector2(894, 180)
+score = 30
+
+[node name="Maroon" parent="Balloons" instance=ExtResource("7")]
+position = Vector2(822, 292)
+score = 10
+
+[node name="Maroon2" parent="Balloons" instance=ExtResource("7")]
+position = Vector2(814, 540)
+score = 10
+
+[node name="Maroon3" parent="Balloons" instance=ExtResource("7")]
+position = Vector2(350, 644)
+score = 10
+
+[node name="Maroon4" parent="Balloons" instance=ExtResource("7")]
+position = Vector2(246, 412)
+score = 10
+
+[node name="Orange" parent="Balloons" instance=ExtResource("8")]
+position = Vector2(302, 308)
+score = 10
+
+[node name="Orange2" parent="Balloons" instance=ExtResource("8")]
+position = Vector2(510, 412)
+score = 10
+
+[node name="Orange3" parent="Balloons" instance=ExtResource("8")]
+position = Vector2(958, 300)
+score = 10
+
+[node name="Orange4" parent="Balloons" instance=ExtResource("8")]
+position = Vector2(478, 644)
+score = 10
+
+[node name="Orange5" parent="Balloons" instance=ExtResource("8")]
+position = Vector2(958, 548)
+score = 10
+
+[node name="White" parent="Balloons" instance=ExtResource("5")]
+position = Vector2(446, 308)
+score = 10
+
+[node name="White2" parent="Balloons" instance=ExtResource("5")]
+position = Vector2(422, 532)
+score = 10
+
+[node name="White3" parent="Balloons" instance=ExtResource("5")]
+position = Vector2(662, 532)
+score = 10
+
+[node name="Brown" parent="Balloons" instance=ExtResource("3")]
+position = Vector2(542, 534)
+score = 10
+
+[node name="Brown2" parent="Balloons" instance=ExtResource("3")]
+position = Vector2(606, 652)
+score = 10
+
+[node name="Brown3" parent="Balloons" instance=ExtResource("3")]
+position = Vector2(166, 532)
+score = 10
+
+[node name="Brown4" parent="Balloons" instance=ExtResource("3")]
+position = Vector2(170, 309.261)
+score = 10
+
+[node name="Brown5" parent="Balloons" instance=ExtResource("3")]
+position = Vector2(702, 308)
+score = 10
+
+[node name="Foreground" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("10")
+centered = false
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+material = SubResource("2")
+position = Vector2(608, 405)
+scale = Vector2(4, 4)
+texture = ExtResource("12")
+script = ExtResource("11")
+
+[node name="Area2D" type="Area2D" parent="Crosshair"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Crosshair/Area2D"]
+shape = SubResource("3")
+
+[node name="AIController" type="Node" parent="."]
+script = ExtResource("14")

@@ -1,0 +1,32 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://ce0md4y0cjkx5"]
+
+[ext_resource type="Texture2D" uid="uid://dhnfw4e1tcufn" path="res://scenes/_main/ch5sc6/assets/envi/sky_afternoon.png" id="1_lbckm"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_qhsqa"]
+panorama = ExtResource("1_lbckm")
+filter = false
+
+[sub_resource type="Sky" id="6541"]
+sky_material = SubResource("PanoramaSkyMaterial_qhsqa")
+
+[resource]
+background_mode = 2
+sky = SubResource("6541")
+sky_custom_fov = 64.0
+sky_rotation = Vector3(0, 2.44346, 0)
+ambient_light_color = Color(0.87451, 0.678431, 0.513726, 1)
+ambient_light_sky_contribution = 0.7
+tonemap_mode = 2
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 0.75
+ssao_intensity = 1.5
+glow_enabled = true
+glow_intensity = 1.0
+fog_enabled = true
+fog_light_color = Color(0.909804, 0.764706, 0.564706, 1)
+fog_light_energy = 0.8
+fog_density = 0.006
+fog_sky_affect = 0.1
+adjustment_enabled = true
+adjustment_contrast = 1.05

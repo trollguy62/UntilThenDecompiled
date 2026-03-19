@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b2nau8tp05a41"]
+
+[ext_resource type="Script" path="res://scenes/_cutscenes/credits/Credits.gd" id="4"]
+[ext_resource type="AudioStream" uid="uid://brixi3n42g4up" path="res://scenes/_cutscenes/credits/assets/music/wedding_day.ogg" id="5"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="2"]
+
+[node name="Credits" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("4")
+start_delay = 4.0
+end_delay = 6.0
+pausable = false
+fade_in_duration = 0.0
+fade_out_duration = 0.0
+fade_in_delay = 0.0
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
+volume_db = -3.0
+bus = &"Music"
+
+[node name="Main" type="PanelContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("2")

@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://cxxxfuwlnrah8"]
+
+[ext_resource type="Script" path="res://ui/components/FbComment/FbComment.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://0fjqpfprev6u" path="res://ui/components/FbBaseComment/FbBaseComment.tscn" id="2"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="3"]
+[ext_resource type="Script" path="res://ui/components/FbComment/CollapsedRepliesButton.gd" id="3_mge2x"]
+[ext_resource type="PackedScene" uid="uid://c2v5cy37b1mgm" path="res://ui/components/TextureRectButton/TextureRectButton.tscn" id="3_r4w3e"]
+[ext_resource type="FontFile" uid="uid://sghb20e60wif" path="res://fonts/PTSans-Bold-Small.tres" id="5"]
+[ext_resource type="FontFile" uid="uid://dhcnjnvquq3am" path="res://fonts/PTSans-Regular-Small.tres" id="6"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.952941, 0.960784, 0.968627, 1)
+
+[sub_resource type="StyleBoxEmpty" id="2"]
+
+[node name="FbComment" type="VBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+theme_override_constants/separation = 10
+script = ExtResource("1")
+
+[node name="RootComment" parent="." instance=ExtResource("2")]
+layout_mode = 2
+
+[node name="Replies" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+
+[node name="Collapsed" type="PanelContainer" parent="Replies"]
+layout_mode = 2
+focus_mode = 2
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("3_mge2x")
+
+[node name="Margin" type="MarginContainer" parent="Replies/Collapsed"]
+layout_mode = 2
+theme_override_constants/margin_left = 4
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 4
+theme_override_constants/margin_bottom = 4
+
+[node name="HBox" type="HBoxContainer" parent="Replies/Collapsed/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="ProfilePicture" parent="Replies/Collapsed/Margin/HBox" instance=ExtResource("3_r4w3e")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("3")
+stretch_mode = 0
+anim_hover = false
+open_alt = false
+
+[node name="Spacer1" type="PanelContainer" parent="Replies/Collapsed/Margin/HBox"]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Author" type="Label" parent="Replies/Collapsed/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5")
+text = "Mike Aguilar"
+
+[node name="Spacer2" type="PanelContainer" parent="Replies/Collapsed/Margin/HBox"]
+custom_minimum_size = Vector2(12, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("2")
+
+[node name="ReplyCount" type="Label" parent="Replies/Collapsed/Margin/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_fonts/font = ExtResource("6")
+text = "3 replies"
+
+[node name="Spacer3" type="PanelContainer" parent="Replies/Collapsed/Margin/HBox"]
+custom_minimum_size = Vector2(8, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Expanded" type="VBoxContainer" parent="Replies"]
+layout_mode = 2
+theme_override_constants/separation = 10

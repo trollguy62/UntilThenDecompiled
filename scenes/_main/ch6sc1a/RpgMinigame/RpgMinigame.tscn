@@ -1,0 +1,1559 @@
+[gd_scene load_steps=160 format=3 uid="uid://w5b6lq8fmwf1"]
+
+[ext_resource type="ArrayMesh" uid="uid://cv5par8h3nlwk" path="res://scenes/_main/ch6sc1a/RpgMinigame/envi/castle.obj" id="1"]
+[ext_resource type="Script" path="res://addons/SIsilicon.vfx.godrays/GodRays.gd" id="2"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://bq1opaqu1d7jq" path="res://scenes/_main/ch6sc1a/RpgMinigame/envi/castle.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://m7qb8o7mckn4" path="res://scenes/_main/ch6sc1a/RpgMinigame/envi/castle_far.png" id="6_ix76e"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="7"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="8"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/RpgMinigame.gd" id="9"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="10"]
+[ext_resource type="FontFile" uid="uid://bbbya613slrkx" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/fonts/Tiny5/Tiny5-Regular.ttf" id="11_j42fa"]
+[ext_resource type="PackedScene" uid="uid://0x4y5ygtuh7m" path="res://scenes/_main/ch6sc1a/RpgMinigame/ItemMenu.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://bmg0kdxd8daef" path="res://scenes/_main/ch6sc1a/RpgMinigame/PrematchScreen.tscn" id="18"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/BeamCollision.gd" id="19_65y43"]
+[ext_resource type="PackedScene" uid="uid://colm1ue0251kx" path="res://scenes/_main/ch6sc1a/RpgMinigame/HUD_HP.tscn" id="20"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/_beamcollision/01.tres" id="20_3p2si"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/Countdown.gd" id="22"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/LogContainer.gd" id="23"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/_beamcollision/02.tres" id="23_15ge4"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/RpgMasher3D.gd" id="23_ibpgf"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/_beamcollision/03.tres" id="24_nyyfg"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_win_body/01.tres" id="25_5i0bj"]
+[ext_resource type="PackedScene" uid="uid://b5ldmqwdjsvbj" path="res://scenes/_main/ch6sc1a/RpgMinigame/VictoryUI.tscn" id="26"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_attack_body/01.tres" id="26_ytkh4"]
+[ext_resource type="PackedScene" uid="uid://dvi3nevcdp24v" path="res://scenes/_main/ch6sc1a/RpgMinigame/MashableUI.tscn" id="27"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_attack_body/02.tres" id="27_v5ba5"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_attack_body/03.tres" id="28_m17c3"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_attack_body/04.tres" id="29_wnbeh"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_attack_body/05.tres" id="30_53j2n"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_attack_body/06.tres" id="31_tynt8"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_idle_body/01.tres" id="32_3msno"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_idle_body/02.tres" id="33_nehhu"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_idle_body/03.tres" id="34_mj255"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_idle_body/04.tres" id="35_w17ux"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_idle_body/05.tres" id="36_f01kq"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_idle_body/06.tres" id="37_y0ee0"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_lose_head/01.tres" id="38_wv6tc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_lose_head/02.tres" id="39_xt6f1"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_lose_head/03.tres" id="40_lisp3"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_lose_head/04.tres" id="41_1qv7y"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_lose_head/05.tres" id="42_18wdf"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_lose_head/06.tres" id="43_jnio7"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_win_body/02.tres" id="44_f3jw5"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_win_body/03.tres" id="45_i3vbc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_win_body/04.tres" id="46_dfy6i"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_win_body/05.tres" id="47_t52l8"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Mark_win_body/06.tres" id="48_3es8n"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3DNoDepthTest.gdshader" id="49_effq6"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Nicole_explosion/01.tres" id="50_0esx3"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Nicole_explosion/02.tres" id="51_ovj3x"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Nicole_explosion/03.tres" id="52_8cw13"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Nicole_explosion/04.tres" id="53_veunc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Nicole_explosion/05.tres" id="54_vhbl0"]
+[ext_resource type="Shader" path="res://scenes/_main/ch6sc1a/RpgMinigame/BeamPartition.gdshader" id="55_av354"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_attack_body/01.tres" id="56_5xyou"]
+[ext_resource type="Texture2D" uid="uid://ckp0eqa3oghbh" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/mark_beampartition1.png" id="56_q533s"]
+[ext_resource type="Texture2D" uid="uid://c7to56rhpnf4v" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/mark_beampartition2.png" id="57_haj8v"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_attack_body/02.tres" id="57_xlwl8"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_attack_body/03.tres" id="58_jxcqk"]
+[ext_resource type="Texture2D" uid="uid://clnxqku3ppi38" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/mark_beampartition3.png" id="58_ulk23"]
+[ext_resource type="Script" path="res://scenes/_main/ch6sc1a/RpgMinigame/Beam.gd" id="59_5s1dx"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_attack_body/04.tres" id="59_muk5h"]
+[ext_resource type="Texture2D" uid="uid://dqww18advoxg6" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/mark_gloworb_end1.png" id="59_xsf6i"]
+[ext_resource type="Texture2D" uid="uid://ddblxuw6615yg" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/mark_gloworb_end2.png" id="60_h0a7f"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_attack_body/05.tres" id="60_tfluu"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_attack_body/06.tres" id="61_nbtj6"]
+[ext_resource type="Texture2D" uid="uid://c341sx5v2i1yg" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/mark_gloworb_end3.png" id="61_tkvrn"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_idle_nicole/01.tres" id="62_b8boc"]
+[ext_resource type="Texture2D" uid="uid://dayyysjahnwcu" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/mark_gloworb_start1.png" id="62_qgyo5"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_idle_nicole/02.tres" id="63_3katd"]
+[ext_resource type="Texture2D" uid="uid://bidqxbce0k2au" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/mark_gloworb_start2.png" id="63_3n8ui"]
+[ext_resource type="Texture2D" uid="uid://hsfa21obb31x" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/mark_gloworb_start3.png" id="64_fbn5g"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_idle_nicole/03.tres" id="64_ypldo"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_idle_nicole/04.tres" id="65_as5pf"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_idle_nicole/05.tres" id="66_rt5ui"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_idle_nicole/06.tres" id="67_633ce"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_lose_head/01.tres" id="68_dlbo3"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_lose_head/02.tres" id="69_4tiao"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_lose_head/03.tres" id="70_ycr34"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_lose_head/04.tres" id="71_pwiii"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_lose_head/05.tres" id="72_lko4a"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_lose_head/06.tres" id="73_1br7g"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_win_head/01.tres" id="74_yif1h"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_win_head/02.tres" id="75_xm7cp"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_win_head/03.tres" id="76_iw0xc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_win_head/04.tres" id="77_ucttg"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_win_head/05.tres" id="78_pcrmr"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/LOM_Characters/Nicole_win_head/06.tres" id="79_djyb3"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Mark_explosion/01.tres" id="80_vd26e"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Mark_explosion/02.tres" id="81_po237"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Mark_explosion/03.tres" id="82_0nyqy"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Mark_explosion/04.tres" id="83_cbmip"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/Explosion_Mark_explosion/05.tres" id="84_y6f8o"]
+[ext_resource type="Texture2D" uid="uid://q6ubi6tjhxbo" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/nicole_beampartition1.png" id="97_dvus0"]
+[ext_resource type="Texture2D" uid="uid://hjhrof8hqqgl" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/nicole_beampartition2.png" id="98_3up85"]
+[ext_resource type="Texture2D" uid="uid://bf6yur25fw2gs" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/nicole_beampartition3.png" id="99_lce8i"]
+[ext_resource type="Texture2D" uid="uid://dmny375uxy1cp" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/nicole_gloworb_end1.png" id="100_cwrvl"]
+[ext_resource type="Texture2D" uid="uid://bf1nnx55d4nrw" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/nicole_gloworb_end2.png" id="101_jf2y6"]
+[ext_resource type="Texture2D" uid="uid://0n2j22utdgyg" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/nicole_gloworb_end3.png" id="102_1a08b"]
+[ext_resource type="Texture2D" uid="uid://ckf1y5b5qhyrn" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/nicole_gloworb_start1.png" id="103_aokmt"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="103_fmlsm"]
+[ext_resource type="Texture2D" uid="uid://c2a1auq7ndnv7" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/nicole_gloworb_start2.png" id="104_r1aha"]
+[ext_resource type="Texture2D" uid="uid://ce423f1h28n4x" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/_new/Beams/nicole_gloworb_start3.png" id="105_rpf5y"]
+
+[sub_resource type="Environment" id="1"]
+background_mode = 1
+background_color = Color(1, 0.764706, 0.631373, 1)
+background_energy_multiplier = 1.2
+ambient_light_color = Color(0.741176, 0.541176, 0.384314, 1)
+tonemap_mode = 2
+glow_enabled = true
+glow_intensity = 1.0
+glow_strength = 1.3
+glow_mix = 0.1
+glow_blend_mode = 4
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.68
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8duox"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_ix76e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4m5gu"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 5.94, 2.54, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_8duox"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qiy70"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_ix76e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7y2h4"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 5.94, 2.54, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_qiy70"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ucuma"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_ix76e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uydx3"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 5.94, 2.54, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_ucuma"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_oobub"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_ix76e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m2v0b"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 5.94, 2.54, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_oobub"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6r7tl"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_ix76e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nskhm"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 5.94, 2.54, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_6r7tl"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mb35t"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_ix76e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_s8ghq"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 5.94, 2.54, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_mb35t"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3y2qd"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_ix76e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ujin3"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 5.94, 2.54, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_3y2qd"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgf7r"]
+render_priority = 0
+shader = ExtResource("7")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_ix76e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i6lum"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 5.94, 2.54, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_bgf7r"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 123, 20, 190, 64, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 92, 143, 34, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ij07v"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0, 0, 0.137255, 0.501961)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4cjmf"]
+render_priority = 0
+shader = ExtResource("49_effq6")
+shader_parameter/scale = Vector3(2.2, 1.2, 1)
+shader_parameter/offset = Vector3(-1.1, -0.60835, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.5
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("20_3p2si")
+shader_parameter/texture_emission = ExtResource("20_3p2si")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mc4jx"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_4cjmf")
+shader = ExtResource("8")
+shader_parameter/scale = Vector3(2.2, 1.2, 1)
+shader_parameter/offset = Vector3(-1.1, -0.60835, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.5
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("20_3p2si")
+shader_parameter/texture_emission = ExtResource("20_3p2si")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g7opc"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_mc4jx"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_engwm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_3p2si")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_15ge4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_nyyfg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vkfm6"]
+render_priority = 0
+shader = ExtResource("8")
+shader_parameter/scale = Vector3(2.2, 2.22, 1)
+shader_parameter/offset = Vector3(-1.2457, -0.425, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("26_ytkh4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hwrfb"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("ShaderMaterial_vkfm6"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uei04"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("26_ytkh4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_v5ba5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_m17c3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_wnbeh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_53j2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_tynt8")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("32_3msno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_nehhu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_mj255")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_w17ux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_f01kq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_y0ee0")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38_wv6tc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_xt6f1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_lisp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_1qv7y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_18wdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_jnio7")
+}],
+"loop": true,
+"name": &"lose",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_5i0bj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_f3jw5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_i3vbc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_dfy6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_t52l8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_3es8n")
+}],
+"loop": true,
+"name": &"win",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w5yer"]
+render_priority = 0
+shader = ExtResource("49_effq6")
+shader_parameter/scale = Vector3(2.2, 1.2, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 0.858824, 0.54902, 1)
+shader_parameter/emission_strength = 1.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("50_0esx3")
+shader_parameter/texture_emission = ExtResource("50_0esx3")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_falp0"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_w5yer")
+shader = ExtResource("8")
+shader_parameter/scale = Vector3(2.2, 1.2, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 0.858824, 0.54902, 1)
+shader_parameter/emission_strength = 1.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("50_0esx3")
+shader_parameter/texture_emission = ExtResource("50_0esx3")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vtr06"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_falp0"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_t8n2x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50_0esx3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_ovj3x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_8cw13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_veunc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_vhbl0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="Animation_yq1vh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OmniLight3D:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_8e26e"]
+resource_name = "boom"
+length = 0.83335
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.666667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 4]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["default"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.833333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("OmniLight3D:light_energy")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.166667, 0.333333, 0.5, 0.666667, 0.833333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [1.5, 0.5, 1.7, 0.5, 0.25, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_rad4i"]
+_data = {
+"RESET": SubResource("Animation_yq1vh"),
+"boom": SubResource("Animation_8e26e")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_srss6"]
+render_priority = 0
+shader = ExtResource("55_av354")
+shader_parameter/width = 2.77778
+shader_parameter/frame_1 = ExtResource("56_q533s")
+shader_parameter/frame_2 = ExtResource("57_haj8v")
+shader_parameter/frame_3 = ExtResource("58_ulk23")
+
+[sub_resource type="QuadMesh" id="QuadMesh_enl24"]
+size = Vector2(1.25, 0.31)
+center_offset = Vector3(0.625, 0, 0)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_j02dv"]
+frames = 3
+frame_0/texture = ExtResource("59_xsf6i")
+frame_0/duration = 0.15
+frame_1/texture = ExtResource("60_h0a7f")
+frame_1/duration = 0.15
+frame_2/texture = ExtResource("61_tkvrn")
+frame_2/duration = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5scaf"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = SubResource("AnimatedTexture_j02dv")
+emission_enabled = true
+emission_energy_multiplier = 3.0
+emission_texture = SubResource("AnimatedTexture_j02dv")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_idsay"]
+size = Vector2(0.41, 0.43)
+center_offset = Vector3(0.15, 0, 0)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_2gk8j"]
+frames = 3
+frame_0/texture = ExtResource("62_qgyo5")
+frame_0/duration = 0.15
+frame_1/texture = ExtResource("63_3n8ui")
+frame_1/duration = 0.15
+frame_2/texture = ExtResource("64_fbn5g")
+frame_2/duration = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4hvq"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+albedo_texture = SubResource("AnimatedTexture_2gk8j")
+emission_enabled = true
+emission_energy_multiplier = 3.0
+emission_texture = SubResource("AnimatedTexture_2gk8j")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_j62xg"]
+size = Vector2(0.29, 0.38)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jkpjo"]
+render_priority = 0
+shader = ExtResource("8")
+shader_parameter/scale = Vector3(2.2, 2.22, 1)
+shader_parameter/offset = Vector3(-1.05185, -0.52225, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("56_5xyou")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_lissw"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_jkpjo"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mndr2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("56_5xyou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_xlwl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_jxcqk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_muk5h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_tfluu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_nbtj6")
+}],
+"loop": true,
+"name": &"attack",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62_b8boc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_3katd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_ypldo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_as5pf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_rt5ui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_633ce")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("68_dlbo3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_4tiao")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_ycr34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_pwiii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_lko4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_1br7g")
+}],
+"loop": true,
+"name": &"lose",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74_yif1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_xm7cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_iw0xc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_ucttg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_pcrmr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_djyb3")
+}],
+"loop": true,
+"name": &"win",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vt36k"]
+render_priority = 0
+shader = ExtResource("49_effq6")
+shader_parameter/scale = Vector3(2.2, 1.2, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(0.976471, 0.65098, 1, 1)
+shader_parameter/emission_strength = 1.5
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("80_vd26e")
+shader_parameter/texture_emission = ExtResource("80_vd26e")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_eo467"]
+render_priority = 0
+next_pass = SubResource("ShaderMaterial_vt36k")
+shader = ExtResource("8")
+shader_parameter/scale = Vector3(2.2, 1.2, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(0.976471, 0.65098, 1, 1)
+shader_parameter/emission_strength = 1.5
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("80_vd26e")
+shader_parameter/texture_emission = ExtResource("80_vd26e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e3143"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_eo467"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ihq4m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80_vd26e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_po237")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_0nyqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_cbmip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_y6f8o")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t8mlt"]
+render_priority = 0
+shader = ExtResource("55_av354")
+shader_parameter/width = 2.77778
+shader_parameter/frame_1 = ExtResource("97_dvus0")
+shader_parameter/frame_2 = ExtResource("98_3up85")
+shader_parameter/frame_3 = ExtResource("99_lce8i")
+
+[sub_resource type="QuadMesh" id="QuadMesh_3iawh"]
+size = Vector2(1.25, 0.25)
+center_offset = Vector3(0.625, 0, 0)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_76r6t"]
+frames = 3
+frame_0/texture = ExtResource("100_cwrvl")
+frame_0/duration = 0.15
+frame_1/texture = ExtResource("101_jf2y6")
+frame_1/duration = 0.15
+frame_2/texture = ExtResource("102_1a08b")
+frame_2/duration = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8cxhl"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("AnimatedTexture_76r6t")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = SubResource("AnimatedTexture_76r6t")
+texture_filter = 0
+
+[sub_resource type="QuadMesh" id="QuadMesh_sp3hn"]
+size = Vector2(0.41, 0.43)
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_80hru"]
+frames = 3
+frame_0/texture = ExtResource("103_aokmt")
+frame_0/duration = 0.15
+frame_1/texture = ExtResource("104_r1aha")
+frame_1/duration = 0.15
+frame_2/texture = ExtResource("105_rpf5y")
+frame_2/duration = 0.15
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_km0dw"]
+transparency = 2
+alpha_scissor_threshold = 0.5
+alpha_antialiasing_mode = 0
+cull_mode = 2
+albedo_texture = SubResource("AnimatedTexture_80hru")
+emission_enabled = true
+emission_energy_multiplier = 2.0
+emission_texture = SubResource("AnimatedTexture_80hru")
+texture_filter = 0
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_wiaog"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.182
+dof_blur_near_transition = 0.1
+dof_blur_amount = 0.085
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3coce"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.182
+dof_blur_near_transition = 0.1
+dof_blur_amount = 0.07
+
+[node name="RpgMinigame" type="Node3D"]
+script = ExtResource("9")
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="World"]
+environment = SubResource("1")
+
+[node name="Castle" type="MeshInstance3D" parent="World"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.12937, 0, -0.148608)
+material_override = SubResource("2")
+mesh = ExtResource("1")
+skeleton = NodePath("../..")
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="World"]
+transform = Transform3D(0.965926, -0.258819, -5.16701e-10, 0.216852, 0.809303, 0.545897, -0.141289, -0.527296, 0.837852, 6.45594, 1.12043, 1.47517)
+light_color = Color(1, 0.643137, 0.278431, 1)
+shadow_enabled = true
+shadow_bias = 0.01
+directional_shadow_mode = 0
+directional_shadow_max_distance = 10.0
+
+[node name="GodRays" type="Node3D" parent="World/DirectionalLight"]
+script = ExtResource("2")
+exposure = 1.0
+light_size = 1.0
+
+[node name="Background" type="Node3D" parent="World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.38, 0)
+
+[node name="CastleFar_1" type="MeshInstance3D" parent="World/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3.99193)
+mesh = SubResource("ArrayMesh_4m5gu")
+script = ExtResource("5")
+texture = ExtResource("6_ix76e")
+metadata/mat_opaque = SubResource("ShaderMaterial_8duox")
+
+[node name="CastleFar_2" type="MeshInstance3D" parent="World/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37518, 0, 4.35107)
+mesh = SubResource("ArrayMesh_7y2h4")
+script = ExtResource("5")
+texture = ExtResource("6_ix76e")
+metadata/mat_opaque = SubResource("ShaderMaterial_qiy70")
+
+[node name="CastleFar_3" type="MeshInstance3D" parent="World/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.20538, 0, 4.35107)
+mesh = SubResource("ArrayMesh_uydx3")
+script = ExtResource("5")
+texture = ExtResource("6_ix76e")
+metadata/mat_opaque = SubResource("ShaderMaterial_ucuma")
+
+[node name="CastleFar_4" type="MeshInstance3D" parent="World/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8103, 0, 3.86606)
+mesh = SubResource("ArrayMesh_m2v0b")
+script = ExtResource("5")
+texture = ExtResource("6_ix76e")
+metadata/mat_opaque = SubResource("ShaderMaterial_oobub")
+
+[node name="CastleFar_5" type="MeshInstance3D" parent="World/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 8.69714)
+mesh = SubResource("ArrayMesh_nskhm")
+script = ExtResource("5")
+texture = ExtResource("6_ix76e")
+metadata/mat_opaque = SubResource("ShaderMaterial_6r7tl")
+
+[node name="CastleFar_6" type="MeshInstance3D" parent="World/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.37518, 0, 9.05627)
+mesh = SubResource("ArrayMesh_s8ghq")
+script = ExtResource("5")
+texture = ExtResource("6_ix76e")
+metadata/mat_opaque = SubResource("ShaderMaterial_mb35t")
+
+[node name="CastleFar_7" type="MeshInstance3D" parent="World/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.20538, 0, 9.05627)
+mesh = SubResource("ArrayMesh_ujin3")
+script = ExtResource("5")
+texture = ExtResource("6_ix76e")
+metadata/mat_opaque = SubResource("ShaderMaterial_3y2qd")
+
+[node name="CastleFar_8" type="MeshInstance3D" parent="World/Background"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.8103, 0, 8.57127)
+mesh = SubResource("ArrayMesh_i6lum")
+script = ExtResource("5")
+texture = ExtResource("6_ix76e")
+metadata/mat_opaque = SubResource("ShaderMaterial_bgf7r")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Anchor" type="Control" parent="UI"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+grow_vertical = 0
+
+[node name="Container" type="PanelContainer" parent="UI/Anchor"]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -124.0
+offset_right = 523.0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_ij07v")
+
+[node name="LogContainer" type="VBoxContainer" parent="UI/Anchor/Container"]
+clip_contents = true
+layout_mode = 2
+alignment = 2
+script = ExtResource("23")
+
+[node name="P1_HP" parent="UI" instance=ExtResource("20")]
+player_name = "MG_RPG_PLAYER_MARK"
+
+[node name="P2_HP" parent="UI" instance=ExtResource("20")]
+offset_left = 840.0
+offset_top = 653.0
+offset_right = 880.0
+offset_bottom = 693.0
+player_name = "MG_RPG_PLAYER_NICOLE"
+flip_align = true
+
+[node name="ItemMenu" parent="UI" instance=ExtResource("17")]
+visible = false
+
+[node name="Countdown" type="Label" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.5
+offset_top = -55.5
+offset_right = 40.5
+offset_bottom = 91.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0.772549, 0.247059, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 2
+theme_override_constants/outline_size = 11
+theme_override_fonts/font = ExtResource("11_j42fa")
+theme_override_font_sizes/font_size = 144
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("22")
+
+[node name="Ready" parent="UI/Countdown" instance=ExtResource("27")]
+position = Vector2(30.5, 88.5)
+scale = Vector2(3, 3)
+
+[node name="Timer" type="Timer" parent="UI/Countdown"]
+
+[node name="PreScreen" type="CanvasLayer" parent="."]
+
+[node name="PrematchScreen" parent="PreScreen" instance=ExtResource("18")]
+visible = false
+
+[node name="VictoryScreen" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="VictoryUI" parent="VictoryScreen" instance=ExtResource("26")]
+
+[node name="Anchor" type="Node3D" parent="."]
+transform = Transform3D(-1, -8.74228e-08, 7.64274e-15, -8.74228e-08, 1, -8.74228e-08, 0, -8.74228e-08, -1, 0.395932, 0, -1.0654)
+
+[node name="BeamCollision" type="Node3D" parent="Anchor"]
+transform = Transform3D(1, -4.443e-28, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.422, 0.004)
+script = ExtResource("19_65y43")
+extent = 1.25
+
+[node name="Sprite" type="MeshInstance3D" parent="Anchor/BeamCollision"]
+transform = Transform3D(1, -4.443e-28, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+sorting_offset = 1.0
+cast_shadow = 0
+extra_cull_margin = 16384.0
+mesh = SubResource("ArrayMesh_g7opc")
+skeleton = NodePath("../../..")
+script = ExtResource("10")
+texture_frames = SubResource("SpriteFrames_engwm")
+emission_frames = SubResource("SpriteFrames_engwm")
+animation = "default"
+alias = "BeamCollision"
+offset = Vector3(-110, -60.835, 0)
+emission_strength = 0.5
+depth_test_disabled = true
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Anchor/BeamCollision"]
+transform = Transform3D(1, -4.443e-28, -5.0822e-21, 0, 1, 0, 0, 0, 1, 0, 2.98023e-08, 0.334505)
+light_energy = 0.25
+metadata/_edit_lock_ = true
+
+[node name="Mark" type="Node3D" parent="Anchor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.75022, 0.391522, 0)
+script = ExtResource("23_ibpgf")
+player_name = "MG_RPG_PLAYER_MARK"
+
+[node name="Sprite" type="MeshInstance3D" parent="Anchor/Mark"]
+sorting_offset = -1.0
+extra_cull_margin = 16384.0
+mesh = SubResource("ArrayMesh_hwrfb")
+script = ExtResource("10")
+texture_frames = SubResource("SpriteFrames_uei04")
+animation = "attack"
+alias = "AnimatedPaper3D"
+offset = Vector3(-124.57, -42.5, 0)
+
+[node name="Explosion" type="MeshInstance3D" parent="Anchor/Mark"]
+transform = Transform3D(-1, 0, 0, 0, 1, 0, 0, 0, 1, 1.0807, -0.577021, -0.0563183)
+visible = false
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_vtr06")
+skeleton = NodePath("../../..")
+script = ExtResource("10")
+texture_frames = SubResource("SpriteFrames_t8n2x")
+emission_frames = SubResource("SpriteFrames_t8n2x")
+animation = "default"
+playing = false
+alias = "AnimatedPaper3D"
+emission_mult = Color(1, 0.858824, 0.54902, 1)
+emission_strength = 1.0
+depth_test_disabled = true
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Anchor/Mark/Explosion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.09772, 0.66263, 0.324788)
+light_color = Color(0.980392, 0.733333, 0, 1)
+light_energy = 0.0
+shadow_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Anchor/Mark/Explosion"]
+libraries = {
+"": SubResource("AnimationLibrary_rad4i")
+}
+
+[node name="Beam" type="MeshInstance3D" parent="Anchor/Mark"]
+transform = Transform3D(1, -4.443e-28, 0, 0, 1, 0, 0, 0, 1, 0.221664, 0.0289965, -2.38419e-07)
+visible = false
+material_override = SubResource("ShaderMaterial_srss6")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_enl24")
+script = ExtResource("59_5s1dx")
+partition_width = 0.45
+metadata/_edit_lock_ = true
+
+[node name="OrbEnd" type="MeshInstance3D" parent="Anchor/Mark/Beam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.0106503, 0.00100005)
+material_override = SubResource("StandardMaterial3D_5scaf")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_idsay")
+
+[node name="OrbStart" type="MeshInstance3D" parent="Anchor/Mark/Beam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
+material_override = SubResource("StandardMaterial3D_l4hvq")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_j62xg")
+metadata/_edit_lock_ = true
+
+[node name="Nicole" type="Node3D" parent="Anchor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.58397, 0.421796, 0)
+script = ExtResource("23_ibpgf")
+player_name = "MG_RPG_PLAYER_NICOLE"
+
+[node name="Sprite" type="MeshInstance3D" parent="Anchor/Nicole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.032, -0.032)
+extra_cull_margin = 16384.0
+mesh = SubResource("ArrayMesh_lissw")
+script = ExtResource("10")
+texture_frames = SubResource("SpriteFrames_mndr2")
+animation = "attack"
+alias = "AnimatedPaper3D"
+offset = Vector3(-105.185, -52.225, 0)
+
+[node name="Explosion" type="MeshInstance3D" parent="Anchor/Nicole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.14743, -0.567039, 0.0339928)
+visible = false
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_e3143")
+script = ExtResource("10")
+texture_frames = SubResource("SpriteFrames_ihq4m")
+emission_frames = SubResource("SpriteFrames_ihq4m")
+animation = "default"
+playing = false
+alias = "AnimatedPaper3D2"
+emission_mult = Color(0.976471, 0.65098, 1, 1)
+emission_strength = 1.5
+depth_test_disabled = true
+metadata/_edit_lock_ = true
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Anchor/Nicole/Explosion"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.05491, 0.66263, 0.324787)
+light_color = Color(0.309804, 0, 0.980392, 1)
+light_energy = 0.0
+shadow_enabled = true
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Anchor/Nicole/Explosion"]
+libraries = {
+"": SubResource("AnimationLibrary_rad4i")
+}
+
+[node name="Beam" type="MeshInstance3D" parent="Anchor/Nicole"]
+transform = Transform3D(-1, -1.74846e-07, -8.74228e-08, -1.74846e-07, 1, -1.74846e-07, 8.74228e-08, -1.74846e-07, -1, -0.353, 0, 0)
+visible = false
+material_override = SubResource("ShaderMaterial_t8mlt")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_3iawh")
+script = ExtResource("59_5s1dx")
+partition_width = 0.45
+metadata/_edit_lock_ = true
+
+[node name="OrbEnd" type="MeshInstance3D" parent="Anchor/Nicole/Beam"]
+transform = Transform3D(1, -5.37354e-16, 0, -5.3735e-16, 1, 0, 0, 0, 1, 1.25, 0, -0.001)
+material_override = SubResource("StandardMaterial3D_8cxhl")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_sp3hn")
+
+[node name="OrbStart" type="MeshInstance3D" parent="Anchor/Nicole/Beam"]
+transform = Transform3D(1, -5.37354e-16, 0, -5.3735e-16, 1, 0, 0, 0, 1, 0, 0, -0.001)
+material_override = SubResource("StandardMaterial3D_km0dw")
+cast_shadow = 0
+mesh = SubResource("QuadMesh_j62xg")
+metadata/_edit_lock_ = true
+
+[node name="CamSample2" type="Camera3D" parent="."]
+transform = Transform3D(-0.999998, -2.19193e-05, 0.00178291, 0, 0.999924, 0.0122932, -0.00178304, 0.0122932, -0.999923, 0.57, 0.6, -3.937)
+attributes = SubResource("CameraAttributesPractical_wiaog")
+fov = 50.0
+near = 1.2
+script = ExtResource("103_fmlsm")
+wiggle_offset = Vector2(0.012, 0.012)
+wiggle_speed = 1.0
+c = 0.0
+
+[node name="CamBG" type="Camera3D" parent="."]
+transform = Transform3D(-0.999329, -0.00550701, 0.0362081, 0, 0.988631, 0.150364, -0.0366245, 0.150263, -0.987967, -1.42, 0.63, -3.445)
+attributes = SubResource("CameraAttributesPractical_3coce")
+fov = 50.0
+near = 0.82

@@ -1,0 +1,85 @@
+[gd_scene load_steps=10 format=3 uid="uid://lupbcwtkqx1"]
+
+[ext_resource type="Texture2D" uid="uid://de37rm8l5f0sk" path="res://scenes/lis/chemistry_lab/assets/reagent_shelf.png" id="1"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://dc4itc8n3plxd" path="res://scenes/lis/chemistry_lab/assets/reagent_shelf.obj" id="3"]
+[ext_resource type="Texture2D" uid="uid://dgadddxdwlhov" path="res://scenes/lis/chemistry_lab/assets/reagent_shelf_light_tube.png" id="4"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="5"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="6"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("5")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("1")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5u3e0"]
+render_priority = 0
+shader = ExtResource("6")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_fjl44"]
+_surfaces = [{
+"aabb": AABB(-0.35, -0.01, 0, 0.70001, 0.02, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("ShaderMaterial_5u3e0"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(51, 51, 179, 62, 10, 215, 35, 188, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 51, 51, 179, 190, 10, 215, 35, 188, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 51, 51, 179, 62, 10, 215, 35, 60, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 51, 51, 179, 190, 10, 215, 35, 60, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[node name="ReagentShelf" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.005, 0.53, -0.38)
+mesh = ExtResource("3")
+surface_material_override/0 = SubResource("1")
+
+[node name="LightTube" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.26, 0)
+mesh = SubResource("ArrayMesh_fjl44")
+script = ExtResource("2")
+texture = ExtResource("4")
+centered = true
+metadata/mat_opaque = SubResource("ShaderMaterial_5u3e0")

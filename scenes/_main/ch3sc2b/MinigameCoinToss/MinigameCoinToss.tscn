@@ -1,0 +1,104 @@
+[gd_scene load_steps=20 format=3 uid="uid://ciwe1dxnp822k"]
+
+[ext_resource type="Texture2D" uid="uid://c3ywdf48elkkh" path="res://scenes/_main/ch3sc2b/MinigameCoinToss/assets/board.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cwryl3sxlu1kv" path="res://scenes/_main/ch3sc2b/MinigameBalloon/assets/crosshair.png" id="2"]
+[ext_resource type="BankAsset" uid="uid://b0wwfgfewodvg" path="res://addons/fmod/editor/resources/banks/{cea1e13e-ef55-4e61-8381-e1a8d1c3967b}.tres" id="2_ieijn"]
+[ext_resource type="Texture2D" uid="uid://r6nydohhpggk" path="res://scenes/_main/ch3sc2b/MinigameDart/assets/meter_indicator.png" id="3"]
+[ext_resource type="EventAsset" uid="uid://w5kmq1xcycib" path="res://addons/fmod/editor/resources/events/{05e649aa-6f28-4480-a36a-d7f946aef416}.tres" id="3_77fus"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameCoinToss/scripts/Crosshair.gd" id="4"]
+[ext_resource type="EventAsset" uid="uid://dbe5xmkgj38wb" path="res://addons/fmod/editor/resources/events/{c8ae73db-347a-4453-b6e7-565134db74a8}.tres" id="4_2fkcu"]
+[ext_resource type="Texture2D" uid="uid://crvxna3tcqw3i" path="res://scenes/_main/ch3sc2b/MinigameDart/assets/meter.png" id="5"]
+[ext_resource type="EventAsset" uid="uid://dnfply2fkrmr5" path="res://addons/fmod/editor/resources/events/{0c9abc59-9555-4797-8631-d3b8c5f6744d}.tres" id="5_710ew"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameCoinToss/MinigameCoinToss.gd" id="6"]
+[ext_resource type="EventAsset" uid="uid://dyuypfq3iy4pd" path="res://addons/fmod/editor/resources/events/{90c26b88-1432-4637-bdb6-aea6c1ba6926}.tres" id="6_6fjbt"]
+[ext_resource type="Texture2D" uid="uid://bbc4bs0ol08iw" path="res://scenes/_main/ch3sc2b/MinigameCoinToss/assets/BG.png" id="7"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameCoinToss/scripts/Meter.gd" id="9"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="13"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameCoinToss/scripts/AIController.gd" id="14"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameDart/scripts/Board.gd" id="15"]
+[ext_resource type="Texture2D" uid="uid://dfn0peo0hrbsb" path="res://scenes/_main/ch3sc2b/MinigameCoinToss/assets/board_map.png" id="16"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type canvas_item;
+
+uniform sampler2D tex : filter_nearest;
+uniform bool flash = false;
+
+void fragment() {
+	vec4 c = texture(tex, UV);
+
+	if (c.a > 0.5) {
+		COLOR = flash ? vec4(1) : c;
+	} else {
+		COLOR = vec4(0);
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("1")
+shader_parameter/flash = false
+shader_parameter/tex = ExtResource("2")
+
+[node name="MinigameCoinToss" type="Node2D"]
+texture_filter = 1
+script = ExtResource("6")
+
+[node name="AudioBankLoader" type="StudioBankLoader" parent="."]
+num_banks = 1
+bank_0 = ExtResource("2_ieijn")
+
+[node name="SFX" type="Node" parent="."]
+
+[node name="CoinsFromPocket" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("3_77fus")
+
+[node name="CoinFlip" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("4_2fkcu")
+
+[node name="CoinDrop" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("5_710ew")
+
+[node name="SetPosition" type="StudioEventEmitter2D" parent="SFX"]
+event = ExtResource("6_6fjbt")
+
+[node name="Focus" type="Node" parent="."]
+script = ExtResource("13")
+focus_name = "MinigameCoinToss"
+
+[node name="BG" type="Sprite2D" parent="."]
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("7")
+centered = false
+
+[node name="Board" type="Sprite2D" parent="BG"]
+position = Vector2(169.063, 99.0625)
+texture = ExtResource("1")
+script = ExtResource("15")
+score_map = ExtResource("16")
+
+[node name="Constraint" type="Sprite2D" parent="BG"]
+visible = false
+texture = ExtResource("1")
+centered = false
+
+[node name="Crosshair" type="Sprite2D" parent="."]
+material = SubResource("2")
+position = Vector2(540.889, 317.641)
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("2")
+script = ExtResource("4")
+
+[node name="Meter" type="Sprite2D" parent="."]
+position = Vector2(492.267, 672.651)
+rotation = 1.5708
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("5")
+script = ExtResource("9")
+
+[node name="Indicator" type="Sprite2D" parent="Meter"]
+position = Vector2(-8.96848, -2.90753)
+texture = ExtResource("3")
+
+[node name="AIController" type="Node" parent="."]
+script = ExtResource("14")

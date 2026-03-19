@@ -1,0 +1,102 @@
+[gd_scene load_steps=10 format=3 uid="uid://sc3775ffbjfx"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch10sc1c/scripts/RainLeak.gd" id="1_ulpwf"]
+
+[sub_resource type="Shader" id="Shader_c2m8b"]
+code = "shader_type spatial;
+
+uniform vec4 albedo : source_color = vec4(1);
+uniform float max_height = 1.0;
+
+instance uniform float progress : hint_range(0.0, 1.0) = 0.0;
+
+float f(float x) {
+	float mean = 0.0;
+	float sd = 0.14;
+	float peak = 2.85;
+	float e = -pow(x - mean, 2.0) / (2.0 * sd * sd);
+	float fac = pow(progress, 0.4);
+	return (1.0 / (sd * sqrt(2.0 * PI))) * pow(E, e) / peak * fac;
+}
+
+void vertex() {
+	UV -= vec2(0.5);
+
+	float r = length(UV);
+	VERTEX.y = f(r) * max_height;
+
+	// TODO: Compute NORMAL
+}
+
+void fragment() {
+	ALBEDO = albedo.rgb;
+	ALPHA = step(length(UV), 0.5) * albedo.a;
+
+	ROUGHNESS = 0.02;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_txd0x"]
+render_priority = 0
+shader = SubResource("Shader_c2m8b")
+shader_parameter/albedo = Color(0.658824, 0.858824, 1, 0.278431)
+shader_parameter/max_height = 0.032
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_f6aud"]
+size = Vector2(0.1, 0.1)
+subdivide_width = 20
+subdivide_depth = 20
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t25iw"]
+transparency = 1
+albedo_color = Color(0.74902, 0.890196, 1, 0.607843)
+roughness = 0.02
+refraction_enabled = true
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_m7ue5"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_r5evb"]
+size = Vector2(0.016, 0.016)
+
+[sub_resource type="EventAsset" id="EventAsset_hdmys"]
+is_3d = true
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1c/Specific/WaterDropFloor"
+guid = "{1ab872ec-59ad-4021-854d-e1dd8b843872}"
+name = "WaterDropFloor"
+
+[sub_resource type="EventAsset" id="EventAsset_iq22j"]
+is_3d = true
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT2/Ch10/Sc1c/Specific/WaterDropBucket"
+guid = "{b1fb144f-b32c-48fd-9c07-ec68910d73b3}"
+name = "WaterDropBucket"
+
+[node name="RainLeak" type="MeshInstance3D"]
+transform = Transform3D(-1, 8.74228e-08, 0, -8.74228e-08, -1, 0, 0, 0, 1, 0, 0, 0)
+material_override = SubResource("ShaderMaterial_txd0x")
+instance_shader_parameters/progress = 1.0
+mesh = SubResource("PlaneMesh_f6aud")
+script = ExtResource("1_ulpwf")
+
+[node name="Drop" type="GPUParticles3D" parent="."]
+material_override = SubResource("StandardMaterial3D_t25iw")
+emitting = false
+amount = 1
+one_shot = true
+process_material = SubResource("ParticleProcessMaterial_m7ue5")
+draw_pass_1 = SubResource("QuadMesh_r5evb")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="WaterDropFloor" type="StudioEventEmitter3D" parent="."]
+event = SubResource("EventAsset_hdmys")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53523e-07, 1.7561, 0)
+
+[node name="WaterDropBucket" type="StudioEventEmitter3D" parent="."]
+event = SubResource("EventAsset_iq22j")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.53523e-07, 1.7561, 0)

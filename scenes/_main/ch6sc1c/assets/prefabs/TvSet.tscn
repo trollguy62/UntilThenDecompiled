@@ -1,0 +1,68 @@
+[gd_scene load_steps=20 format=3 uid="uid://bi4fquigpx7bg"]
+
+[ext_resource type="ArrayMesh" uid="uid://dx58h56yqpw4i" path="res://scenes/_main/ch1sc1c/assets/tv_set.obj" id="1_wk76n"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="2_s4ssj"]
+[ext_resource type="Texture2D" uid="uid://7ba8inapujlq" path="res://scenes/_main/ch1sc1c/assets/tv_set.png" id="3_8wbt0"]
+[ext_resource type="Texture2D" uid="uid://cy2ko3hbsc3xy" path="res://scenes/_main/ch1sc1c/assets/tv_set_em.png" id="4_2saxi"]
+[ext_resource type="Shader" path="res://scenes/krt2/train/assets/shaders/TvScreen.gdshader" id="5_p4cwx"]
+[ext_resource type="Texture2D" uid="uid://tj63k3hoggcs" path="res://scenes/krt2/train/assets/tv/bottom.png" id="6_dgrg2"]
+[ext_resource type="Texture2D" uid="uid://cf1dfqwxt62ol" path="res://scenes/_main/ch6sc1c/assets/envi/main_1.png" id="7_mysvf"]
+[ext_resource type="Texture2D" uid="uid://c0sg4wu3vhm62" path="res://scenes/_main/ch6sc1c/assets/envi/main_2.png" id="8_htrot"]
+[ext_resource type="Texture2D" uid="uid://cxivwc0cj6oxb" path="res://scenes/_main/ch6sc1c/assets/envi/side_1.png" id="9_2xebp"]
+[ext_resource type="Texture2D" uid="uid://csuvtwbf07387" path="res://scenes/_main/ch6sc1c/assets/envi/side_2.png" id="10_lx83t"]
+[ext_resource type="Texture2D" uid="uid://drheghxytmvu0" path="res://scenes/_main/ch6sc1c/assets/envi/side_3.png" id="11_6xhla"]
+[ext_resource type="Texture2D" uid="uid://h8ih407m0fa" path="res://scenes/_main/ch6sc1c/assets/envi/side_4.png" id="12_wbdhu"]
+[ext_resource type="Texture2D" uid="uid://bqcroorp72kxl" path="res://scenes/_main/ch6sc1c/assets/envi/side_5.png" id="13_u5n7w"]
+[ext_resource type="Texture2D" uid="uid://b6qjbd7fka6vh" path="res://scenes/krt2/train/assets/tv/ticker.png" id="14_j0tw4"]
+[ext_resource type="Texture2D" uid="uid://f03t4etpms4w" path="res://scenes/krt2/train/assets/tv/ticker_content_1.png" id="15_84ij7"]
+[ext_resource type="Texture2D" uid="uid://bo52w5u5l1qyd" path="res://scenes/krt2/train/assets/tv/ticker_content_2.png" id="16_23gol"]
+[ext_resource type="Texture2D" uid="uid://dtjdmd03uwxtc" path="res://scenes/krt2/train/assets/tv/ticker_content_3.png" id="17_umiqr"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("2_s4ssj")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 1, 1, 1)
+shader_parameter/emission_energy = 2.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3_8wbt0")
+shader_parameter/texture_emission = ExtResource("4_2saxi")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dll01"]
+render_priority = 0
+shader = ExtResource("5_p4cwx")
+shader_parameter/emission_mult = 0.7
+shader_parameter/tex_bottom = ExtResource("6_dgrg2")
+shader_parameter/tex_ticker = ExtResource("14_j0tw4")
+shader_parameter/tex_ticker_c_1 = ExtResource("15_84ij7")
+shader_parameter/tex_ticker_c_2 = ExtResource("16_23gol")
+shader_parameter/tex_ticker_c_3 = ExtResource("17_umiqr")
+shader_parameter/tex_side_1 = ExtResource("9_2xebp")
+shader_parameter/tex_side_2 = ExtResource("10_lx83t")
+shader_parameter/tex_side_3 = ExtResource("11_6xhla")
+shader_parameter/tex_side_4 = ExtResource("12_wbdhu")
+shader_parameter/tex_side_5 = ExtResource("13_u5n7w")
+shader_parameter/tex_main_1 = ExtResource("7_mysvf")
+shader_parameter/tex_main_2 = ExtResource("8_htrot")
+
+[node name="TvSet" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.23, 0)
+mesh = ExtResource("1_wk76n")
+surface_material_override/0 = SubResource("1")
+surface_material_override/1 = SubResource("ShaderMaterial_dll01")

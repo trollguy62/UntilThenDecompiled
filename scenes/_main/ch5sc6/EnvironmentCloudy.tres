@@ -1,0 +1,35 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://h8cam8tu1q1m"]
+
+[ext_resource type="Texture2D" uid="uid://0k1lshsv8snt" path="res://scenes/_main/ch5sc6/assets/envi/sky_cloudy_01.png" id="1_eofue"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_iulj4"]
+panorama = ExtResource("1_eofue")
+filter = false
+
+[sub_resource type="Sky" id="6423"]
+sky_material = SubResource("PanoramaSkyMaterial_iulj4")
+radiance_size = 2
+
+[resource]
+background_mode = 2
+sky = SubResource("6423")
+sky_custom_fov = 60.0
+sky_rotation = Vector3(0, 2.53073, 0)
+ambient_light_color = Color(0.615686, 0.533333, 0.890196, 1)
+ambient_light_sky_contribution = 0.8
+tonemap_mode = 3
+ssr_enabled = true
+ssao_enabled = true
+ssao_radius = 0.5
+ssao_intensity = 1.0
+glow_enabled = true
+glow_strength = 0.36
+glow_bloom = 0.4
+glow_blend_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.576471, 0.580392, 0.729412, 1)
+fog_density = 0.007
+fog_sky_affect = 0.0
+adjustment_enabled = true
+adjustment_contrast = 1.05
+adjustment_saturation = 0.85

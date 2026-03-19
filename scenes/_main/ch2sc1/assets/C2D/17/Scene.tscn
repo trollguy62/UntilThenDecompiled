@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://bydcamhdphsng"]
+
+[ext_resource type="Texture2D" uid="uid://j0nfh3ns4voo" path="res://scenes/_main/ch2sc1/assets/C2D/17/Mark.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://lp08sy8v6kpw" path="res://scenes/_main/ch2sc1/assets/C2D/17/background.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://c2lpfa3dx4087" path="res://scenes/_main/ch2sc1/assets/C2D/17/shock.png" id="3"]
+
+[sub_resource type="Animation" id="1"]
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Shock:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(160, 90), Vector2(159, 90), Vector2(161, 90), Vector2(158, 90), Vector2(162, 90)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Mark:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(159, 90), Vector2(160, 90), Vector2(158, 90), Vector2(159, 90), Vector2(160, 90)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j8o0v"]
+_data = {
+"shocked": SubResource("1")
+}
+
+[node name="C2D_17" type="Node2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("2")
+centered = false
+
+[node name="Shock" type="Sprite2D" parent="."]
+position = Vector2(159, 90)
+scale = Vector2(1.02, 1)
+texture = ExtResource("3")
+
+[node name="Mark" type="Sprite2D" parent="."]
+position = Vector2(160, 90)
+texture = ExtResource("1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "shocked"
+libraries = {
+"": SubResource("AnimationLibrary_j8o0v")
+}

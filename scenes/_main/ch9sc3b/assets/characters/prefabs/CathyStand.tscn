@@ -1,0 +1,125 @@
+[gd_scene load_steps=20 format=3 uid="uid://mvb7efbymdm3"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://bhmqbe6pshqei" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _idle/03.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://hbmxtgl67wuu" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _idle/02.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dwmhjv1djjjhj" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _talk/04.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dv08mc74g2mol" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _talk/06.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://c6dbxlrkgyryv" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _idle/06.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://b7juphudy8oel" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _talk/05.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://difig0v6y5bkl" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _idle/01.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cdrvgu0q35eos" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _talk/02.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://diw21dkusc14w" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _talk/03.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://x5gcwsge4e5t" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _idle/04.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://c7mehs5r043d6" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _talk/01.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://byyu14pbuyfog" path="res://assets/characters/CathyPortillo/casual/lf_stand^lf_default _idle/05.png" id="14"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="15"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="16"]
+
+[sub_resource type="ShaderMaterial" id="858"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/scale = Vector3(0.792, 1.232, 1)
+shader_parameter/offset = Vector3(0.088, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("9")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jqkvh"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("858"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}]
+
+[node name="Sprite" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_jqkvh")
+script = ExtResource("1")
+texture_frames = SubResource("3")
+sync_all = true
+reflect_h_width = 110
+animation = "default_idle"
+random_initial = true
+alias = "CathyPortillo"
+pixel_size = 0.008
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.44, 0.98, 0)
+script = ExtResource("16")
+alias = "CathyPortillo"
+
+[node name="SpriteController" type="Node" parent="."]
+script = ExtResource("15")
+state_container_alias = "CathyPortillo"
+fallback_idle_talk_anim = "default"
+idle_talk_anims = Array[String](["default"])

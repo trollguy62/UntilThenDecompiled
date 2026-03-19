@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://cc3bu3ptot12y"]
+
+[ext_resource type="Texture2D" uid="uid://fnmdgrckhpr1" path="res://scenes/_main/ch5sc3/assets/envi/rock.png" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc3/assets/prefabs/Rock.gd" id="1_62s1w"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://davjuht84onwk" path="res://scenes/_main/ch5sc3/assets/envi/rock.obj" id="3"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc3/scripts/Water/DroppableRigidBody.gd" id="4"]
+
+[sub_resource type="ShaderMaterial" id="6039"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("1")
+
+[sub_resource type="Shader" id="4496"]
+code = "shader_type spatial;
+render_mode unshaded;
+
+uniform float speed;
+
+void fragment() {
+	ALBEDO = vec3(speed, 0, 0);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="6038"]
+render_priority = 0
+shader = SubResource("4496")
+shader_parameter/speed = 8.0
+
+[sub_resource type="BoxShape3D" id="6040"]
+margin = 0.02
+size = Vector3(0.024, 0.044, 0.032)
+
+[node name="Rock" type="RigidBody3D"]
+transform = Transform3D(0.904197, 0.00573431, -0.427076, 0.210817, 0.863628, 0.457934, 0.371461, -0.504098, 0.779681, 0.13, 0.374, 0.107901)
+mass = 100.0
+gravity_scale = 0.15
+can_sleep = false
+script = ExtResource("1_62s1w")
+
+[node name="MeshInstance" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0)
+material_override = SubResource("6039")
+mesh = ExtResource("3")
+
+[node name="CollisionMesh" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.599, -2.36174e-09, 7.32594e-18, 2.36174e-09, 0.599, 0, -7.32594e-18, 2.88847e-26, 0.599, 0, 0, 0)
+layers = 32768
+material_override = SubResource("6038")
+mesh = ExtResource("3")
+
+[node name="CollisionShape" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, -8.9407e-08, 8.9407e-08, 1.19209e-07, 0.996195, 0.0871557, 1.19209e-07, -0.0871558, 0.996195, 2.07126e-06, -0.00297946, 0.00528523)
+shape = SubResource("6040")
+
+[node name="DroppableRigidBody" type="Node" parent="."]
+script = ExtResource("4")

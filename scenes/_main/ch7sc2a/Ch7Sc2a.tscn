@@ -1,0 +1,3244 @@
+[gd_scene load_steps=400 format=3 uid="uid://dvpt5c7al1lhy"]
+
+[ext_resource type="PackedScene" uid="uid://bls5l0dvhob1v" path="res://scenes/lis/classroom_9pearl/Scene.tscn" id="1"]
+[ext_resource type="Environment" uid="uid://wbfsids8wmu2" path="res://scenes/_main/ch2sc2a/Environment.tres" id="2_i1ivi"]
+[ext_resource type="Script" path="res://components/Scene.gd" id="3"]
+[ext_resource type="Script" path="res://components/SceneManager.gd" id="4"]
+[ext_resource type="VoxelGIData" uid="uid://cscvxst0o8d6" path="res://scenes/_main/ch2sc2a/GIProbeData.res" id="4_v342k"]
+[ext_resource type="Script" path="res://components/DialogueHandler.gd" id="5"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="6"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="7"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="8"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="9"]
+[ext_resource type="Texture2D" uid="uid://bte8imhso7o8y" path="res://assets/characters/MarkBorja/uniform/f_sitheaddown^f_default_idle/01.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bs87in88ik0s4" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_idle/01.png" id="11"]
+[ext_resource type="AudioStream" uid="uid://clyakd54libh8" path="res://assets/sfx/leaves_shuffle.ogg" id="12"]
+[ext_resource type="AudioStream" uid="uid://dg5c2sg7mwyjj" path="res://assets/sfx/bird_chirps_2.ogg" id="13"]
+[ext_resource type="Texture2D" uid="uid://bhg1k04yalcsh" path="res://scenes/_main/ch7sc2a/assets/C2D/01.png" id="13_2h7lk"]
+[ext_resource type="Texture2D" uid="uid://5wgx2fy1oj6c" path="res://assets/characters/MarkBorja/uniform/f_sitwakeup^f_default_idle/01.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://cgrn2hq8sktte" path="res://scenes/_main/ch7sc2a/assets/C2D/02.png" id="14_7hrno"]
+[ext_resource type="AudioStream" uid="uid://rv0lv6oerrst" path="res://scenes/_main/ch1sc5a/assets/sfx/hallway_ambience.ogg" id="15"]
+[ext_resource type="Texture2D" uid="uid://dixt0rtnvbda7" path="res://scenes/_main/ch7sc2a/assets/C2D/03.png" id="15_8t8cp"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="16"]
+[ext_resource type="Texture2D" uid="uid://7he15vg2f6nm" path="res://scenes/_main/ch7sc2a/assets/C2D/04.png" id="16_mu5dt"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="17"]
+[ext_resource type="Texture2D" uid="uid://d0ay8b2xqhrv1" path="res://scenes/_main/ch7sc2a/assets/C2D/05.png" id="17_535v7"]
+[ext_resource type="Texture2D" uid="uid://cyfl1skbwg0s1" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_idle/03.tres" id="18"]
+[ext_resource type="Texture2D" uid="uid://boujo8f5mf3u" path="res://scenes/_main/ch7sc2a/assets/C2D/06.png" id="18_ivew2"]
+[ext_resource type="Texture2D" uid="uid://bq8dre1dvbshn" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_idle/01.tres" id="19"]
+[ext_resource type="Texture2D" uid="uid://cawd0ne1y3x4v" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_talk/03.tres" id="20"]
+[ext_resource type="Texture2D" uid="uid://b1pjx7l1y02qy" path="res://scenes/lis/classroom_9pearl/assets/bulletin_board.png" id="20_31ipj"]
+[ext_resource type="Texture2D" uid="uid://csbwoskm1tv1x" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_talk/01.tres" id="21"]
+[ext_resource type="Texture2D" uid="uid://c0wvt8u6rky2u" path="res://scenes/lis/classroom_9pearl/assets/portrait_melchora.png" id="21_82rhw"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="22"]
+[ext_resource type="Texture2D" uid="uid://ve0liwani4ed" path="res://scenes/lis/classroom_9pearl/assets/portrait_rizal.png" id="22_qabmt"]
+[ext_resource type="Texture2D" uid="uid://d3uh7usybl2jk" path="res://scenes/lis/classroom_9pearl/assets/portrait_andres.png" id="23_pi6vf"]
+[ext_resource type="Texture2D" uid="uid://bo8euiooe05og" path="res://scenes/lis/classroom_9pearl/assets/portrait_willie.png" id="24_j3g7p"]
+[ext_resource type="Texture2D" uid="uid://d1wi58b8in44j" path="res://scenes/lis/classroom_9pearl/assets/ext/flagpole.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://c83lhdrylrmyj" path="res://scenes/lis/classroom_9pearl/assets/ext/basketball_ring.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://bol7jeeh18g8a" path="res://scenes/_main/ch2sc2a/assets/C2D/05/01.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://6kx4ayusvh2m" path="res://scenes/_main/ch1sc4/characters/JunjunChavez/sleep/01.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://by7vhlf8ju1s3" path="res://scenes/_main/ch1sc4/characters/JunjunChavez/sleep/05.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://bu5pr8755613y" path="res://scenes/_main/ch1sc4/characters/JunjunChavez/sleep/02.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://bqsllwr38knaa" path="res://scenes/_main/ch1sc4/characters/JunjunChavez/sleep/04.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://bqx5l2204uxkd" path="res://scenes/_main/ch1sc4/characters/JunjunChavez/sleep/03.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://bqex57ongcc7q" path="res://scenes/_main/ch1sc4/characters/JunjunChavez/sleep/08.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://ckkbghapgo8w3" path="res://scenes/_main/ch1sc4/characters/JunjunChavez/sleep/06.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://g5y2sdenrksp" path="res://scenes/_main/ch1sc4/characters/JunjunChavez/sleep/07.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://ctkncegfutbnw" path="res://scenes/_main/ch7sc2a/assets/envi/poster_2.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://6kr0dly5s6l4" path="res://scenes/_main/ch7sc2a/assets/envi/poster_1.png" id="73"]
+[ext_resource type="Texture2D" uid="uid://bhe0mwn4tx7im" path="res://scenes/_main/ch2sc2a/assets/C2D/04/01.png" id="74"]
+[ext_resource type="Texture2D" uid="uid://bfxbiohcf5rt1" path="res://scenes/_main/ch7sc2a/assets/envi/poster_3.png" id="75"]
+[ext_resource type="Texture2D" uid="uid://div256a7rotx" path="res://scenes/_main/ch2sc2a/characters/NpcFemaleStickingTape/01.png" id="76"]
+[ext_resource type="Script" path="res://components/CameraEffects.gd" id="77"]
+[ext_resource type="Texture2D" uid="uid://ddr17df58t1g8" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen4/talk/01.png" id="79"]
+[ext_resource type="Texture2D" uid="uid://b7hrxh3qiq3cr" path="res://scenes/_main/ch2sc2a/characters/NpcMaleStickingTape/01.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://bktpvax6k370m" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen4/talk/06.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://b7pkfunf3xrr6" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen4/talk/02.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://dixuaxe3fid1w" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen4/talk/05.png" id="83"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/VisibilityController.gd" id="84"]
+[ext_resource type="Texture2D" uid="uid://dvamx5vgiw87i" path="res://assets/characters/MarkBorja/uniform/l_run^l_determined_idle/03.png" id="85"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="86"]
+[ext_resource type="Texture2D" uid="uid://cofibltrx7omj" path="res://assets/characters/MarkBorja/uniform/l_run^l_determined_idle/04.png" id="87"]
+[ext_resource type="Texture2D" uid="uid://y4imioyks8ku" path="res://assets/characters/MarkBorja/uniform/l_run^l_determined_idle/02.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://lqskx107o5qk" path="res://assets/characters/MarkBorja/uniform/l_run^l_determined_idle/05.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://b6tny5l8mfl2c" path="res://assets/characters/MarkBorja/uniform/l_run^l_determined_idle/07.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://bc6jhro6g7g8t" path="res://assets/characters/MarkBorja/uniform/l_run^l_determined_idle/06.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://dg1imjtf7krq" path="res://assets/characters/MarkBorja/uniform/l_run^l_determined_idle/08.png" id="92"]
+[ext_resource type="Texture2D" uid="uid://be38aqmmqweo6" path="res://assets/characters/MarkBorja/uniform/l_run^l_determined_idle/01.png" id="93"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="94"]
+[ext_resource type="Texture2D" uid="uid://b6lx8432bfwer" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_idle/01.png" id="96"]
+[ext_resource type="Texture2D" uid="uid://c6cx2m645rosq" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_talk/01.png" id="97"]
+[ext_resource type="Texture2D" uid="uid://vk4y0bbo6vaj" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_idle/01.png" id="98"]
+[ext_resource type="Texture2D" uid="uid://ic0lm4w6qb5h" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_talk/01.png" id="99"]
+[ext_resource type="Texture2D" uid="uid://bqdm00vc0dp7q" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_idle/01.png" id="100"]
+[ext_resource type="Texture2D" uid="uid://bcjkqw02tyta2" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_talk/01.png" id="101"]
+[ext_resource type="Texture2D" uid="uid://bm0jw0j5jv2ij" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_idle/01.png" id="102"]
+[ext_resource type="Texture2D" uid="uid://dx17stok3jp6q" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_talk/01.png" id="103"]
+[ext_resource type="Texture2D" uid="uid://bdnyx3xbcfmy8" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_talk/01.png" id="104"]
+[ext_resource type="Texture2D" uid="uid://ck5cljvbv30dc" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_idle/01.png" id="105"]
+[ext_resource type="Texture2D" uid="uid://jj0fpgc1iqts" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_talk/03.tres" id="106"]
+[ext_resource type="Texture2D" uid="uid://dg2c4ty41lor3" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_talk/03.tres" id="107"]
+[ext_resource type="Texture2D" uid="uid://cequb31f8uxe0" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_idle/04.tres" id="108"]
+[ext_resource type="Texture2D" uid="uid://cod74ebaofdfo" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_talk/02.tres" id="109"]
+[ext_resource type="Texture2D" uid="uid://hhj4uplftqou" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_idle/05.tres" id="110"]
+[ext_resource type="Texture2D" uid="uid://c1ax277hb5c3p" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_idle/02.tres" id="111"]
+[ext_resource type="Texture2D" uid="uid://hsrnfcucywbv" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_talk/02.tres" id="112"]
+[ext_resource type="Texture2D" uid="uid://egdvpmm13lw3" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_idle/02.tres" id="113"]
+[ext_resource type="Texture2D" uid="uid://bxb2dx12mbij" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_talk/02.tres" id="114"]
+[ext_resource type="Texture2D" uid="uid://da648otg8lv4v" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_idle/01.tres" id="115"]
+[ext_resource type="PackedScene" uid="uid://e3hu5waf2v3u" path="res://components/ThoughtBubble/ThoughtBubble.tscn" id="116"]
+[ext_resource type="AudioStream" uid="uid://bhlngsusa4ygx" path="res://scenes/_main/ch2sc2a/assets/sfx/Snoring.ogg" id="118"]
+[ext_resource type="Script" path="res://components/AudioStreamPlayer.gd" id="119"]
+[ext_resource type="AudioStream" uid="uid://mxcpoabuk5ce" path="res://scenes/_main/ch2sc2a/assets/sfx/Poking (Long intervals).ogg" id="120"]
+[ext_resource type="AudioStream" uid="uid://ihb37ldfcbei" path="res://assets/sfx/clothes_slow_2.ogg" id="121"]
+[ext_resource type="Texture2D" uid="uid://bq0lsux5gutyr" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_idle/02.tres" id="122"]
+[ext_resource type="AudioStream" uid="uid://csob5672rusfo" path="res://scenes/_main/ch2sc2a/assets/sfx/Arm on desk.ogg" id="123"]
+[ext_resource type="AudioStream" uid="uid://brk8v0qwam8e4" path="res://scenes/_main/ch2sc2a/assets/sfx/Poking (Medium intervals).ogg" id="124"]
+[ext_resource type="AudioStream" uid="uid://cn7et0or0mndk" path="res://scenes/_main/ch2sc2a/assets/sfx/Heavy Desk Screech 3.ogg" id="125"]
+[ext_resource type="AudioStream" uid="uid://ds8m3yfyvrkuf" path="res://scenes/_main/ch2sc2a/assets/sfx/Heavy Desk Screech 2.ogg" id="126"]
+[ext_resource type="AudioStream" uid="uid://ofaoa7tkcco4" path="res://scenes/_main/ch1sc1a/assets/sfx/footsteps.ogg" id="127"]
+[ext_resource type="AudioStream" uid="uid://d33blr2s421fe" path="res://scenes/_main/ch2sc2a/assets/sfx/Paper Uncrumple (Fast).ogg" id="128"]
+[ext_resource type="AudioStream" uid="uid://djurdkai1wc6a" path="res://assets/sfx/clothes_2.ogg" id="129"]
+[ext_resource type="Texture2D" uid="uid://b8dsbwe1mkn3v" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_idle/04.tres" id="130"]
+[ext_resource type="AudioStream" uid="uid://dn7v850f3323x" path="res://scenes/_main/ch2sc2a/assets/sfx/Heavy Desk Screech 1.ogg" id="131"]
+[ext_resource type="AudioStream" uid="uid://ba1nx1cg88jf4" path="res://scenes/_main/ch2sc2a/assets/sfx/Whistling.ogg" id="132"]
+[ext_resource type="AudioStream" uid="uid://y2dnae6fagso" path="res://assets/sfx/clothes_1.ogg" id="133"]
+[ext_resource type="PackedScene" uid="uid://da0ppgkx2d538" path="res://components/Vignette.tscn" id="134"]
+[ext_resource type="AudioStream" uid="uid://ch006e225khcy" path="res://scenes/_main/ch1sc4/assets/sfx/electric_fan.ogg" id="136"]
+[ext_resource type="AudioStream" uid="uid://jvylg8r085xr" path="res://scenes/_main/ch1sc1c/assets/music/main.ogg" id="137"]
+[ext_resource type="Texture2D" uid="uid://ct8u0354wfipk" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_talk/05.tres" id="138"]
+[ext_resource type="Texture2D" uid="uid://c233t18vja6pc" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_talk/03.tres" id="139"]
+[ext_resource type="Texture2D" uid="uid://btq1d6wcs04fa" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_idle/06.tres" id="140"]
+[ext_resource type="Texture2D" uid="uid://rdtd4cj8usjr" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_idle/02.tres" id="141"]
+[ext_resource type="Texture2D" uid="uid://dhvplcfwgn2vy" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_idle/04.tres" id="142"]
+[ext_resource type="Texture2D" uid="uid://yo4mn6juxcvv" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_talk/05.tres" id="143"]
+[ext_resource type="Texture2D" uid="uid://bgako7yjc4pit" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_idle/02.tres" id="144"]
+[ext_resource type="Texture2D" uid="uid://bojeisj65q5la" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_idle/05.tres" id="145"]
+[ext_resource type="Texture2D" uid="uid://voa72wvsggg1" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_idle/03.tres" id="146"]
+[ext_resource type="Texture2D" uid="uid://b7hwr1obdbftq" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_talk/04.tres" id="147"]
+[ext_resource type="Texture2D" uid="uid://cmqht310vvq3c" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_idle/03.tres" id="148"]
+[ext_resource type="Texture2D" uid="uid://dr0i5vga2ohs6" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_talk/06.tres" id="149"]
+[ext_resource type="Texture2D" uid="uid://cvx2v46m55m3k" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_talk/02.tres" id="150"]
+[ext_resource type="Texture2D" uid="uid://c50enyk678j7k" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_talk/05.tres" id="151"]
+[ext_resource type="Texture2D" uid="uid://duk87d1xjrce4" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_idle/06.tres" id="152"]
+[ext_resource type="Texture2D" uid="uid://bgt7kl56jsivm" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_idle/01.tres" id="153"]
+[ext_resource type="Texture2D" uid="uid://bs175j1ul7q8q" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_talk/04.tres" id="154"]
+[ext_resource type="Texture2D" uid="uid://be0lr8sd7erge" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_idle/01.tres" id="155"]
+[ext_resource type="Texture2D" uid="uid://by71atjjx75go" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_idle/04.tres" id="156"]
+[ext_resource type="Texture2D" uid="uid://blct3r0vhsu7" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_idle/06.tres" id="157"]
+[ext_resource type="Texture2D" uid="uid://tkt8n1qj86yw" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_talk/05.tres" id="158"]
+[ext_resource type="Texture2D" uid="uid://56ta05cx6fod" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_idle/04.tres" id="159"]
+[ext_resource type="Texture2D" uid="uid://dmjefgc7kdpoc" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_talk/03.tres" id="160"]
+[ext_resource type="Texture2D" uid="uid://bwnivvbc2slux" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_talk/04.tres" id="161"]
+[ext_resource type="Texture2D" uid="uid://b0wflc58vpxdl" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_idle/05.tres" id="162"]
+[ext_resource type="Texture2D" uid="uid://b7iaho6a6oqs0" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_idle/01.tres" id="163"]
+[ext_resource type="Texture2D" uid="uid://4t85jfkrwit3" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_talk/01.tres" id="164"]
+[ext_resource type="Texture2D" uid="uid://fnrou1a3wuda" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_idle/05.tres" id="165"]
+[ext_resource type="Texture2D" uid="uid://dh68bpiubvwmg" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_talk/01.tres" id="166"]
+[ext_resource type="Texture2D" uid="uid://v54dfi0gqca5" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_talk/06.tres" id="167"]
+[ext_resource type="Texture2D" uid="uid://cednrrdq1vgi0" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_idle/06.tres" id="168"]
+[ext_resource type="Texture2D" uid="uid://cgn1flued56cm" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_idle/02.tres" id="169"]
+[ext_resource type="Texture2D" uid="uid://fu0qmfllptp1" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_idle/04.tres" id="170"]
+[ext_resource type="Texture2D" uid="uid://c7euc408ch8q2" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_idle/05.tres" id="171"]
+[ext_resource type="Texture2D" uid="uid://c4pxu31xe80qy" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_idle/04.tres" id="172"]
+[ext_resource type="Texture2D" uid="uid://dp4vnfs4yxewc" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_talk/06.tres" id="173"]
+[ext_resource type="Texture2D" uid="uid://b31wq8tn0w2cu" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_idle/05.tres" id="174"]
+[ext_resource type="Texture2D" uid="uid://cbwrbmluie2sc" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_idle/05.tres" id="175"]
+[ext_resource type="Texture2D" uid="uid://bc6l41muvnhuq" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_idle/06.tres" id="176"]
+[ext_resource type="Texture2D" uid="uid://btlw8d68tq3s" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_talk/05.tres" id="177"]
+[ext_resource type="Texture2D" uid="uid://cbulabgvnw5vu" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_idle/06.tres" id="178"]
+[ext_resource type="Texture2D" uid="uid://dsiw1ippiwwa6" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_talk/01.tres" id="179"]
+[ext_resource type="Texture2D" uid="uid://ba1dqgo02tq88" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_talk/02.tres" id="180"]
+[ext_resource type="Texture2D" uid="uid://chylk7rlr3gd1" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_talk/06.tres" id="181"]
+[ext_resource type="Texture2D" uid="uid://bxt3dta0wt877" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_idle/01.tres" id="182"]
+[ext_resource type="Texture2D" uid="uid://cpgsbbnkg08sp" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_talk/02.tres" id="183"]
+[ext_resource type="Texture2D" uid="uid://da2r0sag0ei8o" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_talk/01.tres" id="184"]
+[ext_resource type="Texture2D" uid="uid://duvuc7uw1i061" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_idle/04.tres" id="185"]
+[ext_resource type="Texture2D" uid="uid://dj22tmwdsvrwi" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_talk/05.tres" id="186"]
+[ext_resource type="Texture2D" uid="uid://bt8lq6xymci6q" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_talk/04.tres" id="187"]
+[ext_resource type="Texture2D" uid="uid://ciby5gpxom0r0" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_idle/03.tres" id="188"]
+[ext_resource type="Texture2D" uid="uid://fe7ikg2lqwfk" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_idle/05.tres" id="189"]
+[ext_resource type="Texture2D" uid="uid://c2l6860wr1pwk" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_talk/05.tres" id="190"]
+[ext_resource type="Texture2D" uid="uid://ccbbqkkwxe6pd" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_idle/01.tres" id="191"]
+[ext_resource type="Texture2D" uid="uid://cnju544krkgx4" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_idle/03.tres" id="192"]
+[ext_resource type="Texture2D" uid="uid://brbh87upryfa4" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_talk/04.tres" id="193"]
+[ext_resource type="Texture2D" uid="uid://c0n45fljom34t" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_idle/02.tres" id="194"]
+[ext_resource type="Texture2D" uid="uid://ciajh1oyhlpyh" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_idle/06.tres" id="195"]
+[ext_resource type="Texture2D" uid="uid://ceysueq0xtxc5" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_idle/01.tres" id="196"]
+[ext_resource type="Texture2D" uid="uid://bac1boesdwtw7" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_talk/03.tres" id="197"]
+[ext_resource type="Texture2D" uid="uid://b835iull6ckcd" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_idle/02.tres" id="198"]
+[ext_resource type="Texture2D" uid="uid://c746lcircvhir" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_idle/04.tres" id="199"]
+[ext_resource type="Texture2D" uid="uid://cblelbrti7fut" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_talk/02.tres" id="200"]
+[ext_resource type="Texture2D" uid="uid://n6hdnwtks56x" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_talk/05.tres" id="201"]
+[ext_resource type="Texture2D" uid="uid://i3ciuymcsjuh" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_talk/02.tres" id="202"]
+[ext_resource type="Texture2D" uid="uid://cup1nvfwk0ffq" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_idle/05.tres" id="203"]
+[ext_resource type="Texture2D" uid="uid://uwt460omlg03" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_talk/01.tres" id="204"]
+[ext_resource type="Texture2D" uid="uid://bqt2hq4ntiee1" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_talk/03.tres" id="205"]
+[ext_resource type="Texture2D" uid="uid://caevjyckwr4qc" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_idle/05.tres" id="206"]
+[ext_resource type="Texture2D" uid="uid://dw0pw352s0bdt" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_idle/01.tres" id="207"]
+[ext_resource type="Texture2D" uid="uid://depqh4mx8osqp" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_talk/05.png" id="208"]
+[ext_resource type="Texture2D" uid="uid://rv3dio13i15m" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_idle/03.png" id="209"]
+[ext_resource type="Texture2D" uid="uid://b7xayefeic0t4" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_talk/05.png" id="210"]
+[ext_resource type="Texture2D" uid="uid://blwipquwiwggj" path="res://assets/characters/MarkBorja/uniform/f_sitheaddown^f_default_idle/02.png" id="211"]
+[ext_resource type="Texture2D" uid="uid://dguk5ixmbb2jm" path="res://assets/characters/MarkBorja/uniform/f_sitheaddown^f_default_idle/03.png" id="212"]
+[ext_resource type="Texture2D" uid="uid://dbu4a6n1gfisu" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_idle/05.png" id="213"]
+[ext_resource type="Texture2D" uid="uid://ba73b2w7jsi6m" path="res://assets/characters/MarkBorja/uniform/f_sitheaddown^f_default_idle/04.png" id="214"]
+[ext_resource type="Texture2D" uid="uid://nulbn1mai4qx" path="res://assets/characters/MarkBorja/uniform/f_sitheaddown^f_default_idle/05.png" id="215"]
+[ext_resource type="Texture2D" uid="uid://cbpfmeqxpbmqg" path="res://assets/characters/MarkBorja/uniform/f_sitwakeup^f_default_idle/03.png" id="216"]
+[ext_resource type="Texture2D" uid="uid://b0imfoqkon6oc" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_idle/03.png" id="217"]
+[ext_resource type="Texture2D" uid="uid://baqcvvhmu4vs5" path="res://assets/characters/MarkBorja/uniform/f_sitwakeup^f_default_idle/04.png" id="218"]
+[ext_resource type="Texture2D" uid="uid://ct8rwd0qcxnk8" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_talk/04.png" id="219"]
+[ext_resource type="Texture2D" uid="uid://bd82ct2cd7vd2" path="res://assets/characters/MarkBorja/uniform/f_sitwakeup^f_default_idle/05.png" id="220"]
+[ext_resource type="Texture2D" uid="uid://fnmkfbbhfxvf" path="res://assets/characters/MarkBorja/uniform/f_sitwakeup^f_default_idle/06.png" id="221"]
+[ext_resource type="Texture2D" uid="uid://cwrm3tq85gfsk" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_talk/03.png" id="222"]
+[ext_resource type="Texture2D" uid="uid://4uydb67wa0pu" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_idle/06.png" id="223"]
+[ext_resource type="Texture2D" uid="uid://dtf6twd5lh46q" path="res://assets/characters/MarkBorja/uniform/f_sitwakeup^f_default_idle/07.png" id="224"]
+[ext_resource type="Texture2D" uid="uid://gwq2beh2c8ff" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_talk/05.png" id="225"]
+[ext_resource type="Texture2D" uid="uid://c0lnrgdkrclxx" path="res://assets/characters/MarkBorja/uniform/f_sitwakeup^f_default_idle/08.png" id="226"]
+[ext_resource type="Texture2D" uid="uid://cprhqx6yr4pi3" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_talk/03.png" id="227"]
+[ext_resource type="Texture2D" uid="uid://ocrroo5wlvlf" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_idle/02.png" id="228"]
+[ext_resource type="Texture2D" uid="uid://qqshf421tnaf" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_idle/04.png" id="229"]
+[ext_resource type="Texture2D" uid="uid://dlfuh6ltrkx71" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_idle/05.png" id="230"]
+[ext_resource type="Texture2D" uid="uid://vgiaf2ai07e0" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_talk/06.png" id="231"]
+[ext_resource type="Texture2D" uid="uid://dea5u8pr1iaa" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_talk/06.png" id="232"]
+[ext_resource type="Texture2D" uid="uid://b6p0i3ah01wy3" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_idle/04.png" id="233"]
+[ext_resource type="Texture2D" uid="uid://b0v8ur17ij4q8" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_idle/02.png" id="234"]
+[ext_resource type="Texture2D" uid="uid://b141wa8at0t2t" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_idle/04.png" id="235"]
+[ext_resource type="Texture2D" uid="uid://6geagiplx0kg" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_talk/02.png" id="236"]
+[ext_resource type="Texture2D" uid="uid://cit7kqmpe7hc4" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_talk/03.png" id="237"]
+[ext_resource type="Texture2D" uid="uid://dq21yt8eutaav" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_talk/02.png" id="238"]
+[ext_resource type="Texture2D" uid="uid://br7mkfuplq15x" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_talk/02.png" id="239"]
+[ext_resource type="Texture2D" uid="uid://bpjwuvafgkqfd" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_talk/01.png" id="240"]
+[ext_resource type="Texture2D" uid="uid://nakgndxkhvai" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_talk/06.png" id="241"]
+[ext_resource type="Texture2D" uid="uid://nyy771lyqcl2" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_idle/06.png" id="242"]
+[ext_resource type="Texture2D" uid="uid://c57i6d4u8jcn0" path="res://assets/characters/MarkBorja/uniform/f_sitheaddown^f_default_idle/06.png" id="243"]
+[ext_resource type="Texture2D" uid="uid://bahjv1fje8lru" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_talk/04.png" id="244"]
+[ext_resource type="Texture2D" uid="uid://b3bdc2eiseuv8" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_default_idle/05.png" id="245"]
+[ext_resource type="Texture2D" uid="uid://0whjltoypgv5" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_confused_talk/04.png" id="246"]
+[ext_resource type="Texture2D" uid="uid://b6rka7wq3n8gj" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_idle/02.png" id="247"]
+[ext_resource type="Texture2D" uid="uid://csq6rinw8eb21" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_idle/06.png" id="248"]
+[ext_resource type="Texture2D" uid="uid://bbc03foo5ej3y" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_default_idle/03.png" id="249"]
+[ext_resource type="Texture2D" uid="uid://bvdmok7jrib32" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_talk/02.png" id="250"]
+[ext_resource type="Texture2D" uid="uid://bj72b02gdq5yp" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_idle/02.png" id="251"]
+[ext_resource type="Texture2D" uid="uid://bccwq5t4h0jvx" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_talk/06.png" id="252"]
+[ext_resource type="Texture2D" uid="uid://cuv8kbwuetdxo" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_idle/05.png" id="253"]
+[ext_resource type="Texture2D" uid="uid://cs1quk32381gv" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_idle/03.png" id="254"]
+[ext_resource type="Texture2D" uid="uid://vl8dd8cbs34e" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_talk/05.png" id="255"]
+[ext_resource type="Texture2D" uid="uid://bvblrumrb16es" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_idle/04.png" id="256"]
+[ext_resource type="Texture2D" uid="uid://dpkyixwv7feiq" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_talk/04.png" id="257"]
+[ext_resource type="Texture2D" uid="uid://d0ko2hrbodx1a" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_talk/03.png" id="258"]
+[ext_resource type="Texture2D" uid="uid://cyi6g55x7ajt8" path="res://assets/characters/MarkBorja/uniform/f_sit^lf=l_worried_idle/06.png" id="259"]
+[ext_resource type="Texture2D" uid="uid://biyt8bwu8b3i1" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen4/talk/03.png" id="260"]
+[ext_resource type="Texture2D" uid="uid://cw51s64ovrm0x" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen4/talk/04.png" id="261"]
+[ext_resource type="Texture2D" uid="uid://ci76udlbd00r5" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen1/talk/03.png" id="262"]
+[ext_resource type="Texture2D" uid="uid://0e0kkriausce" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen1/talk/05.png" id="263"]
+[ext_resource type="Texture2D" uid="uid://ehdglydaavrr" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen1/talk/06.png" id="264"]
+[ext_resource type="Texture2D" uid="uid://dk730q7qmfxmo" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen1/talk/04.png" id="265"]
+[ext_resource type="Texture2D" uid="uid://d03hs7oyvmnnh" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen1/talk/01.png" id="266"]
+[ext_resource type="Texture2D" uid="uid://23tmqrwpkaak" path="res://scenes/lis/assets/characters/NpcChattingStudentTeen1/talk/02.png" id="267"]
+[ext_resource type="Texture2D" uid="uid://ccpm8x4xdx0bs" path="res://scenes/_main/ch2sc2a/characters/NpcFemaleStickingTape/02.png" id="268"]
+[ext_resource type="Texture2D" uid="uid://c4ptdxh68uxev" path="res://scenes/_main/ch2sc2a/characters/NpcMaleStickingTape/06.png" id="269"]
+[ext_resource type="Texture2D" uid="uid://bld2ovpmwmu3b" path="res://scenes/_main/ch2sc2a/characters/NpcFemaleStickingTape/03.png" id="270"]
+[ext_resource type="Texture2D" uid="uid://doag4s54aq8i5" path="res://scenes/_main/ch2sc2a/characters/NpcFemaleStickingTape/04.png" id="271"]
+[ext_resource type="Texture2D" uid="uid://p4ivfoai25hd" path="res://scenes/_main/ch2sc2a/characters/NpcFemaleStickingTape/06.png" id="272"]
+[ext_resource type="Texture2D" uid="uid://di5jh6rmi0ga2" path="res://scenes/_main/ch2sc2a/characters/NpcMaleStickingTape/04.png" id="273"]
+[ext_resource type="Texture2D" uid="uid://t5ivapfwe4jl" path="res://scenes/_main/ch2sc2a/characters/NpcMaleStickingTape/02.png" id="274"]
+[ext_resource type="Texture2D" uid="uid://dite35do4jt08" path="res://scenes/_main/ch2sc2a/characters/NpcMaleStickingTape/03.png" id="275"]
+[ext_resource type="Texture2D" uid="uid://bjfc52wrcy7ck" path="res://scenes/_main/ch2sc2a/characters/NpcFemaleStickingTape/05.png" id="276"]
+[ext_resource type="Texture2D" uid="uid://cg5kykmskv2ac" path="res://scenes/_main/ch2sc2a/characters/NpcMaleStickingTape/05.png" id="277"]
+[ext_resource type="Script" path="res://data/AnimationTransition.gd" id="278"]
+[ext_resource type="Texture2D" uid="uid://qrpdx3m4nabd" path="res://assets/characters/MarkBorja/uniform/f_sitwakeup^f_default_idle/02.png" id="279"]
+[ext_resource type="Texture2D" uid="uid://ndd51a0et11m" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_talk/06.png" id="280"]
+[ext_resource type="Texture2D" uid="uid://dhrx5dardimo5" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_idle/04.png" id="281"]
+[ext_resource type="Texture2D" uid="uid://pw1r2mbgbyg8" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_talk/05.png" id="282"]
+[ext_resource type="Texture2D" uid="uid://cnwifw8l2kn1m" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_talk/04.png" id="283"]
+[ext_resource type="Texture2D" uid="uid://bq8l1p4472bw2" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_idle/06.png" id="284"]
+[ext_resource type="Texture2D" uid="uid://1eeuf7p3d5vf" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_talk/02.png" id="285"]
+[ext_resource type="Texture2D" uid="uid://cqfe8ivojkxu2" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_talk/03.png" id="286"]
+[ext_resource type="Texture2D" uid="uid://c0h2oumc52yvb" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_idle/05.png" id="287"]
+[ext_resource type="Texture2D" uid="uid://bos8g5jjv1po7" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_talk/03.png" id="288"]
+[ext_resource type="Texture2D" uid="uid://bmejyo1jdtdjs" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_idle/06.png" id="289"]
+[ext_resource type="Texture2D" uid="uid://wcior7rep0hm" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_talk/04.png" id="290"]
+[ext_resource type="Texture2D" uid="uid://cd33ad3ll0dj0" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_talk/02.png" id="291"]
+[ext_resource type="Texture2D" uid="uid://cpn56lebhnr6" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_idle/02.png" id="292"]
+[ext_resource type="Texture2D" uid="uid://cqq3od6qnd2xe" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_idle/05.png" id="293"]
+[ext_resource type="Texture2D" uid="uid://bbidfj6spcutx" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_idle/04.png" id="294"]
+[ext_resource type="Texture2D" uid="uid://c2r5v27dbuffy" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_idle/03.png" id="295"]
+[ext_resource type="Texture2D" uid="uid://bdsu6h7xan7fx" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_idle/02.png" id="296"]
+[ext_resource type="Texture2D" uid="uid://dp30rog54io05" path="res://assets/characters/MarkBorja/uniform/f_sit^f=r_worried_idle/03.png" id="297"]
+[ext_resource type="Texture2D" uid="uid://cujmvgwko1e4w" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_talk/05.png" id="298"]
+[ext_resource type="Texture2D" uid="uid://dc88hnswlj04b" path="res://assets/characters/MarkBorja/uniform/f_sit^rf=r_worried_talk/06.png" id="299"]
+[ext_resource type="Texture2D" uid="uid://cg6sg6gex256s" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitwakeup^f_default_idle/01.png" id="300"]
+[ext_resource type="Texture2D" uid="uid://cma36hb2tfkbk" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitwakeup^f_default_idle/02.png" id="301"]
+[ext_resource type="Texture2D" uid="uid://b76pcgkjg707m" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitheaddown^f_default_idle/05.png" id="302"]
+[ext_resource type="Texture2D" uid="uid://c0toi0qbut4u8" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitheaddown^f_default_idle/01.png" id="303"]
+[ext_resource type="Texture2D" uid="uid://dy4kta5ndbll5" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitheaddown^f_default_idle/06.png" id="304"]
+[ext_resource type="Texture2D" uid="uid://cow5isn25vhrt" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitheaddown^f_default_idle/03.png" id="305"]
+[ext_resource type="Texture2D" uid="uid://57sl3kts77id" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitwakeup^f_default_idle/04.png" id="306"]
+[ext_resource type="Texture2D" uid="uid://bqcd4xiqfynal" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitheaddown^f_default_idle/02.png" id="307"]
+[ext_resource type="Texture2D" uid="uid://b17srsr0lhk1" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitheaddown^f_default_idle/04.png" id="308"]
+[ext_resource type="Texture2D" uid="uid://c1px2s3xnp2d2" path="res://scenes/_main/ch2sc2a/characters/MarkBorja/arms/f_sitwakeup^f_default_idle/03.png" id="309"]
+[ext_resource type="Script" path="res://scenes/_main/ch2sc2a/scripts/_minor/ArmsNoDepthTestController.gd" id="310"]
+[ext_resource type="Texture2D" uid="uid://c2qxr26n5idas" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_talk/06.png" id="311"]
+[ext_resource type="Texture2D" uid="uid://d2nummg16ljtk" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_talk/05.png" id="312"]
+[ext_resource type="Texture2D" uid="uid://c2ctvt4v1hoap" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_talk/02.png" id="313"]
+[ext_resource type="AudioStream" uid="uid://drw108fksl7kp" path="res://scenes/_main/ch1sc4/assets/sfx/School-Grounds-Active-2.ogg" id="313_ojnva"]
+[ext_resource type="Texture2D" uid="uid://b8aax4wxi5v0k" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_talk/04.png" id="314"]
+[ext_resource type="Texture2D" uid="uid://d0mscghvxhw66" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_talk/03.png" id="315"]
+[ext_resource type="Texture2D" uid="uid://bwkp1aihnj5gq" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_idle/02.png" id="316"]
+[ext_resource type="Texture2D" uid="uid://ddme7aviwxvuk" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_idle/06.png" id="317"]
+[ext_resource type="Texture2D" uid="uid://dr8isgj7twhtl" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_idle/04.png" id="318"]
+[ext_resource type="Texture2D" uid="uid://bom5cv7l0wrxr" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_idle/05.png" id="319"]
+[ext_resource type="Texture2D" uid="uid://cncjss6lyns3n" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_talk/01.png" id="320"]
+[ext_resource type="Texture2D" uid="uid://tvp3yfro3ic3" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_idle/03.png" id="321"]
+[ext_resource type="Texture2D" uid="uid://ckj182owckn5c" path="res://assets/characters/MarkBorja/uniform/f_sit^f=l_confused_idle/01.png" id="322"]
+[ext_resource type="AudioStream" uid="uid://c5layiywqhpq7" path="res://scenes/_main/ch2sc2a/assets/sfx/Pressing, Gliding Poster.ogg" id="323"]
+[ext_resource type="Texture2D" uid="uid://brr2by6qw5fq3" path="res://scenes/_main/ch2sc2a/assets/C2D/04/02.png" id="325"]
+[ext_resource type="Texture2D" uid="uid://d065s80bpenb3" path="res://scenes/_main/ch2sc2a/assets/C2D/05/02.png" id="326"]
+[ext_resource type="AudioStream" uid="uid://devb7y7hkavn8" path="res://scenes/_main/ch2sc2a/assets/sfx/Unrolling Poster.ogg" id="330"]
+[ext_resource type="AudioStream" uid="uid://lmr8kheyo6de" path="res://scenes/_main/ch2sc2a/assets/sfx/After Anime Scene Part 3.ogg" id="331"]
+[ext_resource type="Texture2D" uid="uid://1agr85xj3582" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_idle/03.tres" id="332"]
+[ext_resource type="Texture2D" uid="uid://ddxxvweewec5s" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_talk/04.tres" id="333"]
+[ext_resource type="Texture2D" uid="uid://bxbu5y6g7x67s" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_idle/03.tres" id="334"]
+[ext_resource type="Texture2D" uid="uid://dsrn8hlra660n" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_talk/03.tres" id="335"]
+[ext_resource type="Texture2D" uid="uid://bl6x522pnrxcs" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_talk/06.tres" id="336"]
+[ext_resource type="Texture2D" uid="uid://6n20fso5rdc8" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_talk/04.tres" id="337"]
+[ext_resource type="Texture2D" uid="uid://b3qbn0op7srq5" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_talk/03.tres" id="338"]
+[ext_resource type="Texture2D" uid="uid://dven5wibjj4k5" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_talk/05.tres" id="339"]
+[ext_resource type="Texture2D" uid="uid://bwk0xm7iks8xr" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_talk/01.tres" id="340"]
+[ext_resource type="Texture2D" uid="uid://bbd6t3gsg1k36" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_idle/02.tres" id="341"]
+[ext_resource type="Texture2D" uid="uid://fc6rm151b47k" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_talk/02.tres" id="342"]
+[ext_resource type="Texture2D" uid="uid://cps8rd3gp2oto" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_idle/06.tres" id="343"]
+[ext_resource type="Texture2D" uid="uid://c3ocx67ccaolg" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_talk/04.tres" id="344"]
+[ext_resource type="Texture2D" uid="uid://cftdocoe4uynd" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_idle/03.tres" id="345"]
+[ext_resource type="Texture2D" uid="uid://b2y2ovxarhuy4" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_idle/03.tres" id="346"]
+[ext_resource type="Texture2D" uid="uid://c6ao4ktfxah50" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit^f_smirk=l_talk/06.tres" id="347"]
+[ext_resource type="Texture2D" uid="uid://bqky6dx4gpwyg" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_talk/05.tres" id="348"]
+[ext_resource type="Texture2D" uid="uid://8lmch7hwdeyx" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_talk/04.tres" id="349"]
+[ext_resource type="Texture2D" uid="uid://b35moppbil0d6" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_talk/01.tres" id="350"]
+[ext_resource type="Texture2D" uid="uid://dx0xculmjbwfe" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_idle/02.tres" id="351"]
+[ext_resource type="Texture2D" uid="uid://dx3jx3mrlw31u" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_default_talk/02.tres" id="352"]
+[ext_resource type="Texture2D" uid="uid://djvap8tyrttrv" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_talk/06.tres" id="353"]
+[ext_resource type="Texture2D" uid="uid://dbmnjtcd0w3g7" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=r_idle/01.tres" id="354"]
+[ext_resource type="Texture2D" uid="uid://bwpp0xmvyubrn" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_talk/04.tres" id="355"]
+[ext_resource type="Texture2D" uid="uid://peu2wdcmhgkc" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_talk/03.tres" id="356"]
+[ext_resource type="Texture2D" uid="uid://cq66itva6jx5b" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_idle/06.tres" id="357"]
+[ext_resource type="Texture2D" uid="uid://bcqvoj2ts0aup" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sit+posteropen^f_smug=l_idle/03.tres" id="358"]
+[ext_resource type="Texture2D" uid="uid://ert60k42f5c4" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_idle/06.tres" id="359"]
+[ext_resource type="Texture2D" uid="uid://dya8g3k8psdw7" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_positive_talk/06.tres" id="360"]
+[ext_resource type="Texture2D" uid="uid://crtwtu3hhqynu" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_cheeky_idle/04.tres" id="361"]
+[ext_resource type="Texture2D" uid="uid://dq1wvs4sb6s8r" path="res://scenes/_main/ch7sc2a/assets/characters/MarkBorja/lf_sitfumble^df_smug_talk/06.tres" id="362"]
+[ext_resource type="Texture2D" uid="uid://kbripy3hhon7" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_frown_talk/06.tres" id="363"]
+[ext_resource type="Texture2D" uid="uid://bqanv7sf68f3y" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_shocked_talk/01.tres" id="364"]
+[ext_resource type="Texture2D" uid="uid://4xte7d4liqyk" path="res://scenes/_main/ch7sc2a/assets/characters/CathyPortillo/lf_stand+poster^lf_jaded_talk/01.tres" id="365"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "MarkRun"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/MarkBorja/StandRun/Sprite:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(1.20754, 0, 3.75415), Vector3(1.208, 0, 2.518)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("World/Classroom9Pearl/KeyObjects/Row4/ChairStudent2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.699175, 0, 3.7325), Vector3(-0.699175, 0, 3.7325)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("World/Classroom9Pearl/KeyObjects/Row4/ChairStudent2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, -2.87979, 0), Vector3(0, -2.87979, 0)]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "MarkZoom_A"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cameras/MarkZoom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(3.01111, 0.84659, 4.18481), Vector3(2.51126, 0.810316, 4.04614)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cameras/MarkZoom:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [25.0, 32.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cameras/MarkZoom:attributes:dof_blur_far_distance")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.8, 1.8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cameras/MarkZoom:attributes:dof_blur_near_distance")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.2, 0.9]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "MarkZoom_B"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cameras/MarkZoom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.5126, 0.790365, 4.04652), Vector3(2.18578, 0.766648, 3.95585)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Cameras/MarkZoom:fov")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [32.0, 40.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Cameras/MarkZoom:attributes:dof_blur_far_distance")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.8, 1.8]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Cameras/MarkZoom:attributes:dof_blur_near_distance")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.85, 0.64]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "Poster1_zoom"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cameras/Poster1:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.235, 0.862, 3.161), Vector3(4.489, 0.862, 3.161)]
+}
+
+[sub_resource type="Animation" id="5"]
+resource_name = "Poster2_zoom"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cameras/Poster2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.719, 0.83, 1.534), Vector3(4.93, 0.83, 1.534)]
+}
+
+[sub_resource type="Animation" id="6"]
+resource_name = "Poster3_zoom"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cameras/Poster3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(4.226, 0.863, 4.121), Vector3(4.487, 0.863, 4.121)]
+}
+
+[sub_resource type="Animation" id="7"]
+resource_name = "_RESET"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("World/Classroom9Pearl/KeyObjects/Row4/ChairStudent2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.69, 0, 3.67), Vector3(-0.69, 0, 3.67)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("World/Classroom9Pearl/KeyObjects/Row4/ChairStudent2:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 180, 0), Vector3(0, 180, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qvkha"]
+_data = {
+"MarkRun": SubResource("1"),
+"MarkZoom_A": SubResource("2"),
+"MarkZoom_B": SubResource("3"),
+"Poster1_zoom": SubResource("4"),
+"Poster2_zoom": SubResource("5"),
+"Poster3_zoom": SubResource("6"),
+"_RESET": SubResource("7")
+}
+
+[sub_resource type="SpriteFrames" id="8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("325")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="SpriteFrames" id="9"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("326")
+}],
+"loop": true,
+"name": &"default",
+"speed": 4.0
+}]
+
+[sub_resource type="SpriteFrames" id="10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_2h7lk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7hrno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_8t8cp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_mu5dt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_535v7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ivew2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="137"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("20_31ipj")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_m54bw"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.66003, 0.39, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("137"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(18, 247, 40, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 18, 247, 40, 63, 20, 174, 199, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 20, 174, 199, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="139"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("21_82rhw")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_brv0s"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.21003, 0.29, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("139"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(124, 15, 87, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 124, 15, 87, 62, 225, 122, 148, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 225, 122, 148, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="141"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("22_qabmt")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_tpov4"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.21003, 0.29, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("141"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(124, 15, 87, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 124, 15, 87, 62, 225, 122, 148, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 225, 122, 148, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="143"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("23_pi6vf")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8xjca"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.21003, 0.29, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("143"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(124, 15, 87, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 124, 15, 87, 62, 225, 122, 148, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 225, 122, 148, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="145"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("24_j3g7p")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_e3jxo"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.21003, 0.29, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("145"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(124, 15, 87, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 124, 15, 87, 62, 225, 122, 148, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 225, 122, 148, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ngid0"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("31")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r63xd"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.57, 3.74, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_ngid0"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 133, 235, 17, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 133, 235, 17, 63, 41, 92, 111, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 111, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2yyan"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("57")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rtvem"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 2.04, 3.15, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_2yyan"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 92, 143, 2, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 92, 143, 2, 64, 153, 153, 73, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 153, 153, 73, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4bx6x"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("73")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t64ee"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.45, 0.58, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_4bx6x"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 230, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 230, 62, 225, 122, 20, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 225, 122, 20, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0fnw2"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("72")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_l0esk"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.45, 0.58, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_0fnw2"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 230, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 230, 62, 225, 122, 20, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 225, 122, 20, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p1jys"]
+render_priority = 0
+shader = ExtResource("22")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("75")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t0omy"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.45, 0.58, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_p1jys"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 230, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 230, 62, 225, 122, 20, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 225, 122, 20, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_qtade"]
+dof_blur_far_distance = 1.64
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.25
+dof_blur_near_transition = 0.5
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_fx04c"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.8
+dof_blur_far_transition = 0.1
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.2
+dof_blur_near_transition = 0.1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_a4cen"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.2
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.6
+dof_blur_near_transition = 0.1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_nvu4c"]
+dof_blur_far_distance = 1.25
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_transition = 0.1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_7sr3d"]
+dof_blur_far_distance = 1.25
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.5
+dof_blur_near_transition = 0.25
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_sx7ux"]
+dof_blur_far_distance = 1.25
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.8
+dof_blur_near_transition = 0.1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jxuxg"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.5
+dof_blur_far_transition = 0.5
+dof_blur_near_distance = 0.6
+dof_blur_near_transition = 0.05
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_gp3yf"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.25
+dof_blur_far_transition = 0.5
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.08
+dof_blur_near_transition = 0.2
+
+[sub_resource type="ShaderMaterial" id="439"]
+render_priority = 0
+shader = ExtResource("9")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(0.032, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("10")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_63kmn"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("439"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7wfnu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("228")
+}, {
+"duration": 1.0,
+"texture": ExtResource("217")
+}, {
+"duration": 1.0,
+"texture": ExtResource("229")
+}, {
+"duration": 1.0,
+"texture": ExtResource("230")
+}, {
+"duration": 1.0,
+"texture": ExtResource("223")
+}],
+"loop": true,
+"name": &"confused=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("240")
+}, {
+"duration": 1.0,
+"texture": ExtResource("238")
+}, {
+"duration": 1.0,
+"texture": ExtResource("222")
+}, {
+"duration": 1.0,
+"texture": ExtResource("246")
+}, {
+"duration": 1.0,
+"texture": ExtResource("225")
+}, {
+"duration": 1.0,
+"texture": ExtResource("231")
+}],
+"loop": true,
+"name": &"confused=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("322")
+}, {
+"duration": 1.0,
+"texture": ExtResource("316")
+}, {
+"duration": 1.0,
+"texture": ExtResource("321")
+}, {
+"duration": 1.0,
+"texture": ExtResource("318")
+}, {
+"duration": 1.0,
+"texture": ExtResource("319")
+}, {
+"duration": 1.0,
+"texture": ExtResource("317")
+}],
+"loop": true,
+"name": &"confused_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("320")
+}, {
+"duration": 1.0,
+"texture": ExtResource("313")
+}, {
+"duration": 1.0,
+"texture": ExtResource("315")
+}, {
+"duration": 1.0,
+"texture": ExtResource("314")
+}, {
+"duration": 1.0,
+"texture": ExtResource("312")
+}, {
+"duration": 1.0,
+"texture": ExtResource("311")
+}],
+"loop": true,
+"name": &"confused_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("96")
+}, {
+"duration": 1.0,
+"texture": ExtResource("247")
+}, {
+"duration": 1.0,
+"texture": ExtResource("249")
+}, {
+"duration": 1.0,
+"texture": ExtResource("233")
+}, {
+"duration": 1.0,
+"texture": ExtResource("213")
+}, {
+"duration": 1.0,
+"texture": ExtResource("248")
+}],
+"loop": true,
+"name": &"default=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("97")
+}, {
+"duration": 1.0,
+"texture": ExtResource("239")
+}, {
+"duration": 1.0,
+"texture": ExtResource("227")
+}, {
+"duration": 1.0,
+"texture": ExtResource("244")
+}, {
+"duration": 1.0,
+"texture": ExtResource("208")
+}, {
+"duration": 1.0,
+"texture": ExtResource("232")
+}],
+"loop": true,
+"name": &"default=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("98")
+}, {
+"duration": 1.0,
+"texture": ExtResource("234")
+}, {
+"duration": 1.0,
+"texture": ExtResource("209")
+}, {
+"duration": 1.0,
+"texture": ExtResource("235")
+}, {
+"duration": 1.0,
+"texture": ExtResource("245")
+}, {
+"duration": 1.0,
+"texture": ExtResource("242")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99")
+}, {
+"duration": 1.0,
+"texture": ExtResource("236")
+}, {
+"duration": 1.0,
+"texture": ExtResource("237")
+}, {
+"duration": 1.0,
+"texture": ExtResource("219")
+}, {
+"duration": 1.0,
+"texture": ExtResource("210")
+}, {
+"duration": 1.0,
+"texture": ExtResource("241")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("211")
+}, {
+"duration": 1.0,
+"texture": ExtResource("212")
+}, {
+"duration": 1.0,
+"texture": ExtResource("214")
+}, {
+"duration": 1.0,
+"texture": ExtResource("215")
+}, {
+"duration": 1.0,
+"texture": ExtResource("243")
+}],
+"loop": true,
+"name": &"headdown",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("153")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176")
+}],
+"loop": true,
+"name": &"smirk_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("204")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160")
+}, {
+"duration": 1.0,
+"texture": ExtResource("193")
+}, {
+"duration": 1.0,
+"texture": ExtResource("190")
+}, {
+"duration": 1.0,
+"texture": ExtResource("347")
+}],
+"loop": true,
+"name": &"smirk_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("354")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168")
+}],
+"loop": true,
+"name": &"smug+poster=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("184")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139")
+}, {
+"duration": 1.0,
+"texture": ExtResource("344")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149")
+}],
+"loop": true,
+"name": &"smug+poster=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("115")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113")
+}, {
+"duration": 1.0,
+"texture": ExtResource("358")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189")
+}, {
+"duration": 1.0,
+"texture": ExtResource("343")
+}],
+"loop": true,
+"name": &"smug+poster_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("179")
+}, {
+"duration": 1.0,
+"texture": ExtResource("200")
+}, {
+"duration": 1.0,
+"texture": ExtResource("338")
+}, {
+"duration": 1.0,
+"texture": ExtResource("355")
+}, {
+"duration": 1.0,
+"texture": ExtResource("339")
+}, {
+"duration": 1.0,
+"texture": ExtResource("353")
+}],
+"loop": true,
+"name": &"smug+poster_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("182")
+}, {
+"duration": 1.0,
+"texture": ExtResource("341")
+}, {
+"duration": 1.0,
+"texture": ExtResource("346")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165")
+}, {
+"duration": 1.0,
+"texture": ExtResource("359")
+}],
+"loop": true,
+"name": &"smug_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("340")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151")
+}, {
+"duration": 1.0,
+"texture": ExtResource("362")
+}],
+"loop": true,
+"name": &"smug_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("279")
+}, {
+"duration": 1.0,
+"texture": ExtResource("216")
+}, {
+"duration": 1.0,
+"texture": ExtResource("218")
+}, {
+"duration": 1.0,
+"texture": ExtResource("220")
+}, {
+"duration": 1.0,
+"texture": ExtResource("221")
+}, {
+"duration": 1.0,
+"texture": ExtResource("224")
+}, {
+"duration": 1.0,
+"texture": ExtResource("226")
+}],
+"loop": false,
+"name": &"wakeup",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("102")
+}, {
+"duration": 1.0,
+"texture": ExtResource("251")
+}, {
+"duration": 1.0,
+"texture": ExtResource("254")
+}, {
+"duration": 1.0,
+"texture": ExtResource("256")
+}, {
+"duration": 1.0,
+"texture": ExtResource("253")
+}, {
+"duration": 1.0,
+"texture": ExtResource("259")
+}],
+"loop": true,
+"name": &"worried=l_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("103")
+}, {
+"duration": 1.0,
+"texture": ExtResource("250")
+}, {
+"duration": 1.0,
+"texture": ExtResource("258")
+}, {
+"duration": 1.0,
+"texture": ExtResource("257")
+}, {
+"duration": 1.0,
+"texture": ExtResource("255")
+}, {
+"duration": 1.0,
+"texture": ExtResource("252")
+}],
+"loop": true,
+"name": &"worried=l_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("100")
+}, {
+"duration": 1.0,
+"texture": ExtResource("292")
+}, {
+"duration": 1.0,
+"texture": ExtResource("295")
+}, {
+"duration": 1.0,
+"texture": ExtResource("294")
+}, {
+"duration": 1.0,
+"texture": ExtResource("293")
+}, {
+"duration": 1.0,
+"texture": ExtResource("289")
+}],
+"loop": true,
+"name": &"worried=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("101")
+}, {
+"duration": 1.0,
+"texture": ExtResource("291")
+}, {
+"duration": 1.0,
+"texture": ExtResource("288")
+}, {
+"duration": 1.0,
+"texture": ExtResource("290")
+}, {
+"duration": 1.0,
+"texture": ExtResource("298")
+}, {
+"duration": 1.0,
+"texture": ExtResource("299")
+}],
+"loop": true,
+"name": &"worried=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("105")
+}, {
+"duration": 1.0,
+"texture": ExtResource("296")
+}, {
+"duration": 1.0,
+"texture": ExtResource("297")
+}, {
+"duration": 1.0,
+"texture": ExtResource("281")
+}, {
+"duration": 1.0,
+"texture": ExtResource("287")
+}, {
+"duration": 1.0,
+"texture": ExtResource("284")
+}],
+"loop": true,
+"name": &"worried_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("104")
+}, {
+"duration": 1.0,
+"texture": ExtResource("285")
+}, {
+"duration": 1.0,
+"texture": ExtResource("286")
+}, {
+"duration": 1.0,
+"texture": ExtResource("283")
+}, {
+"duration": 1.0,
+"texture": ExtResource("282")
+}, {
+"duration": 1.0,
+"texture": ExtResource("280")
+}],
+"loop": true,
+"name": &"worried_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="Resource" id="146"]
+script = ExtResource("278")
+anim = "wakeup"
+from_anim = "headdown"
+to_anim = "default_idle"
+reversible = false
+
+[sub_resource type="ShaderMaterial" id="442"]
+render_priority = 0
+shader = ExtResource("9")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(0.032, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("304")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rvihv"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("442"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="150"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("303")
+}, {
+"duration": 1.0,
+"texture": ExtResource("307")
+}, {
+"duration": 1.0,
+"texture": ExtResource("305")
+}, {
+"duration": 1.0,
+"texture": ExtResource("308")
+}, {
+"duration": 1.0,
+"texture": ExtResource("302")
+}, {
+"duration": 1.0,
+"texture": ExtResource("304")
+}],
+"loop": true,
+"name": &"headdown",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("300")
+}, {
+"duration": 1.0,
+"texture": ExtResource("301")
+}, {
+"duration": 1.0,
+"texture": ExtResource("309")
+}, {
+"duration": 1.0,
+"texture": ExtResource("306")
+}],
+"loop": false,
+"name": &"wakeup",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="444"]
+render_priority = 0
+shader = ExtResource("9")
+shader_parameter/scale = Vector3(0.72, 1.064, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("93")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_02iqf"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("444"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="153"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("93")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.5
+}]
+
+[sub_resource type="ShaderMaterial" id="446"]
+render_priority = 0
+shader = ExtResource("9")
+shader_parameter/scale = Vector3(0.792, 1.232, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("19")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3ffut"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("446"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="306"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("361")
+}, {
+"duration": 1.0,
+"texture": ExtResource("203")
+}, {
+"duration": 1.0,
+"texture": ExtResource("195")
+}],
+"loop": true,
+"name": &"cheeky_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("350")
+}, {
+"duration": 1.0,
+"texture": ExtResource("342")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("349")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173")
+}],
+"loop": true,
+"name": &"cheeky_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("163")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("192")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("164")
+}, {
+"duration": 1.0,
+"texture": ExtResource("352")
+}, {
+"duration": 1.0,
+"texture": ExtResource("335")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("196")
+}, {
+"duration": 1.0,
+"texture": ExtResource("122")
+}, {
+"duration": 1.0,
+"texture": ExtResource("334")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171")
+}, {
+"duration": 1.0,
+"texture": ExtResource("357")
+}],
+"loop": true,
+"name": &"frown_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("166")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("333")
+}, {
+"duration": 1.0,
+"texture": ExtResource("348")
+}, {
+"duration": 1.0,
+"texture": ExtResource("363")
+}],
+"loop": true,
+"name": &"frown_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("191")
+}, {
+"duration": 1.0,
+"texture": ExtResource("351")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152")
+}],
+"loop": true,
+"name": &"jaded_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("365")
+}, {
+"duration": 1.0,
+"texture": ExtResource("202")
+}, {
+"duration": 1.0,
+"texture": ExtResource("356")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167")
+}],
+"loop": true,
+"name": &"jaded_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("155")
+}, {
+"duration": 1.0,
+"texture": ExtResource("194")
+}, {
+"duration": 1.0,
+"texture": ExtResource("332")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157")
+}],
+"loop": true,
+"name": &"positive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109")
+}, {
+"duration": 1.0,
+"texture": ExtResource("197")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186")
+}, {
+"duration": 1.0,
+"texture": ExtResource("360")
+}],
+"loop": true,
+"name": &"positive_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("207")
+}, {
+"duration": 1.0,
+"texture": ExtResource("198")
+}, {
+"duration": 1.0,
+"texture": ExtResource("345")
+}, {
+"duration": 1.0,
+"texture": ExtResource("199")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140")
+}],
+"loop": true,
+"name": &"shocked_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("364")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205")
+}, {
+"duration": 1.0,
+"texture": ExtResource("337")
+}, {
+"duration": 1.0,
+"texture": ExtResource("201")
+}, {
+"duration": 1.0,
+"texture": ExtResource("336")
+}],
+"loop": true,
+"name": &"shocked_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="449"]
+render_priority = 0
+shader = ExtResource("9")
+shader_parameter/scale = Vector3(1.08, 0.82, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("64")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_uwgeo"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("449"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="160"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="451"]
+render_priority = 0
+shader = ExtResource("9")
+shader_parameter/scale = Vector3(0.744, 1.232, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("76")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_velcv"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("451"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="163"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("268")
+}, {
+"duration": 1.0,
+"texture": ExtResource("270")
+}, {
+"duration": 1.0,
+"texture": ExtResource("271")
+}, {
+"duration": 1.0,
+"texture": ExtResource("276")
+}, {
+"duration": 1.0,
+"texture": ExtResource("272")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="453"]
+render_priority = 0
+shader = ExtResource("9")
+shader_parameter/scale = Vector3(0.744, 1.232, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("80")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_s2vok"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("453"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="166"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("274")
+}, {
+"duration": 1.0,
+"texture": ExtResource("275")
+}, {
+"duration": 1.0,
+"texture": ExtResource("273")
+}, {
+"duration": 1.0,
+"texture": ExtResource("277")
+}, {
+"duration": 1.0,
+"texture": ExtResource("269")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="455"]
+render_priority = 0
+shader = ExtResource("9")
+shader_parameter/scale = Vector3(0.368, 1.016, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("266")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bp1ry"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("455"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="169"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("266")
+}, {
+"duration": 1.0,
+"texture": ExtResource("267")
+}, {
+"duration": 1.0,
+"texture": ExtResource("262")
+}, {
+"duration": 1.0,
+"texture": ExtResource("265")
+}, {
+"duration": 1.0,
+"texture": ExtResource("263")
+}, {
+"duration": 1.0,
+"texture": ExtResource("264")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="457"]
+render_priority = 0
+shader = ExtResource("9")
+shader_parameter/scale = Vector3(0.264, 0.944, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("79")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_phex5"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("457"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="172"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("79")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("260")
+}, {
+"duration": 1.0,
+"texture": ExtResource("261")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Root2" type="Node3D"]
+script = ExtResource("3")
+fade_in_duration = 2.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2_i1ivi")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qvkha")
+}
+script = ExtResource("86")
+
+[node name="GIProbe" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.07, 0.73, 3)
+size = Vector3(10.2, 2.62, 6.54)
+data = ExtResource("4_v342k")
+
+[node name="Main" type="Node3D" parent="."]
+
+[node name="Services" type="Node" parent="Main"]
+
+[node name="$SceneManager" type="Node" parent="Main/Services"]
+script = ExtResource("4")
+scene_id = "7.2a"
+shot = "Main"
+
+[node name="$DialogueHandler" type="Node" parent="Main/Services"]
+script = ExtResource("5")
+
+[node name="$SceneState" type="Node" parent="Main/Services"]
+script = ExtResource("7")
+alias = "scene"
+
+[node name="C2Ds" type="Node2D" parent="Main"]
+texture_filter = 1
+
+[node name="C2D_4" type="Node2D" parent="Main/C2Ds"]
+visible = false
+scale = Vector2(0.667, 0.667)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Main/C2Ds/C2D_4"]
+scale = Vector2(5.997, 5.997)
+sprite_frames = SubResource("8")
+autoplay = "default"
+centered = false
+
+[node name="VisibilityController" type="Node" parent="Main/C2Ds/C2D_4"]
+script = ExtResource("84")
+visible_on_shots = Array[String](["C2D_4"])
+
+[node name="C2D_5" type="Node2D" parent="Main/C2Ds"]
+visible = false
+scale = Vector2(0.667, 0.667)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Main/C2Ds/C2D_5"]
+scale = Vector2(5.997, 5.997)
+sprite_frames = SubResource("9")
+autoplay = "default"
+frame = 1
+centered = false
+
+[node name="VisibilityController" type="Node" parent="Main/C2Ds/C2D_5"]
+script = ExtResource("84")
+visible_on_shots = Array[String](["C2D_5"])
+
+[node name="C2D_6" type="Node2D" parent="Main/C2Ds"]
+visible = false
+scale = Vector2(0.667, 0.667)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="Main/C2Ds/C2D_6"]
+scale = Vector2(5.997, 5.997)
+sprite_frames = SubResource("10")
+autoplay = "default"
+centered = false
+
+[node name="VisibilityController" type="Node" parent="Main/C2Ds/C2D_6"]
+script = ExtResource("84")
+visible_on_shots = Array[String](["C2D_6"])
+
+[node name="SbPivots" type="Node2D" parent="Main/C2Ds"]
+
+[node name="SbPivotMark" type="Marker2D" parent="Main/C2Ds/SbPivots"]
+position = Vector2(1240, 680)
+scale = Vector2(0.667, 0.667)
+script = ExtResource("17")
+alias = "MarkBorja"
+orientation = 1
+
+[node name="SbPivotCathy" type="Marker2D" parent="Main/C2Ds/SbPivots"]
+position = Vector2(640, 688)
+scale = Vector2(0.667, 0.667)
+script = ExtResource("17")
+alias = "CathyPortillo"
+
+[node name="VisibilityController" type="Node" parent="Main/C2Ds/SbPivots"]
+script = ExtResource("84")
+visible_on_shots = Array[String](["C2D_4", "C2D_5", "C2D_6"])
+
+[node name="Vignette" parent="Main" instance=ExtResource("134")]
+
+[node name="$ThoughtBubble" parent="Main" instance=ExtResource("116")]
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Classroom9Pearl" parent="World" instance=ExtResource("1")]
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent1" index="0"]
+transform = Transform3D(0.00828222, 0.0367052, 1.26666e-10, 0, -1.66103e-09, 0.003, 0.0309096, -0.00983514, -3.39401e-11, -0.0900002, 0.539, 0.53)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent1" index="1"]
+transform = Transform3D(-0.011388, 0.0270459, 1.26666e-10, 0, -1.22392e-09, 0.003, 0.0425007, 0.00724692, 3.39399e-11, -0.25, 0.539, 0.17)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent2" index="0"]
+transform = Transform3D(-0.015, 0.0242487, 1.13566e-10, 0, -1.22392e-09, 0.003, 0.0259808, 0.014, 6.5567e-11, -0.0999999, 0.539, 0.18)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent2" index="1"]
+transform = Transform3D(-1.22392e-09, 0.024, 1.31134e-10, 0, -1.04907e-09, 0.003, 0.028, 1.04907e-09, 5.73206e-18, -0.0999994, 0.539, 0.49)
+
+[node name="Decal3" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent2" index="2"]
+transform = Transform3D(0.025, 0.0311769, 1.13566e-10, 0, -1.57361e-09, 0.003, 0.0433013, -0.018, -6.55671e-11, -0.28, 0.539, 0.13)
+
+[node name="Decal4" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent2" index="3"]
+transform = Transform3D(0.0150115, 0.0811378, 1.26666e-10, 0, -3.67176e-09, 0.003, 0.0560237, -0.0217408, -3.394e-11, -0.259999, 0.539, 0.35)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent3" index="0"]
+transform = Transform3D(0.0124233, 0.0753422, 1.26666e-10, 0, -3.40949e-09, 0.003, 0.0463644, -0.0201879, -3.394e-11, -0.26, 0.539, 0.14)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent3" index="1"]
+transform = Transform3D(-0.046, 0.0484974, 1.13566e-10, 0, -2.44784e-09, 0.003, 0.0796743, 0.028, 6.55671e-11, -0.16, 0.539, 0.44)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent4" index="0"]
+transform = Transform3D(0.00879985, 0.0328415, 1.26666e-10, 0, -1.48619e-09, 0.003, 0.0328415, -0.00879985, -3.394e-11, -0.33, 0.539, 0.54)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent4" index="1"]
+transform = Transform3D(0.00672924, 0.0347734, 1.26666e-10, 0, -1.57361e-09, 0.003, 0.0251141, -0.0093174, -3.39397e-11, -0.11, 0.539, 0.43)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent5" index="0"]
+transform = Transform3D(0.0258819, 0.0502281, 1.26666e-10, 0, -2.27299e-09, 0.003, 0.0965926, -0.0134586, -3.394e-11, -0.27, 0.539, 0.17)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent5" index="1"]
+transform = Transform3D(-0.0201879, 0.0405689, 1.26666e-10, 0, -1.83588e-09, 0.003, 0.0753422, 0.0108704, 3.39401e-11, -0.12, 0.539, 0.45)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent6" index="0"]
+transform = Transform3D(-0.011388, 0.0270459, 1.26666e-10, 0, -1.22392e-09, 0.003, 0.0425007, 0.00724692, 3.39399e-11, -0.29, 0.539, 0.0699998)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row1/DeskStudent6" index="1"]
+transform = Transform3D(-2.62268e-09, 0.046, 1.31134e-10, 0, -2.01072e-09, 0.003, 0.06, 2.01072e-09, 5.73206e-18, -0.0799999, 0.539, 0.48)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent1" index="0"]
+transform = Transform3D(0.0134586, 0.0212504, 1.26666e-10, 0, -9.61651e-10, 0.003, 0.0502281, -0.00569403, -3.39401e-11, -0.0799999, 0.539, 0.1)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent1" index="1"]
+transform = Transform3D(-0.0618193, 0.0175997, 3.394e-11, 0, -2.97237e-09, 0.003, 0.0165644, 0.065683, 1.26666e-10, -0.13, 0.539, 0.27)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent2" index="0"]
+transform = Transform3D(-0.042, 0.0173205, 1.13566e-10, 0, -8.74228e-10, 0.003, 0.0727461, 0.01, 6.55671e-11, -0.11, 0.539, 0.47)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent2" index="1"]
+transform = Transform3D(0.01, 0.0173205, 1.13566e-10, 0, -8.74228e-10, 0.003, 0.0173205, -0.01, -6.55671e-11, -0.33, 0.539, 0.11)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent3" index="0"]
+transform = Transform3D(-0.0455522, 0.0270459, 1.26666e-10, 0, -1.22392e-09, 0.003, 0.170003, 0.00724694, 3.39401e-11, -0.11, 0.539, 0.21)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent4" index="0"]
+transform = Transform3D(-0.0144939, 0.0540918, 1.26666e-10, 0, -2.44784e-09, 0.003, 0.0540918, 0.0144939, 3.39401e-11, -0.25, 0.539, 0.5)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent4" index="1"]
+transform = Transform3D(0.00724694, 0.0309096, 1.26666e-10, 0, -1.39876e-09, 0.003, 0.0270459, -0.00828222, -3.39401e-11, -0.13, 0.539, 0.0999999)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent5" index="0"]
+transform = Transform3D(0.0119057, 0.0173867, 1.26666e-10, 0, -7.86805e-10, 0.003, 0.0444326, -0.00465875, -3.39401e-11, -0.29, 0.539, 0.52)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent6" index="0"]
+transform = Transform3D(-0.00828224, 0.0309096, 1.26666e-10, 0, -1.39876e-09, 0.003, 0.0309096, 0.00828224, 3.39402e-11, -0.28, 0.539, 0.51)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row2/DeskStudent6" index="1"]
+transform = Transform3D(0.0103528, 0.0347733, 1.26666e-10, 0, -1.57361e-09, 0.003, 0.038637, -0.00931752, -3.39402e-11, -0.18, 0.539, 0.15)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent1" index="0"]
+transform = Transform3D(0.025, 0.0467654, 1.13566e-10, 0, -2.36041e-09, 0.003, 0.0433013, -0.027, -6.55671e-11, -0.299999, 0.539, 0.48)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent1" index="1"]
+transform = Transform3D(-0.033, 0.0277128, 1.13566e-10, 0, -1.39876e-09, 0.003, 0.0571577, 0.016, 6.55671e-11, -0.299999, 0.539, 0.3)
+
+[node name="Decal3" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent1" index="2"]
+transform = Transform3D(0.024, 0.06755, 1.13566e-10, 0, -3.40949e-09, 0.003, 0.0415692, -0.039, -6.55671e-11, -0.27, 0.539, 0.0999999)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent2" index="0"]
+transform = Transform3D(0.01, 0.0173205, 1.13566e-10, 0, -8.74228e-10, 0.003, 0.0173205, -0.01, -6.55671e-11, -0.329999, 0.539, 0.53)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent2" index="1"]
+transform = Transform3D(0.019, 0.0173205, 1.13566e-10, 0, -8.74228e-10, 0.003, 0.032909, -0.00999999, -6.5567e-11, -0.179999, 0.539, 0.11)
+
+[node name="ChairStudent2" parent="World/Classroom9Pearl/KeyObjects/Row3" index="3"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -0.69, 0, 3.67)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent3" index="0"]
+transform = Transform3D(0.018, 0.0225167, 1.13566e-10, 0, -1.1365e-09, 0.003, 0.0311769, -0.013, -6.55671e-11, -0.129999, 0.539, 0.11)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent3" index="1"]
+transform = Transform3D(-0.0113881, 0.05216, 1.26666e-10, 0, -2.36041e-09, 0.003, 0.0425007, 0.0139763, 3.39402e-11, -0.269999, 0.539, 0.49)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent4" index="0"]
+transform = Transform3D(-0.0248467, 0.0251141, 1.26666e-10, 0, -1.1365e-09, 0.003, 0.0927289, 0.00672931, 3.39401e-11, -0.319999, 0.539, 0.46)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent4" index="1"]
+transform = Transform3D(0.00828222, 0.0367052, 1.26666e-10, 0, -1.66103e-09, 0.003, 0.0309096, -0.00983514, -3.39401e-11, -0.289999, 0.539, 0.1)
+
+[node name="Decal3" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent4" index="2"]
+transform = Transform3D(-0.0139762, 0.0309096, 1.26666e-10, 0, -1.39876e-09, 0.003, 0.05216, 0.00828219, 3.39399e-11, -0.109999, 0.539, 0.13)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent5" index="0"]
+transform = Transform3D(-0.0227761, 0.0270459, 1.26666e-10, 0, -1.22392e-09, 0.003, 0.0850015, 0.00724694, 3.39401e-11, -0.109999, 0.539, 0.44)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent5" index="1"]
+transform = Transform3D(0.0165644, 0.0309096, 1.26666e-10, 0, -1.39876e-09, 0.003, 0.0618193, -0.0082822, -3.394e-11, -0.309999, 0.539, 0.48)
+
+[node name="Decal3" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent5" index="2"]
+transform = Transform3D(0.00724695, 0.0231822, 1.26666e-10, 0, -1.04907e-09, 0.003, 0.0270459, -0.00621167, -3.39401e-11, -0.109999, 0.539, 0.12)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent6" index="0"]
+transform = Transform3D(0.00879983, 0.0328415, 1.26666e-10, 0, -1.48619e-09, 0.003, 0.0328415, -0.00879983, -3.39399e-11, -0.309999, 0.539, 0.44)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row3/DeskStudent6" index="1"]
+transform = Transform3D(0.0134586, 0.0212504, 1.26666e-10, 0, -9.61651e-10, 0.003, 0.0502281, -0.00569403, -3.39401e-11, -0.149999, 0.539, 0.12)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent1" index="0"]
+transform = Transform3D(0.00828222, 0.0309096, 1.26666e-10, 0, -1.39876e-09, 0.003, 0.0309096, -0.00828222, -3.39401e-11, -0.129999, 0.539, 0.51)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent1" index="1"]
+transform = Transform3D(-1.52509e-08, 0.02, 1.31134e-10, 0, -8.74228e-10, 0.003, 0.038, 8.02679e-09, 5.26293e-17, -0.349999, 0.539, 0.0799999)
+
+[node name="ChairStudent1" parent="World/Classroom9Pearl/KeyObjects/Row4" index="1"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.67, 0, 4.42)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent2" index="0"]
+transform = Transform3D(-1.12375e-08, 0.032, 1.31134e-10, 0, -1.39876e-09, 0.003, 0.028, 1.28429e-08, 5.26293e-17, -0.299999, 0.539, 0.5)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent2" index="1"]
+transform = Transform3D(0.011388, 0.108184, 1.26666e-10, 0, -4.89568e-09, 0.003, 0.0425007, -0.0289877, -3.394e-11, -0.269999, 0.539, 0.0899992)
+
+[node name="Decal3" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent2" index="2"]
+transform = Transform3D(-0.00931754, -0.0251141, -1.26666e-10, 0, -1.1365e-09, 0.003, -0.0347733, 0.00672934, 3.39402e-11, -0.189999, 0.539, 0.289999)
+
+[node name="ChairStudent2" parent="World/Classroom9Pearl/KeyObjects/Row4" index="3"]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, -0.699175, 0, 3.7325)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent3" index="0"]
+transform = Transform3D(-0.0135446, 0.0413619, 1.29142e-10, 0, -1.83588e-09, 0.003, 0.076815, 0.00729324, 2.27713e-11, -0.329999, 0.539, 0.489999)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent3" index="1"]
+transform = Transform3D(-0.00776455, 0.0270459, 1.26666e-10, 0, -1.22392e-09, 0.003, 0.0289778, 0.00724692, 3.39399e-11, -0.199999, 0.539, 0.539999)
+
+[node name="Decal3" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent3" index="2"]
+transform = Transform3D(-0.0238114, 0.0540918, 1.26666e-10, 0, -2.44784e-09, 0.003, 0.0888652, 0.0144939, 3.39401e-11, -0.269999, 0.539, 0.109999)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent4" index="0"]
+transform = Transform3D(-0.0144939, 0.0540918, 1.26666e-10, 0, -2.44784e-09, 0.003, 0.0540918, 0.0144939, 3.39401e-11, -0.0999992, 0.539, 0.489999)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent4" index="1"]
+transform = Transform3D(0.00517638, 0.0193185, 1.26666e-10, 0, -8.74228e-10, 0.003, 0.0193185, -0.00517638, -3.394e-11, -0.299999, 0.539, 0.469999)
+
+[node name="Decal3" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent4" index="2"]
+transform = Transform3D(0.0269176, 0.0444325, 1.26666e-10, 0, -2.01072e-09, 0.003, 0.100456, -0.0119059, -3.39406e-11, -0.289999, 0.539, 0.139999)
+
+[node name="Decal1" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent5" index="0"]
+transform = Transform3D(0.0103528, 0.0347733, 1.26666e-10, 0, -1.57361e-09, 0.003, 0.038637, -0.00931752, -3.39402e-11, -0.299999, 0.539, 0.399999)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent5" index="1"]
+transform = Transform3D(-0.00828225, 0.0367052, 1.26666e-10, 0, -1.66103e-09, 0.003, 0.0309096, 0.00983518, 3.39402e-11, -0.299999, 0.539, 0.499999)
+
+[node name="Decal3" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent5" index="2"]
+transform = Transform3D(-0.00672927, 0.0347733, 1.26666e-10, 0, -1.57361e-09, 0.003, 0.0251141, 0.00931744, 3.39399e-11, -0.119999, 0.539, 0.469999)
+
+[node name="Decal4" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent5" index="3"]
+transform = Transform3D(0.0103527, 0.038637, 1.26666e-10, 0, -1.74846e-09, 0.003, 0.038637, -0.0103527, -3.39399e-11, -0.329999, 0.539, 0.0599991)
+
+[node name="Decal2" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent6" index="0"]
+transform = Transform3D(0.0129409, 0.0347733, 1.26666e-10, 0, -1.57361e-09, 0.003, 0.0482963, -0.00931745, -3.39399e-11, -0.229999, 0.539, 0.0999993)
+
+[node name="Decal3" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent6" index="1"]
+transform = Transform3D(0.00724694, 0.0309096, 1.26666e-10, 0, -1.39876e-09, 0.003, 0.0270459, -0.00828222, -3.39401e-11, -0.249999, 0.539, 0.479999)
+
+[node name="Decal4" parent="World/Classroom9Pearl/KeyObjects/Row4/DeskStudent6" index="2"]
+transform = Transform3D(0.0119057, 0.0173867, 1.26666e-10, 0, -7.86805e-10, 0.003, 0.0444326, -0.00465875, -3.39401e-11, -0.329999, 0.539, 0.529999)
+
+[node name="BulletinBoard" parent="World/Classroom9Pearl/Deco" index="0"]
+mesh = SubResource("ArrayMesh_m54bw")
+
+[node name="Portrait1" parent="World/Classroom9Pearl/Deco" index="1"]
+mesh = SubResource("ArrayMesh_brv0s")
+
+[node name="Portrait2" parent="World/Classroom9Pearl/Deco" index="2"]
+mesh = SubResource("ArrayMesh_tpov4")
+
+[node name="Portrait3" parent="World/Classroom9Pearl/Deco" index="3"]
+mesh = SubResource("ArrayMesh_8xjca")
+
+[node name="Portrait4" parent="World/Classroom9Pearl/Deco" index="4"]
+mesh = SubResource("ArrayMesh_e3jxo")
+
+[node name="FlagPole" parent="World/Classroom9Pearl/Exterior/RightVoid" index="5"]
+mesh = SubResource("ArrayMesh_r63xd")
+
+[node name="BasketballRing" parent="World/Classroom9Pearl/Exterior/RightVoid" index="6"]
+mesh = SubResource("ArrayMesh_rtvem")
+
+[node name="Posters" type="Node3D" parent="World"]
+
+[node name="Poster1" type="MeshInstance3D" parent="World/Posters"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 6.75947, 0.631761, 3.00614)
+mesh = SubResource("ArrayMesh_t64ee")
+script = ExtResource("94")
+texture = ExtResource("73")
+metadata/mat_opaque = SubResource("ShaderMaterial_4bx6x")
+
+[node name="Poster2" type="MeshInstance3D" parent="World/Posters"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 6.75947, 0.631761, 1.2807)
+mesh = SubResource("ArrayMesh_l0esk")
+script = ExtResource("94")
+texture = ExtResource("72")
+metadata/mat_opaque = SubResource("ShaderMaterial_0fnw2")
+
+[node name="Poster3" type="MeshInstance3D" parent="World/Posters"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 6.75947, 0.631761, 3.84727)
+mesh = SubResource("ArrayMesh_t0omy")
+script = ExtResource("94")
+texture = ExtResource("75")
+metadata/mat_opaque = SubResource("ShaderMaterial_p1jys")
+
+[node name="Lighting" type="Node3D" parent="World"]
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="World/Lighting"]
+transform = Transform3D(0.906308, -1.21089e-08, 0.422618, -0.211309, 0.866026, 0.453154, -0.365998, -0.5, 0.784886, 0, 4.05805, 7.651)
+light_color = Color(1, 0.960784, 0.764706, 1)
+light_energy = 2.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.03
+directional_shadow_max_distance = 20.0
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="Main" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.0348994, 0, 0.999391, 0, 1, 0, -0.999391, 0, 0.0348994, 2.902, 0.818, 4.161)
+attributes = SubResource("CameraAttributesPractical_qtade")
+fov = 35.0
+script = ExtResource("6")
+mouse_offset_strength = 0.005
+
+[node name="CameraEffects" type="Node" parent="Cameras/Main"]
+script = ExtResource("77")
+dof_blur_far_distance = 1.64
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.25
+dof_blur_near_transition = 0.5
+
+[node name="MarkZoom" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.267323, -0.0672178, 0.96126, 0, 0.997564, 0.0697565, -0.963607, -0.0186475, 0.266672, 2.5126, 0.790365, 4.04652)
+attributes = SubResource("CameraAttributesPractical_fx04c")
+fov = 32.0
+script = ExtResource("6")
+
+[node name="CameraEffects" type="Node" parent="Cameras/MarkZoom"]
+script = ExtResource("77")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.8
+dof_blur_far_transition = 0.1
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.2
+
+[node name="Junjun" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.0871556, 0, 0.996195, 0, 1, 0, -0.996195, 0, 0.0871556, 2.394, 0.703, 0.621)
+attributes = SubResource("CameraAttributesPractical_a4cen")
+fov = 35.0
+far = 500.0
+script = ExtResource("6")
+mouse_offset_strength = 0.005
+
+[node name="CameraEffects" type="Node" parent="Cameras/Junjun"]
+script = ExtResource("77")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.2
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.6
+
+[node name="Poster1" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 4.235, 0.862, 3.161)
+attributes = SubResource("CameraAttributesPractical_nvu4c")
+fov = 20.0
+script = ExtResource("6")
+
+[node name="CameraEffects" type="Node" parent="Cameras/Poster1"]
+script = ExtResource("77")
+dof_blur_far_distance = 1.25
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+
+[node name="Poster2" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 4.719, 0.83, 1.534)
+attributes = SubResource("CameraAttributesPractical_7sr3d")
+fov = 30.0
+script = ExtResource("6")
+
+[node name="CameraEffects" type="Node" parent="Cameras/Poster2"]
+script = ExtResource("77")
+dof_blur_far_distance = 1.25
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.5
+dof_blur_near_transition = 0.25
+
+[node name="Poster3" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 4.226, 0.863, 4.121)
+attributes = SubResource("CameraAttributesPractical_sx7ux")
+fov = 20.0
+script = ExtResource("6")
+
+[node name="CameraEffects" type="Node" parent="Cameras/Poster3"]
+script = ExtResource("77")
+dof_blur_far_distance = 1.25
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.8
+
+[node name="CathyCloseUp" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-0.173648, 0.0257793, 0.98447, 0, 0.999657, -0.026177, -0.984807, -0.00454558, -0.173589, 2.808, 0.8, 4.329)
+attributes = SubResource("CameraAttributesPractical_jxuxg")
+fov = 30.0
+script = ExtResource("6")
+mouse_offset_strength = 0.008
+
+[node name="CameraEffects" type="Node" parent="Cameras/CathyCloseUp"]
+script = ExtResource("77")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.5
+dof_blur_far_transition = 0.5
+dof_blur_near_distance = 0.6
+dof_blur_near_transition = 0.05
+
+[node name="MarkCloseUp" type="Camera3D" parent="Cameras"]
+transform = Transform3D(0.104528, 0, 0.994522, 0, 1, 0, -0.994522, 0, 0.104528, 2.667, 0.787, 3.705)
+attributes = SubResource("CameraAttributesPractical_gp3yf")
+fov = 30.0
+script = ExtResource("6")
+mouse_offset_strength = 0.008
+
+[node name="CameraEffects" type="Node" parent="Cameras/MarkCloseUp"]
+script = ExtResource("77")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.25
+dof_blur_far_transition = 0.5
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.08
+dof_blur_near_transition = 0.2
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="MarkBorja" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/MarkBorja"]
+script = ExtResource("7")
+alias = "MarkBorja"
+
+[node name="Main" type="Node3D" parent="Characters/MarkBorja"]
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja/Main"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.56, 0.016, 4.1)
+layers = 129
+mesh = SubResource("ArrayMesh_63kmn")
+script = ExtResource("8")
+texture_frames = SubResource("SpriteFrames_7wfnu")
+local_offsets = {
+"headdown": Vector3(4, 0, 0),
+"smirk_idle": Vector3(4, 0, 0),
+"smirk_talk": Vector3(4, 0, 0),
+"smug+poster=r_idle": Vector3(4, 0, 0),
+"smug+poster=r_talk": Vector3(4, 0, 0),
+"smug+poster_idle": Vector3(4, 0, 0),
+"smug+poster_talk": Vector3(4, 0, 0),
+"smug_idle": Vector3(4, 0, 0),
+"smug_talk": Vector3(4, 0, 0)
+}
+sync_all = true
+animation = "headdown"
+alias = "MarkBorja"
+transitions = Array[ExtResource("278")]([SubResource("146")])
+pixel_size = 0.008
+
+[node name="SbPivot" type="Marker3D" parent="Characters/MarkBorja/Main/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 0.92, 7.15256e-07)
+script = ExtResource("17")
+alias = "MarkBorja"
+
+[node name="ArmsNoDepthTest" type="MeshInstance3D" parent="Characters/MarkBorja/Main/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.001)
+layers = 129
+mesh = SubResource("ArrayMesh_rvihv")
+script = ExtResource("8")
+texture_frames = SubResource("150")
+local_offsets = {
+"headdown": Vector3(4, 0, 0)
+}
+sync_all = true
+animation = "headdown"
+frame = 5
+playing = false
+alias = "ArmsNoDepthTest"
+transitions = Array[ExtResource("278")]([SubResource("146")])
+pixel_size = 0.008
+
+[node name="Controller" type="Node" parent="Characters/MarkBorja/Main/Sprite/ArmsNoDepthTest"]
+script = ExtResource("310")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="Characters/MarkBorja/Main/Sprite"]
+sprite_frames = SubResource("150")
+animation = &"wakeup"
+
+[node name="SpriteController" type="Node" parent="Characters/MarkBorja/Main"]
+script = ExtResource("16")
+state_container_alias = "MarkBorja"
+standalone_anims = Array[String](["headdown", "wakeup"])
+idle_talk_anims = Array[String](["confused", "default", "smirk", "smug", "worried"])
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/Main"]
+script = ExtResource("84")
+visible_on_shots = Array[String](["Main", "MarkZoom", "MarkCloseUp"])
+visible_on_parts = Array[String](["Main"])
+
+[node name="StandRun" type="Node3D" parent="Characters/MarkBorja"]
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja/StandRun"]
+transform = Transform3D(-1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 1.20754, 0, 3.75415)
+layers = 129
+mesh = SubResource("ArrayMesh_02iqf")
+script = ExtResource("8")
+texture_frames = SubResource("153")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.008
+flip_h = true
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/StandRun"]
+script = ExtResource("84")
+visible_on_shots = Array[String](["Main"])
+visible_on_parts = Array[String](["Run"])
+
+[node name="CathyPortillo" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/CathyPortillo"]
+script = ExtResource("7")
+alias = "CathyPortillo"
+
+[node name="Main" type="Node3D" parent="Characters/CathyPortillo"]
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/CathyPortillo/Main"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 1.57, 0, 4.69)
+layers = 65
+mesh = SubResource("ArrayMesh_3ffut")
+script = ExtResource("8")
+texture_frames = SubResource("306")
+sync_all = true
+animation = "cheeky_idle"
+alias = "AnimatedPaper3D"
+pixel_size = 0.008
+flip_h = true
+debug_add_anim_str = "(cheeky/default/frown/jaded/positive/shocked)_(idle/talk)"
+
+[node name="SbPivot" type="Marker3D" parent="Characters/CathyPortillo/Main/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32, 0.95, -0.00999904)
+script = ExtResource("17")
+alias = "CathyPortillo"
+
+[node name="VisibilityController" type="Node" parent="Characters/CathyPortillo/Main/Sprite/SbPivot"]
+script = ExtResource("84")
+visible_on_shots = Array[String](["Main", "CathyCloseUp"])
+
+[node name="SpriteController" type="Node" parent="Characters/CathyPortillo/Main"]
+script = ExtResource("16")
+state_container_alias = "CathyPortillo"
+fallback_idle_talk_anim = "default"
+idle_talk_anims = Array[String](["cheeky", "default", "frown", "jaded", "positive", "shocked"])
+
+[node name="JunjunChavez" type="Node3D" parent="Characters"]
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/JunjunChavez"]
+transform = Transform3D(-1.31134e-08, 0, 0.3, 0, 0.3, 0, -0.3, 0, -1.31134e-08, 1.5, 0.47, 0.693)
+layers = 65
+mesh = SubResource("ArrayMesh_uwgeo")
+script = ExtResource("8")
+texture_frames = SubResource("160")
+animation = "default"
+alias = "AnimatedPaper3D"
+
+[node name="NPCs" type="Node3D" parent="Characters"]
+
+[node name="StickingTapeBelow" type="Node3D" parent="Characters/NPCs"]
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/NPCs/StickingTapeBelow"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 6.71613, -2.38419e-07, 2.8237)
+layers = 33
+mesh = SubResource("ArrayMesh_velcv")
+script = ExtResource("8")
+texture_frames = SubResource("163")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.008
+
+[node name="StickingTapeAbove" type="Node3D" parent="Characters/NPCs"]
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/NPCs/StickingTapeAbove"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 6.71613, -2.38419e-07, 3.67558)
+layers = 33
+mesh = SubResource("ArrayMesh_s2vok")
+script = ExtResource("8")
+texture_frames = SubResource("166")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.008
+
+[node name="TalkingStudents" type="Node3D" parent="Characters/NPCs"]
+
+[node name="StudentLeft" type="MeshInstance3D" parent="Characters/NPCs/TalkingStudents"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 6.63774, -2.38419e-07, 1.01555)
+layers = 33
+mesh = SubResource("ArrayMesh_bp1ry")
+script = ExtResource("8")
+texture_frames = SubResource("169")
+animation = "default"
+random_initial = true
+alias = "AnimatedPaper3D"
+pixel_size = 0.008
+
+[node name="StudentRight" type="MeshInstance3D" parent="Characters/NPCs/TalkingStudents"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 6.63774, -2.38419e-07, 1.69524)
+layers = 33
+mesh = SubResource("ArrayMesh_phex5")
+script = ExtResource("8")
+texture_frames = SubResource("172")
+animation = "default"
+random_initial = true
+alias = "AnimatedPaper3D"
+pixel_size = 0.008
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="Music" type="Node3D" parent="Audio"]
+
+[node name="MusicTense" type="AudioStreamPlayer" parent="Audio/Music"]
+stream = ExtResource("137")
+volume_db = -4.0
+bus = &"Music"
+script = ExtResource("119")
+
+[node name="HallwayAmbience" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02, 1.03, 5.85)
+stream = ExtResource("15")
+attenuation_model = 3
+max_db = -3.0
+autoplay = true
+bus = &"NearOut"
+script = ExtResource("119")
+
+[node name="CrowdTalking" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.09, 1.03, 12.37)
+stream = ExtResource("313_ojnva")
+attenuation_model = 3
+volume_db = 4.0
+max_db = 4.0
+autoplay = true
+bus = &"NearOut"
+script = ExtResource("119")
+autoplay_random_position = true
+
+[node name="Leaves" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.65, 0.56, -0.6)
+stream = ExtResource("12")
+attenuation_model = 3
+max_db = -2.5
+autoplay = true
+bus = &"SFX"
+script = ExtResource("119")
+autoplay_random_position = true
+
+[node name="FanL" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96, 1.45, 4.39)
+stream = ExtResource("136")
+unit_size = 2.0
+max_db = -5.0
+autoplay = true
+bus = &"SFX"
+script = ExtResource("119")
+autoplay_random_position = true
+
+[node name="FanR" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.96, 1.45, 0.2)
+stream = ExtResource("136")
+unit_size = 2.0
+max_db = -5.0
+autoplay = true
+bus = &"SFX"
+script = ExtResource("119")
+autoplay_random_position = true
+
+[node name="BirdChirps" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("13")
+volume_db = -12.0
+autoplay = true
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="Snore" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("118")
+volume_db = -16.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="PokeLong" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("120")
+volume_db = -8.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="PokeMed" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("124")
+volume_db = -8.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="AnimeDing" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("331")
+volume_db = -2.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="Clothes2Slow" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("121")
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="ArmOnDesk" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("123")
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="HeavyDeskScreech2" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("126")
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="HeavyDeskScreech3" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("125")
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="Whistling" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("132")
+volume_db = -12.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="PaperUncrumpleFast" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("128")
+volume_db = -10.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="Clothes1Sudden" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("133")
+volume_db = -10.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="Clothes2Sudden" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("129")
+volume_db = -10.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="HeavyDeskScreech1" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("131")
+volume_db = 2.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("127")
+pitch_scale = 1.75
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="PosterPress" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("323")
+pitch_scale = 1.75
+bus = &"SFX"
+script = ExtResource("119")
+
+[node name="UnrollingPoster" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.6, 0.55, 4.32)
+stream = ExtResource("330")
+unit_size = 2.0
+max_db = 0.0
+bus = &"SFX"
+script = ExtResource("119")
+
+[editable path="World/Classroom9Pearl"]

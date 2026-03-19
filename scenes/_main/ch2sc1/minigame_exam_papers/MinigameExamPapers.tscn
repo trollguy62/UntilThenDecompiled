@@ -1,0 +1,125 @@
+[gd_scene load_steps=24 format=3 uid="uid://dxkpodjkc2uy3"]
+
+[ext_resource type="Texture2D" uid="uid://pnchbb2cwiub" path="res://scenes/_main/ch2sc1/minigame_exam_papers/assets/background.png" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch2sc1/minigame_exam_papers/MinigameExamPapers.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://6wyrgicu84kx" path="res://scenes/_main/ch2sc1/minigame_exam_papers/assets/papers_art/ian47.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://8umatxqq1jpd" path="res://scenes/_main/ch2sc1/minigame_exam_papers/assets/folder_front_chemistry.png" id="4"]
+[ext_resource type="Script" path="res://scenes/_main/ch2sc1/minigame_exam_papers/scripts/Paper.gd" id="5"]
+[ext_resource type="Resource" uid="uid://bs21i8qxqm3na" path="res://scenes/_main/ch2sc1/minigame_exam_papers/MinigameExamPapersResources/ExamFolders/ExamFolderChem.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://bj6p6kwr506xh" path="res://scenes/_main/ch2sc1/minigame_exam_papers/assets/folder_back.png" id="7"]
+[ext_resource type="Resource" uid="uid://deqyapsyyo13w" path="res://scenes/_main/ch2sc1/minigame_exam_papers/MinigameExamPapersResources/ExamFolders/ExamFolderFil.tres" id="8"]
+[ext_resource type="Resource" uid="uid://bmagifmtnebty" path="res://scenes/_main/ch2sc1/minigame_exam_papers/MinigameExamPapersResources/ExamFolders/ExamFolderEng.tres" id="9"]
+[ext_resource type="Resource" uid="uid://be7hpxd5nq8xt" path="res://scenes/_main/ch2sc1/minigame_exam_papers/MinigameExamPapersResources/ExamFolders/ExamFolderMath.tres" id="10"]
+[ext_resource type="Resource" uid="uid://col0gl1u6cltb" path="res://scenes/_main/ch2sc1/minigame_exam_papers/MinigameExamPapersResources/ExamFolders/ExamFolderArt.tres" id="11"]
+[ext_resource type="Resource" uid="uid://bf1xh0pf5m0fm" path="res://scenes/_main/ch2sc1/minigame_exam_papers/MinigameExamPapersResources/ExamFolders/ExamFolderHis.tres" id="12"]
+[ext_resource type="Texture2D" uid="uid://3oe86xfv7cme" path="res://scenes/_main/ch2sc1/minigame_exam_papers/assets/papers_art/mark13.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://b8o4u382deyjb" path="res://scenes/_main/ch2sc1/minigame_exam_papers/assets/papers_art/angel41.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://b6u3lkgf4inhv" path="res://scenes/_main/ch2sc1/minigame_exam_papers/assets/papers_art/brian35.png" id="15"]
+[ext_resource type="AudioStream" uid="uid://n5cpih4o73h3" path="res://scenes/_main/ch2sc1/minigame_exam_papers/audio/Paper Shuffling (Short 6).ogg" id="16"]
+[ext_resource type="AudioStream" uid="uid://7cplwj5qo0hk" path="res://scenes/_main/ch2sc1/minigame_exam_papers/audio/Paper Shuffling (Short 5).ogg" id="17"]
+[ext_resource type="AudioStream" uid="uid://yweit6jrr5fp" path="res://scenes/_main/ch2sc1/minigame_exam_papers/audio/Paper Shuffling (Short 3).ogg" id="18"]
+[ext_resource type="AudioStream" uid="uid://cbcsqjqcnhbqc" path="res://scenes/_main/ch2sc1/minigame_exam_papers/audio/Folder and Papers Sliding 1.ogg" id="19"]
+[ext_resource type="AudioStream" uid="uid://claidxuumliea" path="res://scenes/_main/ch2sc1/minigame_exam_papers/audio/Folder and Papers Sliding 2.ogg" id="20"]
+[ext_resource type="AudioStream" uid="uid://dikq8t37vrfw4" path="res://scenes/_main/ch2sc1/minigame_exam_papers/audio/Folder and Papers Sliding 3.ogg" id="21"]
+[ext_resource type="AudioStream" uid="uid://bhijl5og5pgno" path="res://scenes/_main/ch2sc1/minigame_exam_papers/audio/Folder and Papers Sliding 4.ogg" id="22"]
+[ext_resource type="PackedScene" uid="uid://cng5pa21vpc74" path="res://ui/components/Pointer/Pointer.tscn" id="23_52twn"]
+
+[node name="MinigameExamPapers" type="Node2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+script = ExtResource("2")
+exam_sets = Array[Resource]([ExtResource("6"), ExtResource("10"), ExtResource("8"), ExtResource("9"), ExtResource("12"), ExtResource("11")])
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+centered = false
+
+[node name="PaperHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("16")
+volume_db = -4.0
+
+[node name="PaperReveal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("17")
+volume_db = -2.0
+
+[node name="PaperPull" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("18")
+volume_db = -2.0
+
+[node name="Slide1" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19")
+volume_db = -2.0
+
+[node name="Slide2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20")
+volume_db = -2.0
+
+[node name="Slide3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21")
+volume_db = -2.0
+
+[node name="Slide4" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22")
+volume_db = -2.0
+
+[node name="Parent" type="Node2D" parent="."]
+
+[node name="FolderBack" type="Sprite2D" parent="Parent"]
+position = Vector2(20.5, 28)
+texture = ExtResource("7")
+centered = false
+
+[node name="Paper4" type="Area2D" parent="Parent"]
+position = Vector2(177, 29.75)
+script = ExtResource("5")
+
+[node name="Sprite" type="Sprite2D" parent="Parent/Paper4"]
+texture = ExtResource("3")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Parent/Paper4"]
+position = Vector2(80, 37)
+polygon = PackedVector2Array(-11, -31.75, 24.1467, -36.2201, 53.1228, 113.49, 18, 115.25)
+
+[node name="Paper3" type="Area2D" parent="Parent"]
+position = Vector2(140, 30)
+script = ExtResource("5")
+
+[node name="Sprite" type="Sprite2D" parent="Parent/Paper3"]
+texture = ExtResource("13")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Parent/Paper3"]
+position = Vector2(80, 37)
+polygon = PackedVector2Array(-11, -32, 24.1467, -36.2201, 53.1228, 113.49, 18, 115)
+
+[node name="Paper2" type="Area2D" parent="Parent"]
+position = Vector2(103, 30)
+script = ExtResource("5")
+
+[node name="Sprite" type="Sprite2D" parent="Parent/Paper2"]
+texture = ExtResource("15")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Parent/Paper2"]
+position = Vector2(80, 37)
+polygon = PackedVector2Array(-11, -32, 24.1467, -36.2201, 53.1228, 113.49, 18, 116)
+
+[node name="Paper1" type="Area2D" parent="Parent"]
+position = Vector2(66, 30)
+script = ExtResource("5")
+
+[node name="Sprite" type="Sprite2D" parent="Parent/Paper1"]
+texture = ExtResource("14")
+centered = false
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Parent/Paper1"]
+position = Vector2(80, 37)
+polygon = PackedVector2Array(-14.488, -31.3907, 24.1467, -36.2201, 53.1228, 113.49, 19.3174, 115.904)
+
+[node name="Folder" type="Sprite2D" parent="Parent"]
+position = Vector2(16, 26)
+texture = ExtResource("4")
+centered = false
+
+[node name="Pointer" parent="." instance=ExtResource("23_52twn")]

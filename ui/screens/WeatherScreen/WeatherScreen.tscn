@@ -1,0 +1,235 @@
+[gd_scene load_steps=19 format=3 uid="uid://cxpdoemgx3u0a"]
+
+[ext_resource type="Script" path="res://ui/screens/WeatherScreen/WeatherScreen.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://jsnjhws5j0r0" path="res://fonts/Quicksand-Bold-24.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://bkpimnwjoe4x0" path="res://fonts/Quicksand-Regular.ttf" id="3"]
+[ext_resource type="Texture2D" uid="uid://di5iebobysn6" path="res://ui/screens/WeatherScreen/icons/wi_cloudy.png" id="4"]
+[ext_resource type="FontFile" uid="uid://swcrecxagkae" path="res://fonts/Quicksand-Regular-20.tres" id="5"]
+[ext_resource type="FontFile" uid="uid://8w5jqmqliqqd" path="res://fonts/Quicksand-Bold-20.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://caunogdv2fj5g" path="res://assets/ui/ic_back.png" id="7"]
+[ext_resource type="PackedScene" uid="uid://bdjkeyee4hvxi" path="res://ui/screens/WeatherScreen/DayLine.tscn" id="8"]
+[ext_resource type="Texture2D" uid="uid://dixxktfcx6moy" path="res://ui/screens/WeatherScreen/icons/wi_cloud.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cdiyrjuvtfhkh" path="res://ui/screens/WeatherScreen/icons/wi_day_sunny.png" id="10"]
+[ext_resource type="PackedScene" uid="uid://dyjpla5bera8e" path="res://ui/components/BackButton/BackButton.tscn" id="11"]
+[ext_resource type="Texture2D" uid="uid://bo1hlusj044do" path="res://ui/screens/WeatherScreen/icons/wi_rainy.png" id="13"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.023, 0.292483, 0.46, 1)
+
+[sub_resource type="StyleBoxEmpty" id="2"]
+
+[sub_resource type="StyleBoxEmpty" id="3"]
+
+[sub_resource type="FontFile" id="4"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/26/0 = Vector2(0, 0)
+cache/0/26/0/ascent = 0.0
+cache/0/26/0/descent = 0.0
+cache/0/26/0/underline_position = 0.0
+cache/0/26/0/underline_thickness = 0.0
+cache/0/26/0/scale = 1.0
+cache/0/26/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/26/0/kerning_overrides/26/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="5"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/48/0 = Vector2(0, 0)
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+cache/0/48/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/48/0/kerning_overrides/48/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="6"]
+bg_color = Color(0.0941176, 0.294118, 0.54902, 0.847059)
+
+[node name="WeatherScreen" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+script = ExtResource("1")
+weather_states = {
+"WEATHERAPP_CLOUDY": ExtResource("9"),
+"WEATHERAPP_MOSTLY_CLOUDY": ExtResource("4"),
+"WEATHERAPP_RAINY": ExtResource("13"),
+"WEATHERAPP_SUNNY": ExtResource("10")
+}
+weather_state_names = Array[String](["WEATHERAPP_CLOUDY", "WEATHERAPP_MOSTLY_CLOUDY", "WEATHERAPP_SUNNY", "WEATHERAPP_RAINY"])
+weather_state_icons = Array[Texture2D]([ExtResource("9"), ExtResource("4"), ExtResource("10"), ExtResource("13")])
+
+[node name="Menu" type="PanelContainer" parent="."]
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
+
+[node name="Label" type="Label" parent="Menu"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 24
+text = "WEATHERAPP_TITLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BackButton" parent="Menu/Label" instance=ExtResource("11")]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 14.0
+offset_right = 40.0
+offset_bottom = 38.0
+disabled = true
+
+[node name="Header" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Content" type="VBoxContainer" parent="Header"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 0
+
+[node name="Spacer1" type="PanelContainer" parent="Header/Content"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("3")
+
+[node name="Location" type="Label" parent="Header/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("4")
+theme_override_font_sizes/font_size = 26
+text = "Bonifacio"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="IconMain" type="TextureRect" parent="Header/Content"]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+size_flags_horizontal = 4
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="TempMain" type="Label" parent="Header/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 48
+text = "34°C"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Descriptor" type="Label" parent="Header/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("5")
+theme_override_font_sizes/font_size = 20
+text = "Mostly Cloudy"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Spacer2" type="PanelContainer" parent="Header/Content"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("3")
+
+[node name="Body" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("6")
+
+[node name="Content" type="VBoxContainer" parent="Body"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Spacer1" type="PanelContainer" parent="Body/Content"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/panel = SubResource("3")
+
+[node name="WeekCycler" type="HBoxContainer" parent="Body/Content"]
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_constants/separation = 16
+
+[node name="Left" type="TextureButton" parent="Body/Content/WeekCycler"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+focus_mode = 0
+texture_normal = ExtResource("7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="Body/Content/WeekCycler"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("6")
+theme_override_font_sizes/font_size = 20
+text = "Today"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Right" type="TextureButton" parent="Body/Content/WeekCycler"]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+texture_normal = ExtResource("7")
+ignore_texture_size = true
+stretch_mode = 0
+flip_h = true
+
+[node name="Spacer2" type="PanelContainer" parent="Body/Content"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/panel = SubResource("3")
+
+[node name="Sunday" parent="Body/Content" instance=ExtResource("8")]
+layout_mode = 2
+
+[node name="Monday" parent="Body/Content" instance=ExtResource("8")]
+layout_mode = 2
+day_of_week = 1
+
+[node name="Tuesday" parent="Body/Content" instance=ExtResource("8")]
+layout_mode = 2
+day_of_week = 2
+
+[node name="Wednesday" parent="Body/Content" instance=ExtResource("8")]
+layout_mode = 2
+day_of_week = 3
+
+[node name="Thursday" parent="Body/Content" instance=ExtResource("8")]
+layout_mode = 2
+day_of_week = 4
+
+[node name="Friday" parent="Body/Content" instance=ExtResource("8")]
+layout_mode = 2
+day_of_week = 5
+
+[node name="Saturday" parent="Body/Content" instance=ExtResource("8")]
+layout_mode = 2
+day_of_week = 6

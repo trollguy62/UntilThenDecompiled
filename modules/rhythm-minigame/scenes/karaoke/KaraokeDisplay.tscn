@@ -1,0 +1,176 @@
+[gd_scene load_steps=16 format=3 uid="uid://cwng73ilijr10"]
+
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/InitialScreen.gd" id="1"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeLogo.gd" id="6"]
+[ext_resource type="PackedScene" uid="uid://cqoq8m8k8s013" path="res://modules/rhythm-minigame/scenes/karaoke/ScoreScreen.tscn" id="12"]
+[ext_resource type="PackedScene" uid="uid://c86fa55byqcqr" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeBackground.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://bxjf66npdjyh3" path="res://modules/rhythm-minigame/scenes/karaoke/SongPreview.tscn" id="14"]
+[ext_resource type="FontVariation" uid="uid://creygg1hordty" path="res://modules/rhythm-minigame/assets/fonts/Noto_Sans_JP/NotoSans.tres" id="14_nuqsx"]
+[ext_resource type="PackedScene" uid="uid://brvuourig4rjr" path="res://modules/rhythm-minigame/scenes/karaoke/SongInput.tscn" id="15"]
+[ext_resource type="PackedScene" uid="uid://bwwofsr2monkl" path="res://modules/rhythm-minigame/scenes/karaoke/SongInfo.tscn" id="16"]
+[ext_resource type="PackedScene" uid="uid://byf1avqm57nc4" path="res://modules/rhythm-minigame/scenes/karaoke/SongQueue.tscn" id="17"]
+[ext_resource type="PackedScene" uid="uid://bs3xl11844rb6" path="res://modules/rhythm-minigame/scenes/karaoke/RhythmContainer.tscn" id="18"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/RhythmAnchor.gd" id="19"]
+[ext_resource type="Texture2D" uid="uid://egjgnkajpmeo" path="res://modules/rhythm-minigame/assets/karaoke/mic_ko_logo_green.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://18woj5q2nkgh" path="res://modules/rhythm-minigame/assets/karaoke/mic_ko_logo_red.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://7af77rwxq7ps" path="res://modules/rhythm-minigame/assets/karaoke/mic_ko_logo_blue.png" id="22"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeDisplay.gd" id="23"]
+
+[node name="KaraokeDisplay" type="Node"]
+script = ExtResource("23")
+
+[node name="Background" parent="." instance=ExtResource("13")]
+texture_filter = 1
+position = Vector2(257, 192)
+
+[node name="Logo" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(76, 31)
+texture = ExtResource("21")
+script = ExtResource("6")
+logos = [ExtResource("22"), ExtResource("20"), ExtResource("21")]
+
+[node name="Idle" type="Control" parent="."]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+
+[node name="PopularSongs" parent="Idle" instance=ExtResource("14")]
+texture_filter = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 63.0
+offset_top = 72.0
+offset_right = 420.0
+offset_bottom = 320.0
+
+[node name="SongInfo" parent="Idle" instance=ExtResource("16")]
+texture_filter = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 70.0
+offset_right = 496.0
+offset_bottom = 236.0
+
+[node name="Sing" type="Control" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+
+[node name="RhythmAnchor" type="Control" parent="Sing"]
+texture_filter = 1
+anchors_preset = 0
+offset_left = 30.2361
+offset_top = 263.0
+offset_right = 508.236
+offset_bottom = 354.0
+script = ExtResource("19")
+
+[node name="Top" parent="Sing/RhythmAnchor" instance=ExtResource("18")]
+texture_filter = 1
+layout_mode = 0
+offset_left = -5.67
+offset_top = -22.0
+offset_right = 394.33
+offset_bottom = 22.0
+
+[node name="Bottom" parent="Sing/RhythmAnchor" instance=ExtResource("18")]
+texture_filter = 1
+layout_mode = 0
+offset_left = 5.0
+offset_top = 40.0
+offset_right = 386.0
+offset_bottom = 84.0
+
+[node name="SongQueue" parent="Sing" instance=ExtResource("17")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 154.236
+offset_top = 8.0
+offset_right = 218.236
+offset_bottom = 50.0
+
+[node name="SongInputTopBar" parent="Sing" instance=ExtResource("15")]
+visible = false
+texture_filter = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_left = 23.0
+offset_top = 10.746
+offset_right = 207.0
+offset_bottom = 45.746
+
+[node name="InitialScreen" type="Control" parent="Sing"]
+visible = false
+texture_filter = 1
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+script = ExtResource("1")
+
+[node name="SongTitle" type="Label" parent="Sing/InitialScreen"]
+texture_filter = 1
+custom_minimum_size = Vector2(496, 0)
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = 79.0
+offset_right = 496.0
+offset_bottom = 149.0
+theme_override_colors/font_color = Color(0.133333, 0.113725, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("14_nuqsx")
+theme_override_font_sizes/font_size = 48
+text = "Dahil Sa'yo"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="Artist" type="Label" parent="Sing/InitialScreen"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 30.0
+offset_top = 286.0
+offset_right = 450.0
+offset_bottom = 321.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("14_nuqsx")
+theme_override_font_sizes/font_size = 20
+text = "Popularized By: Inigo Pascual"
+clip_text = true
+
+[node name="Scoring" type="Control" parent="."]
+visible = false
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+
+[node name="ScoreScreen" parent="Scoring" instance=ExtResource("12")]
+texture_filter = 1
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+offset_top = 70.0
+offset_right = 496.0
+offset_bottom = 223.0

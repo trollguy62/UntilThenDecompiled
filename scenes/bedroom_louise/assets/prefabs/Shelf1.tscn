@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://carlll4s0kh52"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="1_eq1vj"]
+[ext_resource type="Texture2D" uid="uid://o2sri5gxanb6" path="res://scenes/bedroom_louise/assets/shelf_1.png" id="2_o2tfp"]
+[ext_resource type="ArrayMesh" uid="uid://bebw2kq7l6h1r" path="res://scenes/bedroom_louise/assets/shelf.obj" id="3_cig0k"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7irdr"]
+render_priority = 0
+shader = ExtResource("1_eq1vj")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2_o2tfp")
+
+[node name="Shelf1" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06, 0, 0.16)
+material_override = SubResource("ShaderMaterial_7irdr")
+mesh = ExtResource("3_cig0k")

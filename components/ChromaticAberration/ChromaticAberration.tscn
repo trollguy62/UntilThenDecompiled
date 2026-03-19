@@ -1,0 +1,41 @@
+[gd_scene load_steps=5 format=3 uid="uid://ccxopd4fx8nlf"]
+
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="1"]
+[ext_resource type="Script" path="res://components/ChromaticAberration/ChromaticAberration.gd" id="2"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type canvas_item;
+
+uniform float strength = 1.0;
+uniform float inner_radius : hint_range(0, 1) = 0.2;
+uniform float outer_radius : hint_range(0, 2) = 1.25;
+
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+    vec2 centered = UV - vec2(0.5);
+	float a = smoothstep(inner_radius, outer_radius, length(centered));
+
+	vec4 c = texture(SCREEN_TEXTURE, SCREEN_UV);
+	float offset = strength * a / 100.;
+	c.r = texture(SCREEN_TEXTURE, SCREEN_UV + vec2(offset, 0)).r;
+	c.b = texture(SCREEN_TEXTURE, SCREEN_UV - vec2(offset, 0)).b;
+
+	COLOR = c;
+}"
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("1")
+shader_parameter/strength = 1.0
+shader_parameter/inner_radius = 0.3
+shader_parameter/outer_radius = 1.2
+
+[node name="ChromaticAberration" type="TextureRect"]
+material = SubResource("2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+texture = ExtResource("1")
+expand_mode = 1
+script = ExtResource("2")

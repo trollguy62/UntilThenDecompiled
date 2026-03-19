@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://ltqveemvwqw7"]
+
+[ext_resource type="Texture2D" uid="uid://dx35jidugisis" path="res://assets/common/hint_notice/01.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://ccf502ekxgsa2" path="res://assets/common/hint_notice/03.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b7m6pnuex68rl" path="res://assets/common/hint_notice/02.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://01ihx7lgosmv" path="res://assets/common/hint_notice/04.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bratnjwtwrumm" path="res://assets/common/hint_notice/05.png" id="5"]
+[ext_resource type="Script" path="res://components/AnimatedSprite3D.gd" id="6"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": false,
+"name": &"notice",
+"speed": 6.0
+}]
+
+[node name="Hint" type="AnimatedSprite3D"]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0, 0, 0)
+centered = false
+alpha_cut = 1
+texture_filter = 0
+sprite_frames = SubResource("1")
+script = ExtResource("6")
+alias = "MarkHint"

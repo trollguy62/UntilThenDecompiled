@@ -1,0 +1,57 @@
+[gd_scene load_steps=6 format=3 uid="uid://brhqf165nfpf"]
+
+[ext_resource type="Texture2D" uid="uid://coqj2fcsaxvcn" path="res://addons/controller_icons/assets/key/space.png" id="1"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/SkipHint.gd" id="3"]
+[ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="4"]
+[ext_resource type="FontFile" uid="uid://b62gu2re0t70r" path="res://fonts/NunitoSans-Light-24.tres" id="4_o3f1e"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4so7d"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0, 0, 0, 0.282353)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="SkipHint" type="PanelContainer"]
+light_mask = 33
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -204.0
+offset_top = -156.0
+offset_right = -115.0
+offset_bottom = -92.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_4so7d")
+script = ExtResource("3")
+
+[node name="HBox" type="HBoxContainer" parent="."]
+light_mask = 33
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 16
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="HBox"]
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1")
+expand_mode = 1
+script = ExtResource("4")
+path = "skip"
+prioritize_controller = true
+
+[node name="Label" type="Label" parent="HBox"]
+light_mask = 33
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4_o3f1e")
+theme_override_font_sizes/font_size = 24
+text = "CH1SC1A_UI_SKIP_HINT"

@@ -1,0 +1,114 @@
+[gd_scene load_steps=12 format=3 uid="uid://b1nbr21n3i2ts"]
+
+[ext_resource type="ArrayMesh" uid="uid://dq0l47vl6dkau" path="res://scenes/house_mark_og/assets/dish_container.obj" id="1_i6ghm"]
+[ext_resource type="Material" uid="uid://bnrj7iyonqvnh" path="res://scenes/house_mark_og/assets/materials/DishContainer.tres" id="2_52inr"]
+[ext_resource type="Material" uid="uid://tkfxacw5niiq" path="res://scenes/house_mark_og/assets/materials/DishContainerTransp.tres" id="3_m0tj8"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="4_d8pmy"]
+[ext_resource type="Texture2D" uid="uid://14gex73nllby" path="res://scenes/house_mark_og/assets/deco/dish.png" id="5_yon6b"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="6_l7rox"]
+[ext_resource type="Texture2D" uid="uid://benod06lqex4c" path="res://scenes/house_mark_og/assets/deco/spoons_forks.png" id="7_7lwfj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iwisx"]
+render_priority = 0
+shader = ExtResource("4_d8pmy")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5_yon6b")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_py8un"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.1638, 0.1729, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_iwisx"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 48, 187, 39, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 48, 187, 39, 62, 179, 12, 49, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 179, 12, 49, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k8dqe"]
+render_priority = 0
+shader = ExtResource("4_d8pmy")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7_7lwfj")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_na5nf"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.11, 0.14, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_k8dqe"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 174, 71, 225, 61, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 174, 71, 225, 61, 41, 92, 15, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 15, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[node name="DishContainer" type="MeshInstance3D"]
+mesh = ExtResource("1_i6ghm")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("2_52inr")
+surface_material_override/1 = ExtResource("3_m0tj8")
+
+[node name="Dish_1" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.2222e-08, -0.258819, 0.965926, -1.13133e-08, 0.965926, 0.258819, -1, 6.16922e-16, -4.37114e-08, -0.08, 0.13, 0.067)
+mesh = SubResource("ArrayMesh_py8un")
+script = ExtResource("6_l7rox")
+texture = ExtResource("5_yon6b")
+pixel_size = 0.0091
+metadata/mat_opaque = SubResource("ShaderMaterial_iwisx")
+
+[node name="Dish_2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.2222e-08, -0.258819, 0.965926, -1.13133e-08, 0.965926, 0.258819, -1, 6.16922e-16, -4.37114e-08, -0.03, 0.13, 0.067)
+mesh = SubResource("ArrayMesh_py8un")
+script = ExtResource("6_l7rox")
+texture = ExtResource("5_yon6b")
+pixel_size = 0.0091
+metadata/mat_opaque = SubResource("ShaderMaterial_iwisx")
+
+[node name="SpoonsForks" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.707107, -0.183013, 0.683013, 0, 0.965926, 0.258819, -0.707107, -0.183013, 0.683013, 0.0592772, 0.107765, 0.0417036)
+mesh = SubResource("ArrayMesh_na5nf")
+script = ExtResource("6_l7rox")
+texture = ExtResource("7_7lwfj")
+metadata/mat_opaque = SubResource("ShaderMaterial_k8dqe")

@@ -1,0 +1,68 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvogx64gtu3r5"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="1"]
+[ext_resource type="Texture2D" uid="uid://cochnpq1pumxy" path="res://scenes/cemetery/assets/gravestone_1.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dqy0davtfuxhu" path="res://scenes/cemetery/assets/grave_1.png" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://4yhi57wsc16" path="res://scenes/cemetery/assets/gravestone.obj" id="4"]
+[ext_resource type="ArrayMesh" uid="uid://bgt6fnviig7s" path="res://scenes/cemetery/assets/grave.obj" id="5"]
+
+[sub_resource type="ShaderMaterial" id="11"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+
+[sub_resource type="ShaderMaterial" id="12"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+
+[node name="Grave" type="MeshInstance"]
+material_override = SubResource("11")
+mesh = ExtResource("5")
+skeleton = NodePath("../../..")
+
+[node name="GraveStone" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 2.23517e-07, 0, -2.23517e-07, 1, 0.15, 0.03, -0.08)
+material_override = SubResource("12")
+mesh = ExtResource("4")
+skeleton = NodePath("../../../..")

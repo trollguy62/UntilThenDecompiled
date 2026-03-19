@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://ci3y8vmje2i2l"]
+
+[ext_resource type="ArrayMesh" uid="uid://cf63jsgjjj42x" path="res://scenes/_main/ch4sc2b/assets/envi/waiting_shed.obj" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/Wet.gdshader" id="1_rab2q"]
+[ext_resource type="Texture2D" uid="uid://c5j0jthtxnat7" path="res://scenes/_main/ch4sc2b/assets/envi/waiting_shed.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://dx35fx5ub6e6y" path="res://scenes/_main/ch4sc2b/assets/envi/waiting_shed_wet.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cx5704ya0dd3w" path="res://scenes/_main/ch4sc2b/assets/envi/waiting_shed_rm.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://jche2pjvbmr6" path="res://scenes/_main/ch4sc2b/assets/envi/waiting_shed_n.png" id="5"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("1_rab2q")
+shader_parameter/albedo_mult = false
+shader_parameter/albedo = null
+shader_parameter/global_wet_roughness = 1.0
+shader_parameter/normal_smooth_sampling = false
+shader_parameter/distort = 0.0
+shader_parameter/max_normal_depth = 1.0
+shader_parameter/tex_albedo = ExtResource("2")
+shader_parameter/tex_roughness = ExtResource("4")
+shader_parameter/tex_wetmap = ExtResource("3")
+shader_parameter/tex_metallic = ExtResource("4")
+shader_parameter/tex_normal = ExtResource("5")
+
+[node name="WaitingShed" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.87, 0.05, 1.9)
+material_override = SubResource("1")
+mesh = ExtResource("1")

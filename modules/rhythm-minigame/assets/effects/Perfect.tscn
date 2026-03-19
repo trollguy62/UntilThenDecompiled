@@ -1,0 +1,235 @@
+[gd_scene load_steps=23 format=3 uid="uid://2wtwjre68lir"]
+
+[ext_resource type="Texture2D" uid="uid://cqu50301n0cjw" path="res://modules/rhythm-minigame/assets/effects/assets/star.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://baho25s0bggyy" path="res://modules/rhythm-minigame/assets/effects/assets/halo.png" id="2"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/assets/effects/Effect.gd" id="3"]
+[ext_resource type="FontFile" uid="uid://cpo4jfo8m4uaw" path="res://modules/rhythm-minigame/assets/fonts/Raleway/Raleway-ExtraBold.ttf" id="4"]
+
+[sub_resource type="Animation" id="15"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-150, -125)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="16"]
+resource_name = "default"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Label:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Label:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-250, -120), Vector2(-250, -150)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Label:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.05, 1.05)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_lsy11"]
+_data = {
+"RESET": SubResource("15"),
+"default": SubResource("16")
+}
+
+[sub_resource type="Gradient" id="1"]
+offsets = PackedFloat32Array(0, 0.118932, 0.927184, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="2"]
+gradient = SubResource("1")
+width = 128
+
+[sub_resource type="Curve" id="3"]
+_data = [Vector2(0, 0.210932), 0.0, 1.57089, 0, 0, Vector2(1, 1), 0.237231, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="4"]
+width = 128
+curve = SubResource("3")
+
+[sub_resource type="ParticleProcessMaterial" id="5"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("4")
+color_ramp = SubResource("2")
+
+[sub_resource type="Gradient" id="6"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="7"]
+gradient = SubResource("6")
+width = 128
+
+[sub_resource type="Curve" id="8"]
+_data = [Vector2(0, 1), 0.0, -0.051383, 0, 0, Vector2(1, 0), -2.98636, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="9"]
+width = 128
+curve = SubResource("8")
+
+[sub_resource type="ParticleProcessMaterial" id="10"]
+lifetime_randomness = 0.16
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+direction = Vector3(0, 0, 0)
+spread = 180.0
+gravity = Vector3(-200, 0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+angular_velocity_min = -150.0
+angular_velocity_max = 150.0
+orbit_velocity_min = -0.02
+orbit_velocity_max = 0.02
+linear_accel_min = -20.0
+damping_max = 3.773
+angle_min = -180.0
+angle_max = 180.0
+scale_min = 0.25
+scale_max = 0.66
+scale_curve = SubResource("9")
+color_ramp = SubResource("7")
+hue_variation_min = -0.01
+hue_variation_max = 0.01
+turbulence_noise_strength = 0.09
+
+[sub_resource type="Gradient" id="11"]
+offsets = PackedFloat32Array(0, 0.118932, 0.334951, 0.995146, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="12"]
+gradient = SubResource("11")
+width = 128
+
+[sub_resource type="CurveTexture" id="13"]
+width = 128
+curve = SubResource("3")
+
+[sub_resource type="ParticleProcessMaterial" id="14"]
+emission_shape = 1
+emission_sphere_radius = 48.0
+spread = 0.0
+gravity = Vector3(0, 0, 0)
+scale_min = 0.25
+scale_max = 0.5
+scale_curve = SubResource("13")
+color_ramp = SubResource("12")
+
+[sub_resource type="FontFile" id="17"]
+fallbacks = Array[Font]([ExtResource("4")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/32/0 = Vector2(0, 0)
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
+cache/0/32/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/32/0/kerning_overrides/32/0 = Vector2(0, 0)
+
+[node name="Perfect" type="Node2D"]
+modulate = Color(1, 0.960784, 0.337255, 1)
+script = ExtResource("3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_lsy11")
+}
+
+[node name="HaloMain" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.25098)
+amount = 1
+process_material = SubResource("5")
+texture = ExtResource("2")
+
+[node name="Stars" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.658824)
+position = Vector2(0, -25)
+process_material = SubResource("10")
+texture = ExtResource("1")
+explosiveness = 0.99
+fixed_fps = 60
+
+[node name="Halos" type="GPUParticles2D" parent="."]
+modulate = Color(1, 1, 1, 0.470588)
+amount = 3
+process_material = SubResource("14")
+texture = ExtResource("2")
+explosiveness = 0.7
+
+[node name="Label" type="Label" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(500, 0)
+offset_left = -150.0
+offset_top = -125.0
+offset_right = 350.0
+offset_bottom = -36.0
+pivot_offset = Vector2(250, 89)
+theme_override_fonts/font = SubResource("17")
+theme_override_font_sizes/font_size = 32
+text = "MG_RHYTHM_JUDG_PERFECT"
+horizontal_alignment = 1

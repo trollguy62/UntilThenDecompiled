@@ -1,0 +1,77 @@
+[gd_scene load_steps=10 format=3 uid="uid://dumi5jqmljupu"]
+
+[ext_resource type="FontFile" uid="uid://mnqw5d1komab" path="res://fonts/DejaVuSans.ttf" id="1_ab4qy"]
+[ext_resource type="Script" path="res://ui/screens/TVM/MainScreen/Button.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://81hyp0rd2njf" path="res://ui/screens/TVM/MainScreen/cross.png" id="3"]
+
+[sub_resource type="FontVariation" id="FontVariation_10pos"]
+base_font = ExtResource("1_ab4qy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1uj6"]
+bg_color = Color(0, 0, 0, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o73fy"]
+bg_color = Color(0, 0, 0, 0.12549)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_45n36"]
+bg_color = Color(0, 0, 0, 0.25098)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_b2fr8"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xcyq0"]
+bg_color = Color(0, 0, 0, 0.12549)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0, 0, 0, 1)
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(0, 80)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+focus_mode = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_disabled_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_10pos")
+theme_override_font_sizes/font_size = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_q1uj6")
+theme_override_styles/hover = SubResource("StyleBoxFlat_o73fy")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_45n36")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_b2fr8")
+theme_override_styles/focus = SubResource("StyleBoxFlat_xcyq0")
+text = "Single Journey Ticket"
+flat = true
+script = ExtResource("2")
+
+[node name="DisabledOverlay" type="TextureRect" parent="."]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+texture = ExtResource("3")
+expand_mode = 1

@@ -1,0 +1,104 @@
+[gd_scene load_steps=13 format=3 uid="uid://cqtos7wyggwuo"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://bfd0fky0jo3fi" path="res://scenes/bonifacio_station_entrance/assets/characters/NpcManongChick/lf_stand^lf=l_positive_idle/01.png" id="2_vt4xa"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="4"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc1b/scripts/NpcManongController.gd" id="5"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="6"]
+[ext_resource type="PackedScene" uid="uid://b1myvkwvnotwi" path="res://components/InteractiveArea/InteractiveArea.tscn" id="7"]
+[ext_resource type="AudioStream" uid="uid://dgyxmo6cmwyfg" path="res://scenes/_main/ch1sc1b/assets/sfx/baby_chicks.ogg" id="8"]
+[ext_resource type="SpriteFrames" path="res://scenes/bonifacio_station_entrance/assets/characters/NpcManongChick/NpcManongChick.tres" id="10"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("4")
+shader_parameter/scale = Vector3(0.888, 0.984, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("2_vt4xa")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_x5cnu"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="BoxShape3D" id="3"]
+size = Vector3(0.32, 2, 1.46)
+
+[node name="ManongChick" type="Node3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -23.4, 0.08, 0.44)
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0799999, 0, 0)
+layers = 33
+mesh = SubResource("ArrayMesh_x5cnu")
+script = ExtResource("1")
+texture_frames = ExtResource("10")
+sync_all = true
+animation = "lf_positive=l_idle"
+alias = "ManongChick"
+pixel_size = 0.008
+
+[node name="State" type="Node" parent="."]
+script = ExtResource("2")
+alias = "ManongChick"
+
+[node name="Controller" type="Node" parent="."]
+script = ExtResource("5")
+sprite_path = NodePath("../Sprite")
+state_path = NodePath("../State")
+default_idle_anim = "lf_positive=r_idle"
+default_talk_anim = "lf_positive=r_talk"
+look_around_anims = ["lf_positive=l_idle", "lf_positive=r_idle"]
+look_around_interval = 2.5
+
+[node name="SbPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.253334, 1.05333, 0)
+script = ExtResource("6")
+alias = "ManongChick"
+
+[node name="InteractiveArea" parent="." instance=ExtResource("7")]
+transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0.840002, 0.72, 0.24)
+collision_layer = 0
+collision_mask = 2
+max_interact_count = 1
+preset = 3
+short_knot = "manong_chick"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0900002, 0, 0)
+shape = SubResource("3")
+
+[node name="IconTarget" type="Marker3D" parent="InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.239998, 0.17, -0.2)
+
+[node name="BabyChicks" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0.506666, 0.52, 0.24)
+stream = ExtResource("8")
+unit_size = 2.0
+max_db = 4.0
+autoplay = true
+bus = &"SFX"

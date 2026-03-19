@@ -1,0 +1,87 @@
+[gd_scene load_steps=10 format=3 uid="uid://e3hu5waf2v3u"]
+
+[ext_resource type="Script" path="res://ui/components/CoolRichTextLabel.gd" id="1"]
+[ext_resource type="Script" path="res://components/ThoughtBubble/ThoughtBubble.gd" id="3"]
+[ext_resource type="FontFile" uid="uid://b8yu1fvgcxiup" path="res://fonts/DiarioDeAndy-Extended-Ligatures-removed.ttf" id="3_pbtuf"]
+[ext_resource type="AudioStream" uid="uid://cq1njhxek24n3" path="res://ui/sfx/text.wav" id="4"]
+[ext_resource type="AudioStream" uid="uid://dbmwi5hl82wae" path="res://ui/sfx/hover.wav" id="5"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="6"]
+[ext_resource type="PackedScene" uid="uid://ckok7q64ews8b" path="res://components/HintNext/HintNext.tscn" id="7"]
+[ext_resource type="Script" path="res://ui/components/Clickable.gd" id="8"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_46vds"]
+content_margin_left = 64.0
+content_margin_right = 64.0
+bg_color = Color(0, 0, 0, 0.862745)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="$ThoughtBubble" type="MarginContainer"]
+light_mask = 65
+custom_minimum_size = Vector2(0, 210)
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -210.0
+mouse_filter = 2
+script = ExtResource("3")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="PanelContainer" parent="CanvasLayer"]
+light_mask = 65
+offset_left = 256.0
+offset_top = 510.0
+offset_right = 1024.0
+offset_bottom = 688.0
+pivot_offset = Vector2(384, 89)
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_46vds")
+script = ExtResource("8")
+
+[node name="Label" type="RichTextLabel" parent="CanvasLayer/Panel"]
+light_mask = 65
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/line_separation = 8
+theme_override_fonts/normal_font = ExtResource("3_pbtuf")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+scroll_active = false
+visible_characters_behavior = 1
+script = ExtResource("1")
+open_links = false
+max_lines_visible = 3
+
+[node name="HintNextContainer" type="Control" parent="CanvasLayer/Panel"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="HintNext" parent="CanvasLayer/Panel/HintNextContainer" instance=ExtResource("7")]
+custom_minimum_size = Vector2(16, 20)
+layout_mode = 0
+offset_left = 670.0
+offset_top = 144.0
+offset_right = 686.0
+offset_bottom = 164.0
+mouse_filter = 2
+
+[node name="Focus" type="Node" parent="."]
+script = ExtResource("6")
+focus_name = "ThoughtBubble"
+
+[node name="SoundHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
+pitch_scale = 0.6
+bus = &"UI"
+
+[node name="SoundText" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4")
+bus = &"SFX"

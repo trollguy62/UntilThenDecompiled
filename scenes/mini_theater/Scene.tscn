@@ -1,0 +1,184 @@
+[gd_scene load_steps=10 format=3 uid="uid://dg2s5chxo6eg5"]
+
+[ext_resource type="ArrayMesh" uid="uid://bh7dny0ms3md0" path="res://scenes/mini_theater/assets/structure.obj" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://dq8872ut4r5gp" path="res://scenes/mini_theater/assets/structure.png" id="3"]
+[ext_resource type="PackedScene" path="res://scenes/mini_theater/assets/prefabs/Speaker.tscn" id="4"]
+[ext_resource type="PackedScene" path="res://scenes/mini_theater/assets/prefabs/BenchesRow.tscn" id="5"]
+[ext_resource type="PackedScene" path="res://scenes/mini_theater/assets/prefabs/Curtain1.tscn" id="6"]
+[ext_resource type="PackedScene" path="res://scenes/mini_theater/assets/prefabs/SofaPillow2.tscn" id="14"]
+[ext_resource type="PackedScene" path="res://scenes/mini_theater/assets/prefabs/SofaPillow1.tscn" id="15"]
+
+[sub_resource type="ShaderMaterial" id="4"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+
+[node name="MiniTheater" type="Spatial"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Structure" type="MeshInstance" parent="."]
+layers = 3
+material_override = SubResource("4")
+use_in_baked_light = true
+mesh = ExtResource("1")
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Benches" type="Spatial" parent="Structure"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BenchesRow1" parent="Structure/Benches" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76, 0, -2.24)
+
+[node name="SofaPillow1_1" parent="Structure/Benches/BenchesRow1" instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 0.0871557, -0.996195, 0, 0.996195, 0.0871557, 0.41, 0.43, 0.12)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow1_2" parent="Structure/Benches/BenchesRow1" instance=ExtResource("15")]
+transform = Transform3D(0.965926, -0.0225576, 0.257834, 0, 0.996195, 0.0871557, -0.258819, -0.084186, 0.96225, 1.77, 0.336, 0.22)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow2_1" parent="Structure/Benches/BenchesRow1" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 0.0871557, -0.996195, 0, 0.996195, 0.0871557, 2.71, 0.42, 0.12)
+skeleton = NodePath("../../..")
+
+[node name="BenchesRow2" parent="Structure/Benches" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76, 0.08, -2.86)
+
+[node name="SofaPillow1_1" parent="Structure/Benches/BenchesRow2" instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 0.34202, -0.939693, 0, 0.939693, 0.34202, 1.46, 0.416, 0.15)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow2_1" parent="Structure/Benches/BenchesRow2" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 0.0871557, -0.996195, 0, 0.996195, 0.0871557, 0.78, 0.42, 0.12)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow2_2" parent="Structure/Benches/BenchesRow2" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 0.0871557, -0.996195, 0, 0.996195, 0.0871557, 2.1, 0.42, 0.12)
+skeleton = NodePath("../../..")
+
+[node name="BenchesRow3" parent="Structure/Benches" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76, 0.16, -3.48)
+
+[node name="SofaPillow1_1" parent="Structure/Benches/BenchesRow3" instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 0.0871557, -0.996195, 0, 0.996195, 0.0871557, 0.99, 0.43, 0.12)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow2_2" parent="Structure/Benches/BenchesRow3" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 0.422618, -0.906308, 0, 0.906308, 0.422618, 2.68, 0.413, 0.145)
+skeleton = NodePath("../../..")
+
+[node name="BenchesRow4" parent="Structure/Benches" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76, 0.24, -4.1)
+
+[node name="SofaPillow1_1" parent="Structure/Benches/BenchesRow4" instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 0.34202, -0.939693, 0, 0.939693, 0.34202, 2.09, 0.416, 0.15)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow1_2" parent="Structure/Benches/BenchesRow4" instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 0.34202, -0.939693, 0, 0.939693, 0.34202, 0.58, 0.416, 0.15)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow2_2" parent="Structure/Benches/BenchesRow4" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 0.0871557, -0.996195, 0, 0.996195, 0.0871557, 1.65, 0.42, 0.12)
+skeleton = NodePath("../../..")
+
+[node name="BenchesRow5" parent="Structure/Benches" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76, 0.32, -4.72)
+
+[node name="SofaPillow1_1" parent="Structure/Benches/BenchesRow5" instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 0.0871557, -0.996195, 0, 0.996195, 0.0871557, 2.99, 0.43, 0.12)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow2_2" parent="Structure/Benches/BenchesRow5" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 0.422618, -0.906308, 0, 0.906308, 0.422618, 1.82, 0.413, 0.145)
+skeleton = NodePath("../../..")
+
+[node name="BenchesRow6" parent="Structure/Benches" instance=ExtResource("5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.76, 0.4, -5.34)
+
+[node name="SofaPillow1_1" parent="Structure/Benches/BenchesRow6" instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 0.34202, -0.939693, 0, 0.939693, 0.34202, 2.67, 0.416, 0.15)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow1_2" parent="Structure/Benches/BenchesRow6" instance=ExtResource("15")]
+transform = Transform3D(1, 0, 0, 0, 0.34202, -0.939693, 0, 0.939693, 0.34202, 1.16, 0.416, 0.15)
+skeleton = NodePath("../../..")
+
+[node name="SofaPillow2_2" parent="Structure/Benches/BenchesRow6" instance=ExtResource("14")]
+transform = Transform3D(1, 0, 0, 0, 0.0871557, -0.996195, 0, 0.996195, 0.0871557, 0.58, 0.42, 0.12)
+skeleton = NodePath("../../..")
+
+[node name="Speakers" type="Spatial" parent="Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.21, 1.49, -1.92)
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Speaker1" parent="Structure/Speakers" instance=ExtResource("4")]
+skeleton = NodePath("../..")
+
+[node name="Speaker2" parent="Structure/Speakers" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.25)
+skeleton = NodePath("../..")
+
+[node name="Speaker3" parent="Structure/Speakers" instance=ExtResource("4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -2.5)
+skeleton = NodePath("../..")
+
+[node name="Speaker4" parent="Structure/Speakers" instance=ExtResource("4")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 4.42, 0, -2.38419e-07)
+skeleton = NodePath("../..")
+
+[node name="Speaker5" parent="Structure/Speakers" instance=ExtResource("4")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 4.42, 0, -1.25)
+skeleton = NodePath("../..")
+
+[node name="Speaker6" parent="Structure/Speakers" instance=ExtResource("4")]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, 4.42, 0, -2.5)
+skeleton = NodePath("../..")
+
+[node name="Speaker7" parent="Structure/Speakers" instance=ExtResource("4")]
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 1.49, 0.05, -3.42)
+skeleton = NodePath("../..")
+
+[node name="Speaker8" parent="Structure/Speakers" instance=ExtResource("4")]
+transform = Transform3D(1.94707e-07, 0, -1, 0, 1, 0, 1, 0, 1.94707e-07, 2.92, 0.05, -3.42)
+skeleton = NodePath("../..")
+
+[node name="Curtains" type="Spatial" parent="Structure"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Curtain1_1" parent="Structure/Curtains" instance=ExtResource("6")]
+transform = Transform3D(0.92, 0, 0, 0, 1, 0, 0, 0, 1, 2.27, 1.95, -0.05)
+
+[node name="Curtain1_2" parent="Structure/Curtains" instance=ExtResource("6")]
+transform = Transform3D(0.92, 0, 0, 0, 1, 0, 0, 0, 1, -1.33, 1.95, -0.05)

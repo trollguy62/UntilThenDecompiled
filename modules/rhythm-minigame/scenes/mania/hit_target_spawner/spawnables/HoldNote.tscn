@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=3 uid="uid://dotbuwdktcoow"]
+
+[ext_resource type="PackedScene" uid="uid://cphs0t5ngiubn" path="res://modules/rhythm-minigame/scenes/mania/hit_target/HitTarget.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://b3o11uambtub5" path="res://modules/rhythm-minigame/assets/mania/arrows/blueRectVertical.png" id="2"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/mania/hit_target_spawner/spawnables/HoldNote.gd" id="3"]
+[ext_resource type="Shader" path="res://modules/rhythm-minigame/assets/mania/shaders/color_manipulator.gdshader" id="5"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+shader = ExtResource("5")
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue = 0.0
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = ExtResource("5")
+shader_parameter/saturation = 1.0
+shader_parameter/brightness = 1.0
+shader_parameter/contrast = 1.0
+shader_parameter/hue = 0.0
+
+[node name="HoldNote" type="Node2D"]
+material = SubResource("1")
+script = ExtResource("3")
+
+[node name="Bridge" type="NinePatchRect" parent="."]
+modulate = Color(1, 1, 1, 0.74902)
+light_mask = 24
+material = SubResource("2")
+custom_minimum_size = Vector2(50, 0)
+offset_left = -25.0
+offset_top = -400.0
+offset_right = 25.0
+offset_bottom = -200.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2")
+region_rect = Rect2(55, 19, 94, 301)
+
+[node name="Tail" parent="." instance=ExtResource("1")]
+use_parent_material = true
+position = Vector2(-1, -200)
+
+[node name="Head" parent="." instance=ExtResource("1")]
+use_parent_material = true
+position = Vector2(-1, 0)

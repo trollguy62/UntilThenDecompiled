@@ -1,0 +1,124 @@
+[gd_scene load_steps=20 format=3 uid="uid://dia8qsr6pj7k4"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://b3un8kyacel7d" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/04.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b8j5dyvg6ko0v" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/03.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://d2eu7e8x873vq" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/04.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://iwuqxcaq0wvx" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/02.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dkd4vxlf4l1l8" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/06.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cyvu1ki2b8wfa" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/05.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://7ixxeijdux00" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/03.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bdiyan8y6jykb" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_idle/01.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://c2cav6a1um4dv" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/06.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://d2j5a4qituaa5" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/02.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://ne42pkb2iuwh" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/05.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://dmuwuke3lgyfx" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand^lf_neutral_talk/01.png" id="14"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="15"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="16"]
+
+[sub_resource type="ShaderMaterial" id="4"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/scale = Vector3(0.56, 1.08, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("10")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ro6uh"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("4"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}]
+
+[node name="Sprite" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_ro6uh")
+script = ExtResource("1")
+texture_frames = SubResource("3")
+sync_all = true
+animation = "default_idle"
+random_initial = true
+alias = "RidelGonzales"
+pixel_size = 0.008
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 1.08, 8.34465e-07)
+script = ExtResource("16")
+alias = "RidelGonzales"
+
+[node name="SpriteController" type="Node" parent="."]
+script = ExtResource("15")
+state_container_alias = "RidelGonzales"
+fallback_idle_talk_anim = "default"
+idle_talk_anims = Array[String](["default"])

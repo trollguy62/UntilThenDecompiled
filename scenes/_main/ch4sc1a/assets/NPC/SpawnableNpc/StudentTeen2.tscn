@@ -1,0 +1,70 @@
+[gd_scene load_steps=8 format=3 uid="uid://cpnoo6v738so1"]
+
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1_2ctm6"]
+[ext_resource type="Texture2D" uid="uid://c5iw4ah6xtbj0" path="res://scenes/lis/assets/characters/NpcStudentTeen/lf_walk^lf_default_idle/002/01.png" id="2_orpu4"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="3_anv6a"]
+[ext_resource type="SpriteFrames" uid="uid://co8u6vtr4ea7v" path="res://scenes/lis/assets/characters/NpcStudentTeen/lf_walk^lf_default_idle/002.tres" id="4_l6fb5"]
+[ext_resource type="AudioStream" uid="uid://xjt40ljbfeqf" path="res://scenes/_main/ch1sc5a/assets/sfx/footsteps_stone_fast.ogg" id="6_6blgl"]
+
+[sub_resource type="ShaderMaterial" id="247"]
+render_priority = 0
+shader = ExtResource("1_2ctm6")
+shader_parameter/scale = Vector3(0.384, 0.832, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("2_orpu4")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_blk8w"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00003, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("247"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[node name="StudentTeen2_1" type="Node3D"]
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+layers = 33
+mesh = SubResource("ArrayMesh_blk8w")
+script = ExtResource("3_anv6a")
+texture_frames = ExtResource("4_l6fb5")
+sync_all = true
+animation = "default"
+random_initial = true
+alias = "AnimatedPaper3D"
+pixel_size = 0.008
+flip_h = true
+
+[node name="RayCastL" type="RayCast3D" parent="Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1, 0.39, -2.98023e-08)
+
+[node name="RayCastR" type="RayCast3D" parent="Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 0.39, -2.98023e-08)
+
+[node name="Footsteps" type="AudioStreamPlayer3D" parent="Sprite"]
+stream = ExtResource("6_6blgl")
+attenuation_model = 1
+unit_size = 3.0
+pitch_scale = 0.6
+autoplay = true
+bus = &"SFX"

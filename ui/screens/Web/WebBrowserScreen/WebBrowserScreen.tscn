@@ -1,0 +1,163 @@
+[gd_scene load_steps=14 format=3 uid="uid://cx0k5rxrxnv4g"]
+
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="1"]
+[ext_resource type="PackedScene" uid="uid://dyjpla5bera8e" path="res://ui/components/BackButton/BackButton.tscn" id="4"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="5"]
+[ext_resource type="Script" path="res://ui/screens/Web/WebBrowserScreen/WebBrowserScreen.gd" id="7"]
+[ext_resource type="Theme" uid="uid://cm4iq2rnf2ofd" path="res://ui/default.tres" id="8"]
+[ext_resource type="Texture2D" uid="uid://mx8c56p17c5o" path="res://assets/ui/ic_close.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cwafoli71fioc" path="res://assets/ui/ic_refresh.png" id="10"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0.968627, 0.968627, 0.968627, 1)
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(0.968627, 0.968627, 0.968627, 1)
+
+[sub_resource type="StyleBoxEmpty" id="3"]
+
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0.94902, 0.94902, 0.94902, 1)
+shadow_color = Color(0.631373, 0.631373, 0.631373, 0.6)
+shadow_size = 3
+
+[sub_resource type="StyleBoxFlat" id="5"]
+bg_color = Color(1, 1, 1, 1)
+shadow_color = Color(0.854902, 0.854902, 0.854902, 1)
+shadow_size = 3
+shadow_offset = Vector2(0, 1)
+
+[sub_resource type="StyleBoxFlat" id="6"]
+bg_color = Color(0.435294, 0.788235, 1, 1)
+
+[node name="WebBrowserScreen" type="Panel" node_paths=PackedStringArray("focus_on_enter", "default_back_btn")]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("7")
+focus_on_enter = NodePath("Menu/Margin/HBox/MarginContainer/BackButton")
+default_back_btn = NodePath("Menu/Margin/HBox/MarginContainer/BackButton")
+
+[node name="Body" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+
+[node name="Scroll" type="ScrollContainer" parent="Body"]
+custom_minimum_size = Vector2(0, 720)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("8")
+script = ExtResource("5")
+enable_improved_follow_focus = true
+
+[node name="Main" type="VBoxContainer" parent="Body/Scroll"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Spacer" type="PanelContainer" parent="Body/Scroll/Main"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="PageContainer" type="PanelContainer" parent="Body/Scroll/Main"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 1
+theme_override_styles/panel = SubResource("3")
+
+[node name="Menu" type="PanelContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+theme_override_styles/panel = SubResource("4")
+
+[node name="Margin" type="MarginContainer" parent="Menu"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 16
+theme_override_constants/margin_bottom = 8
+
+[node name="HBox" type="HBoxContainer" parent="Menu/Margin"]
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/Margin/HBox"]
+clip_contents = true
+custom_minimum_size = Vector2(36, 36)
+layout_mode = 2
+
+[node name="BackButton" parent="Menu/Margin/HBox/MarginContainer" instance=ExtResource("4")]
+modulate = Color(0.32549, 0.32549, 0.32549, 1)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+pop_nav_on_press = false
+
+[node name="LinkBox" type="PanelContainer" parent="Menu/Margin/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("5")
+
+[node name="HBox" type="HBoxContainer" parent="Menu/Margin/HBox/LinkBox"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="URLContainer" type="MarginContainer" parent="Menu/Margin/HBox/LinkBox/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 11
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 10
+
+[node name="URL" type="HBoxContainer" parent="Menu/Margin/HBox/LinkBox/HBox/URLContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Protocol" type="Label" parent="Menu/Margin/HBox/LinkBox/HBox/URLContainer/URL"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_colors/font_color = Color(0.658824, 0.658824, 0.658824, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1")
+text = "https://"
+
+[node name="Link" type="Label" parent="Menu/Margin/HBox/LinkBox/HBox/URLContainer/URL"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1")
+text = "link.com"
+clip_text = true
+
+[node name="ButtonContainer" type="MarginContainer" parent="Menu/Margin/HBox/LinkBox/HBox"]
+layout_mode = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 8
+
+[node name="CtrlButton" type="TextureButton" parent="Menu/Margin/HBox/LinkBox/HBox/ButtonContainer"]
+modulate = Color(0.32549, 0.32549, 0.32549, 1)
+custom_minimum_size = Vector2(37, 0)
+layout_mode = 2
+focus_mode = 0
+toggle_mode = true
+texture_normal = ExtResource("10")
+texture_pressed = ExtResource("9")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="ProgressBar" type="PanelContainer" parent="Menu/Margin/HBox/LinkBox"]
+custom_minimum_size = Vector2(0, 3)
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_styles/panel = SubResource("6")

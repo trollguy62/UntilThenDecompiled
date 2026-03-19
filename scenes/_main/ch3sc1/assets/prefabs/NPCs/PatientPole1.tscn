@@ -1,0 +1,97 @@
+[gd_scene load_steps=16 format=3 uid="uid://svq2wr1o83i1"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://dqp7sxeo4uyyo" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/05.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dtoh6v677mcvd" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/09.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bubjfiv1rt34h" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/04.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://cx2qmvvix1bf4" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/01.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dlbdoi8mv6a5j" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/07.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://bjakvmlt2rpg5" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/10.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://be4py6hlor8go" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/02.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://doaxvwaml86uo" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/08.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://tfxd6jddxgv1" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/06.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://b2a5yfhxfhv45" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/_patients_pole/var1 walk_idle/03.png" id="12"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/scale = Vector3(1.2, 1.2, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("6")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j6h32"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="PatientPole1" type="Node3D"]
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_j6h32")
+script = ExtResource("1")
+texture_frames = SubResource("3")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.008

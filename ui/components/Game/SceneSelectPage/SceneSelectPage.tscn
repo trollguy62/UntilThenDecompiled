@@ -1,0 +1,236 @@
+[gd_scene load_steps=19 format=3 uid="uid://bvs323ahupfr0"]
+
+[ext_resource type="Theme" uid="uid://cm4iq2rnf2ofd" path="res://ui/default.tres" id="1"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://pbb13vhi2ohf" path="res://ui/components/Game/FocusableButton/FocusableButton.tscn" id="3"]
+[ext_resource type="Script" path="res://ui/components/Game/SceneSelectPage/ButtonContainer.gd" id="3_npwcu"]
+[ext_resource type="Script" path="res://ui/components/Game/SceneSelectPage/ChapterList.gd" id="4"]
+[ext_resource type="Script" path="res://ui/components/Game/SceneSelectPage/SceneList.gd" id="5"]
+[ext_resource type="Script" path="res://ui/components/Game/SceneSelectPage/SceneSelectPage.gd" id="6"]
+
+[sub_resource type="StyleBoxEmpty" id="4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ojej7"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 20.0
+expand_margin_top = 8.0
+expand_margin_right = 20.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_isa3j"]
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 64
+corner_radius_top_right = 64
+corner_radius_bottom_right = 64
+corner_radius_bottom_left = 64
+corner_detail = 12
+expand_margin_left = 20.0
+expand_margin_top = 8.0
+expand_margin_right = 20.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="ButtonGroup" id="ButtonGroup_1g6a8"]
+
+[sub_resource type="Gradient" id="Gradient_3l64v"]
+offsets = PackedFloat32Array(0, 0.075, 0.925, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_l2hqc"]
+gradient = SubResource("Gradient_3l64v")
+width = 16
+height = 256
+fill_from = Vector2(1, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_myiv2"]
+texture = SubResource("GradientTexture2D_l2hqc")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wfsq3"]
+
+[sub_resource type="StyleBoxFlat" id="3"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="2"]
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[node name="SceneSelectPage" type="MarginContainer" node_paths=PackedStringArray("focus_on_enter")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 64
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_right = 64
+theme_override_constants/margin_bottom = 64
+script = ExtResource("6")
+persist_focus = true
+focus_on_enter = NodePath("BackBtn")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Spacer" type="Panel" parent="VBox"]
+custom_minimum_size = Vector2(0, 24)
+layout_mode = 2
+theme_override_styles/panel = SubResource("4")
+
+[node name="ButtonContainer" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+script = ExtResource("3_npwcu")
+
+[node name="Spacer" type="Panel" parent="VBox/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_styles/panel = SubResource("4")
+
+[node name="Button" parent="VBox/ButtonContainer" instance=ExtResource("3")]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ojej7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_isa3j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_isa3j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_isa3j")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1g6a8")
+text = "1"
+
+[node name="Button2" parent="VBox/ButtonContainer" instance=ExtResource("3")]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ojej7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_isa3j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_isa3j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_isa3j")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1g6a8")
+text = "2"
+
+[node name="Button3" parent="VBox/ButtonContainer" instance=ExtResource("3")]
+layout_mode = 2
+size_flags_horizontal = 6
+theme_override_font_sizes/font_size = 24
+theme_override_styles/normal = SubResource("StyleBoxFlat_ojej7")
+theme_override_styles/hover = SubResource("StyleBoxFlat_isa3j")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_isa3j")
+theme_override_styles/focus = SubResource("StyleBoxFlat_isa3j")
+toggle_mode = true
+button_group = SubResource("ButtonGroup_1g6a8")
+text = "3"
+
+[node name="Spacer2" type="Panel" parent="VBox/ButtonContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+theme_override_styles/panel = SubResource("4")
+
+[node name="SceneSelectContainer" type="HBoxContainer" parent="VBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="Spacer" type="Panel" parent="VBox/SceneSelectContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("4")
+
+[node name="Panel" type="Panel" parent="VBox/SceneSelectContainer"]
+clip_children = 1
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 5.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_myiv2")
+
+[node name="Scroll" type="ScrollContainer" parent="VBox/SceneSelectContainer/Panel"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource("1")
+follow_focus = true
+script = ExtResource("2")
+auto_scroll_weight = 0.16
+
+[node name="SceneContainer" type="PanelContainer" parent="VBox/SceneSelectContainer/Panel/Scroll"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_wfsq3")
+
+[node name="SceneList" type="VBoxContainer" parent="VBox/SceneSelectContainer/Panel/Scroll/SceneContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+script = ExtResource("5")
+
+[node name="SceneList2" type="VBoxContainer" parent="VBox/SceneSelectContainer/Panel/Scroll/SceneContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+script = ExtResource("5")
+playthrough = 2
+
+[node name="SceneList3" type="VBoxContainer" parent="VBox/SceneSelectContainer/Panel/Scroll/SceneContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 4
+script = ExtResource("5")
+playthrough = 3
+
+[node name="ChapterList" type="VBoxContainer" parent="VBox/SceneSelectContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+script = ExtResource("4")
+
+[node name="BackBtn" parent="." instance=ExtResource("3")]
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme_override_styles/normal = SubResource("3")
+theme_override_styles/hover = SubResource("1")
+theme_override_styles/pressed = SubResource("2")
+theme_override_styles/focus = SubResource("1")
+text = "UI_BACK"
+alignment = 0

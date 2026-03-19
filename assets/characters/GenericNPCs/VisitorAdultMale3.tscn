@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://v1i1l40e7r10"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1_ogbhh"]
+[ext_resource type="Texture2D" uid="uid://vsbgtvl45xi8" path="res://assets/characters/NpcGeneric/Visitors_Adult_Male/Adult 3_Head/01.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://deb6pk75etih6" path="res://assets/characters/NpcGeneric/Visitors_Adult_Male/Adult 3_Head/03.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ce8q53j3ic8yt" path="res://assets/characters/NpcGeneric/Visitors_Adult_Male/Adult 3_Head/04.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://dc0dakbyygaeo" path="res://assets/characters/NpcGeneric/Visitors_Adult_Male/Adult 3_Head/06.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://5bhickds1rmm" path="res://assets/characters/NpcGeneric/Visitors_Adult_Male/Adult 3_Head/02.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://8us8chvhtolr" path="res://assets/characters/NpcGeneric/Visitors_Adult_Male/Adult 3_Head/05.png" id="7"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4d23w"]
+render_priority = 0
+shader = ExtResource("1_ogbhh")
+shader_parameter/scale = Vector3(0.728, 1.08, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("2")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gdx2m"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_4d23w"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="VisitorAdultMale3" type="Node3D"]
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_gdx2m")
+script = ExtResource("1")
+texture_frames = SubResource("3")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.008

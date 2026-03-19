@@ -1,0 +1,31 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://qtpndpyk4ayc"]
+
+[ext_resource type="Texture2D" uid="uid://dgop54tk1pwdr" path="res://scenes/_main/ch4sc2a/assets/skyboxes/sky_afternoon.png" id="1_qjg4u"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_dxdko"]
+panorama = ExtResource("1_qjg4u")
+filter = false
+
+[sub_resource type="Sky" id="604"]
+sky_material = SubResource("PanoramaSkyMaterial_dxdko")
+radiance_size = 2
+
+[resource]
+background_mode = 2
+sky = SubResource("604")
+sky_rotation = Vector3(0, 1.5708, 0)
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
+ambient_light_energy = 0.7
+tonemap_mode = 2
+ssr_max_steps = 128
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_min_cell_size = 0.1
+sdfgi_y_scale = 0
+glow_enabled = true
+glow_intensity = 1.0
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.1
+volumetric_fog_sky_affect = 0.5
+adjustment_enabled = true

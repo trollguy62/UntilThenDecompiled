@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c8n82cm01cj6x"]
+
+[ext_resource type="FontFile" uid="uid://cs6o3l4bk2n5w" path="res://fonts/PTSans-Regular-Large.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="2_1o2bj"]
+[ext_resource type="Script" path="res://ui/screens/Web/TheLiamsonTimes/ArticleComponent.gd" id="3"]
+[ext_resource type="Script" path="res://ui/components/Clickable.gd" id="4"]
+
+[node name="ArticleComponent" type="HBoxContainer"]
+offset_right = 1280.0
+offset_bottom = 80.0
+theme_override_constants/separation = 16
+script = ExtResource("3")
+
+[node name="Thumbnail" type="TextureRect" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(140, 80)
+layout_mode = 2
+size_flags_vertical = 0
+focus_mode = 2
+texture = ExtResource("2_1o2bj")
+expand_mode = 1
+stretch_mode = 6
+script = ExtResource("4")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 18
+text = "Lorem ipsum dolor sit amet"
+autowrap_mode = 3
+script = ExtResource("4")

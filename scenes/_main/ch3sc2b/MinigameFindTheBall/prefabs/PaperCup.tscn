@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://b47xyqc8dn8ys"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/scripts/PaperCup.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dxubuolf8b4ip" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/assets/paper_cup.png" id="3"]
+[ext_resource type="EventAsset" uid="uid://bdiomscni0emp" path="res://addons/fmod/editor/resources/events/{460f95aa-0d28-403f-a63b-0253b2c668f1}.tres" id="3_cj156"]
+[ext_resource type="Texture2D" uid="uid://cs0f7lgw24m11" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/assets/paper_cup_illuminated.png" id="4"]
+[ext_resource type="EventAsset" uid="uid://2i6vs2ymqqmt" path="res://addons/fmod/editor/resources/events/{d1185b17-cd30-426e-8d44-ab96302d65cd}.tres" id="4_2k1jt"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(80.4404, 103.376)
+
+[node name="PaperCup" type="Sprite2D"]
+position = Vector2(59.2403, 126.55)
+texture = ExtResource("3")
+script = ExtResource("2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("1")
+disabled = true
+
+[node name="SfxCupClose" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("3_cj156")
+
+[node name="SfxCupOpen" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("4_2k1jt")
+
+[node name="CupIlluminated" type="Sprite2D" parent="."]
+texture = ExtResource("4")

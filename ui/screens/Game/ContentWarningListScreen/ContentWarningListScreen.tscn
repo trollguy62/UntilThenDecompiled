@@ -1,0 +1,84 @@
+[gd_scene load_steps=8 format=3 uid="uid://cknj41bv32g6j"]
+
+[ext_resource type="Script" path="res://ui/screens/Game/ContentWarningListScreen/ContentWarningListScreen.gd" id="1_qds1h"]
+[ext_resource type="FontFile" uid="uid://cgsnpibqgvabu" path="res://fonts/NunitoSans-Regular.ttf" id="2_liymw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mgqxw"]
+content_margin_left = 64.0
+content_margin_top = 64.0
+content_margin_right = 64.0
+content_margin_bottom = 64.0
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_alcve"]
+font = ExtResource("2_liymw")
+font_size = 18
+font_color = Color(0.756863, 0.756863, 0.756863, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cqasw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6kqo"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.0627451, 0.0627451, 0.0627451, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_23bfu"]
+
+[node name="ContentWarningListScreen" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mgqxw")
+script = ExtResource("1_qds1h")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "CW_BODY"
+label_settings = SubResource("LabelSettings_alcve")
+autowrap_mode = 3
+
+[node name="Spacer1" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_cqasw")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 24
+
+[node name="Tree" type="Tree" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme_override_constants/v_separation = 6
+theme_override_constants/scroll_speed = 0
+theme_override_fonts/font = ExtResource("2_liymw")
+theme_override_font_sizes/font_size = 18
+theme_override_styles/panel = SubResource("StyleBoxFlat_l6kqo")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_23bfu")
+allow_search = false
+enable_recursive_folding = false
+hide_root = true
+scroll_horizontal_enabled = false
+
+[node name="Aside" type="Label" parent="VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+label_settings = SubResource("LabelSettings_alcve")
+horizontal_alignment = 2
+vertical_alignment = 2
+autowrap_mode = 3

@@ -1,0 +1,158 @@
+[gd_scene load_steps=15 format=3 uid="uid://neegxtsmq7v5"]
+
+[ext_resource type="ArrayMesh" uid="uid://c3hollv4up7pc" path="res://scenes/cemetery/assets/gazebo_roof.obj" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://dmg6ofwif01o4" path="res://scenes/cemetery/assets/gazebo_floor.obj" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://tjslltcptur3" path="res://scenes/cemetery/assets/gazebo_ceiling.obj" id="4"]
+[ext_resource type="Texture2D" uid="uid://cx3npm2tq0no2" path="res://scenes/cemetery/assets/gazebo_ceiling.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://bo03dnl3qcgun" path="res://scenes/cemetery/assets/gazebo_roof.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://or5v8uf4b3dr" path="res://scenes/cemetery/assets/gazebo_pillar_1.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://de0bcxj7r7t8s" path="res://scenes/cemetery/assets/gazebo_floor.png" id="8"]
+[ext_resource type="PackedScene" uid="uid://cmpbm73ny62pg" path="res://scenes/cemetery/assets/prefabs/GazeboPillar.tscn" id="10"]
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.04
+shader_parameter/roughness = 0.75
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("8")
+
+[sub_resource type="BoxShape3D" id="7"]
+size = Vector3(7.31, 0.15, 2.87)
+
+[sub_resource type="ShaderMaterial" id="6"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6")
+
+[sub_resource type="ShaderMaterial" id="5"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7")
+
+[node name="GazeboStructure" type="Node3D"]
+
+[node name="GazeboCeiling" type="MeshInstance3D" parent="."]
+material_override = SubResource("2")
+mesh = ExtResource("4")
+
+[node name="GazeboFloor" type="MeshInstance3D" parent="."]
+material_override = SubResource("3")
+mesh = ExtResource("3")
+skeleton = NodePath("../GazeboCeiling")
+
+[node name="StaticBody" type="StaticBody3D" parent="GazeboFloor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.655, -0.075, 1.435)
+
+[node name="CollisionShape" type="CollisionShape3D" parent="GazeboFloor/StaticBody"]
+shape = SubResource("7")
+
+[node name="GazeboRoof" type="MeshInstance3D" parent="."]
+material_override = SubResource("6")
+mesh = ExtResource("1")
+skeleton = NodePath("../GazeboCeiling")
+
+[node name="Pillars" type="Node3D" parent="."]
+
+[node name="GazeboPillar_1" parent="Pillars" instance=ExtResource("10")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0, 0.2)
+material_override = SubResource("5")
+skeleton = NodePath("../../GazeboCeiling")
+
+[node name="GazeboPillar_2" parent="Pillars" instance=ExtResource("10")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.2, 0, 2.67)
+material_override = SubResource("5")
+skeleton = NodePath("../../GazeboCeiling")
+
+[node name="GazeboPillar_5" parent="Pillars" instance=ExtResource("10")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 7.11, 0, 0.2)
+material_override = SubResource("5")
+skeleton = NodePath("../../GazeboCeiling")
+
+[node name="GazeboPillar_6" parent="Pillars" instance=ExtResource("10")]
+transform = Transform3D(-1, 0, 1.50996e-07, 0, 1, 0, -1.50996e-07, 0, -1, 7.11, 0, 2.67)
+material_override = SubResource("5")
+skeleton = NodePath("../../GazeboCeiling")

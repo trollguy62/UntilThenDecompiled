@@ -1,0 +1,25 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://tnlf12d8pdcg"]
+
+[ext_resource type="Texture2D" uid="uid://nxk8jiufvks0" path="res://scenes/_main/ch5sc4/assets/sky.png" id="1"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_m3crx"]
+panorama = ExtResource("1")
+filter = false
+
+[sub_resource type="Sky" id="1"]
+sky_material = SubResource("PanoramaSkyMaterial_m3crx")
+radiance_size = 2
+
+[resource]
+background_mode = 2
+background_color = Color(0.647059, 0.807843, 0.894118, 1)
+sky = SubResource("1")
+sky_rotation = Vector3(0, 1.6057, 0)
+tonemap_mode = 2
+ssao_enabled = true
+ssao_radius = 0.75
+ssao_intensity = 1.5
+glow_enabled = true
+glow_intensity = 1.0
+glow_bloom = 0.06
+adjustment_contrast = 1.04

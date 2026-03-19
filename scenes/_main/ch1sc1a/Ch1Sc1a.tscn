@@ -1,0 +1,3204 @@
+[gd_scene load_steps=315 format=3 uid="uid://7ga68w7mko0o"]
+
+[ext_resource type="PackedScene" uid="uid://5iros0lf6au8" path="res://scenes/bedroom_mark/assets/prefabs/Bedroom.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://cnnxko7vopixe" path="res://scenes/bedroom_mark/assets/prefabs/BedroomDeco.tscn" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="3"]
+[ext_resource type="VoxelGIData" uid="uid://fos68ny5vc3n" path="res://scenes/_main/ch1sc1a/GIProbeData.res" id="3_ev1kv"]
+[ext_resource type="AudioStream" uid="uid://nagy1sdspd2q" path="res://scenes/_main/ch1sc1a/assets/music/main_mid_2.ogg" id="4"]
+[ext_resource type="AudioStream" uid="uid://chmqmg0hm8gdj" path="res://scenes/_main/ch1sc1a/assets/music/main_mid_1.ogg" id="5"]
+[ext_resource type="AudioStream" uid="uid://chupvhaoytp8m" path="res://scenes/_main/ch1sc1a/assets/music/main_intro.ogg" id="6"]
+[ext_resource type="Texture2D" uid="uid://dxaxx1kxkhvlj" path="res://scenes/bedroom_mark/assets/ext/fence.png" id="7"]
+[ext_resource type="AudioStream" uid="uid://g8lqikjvp4rx" path="res://scenes/bedroom_mark/assets/sfx/rooster.ogg" id="8"]
+[ext_resource type="AudioStream" uid="uid://cdyyoyvqr73f3" path="res://scenes/bedroom_mark/assets/sfx/taho_vendor.ogg" id="9"]
+[ext_resource type="Script" path="res://components/StreamLooper.gd" id="10"]
+[ext_resource type="AudioStream" uid="uid://bml30mepd7lor" path="res://scenes/bedroom_mark/assets/sfx/alarm.ogg" id="11"]
+[ext_resource type="Environment" uid="uid://cjwy5s3pimu72" path="res://scenes/_main/ch1sc1a/Environment.tres" id="12"]
+[ext_resource type="Texture2D" uid="uid://dp63bg5nfb7cb" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/05.png" id="13"]
+[ext_resource type="Script" path="res://components/Skit/SkitContainer.gd" id="14"]
+[ext_resource type="Texture2D" uid="uid://bse5x1jmjy2n2" path="res://scenes/bedroom_mark/assets/lamp_em.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://cewp6t2jh85vs" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/02 Groan/01.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://dau73ubuvd14e" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/02 Groan/02.png" id="17"]
+[ext_resource type="PackedScene" uid="uid://byo2igeix8kq8" path="res://scenes/bedroom_mark/assets/prefabs/Laundry.tscn" id="18"]
+[ext_resource type="Texture2D" uid="uid://df443pp8vvsod" path="res://scenes/bedroom_mark/assets/bag.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://gk0ujjn2dc82" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/01.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://cxapdclgr18kj" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/03 Cover/03.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://4bk4b6hw1pli" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/03 Cover/01.png" id="22"]
+[ext_resource type="Script" path="res://components/CameraEffects.gd" id="22_bju1h"]
+[ext_resource type="Texture2D" uid="uid://dl72mt18l25k2" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/03 Cover/06.png" id="23"]
+[ext_resource type="ArrayMesh" uid="uid://mk656paaxo3a" path="res://scenes/bedroom_mark/assets/blanket_1.obj" id="24"]
+[ext_resource type="Texture2D" uid="uid://du2itv1285c17" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/02 Groan/03.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://c1qtqni8gdq4u" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/02 Groan/04.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://cmcerum0s0oo" path="res://scenes/bedroom_mark/assets/temp/pillow_1.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://c6nclbic0uavj" path="res://scenes/bedroom_mark/assets/blanket.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://dayppfnsw5sg2" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/03.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://2521ji3qov77" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/03 Cover/08.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://dyrkundjiprs0" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/03 Cover/02.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://cdbh2pypnjxqn" path="res://scenes/bedroom_mark/assets/lamp.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://dey7gww1wsgit" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/03 Cover/04.png" id="33"]
+[ext_resource type="SpriteFrames" uid="uid://kuklvsf5ybuc" path="res://scenes/_main/ch1sc1a/resources/PianoFront.tres" id="34"]
+[ext_resource type="Script" path="res://components/Scene.gd" id="35"]
+[ext_resource type="PackedScene" uid="uid://cn7hf27egf4jg" path="res://ui/screens/Game/MainMenu/MainMenu.tscn" id="36"]
+[ext_resource type="PackedScene" uid="uid://pbb13vhi2ohf" path="res://ui/components/Game/FocusableButton/FocusableButton.tscn" id="37"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/scripts/PlayerController.gd" id="38"]
+[ext_resource type="Texture2D" uid="uid://dbdntuoa20xgs" path="res://scenes/bedroom_mark/assets/lamp_n.png" id="39"]
+[ext_resource type="Script" path="res://components/SceneManager.gd" id="40"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="41"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="42"]
+[ext_resource type="Texture2D" uid="uid://7sag1h4w4abx" path="res://scenes/bedroom_mark/assets/blinds_up.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://4031mlp5itxa" path="res://scenes/bedroom_mark/assets/bag_n.png" id="44"]
+[ext_resource type="Script" path="res://components/Skit/SkitExternalRef.gd" id="45"]
+[ext_resource type="Texture2D" uid="uid://bi45kqc3frhs1" path="res://scenes/bedroom_mark/assets/blinds_down.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://c7fhcsfph2acu" path="res://scenes/bedroom_mark/assets/shelf_deco_6.png" id="47"]
+[ext_resource type="Script" path="res://components/AudioCrossFade.gd" id="54"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="55"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="56"]
+[ext_resource type="Texture2D" uid="uid://b2c2airybva67" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/03 Cover/05.png" id="57"]
+[ext_resource type="Script" path="res://components/ShotVisibilityController.gd" id="58"]
+[ext_resource type="Script" path="res://components/PathGrounder.gd" id="59"]
+[ext_resource type="Texture2D" uid="uid://2737uvr1vy54" path="res://assets/characters/MarkBorja/house_1/lf_stand^lf_default_idle/02.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://f2wrjp4i5jo6" path="res://assets/characters/MarkBorja/house_1/lf_stand^lf_default_idle/06.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://bnshicr8qxny" path="res://assets/characters/MarkBorja/house_1/lf_stand^lf_default_idle/05.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://clhipyhht4pci" path="res://assets/characters/MarkBorja/house_1/lf_walk^lf_default_idle/02.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://gyk66bgpypuv" path="res://assets/characters/MarkBorja/house_1/lf_walk^lf_default_idle/06.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://u7cq6820oepy" path="res://assets/characters/MarkBorja/house_1/lf_stand^lf_default_idle/04.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://cij1p608j3cei" path="res://assets/characters/MarkBorja/uniform/lf_stand^lf_default_idle/01.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://dvoawl7e1qgni" path="res://assets/characters/MarkBorja/uniform/lf_stand^lf_default_idle/05.png" id="67"]
+[ext_resource type="Texture2D" uid="uid://bcjgpak0gmsmt" path="res://assets/characters/MarkBorja/uniform/lf_stand^lf_default_idle/02.png" id="68"]
+[ext_resource type="Texture2D" uid="uid://dsr6x6lnkktrc" path="res://assets/characters/MarkBorja/uniform/lf_stand^lf_default_idle/06.png" id="69"]
+[ext_resource type="Texture2D" uid="uid://fn552li03a1b" path="res://assets/characters/MarkBorja/house_1/lf_walk^lf_default_idle/04.png" id="70"]
+[ext_resource type="Texture2D" uid="uid://la6pxgsyobk" path="res://assets/characters/MarkBorja/house_1/lf_walk^lf_default_idle/01.png" id="71"]
+[ext_resource type="Texture2D" uid="uid://ng5pund23t4o" path="res://assets/characters/MarkBorja/house_1/lf_walk^lf_default_idle/03.png" id="72"]
+[ext_resource type="Texture2D" uid="uid://erfhumkbl7ro" path="res://assets/characters/MarkBorja/uniform/lf_walk^lf_default_idle/03.png" id="73"]
+[ext_resource type="Texture2D" uid="uid://b6d3dovn4yjhx" path="res://assets/characters/MarkBorja/uniform/lf_walk^lf_default_idle/06.png" id="74"]
+[ext_resource type="Material" uid="uid://l1gh1qhriggb" path="res://assets/shaders/BokehParticle.tres" id="75"]
+[ext_resource type="Texture2D" uid="uid://t76ggtd0ub1a" path="res://assets/characters/MarkBorja/uniform/lf_walk^lf_default_idle/04.png" id="76"]
+[ext_resource type="Texture2D" uid="uid://cx0xyi4div8pn" path="res://assets/characters/MarkBorja/house_1/lf_stand^lf_default_idle/01.png" id="77"]
+[ext_resource type="Texture2D" uid="uid://36id3md20e21" path="res://assets/characters/MarkBorja/house_1/lf_walk^lf_default_idle/08.png" id="78"]
+[ext_resource type="Script" path="res://addons/SIsilicon.vfx.godrays/GodRays.gd" id="79"]
+[ext_resource type="Texture2D" uid="uid://one4oa0vanav" path="res://assets/characters/MarkBorja/house_1/lf_stand^lf_default_idle/03.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://ei58cpgpd4dc" path="res://assets/characters/MarkBorja/house_1/lf_walk^lf_default_idle/07.png" id="81"]
+[ext_resource type="Sky" uid="uid://cmk055n5m56tb" path="res://scenes/_main/ch1sc1a/Sky.tres" id="82"]
+[ext_resource type="Texture2D" uid="uid://hph2n4spxok6" path="res://assets/characters/MarkBorja/uniform/lf_walk^lf_default_idle/08.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://1i2d3s8sq4ti" path="res://assets/characters/MarkBorja/house_1/lf_walk^lf_default_idle/05.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://b1rh2fmtevumx" path="res://assets/characters/MarkBorja/uniform/lf_walk^lf_default_idle/01.png" id="85"]
+[ext_resource type="PackedScene" uid="uid://da0ppgkx2d538" path="res://components/Vignette.tscn" id="86"]
+[ext_resource type="AudioStream" uid="uid://sahm8u2peomu" path="res://scenes/bedroom_mark/assets/sfx/blinds.ogg" id="87"]
+[ext_resource type="AudioStream" uid="uid://n1sncqgsnyxu" path="res://scenes/bedroom_mark/assets/sfx/popipot.ogg" id="88"]
+[ext_resource type="AudioStream" uid="uid://dcnim1k7pe0ac" path="res://scenes/bedroom_mark/assets/sfx/walis_tingting-01.ogg" id="89"]
+[ext_resource type="Texture2D" uid="uid://dqave3km0awcn" path="res://assets/characters/MarkBorja/uniform/lf_stand^lf_default_idle/03.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://c3arcmc2srrpn" path="res://assets/characters/MarkBorja/uniform/lf_walk^lf_default_idle/02.png" id="92"]
+[ext_resource type="Texture2D" uid="uid://c34vjftrter2" path="res://assets/characters/MarkBorja/uniform/lf_walk^lf_default_idle/05.png" id="93"]
+[ext_resource type="Texture2D" uid="uid://blqqokowoml4l" path="res://assets/characters/MarkBorja/uniform/lf_walk^lf_default_idle/07.png" id="94"]
+[ext_resource type="Texture2D" uid="uid://dspu28h4sbpi8" path="res://assets/characters/MarkBorja/uniform/lf_stand^lf_default_idle/04.png" id="95"]
+[ext_resource type="Script" path="res://components/Pivot.gd" id="96"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc1a/scripts/StandCamBlurController.gd" id="97"]
+[ext_resource type="PackedScene" uid="uid://b1myvkwvnotwi" path="res://components/InteractiveArea/InteractiveArea.tscn" id="98"]
+[ext_resource type="Script" path="res://components/InteractiveAreaHandler.gd" id="99"]
+[ext_resource type="AudioStream" uid="uid://cqpa5j4lvwf08" path="res://scenes/_main/ch1sc1a/assets/music/wedding_day_3.ogg" id="100"]
+[ext_resource type="PackedScene" uid="uid://e3hu5waf2v3u" path="res://components/ThoughtBubble/ThoughtBubble.tscn" id="101"]
+[ext_resource type="Script" path="res://components/DialogueHandler.gd" id="102"]
+[ext_resource type="Script" path="res://components/AudioStreamPlayer.gd" id="103"]
+[ext_resource type="Texture2D" uid="uid://byyi67f7k3har" path="res://scenes/bedroom_mark/assets/ext/house.png" id="104"]
+[ext_resource type="Texture2D" uid="uid://cwx6fgjb2sstj" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/02 Alarm slam/02.png" id="105"]
+[ext_resource type="PackedScene" uid="uid://csp7pkywbeau7" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/PianoBack.tscn" id="106"]
+[ext_resource type="Texture2D" uid="uid://wssfwgducwa4" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/02 Alarm slam/01.png" id="107"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc1a/scripts/Controls.gd" id="108"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="109"]
+[ext_resource type="AudioStream" uid="uid://c6ks32fnnaau1" path="res://scenes/_main/ch1sc1a/assets/music/wedding_day_2.ogg" id="110"]
+[ext_resource type="AudioStream" uid="uid://bn6fcg4i5f14g" path="res://scenes/_main/ch1sc1a/assets/music/wedding_day_1.ogg" id="111"]
+[ext_resource type="Script" path="res://components/StateDictVisibilityController.gd" id="112"]
+[ext_resource type="AudioStream" uid="uid://dd71dlwqiwwch" path="res://scenes/_main/ch1sc1a/assets/music/main_mid_3.ogg" id="113"]
+[ext_resource type="PackedScene" uid="uid://d3k36hwbhtbno" path="res://ui/components/Panel/Panel.tscn" id="114"]
+[ext_resource type="PackedScene" uid="uid://6wv4v74iymiq" path="res://scenes/_main/ch1sc1a/minigame_button_up/MinigameButtonUp.tscn" id="115"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="116"]
+[ext_resource type="AudioStream" uid="uid://c083q8wl11vnk" path="res://scenes/_main/ch1sc1a/assets/sfx/slam_alarm.ogg" id="117"]
+[ext_resource type="AudioStream" uid="uid://cgqrit160wgkt" path="res://scenes/_main/ch1sc1a/assets/sfx/rub_skin.ogg" id="118"]
+[ext_resource type="AudioStream" uid="uid://b73pfqlc33uau" path="res://scenes/bedroom_mark/assets/sfx/creak_1.ogg" id="119"]
+[ext_resource type="AudioStream" uid="uid://cyke4lpv7kt08" path="res://scenes/bedroom_mark/assets/sfx/creak_2.ogg" id="120"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc1a/scripts/Mover.gd" id="121"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="122"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="123"]
+[ext_resource type="AudioStream" uid="uid://ofaoa7tkcco4" path="res://scenes/_main/ch1sc1a/assets/sfx/footsteps.ogg" id="124"]
+[ext_resource type="FontFile" uid="uid://b62gu2re0t70r" path="res://fonts/NunitoSans-Light-24.tres" id="125"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc1a/StartButton.gd" id="126"]
+[ext_resource type="Texture2D" uid="uid://chf4yaoeyexh8" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/02 Alarm slam/03.png" id="127"]
+[ext_resource type="PackedScene" uid="uid://bikw6lnq5w7a5" path="res://assets/resources/PcKeyHint.tscn" id="128"]
+[ext_resource type="Texture2D" uid="uid://de8wowsj7nwrp" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/02 Alarm slam/04.png" id="129"]
+[ext_resource type="Texture2D" uid="uid://0eqqxulqry3f" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/02 Alarm slam/05.png" id="130"]
+[ext_resource type="Texture2D" uid="uid://67pmydmjf0qc" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/40.png" id="131"]
+[ext_resource type="Texture2D" uid="uid://cnufjmto06ci2" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/04.png" id="132"]
+[ext_resource type="Texture2D" uid="uid://cpgr5n2m3ak7g" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/28.png" id="133"]
+[ext_resource type="Texture2D" uid="uid://crd2kk5blntmn" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/27.png" id="134"]
+[ext_resource type="Texture2D" uid="uid://bgxp31osh4oc1" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/02 Alarm slam/06.png" id="135"]
+[ext_resource type="Texture2D" uid="uid://c4tv7piu1u0ww" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/37.png" id="136"]
+[ext_resource type="Texture2D" uid="uid://bag3m2cibcxkc" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/36.png" id="137"]
+[ext_resource type="Texture2D" uid="uid://bqkkjkkwejuxv" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/11.png" id="138"]
+[ext_resource type="Texture2D" uid="uid://dflee0ad2ee4f" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/45.png" id="139"]
+[ext_resource type="Texture2D" uid="uid://cb07t1p6qiy7w" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/09.png" id="140"]
+[ext_resource type="Texture2D" uid="uid://b2bhn6hscuqdw" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/16.png" id="141"]
+[ext_resource type="Texture2D" uid="uid://cmg8yxfql3sle" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/17.png" id="142"]
+[ext_resource type="Texture2D" uid="uid://cihp8nfcsot45" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/02 Alarm slam/08.png" id="143"]
+[ext_resource type="Texture2D" uid="uid://bxj74usmr7j1y" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/29.png" id="144"]
+[ext_resource type="Texture2D" uid="uid://c8puiik17qneo" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/07.png" id="145"]
+[ext_resource type="Texture2D" uid="uid://76fhrahuxfan" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/30.png" id="146"]
+[ext_resource type="Texture2D" uid="uid://t7hy4mkta1e1" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/31.png" id="147"]
+[ext_resource type="Texture2D" uid="uid://bvsc5her8hfmr" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/42.png" id="148"]
+[ext_resource type="Texture2D" uid="uid://b4euo1edbb234" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/23.png" id="149"]
+[ext_resource type="Texture2D" uid="uid://lmks4brmmcme" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/47.png" id="150"]
+[ext_resource type="Texture2D" uid="uid://bbn7enrgashwo" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/12.png" id="151"]
+[ext_resource type="Texture2D" uid="uid://dv6dj5ikatk4y" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/02 Alarm slam/07.png" id="152"]
+[ext_resource type="Texture2D" uid="uid://dpx4sycpjqvd3" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/01.png" id="153"]
+[ext_resource type="Texture2D" uid="uid://ddgmo5nj45iw5" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/15.png" id="154"]
+[ext_resource type="Texture2D" uid="uid://bsp7p8vp5pxvu" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/06.png" id="155"]
+[ext_resource type="Texture2D" uid="uid://b108frtrisdkx" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/18.png" id="156"]
+[ext_resource type="Texture2D" uid="uid://d07vumv5uw2u2" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/02.png" id="157"]
+[ext_resource type="Texture2D" uid="uid://dvlxg3u2t832w" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/19.png" id="158"]
+[ext_resource type="Texture2D" uid="uid://usbb5aqg5kl5" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/32.png" id="159"]
+[ext_resource type="Texture2D" uid="uid://lenx4rkxtgl0" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/03.png" id="160"]
+[ext_resource type="Texture2D" uid="uid://cca053ix58alr" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/35.png" id="161"]
+[ext_resource type="Texture2D" uid="uid://cu4sxpauhx68n" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/46.png" id="162"]
+[ext_resource type="Texture2D" uid="uid://btrkqwaul03g2" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/44.png" id="163"]
+[ext_resource type="Texture2D" uid="uid://l1p1r4hvxhrv" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/05.png" id="164"]
+[ext_resource type="Texture2D" uid="uid://dci7fbxryxq8e" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/26.png" id="165"]
+[ext_resource type="Texture2D" uid="uid://cushooumd37lb" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/41.png" id="166"]
+[ext_resource type="Texture2D" uid="uid://c3dct8rd8f52k" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/39.png" id="167"]
+[ext_resource type="Texture2D" uid="uid://d1w6xyo8a0rek" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/24.png" id="168"]
+[ext_resource type="Texture2D" uid="uid://bydvm1v0jwjce" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/48.png" id="169"]
+[ext_resource type="Texture2D" uid="uid://ctquxjxebdyoh" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/38.png" id="170"]
+[ext_resource type="Texture2D" uid="uid://cus8cm5435b5e" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/22.png" id="171"]
+[ext_resource type="Texture2D" uid="uid://coj4mdi2qjaus" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/20.png" id="172"]
+[ext_resource type="Texture2D" uid="uid://d3d4whi62ieaw" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/43.png" id="173"]
+[ext_resource type="Texture2D" uid="uid://b4p5n5lyo87po" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/33.png" id="174"]
+[ext_resource type="Texture2D" uid="uid://cwdqg6rijh6up" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/13.png" id="175"]
+[ext_resource type="Texture2D" uid="uid://c3iv8kvw2wrj4" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/08.png" id="176"]
+[ext_resource type="Texture2D" uid="uid://cmv3tknsex1j1" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/10.png" id="177"]
+[ext_resource type="Texture2D" uid="uid://drikpqnki7fy1" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/21.png" id="178"]
+[ext_resource type="Texture2D" uid="uid://muqcp6nw5lq0" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/14.png" id="179"]
+[ext_resource type="Texture2D" uid="uid://oakh0hf4thj" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/25.png" id="180"]
+[ext_resource type="Texture2D" uid="uid://4dxl7xnbb8m5" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/03 Sit sequence/34.png" id="181"]
+[ext_resource type="Texture2D" uid="uid://b6lwaumr7ioy5" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/06.png" id="182"]
+[ext_resource type="Texture2D" uid="uid://bjxliw8vexqwv" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/07.png" id="183"]
+[ext_resource type="Texture2D" uid="uid://cmfg0aby8kbpv" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/08.png" id="184"]
+[ext_resource type="Texture2D" uid="uid://butdyr0glsvup" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/09.png" id="185"]
+[ext_resource type="Texture2D" uid="uid://bkoii2ugqhetf" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/04.png" id="186"]
+[ext_resource type="Texture2D" uid="uid://cbavhl271poah" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/03 Cover/07.png" id="187"]
+[ext_resource type="Texture2D" uid="uid://dxcfq1rrpj3wf" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/10.png" id="188"]
+[ext_resource type="Texture2D" uid="uid://bhdvbdvahj63" path="res://scenes/_main/ch1sc1a/characters/MarkBorja/01 Waking up/01 Sleep/02.png" id="189"]
+[ext_resource type="Texture2D" uid="uid://bt5vwqyxx2nca" path="res://scenes/bedroom_mark/assets/shelf_deco_1.png" id="190"]
+[ext_resource type="Texture2D" uid="uid://c65il642mewg0" path="res://scenes/bedroom_mark/assets/ext/tree.png" id="191"]
+[ext_resource type="Texture2D" uid="uid://b3j8l4u1vyqv4" path="res://scenes/bedroom_mark/assets/shelf_deco_3.png" id="192"]
+[ext_resource type="Texture2D" uid="uid://b5bhwt8qokvhs" path="res://scenes/bedroom_mark/assets/shelf_deco_10.png" id="193"]
+[ext_resource type="Texture2D" uid="uid://c7vudyj8r4n22" path="res://scenes/bedroom_mark/assets/shelf_deco_4.png" id="194"]
+[ext_resource type="Texture2D" uid="uid://coc3fh3f8ar0" path="res://scenes/bedroom_mark/assets/shelf_deco_8.png" id="195"]
+[ext_resource type="Texture2D" uid="uid://utwiqul5onnm" path="res://scenes/bedroom_mark/assets/shelf_deco_5.png" id="196"]
+[ext_resource type="Texture2D" uid="uid://b2j6aeqgx5cf3" path="res://scenes/bedroom_mark/assets/shelf_deco_7.png" id="197"]
+[ext_resource type="Texture2D" uid="uid://cls6gpakx6olt" path="res://scenes/bedroom_mark/assets/shelf_deco_9.png" id="198"]
+[ext_resource type="Texture2D" uid="uid://b4dcyrq82hagv" path="res://scenes/bedroom_mark/assets/shelf_deco_2.png" id="199"]
+[ext_resource type="AudioStream" uid="uid://crhx66lyl483g" path="res://scenes/bedroom_mark/assets/sfx/walis_tingting-04.ogg" id="200"]
+[ext_resource type="PackedScene" uid="uid://c4seij2c77m2l" path="res://scenes/bedroom_mark/assets/prefabs/BeanBag.tscn" id="201"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialTransparent.gdshader" id="202"]
+[ext_resource type="Texture2D" uid="uid://dx35jidugisis" path="res://assets/common/hint_notice/01.png" id="203"]
+[ext_resource type="Texture2D" uid="uid://b7m6pnuex68rl" path="res://assets/common/hint_notice/02.png" id="204"]
+[ext_resource type="Texture2D" uid="uid://bratnjwtwrumm" path="res://assets/common/hint_notice/05.png" id="205"]
+[ext_resource type="Texture2D" uid="uid://01ihx7lgosmv" path="res://assets/common/hint_notice/04.png" id="206"]
+[ext_resource type="Texture2D" uid="uid://ccf502ekxgsa2" path="res://assets/common/hint_notice/03.png" id="207"]
+[ext_resource type="ArrayMesh" uid="uid://hx8jbpq5fdf6" path="res://scenes/bedroom_mark/assets/temp/pillow_bent.obj" id="208"]
+[ext_resource type="Texture2D" uid="uid://dikqvex5i58sx" path="res://scenes/bedroom_mark/assets/temp/pillow_2.png" id="209"]
+[ext_resource type="ArrayMesh" uid="uid://bdhcigjch6ubm" path="res://scenes/bedroom_mark/assets/temp/pillow_straight.obj" id="211"]
+[ext_resource type="Script" path="res://components/AudioStreamPlayerMultiple3D.gd" id="212"]
+[ext_resource type="AudioStream" uid="uid://b16khdbjwb716" path="res://scenes/bedroom_mark/assets/sfx/walis_tingting-02.ogg" id="213"]
+[ext_resource type="Texture2D" uid="uid://vj4piy7u870r" path="res://assets/characters/MarkBorja/house_1/f_sitpiano^df_default_idle/01.png" id="213_bargc"]
+[ext_resource type="Texture2D" uid="uid://bocna74cil8jh" path="res://addons/controller_icons/assets/xbox360/l_stick_right.png" id="213_o6dc0"]
+[ext_resource type="AudioStream" uid="uid://caf31hugjbjwp" path="res://scenes/bedroom_mark/assets/sfx/walis_tingting-03.ogg" id="214"]
+[ext_resource type="AudioStream" uid="uid://d2abd40t5wv6e" path="res://scenes/bedroom_mark/assets/sfx/walis_tingting-05.ogg" id="215"]
+[ext_resource type="AudioStream" uid="uid://dk2hed20exvuv" path="res://scenes/bedroom_mark/assets/sfx/blanket_shuffle.ogg" id="216"]
+[ext_resource type="Texture2D" uid="uid://coqj2fcsaxvcn" path="res://addons/controller_icons/assets/key/space.png" id="216_7hyk6"]
+[ext_resource type="AudioStream" uid="uid://bxcfdnptsej4q" path="res://assets/sfx/bird_chirps_1.ogg" id="217"]
+[ext_resource type="AudioStream" uid="uid://ctn28wh3huf5p" path="res://scenes/bedroom_mark/assets/sfx/pillow_cover.ogg" id="218"]
+[ext_resource type="AudioStream" uid="uid://djurdkai1wc6a" path="res://assets/sfx/clothes_2.ogg" id="219"]
+[ext_resource type="AudioStream" uid="uid://c6vk6s2wagxee" path="res://assets/sfx/clothes_3.ogg" id="220"]
+[ext_resource type="AudioStream" uid="uid://y2dnae6fagso" path="res://assets/sfx/clothes_1.ogg" id="221"]
+[ext_resource type="AudioStream" uid="uid://r2ixf0tsqngj" path="res://assets/sfx/dog_barking_1.ogg" id="222"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc1a/Start.gd" id="223"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="224"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc1a/scripts/Practice.gd" id="225"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc1a/scripts/ButtonUpController.gd" id="227"]
+[ext_resource type="AudioStream" uid="uid://dnxqa4lrq51ue" path="res://scenes/_main/ch1sc1a/assets/music/main_end.ogg" id="228"]
+[ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="229"]
+[ext_resource type="Texture2D" uid="uid://dlmx7hjuyqof5" path="res://assets/characters/MarkBorja/house_1/b_sitpiano^b_pianoplay_play/01.png" id="230"]
+
+[sub_resource type="Environment" id="7"]
+background_mode = 2
+background_color = Color(0.513726, 0.486275, 0.45098, 1)
+sky = ExtResource("82")
+ambient_light_color = Color(0.63, 0.54264, 0.4662, 1)
+ambient_light_sky_contribution = 0.1
+tonemap_mode = 3
+ssao_enabled = true
+ssao_radius = 0.3
+ssao_intensity = 0.3
+glow_enabled = true
+glow_bloom = 0.1
+adjustment_enabled = true
+adjustment_brightness = 1.05
+adjustment_saturation = 1.05
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_t21ny"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.0
+dof_blur_far_transition = 0.5
+dof_blur_near_enabled = true
+dof_blur_near_transition = 0.5
+dof_blur_amount = 0.09
+
+[sub_resource type="Environment" id="311"]
+background_mode = 2
+background_color = Color(0.513726, 0.486275, 0.45098, 1)
+sky = ExtResource("82")
+ambient_light_color = Color(0.63, 0.54264, 0.4662, 1)
+ambient_light_sky_contribution = 0.1
+tonemap_mode = 3
+ssao_enabled = true
+ssao_radius = 0.3
+ssao_intensity = 0.3
+glow_enabled = true
+glow_bloom = 0.1
+adjustment_enabled = true
+adjustment_brightness = 1.05
+adjustment_saturation = 1.05
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_3y6fr"]
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.89
+dof_blur_near_transition = 0.35
+dof_blur_amount = 0.12
+
+[sub_resource type="ShaderMaterial" id="20"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("43")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_o1euw"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.75002, 0.59, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("20"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 64, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 64, 63, 61, 10, 23, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 61, 10, 23, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="23"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("46")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_3nue1"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.75002, 0.59, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("23"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 64, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 64, 63, 61, 10, 23, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 61, 10, 23, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="19"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("28")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nfokb"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(0.745098, 0.745098, 0.745098, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("209")
+
+[sub_resource type="ShaderMaterial" id="21"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("27")
+
+[sub_resource type="ShaderMaterial" id="28"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 3.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("32")
+shader_parameter/texture_normal = ExtResource("39")
+shader_parameter/texture_emission = ExtResource("15")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3irxq"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("47")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4xmf6"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("197")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2s0us"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("195")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_a4tsg"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("198")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k2jkk"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("193")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6tau6"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("190")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rueq6"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("199")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yftkw"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("192")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sh1ol"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("194")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ug6fk"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("196")
+
+[sub_resource type="ShaderMaterial" id="62"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("19")
+shader_parameter/texture_normal = ExtResource("44")
+
+[sub_resource type="ShaderMaterial" id="63"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("19")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_eych7"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.32001, 0.28, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("63"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(10, 215, 163, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 10, 215, 163, 62, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 143, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_4nafn"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.07001, 0.32, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(195, 245, 136, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 195, 245, 136, 63, 10, 215, 163, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 10, 215, 163, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_chmtj"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.86001, 0.56, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(246, 40, 92, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 246, 40, 92, 63, 41, 92, 15, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 41, 92, 15, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="Curve" id="67"]
+_data = [Vector2(0, 0), 0.0, 10.6021, 0, 0, Vector2(0.250459, 1), 0.0, -0.425047, 0, 0, Vector2(0.578684, 1), 0.0247117, 0.0247117, 0, 0, Vector2(1, 0), -3.01623, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="68"]
+curve = SubResource("67")
+
+[sub_resource type="ParticleProcessMaterial" id="69"]
+emission_shape = 3
+emission_box_extents = Vector3(0.8, 0.2, 0.25)
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+initial_velocity_min = 0.15
+initial_velocity_max = 0.2
+scale_min = 0.0
+scale_max = 0.2
+scale_curve = SubResource("68")
+color = Color(1, 0.792157, 0.47451, 1)
+
+[sub_resource type="QuadMesh" id="70"]
+material = ExtResource("75")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e7pqv"]
+render_priority = 0
+shader = ExtResource("202")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cx550"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 4.86, 0.57, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_e7pqv"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 30, 133, 155, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 30, 133, 155, 64, 133, 235, 17, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 133, 235, 17, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2vepv"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_4q36e"]
+render_priority = 0
+shader = ExtResource("202")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("104")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ac4xa"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 3.24, 1.51, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_4q36e"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 79, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 79, 64, 174, 71, 193, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 193, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ibyqm"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("104")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i4ey2"]
+render_priority = 0
+shader = ExtResource("202")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("104")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iv414"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 3.24, 1.51, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_i4ey2"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 79, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 79, 64, 174, 71, 193, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 193, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bge4o"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("104")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8hfl"]
+render_priority = 0
+shader = ExtResource("202")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("191")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_175ml"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.06, 1.26, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_f8hfl"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 20, 174, 135, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 20, 174, 135, 63, 174, 71, 161, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 161, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wf6rx"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("191")
+
+[sub_resource type="BoxShape3D" id="25"]
+size = Vector3(0.4, 0.8, 0.62)
+
+[sub_resource type="BoxShape3D" id="35"]
+size = Vector3(0.32, 0.8, 0.62)
+
+[sub_resource type="BoxShape3D" id="22"]
+size = Vector3(0.516, 0.8, 0.4)
+
+[sub_resource type="BoxShape3D" id="66"]
+size = Vector3(0.62, 0.8, 0.58)
+
+[sub_resource type="ShaderMaterial" id="396"]
+render_priority = 0
+shader = ExtResource("122")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(-0.096, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("77")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_7x32m"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("396"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="92"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69")
+}],
+"loop": true,
+"name": &"default+uniform_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83")
+}],
+"loop": true,
+"name": &"default+uniform_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78")
+}],
+"loop": true,
+"name": &"default_walk",
+"speed": 7.0
+}]
+
+[sub_resource type="BoxShape3D" id="93"]
+size = Vector3(0.28, 0.98, 0.002)
+
+[sub_resource type="Curve3D" id="89"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -1.42, 0.42, 0.4, 0, 0, 0, 0, 0, 0, -1.42, 0.42, 1.63, 0, 0, 0, 0, 0, 0, -0.59, 0.42, 2.02, 0, 0, 0, 0, 0, 0, -0.59, 0.42, 3.4),
+"tilts": PackedFloat32Array(0, 0, 0, 0)
+}
+point_count = 4
+
+[sub_resource type="Animation" id="267"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skits/WakeUp/Root2D/StartBtn:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skits/WakeUp/Character/MarkBorja/Bed/Sprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="268"]
+resource_name = "alarm_slam"
+length = 1.66667
+step = 0.166667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skits/WakeUp/Character/MarkBorja/Wake/Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.166667, 0.333333, 0.5, 0.666667, 0.833333, 1, 1.16667, 1.33333, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skits/WakeUp/Character/MarkBorja/Wake/Sprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.166667, 1.66667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [true, false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skits/WakeUp/Character/MarkBorja/Wake/Sprite:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": ["pre_slam", "alarm_slam"]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skits/WakeUp/Audio/SlamAlarm:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.833333),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skits/WakeUp/Root2D/StartBtn:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.166667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="269"]
+resource_name = "pic_zoom"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skits/WakeUp/Cameras/PicZoom:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.12902, 0.555944, 0.51734), Vector3(-0.87605, 0.555944, 0.435114)]
+}
+
+[sub_resource type="Animation" id="140"]
+resource_name = "pillow_cover"
+step = 0.125
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skits/WakeUp/Character/MarkBorja/Bed/Sprite:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": ["cover"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skits/WakeUp/Character/MarkBorja/Bed/Sprite:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skits/WakeUp/Character/MarkBorja/Bed/Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 7]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skits/WakeUp/Audio/Clothes3")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("220")
+}],
+"times": PackedFloat32Array(0.625)
+}
+tracks/3/use_blend = true
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skits/WakeUp/Audio/PillowCover")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("218")
+}],
+"times": PackedFloat32Array(0.25)
+}
+tracks/4/use_blend = true
+
+[sub_resource type="Animation" id="270"]
+resource_name = "sit_seq"
+length = 9.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skits/WakeUp/Character/MarkBorja/Wake/Sprite:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skits/WakeUp/Character/MarkBorja/Wake/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": ["sit_seq"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skits/WakeUp/Character/MarkBorja/Wake/Sprite:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 9.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0, 47]
+}
+tracks/3/type = "audio"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Skits/WakeUp/Audio/Creak2")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("120")
+}],
+"times": PackedFloat32Array(2.6)
+}
+tracks/3/use_blend = true
+tracks/4/type = "audio"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Skits/WakeUp/Audio/RubSkin")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("118")
+}],
+"times": PackedFloat32Array(3.9)
+}
+tracks/4/use_blend = true
+tracks/5/type = "audio"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Skits/WakeUp/Audio/Clothes1")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("221")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("221")
+}],
+"times": PackedFloat32Array(2.3, 3.6)
+}
+tracks/5/use_blend = true
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_khija"]
+_data = {
+"RESET": SubResource("267"),
+"alarm_slam": SubResource("268"),
+"pic_zoom": SubResource("269"),
+"pillow_cover": SubResource("140"),
+"sit_seq": SubResource("270")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_bl1p0"]
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.5
+dof_blur_near_transition = 0.3
+dof_blur_amount = 0.12
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tqcgy"]
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.64
+dof_blur_near_transition = 0.05
+dof_blur_amount = 0.12
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ghn28"]
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.6
+dof_blur_near_transition = 0.1
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ykkms"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 0.5
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.5
+dof_blur_near_transition = 0.3
+dof_blur_amount = 0.11
+
+[sub_resource type="ShaderMaterial" id="398"]
+render_priority = 0
+shader = ExtResource("122")
+shader_parameter/scale = Vector3(2.68, 1.39, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("184")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_14pce"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("398"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="81"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("187")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30")
+}],
+"loop": false,
+"name": &"cover",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}],
+"loop": false,
+"name": &"groan",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("189")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("186")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("182")
+}, {
+"duration": 1.0,
+"texture": ExtResource("183")
+}, {
+"duration": 1.0,
+"texture": ExtResource("184")
+}, {
+"duration": 1.0,
+"texture": ExtResource("185")
+}, {
+"duration": 1.0,
+"texture": ExtResource("188")
+}],
+"loop": true,
+"name": &"sleep",
+"speed": 6.0
+}]
+
+[sub_resource type="ShaderMaterial" id="400"]
+render_priority = 0
+shader = ExtResource("122")
+shader_parameter/scale = Vector3(1.04, 1.064, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("107")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vsdtc"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("400"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="84"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135")
+}, {
+"duration": 1.0,
+"texture": ExtResource("152")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143")
+}],
+"loop": false,
+"name": &"alarm_slam",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("107")
+}],
+"loop": true,
+"name": &"pre_slam",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("153")
+}, {
+"duration": 1.0,
+"texture": ExtResource("157")
+}, {
+"duration": 1.0,
+"texture": ExtResource("160")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132")
+}, {
+"duration": 1.0,
+"texture": ExtResource("164")
+}, {
+"duration": 1.0,
+"texture": ExtResource("155")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145")
+}, {
+"duration": 1.0,
+"texture": ExtResource("176")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140")
+}, {
+"duration": 1.0,
+"texture": ExtResource("177")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138")
+}, {
+"duration": 1.0,
+"texture": ExtResource("151")
+}, {
+"duration": 1.0,
+"texture": ExtResource("175")
+}, {
+"duration": 1.0,
+"texture": ExtResource("179")
+}, {
+"duration": 1.0,
+"texture": ExtResource("154")
+}, {
+"duration": 1.0,
+"texture": ExtResource("141")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142")
+}, {
+"duration": 1.0,
+"texture": ExtResource("156")
+}, {
+"duration": 1.0,
+"texture": ExtResource("158")
+}, {
+"duration": 1.0,
+"texture": ExtResource("172")
+}, {
+"duration": 1.0,
+"texture": ExtResource("178")
+}, {
+"duration": 1.0,
+"texture": ExtResource("171")
+}, {
+"duration": 1.0,
+"texture": ExtResource("149")
+}, {
+"duration": 1.0,
+"texture": ExtResource("168")
+}, {
+"duration": 1.0,
+"texture": ExtResource("180")
+}, {
+"duration": 1.0,
+"texture": ExtResource("165")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134")
+}, {
+"duration": 1.0,
+"texture": ExtResource("133")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146")
+}, {
+"duration": 1.0,
+"texture": ExtResource("147")
+}, {
+"duration": 1.0,
+"texture": ExtResource("159")
+}, {
+"duration": 1.0,
+"texture": ExtResource("174")
+}, {
+"duration": 1.0,
+"texture": ExtResource("181")
+}, {
+"duration": 1.0,
+"texture": ExtResource("161")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136")
+}, {
+"duration": 1.0,
+"texture": ExtResource("170")
+}, {
+"duration": 1.0,
+"texture": ExtResource("167")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131")
+}, {
+"duration": 1.0,
+"texture": ExtResource("166")
+}, {
+"duration": 1.0,
+"texture": ExtResource("148")
+}, {
+"duration": 1.0,
+"texture": ExtResource("173")
+}, {
+"duration": 1.0,
+"texture": ExtResource("163")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139")
+}, {
+"duration": 1.0,
+"texture": ExtResource("162")
+}, {
+"duration": 1.0,
+"texture": ExtResource("150")
+}, {
+"duration": 1.0,
+"texture": ExtResource("169")
+}],
+"loop": false,
+"name": &"sit_seq",
+"speed": 5.0
+}]
+
+[sub_resource type="ShaderMaterial" id="402"]
+render_priority = 0
+shader = ExtResource("122")
+shader_parameter/scale = Vector3(0.099, 0.102, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("205")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gan6h"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("402"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="96"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("203")
+}, {
+"duration": 1.0,
+"texture": ExtResource("204")
+}, {
+"duration": 1.0,
+"texture": ExtResource("207")
+}, {
+"duration": 1.0,
+"texture": ExtResource("206")
+}, {
+"duration": 1.0,
+"texture": ExtResource("205")
+}],
+"loop": false,
+"name": &"notice",
+"speed": 16.0
+}]
+
+[sub_resource type="StyleBoxFlat" id="181"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="179"]
+bg_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="180"]
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="Animation" id="226"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skits/WakeUp/Root2D/StartBtn:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="2"]
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skits/Practice/Cameras/Piano:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.527, 0.477, 2.286), Vector3(-1.39465, 0.477, 2.286)]
+}
+
+[sub_resource type="Animation" id="Animation_mnbn5"]
+length = 46.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Skits/Practice/Cameras/Outside:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 43),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0.188, 0.732, 2.39), Vector3(0.188, 0.8, 2.39)]
+}
+tracks/1/type = "audio"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skits/Practice/Audio/WeddingDay")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("111")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("110")
+}, {
+"end_offset": 0.0,
+"start_offset": 0.0,
+"stream": ExtResource("100")
+}],
+"times": PackedFloat32Array(0, 8.5, 24.6)
+}
+tracks/1/use_blend = true
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Skits/Practice/Character/MarkBorja/Piano/Piano:animation")
+tracks/2/interp = 0
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 6.9, 8.4, 13.3, 23, 24.8, 39, 43, 44.5, 46),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["default", "annoyed", "focusing", "default", "frustrated", "focusing", "default", "frustrated", "static", "static"]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8wak4"]
+_data = {
+"RESET": SubResource("226"),
+"piano_pan": SubResource("2"),
+"piano_practice": SubResource("Animation_mnbn5")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_lkxt2"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.5
+dof_blur_far_transition = 0.5
+dof_blur_near_transition = 0.1
+dof_blur_amount = 0.08
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tc8wc"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.33
+dof_blur_far_transition = 0.5
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.3
+dof_blur_near_transition = 0.1
+
+[sub_resource type="ShaderMaterial" id="404"]
+render_priority = 0
+shader = ExtResource("122")
+shader_parameter/scale = Vector3(0.99, 1.053, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("213_bargc")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_xf7qn"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("404"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="406"]
+render_priority = 0
+shader = ExtResource("122")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("230")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_vg573"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("406"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="StyleBoxEmpty" id="366"]
+
+[sub_resource type="StyleBoxEmpty" id="367"]
+
+[sub_resource type="BoxShape3D" id="39"]
+size = Vector3(0.4, 0.8, 0.62)
+
+[sub_resource type="BoxShape3D" id="65"]
+size = Vector3(0.68, 0.8, 0.62)
+
+[node name="Root" type="Node3D"]
+script = ExtResource("35")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("12")
+
+[node name="GIProbe" type="VoxelGI" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.79, 0.79, 1.88)
+size = Vector3(2.48, 1.94, 4.08)
+data = ExtResource("3_ev1kv")
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="Clothes2" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("219")
+volume_db = -8.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="BirdsChirping" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("217")
+volume_db = -12.0
+autoplay = true
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="WalisTingting" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.19582, 0.645105, -0.195379)
+stream = ExtResource("213")
+unit_size = 1.5
+max_db = 2.0
+bus = &"SFX"
+script = ExtResource("212")
+streams = Array[AudioStream]([ExtResource("89"), ExtResource("213"), ExtResource("214"), ExtResource("200"), ExtResource("215")])
+interval_min = 0.2
+interval_max = 1.2
+
+[node name="Rooster" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.2, 0.4, 4.03)
+stream = ExtResource("8")
+unit_size = 3.0
+bus = &"NearOut"
+script = ExtResource("10")
+gap = 30.0
+gap_max_random = 90.0
+
+[node name="Popipot" type="AudioStreamPlayer3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.412, 0.645, 75.902)
+stream = ExtResource("88")
+attenuation_model = 1
+unit_size = 1.5
+max_db = -4.0
+autoplay = true
+bus = &"NearOut"
+script = ExtResource("121")
+move_dir = Vector3(0, 0, -1)
+speed = 0.8
+
+[node name="TahoVendor" type="Node3D" parent="Audio"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.222, 0.645, 3.985)
+script = ExtResource("121")
+move_dir = Vector3(0, 0, -1)
+speed = 0.8
+
+[node name="TahoVendor" type="AudioStreamPlayer3D" parent="Audio/TahoVendor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.02, 0, 23.76)
+stream = ExtResource("9")
+attenuation_model = 1
+unit_size = 1.5
+bus = &"NearOut"
+script = ExtResource("10")
+gap = 4.0
+
+[node name="ACF_Mid1_Mid3" type="Node" parent="Audio"]
+script = ExtResource("54")
+from = NodePath("../../Skits/Practice/Audio/MainMid1")
+to = NodePath("../../Skits/Practice/Audio/MainMid2")
+duration = 0.5
+
+[node name="MainMid3" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("113")
+volume_db = -2.5
+bus = &"Music"
+script = ExtResource("103")
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="Main" type="Camera3D" parent="Cameras"]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -2.662, 0.51, 2.878)
+cull_mask = 2148532223
+environment = SubResource("7")
+attributes = SubResource("CameraAttributesPractical_t21ny")
+current = true
+fov = 50.0
+script = ExtResource("55")
+mouse_offset_strength = 0.01
+
+[node name="CameraEffects" type="Node" parent="Cameras/Main"]
+script = ExtResource("22_bju1h")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 3.0
+dof_blur_far_transition = 0.5
+dof_blur_far_amount = 0.08
+dof_blur_near_enabled = true
+dof_blur_near_transition = 0.5
+
+[node name="Stand" type="InterpolatedCamera3D" parent="Cameras"]
+target = NodePath("../../Characters/MarkBorja/Stand/CamPos/Pivot")
+speed = 2.5
+enabled = true
+process_mode = 0
+process_mode = 0
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -2.739, 0.537, 0.951)
+environment = SubResource("311")
+attributes = SubResource("CameraAttributesPractical_3y6fr")
+fov = 50.0
+script = ExtResource("55")
+
+[node name="CameraEffects" type="Node" parent="Cameras/Stand"]
+script = ExtResource("22_bju1h")
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.89
+dof_blur_near_transition = 0.35
+dof_blur_near_amount = 0.12
+
+[node name="StandCamBlurController" type="Node" parent="Cameras/Stand/CameraEffects"]
+script = ExtResource("97")
+path = NodePath("../../../../Characters/Path")
+path_follow = NodePath("../../../../Characters/Path/PathFollow")
+player = NodePath("../../../../Characters/MarkBorja/Stand")
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.258819, -0.200827, 0.944818, 0, 0.978148, 0.207912, -0.965926, -0.0538115, 0.253163, 1.38, 1.74, 2.36)
+light_color = Color(1, 0.921569, 0.752941, 1)
+light_energy = 0.7
+light_indirect_energy = 0.0
+light_bake_mode = 0
+shadow_enabled = true
+shadow_bias = 0.08
+shadow_blur = 0.5
+directional_shadow_mode = 0
+directional_shadow_max_distance = 5.0
+
+[node name="GodRays" type="Node3D" parent="Lighting/DirectionalLight"]
+script = ExtResource("79")
+exposure = 1.1
+light_size = 2.0
+
+[node name="FakeBounceLight" type="OmniLight3D" parent="Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.34047, 0.605325, 2.14716)
+light_color = Color(1, 0.792157, 0.619608, 1)
+light_energy = 0.3
+light_specular = 0.0
+omni_range = 3.0
+omni_attenuation = 0.5
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Bedroom" parent="World" instance=ExtResource("1")]
+
+[node name="BlindsUp" parent="World/Bedroom/Window" index="0"]
+visible = true
+mesh = SubResource("ArrayMesh_o1euw")
+
+[node name="VisibilityController2" type="Node" parent="World/Bedroom/Window/BlindsUp" index="0"]
+script = ExtResource("112")
+state_container_alias = "scene"
+dict_values = {
+"blinds_up": true
+}
+
+[node name="BlindsDown" parent="World/Bedroom/Window" index="1"]
+visible = false
+mesh = SubResource("ArrayMesh_3nue1")
+
+[node name="VisibilityController" type="Node" parent="World/Bedroom/Window/BlindsDown" index="0"]
+script = ExtResource("112")
+state_container_alias = "scene"
+dict_values = {
+"blinds_up": false
+}
+
+[node name="BedroomDeco" parent="World" instance=ExtResource("2")]
+
+[node name="VisibilityController" type="Node" parent="World/BedroomDeco/BedsideTable/PictureFrame" index="1"]
+script = ExtResource("58")
+visible_on_shots = Array[String](["PicZoom"])
+invert = true
+
+[node name="PictureFrameHi" parent="World/BedroomDeco/BedsideTable" index="1"]
+transform = Transform3D(0.422618, 0, -0.906308, 0, 1, 0, 0.906308, 0, 0.422618, -0.193303, 0.5, 0.0843627)
+
+[node name="VisibilityController" type="Node" parent="World/BedroomDeco/BedsideTable/PictureFrameHi" index="0"]
+script = ExtResource("58")
+visible_on_shots = Array[String](["PicZoom"])
+
+[node name="Blanket" type="MeshInstance3D" parent="World/BedroomDeco/Bed" index="2"]
+material_override = SubResource("19")
+mesh = ExtResource("24")
+
+[node name="PillowL" type="MeshInstance3D" parent="World/BedroomDeco/Bed" index="3"]
+transform = Transform3D(0.0871557, 0, -0.996195, 0, 1.2, 0, 0.996195, 0, 0.0871557, -0.39, 0.362, 0.024)
+material_override = SubResource("ShaderMaterial_nfokb")
+mesh = ExtResource("211")
+
+[node name="PillowR" type="MeshInstance3D" parent="World/BedroomDeco/Bed" index="4"]
+transform = Transform3D(-4.37114e-08, 0, -1.1, 0, 1.25, 0, 1, 0, -4.80825e-08, -0.338, 0.374, 0.337)
+material_override = SubResource("21")
+mesh = ExtResource("208")
+
+[node name="VisibilityController" type="Node" parent="World/BedroomDeco/Bed/PillowR"]
+script = ExtResource("112")
+state_container_alias = "scene"
+dict_values = {
+"hide_pillow_r": false
+}
+
+[node name="Lamp" parent="World/BedroomDeco/StudyTable" index="0"]
+material_override = SubResource("28")
+
+[node name="Deco1" parent="World/BedroomDeco/ShelfTop" index="0"]
+metadata/mat_opaque = SubResource("ShaderMaterial_3irxq")
+
+[node name="Deco2" parent="World/BedroomDeco/ShelfTop" index="1"]
+metadata/mat_opaque = SubResource("ShaderMaterial_4xmf6")
+
+[node name="Deco3" parent="World/BedroomDeco/ShelfTop" index="2"]
+metadata/mat_opaque = SubResource("ShaderMaterial_2s0us")
+
+[node name="Deco4" parent="World/BedroomDeco/ShelfTop" index="3"]
+metadata/mat_opaque = SubResource("ShaderMaterial_a4tsg")
+
+[node name="Deco5" parent="World/BedroomDeco/ShelfTop" index="4"]
+metadata/mat_opaque = SubResource("ShaderMaterial_k2jkk")
+
+[node name="Deco1" parent="World/BedroomDeco/ShelfBottom" index="0"]
+metadata/mat_opaque = SubResource("ShaderMaterial_6tau6")
+
+[node name="Deco2" parent="World/BedroomDeco/ShelfBottom" index="1"]
+metadata/mat_opaque = SubResource("ShaderMaterial_rueq6")
+
+[node name="Deco3" parent="World/BedroomDeco/ShelfBottom" index="2"]
+metadata/mat_opaque = SubResource("ShaderMaterial_yftkw")
+
+[node name="Deco4" parent="World/BedroomDeco/ShelfBottom" index="3"]
+metadata/mat_opaque = SubResource("ShaderMaterial_sh1ol")
+
+[node name="Deco5" parent="World/BedroomDeco/ShelfBottom" index="4"]
+metadata/mat_opaque = SubResource("ShaderMaterial_ug6fk")
+
+[node name="Deco" type="Node3D" parent="World"]
+
+[node name="Bag" type="MeshInstance3D" parent="World/Deco"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.755, -1.86265e-09, 3.319)
+material_override = SubResource("62")
+mesh = SubResource("ArrayMesh_eych7")
+
+[node name="Laundry" parent="World/Deco" instance=ExtResource("18")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27, -0.01, 1.92)
+layers = 3
+mesh = SubResource("ArrayMesh_4nafn")
+
+[node name="BeanBag" parent="World/Deco" instance=ExtResource("201")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.5, 0, 2.3)
+mesh = SubResource("ArrayMesh_chmtj")
+
+[node name="Particles" type="Node3D" parent="World"]
+
+[node name="DustParticles" type="GPUParticles3D" parent="World/Particles"]
+transform = Transform3D(0.938016, -0.181071, -0.295532, 0.186909, 0.982339, -0.0086285, 0.291875, -0.0471438, 0.955294, -0.854952, 0.727818, 2.34963)
+amount = 200
+lifetime = 5.0
+preprocess = 5.0
+speed_scale = 0.3
+process_material = SubResource("69")
+draw_pass_1 = SubResource("70")
+
+[node name="Exterior" type="Node3D" parent="World"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 3.41, 0.26, 9.00455e-08)
+
+[node name="Paper3D" type="MeshInstance3D" parent="World/Exterior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.19744e-14, -0.03, 2.15)
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_cx550")
+script = ExtResource("42")
+texture = ExtResource("7")
+transparent = true
+metadata/mat_opaque = SubResource("ShaderMaterial_2vepv")
+metadata/mat_transparent = SubResource("ShaderMaterial_e7pqv")
+
+[node name="Paper3D2" type="MeshInstance3D" parent="World/Exterior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.959999, -0.33, 1.19)
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_ac4xa")
+script = ExtResource("42")
+texture = ExtResource("104")
+transparent = true
+metadata/mat_opaque = SubResource("ShaderMaterial_ibyqm")
+metadata/mat_transparent = SubResource("ShaderMaterial_4q36e")
+
+[node name="Paper3D4" type="MeshInstance3D" parent="World/Exterior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.28, -0.33, 1.19)
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_iv414")
+script = ExtResource("42")
+texture = ExtResource("104")
+transparent = true
+metadata/mat_opaque = SubResource("ShaderMaterial_bge4o")
+metadata/mat_transparent = SubResource("ShaderMaterial_i4ey2")
+
+[node name="Paper3D3" type="MeshInstance3D" parent="World/Exterior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.63, -0.38, 1.61)
+cast_shadow = 0
+mesh = SubResource("ArrayMesh_175ml")
+script = ExtResource("42")
+texture = ExtResource("191")
+transparent = true
+metadata/mat_opaque = SubResource("ShaderMaterial_wf6rx")
+metadata/mat_transparent = SubResource("ShaderMaterial_f8hfl")
+
+[node name="InteractiveAreas" type="Node3D" parent="World"]
+
+[node name="IaPiano" parent="World/InteractiveAreas" instance=ExtResource("98")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.45, -2.0489e-08, 2.82)
+max_interact_count = 1
+story_signal = "piano"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="World/InteractiveAreas/IaPiano"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0.4, 0.09)
+shape = SubResource("25")
+
+[node name="Anchor" type="Marker3D" parent="World/InteractiveAreas/IaPiano"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.33786e-06, 0.85, -0.0899999)
+
+[node name="IaStudyTable" parent="World/InteractiveAreas" instance=ExtResource("98")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.45, -2.04891e-08, 2.08)
+max_interact_count = 1
+preset = 3
+short_knot = "desk"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="World/InteractiveAreas/IaStudyTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0.4, 0.0900001)
+shape = SubResource("35")
+
+[node name="Anchor" type="Marker3D" parent="World/InteractiveAreas/IaStudyTable"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0399966, 0.68, -0.13)
+
+[node name="IaBed" parent="World/InteractiveAreas" instance=ExtResource("98")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27, -2.04891e-08, 1.32)
+max_interact_count = 1
+preset = 3
+short_knot = "bed"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="World/InteractiveAreas/IaBed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12, 0.4, 0.09)
+shape = SubResource("22")
+
+[node name="Anchor" type="Marker3D" parent="World/InteractiveAreas/IaBed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0499966, 0.44, 0.11)
+
+[node name="IaLaundry" parent="World/InteractiveAreas" instance=ExtResource("98")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1.27, -0.01, 1.96)
+max_interact_count = 1
+preset = 3
+short_knot = "laundry"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="World/InteractiveAreas/IaLaundry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00999999, 0.4, 0)
+shape = SubResource("66")
+
+[node name="Anchor" type="Marker3D" parent="World/InteractiveAreas/IaLaundry"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0200026, 0.29, 0.11)
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="MarkBorja" type="Node3D" parent="Characters"]
+
+[node name="StateContainer" type="Node" parent="Characters/MarkBorja"]
+script = ExtResource("56")
+alias = "MarkBorja"
+
+[node name="Stand" type="Node3D" parent="Characters/MarkBorja"]
+transform = Transform3D(1, -9.31736e-21, 0, 5.0822e-21, 1, 7.18684e-21, 5.68434e-14, -2.84217e-14, 1, -1.44316, 1.01328e-06, 0.261747)
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/MarkBorja/Stand"]
+transform = Transform3D(5.51993e-07, 1.77435e-13, -1, -2.97852e-07, 1, 1.30197e-14, 0.999991, 2.97855e-07, 5.51999e-07, 0, 0, 0)
+layers = 129
+gi_mode = 0
+mesh = SubResource("ArrayMesh_7x32m")
+skeleton = NodePath("")
+script = ExtResource("41")
+texture_frames = SubResource("92")
+animation = "default_idle"
+alias = "MarkBorja"
+pixel_size = 0.008
+flip_h = true
+offset = Vector3(-12, 0, 0)
+
+[node name="SpriteController" type="Node" parent="Characters/MarkBorja/Stand/Sprite"]
+script = ExtResource("224")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["default", "default_walk"])
+idle_talk_anims = Array[String](["default"])
+
+[node name="PlayerController" type="Node3D" parent="Characters/MarkBorja/Stand"]
+transform = Transform3D(5.51993e-07, 1.77435e-13, -1, -2.97852e-07, 1, 1.30197e-14, 0.999991, 2.97855e-07, 5.51999e-07, 0, 1.13687e-13, 0.145255)
+script = ExtResource("38")
+
+[node name="Focus" type="Node" parent="Characters/MarkBorja/Stand/PlayerController"]
+script = ExtResource("123")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Characters/MarkBorja/Stand/PlayerController"]
+stream = ExtResource("124")
+volume_db = -3.0
+pitch_scale = 1.1
+bus = &"SFX"
+
+[node name="PathGrounder" type="Node" parent="Characters/MarkBorja/Stand"]
+script = ExtResource("59")
+path_node = NodePath("../../../Path")
+global_offset = Vector3(0, 0, -0.154)
+
+[node name="Area" type="Area3D" parent="Characters/MarkBorja/Stand"]
+transform = Transform3D(5.51993e-07, 1.77435e-13, -1, -2.97852e-07, 1, 1.30197e-14, 0.999991, 2.97855e-07, 5.51999e-07, 0, 2.27374e-13, 0.03)
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Characters/MarkBorja/Stand/Area"]
+transform = Transform3D(1, 0, 0, 3.69482e-13, 1, 0, 7.38964e-13, 1.76183e-19, 1, 0.140001, 0.49, 1.19209e-07)
+shape = SubResource("93")
+
+[node name="CamPos" type="Marker3D" parent="Characters/MarkBorja/Stand"]
+transform = Transform3D(5.51989e-07, 1.77435e-13, -1, -2.9785e-07, 1, 1.30188e-14, 0.999991, 2.97855e-07, 5.51999e-07, -1.3, 0.542, 0.689998)
+
+[node name="Pivot" type="Node3D" parent="Characters/MarkBorja/Stand/CamPos"]
+script = ExtResource("96")
+fixed_x = true
+min_position = Vector3(-9999, -9999, 1)
+max_position = Vector3(9999, 9999, 2.75)
+
+[node name="SbPivot" type="Marker3D" parent="Characters/MarkBorja/Stand"]
+transform = Transform3D(5.51993e-07, 1.77435e-13, -1, -2.97852e-07, 1, 1.30197e-14, 0.999991, 2.97855e-07, 5.51999e-07, 0, 1.07, 0.17)
+script = ExtResource("116")
+alias = "MarkBorja"
+orientation = 7
+
+[node name="RayCast" type="RayCast3D" parent="Characters/MarkBorja/Stand"]
+transform = Transform3D(0.999992, 0, 0, 1.7053e-13, 1, 0, -2.27374e-13, 0, 1.00001, 0, 0.35, 0.203)
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/Stand"]
+script = ExtResource("58")
+visible_on_shots = Array[String](["Stand"])
+
+[node name="Path" type="Path3D" parent="Characters"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.39198, 0)
+curve = SubResource("89")
+
+[node name="PathFollow" type="PathFollow3D" parent="Characters/Path"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1.42, 0.42, 0.4)
+
+[node name="Skits" type="Node3D" parent="."]
+
+[node name="WakeUp" type="Node3D" parent="Skits"]
+script = ExtResource("14")
+id = "WakeUp"
+entrypoint = "1.1a.WakeUp"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/WakeUp"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_khija")
+}
+script = ExtResource("109")
+
+[node name="Audio" type="Node" parent="Skits/WakeUp"]
+
+[node name="MainIntro" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("6")
+volume_db = -4.0
+bus = &"Music"
+script = ExtResource("103")
+
+[node name="Clothes3" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("220")
+volume_db = -8.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="BlanketShuffle" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("216")
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="Clothes1" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("221")
+volume_db = -8.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="RubSkin" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("118")
+volume_db = -23.0
+pitch_scale = 0.5
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="Creak2" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("120")
+volume_db = -16.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="Creak1" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("119")
+volume_db = -16.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="PillowCover" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("218")
+volume_db = 4.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="SlamAlarm" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("117")
+volume_db = -8.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="DogBarking" type="AudioStreamPlayer" parent="Skits/WakeUp/Audio"]
+stream = ExtResource("222")
+volume_db = -4.0
+bus = &"FarOut"
+script = ExtResource("103")
+
+[node name="Cameras" type="Node3D" parent="Skits/WakeUp"]
+
+[node name="WakingUp" type="Camera3D" parent="Skits/WakeUp/Cameras"]
+transform = Transform3D(0.173648, 0.0515409, -0.983458, 0, 0.99863, 0.052336, 0.984808, -0.00908804, 0.17341, -2.011, 0.62, 1.195)
+attributes = SubResource("CameraAttributesPractical_bl1p0")
+fov = 40.0
+script = ExtResource("55")
+mouse_offset_strength = 0.007
+
+[node name="CameraEffects" type="Node" parent="Skits/WakeUp/Cameras/WakingUp"]
+script = ExtResource("22_bju1h")
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.5
+dof_blur_near_transition = 0.3
+dof_blur_near_amount = 0.12
+
+[node name="PicZoom" type="Camera3D" parent="Skits/WakeUp/Cameras"]
+transform = Transform3D(0.309119, 1.05931e-06, -0.951023, 0, 1, 1.11386e-06, 0.951023, -3.44316e-07, 0.309119, -1.12902, 0.555944, 0.51734)
+attributes = SubResource("CameraAttributesPractical_tqcgy")
+fov = 40.0
+script = ExtResource("55")
+
+[node name="CameraEffects" type="Node" parent="Skits/WakeUp/Cameras/PicZoom"]
+script = ExtResource("22_bju1h")
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.64
+dof_blur_near_transition = 0.05
+dof_blur_near_amount = 0.12
+
+[node name="Alarm" type="Camera3D" parent="Skits/WakeUp/Cameras"]
+transform = Transform3D(0.438371, 0.0470393, -0.897562, 0, 0.99863, 0.052336, 0.898794, -0.0229426, 0.43777, -0.864, 0.587, 0.54)
+attributes = SubResource("CameraAttributesPractical_ghn28")
+current = true
+fov = 57.0
+script = ExtResource("55")
+mouse_offset_strength = 0.005
+
+[node name="CameraEffects" type="Node" parent="Skits/WakeUp/Cameras/Alarm"]
+script = ExtResource("22_bju1h")
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.6
+
+[node name="Bed" type="Camera3D" parent="Skits/WakeUp/Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.658, 0.513, 2.679)
+attributes = SubResource("CameraAttributesPractical_ykkms")
+fov = 25.0
+script = ExtResource("55")
+mouse_offset_strength = 0.005
+
+[node name="CameraEffects" type="Node" parent="Skits/WakeUp/Cameras/Bed"]
+script = ExtResource("22_bju1h")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 0.5
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.5
+dof_blur_near_transition = 0.3
+dof_blur_near_amount = 0.12
+
+[node name="Character" type="Node3D" parent="Skits/WakeUp"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/WakeUp/Character"]
+
+[node name="StateRef" type="Node" parent="Skits/WakeUp/Character/MarkBorja"]
+script = ExtResource("45")
+reference = NodePath("../../../../../Characters/MarkBorja/StateContainer")
+
+[node name="Bed" type="Node3D" parent="Skits/WakeUp/Character/MarkBorja"]
+transform = Transform3D(0.45, 0, 0, 0, 0.45, 0, 4.23516e-22, 0, 1, -1.22, 0.146, 1.043)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/WakeUp/Character/MarkBorja/Bed"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -2.52435e-29, 0, 1, 0, 0, 0)
+layers = 129
+mesh = SubResource("ArrayMesh_14pce")
+skeleton = NodePath("../../../../../../Characters/MarkBorja")
+script = ExtResource("41")
+texture_frames = SubResource("81")
+local_offsets = {
+"cover": Vector3(-4, 0, 0)
+}
+animation = "sleepq"
+alias = "MarkBed"
+
+[node name="SpriteController" type="Node" parent="Skits/WakeUp/Character/MarkBorja/Bed/Sprite"]
+script = ExtResource("224")
+state_container_alias = "MarkBorja"
+standalone_anims = Array[String](["cover", "groan", "sleep"])
+
+[node name="VisibilityController" type="Node" parent="Skits/WakeUp/Character/MarkBorja/Bed"]
+script = ExtResource("58")
+visible_on_shots = Array[String](["Main", "Bed"])
+
+[node name="Wake" type="Node3D" parent="Skits/WakeUp/Character/MarkBorja"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.52, 0.05, 0.04)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/WakeUp/Character/MarkBorja/Wake"]
+layers = 129
+mesh = SubResource("ArrayMesh_vsdtc")
+skeleton = NodePath("../../../../../../Characters/MarkBorja")
+script = ExtResource("41")
+texture_frames = SubResource("84")
+animation = "pre_m_sl"
+alias = "MarkWake"
+pixel_size = 0.008
+
+[node name="SpriteController" type="Node" parent="Skits/WakeUp/Character/MarkBorja/Wake/Sprite"]
+script = ExtResource("224")
+state_container_alias = "MarkBorja"
+standalone_anims = Array[String](["alarm_slam", "pre_slam", "sit_seq"])
+
+[node name="VisibilityController" type="Node" parent="Skits/WakeUp/Character/MarkBorja/Wake"]
+script = ExtResource("58")
+visible_on_shots = Array[String](["WakingUp", "PicZoom"])
+
+[node name="Root2D" type="Control" parent="Skits/WakeUp"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("223")
+
+[node name="Alarm" type="AudioStreamPlayer3D" parent="Skits/WakeUp/Root2D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18, 0.56, 0.45)
+stream = ExtResource("11")
+unit_size = 3.0
+max_db = 0.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="AlarmHint" type="MeshInstance3D" parent="Skits/WakeUp/Root2D"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.17, 0.55, 0.48)
+mesh = SubResource("ArrayMesh_gan6h")
+skeleton = NodePath("")
+script = ExtResource("41")
+texture_frames = SubResource("96")
+animation = "notice"
+frame = 4
+playing = false
+alias = "AlarmHint"
+pixel_size = 0.003
+stop_on_finish = true
+
+[node name="VisibilityController" type="Node" parent="Skits/WakeUp/Root2D/AlarmHint"]
+script = ExtResource("58")
+visible_on_shots = Array[String](["Alarm"])
+
+[node name="MainMenu" parent="Skits/WakeUp/Root2D" instance=ExtResource("36")]
+layout_mode = 1
+offset_right = 1.575
+standalone = false
+
+[node name="StartBtn" parent="Skits/WakeUp/Root2D" instance=ExtResource("37")]
+visible = false
+light_mask = 33
+layout_mode = 0
+offset_left = 80.496
+offset_top = 392.319
+offset_right = 183.496
+offset_bottom = 437.319
+theme_override_styles/normal = SubResource("181")
+theme_override_styles/hover = SubResource("179")
+theme_override_styles/pressed = SubResource("180")
+theme_override_styles/focus = SubResource("179")
+text = "MAIN_MENU_START"
+script = ExtResource("126")
+
+[node name="ACF_Intro_Mid1" type="Node" parent="Skits/WakeUp/Root2D"]
+script = ExtResource("54")
+from = NodePath("../../Audio/MainIntro")
+to = NodePath("../../../Practice/Audio/MainMid1")
+duration = 0.2
+
+[node name="Practice" type="Node3D" parent="Skits"]
+script = ExtResource("225")
+id = "Practice"
+entrypoint = "1.1a.Practice"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/Practice"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_8wak4")
+}
+script = ExtResource("109")
+skip_start_offsets = {
+"piano_practice": 10.0
+}
+
+[node name="Audio" type="Node" parent="Skits/Practice"]
+
+[node name="ACF_Mid1_Mid2" type="Node" parent="Skits/Practice/Audio"]
+script = ExtResource("54")
+from = NodePath("../MainMid1")
+to = NodePath("../MainMid2")
+duration = 0.5
+
+[node name="WeddingDay" type="AudioStreamPlayer" parent="Skits/Practice/Audio"]
+stream = ExtResource("111")
+volume_db = 8.0
+bus = &"Music"
+script = ExtResource("103")
+
+[node name="MainMid1" type="AudioStreamPlayer" parent="Skits/Practice/Audio"]
+stream = ExtResource("5")
+volume_db = -2.5
+bus = &"Music"
+script = ExtResource("103")
+
+[node name="MainMid2" type="AudioStreamPlayer" parent="Skits/Practice/Audio"]
+stream = ExtResource("4")
+volume_db = -2.5
+bus = &"Music"
+script = ExtResource("103")
+
+[node name="Blinds" type="AudioStreamPlayer" parent="Skits/Practice/Audio"]
+stream = ExtResource("87")
+volume_db = -10.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="Creak2" type="AudioStreamPlayer" parent="Skits/Practice/Audio"]
+stream = ExtResource("120")
+volume_db = -16.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="Clothes1" type="AudioStreamPlayer" parent="Skits/Practice/Audio"]
+stream = ExtResource("221")
+volume_db = -8.0
+bus = &"SFX"
+script = ExtResource("103")
+
+[node name="MainMid3" type="Node" parent="Skits/Practice/Audio"]
+script = ExtResource("45")
+reference = NodePath("../../../../Audio/MainMid3")
+
+[node name="Cameras" type="Node3D" parent="Skits/Practice"]
+
+[node name="Piano" type="Camera3D" parent="Skits/Practice/Cameras"]
+transform = Transform3D(-1.62921e-07, -0.0348995, -0.999391, 0, 0.999391, -0.0348995, 1, -5.68586e-09, -1.62822e-07, -1.527, 0.477, 2.286)
+attributes = SubResource("CameraAttributesPractical_lkxt2")
+fov = 60.0
+near = 0.01
+script = ExtResource("55")
+
+[node name="CameraEffects" type="Node" parent="Skits/Practice/Cameras/Piano"]
+script = ExtResource("22_bju1h")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.5
+dof_blur_far_transition = 0.5
+dof_blur_far_amount = 0.08
+
+[node name="Outside" type="Camera3D" parent="Skits/Practice/Cameras"]
+transform = Transform3D(-0.0871559, 0, 0.996195, 0, 1, 0, -0.996195, 0, -0.0871559, 0.188, 0.732, 2.39)
+attributes = SubResource("CameraAttributesPractical_tc8wc")
+near = 0.01
+script = ExtResource("55")
+mouse_offset_strength = 0.005
+
+[node name="CameraEffects" type="Node" parent="Skits/Practice/Cameras/Outside"]
+script = ExtResource("22_bju1h")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.33
+dof_blur_far_transition = 0.5
+dof_blur_near_enabled = true
+dof_blur_near_distance = 0.3
+
+[node name="Character" type="Node3D" parent="Skits/Practice"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/Practice/Character"]
+
+[node name="StateRef" type="Node" parent="Skits/Practice/Character/MarkBorja"]
+script = ExtResource("45")
+reference = NodePath("../../../../../Characters/MarkBorja/StateContainer")
+
+[node name="Piano" type="Node3D" parent="Skits/Practice/Character/MarkBorja"]
+
+[node name="Piano" type="MeshInstance3D" parent="Skits/Practice/Character/MarkBorja/Piano"]
+transform = Transform3D(-1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, -0.27, -0.03, 2.98)
+layers = 129
+mesh = SubResource("ArrayMesh_xf7qn")
+skeleton = NodePath("../../../../../../Characters/MarkBorja")
+script = ExtResource("41")
+texture_frames = ExtResource("34")
+sync_all = true
+animation = "default"
+alias = "MarkPiano"
+pixel_size = 0.009
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Practice/Character/MarkBorja/Piano/Piano"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.474444, 1.00333, -2.68221e-07)
+script = ExtResource("116")
+alias = "MarkBorja"
+
+[node name="SpriteController" type="Node" parent="Skits/Practice/Character/MarkBorja/Piano/Piano"]
+script = ExtResource("224")
+state_container_alias = "MarkBorja"
+standalone_anims = Array[String](["annoyed", "default", "focusing", "frustrated", "static", "use_phone"])
+
+[node name="VisibilityController" type="Node" parent="Skits/Practice/Character/MarkBorja/Piano"]
+script = ExtResource("58")
+visible_on_shots = Array[String](["Outside"])
+
+[node name="PianoBack" type="Node3D" parent="Skits/Practice/Character/MarkBorja"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.28, 0, 2.49)
+visible = false
+
+[node name="Body" parent="Skits/Practice/Character/MarkBorja/PianoBack" instance=ExtResource("106")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.240181, -0.013, -0.000999808)
+mesh = SubResource("ArrayMesh_vg573")
+
+[node name="VisibilityController" type="Node" parent="Skits/Practice/Character/MarkBorja/PianoBack"]
+script = ExtResource("58")
+visible_on_shots = Array[String](["Piano"])
+
+[node name="Root2D" type="Control" parent="Skits/Practice"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Controls" type="HBoxContainer" parent="Skits/Practice/Root2D"]
+light_mask = 33
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -330.0
+offset_bottom = -230.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 16
+script = ExtResource("108")
+
+[node name="Spacer1" type="PanelContainer" parent="Skits/Practice/Root2D/Controls"]
+light_mask = 33
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("366")
+
+[node name="MoveHint" type="TextureRect" parent="Skits/Practice/Root2D/Controls"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("213_o6dc0")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("229")
+path = "c_move_right"
+show_only = 2
+force_type = 2
+max_width = 64
+
+[node name="MoveKeys" type="GridContainer" parent="Skits/Practice/Root2D/Controls"]
+light_mask = 33
+layout_mode = 2
+columns = 3
+
+[node name="Blank1" type="PanelContainer" parent="Skits/Practice/Root2D/Controls/MoveKeys"]
+light_mask = 33
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("367")
+
+[node name="Up" parent="Skits/Practice/Root2D/Controls/MoveKeys" instance=ExtResource("128")]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+
+[node name="Blank2" type="PanelContainer" parent="Skits/Practice/Root2D/Controls/MoveKeys"]
+light_mask = 33
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+theme_override_styles/panel = SubResource("367")
+
+[node name="Left" parent="Skits/Practice/Root2D/Controls/MoveKeys" instance=ExtResource("128")]
+layout_mode = 2
+
+[node name="Label" parent="Skits/Practice/Root2D/Controls/MoveKeys/Left" index="0"]
+text = "A"
+
+[node name="Down" parent="Skits/Practice/Root2D/Controls/MoveKeys" instance=ExtResource("128")]
+modulate = Color(1, 1, 1, 0.392157)
+layout_mode = 2
+
+[node name="Label" parent="Skits/Practice/Root2D/Controls/MoveKeys/Down" index="0"]
+text = "S"
+
+[node name="Right" parent="Skits/Practice/Root2D/Controls/MoveKeys" instance=ExtResource("128")]
+layout_mode = 2
+
+[node name="Label" parent="Skits/Practice/Root2D/Controls/MoveKeys/Right" index="0"]
+text = "D"
+
+[node name="Move" type="Label" parent="Skits/Practice/Root2D/Controls"]
+light_mask = 33
+layout_mode = 2
+theme_override_fonts/font = ExtResource("125")
+theme_override_font_sizes/font_size = 24
+text = "CH1SC1A_UI_CONTROLS_MOVE"
+
+[node name="Spacer2" type="PanelContainer" parent="Skits/Practice/Root2D/Controls"]
+light_mask = 33
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+theme_override_styles/panel = SubResource("366")
+
+[node name="KeyHint" type="TextureRect" parent="Skits/Practice/Root2D/Controls"]
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+texture = ExtResource("216_7hyk6")
+expand_mode = 1
+stretch_mode = 5
+script = ExtResource("229")
+path = "interact"
+max_width = 64
+
+[node name="Interact" type="Label" parent="Skits/Practice/Root2D/Controls"]
+light_mask = 33
+layout_mode = 2
+theme_override_fonts/font = ExtResource("125")
+theme_override_font_sizes/font_size = 24
+text = "CH1SC1A_UI_CONTROLS_INTERACT"
+
+[node name="Spacer3" type="PanelContainer" parent="Skits/Practice/Root2D/Controls"]
+light_mask = 33
+custom_minimum_size = Vector2(32, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("366")
+
+[node name="Prepare" type="Node3D" parent="Skits"]
+script = ExtResource("14")
+id = "Prepare"
+entrypoint = "1.1a.Prepare"
+
+[node name="Audio" type="Node3D" parent="Skits/Prepare"]
+
+[node name="MainMid3" type="Node" parent="Skits/Prepare/Audio"]
+script = ExtResource("45")
+reference = NodePath("../../../../Audio/MainMid3")
+
+[node name="Cameras" type="Node3D" parent="Skits/Prepare"]
+
+[node name="MinigameButtonUp" type="Camera3D" parent="Skits/Prepare/Cameras"]
+transform = Transform3D(-0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, -0.173648, -0.85, 0.851, 3.06)
+fov = 50.0
+script = ExtResource("55")
+
+[node name="Character" type="Node3D" parent="Skits/Prepare"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/Prepare/Character"]
+
+[node name="StateRef" type="Node" parent="Skits/Prepare/Character/MarkBorja"]
+script = ExtResource("45")
+reference = NodePath("../../../../../Characters/MarkBorja/StateContainer")
+
+[node name="Misc" type="Node3D" parent="Skits/Prepare"]
+
+[node name="IaWardrobe" parent="Skits/Prepare/Misc" instance=ExtResource("98")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.45, -2.04891e-08, 3.49)
+max_interact_count = 1
+story_signal = "wardrobe_interact"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Prepare/Misc/IaWardrobe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.26, 0.4, 0.09)
+shape = SubResource("39")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Prepare/Misc/IaWardrobe"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0300033, 0.9, 0.0500001)
+
+[node name="IaBag" parent="Skits/Prepare/Misc" instance=ExtResource("98")]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.45, -2.04891e-08, 3.49)
+max_interact_count = 1
+preset = 0
+text = "CH1SC1A_IA_HEAD_TO_SCHOOL"
+story_signal = "head_to_school"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Prepare/Misc/IaBag"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0699999, 0.4, 0.0899999)
+shape = SubResource("65")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Prepare/Misc/IaBag"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00999665, 0.3, 0.34)
+
+[node name="VisibilityController" type="Node" parent="Skits/Prepare/Misc/IaBag"]
+script = ExtResource("112")
+state_container_alias = "scene"
+dict_values = {
+"minigame_finished": true
+}
+
+[node name="Root2D" type="Node2D" parent="Skits/Prepare"]
+
+[node name="MinigameButtonUp" parent="Skits/Prepare/Root2D" instance=ExtResource("115")]
+
+[node name="ButtonUpController" type="Node" parent="Skits/Prepare/Root2D/MinigameButtonUp"]
+script = ExtResource("227")
+
+[node name="Focus" type="Node" parent="Skits/Prepare/Root2D/MinigameButtonUp/ButtonUpController"]
+script = ExtResource("123")
+focus_name = "MinigameButtonUp"
+
+[node name="Main" type="Node3D" parent="."]
+
+[node name="Services" type="Node" parent="Main"]
+
+[node name="$SceneManager" type="Node" parent="Main/Services"]
+script = ExtResource("40")
+scene_id = "1.1a"
+shot = "Main"
+resource_store = {
+"music_end": ExtResource("228")
+}
+
+[node name="$SceneState" type="Node" parent="Main/Services"]
+script = ExtResource("56")
+alias = "scene"
+initial_dict = {
+"blinds_up": false,
+"hide_pillow_r": false,
+"minigame_finished": false
+}
+
+[node name="$InteractiveAreaHandler" type="Node" parent="Main/Services"]
+script = ExtResource("99")
+
+[node name="$DialogueHandler" type="Node" parent="Main/Services"]
+script = ExtResource("102")
+
+[node name="Vignette" parent="Main" instance=ExtResource("86")]
+offset_bottom = 1.0
+
+[node name="Panel" parent="Main" instance=ExtResource("114")]
+
+[node name="$ThoughtBubble" parent="Main" instance=ExtResource("101")]
+
+[editable path="World/Bedroom"]
+[editable path="World/BedroomDeco"]
+[editable path="World/BedroomDeco/BedsideTable"]
+[editable path="World/BedroomDeco/Wardrobe"]
+[editable path="Skits/Practice/Character/MarkBorja/PianoBack/Body"]
+[editable path="Skits/Practice/Root2D/Controls/MoveKeys/Up"]
+[editable path="Skits/Practice/Root2D/Controls/MoveKeys/Left"]
+[editable path="Skits/Practice/Root2D/Controls/MoveKeys/Down"]
+[editable path="Skits/Practice/Root2D/Controls/MoveKeys/Right"]

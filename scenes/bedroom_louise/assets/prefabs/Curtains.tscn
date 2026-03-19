@@ -1,0 +1,149 @@
+[gd_scene load_steps=20 format=3 uid="uid://s1nwpaqbwhks"]
+
+[ext_resource type="Shader" path="res://scenes/lis/classroom_9pearl/assets/shaders/Curtain.gdshader" id="1_vb46f"]
+[ext_resource type="Texture2D" uid="uid://b0m0uw665parq" path="res://scenes/bedroom_louise/assets/curtain_left.png" id="2_5vtwm"]
+[ext_resource type="ArrayMesh" uid="uid://cxi5tokmhma7i" path="res://scenes/bedroom_louise/assets/curtain_left.obj" id="3_mdx8a"]
+[ext_resource type="Texture2D" uid="uid://bitt45pligh3e" path="res://scenes/bedroom_louise/assets/curtain_middle.png" id="4_h3owc"]
+[ext_resource type="ArrayMesh" uid="uid://bc5tm17f1ygda" path="res://scenes/bedroom_louise/assets/curtain_middle.obj" id="5_hikdc"]
+[ext_resource type="Texture2D" uid="uid://d16bbxnslx144" path="res://scenes/bedroom_louise/assets/curtain_right.png" id="6_pvurt"]
+[ext_resource type="ArrayMesh" uid="uid://cs12nfgfovv3g" path="res://scenes/bedroom_louise/assets/curtain_right.obj" id="7_thh81"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="8_haurj"]
+[ext_resource type="Texture2D" uid="uid://f80rhqvpswgh" path="res://scenes/bedroom_louise/assets/deco/curtain_rod.png" id="9_6g2t8"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="10_sfaak"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_vrrub"]
+noise_type = 5
+seed = 1122
+frequency = 0.005
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_raaxw"]
+width = 74
+height = 154
+seamless = true
+seamless_blend_skirt = 0.411
+noise = SubResource("FastNoiseLite_vrrub")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iqpho"]
+render_priority = 0
+shader = ExtResource("1_vb46f")
+shader_parameter/albedo = Color(0.886275, 0.886275, 0.886275, 1)
+shader_parameter/transmission = Color(0, 0, 0, 0)
+shader_parameter/strength = 0.2
+shader_parameter/y_damping = 1.5
+shader_parameter/speed = 1.0
+shader_parameter/displacement = Vector3(0, 0, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/texture_albedo = ExtResource("2_5vtwm")
+shader_parameter/noise = SubResource("NoiseTexture2D_raaxw")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_tyql2"]
+width = 100
+height = 154
+seamless = true
+seamless_blend_skirt = 0.411
+noise = SubResource("FastNoiseLite_vrrub")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yl0o5"]
+render_priority = 0
+shader = ExtResource("1_vb46f")
+shader_parameter/albedo = Color(0.827451, 0.827451, 0.827451, 0.568627)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/strength = 1.0
+shader_parameter/y_damping = 1.5
+shader_parameter/speed = 1.0
+shader_parameter/displacement = Vector3(0, 0, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/texture_albedo = ExtResource("4_h3owc")
+shader_parameter/noise = SubResource("NoiseTexture2D_tyql2")
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_53phj"]
+width = 74
+height = 154
+seamless = true
+seamless_blend_skirt = 0.411
+noise = SubResource("FastNoiseLite_vrrub")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mdb1j"]
+render_priority = 0
+shader = ExtResource("1_vb46f")
+shader_parameter/albedo = Color(0.886275, 0.886275, 0.886275, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/strength = 0.2
+shader_parameter/y_damping = 1.5
+shader_parameter/speed = 1.0
+shader_parameter/displacement = Vector3(0, 0, 1)
+shader_parameter/roughness = 1.0
+shader_parameter/texture_albedo = ExtResource("6_pvurt")
+shader_parameter/noise = SubResource("NoiseTexture2D_53phj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kdp5k"]
+render_priority = 0
+shader = ExtResource("8_haurj")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("9_6g2t8")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_t77yh"]
+_surfaces = [{
+"aabb": AABB(-0.775, -0.025, 0, 1.55, 0.05, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_kdp5k"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(102, 102, 70, 191, 204, 204, 204, 188, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 70, 63, 204, 204, 204, 188, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 70, 63, 204, 204, 204, 60, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 102, 102, 70, 191, 204, 204, 204, 60, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[node name="Curtains" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.43, 1.56, 0.106)
+metadata/_edit_group_ = true
+
+[node name="CurtainLeft" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_iqpho")
+mesh = ExtResource("3_mdx8a")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="CurtainMiddle" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.39, 0, 0.023)
+material_override = SubResource("ShaderMaterial_yl0o5")
+cast_shadow = 0
+gi_mode = 0
+mesh = ExtResource("5_hikdc")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="CurtainRight" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.91, 0, 0)
+material_override = SubResource("ShaderMaterial_mdb1j")
+mesh = ExtResource("7_thh81")
+skeleton = NodePath("../..")
+metadata/_edit_lock_ = true
+
+[node name="CurtainRod" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.621, -0.087, -0.0262)
+mesh = SubResource("ArrayMesh_t77yh")
+script = ExtResource("10_sfaak")
+texture = ExtResource("9_6g2t8")
+centered = true
+metadata/mat_opaque = SubResource("ShaderMaterial_kdp5k")

@@ -1,0 +1,130 @@
+[gd_scene load_steps=9 format=3 uid="uid://c55qydnam603v"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1_543k5"]
+[ext_resource type="Texture2D" uid="uid://chq231v0eslxa" path="res://scenes/minivan_louise/assets/minivan.png" id="2_2wjgp"]
+[ext_resource type="ArrayMesh" uid="uid://dcfmw8h3nk17n" path="res://scenes/minivan_louise/assets/minivan.obj" id="3_6slit"]
+[ext_resource type="PackedScene" uid="uid://dbby03hawdkgh" path="res://scenes/minivan_louise/assets/prefabs/SeatNormal.tscn" id="5_ga5kv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_onyjr"]
+render_priority = 0
+shader = ExtResource("1_543k5")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2_2wjgp")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ukv2e"]
+transparency = 1
+cull_mode = 2
+albedo_color = Color(0.811765, 0.964706, 1, 0.313726)
+metallic = 0.9
+metallic_specular = 0.1
+roughness = 0.0
+
+[sub_resource type="QuadMesh" id="QuadMesh_v3deh"]
+size = Vector2(1.725, 0.435)
+
+[sub_resource type="QuadMesh" id="QuadMesh_fey0m"]
+size = Vector2(0.83, 0.435)
+
+[node name="Minivan" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_onyjr")
+mesh = ExtResource("3_6slit")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="SeatRow1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273, 0, 0.455)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Left" parent="SeatRow1" instance=ExtResource("5_ga5kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
+
+[node name="Right" parent="SeatRow1" instance=ExtResource("5_ga5kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0, 0)
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
+
+[node name="SeatRow2" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.272727, -1.19209e-07, -0.103583)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Left" parent="SeatRow2" instance=ExtResource("5_ga5kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
+
+[node name="Middle" parent="SeatRow2" instance=ExtResource("5_ga5kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.258408, 0, 0)
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
+
+[node name="Right" parent="SeatRow2" instance=ExtResource("5_ga5kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0, 0)
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
+
+[node name="SeatRow3" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.273, 0, -0.686)
+metadata/_edit_lock_ = true
+metadata/_edit_group_ = true
+
+[node name="Left" parent="SeatRow3" instance=ExtResource("5_ga5kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
+
+[node name="Middle" parent="SeatRow3" instance=ExtResource("5_ga5kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.258408, 0, 0)
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
+
+[node name="Right" parent="SeatRow3" instance=ExtResource("5_ga5kv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.53, 0, 0)
+skeleton = NodePath("../../..")
+metadata/_edit_lock_ = true
+
+[node name="WindowL" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, 0.459782, 0.694073, -0.0491492)
+material_override = SubResource("StandardMaterial3D_ukv2e")
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("QuadMesh_v3deh")
+metadata/_edit_lock_ = true
+
+[node name="WindowR" type="MeshInstance3D" parent="."]
+transform = Transform3D(-2.18557e-07, 0, 1, 0, 1, 0, -1, 0, -2.18557e-07, -0.457636, 0.694073, -0.0491492)
+material_override = SubResource("StandardMaterial3D_ukv2e")
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("QuadMesh_v3deh")
+metadata/_edit_lock_ = true
+
+[node name="Dashboard" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 1.74846e-07, -1.02376e-07, 0.810655, 0.585524, -1.41739e-07, -0.585524, 0.810655, 0.00197947, 0.71569, 0.828997)
+material_override = SubResource("StandardMaterial3D_ukv2e")
+cast_shadow = 0
+gi_mode = 0
+mesh = SubResource("QuadMesh_fey0m")
+metadata/_edit_lock_ = true

@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://flesaeeeep1"]
+
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/mania/beatmap_renderer/BeatmapRenderer.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://rpx0rig62ib" path="res://modules/rhythm-minigame/scenes/mania/four_key_play_area/FourKeyPlayArea.tscn" id="2"]
+[ext_resource type="AudioStream" uid="uid://bjtcdxee2vono" path="res://modules/rhythm-minigame/assets/sfx/Beat-Tick-1.ogg" id="4_86hma"]
+[ext_resource type="AudioStream" uid="uid://by374fl3ni72d" path="res://modules/rhythm-minigame/assets/sfx/Full-Measure-Tick-1.ogg" id="5_sabc0"]
+
+[sub_resource type="Gradient" id="5"]
+offsets = PackedFloat32Array(0, 0.6, 0.8, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 0.14902, 1, 1, 1, 0.0156863)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_h00vr"]
+gradient = SubResource("5")
+width = 85
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_0eorx"]
+
+[node name="BeatmapRenderer" type="Node2D"]
+process_mode = 3
+script = ExtResource("1")
+beatmap_file_path = "res://modules/rhythm-minigame/assets/maps/Auld Lang Syne/Robert Burns - Auld Lang Syne (Pkmn05) [4k Normal].osu"
+
+[node name="Visual" type="Sprite2D" parent="."]
+process_mode = 1
+clip_children = 1
+position = Vector2(0, 367)
+rotation = 1.5708
+scale = Vector2(8.456, 367)
+skew = 2.2769e-05
+texture = SubResource("GradientTexture1D_h00vr")
+
+[node name="FourKeyPlayArea" parent="Visual" instance=ExtResource("2")]
+process_mode = 1
+position = Vector2(-43.4011, 0)
+rotation = -1.57179
+scale = Vector2(0.0027248, 0.118259)
+skew = 0.000990033
+scroll_speed_mult = 1.0
+
+[node name="MusicStream" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = SubResource("AudioStreamMP3_0eorx")
+bus = &"Music"
+
+[node name="LeadInDelay" type="Timer" parent="."]
+process_mode = 1
+one_shot = true
+
+[node name="MetronomeTick" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("4_86hma")
+bus = &"SFX"
+
+[node name="MetronomeTickEmphasis" type="AudioStreamPlayer" parent="."]
+process_mode = 1
+stream = ExtResource("5_sabc0")
+bus = &"SFX"

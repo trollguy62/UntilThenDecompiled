@@ -1,0 +1,120 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4ah44naw7t7n"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch5sc9/scripts/DiskBokeh.gd" id="1"]
+
+[sub_resource type="Shader" id="9366"]
+code = "shader_type canvas_item;
+
+uniform float strength : hint_range(0, 4) = 1.0;
+uniform float mul_rand_strength: hint_range(0, 2) = 1.0;
+uniform sampler2D noise;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+const int kernelSampleCount = 22;
+const highp vec2 kernel[22] = highp vec2[22] (
+	vec2(0, 0),
+	vec2(0.53333336, 0),
+	vec2(0.3325279, 0.4169768),
+	vec2(-0.11867785, 0.5199616),
+	vec2(-0.48051673, 0.2314047),
+	vec2(-0.48051673, -0.23140468),
+	vec2(-0.11867763, -0.51996166),
+	vec2(0.33252785, -0.4169769),
+	vec2(1, 0),
+	vec2(0.90096885, 0.43388376),
+	vec2(0.6234898, 0.7818315),
+	vec2(0.22252098, 0.9749279),
+	vec2(-0.22252095, 0.9749279),
+	vec2(-0.62349, 0.7818314),
+	vec2(-0.90096885, 0.43388382),
+	vec2(-1, 0),
+	vec2(-0.90096885, -0.43388376),
+	vec2(-0.6234896, -0.7818316),
+	vec2(-0.22252055, -0.974928),
+	vec2(0.2225215, -0.9749278),
+	vec2(0.6234897, -0.7818316),
+	vec2(0.90096885, -0.43388376)
+);
+
+void fragment() {
+	if (strength < 0.001) {
+		COLOR = vec4(0);
+	} else {
+		vec2 size = 1.0 / vec2(textureSize(SCREEN_TEXTURE, 0));
+		float s = strength * (1.0 + mul_rand_strength * texture(noise, vec2(TIME * 0.2, 0)).r);
+
+		vec3 color = vec3(0);
+		for (int i = 0; i < kernelSampleCount; i++) {
+			vec2 o = kernel[i] * size * 8.0 * s;
+			vec2 uv = SCREEN_UV + o;
+			color += texture(SCREEN_TEXTURE, uv).rgb;
+		}
+
+		color /= float(kernelSampleCount);
+		COLOR = vec4(color, 1);
+	}
+}
+"
+
+[sub_resource type="FastNoiseLite" id="9563"]
+seed = 485
+
+[sub_resource type="NoiseTexture2D" id="9564"]
+width = 128
+height = 1
+seamless = true
+noise = SubResource("9563")
+
+[sub_resource type="ShaderMaterial" id="9367"]
+shader = SubResource("9366")
+shader_parameter/strength = 1.0
+shader_parameter/mul_rand_strength = 0.0
+shader_parameter/noise = SubResource("9564")
+
+[sub_resource type="Shader" id="9561"]
+code = "shader_type canvas_item;
+
+uniform float strength : hint_range(0, 1) = 1.0;
+uniform sampler2D SCREEN_TEXTURE : hint_screen_texture, filter_linear_mipmap;
+
+void fragment() {
+	if (strength < 0.001) {
+		COLOR = vec4(0);
+	} else {
+		vec2 size = 1.0 / vec2(textureSize(SCREEN_TEXTURE, 0));
+		vec4 o = size.xyxy * vec2(-0.5, 0.5).xxyy * strength;
+		vec4 s =
+				texture(SCREEN_TEXTURE, SCREEN_UV + o.xy) +
+				texture(SCREEN_TEXTURE, SCREEN_UV + o.zy) +
+				texture(SCREEN_TEXTURE, SCREEN_UV + o.xw) +
+				texture(SCREEN_TEXTURE, SCREEN_UV + o.zw);
+		COLOR = vec4(s.rgb * 0.25, 1);
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="9562"]
+shader = SubResource("9561")
+shader_parameter/strength = 1.0
+
+[node name="DiskBokeh" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1")
+
+[node name="Pass1" type="ColorRect" parent="."]
+material = SubResource("9367")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+
+[node name="TentFilter" type="BackBufferCopy" parent="."]
+copy_mode = 2
+rect = Rect2(0, 0, 1280, 720)
+
+[node name="Pass2" type="ColorRect" parent="TentFilter"]
+material = SubResource("9562")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2

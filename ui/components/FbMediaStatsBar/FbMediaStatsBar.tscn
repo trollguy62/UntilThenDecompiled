@@ -1,0 +1,100 @@
+[gd_scene load_steps=10 format=3 uid="uid://dcje2jofo46a6"]
+
+[ext_resource type="Script" path="res://ui/components/FbMediaStatsBar/FbMediaStatsBar.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dyi5v0e58f4f6" path="res://assets/ui/v_black_gradient.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://b74dw2gc18ajp" path="res://assets/ui/ic_thumb_up.png" id="3"]
+[ext_resource type="Script" path="res://ui/components/Clickable.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://n6tyimtoryoj" path="res://assets/ui/ic_comment.png" id="5"]
+[ext_resource type="FontFile" uid="uid://sghb20e60wif" path="res://fonts/PTSans-Bold-Small.tres" id="6"]
+[ext_resource type="Script" path="res://ui/components/FbActionToggleButton.gd" id="7"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[sub_resource type="StyleBoxEmpty" id="2"]
+
+[node name="FbMediaStatsBar" type="Panel"]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("1")
+
+[node name="Background" type="TextureRect" parent="."]
+custom_minimum_size = Vector2(0, 64)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="Main" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 16
+
+[node name="Header" type="PanelContainer" parent="Main"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="LikeBtn" type="Button" parent="Main"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("3")
+flat = true
+expand_icon = true
+script = ExtResource("7")
+color_inactive = Color(1, 1, 1, 1)
+
+[node name="CommentBtn" type="Button" parent="Main"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_vertical = 4
+icon = ExtResource("5")
+flat = true
+expand_icon = true
+script = ExtResource("7")
+color_inactive = Color(1, 1, 1, 1)
+color_active = Color(1, 1, 1, 1)
+
+[node name="Spacer" type="PanelContainer" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("2")
+
+[node name="Stats" type="VBoxContainer" parent="Main"]
+custom_minimum_size = Vector2(0, 56)
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+script = ExtResource("4")
+
+[node name="Likes" type="Label" parent="Main/Stats"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("6")
+text = "420 Likes"
+horizontal_alignment = 2
+
+[node name="Comments" type="Label" parent="Main/Stats"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("6")
+text = "69 Comments"
+horizontal_alignment = 2
+
+[node name="Footer" type="PanelContainer" parent="Main"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")

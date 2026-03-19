@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://bpkg2rnrjojve"]
+
+[ext_resource type="PackedScene" uid="uid://bpep0b6opveb8" path="res://scenes/_main/ch5sc9/assets/TVContent/shared/GraphicsBNN.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://dnvjmxs0vnjfu" path="res://scenes/_main/ch5sc9/assets/TVContent/01 News P-111/animatic/02.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://7d82e1ov452f" path="res://scenes/_main/ch5sc9/assets/TVContent/01 News P-111/animatic/03.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ko1k6p5kpvdy" path="res://scenes/_main/ch5sc9/assets/TVContent/01 News P-111/animatic/01.png" id="4"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.25
+}]
+
+[node name="Screen" type="Node2D"]
+texture_filter = 1
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("1")
+autoplay = "default"
+frame = 1
+centered = false
+
+[node name="GraphicsBNN" parent="." instance=ExtResource("1")]
+position = Vector2(0, 62)

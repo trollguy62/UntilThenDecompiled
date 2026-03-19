@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://b3iy8h0xkiakh"]
+
+[ext_resource type="Texture2D" uid="uid://csvwjpbv3hmbn" path="res://scenes/lis/bldg_2/assets/bush_wi.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cri6lygd4q006" path="res://scenes/lis/bldg_2/assets/bush_2.png" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/FoliageDistort.gdshader" id="3"]
+
+[sub_resource type="FastNoiseLite" id="1"]
+
+[sub_resource type="NoiseTexture2D" id="2"]
+width = 252
+height = 35
+seamless = true
+noise = SubResource("1")
+
+[resource]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/speed = Vector2(2, 1)
+shader_parameter/uniformity = Vector2(3, 2)
+shader_parameter/strength = Vector2(4, 1)
+shader_parameter/damping = 3.0
+shader_parameter/time_offset = 0.0
+shader_parameter/tex_albedo = ExtResource("2")
+shader_parameter/tex_noise = SubResource("2")
+shader_parameter/tex_influence = ExtResource("1")

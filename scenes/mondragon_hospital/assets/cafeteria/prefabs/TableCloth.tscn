@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://dx1yj7a1qkvjc"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://bybn6mtdgfbb2" path="res://scenes/mondragon_hospital/assets/cafeteria/table_cloth.obj" id="2"]
+[ext_resource type="Texture2D" uid="uid://dixu813t6o3eq" path="res://scenes/mondragon_hospital/assets/cafeteria/table_cloth.png" id="3"]
+
+[sub_resource type="FastNoiseLite" id="1"]
+
+[sub_resource type="NoiseTexture2D" id="2"]
+width = 250
+height = 150
+bump_strength = 1.0
+noise = SubResource("1")
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.02
+shader_parameter/roughness = 0.7
+shader_parameter/specular = 1.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+shader_parameter/texture_normal = SubResource("2")
+
+[node name="TableCloth" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0221881, -0.0515203, 0.0355648)
+material_override = SubResource("3")
+mesh = ExtResource("2")

@@ -1,0 +1,58 @@
+[gd_scene load_steps=10 format=3 uid="uid://d3k36hwbhtbno"]
+
+[ext_resource type="Theme" uid="uid://cm4iq2rnf2ofd" path="res://ui/default.tres" id="1"]
+[ext_resource type="Script" path="res://ui/components/Panel/ScreenNavigator.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://cre5f1nrldx1c" path="res://ui/components/Panel/NotificationHandler.tscn" id="3"]
+[ext_resource type="AudioStream" uid="uid://b15v3o5xoetr8" path="res://ui/sfx/slide_left.wav" id="5"]
+[ext_resource type="AudioStream" uid="uid://cxrv1lqo3o58w" path="res://ui/sfx/notification.wav" id="6"]
+[ext_resource type="AudioStream" uid="uid://cqw7558igrie8" path="res://ui/sfx/slide_right.wav" id="7"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="8"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[sub_resource type="StyleBoxFlat" id="2"]
+
+[node name="Panel" type="Panel"]
+texture_filter = 3
+clip_contents = true
+custom_minimum_size = Vector2(456, 720)
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_left = -456.0
+theme = ExtResource("1")
+theme_override_styles/panel = SubResource("1")
+
+[node name="$ScreenNavigator" type="Panel" parent="."]
+clip_contents = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("2")
+script = ExtResource("2")
+
+[node name="Focus" type="Node" parent="$ScreenNavigator"]
+script = ExtResource("8")
+focus_name = "ScreenNavigator"
+
+[node name="SoundSlideLeft" type="AudioStreamPlayer" parent="$ScreenNavigator"]
+stream = ExtResource("5")
+volume_db = -8.0
+bus = &"UI"
+
+[node name="SoundSlideRight" type="AudioStreamPlayer" parent="$ScreenNavigator"]
+stream = ExtResource("7")
+volume_db = -8.0
+bus = &"UI"
+
+[node name="$NotificationHandler" parent="." instance=ExtResource("3")]
+layout_mode = 1
+anchors_preset = -1
+metadata/_edit_lock_ = true
+
+[node name="SoundNotification" type="AudioStreamPlayer" parent="$NotificationHandler"]
+stream = ExtResource("6")
+volume_db = 2.0
+bus = &"UI"

@@ -1,0 +1,127 @@
+[gd_scene load_steps=15 format=3 uid="uid://7gf1iyda2t5w"]
+
+[ext_resource type="Texture2D" uid="uid://bvgls2rbfg53g" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/_IDLE/01.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://8c0c2cen48ql" path="res://scenes/_main/ch3sc2a/assets/chibis/chibi_circle.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://cucqvh230wqpe" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with cathy ridel_BOTHERED/01.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dmyw1bt3jwfw" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with cathy ridel_SCORE/01.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://djnk0nyhatyqg" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with cathy ridel_MISS/01.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dk62167f331sf" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with nicole_AIM/01.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://bf4jc440m5mur" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with cathy ridel_FOCUS/01.png" id="7"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/scripts/Chibi.gd" id="8"]
+[ext_resource type="Texture2D" uid="uid://byp3a8dp0m7vh" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with nicole_LOSE/01.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bewncusxr50u6" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with nicole_SMUG/01.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://btmhebbkad2tg" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with nicole_WAIT/01.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://d0o08x8jfiio1" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with nicole_WIN/01.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://b583cwflix7v5" path="res://scenes/_main/ch3sc2a/assets/chibis/Mark/with nicole_POSITIVE/01.png" id="13"]
+
+[sub_resource type="SpriteFrames" id="1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
+"loop": true,
+"name": &"aim",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}],
+"loop": true,
+"name": &"bothered",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7")
+}],
+"loop": true,
+"name": &"focus",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9")
+}],
+"loop": true,
+"name": &"lose",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": true,
+"name": &"miss",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
+"loop": true,
+"name": &"positive",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4")
+}],
+"loop": true,
+"name": &"score",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10")
+}],
+"loop": true,
+"name": &"smug",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11")
+}],
+"loop": true,
+"name": &"wait",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12")
+}],
+"loop": true,
+"name": &"win",
+"speed": 5.0
+}]
+
+[node name="ChibiMark" type="Sprite2D"]
+self_modulate = Color(1, 0.792157, 0.443137, 1)
+texture_filter = 1
+position = Vector2(1104.41, 200.033)
+scale = Vector2(4, 4)
+texture = ExtResource("2")
+script = ExtResource("8")
+alias = "MarkBorja"
+active_color = Color(1, 0.792157, 0.443137, 1)
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.9, 0.9)
+sprite_frames = SubResource("1")
+animation = &"miss"
+
+[node name="Shadow" type="Sprite2D" parent="."]
+self_modulate = Color(0, 0, 0, 0.392157)
+show_behind_parent = true
+position = Vector2(1.89744, 1.99184)
+texture = ExtResource("2")

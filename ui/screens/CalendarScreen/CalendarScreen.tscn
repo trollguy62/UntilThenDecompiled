@@ -1,0 +1,242 @@
+[gd_scene load_steps=15 format=3 uid="uid://1ysvk6l5vhao"]
+
+[ext_resource type="Texture2D" uid="uid://ccm6s2fxgk1sl" path="res://assets/ui/ic_calendar.png" id="1_c8sev"]
+[ext_resource type="Script" path="res://ui/screens/CalendarScreen/CalendarScreen.gd" id="1_h0rhv"]
+[ext_resource type="Texture2D" uid="uid://cxhbufy8rtn5e" path="res://assets/ui/outline_search_white_48dp.png" id="2_63ikc"]
+[ext_resource type="Texture2D" uid="uid://bftyaemctqw4w" path="res://assets/ui/outline_apps_white_48dp.png" id="3_42j06"]
+[ext_resource type="Texture2D" uid="uid://hee622jvg6rv" path="res://assets/ui/outline_filter_list_white_48dp.png" id="4_o5fsw"]
+[ext_resource type="Texture2D" uid="uid://v26d8iyoedd8" path="res://assets/ui/outline_settings_white_48dp.png" id="5_p8var"]
+[ext_resource type="Texture2D" uid="uid://btptrt5hopf4v" path="res://assets/ui/outline_more_vert_white_48dp.png" id="6_gy6ny"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="7_f0mb7"]
+[ext_resource type="PackedScene" uid="uid://bm3tef688a671" path="res://ui/components/Calendar/Calendar.tscn" id="8_w4pkr"]
+
+[sub_resource type="Animation" id="Animation_ysogs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/TextureRect:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_ufqfv"]
+resource_name = "splash"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Panel:modulate")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.7, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Panel/TextureRect:modulate")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5, 1.7, 1.9),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Panel:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xx66x"]
+_data = {
+"RESET": SubResource("Animation_ysogs"),
+"splash": SubResource("Animation_ufqfv")
+}
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 0.384314, 0.262745, 1)
+shadow_color = Color(0, 0, 0, 0.231373)
+shadow_size = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_02r2r"]
+bg_color = Color(1, 0.384314, 0.262745, 1)
+
+[node name="CalendarScreen" type="Control" node_paths=PackedStringArray("focus_on_enter")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h0rhv")
+focus_on_enter = NodePath("VBoxContainer/ScrollContainer/MarginContainer/Calendar")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_xx66x")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="PanelContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 54)
+layout_mode = 2
+theme_override_styles/panel = SubResource("1")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_right = 16
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+alignment = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+text = "CAL_APP_TITLE"
+
+[node name="Spacer" type="Control" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="ActionButtons" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
+visible = false
+layout_mode = 2
+
+[node name="Search" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer/ActionButtons"]
+modulate = Color(1, 0.976471, 0.933333, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("2_63ikc")
+expand_mode = 1
+
+[node name="Apps" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer/ActionButtons"]
+modulate = Color(1, 0.976471, 0.933333, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("3_42j06")
+expand_mode = 1
+
+[node name="Filter" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer/ActionButtons"]
+modulate = Color(1, 0.976471, 0.933333, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("4_o5fsw")
+expand_mode = 1
+
+[node name="Settings" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer/ActionButtons"]
+modulate = Color(1, 0.976471, 0.933333, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("5_p8var")
+expand_mode = 1
+
+[node name="More" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer/ActionButtons"]
+modulate = Color(1, 0.976471, 0.933333, 1)
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+texture = ExtResource("6_gy6ny")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+script = ExtResource("7_f0mb7")
+metadata/_edit_use_anchors_ = true
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="Calendar" parent="VBoxContainer/ScrollContainer/MarginContainer" instance=ExtResource("8_w4pkr")]
+layout_mode = 2
+clamp_to_year = true
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_02r2r")
+
+[node name="TextureRect" type="TextureRect" parent="Panel"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -48.0
+offset_top = -48.0
+offset_right = 48.0
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_c8sev")

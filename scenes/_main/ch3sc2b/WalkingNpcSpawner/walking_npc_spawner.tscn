@@ -1,0 +1,45 @@
+[gd_scene load_steps=8 format=3 uid="uid://b864hg3hvb87"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/scripts/WalkingNpcSpawner.gd" id="1_gwuha"]
+[ext_resource type="PackedScene" uid="uid://doqslh8ep8hcf" path="res://scenes/_main/ch3sc2b/assets/prefabs/Perya_NPC_prefabs/KidFood3.tscn" id="2_icjst"]
+[ext_resource type="PackedScene" uid="uid://dtwrgt8ni13yp" path="res://scenes/_main/ch3sc2b/assets/prefabs/Perya_NPC_prefabs/KidFood2.tscn" id="3_osju1"]
+[ext_resource type="PackedScene" uid="uid://5fmxv36rqfpe" path="res://scenes/_main/ch3sc2b/assets/prefabs/Perya_NPC_prefabs/CoupleStand.tscn" id="4_0ls05"]
+[ext_resource type="PackedScene" uid="uid://cg8aa6tvcdfd8" path="res://scenes/_main/ch3sc2b/assets/prefabs/Perya_NPC_prefabs/KidPrize2.tscn" id="5_31x5n"]
+[ext_resource type="PackedScene" uid="uid://5tcnk3gcwutd" path="res://scenes/_main/ch3sc2b/assets/prefabs/Perya_NPC_prefabs/KidPrize3Walking.tscn" id="6_mr6pc"]
+[ext_resource type="PackedScene" uid="uid://cbdp18xui1bxl" path="res://scenes/_main/ch3sc2b/assets/prefabs/Perya_NPC_prefabs/KidMissingStand.tscn" id="7_lphgg"]
+
+[node name="WalkingNpcSpawner" type="Node3D"]
+script = ExtResource("1_gwuha")
+walking_npcs = Array[Resource]([ExtResource("2_icjst"), ExtResource("3_osju1"), ExtResource("4_0ls05"), ExtResource("5_31x5n"), ExtResource("6_mr6pc"), ExtResource("7_lphgg")])
+
+[node name="Planes" type="Node3D" parent="."]
+
+[node name="Plane1" type="Node3D" parent="Planes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.351102)
+
+[node name="1PointA" type="Marker3D" parent="Planes/Plane1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9078, 0, 0.0188767)
+
+[node name="1PointB" type="Marker3D" parent="Planes/Plane1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.37494, 0, 0.238237)
+
+[node name="Plane2" type="Node3D" parent="Planes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.432261)
+
+[node name="2PointA" type="Marker3D" parent="Planes/Plane2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.75074, 0, -4.24448)
+
+[node name="2PointB" type="Marker3D" parent="Planes/Plane2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -11.9078, 0, -4.24448)
+
+[node name="Plane3" type="Node3D" parent="Planes"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.1558)
+
+[node name="3PointA" type="Marker3D" parent="Planes/Plane3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -12.3043, 0, -1.1217)
+
+[node name="3PointB" type="Marker3D" parent="Planes/Plane3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.49334, 0, -1.1217)
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

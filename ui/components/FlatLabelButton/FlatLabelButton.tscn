@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2eb30hey8rce"]
+
+[ext_resource type="Script" path="res://ui/components/FlatLabelButton/FlatLabelButton.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://dlxdxcvfgn8t5" path="res://fonts/PTSans-Bold.tres" id="2"]
+[ext_resource type="PackedScene" uid="uid://i8b3fudxxx58" path="res://ui/components/FlatButton/FlatButton.tscn" id="3"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[node name="FlatLabelButton" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("1")
+font = ExtResource("2")
+
+[node name="FlatButton" parent="." instance=ExtResource("3")]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="FlatButton"]
+layout_mode = 2
+text = "FlatLabelButton"
+horizontal_alignment = 1
+autowrap_mode = 3

@@ -1,0 +1,274 @@
+[gd_scene load_steps=20 format=3 uid="uid://bhe1akt5bgq4m"]
+
+[ext_resource type="Material" uid="uid://dg1402kf30q4b" path="res://scenes/_main/ch1sc1c/assets/train/TrainRailsInterior.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://daws2illm26eh" path="res://scenes/_main/ch1sc1c/assets/train/cart_front.png" id="2"]
+[ext_resource type="PackedScene" uid="uid://b2y7l27t1tnj3" path="res://scenes/_main/ch1sc1c/assets/prefabs/train/Doors.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://bdntxr42y53nt" path="res://scenes/_main/ch1sc1c/assets/prefabs/train/WindowMid.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://rfs8q61fpjtk" path="res://scenes/_main/ch1sc1c/assets/prefabs/train/WindowFront.tscn" id="5"]
+[ext_resource type="Texture2D" uid="uid://d07gc0hvbsxer" path="res://scenes/_main/ch1sc1c/assets/train/deco_terminal.png" id="6"]
+[ext_resource type="PackedScene" uid="uid://ryub3vi8lnbp" path="res://scenes/_main/ch1sc1c/assets/prefabs/train/DecoLight.tscn" id="7"]
+[ext_resource type="Material" uid="uid://b5dhfqx52jogq" path="res://scenes/_main/ch1sc1c/assets/materials/TrainGlass.tres" id="8"]
+[ext_resource type="Texture2D" uid="uid://dlm7wgns1kj3r" path="res://scenes/_main/ch1sc1c/assets/train/cart_front_interior.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://djr2lpfvsv4a" path="res://scenes/_main/ch1sc1c/assets/train/rails_interior.png" id="10"]
+[ext_resource type="PackedScene" uid="uid://dohtucx67xg07" path="res://scenes/_main/ch1sc1c/assets/prefabs/train/People.tscn" id="11"]
+[ext_resource type="PackedScene" uid="uid://br3na7y0ovel1" path="res://scenes/_main/ch1sc1c/assets/prefabs/train/SideCover.tscn" id="12"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="13"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("13")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("13")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6")
+
+[sub_resource type="PlaneMesh" id="3"]
+size = Vector2(0.7, 0.7)
+
+[sub_resource type="ShaderMaterial" id="6"]
+render_priority = 0
+shader = ExtResource("13")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("9")
+
+[sub_resource type="StandardMaterial3D" id="4"]
+albedo_color = Color(0.370102, 0.370102, 0.386719, 1)
+metallic = 0.25
+roughness = 0.5
+
+[sub_resource type="PlaneMesh" id="5"]
+size = Vector2(11, 0.5)
+
+[node name="CartFront" type="Spatial"]
+
+[node name="Headlight" type="SpotLight" parent="."]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, 11.6898, 0.371425, 0.0533054)
+light_color = Color(0.988235, 1, 0.643137, 1)
+light_energy = 8.0
+light_indienergy = 0.0
+light_bake_mode = 0
+spot_range = 12.0
+spot_angle = 21.6477
+
+[node name="Exterior" type="Spatial" parent="."]
+
+[node name="Cart" type="Sprite3D" parent="Exterior"]
+material_override = SubResource("1")
+centered = false
+texture = ExtResource("2")
+
+[node name="Doors" type="Spatial" parent="Exterior"]
+
+[node name="Doors1" parent="Exterior/Doors" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.81076, 0.657784, 0)
+
+[node name="Doors2" parent="Exterior/Doors" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.0009, 0.657784, 0)
+
+[node name="Doors3" parent="Exterior/Doors" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.19141, 0.657784, 0)
+
+[node name="Doors4" parent="Exterior/Doors" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.38102, 0.657784, 0)
+
+[node name="Doors5" parent="Exterior/Doors" instance=ExtResource("3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.5711, 0.657784, 0)
+
+[node name="Windows" type="Spatial" parent="Exterior"]
+
+[node name="WindowMid1" parent="Exterior/Windows" instance=ExtResource("4")]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 0.236271, 0.526103, -0.00100005)
+
+[node name="WindowMid2" parent="Exterior/Windows" instance=ExtResource("4")]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 2.42909, 0.526103, -0.00100005)
+
+[node name="WindowMid3" parent="Exterior/Windows" instance=ExtResource("4")]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 4.61689, 0.526103, -0.00100005)
+
+[node name="WindowMid4" parent="Exterior/Windows" instance=ExtResource("4")]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 6.81104, 0.526103, -0.00100005)
+
+[node name="WindowMid5" parent="Exterior/Windows" instance=ExtResource("4")]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 9.00216, 0.526103, -0.00100005)
+
+[node name="WindowFront" parent="Exterior/Windows" instance=ExtResource("5")]
+transform = Transform3D(1.04, 0, 0, 0, 1.04, 0, 0, 0, 1.04, 11.1984, 0.526103, -0.00100005)
+
+[node name="Deco" type="Spatial" parent="Exterior"]
+
+[node name="TerminalSign1" type="Sprite3D" parent="Exterior/Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.5319, 1.34953, 0.00100005)
+material_override = SubResource("2")
+centered = false
+texture = ExtResource("6")
+
+[node name="TerminalSign2" type="Sprite3D" parent="Exterior/Deco"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.0919, 1.34953, 0.00100005)
+material_override = SubResource("2")
+centered = false
+texture = ExtResource("6")
+
+[node name="DecoLight1" parent="Exterior/Deco" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.636, 1.367, 0.001)
+
+[node name="DecoLight2" parent="Exterior/Deco" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.82614, 1.367, 0.00100005)
+
+[node name="DecoLight3" parent="Exterior/Deco" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.01769, 1.367, 0.00100005)
+
+[node name="DecoLight4" parent="Exterior/Deco" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.20527, 1.367, 0.00100005)
+
+[node name="DecoLight5" parent="Exterior/Deco" instance=ExtResource("7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.395, 1.367, 0.00100005)
+
+[node name="Glass" type="Spatial" parent="Exterior"]
+
+[node name="Glass1" type="MeshInstance" parent="Exterior/Glass"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.619099, 0.838737, -0.00528455)
+material_override = ExtResource("8")
+mesh = SubResource("3")
+surface_material_override/0 = null
+
+[node name="Glass2" type="MeshInstance" parent="Exterior/Glass"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.76805, 0.838737, -0.00528455)
+material_override = ExtResource("8")
+mesh = SubResource("3")
+surface_material_override/0 = null
+
+[node name="Glass3" type="MeshInstance" parent="Exterior/Glass"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 4.96741, 0.838737, -0.00528455)
+material_override = ExtResource("8")
+mesh = SubResource("3")
+surface_material_override/0 = null
+
+[node name="Glass4" type="MeshInstance" parent="Exterior/Glass"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 7.15419, 0.838737, -0.00528455)
+material_override = ExtResource("8")
+mesh = SubResource("3")
+surface_material_override/0 = null
+
+[node name="Glass5" type="MeshInstance" parent="Exterior/Glass"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 9.36405, 0.838737, -0.00528455)
+material_override = ExtResource("8")
+mesh = SubResource("3")
+surface_material_override/0 = null
+
+[node name="Glass6" type="MeshInstance" parent="Exterior/Glass"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 11.3582, 0.838737, -0.00528455)
+material_override = ExtResource("8")
+mesh = SubResource("3")
+surface_material_override/0 = null
+
+[node name="Interior" type="Spatial" parent="."]
+
+[node name="Cart" type="Sprite3D" parent="Interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.5)
+material_override = SubResource("6")
+centered = false
+texture = ExtResource("9")
+
+[node name="Floor" type="MeshInstance" parent="Interior"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.51, 0.005, -0.256)
+material_override = SubResource("4")
+mesh = SubResource("5")
+surface_material_override/0 = null
+
+[node name="Rails" type="Spatial" parent="Interior"]
+
+[node name="Rails1" type="Sprite3D" parent="Interior/Rails"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.227985, 0.975085, -0.25)
+material_override = ExtResource("1")
+centered = false
+texture = ExtResource("10")
+
+[node name="Rails2" type="Sprite3D" parent="Interior/Rails"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.40089, 0.975085, -0.25)
+material_override = ExtResource("1")
+centered = false
+texture = ExtResource("10")
+
+[node name="Rails3" type="Sprite3D" parent="Interior/Rails"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.61589, 0.975085, -0.25)
+material_override = ExtResource("1")
+centered = false
+texture = ExtResource("10")
+
+[node name="Rails4" type="Sprite3D" parent="Interior/Rails"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.81074, 0.975085, -0.25)
+material_override = ExtResource("1")
+centered = false
+texture = ExtResource("10")
+
+[node name="Rails5" type="Sprite3D" parent="Interior/Rails"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.97655, 0.975085, -0.25)
+material_override = ExtResource("1")
+centered = false
+texture = ExtResource("10")
+
+[node name="People" parent="Interior" instance=ExtResource("11")]
+
+[node name="SideCover" parent="." instance=ExtResource("12")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00400162, 0, 0)

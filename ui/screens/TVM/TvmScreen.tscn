@@ -1,0 +1,88 @@
+[gd_scene load_steps=13 format=3 uid="uid://1gb22bmm3gnu"]
+
+[ext_resource type="Script" path="res://ui/screens/TVM/TvmScreen.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://mnqw5d1komab" path="res://fonts/DejaVuSans.ttf" id="2_s8pyo"]
+[ext_resource type="PackedScene" uid="uid://clah0jvxhrct7" path="res://ui/screens/TVM/MainScreen/MainScreen.tscn" id="3"]
+[ext_resource type="AudioStream" uid="uid://8bhbwrn0aeua" path="res://scenes/_main/ch1sc1c/assets/sfx/tvm_dispense_change.ogg" id="5"]
+[ext_resource type="AudioStream" uid="uid://boj6eyps34tlg" path="res://scenes/_main/ch1sc1c/assets/sfx/tvm_insert_coin.ogg" id="6"]
+[ext_resource type="AudioStream" uid="uid://bgna2pwyptupm" path="res://scenes/_main/ch1sc1c/assets/sfx/tvm_process_ticket.ogg" id="7"]
+[ext_resource type="AudioStream" uid="uid://ceuh4ho5oi0ua" path="res://scenes/_main/ch1sc1c/assets/sfx/tvm_dispense_ticket.ogg" id="8"]
+[ext_resource type="AudioStream" uid="uid://4wyjlwqpnr2o" path="res://scenes/_main/ch1sc1c/assets/sfx/tvm_beep.ogg" id="9"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4ilk1"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r4lju"]
+bg_color = Color(0.054902, 0.105882, 0.439216, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_emvah"]
+base_font = ExtResource("2_s8pyo")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ehr8e"]
+
+[node name="TVM" type="Panel"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+pivot_offset = Vector2(1875.31, 12.143)
+theme_override_styles/panel = SubResource("StyleBoxFlat_4ilk1")
+script = ExtResource("1")
+
+[node name="InfoBar" type="Panel" parent="."]
+layout_mode = 0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -32.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_r4lju")
+
+[node name="SerialNo" type="Label" parent="InfoBar"]
+layout_mode = 0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_right = 193.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("FontVariation_emvah")
+theme_override_font_sizes/font_size = 16
+text = "TVM KRT-2 23 10 41"
+vertical_alignment = 1
+
+[node name="ScreenContainer" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ehr8e")
+
+[node name="MainScreen" parent="ScreenContainer" instance=ExtResource("3")]
+layout_mode = 1
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Beep" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9")
+volume_db = -5.0
+bus = &"SFX"
+
+[node name="InsertCoin" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6")
+volume_db = -4.0
+bus = &"SFX"
+
+[node name="ProcessTicket" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="DispenseTicket" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8")
+volume_db = -3.0
+bus = &"SFX"
+
+[node name="DispenseChange" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
+volume_db = -5.0
+bus = &"SFX"

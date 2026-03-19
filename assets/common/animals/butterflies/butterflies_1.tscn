@@ -1,0 +1,78 @@
+[gd_scene load_steps=11 format=3 uid="uid://c4bscd7ltaqwv"]
+
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1_xdbla"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/butterflies/butterflies_Butterflies_1/04.tres" id="2_4ajcx"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="3_yssn6"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/butterflies/butterflies_Butterflies_1/01.tres" id="4_omha1"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/butterflies/butterflies_Butterflies_1/02.tres" id="5_q0ugp"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/butterflies/butterflies_Butterflies_1/03.tres" id="6_qd4gi"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/butterflies/butterflies_Butterflies_1/05.tres" id="7_qoef2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_73yt4"]
+render_priority = 0
+shader = ExtResource("1_xdbla")
+shader_parameter/scale = Vector3(1.215, 0.81, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("4_omha1")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bc7js"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_73yt4"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8je2e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_omha1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q0ugp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_qd4gi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4ajcx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_qoef2")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Butterflies_1" type="Node3D"]
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_bc7js")
+script = ExtResource("3_yssn6")
+texture_frames = SubResource("SpriteFrames_8je2e")
+animation = "default"
+random_initial = true
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081

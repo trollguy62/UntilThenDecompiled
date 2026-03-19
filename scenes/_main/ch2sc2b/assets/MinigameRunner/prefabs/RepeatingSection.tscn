@@ -1,0 +1,308 @@
+[gd_scene load_steps=38 format=3 uid="uid://c3wgwghr4ujdk"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1"]
+[ext_resource type="Material" uid="uid://b3iy8h0xkiakh" path="res://scenes/lis/bldg_2/assets/materials/Bush2.tres" id="2"]
+[ext_resource type="Texture2D" uid="uid://ddcb7ciut5kha" path="res://scenes/lis/bldg_2/assets/floor.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cri6lygd4q006" path="res://scenes/lis/bldg_2/assets/bush_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://5hsvfkvg5k3p" path="res://scenes/lis/bldg_2/assets/railing_3.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://1tb21bqmnu15" path="res://scenes/lis/bldg_2/assets/floor_n.png" id="6"]
+[ext_resource type="Material" uid="uid://cav4p7qbjjxk7" path="res://scenes/lis/bldg_2/assets/materials/RoomFacade2.tres" id="7"]
+[ext_resource type="Material" uid="uid://c4t112ko6l0yl" path="res://scenes/lis/bldg_2/assets/materials/Railing1.tres" id="8"]
+[ext_resource type="Texture2D" uid="uid://bcxf5306nce2t" path="res://scenes/lis/bldg_2/assets/bush_1.png" id="9"]
+[ext_resource type="Material" uid="uid://bdwkspoax6oad" path="res://scenes/lis/bldg_2/assets/materials/Pillar2.tres" id="10"]
+[ext_resource type="Material" uid="uid://dc8u2k8x028vx" path="res://scenes/lis/bldg_2/assets/materials/Pillar1.tres" id="11"]
+[ext_resource type="Material" uid="uid://c2rho5j3rny4y" path="res://scenes/lis/bldg_2/assets/materials/Bush1.tres" id="12"]
+[ext_resource type="Material" uid="uid://brh2ydkykr8hp" path="res://scenes/lis/bldg_2/assets/materials/RoomFacade1.tres" id="13"]
+[ext_resource type="Material" uid="uid://bc6inmjuli6u6" path="res://scenes/lis/bldg_2/assets/materials/Arch1.tres" id="14"]
+[ext_resource type="Material" uid="uid://bgauphnujyb78" path="res://scenes/lis/bldg_2/assets/materials/Railing3.tres" id="15"]
+[ext_resource type="Material" uid="uid://cflylyhf62ues" path="res://scenes/lis/bldg_2/assets/materials/Arch2.tres" id="16"]
+[ext_resource type="Material" uid="uid://b87ekipnqs2eq" path="res://scenes/lis/bldg_2/assets/materials/Column1.tres" id="17"]
+[ext_resource type="Material" uid="uid://c20hrlt0gle2m" path="res://scenes/lis/bldg_2/assets/materials/Railing2.tres" id="18"]
+[ext_resource type="Material" uid="uid://bgpx6n8h6uynr" path="res://scenes/lis/bldg_2/assets/materials/Column2.tres" id="19"]
+[ext_resource type="Texture2D" uid="uid://c5sg46dhkoojo" path="res://scenes/lis/bldg_2/assets/ceiling.png" id="20"]
+[ext_resource type="Material" uid="uid://ibvmutb8luow" path="res://scenes/lis/bldg_2/assets/materials/Gardenside1.tres" id="21"]
+[ext_resource type="Texture2D" uid="uid://bistsyvauxc26" path="res://scenes/lis/bldg_2/assets/railing_1.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://pfeyyeb4jcwj" path="res://scenes/lis/bldg_2/assets/railing_2.png" id="23"]
+[ext_resource type="ArrayMesh" uid="uid://8jqafk3r6y72" path="res://scenes/lis/bldg_2/assets/gardenside.obj" id="24"]
+[ext_resource type="ArrayMesh" uid="uid://bquisgy2b523" path="res://scenes/lis/bldg_2/assets/pillar.obj" id="25"]
+[ext_resource type="ArrayMesh" uid="uid://ci7mpeifyqtrg" path="res://scenes/lis/bldg_2/assets/column.obj" id="26"]
+[ext_resource type="ArrayMesh" uid="uid://dvt0jqmuo46ck" path="res://scenes/lis/bldg_2/assets/room_facade.obj" id="27"]
+[ext_resource type="ArrayMesh" uid="uid://c0nae54ugbdk8" path="res://scenes/lis/bldg_2/assets/arch.obj" id="28"]
+[ext_resource type="PackedScene" uid="uid://vy00enwvtrhm" path="res://scenes/lis/bldg_2/assets/prefabs/RoomInterior1.tscn" id="29"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.2
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.15
+shader_parameter/roughness = 0.2
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1.96, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+shader_parameter/texture_normal = ExtResource("6")
+
+[sub_resource type="PlaneMesh" id="2"]
+size = Vector2(10.16, 1)
+
+[sub_resource type="ConcavePolygonShape3D" id="3"]
+data = PackedVector3Array(8.5, 0, 0.5, -8.5, 0, 0.5, 8.5, 0, -0.5, -8.5, 0, 0.5, -8.5, 0, -0.5, 8.5, 0, -0.5)
+
+[sub_resource type="ShaderMaterial" id="4"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1.23, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("20")
+
+[sub_resource type="PlaneMesh" id="5"]
+size = Vector2(10.16, 0.88)
+
+[sub_resource type="StandardMaterial3D" id="6"]
+albedo_color = Color(0.682353, 0.796078, 0.831373, 1)
+
+[sub_resource type="QuadMesh" id="7"]
+size = Vector2(1.039, 1.561)
+
+[sub_resource type="StandardMaterial3D" id="8"]
+
+[node name="RepeatingSection" type="Node3D"]
+
+[node name="Hallway" type="Node3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.60187e-07, 0, 0)
+
+[node name="Structure" type="Node3D" parent="Hallway"]
+
+[node name="Floor" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.5, 0, 5.08)
+material_override = SubResource("1")
+mesh = SubResource("2")
+
+[node name="StaticBody" type="StaticBody3D" parent="Hallway/Structure/Floor"]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Hallway/Structure/Floor/StaticBody"]
+shape = SubResource("3")
+
+[node name="Ceiling" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1.31134e-07, 2.6054e-15, -1, 2.98023e-08, -1, 0, -1, -2.98023e-08, -1.31134e-07, -0.5, 1.9, 5.08)
+material_override = SubResource("4")
+mesh = SubResource("5")
+
+[node name="Column_1" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.34888e-08, 0, 1.91)
+material_override = ExtResource("19")
+mesh = ExtResource("26")
+
+[node name="Column_4" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.08165e-07, 0, 7.05)
+material_override = ExtResource("19")
+mesh = ExtResource("26")
+
+[node name="Column_2" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.24677e-07, 0, 5.14)
+material_override = ExtResource("17")
+mesh = ExtResource("26")
+
+[node name="Column_3" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.24328e-13, 0, 2.79396e-07)
+material_override = ExtResource("17")
+mesh = ExtResource("26")
+
+[node name="RoomFacade1_1" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 296, -9.52908e-08, 0, 2.18)
+material_override = ExtResource("13")
+mesh = ExtResource("27")
+
+[node name="RoomFacade1_3" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 284, -3.19967e-07, 0, 7.32)
+material_override = ExtResource("13")
+mesh = ExtResource("27")
+
+[node name="RoomFacade2_1" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 164, -1.18021e-08, 0, 0.27)
+material_override = ExtResource("7")
+mesh = ExtResource("27")
+
+[node name="RoomFacade2_2" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 164, -2.36479e-07, 0, 5.41)
+material_override = ExtResource("7")
+mesh = ExtResource("27")
+
+[node name="Pillar_1" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, -3.49691e-08)
+material_override = ExtResource("10")
+mesh = ExtResource("25")
+
+[node name="Pillar_2" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 0, 2.78)
+material_override = ExtResource("11")
+mesh = ExtResource("25")
+
+[node name="Pillar_3" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 5.08)
+material_override = ExtResource("11")
+mesh = ExtResource("25")
+
+[node name="Pillar_6" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, 0, 7.62)
+material_override = ExtResource("11")
+mesh = ExtResource("25")
+
+[node name="Railing_1" type="Sprite3D" parent="Hallway/Structure"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 0.24)
+material_override = ExtResource("18")
+centered = false
+texture = ExtResource("23")
+
+[node name="Railing_5" type="Sprite3D" parent="Hallway/Structure"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 5.32)
+material_override = ExtResource("15")
+centered = false
+texture = ExtResource("5")
+
+[node name="Railing_6" type="Sprite3D" parent="Hallway/Structure"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 7.86)
+material_override = ExtResource("15")
+centered = false
+texture = ExtResource("5")
+
+[node name="Railing_2" type="Sprite3D" parent="Hallway/Structure"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -1, 0, 2.78)
+material_override = ExtResource("8")
+centered = false
+texture = ExtResource("22")
+
+[node name="Arch_1" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 1.96, 2.78)
+material_override = ExtResource("14")
+mesh = ExtResource("28")
+
+[node name="Arch_5" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 1.96, 5.32)
+material_override = ExtResource("14")
+mesh = ExtResource("28")
+
+[node name="Arch_2" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 1.96, 0.24)
+material_override = ExtResource("16")
+mesh = ExtResource("28")
+
+[node name="Arch_6" type="MeshInstance3D" parent="Hallway/Structure"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.85, 1.96, 7.86)
+material_override = ExtResource("14")
+mesh = ExtResource("28")
+
+[node name="Gardenside1" type="MeshInstance3D" parent="Hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, -0.41, 6.05967e-08)
+material_override = ExtResource("21")
+mesh = ExtResource("24")
+
+[node name="Bush1_1" type="Sprite3D" parent="Hallway/Gardenside1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.29, -0.02, 0.13)
+material_override = ExtResource("12")
+centered = false
+texture = ExtResource("9")
+
+[node name="Bush1_2" type="Sprite3D" parent="Hallway/Gardenside1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.2, -0.02, 0.13)
+material_override = ExtResource("12")
+centered = false
+flip_h = true
+texture = ExtResource("9")
+
+[node name="Bush2_1" type="Sprite3D" parent="Hallway/Gardenside1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.100001, -0.02, 0.149999)
+material_override = ExtResource("2")
+centered = false
+flip_h = true
+texture = ExtResource("4")
+
+[node name="Gardenside2" type="MeshInstance3D" parent="Hallway"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.91, -1, -0.41, 5.32)
+material_override = ExtResource("21")
+mesh = ExtResource("24")
+
+[node name="Bush1_1" type="Sprite3D" parent="Hallway/Gardenside2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.29, -0.02, 0.13)
+material_override = ExtResource("12")
+centered = false
+texture = ExtResource("9")
+
+[node name="Bush1_2" type="Sprite3D" parent="Hallway/Gardenside2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.2, -0.02, 0.13)
+material_override = ExtResource("12")
+centered = false
+flip_h = true
+texture = ExtResource("9")
+
+[node name="Bush2_1" type="Sprite3D" parent="Hallway/Gardenside2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.100001, -0.02, 0.149999)
+material_override = ExtResource("2")
+centered = false
+flip_h = true
+texture = ExtResource("4")
+
+[node name="Misc" type="Node3D" parent="."]
+
+[node name="RoomInterior1_1" parent="Misc" instance=ExtResource("29")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.27, 2.79397e-08, -3.85568e-07)
+
+[node name="RoomInterior1_2" parent="Misc" instance=ExtResource("29")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 5.41, 2.79397e-08, -3.85568e-07)
+
+[node name="Window1_2" parent="Misc/RoomInterior1_2" index="1"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00199992, 1.11, 2.76)
+
+[node name="Window2_1" parent="Misc/RoomInterior1_2" index="2"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00199986, 1.32, 4.11)
+
+[node name="Curtain3" parent="Misc/RoomInterior1_2" index="10"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00799999, 0.61, 2.11)
+
+[node name="Curtain4" parent="Misc/RoomInterior1_2" index="11"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.00799999, 0.61, 2.77)
+
+[node name="InteriorOpaque" type="MeshInstance3D" parent="Misc"]
+transform = Transform3D(10, 0, 0, 0, 2, 0, 0, 0, 1, 5.16, 1.19, -0.00999999)
+visible = false
+material_override = SubResource("6")
+mesh = SubResource("7")
+
+[node name="LightOccluder" type="MeshInstance3D" parent="Misc"]
+transform = Transform3D(10, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 5.18, 1.97, 0.2)
+material_override = SubResource("8")
+mesh = SubResource("7")
+
+[editable path="Misc/RoomInterior1_2"]

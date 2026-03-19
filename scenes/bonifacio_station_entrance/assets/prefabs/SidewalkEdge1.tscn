@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4ayqg8sminn7"]
+
+[ext_resource type="Material" uid="uid://dlunuakxmsnpu" path="res://scenes/bonifacio_station_entrance/assets/materials/SidewalkEdge1.tres" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://3dpcw0vjblk5" path="res://scenes/bonifacio_station_entrance/assets/ground/sidewalk_edge.obj" id="2"]
+
+[sub_resource type="ConcavePolygonShape3D" id="93"]
+data = PackedVector3Array(0, 0, -1.28, 0, 0.08, -1.28, 0, 0, 0, 0, 0, 0, 0, 0.08, -1.28, 0, 0.08, 0, 0, 0.08, -1.28, 1.24, 0.08, -1.28, 0, 0.08, 0, 0, 0.08, 0, 1.24, 0.08, -1.28, 1.24, 0.08, 0, 0, 0.08, 0, 1.24, 0.08, 0, 0, 0, 0, 0, 0, 0, 1.24, 0.08, 0, 1.24, 0, 0)
+
+[node name="SidewalkEdge1" type="MeshInstance"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 4.76837e-07)
+material_override = ExtResource("1")
+mesh = ExtResource("2")
+material/0 = null
+
+[node name="StaticBody" type="StaticBody" parent="."]
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource("93")

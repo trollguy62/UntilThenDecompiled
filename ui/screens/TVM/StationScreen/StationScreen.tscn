@@ -1,0 +1,291 @@
+[gd_scene load_steps=23 format=3 uid="uid://bt1pe53ad6c7o"]
+
+[ext_resource type="Script" path="res://ui/screens/TVM/StationScreen/StationScreen.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://mnqw5d1komab" path="res://fonts/DejaVuSans.ttf" id="2_qmlcy"]
+[ext_resource type="Texture2D" uid="uid://cgsek7tkct1ys" path="res://assets/ui/circle_32px.png" id="3"]
+[ext_resource type="PackedScene" uid="uid://todv5gh6eieu" path="res://ui/screens/TVM/WindowsButton.tscn" id="6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qm6ua"]
+bg_color = Color(0.862745, 0.913725, 1, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ftf8y"]
+bg_color = Color(0.156863, 0.203922, 0.447059, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_35rl4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bmxn6"]
+
+[sub_resource type="FontVariation" id="FontVariation_uyshp"]
+base_font = ExtResource("2_qmlcy")
+
+[sub_resource type="FontVariation" id="FontVariation_hd3xt"]
+base_font = ExtResource("2_qmlcy")
+
+[sub_resource type="FontVariation" id="FontVariation_kgp5u"]
+base_font = ExtResource("2_qmlcy")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qeox1"]
+bg_color = Color(0.862745, 0.913725, 1, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_jn8r3"]
+base_font = ExtResource("2_qmlcy")
+
+[sub_resource type="FontVariation" id="FontVariation_v6ly8"]
+base_font = ExtResource("2_qmlcy")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vw0rx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vifia"]
+bg_color = Color(0.862745, 0.913725, 1, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_2whl0"]
+base_font = ExtResource("2_qmlcy")
+
+[sub_resource type="FontVariation" id="FontVariation_a2orb"]
+base_font = ExtResource("2_qmlcy")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hsnsq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mt2qn"]
+bg_color = Color(0.862745, 0.913725, 1, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_dtbhg"]
+base_font = ExtResource("2_qmlcy")
+
+[sub_resource type="FontVariation" id="FontVariation_jnfg6"]
+base_font = ExtResource("2_qmlcy")
+
+[node name="StationScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Main" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+
+[node name="StationSelector" type="PanelContainer" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_qm6ua")
+
+[node name="MarginContainer" type="MarginContainer" parent="Main/StationSelector"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/margin_right = 82
+
+[node name="Strip" type="Panel" parent="Main/StationSelector/MarginContainer"]
+custom_minimum_size = Vector2(12, 608)
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("StyleBoxFlat_ftf8y")
+
+[node name="StationList" type="VBoxContainer" parent="Main/StationSelector"]
+layout_mode = 2
+
+[node name="Legend" type="VBoxContainer" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.0
+
+[node name="HeadingContainer" type="PanelContainer" parent="Main/Legend"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_35rl4")
+
+[node name="Heading" type="Label" parent="Main/Legend/HeadingContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_qmlcy")
+theme_override_font_sizes/font_size = 32
+text = "TVM_LABEL_STATION_HEADING"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 1
+
+[node name="Spacer" type="PanelContainer" parent="Main/Legend"]
+custom_minimum_size = Vector2(0, 16)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bmxn6")
+
+[node name="LegendItem" type="HBoxContainer" parent="Main/Legend"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Circle" type="TextureRect" parent="Main/Legend/LegendItem"]
+modulate = Color(1, 1, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Main/Legend/LegendItem"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_uyshp")
+theme_override_font_sizes/font_size = 22
+text = "TVM_LABEL_STATION_CURRENT_LOC"
+text_overrun_behavior = 1
+
+[node name="LegendItem2" type="HBoxContainer" parent="Main/Legend"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Circle" type="TextureRect" parent="Main/Legend/LegendItem2"]
+modulate = Color(1, 0, 0, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Main/Legend/LegendItem2"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_hd3xt")
+theme_override_font_sizes/font_size = 22
+text = "TVM_LABEL_STATION_SELECTED_LOC"
+text_overrun_behavior = 1
+
+[node name="LegendItem3" type="HBoxContainer" parent="Main/Legend"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Circle" type="TextureRect" parent="Main/Legend/LegendItem3"]
+modulate = Color(0, 0, 1, 1)
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.6
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="Main/Legend/LegendItem3"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_kgp5u")
+theme_override_font_sizes/font_size = 22
+text = "TVM_LABEL_STATION_OTHER_LOC"
+text_overrun_behavior = 1
+
+[node name="Summary" type="VBoxContainer" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="CurrentStationTitle" type="PanelContainer" parent="Main/Summary"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qeox1")
+
+[node name="Label" type="Label" parent="Main/Summary/CurrentStationTitle"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_jn8r3")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_STATION_YOU_ARE_HERE"
+text_overrun_behavior = 3
+
+[node name="CurrentStation" type="Label" parent="Main/Summary"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_v6ly8")
+theme_override_font_sizes/font_size = 28
+text = "Bonifacio"
+
+[node name="Spacer1" type="PanelContainer" parent="Main/Summary"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_vw0rx")
+
+[node name="SelectedStationTitle" type="PanelContainer" parent="Main/Summary"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_vifia")
+
+[node name="Label" type="Label" parent="Main/Summary/SelectedStationTitle"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_2whl0")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_STATION_SELECTED_STATION"
+text_overrun_behavior = 3
+
+[node name="SelectedStation" type="Label" parent="Main/Summary"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_a2orb")
+theme_override_font_sizes/font_size = 28
+text = "Liamson"
+
+[node name="Spacer2" type="PanelContainer" parent="Main/Summary"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hsnsq")
+
+[node name="TicketFareTitle" type="PanelContainer" parent="Main/Summary"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mt2qn")
+
+[node name="Label" type="Label" parent="Main/Summary/TicketFareTitle"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_dtbhg")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_TICKET_FARE"
+text_overrun_behavior = 3
+
+[node name="TicketFare" type="Label" parent="Main/Summary"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_jnfg6")
+theme_override_font_sizes/font_size = 28
+text = "P15.00"
+
+[node name="NavButtons" type="HBoxContainer" parent="Main/Summary"]
+clip_contents = true
+layout_mode = 2
+
+[node name="Confirm" parent="Main/Summary/NavButtons" instance=ExtResource("6")]
+layout_mode = 2
+size_flags_horizontal = 3
+focus_mode = 2
+disabled = true
+text = "TVM_BUTTON_CONFIRM"
+text_overrun_behavior = 1
+
+[node name="Cancel" parent="Main/Summary/NavButtons" instance=ExtResource("6")]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "TVM_BUTTON_CANCEL"
+text_overrun_behavior = 1

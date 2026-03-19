@@ -1,0 +1,92 @@
+[gd_scene load_steps=12 format=3 uid="uid://2ai1p0vuaiqt"]
+
+[ext_resource type="ArrayMesh" uid="uid://dtbmfntkaw02q" path="res://scenes/_main/ch5sc6/assets/envi/entrance/sand.obj" id="1"]
+[ext_resource type="Texture2D" uid="uid://63wgfv2aifpk" path="res://scenes/_main/ch5sc6/assets/envi/entrance/road.png" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://ege7o31t0ecv" path="res://scenes/_main/ch5sc6/assets/envi/entrance/road_n.png" id="3_jfijt"]
+[ext_resource type="ArrayMesh" uid="uid://d0egrjmhferob" path="res://scenes/_main/ch5sc6/assets/envi/entrance/road.obj" id="4"]
+[ext_resource type="Texture2D" uid="uid://bpth82kqguevn" path="res://scenes/_main/ch5sc6/assets/envi/entrance/sand.png" id="5"]
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 2.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+shader_parameter/texture_normal = ExtResource("3_jfijt")
+
+[sub_resource type="ConcavePolygonShape3D" id="4"]
+data = PackedVector3Array(0, 0.16, 3.67, 15.26, 0.16, 3.67, 0, 0.22, 3.67, 0, 0.22, 3.67, 15.26, 0.16, 3.67, 15.26, 0.22, 3.67, 15.26, 0.22, 3.67, 15.26, 0.22, 4.53, 0, 0.22, 3.67, 0, 0.22, 3.67, 15.26, 0.22, 4.53, 0, 0.22, 4.53, 0, 0, 0, 15.26, 0, 0, 0, 0.16, 0, 0, 0.16, 0, 15.26, 0, 0, 15.26, 0.16, 0, 15.26, 0.16, 0, 15.26, 0.16, 3.67, 0, 0.16, 0, 0, 0.16, 0, 15.26, 0.16, 3.67, 0, 0.16, 3.67)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_474ob"]
+frequency = 0.4
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_a1lqc"]
+width = 1526
+height = 1526
+seamless = true
+seamless_blend_skirt = 0.287
+as_normal_map = true
+bump_strength = 0.1
+noise = SubResource("FastNoiseLite_474ob")
+
+[sub_resource type="ShaderMaterial" id="3"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 8.505
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_a1lqc")
+
+[node name="RoadSandSection" type="Node3D"]
+
+[node name="Road" type="MeshInstance3D" parent="."]
+material_override = SubResource("2")
+mesh = ExtResource("4")
+
+[node name="StaticBody" type="StaticBody3D" parent="Road"]
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Road/StaticBody"]
+shape = SubResource("4")
+
+[node name="Sand" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.997564, 0.0697565, 0, -0.0697565, 0.997564, 0, 0, 0)
+material_override = SubResource("3")
+mesh = ExtResource("1")

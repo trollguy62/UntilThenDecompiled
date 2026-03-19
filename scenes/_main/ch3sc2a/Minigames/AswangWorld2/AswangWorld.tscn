@@ -1,0 +1,429 @@
+[gd_scene load_steps=35 format=3 uid="uid://bv42ajeadylvk"]
+
+[ext_resource type="Texture2D" uid="uid://bandxb2n0qb0b" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/assets/char_sprites/mark/mark.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bubg6o7iuecgi" path="res://assets/ui/circle_128px.png" id="4"]
+[ext_resource type="PackedScene" uid="uid://djrtfu7nau63y" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/prefabs/AI.tscn" id="5"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/scripts/Player.gd" id="6"]
+[ext_resource type="PackedScene" uid="uid://d3ihyck5u1uy" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/prefabs/NPC_Adult1.tscn" id="7"]
+[ext_resource type="PackedScene" uid="uid://dq8bekk3kbxf8" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/prefabs/NPC_Adult2.tscn" id="8"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/AswangWorld.gd" id="9"]
+[ext_resource type="BankAsset" uid="uid://cppypsjkvyyc6" path="res://addons/fmod/editor/resources/banks/{eb788bbb-b781-4aaa-a8f9-e9ee23eb5d06}.tres" id="9_ju2d6"]
+[ext_resource type="PackedScene" uid="uid://ciucujxqd0hcb" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/prefabs/NPC_Adult3.tscn" id="10"]
+[ext_resource type="FontFile" uid="uid://b7kxnvt1mxihy" path="res://fonts/Retro-Gaming.ttf" id="10_i2qe1"]
+[ext_resource type="PackedScene" uid="uid://mxsna4opdpi7" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/NewTileMap.tscn" id="11_ql07c"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/scripts/HUD.gd" id="12"]
+[ext_resource type="PackedScene" uid="uid://dufuywoc3qg1l" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/prefabs/NPC_Child1.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://calv0ts57od02" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/prefabs/NPC_Adult4.tscn" id="14"]
+[ext_resource type="PackedScene" uid="uid://du33chbq8a42w" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/prefabs/NPC_Adult5.tscn" id="15"]
+[ext_resource type="PackedScene" uid="uid://bmnwk8ychfqv7" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/prefabs/NPC_Child2.tscn" id="16"]
+[ext_resource type="EventAsset" uid="uid://bla8ljbspy8u1" path="res://addons/fmod/editor/resources/events/{b5e3d9ae-2697-46c1-8d48-7275101d6b4b}.tres" id="17_435bm"]
+[ext_resource type="AudioStream" uid="uid://dgapcji8badi0" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/assets/sfx/Aswang World.ogg" id="19"]
+[ext_resource type="EventAsset" uid="uid://73dw61pnd8w8" path="res://addons/fmod/editor/resources/events/{a911f325-3d09-4ae8-afcd-0f8a24d6765f}.tres" id="19_0wqh8"]
+[ext_resource type="AudioStream" uid="uid://dpwfj0s6vvoe5" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/assets/sfx/Aswang World Tutorial Loop.ogg" id="20"]
+[ext_resource type="EventAsset" uid="uid://c5msothq27170" path="res://addons/fmod/editor/resources/events/{18a0408a-5c9b-4e02-ab24-1bba6a36273b}.tres" id="20_qle8v"]
+[ext_resource type="EventAsset" uid="uid://dalq6hhuibnmj" path="res://addons/fmod/editor/resources/events/{b9974949-eb87-4cc9-af4a-f409cdc0224d}.tres" id="21_881vl"]
+
+[sub_resource type="FontVariation" id="FontVariation_7ftd8"]
+base_font = ExtResource("10_i2qe1")
+
+[sub_resource type="CircleShape2D" id="7"]
+radius = 11.1111
+
+[sub_resource type="Animation" id="8"]
+resource_name = "b_chase_walk"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="9"]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="10"]
+resource_name = "f_chase_walk"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="11"]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="12"]
+resource_name = "l_chase_walk"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="13"]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="14"]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="15"]
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2vatu"]
+_data = {
+"b_chase_walk": SubResource("8"),
+"b_idle_walk": SubResource("9"),
+"f_chase_walk": SubResource("10"),
+"f_idle_walk": SubResource("11"),
+"l_chase_walk": SubResource("12"),
+"l_idle_walk": SubResource("13"),
+"r_chase_walk": SubResource("14"),
+"r_idle_walk": SubResource("15")
+}
+
+[sub_resource type="CircleShape2D" id="16"]
+radius = 169.967
+
+[node name="AswangWorld" type="Node2D"]
+texture_filter = 1
+script = ExtResource("9")
+game_time = 120
+owned_ai_color = Color(0.184314, 0.368627, 0.917647, 1)
+owned_player_color = Color(0.866667, 0.443137, 0.137255, 1)
+npc_scenes = Array[PackedScene]([ExtResource("7"), ExtResource("8"), ExtResource("10"), ExtResource("14"), ExtResource("15"), ExtResource("13"), ExtResource("16")])
+player_state_container_alias = "MarkBorja"
+ai_state_container_alias = "NicoleLacsamana"
+
+[node name="AudioBankLoader" type="StudioBankLoader" parent="."]
+num_banks = 1
+bank_0 = ExtResource("9_ju2d6")
+
+[node name="HUD" type="CanvasLayer" parent="."]
+script = ExtResource("12")
+
+[node name="UI" type="Node2D" parent="HUD"]
+
+[node name="LabelTimeLeft" type="Label" parent="HUD/UI"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 563.5
+offset_top = 25.0
+offset_right = 717.5
+offset_bottom = 77.0
+grow_horizontal = 2
+pivot_offset = Vector2(77, 26)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 7
+theme_override_fonts/font = SubResource("FontVariation_7ftd8")
+theme_override_font_sizes/font_size = 40
+text = "0:23"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PauseIndependentUI" type="Node2D" parent="HUD"]
+
+[node name="TimerTimeLeft" type="Timer" parent="HUD"]
+
+[node name="TimerRespawn" type="Timer" parent="."]
+autostart = true
+
+[node name="TileMaps" parent="." instance=ExtResource("11_ql07c")]
+
+[node name="RespawnPoint" type="Sprite2D" parent="."]
+position = Vector2(190, 155)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="WayPoints" type="Node2D" parent="."]
+visible = false
+
+[node name="1" type="Sprite2D" parent="WayPoints"]
+position = Vector2(315, 125)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="2" type="Sprite2D" parent="WayPoints"]
+position = Vector2(325, 195)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="3" type="Sprite2D" parent="WayPoints"]
+position = Vector2(125, 145)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="4" type="Sprite2D" parent="WayPoints"]
+position = Vector2(45, 105)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="5" type="Sprite2D" parent="WayPoints"]
+position = Vector2(55, 265)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="6" type="Sprite2D" parent="WayPoints"]
+position = Vector2(105, 35)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="7" type="Sprite2D" parent="WayPoints"]
+position = Vector2(265, 35)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="8" type="Sprite2D" parent="WayPoints"]
+position = Vector2(115, 35)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="9" type="Sprite2D" parent="WayPoints"]
+position = Vector2(225, 65)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="10" type="Sprite2D" parent="WayPoints"]
+position = Vector2(355, 146.044)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="11" type="Sprite2D" parent="WayPoints"]
+position = Vector2(365, 295)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="12" type="Sprite2D" parent="WayPoints"]
+position = Vector2(105, 295)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="13" type="Sprite2D" parent="WayPoints"]
+position = Vector2(85, 175)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="ExitPoint" type="Sprite2D" parent="WayPoints"]
+position = Vector2(194.982, 345)
+scale = Vector2(0.016313, 0.016313)
+texture = ExtResource("4")
+
+[node name="NPCs" type="Node2D" parent="."]
+
+[node name="NPC_Adult5" parent="NPCs" instance=ExtResource("15")]
+position = Vector2(135, 322)
+
+[node name="NPC_Adult1" parent="NPCs" instance=ExtResource("7")]
+position = Vector2(275, 115)
+
+[node name="NPC_Child2" parent="NPCs" instance=ExtResource("16")]
+position = Vector2(180, 252)
+
+[node name="NPC_Adult4" parent="NPCs" instance=ExtResource("14")]
+position = Vector2(145, 50)
+
+[node name="NPC_Adult3" parent="NPCs" instance=ExtResource("10")]
+position = Vector2(285, 265)
+
+[node name="AI" parent="." instance=ExtResource("5")]
+position = Vector2(228, 188)
+intelligence = 100
+
+[node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(156, 188)
+scale = Vector2(0.15, 0.15)
+script = ExtResource("6")
+speed = 50
+
+[node name="Sprite" type="Sprite2D" parent="Player"]
+position = Vector2(0.000244141, -59.7065)
+scale = Vector2(4, 4)
+texture = ExtResource("2")
+flip_h = true
+hframes = 4
+vframes = 6
+frame = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+scale = Vector2(2.8, 2.8)
+shape = SubResource("7")
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+scale = Vector2(6.66667, 6.66667)
+zoom = Vector2(3.386, 3.386)
+limit_left = 0
+limit_top = 0
+limit_right = 380
+limit_bottom = 350
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+libraries = {
+"": SubResource("AnimationLibrary_2vatu")
+}
+
+[node name="PlayerRange" type="Area2D" parent="Player"]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerRange"]
+position = Vector2(0.000244141, -26.6667)
+scale = Vector2(0.875, 0.875)
+shape = SubResource("16")
+
+[node name="TimerChase" type="Timer" parent="Player"]
+wait_time = 2.0
+one_shot = true
+
+[node name="Footsteps" type="StudioEventEmitter2D" parent="Player"]
+event = ExtResource("17_435bm")
+
+[node name="BGMMain" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("19")
+volume_db = 6.0
+bus = &"Music"
+
+[node name="BGMTutorial" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20")
+volume_db = 6.0
+bus = &"Music"
+
+[node name="SfxNpcEnter" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("19_0wqh8")
+position = Vector2(188, 168)
+
+[node name="SfxPlayerScore" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("20_qle8v")
+
+[node name="SfxAiScore" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("21_881vl")

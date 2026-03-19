@@ -1,0 +1,338 @@
+[gd_scene load_steps=65 format=3 uid="uid://cxdw84m56yooo"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Script" path="res://data/AnimationTransition.gd" id="2"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="3"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="4"]
+[ext_resource type="Texture2D" uid="uid://c8ui8lydoqrcj" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf to b_stand+catears2^lf_default_idle/04.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://mtmx0hrntwcj" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/f_stand+catears2^lf_blank_idle/06.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://ddelxg5r8x6lh" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf to b_stand+catears2^lf_default_idle/03.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://d06jwr8ax4thq" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/f_stand+catears2^lf_blank_idle/03.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cvrxh0o7a4m43" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/f_stand+catears2^lf_blank_idle/04.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://cvn8j3lwklicy" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_talk/02.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://bx83la8cr2ifj" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_talk/01.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://co4pb31i1l2ao" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_idle/03.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dks2kmpjqwdhw" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_talk/06.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://b8n1whq1e28wg" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/b_stand+catears2^b_blank_idle/01.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://fyngt5qny4i3" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_idle/02.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://beok3hjf2vdg2" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_idle/06.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://cago2o5kagcn" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_idle/03.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://cvujkseblqdp7" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/f_stand+catears2^lf_blank_idle/01.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://b1xih3f46aif6" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf to b_stand+catears2^lf_default_idle/07.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://c8n17j3qpb7o1" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_idle/06.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://y5lgahx7aey6" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/b_stand+catears2^b_blank_idle/04.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://4qk2etnu80xb" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf to b_stand+catears2^lf_default_idle/06.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://dxxx0nwh1tkf6" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_talk/05.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://cpjra5ufbo6h7" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_talk/06.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://bw55du0s1di2l" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_talk/03.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://itsk6crg4wuc" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_talk/04.png" id="26"]
+[ext_resource type="Texture2D" uid="uid://b7j680oth87de" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_idle/04.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://bxehidpi4d7dv" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_idle/04.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://dr126m1mr4c3l" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_talk/02.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://dmwejqiwbs2a2" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_idle/01.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://b6t4q35tfcqdv" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/f_stand+catears2^lf_blank_idle/02.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://k7evm38o2n3f" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_idle/05.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://dqwhqo6wcrbh6" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/b_stand+catears2^b_blank_idle/06.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://8cnts0ge1c2h" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf to b_stand+catears2^lf_default_idle/02.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://dsrcx1rb010ed" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/f_stand+catears2^lf_blank_idle/05.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://c3sh3dasygtxt" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervouspositive_idle/01.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://c8x7lpsmsbwm1" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_idle/03.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://bhn04bhh8deic" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_idle/05.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://du6h3h2c46h6q" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_talk/01.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://bl2yqkxi5rtvw" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_idle/05.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://crv40osm0h4wn" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_idle/04.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://bdxlspqj6tuab" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf to b_stand+catears2^lf_default_idle/05.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://be56x2s1l3lla" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_idle/06.png" id="43"]
+[ext_resource type="Texture2D" uid="uid://pehppk0b1rut" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_talk/03.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://bs5rv6obdryt" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/b_stand+catears2^b_blank_idle/02.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://np0clp4tdupw" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf to b_stand+catears2^lf_default_idle/01.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://tdoce1ikc5oa" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_idle/01.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://cqhaham5vnune" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_talk/04.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://bloiejt72txr1" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_idle/02.png" id="49"]
+[ext_resource type="Texture2D" uid="uid://d0fugj4a3rib4" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/b_stand+catears2^b_blank_idle/03.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://r565kpaylg63" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/b_stand+catears2^b_blank_idle/05.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://637e3w8ayxdd" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf to b_stand+catears2^lf_default_idle/08.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://lgwx2d0wb03b" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_talk/05.png" id="53"]
+[ext_resource type="Texture2D" uid="uid://bvop72ayncmo" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_idle/02.png" id="54"]
+[ext_resource type="Texture2D" uid="uid://bh60nvdhdnr0" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_talk/01.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://c11s6kbqba3gy" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_talk/06.png" id="56"]
+[ext_resource type="Texture2D" uid="uid://b2ps34xb1fnee" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_talk/04.png" id="57"]
+[ext_resource type="Texture2D" uid="uid://d36kdk2ny77wr" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_talk/03.png" id="58"]
+[ext_resource type="Texture2D" uid="uid://d32e5lbf3rt8e" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_nervous_talk/02.png" id="59"]
+[ext_resource type="Texture2D" uid="uid://bpibedoeo1hef" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_stand+catears2^lf_default_talk/05.png" id="60"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("4")
+shader_parameter/scale = Vector3(0.792, 1.232, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("39")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mbi8h"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}],
+"loop": true,
+"name": &"b_default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}],
+"loop": true,
+"name": &"f_blank_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}],
+"loop": true,
+"name": &"nervous_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56")
+}],
+"loop": true,
+"name": &"nervous_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}],
+"loop": true,
+"name": &"nervouspositive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}],
+"loop": true,
+"name": &"nervouspositive_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}],
+"loop": false,
+"name": &"trans_turn",
+"speed": 6.0
+}]
+
+[sub_resource type="Resource" id="4"]
+script = ExtResource("2")
+anim = "trans_turn"
+from_anim = "default_idle"
+to_anim = "b_default_idle"
+reversible = false
+
+[node name="Sprite" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_mbi8h")
+script = ExtResource("1")
+texture_frames = SubResource("3")
+sync_all = true
+reflect_h_width = 110
+animation = "nervous_talk"
+alias = "CathyPortillo"
+transitions = Array[ExtResource("2")]([SubResource("4")])
+pixel_size = 0.008
+
+[node name="SpriteController" type="Node" parent="."]
+script = ExtResource("3")
+state_container_alias = "CathyPortillo"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["trans_turn"])
+idle_talk_anims = Array[String](["b_default", "default", "f_blank", "nervous", "nervouspositive"])

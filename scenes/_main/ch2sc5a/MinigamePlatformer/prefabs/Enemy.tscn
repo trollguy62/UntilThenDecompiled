@@ -1,0 +1,96 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3gmqjsg25yq2"]
+
+[ext_resource type="Texture2D" uid="uid://p12y43dmoshq" path="res://scenes/_main/ch2sc5a/MinigamePlatformer/assets/enemies-spritesheet.png" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch2sc5a/MinigamePlatformer/scripts/Enemy.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://cevryaydtyf68" path="res://scenes/_main/ch2sc5a/MinigamePlatformer/assets/sfx/stomp.wav" id="3"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(66.235, 41.3574)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(75.8822, 8.65386)
+
+[sub_resource type="RectangleShape2D" id="3"]
+size = Vector2(80.9334, 41.5926)
+
+[sub_resource type="Animation" id="4"]
+resource_name = "walk_left"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="Animation" id="5"]
+resource_name = "walk_right"
+length = 0.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [2, 3]
+}
+
+[node name="Enemy" type="KinematicBody2D"]
+position = Vector2(819.142, 508.482)
+collision_layer = 65536
+collision_mask = 49152
+script = ExtResource("2")
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2(34.0178, -36.5377)
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+hframes = 4
+vframes = 12
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(34.0178, -17.5162)
+shape = SubResource("1")
+
+[node name="AreaStomp" type="Area2D" parent="."]
+position = Vector2(34.3515, -49.2187)
+collision_layer = 0
+collision_mask = 16384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaStomp"]
+position = Vector2(-0.667419, 5.00565)
+shape = SubResource("2")
+
+[node name="AreaBody" type="Area2D" parent="."]
+position = Vector2(34.3515, -22.2796)
+collision_layer = 0
+collision_mask = 16384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaBody"]
+position = Vector2(-0.667419, 5.00565)
+shape = SubResource("3")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "walk_left"
+anims/walk_left = SubResource("4")
+anims/walk_right = SubResource("5")
+
+[node name="TimerChangeDirection" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="Stomp" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3")
+volume_db = -3.918
+bus = "Digital"

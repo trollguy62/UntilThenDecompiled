@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=3 uid="uid://dpiitl3b7ivlk"]
+
+[ext_resource type="Material" uid="uid://b6klet4s6p1r" path="res://scenes/_main/ch1sc1c/assets/materials/Ceiling1.tres" id="1"]
+[ext_resource type="Texture2D" uid="uid://bke715fjdiqcd" path="res://scenes/_main/ch1sc1c/assets/ceiling_1.png" id="2"]
+
+[sub_resource type="StandardMaterial3D" id="1"]
+albedo_color = Color(0.423529, 0.423529, 0.423529, 1)
+
+[sub_resource type="BoxMesh" id="2"]
+size = Vector3(0.17, 0.85, 0.01)
+
+[node name="Ceiling4" type="Sprite3D"]
+material_override = ExtResource("1")
+use_in_baked_light = true
+texture = ExtResource("2")
+
+[node name="Light" type="MeshInstance" parent="."]
+material_override = SubResource("1")
+cast_shadow = 0
+use_in_baked_light = true
+mesh = SubResource("2")
+surface_material_override/0 = null

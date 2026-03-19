@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvr5bulv3pslq"]
+
+[ext_resource type="ArrayMesh" uid="uid://brwnvpjq4iaw2" path="res://scenes/krt2/train/assets/seat_side.obj" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://dt1vcc2s78sly" path="res://scenes/krt2/train/assets/seat_main.obj" id="2"]
+[ext_resource type="Material" uid="uid://bp0or1pkacwrn" path="res://scenes/krt2/train/assets/materials/SeatMain1.tres" id="3"]
+[ext_resource type="Material" uid="uid://bwekwvgydo0u6" path="res://scenes/krt2/train/assets/materials/SeatSide1Glass.tres" id="5"]
+[ext_resource type="Material" uid="uid://dmbybuqeai5yw" path="res://scenes/krt2/train/assets/materials/SeatSide1.tres" id="6"]
+
+[node name="Seat1" type="Spatial"]
+
+[node name="SideL" type="MeshInstance" parent="."]
+mesh = ExtResource("1")
+surface_material_override/0 = ExtResource("6")
+surface_material_override/1 = ExtResource("5")
+
+[node name="Main" type="MeshInstance" parent="."]
+material_override = ExtResource("3")
+mesh = ExtResource("2")
+surface_material_override/0 = null
+
+[node name="SideR" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.11, 0, 0)
+use_in_baked_light = true
+mesh = ExtResource("1")
+surface_material_override/0 = ExtResource("6")
+surface_material_override/1 = ExtResource("5")

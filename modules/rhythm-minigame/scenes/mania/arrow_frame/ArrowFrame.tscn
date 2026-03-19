@@ -1,0 +1,24 @@
+[gd_scene load_steps=6 format=3 uid="uid://cr2iv4y2hugoa"]
+
+[ext_resource type="PackedScene" uid="uid://cjd2kabfvyqew" path="res://modules/rhythm-minigame/scenes/mania/arrow_frame/ArrowVisual.tscn" id="1"]
+[ext_resource type="Texture2D" uid="uid://bbgw7hkfsxqt6" path="res://modules/rhythm-minigame/assets/mania/arrows/arrow_down.png" id="3_i4rdm"]
+[ext_resource type="Texture2D" uid="uid://bau1q5v1ldcg" path="res://modules/rhythm-minigame/assets/mania/arrows/arrow_up.png" id="4_ha7vr"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/mania/arrow_frame/ArrowFrame.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://4wnq0jhmc6ci" path="res://modules/rhythm-minigame/assets/mania/arrows/arrow_right.png" id="5_xiynd"]
+
+[node name="ArrowFrame" type="Node2D"]
+script = ExtResource("5")
+
+[node name="Left" parent="." instance=ExtResource("1")]
+
+[node name="Down" parent="." instance=ExtResource("1")]
+position = Vector2(-36, 0)
+texture = ExtResource("3_i4rdm")
+
+[node name="Up" parent="." instance=ExtResource("1")]
+position = Vector2(36, 0)
+texture = ExtResource("4_ha7vr")
+
+[node name="Right" parent="." instance=ExtResource("1")]
+position = Vector2(104, 0)
+texture = ExtResource("5_xiynd")

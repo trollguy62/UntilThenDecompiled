@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cmvki5afje55i"]
+
+[ext_resource type="Script" path="res://ui/screens/ChatHomeScreen/ChatHomeScreen.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://dlxdxcvfgn8t5" path="res://fonts/PTSans-Bold.tres" id="2"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="9"]
+[ext_resource type="Theme" uid="uid://cm4iq2rnf2ofd" path="res://ui/default.tres" id="11"]
+
+[node name="ChatHomeScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+script = ExtResource("1")
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 8
+
+[node name="Label" type="Label" parent="Main"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+theme_override_font_sizes/font_size = 20
+text = "CHAT_HOME_TITLE"
+horizontal_alignment = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Main"]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("11")
+script = ExtResource("9")
+
+[node name="ConversationList" type="VBoxContainer" parent="Main/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

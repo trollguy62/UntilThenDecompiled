@@ -1,0 +1,30 @@
+[gd_scene load_steps=7 format=3 uid="uid://cvd6iir5bhwqf"]
+
+[ext_resource type="FontFile" uid="uid://b8yu1fvgcxiup" path="res://fonts/DiarioDeAndy-Extended-Ligatures-removed.ttf" id="1_nsqol"]
+[ext_resource type="Script" path="res://assets/rtfx/Ghost.gd" id="2_a6est"]
+[ext_resource type="Script" path="res://assets/rtfx/Pulse.gd" id="3_ooq3n"]
+
+[sub_resource type="FontVariation" id="FontVariation_sl44x"]
+base_font = ExtResource("1_nsqol")
+spacing_top = 3
+spacing_bottom = 3
+
+[sub_resource type="RichTextEffect" id="2"]
+resource_name = "RichTextGhost"
+script = ExtResource("2_a6est")
+
+[sub_resource type="RichTextEffect" id="3"]
+resource_name = "RichTextPulse"
+script = ExtResource("3_ooq3n")
+
+[node name="Label" type="RichTextLabel"]
+light_mask = 65
+clip_contents = false
+mouse_filter = 2
+theme_override_constants/line_separation = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_sl44x")
+theme_override_font_sizes/normal_font_size = 27
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+custom_effects = [SubResource("2"), SubResource("3")]

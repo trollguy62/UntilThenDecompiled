@@ -1,0 +1,852 @@
+[gd_scene load_steps=36 format=3 uid="uid://d200ic5h8dsn7"]
+
+[ext_resource type="PackedScene" uid="uid://pbb13vhi2ohf" path="res://ui/components/Game/FocusableButton/FocusableButton.tscn" id="1"]
+[ext_resource type="Script" path="res://ui/components/Game/FocusableControl.gd" id="2"]
+[ext_resource type="ButtonGroup" uid="uid://dfl870swbw1uu" path="res://ui/components/Game/SettingsPage/SettingsButtonGroup.tres" id="4_0me1v"]
+[ext_resource type="AudioStream" uid="uid://ddd7s3h0lffx4" path="res://ui/sfx/pop.wav" id="5"]
+[ext_resource type="Script" path="res://ui/components/Game/SettingsPage/SettingsPage.gd" id="6"]
+[ext_resource type="Theme" uid="uid://bx5od6h60bvc0" path="res://ui/screens/Game/PauseScreen/Grid.tres" id="7"]
+[ext_resource type="FontFile" uid="uid://d3frmrpnov6pr" path="res://fonts/NunitoSans-Light.ttf" id="8"]
+[ext_resource type="Script" path="res://ui/components/Game/SettingsPage/TextSpeedPreview.gd" id="9"]
+[ext_resource type="PackedScene" uid="uid://cakt11mvi88bg" path="res://ui/components/HSpinBox/HSpinBox.tscn" id="9_8gprd"]
+[ext_resource type="Texture2D" uid="uid://dikf45c0y30eg" path="res://modules/rhythm-minigame/assets/karaoke/arrows/arrow_right.png" id="9_47xnu"]
+[ext_resource type="PackedScene" uid="uid://bt0in70f0c4t4" path="res://ui/components/Game/SettingsConfirmationPage/SettingsConfirmationPage.tscn" id="10"]
+[ext_resource type="FontFile" uid="uid://b8yu1fvgcxiup" path="res://fonts/DiarioDeAndy-Extended-Ligatures-removed.ttf" id="10_54uul"]
+[ext_resource type="Script" path="res://ui/components/Game/SettingsPage/CreditsButton.gd" id="10_dm4ei"]
+[ext_resource type="Script" path="res://ui/components/Game/SettingsPage/SettingsContainer.gd" id="12"]
+[ext_resource type="Script" path="res://ui/components/Game/SettingsPage/SettingsContent.gd" id="13"]
+[ext_resource type="PackedScene" uid="uid://cxvd35waw7458" path="res://ui/components/Game/SettingsControlsPage/SettingsControlsPage.tscn" id="14"]
+[ext_resource type="FontFile" uid="uid://cgsnpibqgvabu" path="res://fonts/NunitoSans-Regular.ttf" id="14_ldfme"]
+[ext_resource type="PackedScene" uid="uid://meyc31l35kna" path="res://ui/components/Game/ResetDefaultsPage/ResetDefaultsPage.tscn" id="15"]
+[ext_resource type="Script" path="res://ui/components/Game/SettingsPage/OffsetCalibrator.gd" id="15_slfsy"]
+[ext_resource type="PackedScene" uid="uid://cpsjiel1w23l5" path="res://ui/components/Game/SettingsWarningPage/SettingsWarningPage.tscn" id="15_ygb1i"]
+[ext_resource type="AudioStream" uid="uid://bmt14gnqo1mr5" path="res://ui/sfx/offset_calib/clap.wav" id="17_3yxsn"]
+[ext_resource type="Script" path="res://ui/components/Game/FocusableOptionButton.gd" id="17_qymtw"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+
+[sub_resource type="StyleBoxEmpty" id="2"]
+
+[sub_resource type="Gradient" id="3"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 0.188235, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="4"]
+gradient = SubResource("3")
+width = 1280
+
+[sub_resource type="FontFile" id="5"]
+fallbacks = Array[Font]([ExtResource("8")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0uwyt"]
+bg_color = Color(1, 1, 1, 0.101961)
+corner_radius_top_left = 6
+corner_radius_top_right = 6
+corner_radius_bottom_right = 6
+corner_radius_bottom_left = 6
+
+[sub_resource type="StyleBoxFlat" id="6"]
+content_margin_left = 16.0
+content_margin_top = 16.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+bg_color = Color(0.0313726, 0.0313726, 0.0313726, 0.862745)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="FontVariation" id="FontVariation_nkb1h"]
+base_font = ExtResource("10_54uul")
+
+[sub_resource type="LabelSettings" id="LabelSettings_71tbk"]
+line_spacing = 0.0
+font = ExtResource("14_ldfme")
+font_size = 18
+
+[sub_resource type="FontFile" id="FontFile_ukpcb"]
+fallbacks = Array[Font]([ExtResource("8")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/23/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/22/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/21/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/23/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/22/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/21/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/23/0/ascent = 0.0
+cache/0/23/0/descent = 0.0
+cache/0/23/0/underline_position = 0.0
+cache/0/23/0/underline_thickness = 0.0
+cache/0/23/0/scale = 1.0
+cache/0/23/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/23/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/23/0/kerning_overrides/23/0 = Vector2(0, 0)
+cache/0/23/0/kerning_overrides/22/0 = Vector2(0, 0)
+cache/0/23/0/kerning_overrides/21/0 = Vector2(0, 0)
+cache/0/23/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/23/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/23/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/23/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/22/0/ascent = 0.0
+cache/0/22/0/descent = 0.0
+cache/0/22/0/underline_position = 0.0
+cache/0/22/0/underline_thickness = 0.0
+cache/0/22/0/scale = 1.0
+cache/0/22/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/22/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/22/0/kerning_overrides/23/0 = Vector2(0, 0)
+cache/0/22/0/kerning_overrides/22/0 = Vector2(0, 0)
+cache/0/22/0/kerning_overrides/21/0 = Vector2(0, 0)
+cache/0/22/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/22/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/22/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/22/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/21/0/ascent = 0.0
+cache/0/21/0/descent = 0.0
+cache/0/21/0/underline_position = 0.0
+cache/0/21/0/underline_thickness = 0.0
+cache/0/21/0/scale = 1.0
+cache/0/21/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/21/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/21/0/kerning_overrides/23/0 = Vector2(0, 0)
+cache/0/21/0/kerning_overrides/22/0 = Vector2(0, 0)
+cache/0/21/0/kerning_overrides/21/0 = Vector2(0, 0)
+cache/0/21/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/21/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/21/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/21/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/20/0/ascent = 0.0
+cache/0/20/0/descent = 0.0
+cache/0/20/0/underline_position = 0.0
+cache/0/20/0/underline_thickness = 0.0
+cache/0/20/0/scale = 1.0
+cache/0/20/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/23/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/22/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/21/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/20/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/19/0/ascent = 0.0
+cache/0/19/0/descent = 0.0
+cache/0/19/0/underline_position = 0.0
+cache/0/19/0/underline_thickness = 0.0
+cache/0/19/0/scale = 1.0
+cache/0/19/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/23/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/22/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/21/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/19/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/18/0/ascent = 0.0
+cache/0/18/0/descent = 0.0
+cache/0/18/0/underline_position = 0.0
+cache/0/18/0/underline_thickness = 0.0
+cache/0/18/0/scale = 1.0
+cache/0/18/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/23/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/22/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/21/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/18/0/kerning_overrides/17/0 = Vector2(0, 0)
+cache/0/17/0/ascent = 0.0
+cache/0/17/0/descent = 0.0
+cache/0/17/0/underline_position = 0.0
+cache/0/17/0/underline_thickness = 0.0
+cache/0/17/0/scale = 1.0
+cache/0/17/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/23/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/22/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/21/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/20/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/19/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/18/0 = Vector2(0, 0)
+cache/0/17/0/kerning_overrides/17/0 = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="9"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="7"]
+bg_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="8"]
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[node name="SettingsPage" type="PanelContainer" node_paths=PackedStringArray("focus_on_enter")]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("1")
+script = ExtResource("6")
+persist_focus = true
+focus_on_enter = NodePath("MarginContainer/VBox/ButtonContainer/GameBtn")
+metadata/_edit_vertical_guides_ = []
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 32
+
+[node name="VBox" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+script = ExtResource("12")
+
+[node name="ButtonContainer" type="HBoxContainer" parent="MarginContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 60
+
+[node name="GameBtn" parent="MarginContainer/VBox/ButtonContainer" instance=ExtResource("1")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_0me1v")
+text = "SETTINGS_CATEG_GAME"
+
+[node name="VideoBtn" parent="MarginContainer/VBox/ButtonContainer" instance=ExtResource("1")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_0me1v")
+text = "SETTINGS_CATEG_VIDEO"
+
+[node name="GraphicsBtn" parent="MarginContainer/VBox/ButtonContainer" instance=ExtResource("1")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_0me1v")
+text = "SETTINGS_CATEG_GRAPHICS"
+
+[node name="SoundBtn" parent="MarginContainer/VBox/ButtonContainer" instance=ExtResource("1")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_0me1v")
+text = "SETTINGS_CATEG_SOUND"
+
+[node name="ControlsBtn" parent="MarginContainer/VBox/ButtonContainer" instance=ExtResource("1")]
+layout_mode = 2
+toggle_mode = true
+button_group = ExtResource("4_0me1v")
+text = "SETTINGS_CATEG_CONTROLS"
+
+[node name="Separator" type="PanelContainer" parent="MarginContainer/VBox"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBox/Separator"]
+clip_contents = true
+layout_mode = 2
+texture = SubResource("4")
+expand_mode = 1
+
+[node name="ScrollContainer" type="ScrollContainer" parent="MarginContainer/VBox"]
+clip_contents = false
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+
+[node name="Content" type="Control" parent="MarginContainer/VBox/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+script = ExtResource("13")
+
+[node name="Game" type="VBoxContainer" parent="MarginContainer/VBox/ScrollContainer/Content"]
+layout_mode = 0
+anchor_right = 1.0
+grow_horizontal = 2
+size_flags_horizontal = 3
+size_flags_vertical = 0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBox/ScrollContainer/Content/Game"]
+layout_mode = 2
+alignment = 1
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("7")
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="TextSpeedLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_TEXT_SPEED"
+horizontal_alignment = 2
+
+[node name="TextSpeedSlider" type="HSlider" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.025
+value = 1.0
+
+[node name="LanguageLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_LANGUAGE"
+horizontal_alignment = 2
+
+[node name="LanguageOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="RhythmOffsetLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_RHYTHM_OFFSET"
+horizontal_alignment = 2
+
+[node name="RhythmOffsetSpinbox" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid" instance=ExtResource("9_8gprd")]
+layout_mode = 2
+size_flags_vertical = 4
+value = 0.0
+step = 1.0
+min_value = -1000.0
+max_value = 1000.0
+text = "%d ms"
+
+[node name="RhythmLaneSpeedLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_RHYTHM_LANE_SPEED"
+horizontal_alignment = 2
+
+[node name="RhythmLaneSpeedSpinbox" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid" instance=ExtResource("9_8gprd")]
+layout_mode = 2
+size_flags_vertical = 4
+step_echo_mult = 2.0
+min_value = 0.5
+max_value = 3.0
+text = "%.1fx"
+
+[node name="SkipCwLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_SKIP_CW"
+horizontal_alignment = 2
+
+[node name="SkipCwCheckbox" type="CheckButton" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="CreditsLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SCENEDIR_END_CREDITS"
+horizontal_alignment = 2
+
+[node name="CreditsButton" type="TextureButton" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+self_modulate = Color(1, 1, 1, 0.784314)
+custom_minimum_size = Vector2(36, 24)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+texture_normal = ExtResource("9_47xnu")
+ignore_texture_size = true
+stretch_mode = 5
+script = ExtResource("10_dm4ei")
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid/CreditsButton"]
+visible = false
+show_behind_parent = true
+layout_mode = 0
+offset_top = -3.0
+offset_right = 36.0
+offset_bottom = 27.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_0uwyt")
+metadata/_edit_lock_ = true
+
+[node name="DebugUnlockAllScenesLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "(Debug) Unlock All Scenes"
+horizontal_alignment = 2
+
+[node name="DebugUnlockAllScenesCheckbox" type="CheckButton" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="DebugPlaythroughLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "(Debug) Set Playthrough"
+horizontal_alignment = 2
+
+[node name="DebugPlaythroughOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("2")
+
+[node name="AsideAnchor" type="Control" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer"]
+layout_mode = 2
+
+[node name="AsideContainer" type="PanelContainer" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/AsideAnchor"]
+custom_minimum_size = Vector2(340, 0)
+layout_mode = 2
+offset_left = -36.0
+offset_top = 80.0
+offset_right = 304.0
+offset_bottom = 139.0
+size_flags_horizontal = 8
+size_flags_vertical = 4
+theme_override_styles/panel = SubResource("6")
+
+[node name="TextSpeedPreview" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/AsideAnchor/AsideContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_constants/line_spacing = 6
+theme_override_fonts/font = SubResource("FontVariation_nkb1h")
+theme_override_font_sizes/font_size = 26
+text = "SETTINGS_LOREM"
+autowrap_mode = 3
+visible_characters_behavior = 1
+script = ExtResource("9")
+
+[node name="RhythmCalib" type="VBoxContainer" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/AsideAnchor/AsideContainer"]
+modulate = Color(0.878431, 0.878431, 0.878431, 1)
+layout_mode = 2
+theme_override_constants/separation = 12
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/AsideAnchor/AsideContainer/RhythmCalib"]
+layout_mode = 2
+text = "RHYTHM_CALIB_AUTO"
+label_settings = SubResource("LabelSettings_71tbk")
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="OffsetCalibrator" type="Node" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/AsideAnchor/AsideContainer/RhythmCalib"]
+script = ExtResource("15_slfsy")
+
+[node name="Clap" type="AudioStreamPlayer" parent="MarginContainer/VBox/ScrollContainer/Content/Game/HBoxContainer/AsideAnchor/AsideContainer/RhythmCalib/OffsetCalibrator"]
+stream = ExtResource("17_3yxsn")
+volume_db = 2.0
+bus = &"SFX"
+
+[node name="Video" type="VBoxContainer" parent="MarginContainer/VBox/ScrollContainer/Content"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/ScrollContainer/Content/Video"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("7")
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="ScreenResLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Video/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_SCREEN_RES"
+horizontal_alignment = 2
+
+[node name="ScreenResOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Video/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="FullscreenLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Video/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_FULLSCREEN"
+horizontal_alignment = 2
+
+[node name="FullscreenCheckbox" type="CheckButton" parent="MarginContainer/VBox/ScrollContainer/Content/Video/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Graphics" type="VBoxContainer" parent="MarginContainer/VBox/ScrollContainer/Content"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("7")
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 2
+
+[node name="AaLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_ANTI_ALIASING"
+horizontal_alignment = 2
+
+[node name="AaOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="VolumetricsLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_VOLU_LIGHTS"
+horizontal_alignment = 2
+
+[node name="VolumetricsOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="GILabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_GLOBAL_ILLUM"
+horizontal_alignment = 2
+
+[node name="GIOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="GlowLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_GLOW"
+horizontal_alignment = 2
+
+[node name="GlowOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="ShadowLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_SHADOWS"
+horizontal_alignment = 2
+
+[node name="ShadowOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="ReflectionsLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_REFLECTIONS"
+horizontal_alignment = 2
+
+[node name="ReflectionsOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="SsaoLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_SSAO"
+horizontal_alignment = 2
+
+[node name="SsaoOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="BokehLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_BOKEH"
+horizontal_alignment = 2
+
+[node name="BokehOption" type="OptionButton" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+script = ExtResource("17_qymtw")
+
+[node name="DebandingLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_DEBANDING"
+horizontal_alignment = 2
+
+[node name="DebandingCheckbox" type="CheckButton" parent="MarginContainer/VBox/ScrollContainer/Content/Graphics/Grid"]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="Sound" type="VBoxContainer" parent="MarginContainer/VBox/ScrollContainer/Content"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_constants/separation = 32
+alignment = 1
+
+[node name="Grid" type="GridContainer" parent="MarginContainer/VBox/ScrollContainer/Content/Sound"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme = ExtResource("7")
+theme_override_constants/h_separation = 24
+theme_override_constants/v_separation = 8
+columns = 3
+
+[node name="MasterVolLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Sound/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_MASTER_VOL"
+horizontal_alignment = 2
+
+[node name="MasterVolSlider" type="HSlider" parent="MarginContainer/VBox/ScrollContainer/Content/Sound/Grid"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MasterVolIndicator" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Sound/Grid"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("FontFile_ukpcb")
+theme_override_font_sizes/font_size = 18
+text = "100"
+
+[node name="MusicVolLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Sound/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_MUSIC_VOL"
+horizontal_alignment = 2
+
+[node name="MusicVolSlider" type="HSlider" parent="MarginContainer/VBox/ScrollContainer/Content/Sound/Grid"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="MusicVolIndicator" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Sound/Grid"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("FontFile_ukpcb")
+theme_override_font_sizes/font_size = 18
+text = "100"
+
+[node name="SfxVolLabel" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Sound/Grid"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("5")
+theme_override_font_sizes/font_size = 24
+text = "SETTINGS_SFX_VOL"
+horizontal_alignment = 2
+
+[node name="SfxVolSlider" type="HSlider" parent="MarginContainer/VBox/ScrollContainer/Content/Sound/Grid"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="SfxVolIndicator" type="Label" parent="MarginContainer/VBox/ScrollContainer/Content/Sound/Grid"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("FontFile_ukpcb")
+theme_override_font_sizes/font_size = 18
+text = "100"
+
+[node name="SettingsControlPage" parent="MarginContainer/VBox/ScrollContainer/Content" instance=ExtResource("14")]
+visible = false
+layout_mode = 1
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Separator2" type="PanelContainer" parent="MarginContainer/VBox"]
+clip_contents = true
+custom_minimum_size = Vector2(0, 2)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/VBox/Separator2"]
+clip_contents = true
+layout_mode = 2
+texture = SubResource("4")
+expand_mode = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBox"]
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_constants/separation = 64
+alignment = 2
+
+[node name="BackBtn" parent="MarginContainer/VBox/HBoxContainer" instance=ExtResource("1")]
+layout_mode = 2
+theme_override_styles/normal = SubResource("9")
+theme_override_styles/hover = SubResource("7")
+theme_override_styles/pressed = SubResource("8")
+theme_override_styles/focus = SubResource("7")
+text = "UI_BACK"
+
+[node name="ResetBtn" parent="MarginContainer/VBox/HBoxContainer" instance=ExtResource("1")]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+theme_override_styles/normal = SubResource("9")
+theme_override_styles/hover = SubResource("7")
+theme_override_styles/pressed = SubResource("8")
+theme_override_styles/focus = SubResource("7")
+text = "SETTINGS_RESET_DEFAULTS"
+
+[node name="SfxVolTest" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
+bus = &"SFX"
+
+[node name="PageHolder" type="CanvasLayer" parent="."]
+visible = false
+
+[node name="SettingsConfirmationPage" parent="PageHolder" instance=ExtResource("10")]
+
+[node name="SettingsControlsPage" parent="PageHolder" instance=ExtResource("14")]
+
+[node name="ResetDefaultsPage" parent="PageHolder" instance=ExtResource("15")]
+
+[node name="SettingsWarningPage" parent="PageHolder" instance=ExtResource("15_ygb1i")]

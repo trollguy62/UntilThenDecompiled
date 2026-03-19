@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://dbmpi5a162sxk"]
+
+[ext_resource type="ArrayMesh" uid="uid://e4rhqkargma0" path="res://scenes/lis/bldg_2/assets/stairs.obj" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://dtac6y36cjl6b" path="res://scenes/lis/bldg_2/assets/handrail.obj" id="2"]
+[ext_resource type="Material" uid="uid://do6fgto16aenw" path="res://scenes/lis/bldg_2/assets/materials/Handrail.tres" id="3"]
+[ext_resource type="Material" uid="uid://cqltkscxcmokr" path="res://scenes/lis/bldg_2/assets/materials/Stairs.tres" id="4"]
+
+[node name="Stairs" type="MeshInstance"]
+material_override = ExtResource("4")
+use_in_baked_light = true
+mesh = ExtResource("1")
+surface_material_override/0 = null
+
+[node name="HandrailL" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, -1, -0.04, 0.48, 0)
+material_override = ExtResource("3")
+use_in_baked_light = true
+mesh = ExtResource("2")
+surface_material_override/0 = null
+
+[node name="HandrailR" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0400001, 0.48, 1.75)
+material_override = ExtResource("3")
+use_in_baked_light = true
+mesh = ExtResource("2")
+surface_material_override/0 = null

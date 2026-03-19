@@ -1,0 +1,61 @@
+[gd_scene load_steps=8 format=3 uid="uid://hag278j74bpx"]
+
+[ext_resource type="FontFile" uid="uid://b62gu2re0t70r" path="res://fonts/NunitoSans-Light-24.tres" id="1"]
+[ext_resource type="Script" path="res://scenes/_cutscenes/SkipHint.gd" id="2"]
+[ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://cnghdqiitl0fu" path="res://addons/controller_icons/assets/key/esc.png" id="4"]
+
+[sub_resource type="StyleBoxEmpty" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(1, 1, 1, 0.188235)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_left = 20.0
+expand_margin_top = 4.0
+expand_margin_right = 20.0
+expand_margin_bottom = 4.0
+
+[sub_resource type="Theme" id="3"]
+
+[node name="SkipHint" type="PanelContainer"]
+custom_minimum_size = Vector2(1280, 0)
+offset_top = 580.0
+offset_right = 1280.0
+offset_bottom = 628.0
+theme_override_styles/panel = SubResource("2")
+script = ExtResource("2")
+
+[node name="Container" type="PanelContainer" parent="."]
+light_mask = 33
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/panel = SubResource("1")
+
+[node name="HBox" type="HBoxContainer" parent="Container"]
+light_mask = 33
+layout_mode = 2
+theme = SubResource("3")
+theme_override_constants/separation = 6
+
+[node name="TextureRect" type="TextureRect" parent="Container/HBox"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 0
+texture = ExtResource("4")
+expand_mode = 1
+script = ExtResource("3")
+path = "ui_cancel"
+max_width = 48
+prioritize_controller = true
+
+[node name="Label" type="Label" parent="Container/HBox"]
+light_mask = 33
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("1")
+theme_override_font_sizes/font_size = 24
+text = "CH1SC1A_UI_SKIP_HINT"

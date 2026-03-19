@@ -1,0 +1,105 @@
+[gd_scene load_steps=14 format=3 uid="uid://bo7t7e4vsh3lv"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cl5tuaaqa30ku" path="res://scenes/bonifacio_station_entrance/assets/characters/NpcManongCig/rf_stand^lf=r_neutral_idle/01.png" id="2_kt7up"]
+[ext_resource type="Script" path="res://components/StreamLooper.gd" id="4"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="5"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc1b/scripts/NpcManongController.gd" id="6"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="7"]
+[ext_resource type="PackedScene" uid="uid://b1myvkwvnotwi" path="res://components/InteractiveArea/InteractiveArea.tscn" id="8"]
+[ext_resource type="AudioStream" uid="uid://b7d22vjeegypj" path="res://scenes/_main/ch1sc1b/assets/sfx/takatak.ogg" id="9"]
+[ext_resource type="SpriteFrames" path="res://scenes/bonifacio_station_entrance/assets/characters/NpcManongCig/NpcManongCig.tres" id="11"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("5")
+shader_parameter/scale = Vector3(0.424, 0.944, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("2_kt7up")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_84jyi"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="BoxShape3D" id="3"]
+size = Vector3(0.24, 2, 1.46)
+
+[node name="ManongCig" type="Node3D"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -27.44, 0.08, 0.47)
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+layers = 33
+mesh = SubResource("ArrayMesh_84jyi")
+script = ExtResource("1")
+texture_frames = ExtResource("11")
+sync_all = true
+animation = "rf_neutral=r_idle"
+alias = "ManongCig"
+pixel_size = 0.008
+
+[node name="State" type="Node" parent="."]
+script = ExtResource("2")
+alias = "ManongCig"
+
+[node name="Controller" type="Node" parent="."]
+script = ExtResource("6")
+sprite_path = NodePath("../Sprite")
+state_path = NodePath("../State")
+default_idle_anim = "rf_neutral=r_idle"
+default_talk_anim = "rf_neutral=r_talk"
+look_around_anims = ["rf_neutral=l_idle", "rf_neutral=r_idle"]
+
+[node name="SbPivot" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.186665, 1.01333, 0)
+script = ExtResource("7")
+alias = "ManongCig"
+
+[node name="InteractiveArea" parent="." instance=ExtResource("8")]
+transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0.840004, 0.72, 0.2)
+collision_layer = 0
+collision_mask = 2
+max_interact_count = 1
+preset = 3
+short_knot = "manong_cig"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0100002, 0, 0)
+shape = SubResource("3")
+
+[node name="IconTarget" type="Marker3D" parent="InteractiveArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.259998, 0.14, -0.13)
+
+[node name="Takatak" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1.33333, 0, 0, 0, 1.33333, 0, 0, 0, 1.33333, 0.200005, 0.52, 0.133333)
+stream = ExtResource("9")
+unit_size = 1.5
+max_db = 0.0
+bus = &"SFX"
+script = ExtResource("4")
+gap = 4.0
+gap_max_random = 8.0

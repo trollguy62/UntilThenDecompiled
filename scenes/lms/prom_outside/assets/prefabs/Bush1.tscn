@@ -1,0 +1,112 @@
+[gd_scene load_steps=6 format=3 uid="uid://xh7ba5tjer56"]
+
+[ext_resource type="ArrayMesh" uid="uid://bit438i3jswod" path="res://scenes/lms/prom_outside/assets/bush.obj" id="1"]
+[ext_resource type="Script" path="res://scenes/lms/prom_outside/scripts/BushRainControllable.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://b3dsx37agph8u" path="res://scenes/lms/prom_outside/assets/bush_1.png" id="3"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type spatial;
+render_mode depth_prepass_alpha, diffuse_burley, specular_schlick_ggx, cull_disabled;
+
+uniform float stiffness : hint_range(1, 8) = 2.0;
+uniform float wind_speed : hint_range(0, 16) = 1.0;
+uniform float wind_strength : hint_range(0, 1) = 0.1;
+uniform float wind_damping : hint_range(1, 8) = 2.0;
+
+uniform float turbulence_speed : hint_range(0, 16) = 1.0;
+uniform float turbulence_strength : hint_range(0, 1) = 0.05;
+uniform float turbulence_damping : hint_range(1, 8) = 2.0;
+
+uniform vec4 albedo : source_color = vec4(1.0f);
+uniform sampler2D texture_albedo : source_color;
+uniform float alpha_scissor : hint_range(0, 1) = 1.0f;
+
+uniform sampler2D texture_normal : hint_normal;
+uniform float normal_depth = 1.0f;
+uniform bool normal_linear_sampling = false;
+
+vec2 random(vec2 uv){
+    uv = vec2( dot(uv, vec2(127.1,311.7) ),
+               dot(uv, vec2(269.5,183.3) ) );
+    return -1.0 + 2.0 * fract(sin(uv) * 43758.5453123);
+}
+
+float noise(vec2 uv) {
+    vec2 uv_index = floor(uv);
+    vec2 uv_fract = fract(uv);
+
+    vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+	return mix( mix( dot( random(uv_index + vec2(0.0,0.0) ), uv_fract - vec2(0.0,0.0) ),
+                     dot( random(uv_index + vec2(1.0,0.0) ), uv_fract - vec2(1.0,0.0) ), blur.x),
+                mix( dot( random(uv_index + vec2(0.0,1.0) ), uv_fract - vec2(0.0,1.0) ),
+                     dot( random(uv_index + vec2(1.0,1.0) ), uv_fract - vec2(1.0,1.0) ), blur.x), blur.y) + 0.5;
+}
+
+vec2 noise2D(vec2 uv, float damping) {
+	return vec2(
+		clamp(pow(noise(uv.xy * 1.0783), damping), 0., 1.),
+		clamp(pow(noise(uv.yx * 1.1145), damping), 0., 1.)
+	) * vec2(2.) - vec2(1.);
+}
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+void vertex() {
+	float uvy = pow(VERTEX.y / 0.52, stiffness);
+	vec3 world_pos = MODEL_MATRIX[3].xyz * 0.5;
+
+	vec2 wind = noise2D(world_pos.xz + vec2(TIME * wind_speed), wind_damping);
+	vec2 turbulence = noise2D(UV + VERTEX.xz + vec2(TIME * turbulence_speed), turbulence_damping);
+
+	VERTEX.xz +=
+		uvy * wind * wind_strength +
+		uvy * turbulence * turbulence_strength;
+}
+
+void fragment() {
+	vec2 px_size = 1.0f / vec2(textureSize(texture_albedo, 0));
+	vec4 albedo_tex = texturePointSmooth(texture_albedo, UV, px_size);
+
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	ALPHA = albedo.a * albedo_tex.a;
+	ALPHA_SCISSOR_THRESHOLD = alpha_scissor;
+
+	BACKLIGHT = vec3(0.5);
+}
+"
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = SubResource("1")
+shader_parameter/stiffness = 2.3
+shader_parameter/wind_speed = 0.3
+shader_parameter/wind_strength = 0.04
+shader_parameter/wind_damping = 2.5
+shader_parameter/turbulence_speed = 1.0
+shader_parameter/turbulence_strength = 0.01
+shader_parameter/turbulence_damping = 3.0
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/texture_albedo = ExtResource("3")
+
+[node name="Bush1" type="MeshInstance"]
+material_override = SubResource("2")
+use_in_baked_light = true
+mesh = ExtResource("1")
+script = ExtResource("2")
+intensity = 1

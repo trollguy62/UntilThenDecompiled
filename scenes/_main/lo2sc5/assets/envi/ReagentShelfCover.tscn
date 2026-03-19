@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://corkapkwoxfcv"]
+
+[ext_resource type="ArrayMesh" uid="uid://ccx5fecrh3fii" path="res://scenes/_main/lo2sc5/assets/envi/reagent_shelf_cover.obj" id="1_0nmr7"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1_15ioo"]
+[ext_resource type="Texture2D" uid="uid://cwu2bex1kbfxc" path="res://scenes/_main/lo2sc5/assets/envi/reagent_shelf_cover.png" id="2_blbds"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_34e07"]
+render_priority = 0
+shader = ExtResource("1_15ioo")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2_blbds")
+
+[node name="ReagentShelfCover" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_34e07")
+mesh = ExtResource("1_0nmr7")
+metadata/_edit_lock_ = true

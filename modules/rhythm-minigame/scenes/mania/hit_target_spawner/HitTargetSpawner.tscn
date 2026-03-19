@@ -1,0 +1,26 @@
+[gd_scene load_steps=6 format=3 uid="uid://ewjyk4wytnxv"]
+
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/mania/hit_target_spawner/HitTargetSpawner.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://dfxeha2d2lm8" path="res://modules/rhythm-minigame/assets/mania/arrows/arrow_filled_left.png" id="2_svxgh"]
+[ext_resource type="Texture2D" uid="uid://cexfojxbfccs1" path="res://modules/rhythm-minigame/assets/mania/arrows/arrow_filled_down.png" id="3_t3jyy"]
+[ext_resource type="Texture2D" uid="uid://df62isxn7b2jm" path="res://modules/rhythm-minigame/assets/mania/arrows/arrow_filled_up.png" id="4_biohp"]
+[ext_resource type="Texture2D" uid="uid://cyrkmmvwaoejp" path="res://modules/rhythm-minigame/assets/mania/arrows/arrow_filled_right.png" id="5_crctu"]
+
+[node name="HitTargetSpawner" type="Node2D"]
+script = ExtResource("1")
+left_texture = ExtResource("2_svxgh")
+down_texture = ExtResource("3_t3jyy")
+up_texture = ExtResource("4_biohp")
+right_texture = ExtResource("5_crctu")
+
+[node name="AnchorLeft" type="Node2D" parent="."]
+position = Vector2(-104, 0)
+
+[node name="AnchorDown" type="Node2D" parent="."]
+position = Vector2(-36, 0)
+
+[node name="AnchorUp" type="Node2D" parent="."]
+position = Vector2(36, 0)
+
+[node name="AnchorRight" type="Node2D" parent="."]
+position = Vector2(104, 0)

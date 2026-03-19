@@ -1,0 +1,70 @@
+[gd_scene load_steps=11 format=3 uid="uid://elqbxobeu2be"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch2sc4/assets/PaintingMinigame/Tracer.gd" id="1_pit4x"]
+[ext_resource type="Script" path="res://scenes/_main/ch2sc4/assets/PaintingMinigame/TracerPath2D.gd" id="2_vt2k7"]
+[ext_resource type="Script" path="res://scenes/_main/ch2sc4/assets/PaintingMinigame/Target.gd" id="3_sbpk4"]
+[ext_resource type="Shader" path="res://scenes/_main/ch2sc4/assets/PaintingMinigame/assets/shaders/horizontal_scroll.gdshader" id="4_topx4"]
+[ext_resource type="Texture2D" uid="uid://dshcdgj38cw56" path="res://scenes/_main/ch2sc4/assets/PaintingMinigame/assets/dotted_line_white.png" id="5_qjyew"]
+[ext_resource type="AudioStream" uid="uid://dhad2ftxroqst" path="res://components/Path2DTracer/Paintbrush Loop.ogg" id="6_dwdj1"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1n85j"]
+radius = 15.0
+
+[sub_resource type="Curve2D" id="Curve2D_d4ml4"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 202, 33, -0.594604, -15.9354, 0.594604, 15.9354, 207, 84, 0, 0, 0, 0, 204, 137)
+}
+point_count = 3
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pquxl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rbsm2"]
+shader = ExtResource("4_topx4")
+shader_parameter/scroll_speed = 2.0
+shader_parameter/tint = Color(1, 1, 1, 1)
+
+[node name="Tracer" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_pit4x")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_1n85j")
+
+[node name="InternalPath2D" type="Path2D" parent="."]
+curve = SubResource("Curve2D_d4ml4")
+script = ExtResource("2_vt2k7")
+break_distance = 40.0
+
+[node name="PathFollow2D" type="PathFollow2D" parent="InternalPath2D"]
+position = Vector2(202, 33)
+rotation = 1.47307
+
+[node name="Marker2D" type="Marker2D" parent="InternalPath2D/PathFollow2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="InternalPath2D/PathFollow2D/Marker2D"]
+visible = false
+texture = SubResource("CompressedTexture2D_pquxl")
+
+[node name="Target" type="Marker2D" parent="InternalPath2D"]
+visible = false
+position = Vector2(628.701, 366.637)
+script = ExtResource("3_sbpk4")
+
+[node name="Line2D" type="Line2D" parent="InternalPath2D"]
+self_modulate = Color(0, 0, 0, 1)
+texture_filter = 1
+texture_repeat = 2
+material = SubResource("ShaderMaterial_rbsm2")
+points = PackedVector2Array(202, 33, 202.19, 34.5378, 202.698, 38.7278, 203.04, 41.619, 203.425, 44.935, 203.842, 48.5965, 204.277, 52.5242, 204.719, 56.6386, 205.157, 60.8604, 205.577, 65.1102, 205.968, 69.3085, 206.318, 73.376, 206.614, 77.2334, 206.846, 80.8012, 207, 84, 207.064, 87.2213, 207.042, 90.8525, 206.944, 94.8085, 206.782, 99.004, 206.568, 103.354, 206.312, 107.772, 206.027, 112.175, 205.723, 116.476, 205.412, 120.59, 205.106, 124.432, 204.816, 127.917, 204.552, 130.96, 204.153, 135.376, 204, 137)
+width = 8.0
+texture = ExtResource("5_qjyew")
+texture_mode = 1
+joint_mode = 2
+antialiased = true
+
+[node name="Stroke" type="AudioStreamPlayer" parent="InternalPath2D"]
+stream = ExtResource("6_dwdj1")
+volume_db = 6.0
+bus = &"SFX"

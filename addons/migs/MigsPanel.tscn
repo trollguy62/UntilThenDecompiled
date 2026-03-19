@@ -1,0 +1,80 @@
+[gd_scene load_steps=2 format=3 uid="uid://d2i688aijycal"]
+
+[ext_resource type="Script" path="res://addons/migs/MigsPanel.gd" id="1_wksft"]
+
+[node name="Migs" type="PanelContainer"]
+clip_contents = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wksft")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+theme_override_constants/separation = 16
+
+[node name="VBoxOperations" type="VBoxContainer" parent="HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxOperations"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Operations"
+
+[node name="ItemList" type="ItemList" parent="HBoxContainer/VBoxOperations"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+allow_reselect = true
+item_count = 2
+item_0/text = "Convert decals"
+item_1/text = "Regen plane normals"
+
+[node name="VBoxMatches" type="VBoxContainer" parent="HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBoxContainer/VBoxMatches"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxMatches/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Matches here"
+
+[node name="BtnExclude" type="Button" parent="HBoxContainer/VBoxMatches/HBoxContainer"]
+layout_mode = 2
+text = "Exclude"
+
+[node name="BtnApply" type="Button" parent="HBoxContainer/VBoxMatches/HBoxContainer"]
+layout_mode = 2
+text = "Apply"
+
+[node name="BtnApplyAll" type="Button" parent="HBoxContainer/VBoxMatches/HBoxContainer"]
+layout_mode = 2
+text = "Apply All"
+
+[node name="ItemList" type="ItemList" parent="HBoxContainer/VBoxMatches"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="VBoxExtScenes" type="VBoxContainer" parent="HBoxContainer"]
+clip_contents = true
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxExtScenes"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Matches in external scenes"
+
+[node name="ItemList" type="ItemList" parent="HBoxContainer/VBoxExtScenes"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3

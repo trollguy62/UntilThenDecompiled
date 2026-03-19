@@ -1,0 +1,74 @@
+[gd_scene load_steps=7 format=3 uid="uid://cxttqmk1f2hsm"]
+
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://uuyeyecovwmi" path="res://scenes/_main/ch5sc10b/assets/envi/construction/deco/light_standing_1_em.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bkcr7qgxks3ds" path="res://scenes/_main/ch5sc10b/assets/envi/construction/deco/light_standing_1.png" id="4"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_dlxmv"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 0.858824, 0.588235, 1)
+shader_parameter/emission_energy = 2.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+shader_parameter/texture_emission = ExtResource("3")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_nqlst"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.26, 1.67, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_dlxmv"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 184, 30, 133, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 184, 30, 133, 62, 143, 194, 213, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 143, 194, 213, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[node name="LightStanding1" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.96, 0, -0.28)
+mesh = SubResource("ArrayMesh_nqlst")
+script = ExtResource("1")
+texture = ExtResource("4")
+emission = Color(1, 0.858824, 0.588235, 1)
+emission_texture = ExtResource("3")
+emission_energy = 2.0
+emission_blend_add = false
+metadata/mat_opaque = SubResource("ShaderMaterial_dlxmv")
+
+[node name="SpotLight" type="SpotLight3D" parent="."]
+transform = Transform3D(0.984808, 0.133022, 0.111619, 0, -0.642788, 0.766044, 0.173648, -0.754407, -0.633022, 0.0929999, 1.57, 0.0790001)
+light_color = Color(1, 0.894118, 0.666667, 1)
+light_energy = 4.0
+shadow_enabled = true
+shadow_bias = 0.04
+spot_attenuation = 1.2
+spot_angle = 50.0
+spot_angle_attenuation = 0.8
+
+[node name="OmniLight" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0999999, 1.41, 0.23)
+light_color = Color(1, 0.894118, 0.666667, 1)
+light_specular = 0.0
+omni_range = 2.0
+omni_attenuation = 2.3

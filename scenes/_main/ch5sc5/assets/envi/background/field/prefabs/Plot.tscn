@@ -1,0 +1,480 @@
+[gd_scene load_steps=15 format=3 uid="uid://dsuijigqe6hvd"]
+
+[ext_resource type="Texture2D" uid="uid://cxpymemoecrt" path="res://scenes/_main/ch5sc5/assets/envi/background/field/dead_grass.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://4oxolych1c62" path="res://scenes/_main/ch5sc5/assets/envi/background/field/grass.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://4s1pym4u5r5n" path="res://scenes/_main/ch5sc5/assets/envi/background/field/ground.png" id="3"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc5/assets/envi/background/field/prefabs/Plot.gd" id="4"]
+[ext_resource type="Material" uid="uid://dgj5g7dt3pjrh" path="res://scenes/_main/ch5sc5/assets/envi/background/field/materials/Crop.tres" id="5"]
+[ext_resource type="Material" uid="uid://b1wmlooyrmoc5" path="res://scenes/_main/ch5sc5/assets/envi/background/field/materials/Plot.tres" id="6"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type spatial;
+
+uniform float plot_seed = 0.17;
+
+uniform float field_coverage : hint_range(0, 1) = 1.0;
+
+uniform vec2 delta_uv = vec2(0);
+
+uniform sampler2D tex_normal : hint_normal;
+
+uniform sampler2D tex_grass : source_color;
+uniform sampler2D tex_dead_grass : source_color;
+uniform sampler2D tex_ground : source_color;
+
+// --- start perlin
+
+vec2 perlin_modulo(vec2 divident, vec2 divisor){
+	vec2 positiveDivident = mod(divident, divisor) + divisor;
+	return mod(positiveDivident, divisor);
+}
+
+vec2 perlin_random(vec2 value){
+	value = vec2( dot(value, vec2(127.1,311.7) ),
+				  dot(value, vec2(269.5,183.3) ) );
+	return -1.0 + 2.0 * fract(sin(value) * 43758.5453123);
+}
+
+float perlin(vec2 uv, int cell_amount, vec2 _period) {
+	uv = uv * float(cell_amount);
+	vec2 cellsMinimum = floor(uv);
+	vec2 cellsMaximum = ceil(uv);
+	vec2 uv_fract = fract(uv);
+
+	cellsMinimum = perlin_modulo(cellsMinimum, _period);
+	cellsMaximum = perlin_modulo(cellsMaximum, _period);
+
+	vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+	vec2 lowerLeftDirection = perlin_random(vec2(cellsMinimum.x, cellsMinimum.y));
+	vec2 lowerRightDirection = perlin_random(vec2(cellsMaximum.x, cellsMinimum.y));
+	vec2 upperLeftDirection = perlin_random(vec2(cellsMinimum.x, cellsMaximum.y));
+	vec2 upperRightDirection = perlin_random(vec2(cellsMaximum.x, cellsMaximum.y));
+
+	vec2 fraction = fract(uv);
+
+	return mix( mix( dot( lowerLeftDirection, fraction - vec2(0, 0) ),
+                     dot( lowerRightDirection, fraction - vec2(1, 0) ), blur.x),
+                mix( dot( upperLeftDirection, fraction - vec2(0, 1) ),
+                     dot( upperRightDirection, fraction - vec2(1, 1) ), blur.x), blur.y) * 0.8 + 0.5;
+}
+
+// --- end perlin
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+float R21(vec2 uv) {
+	return fract(sin(dot(uv.xy,
+		vec2(12.9898,78.233))) * 43758.5453123);
+}
+
+vec2 R22(vec2 uv) {
+	return vec2(R21(uv.xy * 0.13874), R21(uv.yx * 0.173842));
+}
+
+vec2 tiledUV(vec2 uv, vec2 fac) {
+	return floor(uv * fac) / fac;
+}
+
+vec2 repeatedUV(vec2 uv, vec2 fac) {
+	return mod(uv * fac, vec2(1));
+}
+
+float mixfloor(float k, float a, float b) {
+	return floor(mix(a, b, k));
+}
+
+vec2 spread(vec2 r, float k, float c) {
+	return vec2(
+		mixfloor(min(pow(r.x, c * k), c * 4.0 / k), 1.0, 3.0),
+		mixfloor(min(pow(r.y, c * k), c * 4.0 / k), 1.0, 3.0)
+	);
+}
+
+float lengthExp(vec2 v, float p) {
+	return pow(abs(v.x), p) + pow(abs(v.y), p);
+}
+
+vec3 paddy(vec2 basisUV, float seed) {
+	vec2 uvFac = vec2(2.0);
+	vec2 uv = tiledUV(basisUV, uvFac);
+	vec2 buv = repeatedUV(basisUV, uvFac);
+	vec2 r = R22(uv + vec2(seed));
+
+	for (int i = 1; i <= 2; i++) {
+		float k = float(i);
+		uvFac *= spread(r, k, 0.5);
+
+		uv = tiledUV(basisUV, uvFac);
+		buv = repeatedUV(basisUV, uvFac);
+		seed *= 2.0;
+		r = R22(uv + R22(uv * seed) + vec2(seed));
+	}
+
+	buv -= vec2(0.5);
+
+	float group = perlin(uv * 0.6, 2, vec2(8.));
+	group = pow(group, 1.06);
+	group = floor(group * 3.) / 3.;
+
+	float lightness = mix(0.3, 0.9, perlin(basisUV, 6, vec2(4.)));
+
+	float border_exp = pow(field_coverage, 1.5) * 5.;
+	float border = smoothstep(0.01, 0.032, lengthExp(buv, border_exp));
+
+	return vec3(
+		group,
+		lightness,
+		border
+	);
+}
+
+vec2 _uv(vec2 uv) {
+	uv = uv + delta_uv;
+	float pLow = perlin(uv, 4, vec2(5., 3.)) * 0.12;
+	float pHigh = perlin(uv, 20, vec2(5., 3.)) * 0.012;
+	uv += pLow + pHigh;
+	return uv;
+}
+
+vec3 _paddy(vec2 uv) {
+	vec3 pd = paddy(uv, plot_seed);
+	pd.b = clamp(pd.b + step(0.995, uv.y), 0, 1);
+	return pd;
+}
+
+void vertex() {
+	vec2 uv = _uv(UV);
+	vec3 pd = _paddy(uv);
+	float fac = smoothstep(1., 0.9, UV.y);
+	VERTEX.y += pd.b * perlin(uv, 8, vec2(5.)) * 0.08 * fac;
+}
+
+void fragment() {
+	vec3 pd = _paddy(_uv(floor(UV * 500.) / 500.));
+	vec2 uv = UV + delta_uv;
+
+	vec2 tex_size = 1. / vec2(textureSize(tex_ground, 0));
+
+	vec3 ground = texturePointSmooth(tex_ground, uv, tex_size).rgb
+			* mix(0.4, 1.0, perlin(uv, 18, vec2(5.)))
+			* mix(0.3, 0.95, field_coverage);
+
+	vec3 grass = texturePointSmooth(tex_grass, uv, tex_size).rgb;
+
+	vec3 dead_grass = texturePointSmooth(tex_dead_grass, uv, tex_size).rgb
+			* perlin(uv * 2., 8, vec2(3.));
+
+	ALBEDO = mix(
+		ground,
+		mix(
+			grass,
+			dead_grass,
+			pow(perlin(uv, 5, vec2(3.)), 2.)
+		),
+		mix(
+			pd.b * field_coverage,
+			floor(pd.b * field_coverage * 3.0 + 0.75) / 3.0,
+			step(pd.b, 0.75)
+		)
+	);
+
+	NORMAL_MAP = mix(
+		texture(tex_normal, uv + vec2(TIME * 0.01)).rgb,
+		vec3(0.5, 0.5, 1),
+		pd.b
+	);
+
+	ROUGHNESS = max(0.1, pd.b);
+}
+"
+
+[sub_resource type="FastNoiseLite" id="8"]
+seed = 118
+
+[sub_resource type="NoiseTexture2D" id="7"]
+seamless = true
+as_normal_map = true
+bump_strength = 4.0
+noise = SubResource("8")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0tjno"]
+render_priority = 0
+shader = SubResource("1")
+shader_parameter/plot_seed = 0.17
+shader_parameter/field_coverage = 1.0
+shader_parameter/delta_uv = Vector2(0, 0)
+shader_parameter/tex_normal = SubResource("7")
+shader_parameter/tex_grass = ExtResource("2")
+shader_parameter/tex_dead_grass = ExtResource("1")
+shader_parameter/tex_ground = ExtResource("3")
+
+[sub_resource type="PlaneMesh" id="21"]
+size = Vector2(5, 5)
+subdivide_width = 128
+subdivide_depth = 128
+
+[sub_resource type="Shader" id="13"]
+code = "shader_type particles;
+render_mode disable_force, disable_velocity;
+
+uniform float plot_size = 5.0;
+uniform uint grid_size = 32;
+
+uniform vec3 initial_displacement = vec3(0);
+uniform vec3 random_displacement = vec3(0);
+uniform vec3 initial_scale = vec3(1);
+uniform float random_rotation = 0.5235988; // 30 degs
+
+// === PLOT CODE === //
+
+uniform float plot_seed = 0.17;
+uniform float field_coverage : hint_range(0, 1) = 1.0;
+uniform vec2 delta_uv = vec2(0);
+
+// --- start perlin
+
+vec2 perlin_modulo(vec2 divident, vec2 divisor){
+	vec2 positiveDivident = mod(divident, divisor) + divisor;
+	return mod(positiveDivident, divisor);
+}
+
+vec2 perlin_random(vec2 value){
+	value = vec2( dot(value, vec2(127.1,311.7) ),
+				  dot(value, vec2(269.5,183.3) ) );
+	return -1.0 + 2.0 * fract(sin(value) * 43758.5453123);
+}
+
+float perlin(vec2 uv, int cell_amount, vec2 _period) {
+	uv = uv * float(cell_amount);
+	vec2 cellsMinimum = floor(uv);
+	vec2 cellsMaximum = ceil(uv);
+	vec2 uv_fract = fract(uv);
+
+	cellsMinimum = perlin_modulo(cellsMinimum, _period);
+	cellsMaximum = perlin_modulo(cellsMaximum, _period);
+
+	vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+
+	vec2 lowerLeftDirection = perlin_random(vec2(cellsMinimum.x, cellsMinimum.y));
+	vec2 lowerRightDirection = perlin_random(vec2(cellsMaximum.x, cellsMinimum.y));
+	vec2 upperLeftDirection = perlin_random(vec2(cellsMinimum.x, cellsMaximum.y));
+	vec2 upperRightDirection = perlin_random(vec2(cellsMaximum.x, cellsMaximum.y));
+
+	vec2 fraction = fract(uv);
+
+	return mix( mix( dot( lowerLeftDirection, fraction - vec2(0, 0) ),
+                     dot( lowerRightDirection, fraction - vec2(1, 0) ), blur.x),
+                mix( dot( upperLeftDirection, fraction - vec2(0, 1) ),
+                     dot( upperRightDirection, fraction - vec2(1, 1) ), blur.x), blur.y) * 0.8 + 0.5;
+}
+
+// --- end perlin
+
+float R21(vec2 uv) {
+	return fract(sin(dot(uv.xy,
+		vec2(12.9898,78.233))) * 43758.5453123);
+}
+
+vec2 R22(vec2 uv) {
+	return vec2(R21(uv.xy * 0.13874), R21(uv.yx * 0.173842));
+}
+
+vec2 tiledUV(vec2 uv, vec2 fac) {
+	return floor(uv * fac) / fac;
+}
+
+vec2 repeatedUV(vec2 uv, vec2 fac) {
+	return mod(uv * fac, vec2(1));
+}
+
+float mixfloor(float k, float a, float b) {
+	return floor(mix(a, b, k));
+}
+
+vec2 spread(vec2 r, float k, float c) {
+	return vec2(
+		mixfloor(min(pow(r.x, c * k), c * 4.0 / k), 1.0, 3.0),
+		mixfloor(min(pow(r.y, c * k), c * 4.0 / k), 1.0, 3.0)
+	);
+}
+
+float lengthExp(vec2 v, float p) {
+	return pow(abs(v.x), p) + pow(abs(v.y), p);
+}
+
+vec3 paddy(vec2 basisUV, float seed) {
+	vec2 uvFac = vec2(2.0);
+	vec2 uv = tiledUV(basisUV, uvFac);
+	vec2 buv = repeatedUV(basisUV, uvFac);
+	vec2 r = R22(uv + vec2(seed));
+
+	for (int i = 1; i <= 2; i++) {
+		float k = float(i);
+		uvFac *= spread(r, k, 0.5);
+
+		uv = tiledUV(basisUV, uvFac);
+		buv = repeatedUV(basisUV, uvFac);
+		seed *= 2.0;
+		r = R22(uv + R22(uv * seed) + vec2(seed));
+	}
+
+	buv -= vec2(0.5);
+
+	float group = perlin(uv * 0.6, 2, vec2(8.));
+	group = pow(group, 1.06);
+	group = floor(group * 3.) / 3.;
+
+	float lightness = mix(0.3, 0.9, perlin(basisUV, 6, vec2(4.)));
+
+	float border_exp = pow(field_coverage, 1.5) * 5.;
+	float border = smoothstep(0.01, 0.032, lengthExp(buv, border_exp));
+
+	return vec3(
+		group,
+		lightness,
+		border
+	);
+}
+
+vec2 _uv(vec2 uv) {
+	uv = uv + delta_uv;
+	float pLow = perlin(uv, 4, vec2(5., 3.)) * 0.12;
+	float pHigh = perlin(uv, 20, vec2(5., 3.)) * 0.012;
+	uv += pLow + pHigh;
+	return uv;
+}
+
+vec3 _paddy(vec2 uv) {
+	vec3 pd = paddy(uv, plot_seed);
+	pd.b = clamp(pd.b + step(0.995, uv.y), 0, 1);
+	return pd;
+}
+
+// ====== //
+
+float rand_from_seed(inout uint seed) {
+	int k;
+	int s = int(seed);
+	if (s == 0)
+	s = 305420679;
+	k = s / 127773;
+	s = 16807 * (s - k * 127773) - 2836 * k;
+	if (s < 0)
+		s += 2147483647;
+	seed = uint(s);
+	return float(seed % uint(65536)) / 65535.0;
+}
+
+float rand_from_seed_m1_p1(inout uint seed) {
+	return rand_from_seed(seed) * 2.0 - 1.0;
+}
+
+uint hash(uint x) {
+	x = ((x >> uint(16)) ^ x) * uint(73244475);
+	x = ((x >> uint(16)) ^ x) * uint(73244475);
+	x = (x >> uint(16)) ^ x;
+	return x;
+}
+
+void rotate_y(inout mat4 t, float theta) {
+	t *= mat4(
+		vec4(cos(theta), 0, -sin(theta), 0),
+		vec4(0, 1, 0, 0),
+		vec4(sin(theta), 0, cos(theta), 0),
+		vec4(0, 0, 0, 1)
+	);
+}
+
+float mod_grid_r2(uint i, uint st) {
+	return mod(floor(float(i) / float(st)), float(grid_size)) / float(grid_size) * 2. - 1.;
+}
+
+vec2 grid_coord(uint i) {
+	return vec2(
+		mod_grid_r2(i, 1),
+		mod_grid_r2(i, grid_size)
+	);
+}
+
+void process() {
+	if (RESTART) {
+		vec2 coord = grid_coord(uint(INDEX));
+		vec3 pd = _paddy(_uv(coord / 2. + 0.5));
+
+		if (pd.b > 0.01) {
+			TRANSFORM[3].y = -999.;
+			ACTIVE = false;
+		} else {
+			uint seed = RANDOM_SEED + hash(uint(INDEX));
+
+			TRANSFORM[0] *= initial_scale.x;
+			TRANSFORM[1] *= initial_scale.y;
+			TRANSFORM[2] *= initial_scale.z;
+
+			vec3 displacement = initial_displacement + vec3(
+				rand_from_seed_m1_p1(seed) * random_displacement.x,
+				rand_from_seed_m1_p1(seed) * random_displacement.y,
+				rand_from_seed_m1_p1(seed) * random_displacement.z
+			);
+
+			TRANSFORM[3].xz = coord * plot_size / 2.;
+			TRANSFORM[3].xyz += displacement;
+
+			rotate_y(TRANSFORM, rand_from_seed_m1_p1(seed) * random_rotation);
+
+			CUSTOM.xyz = pd;
+		}
+	}
+}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c6dkc"]
+shader = SubResource("13")
+shader_parameter/plot_size = 5.0
+shader_parameter/grid_size = 32
+shader_parameter/initial_displacement = Vector3(0, -0.03, 0)
+shader_parameter/random_displacement = Vector3(0.01, 0.03, 0.006)
+shader_parameter/initial_scale = Vector3(0.42, 0.42, 1)
+shader_parameter/random_rotation = 0.523599
+shader_parameter/plot_seed = 0.17
+shader_parameter/field_coverage = 1.0
+shader_parameter/delta_uv = Vector2(0, 0)
+
+[sub_resource type="PlaneMesh" id="9"]
+material = ExtResource("5")
+size = Vector2(0.01, 0.01)
+subdivide_depth = 4
+
+[node name="Plot" type="Node3D"]
+script = ExtResource("4")
+plot_material = ExtResource("6")
+initial_displacement = Vector3(0, -0.03, 0)
+initial_scale = Vector3(0.42, 0.42, 1)
+random_displacement = Vector3(0.01, 0.03, 0.006)
+
+[node name="Plot" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_0tjno")
+mesh = SubResource("21")
+
+[node name="Crops" type="GPUParticles3D" parent="."]
+amount = 1024
+lifetime = 600.0
+one_shot = true
+explosiveness = 1.0
+randomness = 1.0
+local_coords = true
+process_material = SubResource("ShaderMaterial_c6dkc")
+draw_pass_1 = SubResource("9")

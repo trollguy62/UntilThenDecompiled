@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bhjojm5lu5am5"]
+
+[ext_resource type="Script" path="res://components/Sprite2DMouseMovable.gd" id="1"]
+[ext_resource type="Texture2D" uid="uid://pr5askvmbxig" path="res://scenes/_main/ch2sc4/assets/C2D/41 - Sheet Music/kreisler.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bjvykd0bry8tl" path="res://scenes/_main/ch2sc4/assets/C2D/41 - Sheet Music/debussy.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://dextgkp0ua5o0" path="res://scenes/_main/ch2sc4/assets/C2D/41 - Sheet Music/background.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bjtns3kbc07c7" path="res://scenes/_main/ch2sc4/assets/C2D/41 - Sheet Music/beethoven.png" id="5"]
+[ext_resource type="PackedScene" uid="uid://cng5pa21vpc74" path="res://ui/components/Pointer/Pointer.tscn" id="6_w4ubi"]
+
+[sub_resource type="RectangleShape2D" id="1"]
+size = Vector2(102.713, 149.292)
+
+[sub_resource type="RectangleShape2D" id="2"]
+size = Vector2(102, 148)
+
+[node name="41" type="Node2D"]
+scale = Vector2(4, 4)
+
+[node name="Background" type="Sprite2D" parent="."]
+texture = ExtResource("4")
+centered = false
+
+[node name="Debussy" type="Sprite2D" parent="Background"]
+position = Vector2(192, 88)
+texture = ExtResource("3")
+script = ExtResource("1")
+bring_to_front_on_drag = true
+
+[node name="Area2D" type="Area2D" parent="Background/Debussy"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Debussy/Area2D"]
+rotation = 0.0538467
+shape = SubResource("1")
+
+[node name="Beethoven" type="Sprite2D" parent="Background"]
+position = Vector2(122, 90)
+texture = ExtResource("5")
+script = ExtResource("1")
+bring_to_front_on_drag = true
+
+[node name="Area2D" type="Area2D" parent="Background/Beethoven"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/Beethoven/Area2D"]
+rotation = 0.000771926
+polygon = PackedVector2Array(-66.0532, -68.949, -50.0548, -70.9614, -50.0587, -75.9614, -20.0571, -73.9845, 39.9367, -82.0309, 40.9421, -75.0316, 45.9413, -76.0355, 49.9807, -25.0386, 66.0509, 65.949, -34.9367, 82.027)
+
+[node name="Kreisler" type="Sprite2D" parent="Background"]
+position = Vector2(157, 82)
+texture = ExtResource("2")
+script = ExtResource("1")
+bring_to_front_on_drag = true
+
+[node name="Area2D" type="Area2D" parent="Background/Kreisler"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/Kreisler/Area2D"]
+shape = SubResource("2")
+
+[node name="Pointer" parent="." instance=ExtResource("6_w4ubi")]

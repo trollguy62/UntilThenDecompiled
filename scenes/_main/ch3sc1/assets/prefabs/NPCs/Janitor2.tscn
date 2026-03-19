@@ -1,0 +1,90 @@
+[gd_scene load_steps=14 format=3 uid="uid://br6bc2xv0jees"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://ct8ed0ckf4q3p" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/janitor2/01.png" id="3"]
+[ext_resource type="AudioStream" uid="uid://8menhgwtviic" path="res://scenes/_main/ch3sc1/assets/sfx/Floor Mopping.ogg" id="4"]
+[ext_resource type="Texture2D" uid="uid://bmohwg7tlonxp" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/janitor2/02.png" id="4_xw5x7"]
+[ext_resource type="Script" path="res://components/AudioStreamPlayer.gd" id="5"]
+[ext_resource type="Texture2D" uid="uid://i2lcmgq6ab4f" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/janitor2/03.png" id="5_lqqby"]
+[ext_resource type="Texture2D" uid="uid://sfjbxmf1x5ls" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/janitor2/04.png" id="6_ibh6i"]
+[ext_resource type="Texture2D" uid="uid://cpy0oc47oenon" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/janitor2/05.png" id="7_s5kvc"]
+[ext_resource type="Texture2D" uid="uid://ihpoolcse3aa" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/janitor2/06.png" id="8_rlawn"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/scale = Vector3(0.96, 1.2, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("3")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_dn3gb"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xw5x7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_lqqby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ibh6i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_s5kvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_rlawn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="Janitor2" type="Node3D"]
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+mesh = SubResource("ArrayMesh_dn3gb")
+script = ExtResource("1")
+texture_frames = SubResource("3")
+animation = "default"
+alias = "AnimatedPaper3D"
+pixel_size = 0.008
+
+[node name="Mopping" type="AudioStreamPlayer3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+stream = ExtResource("4")
+unit_size = 0.6
+autoplay = true
+script = ExtResource("5")

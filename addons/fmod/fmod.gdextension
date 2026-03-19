@@ -1,0 +1,20 @@
+[configuration]
+entry_symbol = "fmod_library_init"
+compatibility_minimum = 4.1
+
+[libraries]
+windows.editor = "res://addons/fmod/native/windows/fmod.editor.dll"
+windows.debug = "res://addons/fmod/native/windows/fmod.debug.dll"
+windows.release = "res://addons/fmod/native/windows/fmod.release.dll"
+macos.editor = "res://addons/fmod/native/macos/libfmod.editor.framework"
+macos.debug = "res://addons/fmod/native/macos/libfmod.debug.framework"
+macos.release = "res://addons/fmod/native/macos/libfmod.release.framework"
+linux.editor = "res://addons/fmod/native/linux/libfmod.editor.so"
+linux.debug = "res://addons/fmod/native/linux/libfmod.debug.so"
+linux.release = "res://addons/fmod/native/linux/libfmod.release.so"
+
+[dependencies]
+windows.debug = { "res://addons/fmod/native/windows/fmodL.dll": "", "res://addons/fmod/native/windows/fmodstudioL.dll": "" }
+windows.release = { "res://addons/fmod/native/windows/fmod.dll": "", "res://addons/fmod/native/windows/fmodstudio.dll": "" }
+linux.debug = { "res://addons/fmod/native/linux/libfmodL.so": "", "res://addons/fmod/native/linux/libfmodL.so.13": "", "res://addons/fmod/native/linux/libfmodstudioL.so": "", "res://addons/fmod/native/linux/libfmodstudioL.so.13": "", "res://addons/fmod/native/linux/libfmodstudioL.so.13.17": "" }
+linux.release = { "res://addons/fmod/native/linux/libfmod.so": "", "res://addons/fmod/native/linux/libfmod.so.13": "", "res://addons/fmod/native/linux/libfmodstudio.so": "", "res://addons/fmod/native/linux/libfmodstudio.so.13": "", "res://addons/fmod/native/linux/libfmodstudio.so.13.17": "" }

@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://52aoyvsb1h77"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialTransparent.gdshader" id="1_qh2u8"]
+[ext_resource type="ArrayMesh" uid="uid://c8fygr8ybe4gi" path="res://scenes/_main/ch9sc1b/assets/envi/petri_dish_base.obj" id="2_vq3ph"]
+[ext_resource type="Texture2D" uid="uid://btg0np6kp8tui" path="res://scenes/_main/ch9sc1b/assets/envi/petri_dish.png" id="2_xff8a"]
+[ext_resource type="ArrayMesh" uid="uid://dyfpe87c85ja6" path="res://scenes/_main/ch9sc1b/assets/envi/petri_dish_lip_b.obj" id="3_lbym2"]
+[ext_resource type="ArrayMesh" uid="uid://5jddkdstna6w" path="res://scenes/_main/ch9sc1b/assets/envi/petri_dish_lip_t.obj" id="4_h3gny"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wtnis"]
+render_priority = 0
+shader = ExtResource("1_qh2u8")
+shader_parameter/albedo = Color(1, 1, 1, 0.705882)
+shader_parameter/normal_depth = 1.0
+shader_parameter/metallic = 0.12
+shader_parameter/roughness = 0.2
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2_xff8a")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_311bu"]
+render_priority = 0
+shader = ExtResource("1_qh2u8")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2_xff8a")
+
+[node name="PetriDish" type="MeshInstance3D"]
+material_override = SubResource("ShaderMaterial_wtnis")
+mesh = ExtResource("2_vq3ph")
+
+[node name="LipB" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_311bu")
+mesh = ExtResource("3_lbym2")
+
+[node name="LipT" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_wtnis")
+mesh = ExtResource("4_h3gny")

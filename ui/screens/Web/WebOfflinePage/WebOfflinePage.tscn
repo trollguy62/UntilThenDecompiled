@@ -1,0 +1,86 @@
+[gd_scene load_steps=8 format=3 uid="uid://cl0ht4bbv8sji"]
+
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="1"]
+[ext_resource type="FontFile" uid="uid://dhcnjnvquq3am" path="res://fonts/PTSans-Regular-Small.tres" id="2"]
+[ext_resource type="FontFile" uid="uid://oe2d2wxhekwy" path="res://fonts/PTSans-Regular-Huge.tres" id="3"]
+[ext_resource type="PackedScene" uid="uid://cpwxmv4fc70sh" path="res://ui/screens/Web/WebOfflinePage/dinogame/WebDinoGame.tscn" id="4"]
+[ext_resource type="Script" path="res://ui/screens/Web/WebOfflinePage/WebOfflinePage.gd" id="5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g4bw1"]
+
+[sub_resource type="StyleBoxEmpty" id="2"]
+
+[node name="WebOfflinePage" type="PanelContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+size_flags_horizontal = 3
+focus_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_g4bw1")
+script = ExtResource("5")
+
+[node name="Margin" type="MarginContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 64
+
+[node name="VBox" type="VBoxContainer" parent="Margin"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 8
+
+[node name="ViewportContainer" type="SubViewportContainer" parent="Margin/VBox"]
+texture_filter = 1
+custom_minimum_size = Vector2(395, 205)
+layout_mode = 2
+size_flags_horizontal = 0
+stretch = true
+
+[node name="Viewport" type="SubViewport" parent="Margin/VBox/ViewportContainer"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(395, 205)
+render_target_update_mode = 4
+
+[node name="WebDinoGame" parent="Margin/VBox/ViewportContainer/Viewport" instance=ExtResource("4")]
+
+[node name="Spacer3" type="PanelContainer" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 10.639)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Label1" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.32549, 0.32549, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("3")
+theme_override_font_sizes/font_size = 30
+text = "BROWSER_OFFLINE_HEADING"
+
+[node name="Spacer1" type="PanelContainer" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Label2" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.32549, 0.32549, 0.32549, 1)
+theme_override_constants/line_spacing = 4
+theme_override_fonts/font = ExtResource("1")
+text = "BROWSER_OFFLINE_SUB"
+
+[node name="Spacer2" type="PanelContainer" parent="Margin/VBox"]
+custom_minimum_size = Vector2(0, 8)
+layout_mode = 2
+theme_override_styles/panel = SubResource("2")
+
+[node name="Label3" type="Label" parent="Margin/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.584314, 0.584314, 0.584314, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("2")
+text = "ERR_INTERNET_DISCONNECTED"
+
+[node name="IdleTimer" type="Timer" parent="."]

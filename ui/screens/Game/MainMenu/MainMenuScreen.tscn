@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://dqaq22lfjd5hn"]
+
+[ext_resource type="PackedScene" uid="uid://cn7hf27egf4jg" path="res://ui/screens/Game/MainMenu/MainMenu.tscn" id="1"]
+[ext_resource type="Script" path="res://ui/screens/Game/MainMenu/MainMenuScreen.gd" id="1_e62xh"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="MainMenuScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_e62xh")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("1")
+
+[node name="MainMenu" parent="." instance=ExtResource("1")]
+layout_mode = 1

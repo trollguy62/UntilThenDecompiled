@@ -1,0 +1,273 @@
+[gd_scene load_steps=18 format=3 uid="uid://clw1vml60pd4"]
+
+[ext_resource type="FontFile" uid="uid://cgsnpibqgvabu" path="res://fonts/NunitoSans-Regular.ttf" id="1"]
+[ext_resource type="Texture2D" uid="uid://dukbm8lp0mnbt" path="res://ui/screens/Game/LoadingScreen/icons/floppy_disk.png" id="2"]
+[ext_resource type="Script" path="res://ui/screens/Game/LoadingScreen/LoadingScreen.gd" id="4"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Shader" id="2"]
+code = "shader_type canvas_item;
+
+uniform float frame_width : hint_range(0.01, 0.5) = 0.1;
+
+vec2 rotateUV(vec2 uv, float rotation, float mid) {
+	return vec2(
+	    cos(rotation) * (uv.x - mid) + sin(rotation) * (uv.y - mid) + mid,
+	    cos(rotation) * (uv.y - mid) - sin(rotation) * (uv.x - mid) + mid
+	);
+}
+
+float hand(vec2 uv, float w, float l) {
+	float x = 0.5 - (w / 2.);
+	float aa = 0.02;
+	return
+		smoothstep(x - aa, x, uv.x) * smoothstep(x - aa, x, 1. - uv.x) *
+		step(0.5, 1. - uv.y) * smoothstep(0.5 - l - aa, 0.5 - l, uv.y);
+}
+
+float circle(float r, float distc) {
+	return smoothstep(r, r - 0.02, distc);
+}
+
+void fragment() {
+	vec2 uvc = UV - vec2(0.5);
+	float distc = length(uvc);
+
+	float frame_outer = circle(0.5, distc);
+	float frame_inner = circle(0.5 - frame_width, distc);
+	float frame = abs(frame_outer - frame_inner);
+	float axle = circle(0.06, distc);
+
+	float t = TIME * 2. * PI;
+	float hour_hand = hand(rotateUV(UV, t / 12.0, 0.5), 0.035, 0.18);
+	float minute_hand = hand(rotateUV(UV, t, 0.5), 0.035, 0.35);
+
+	float c = frame + axle + hour_hand + minute_hand;
+	c = clamp(c, 0, 1);
+	COLOR = vec4(vec3(c), 1);
+}"
+
+[sub_resource type="ShaderMaterial" id="3"]
+shader = SubResource("2")
+shader_parameter/frame_width = 0.05
+
+[sub_resource type="StyleBoxFlat" id="4"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="9"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Clock:speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="10"]
+resource_name = "time_loop"
+length = 16.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/Clock:speed")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2, 6, 7, 16),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 0.0, -8.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_3qxx5"]
+_data = {
+"RESET": SubResource("9"),
+"time_loop": SubResource("10")
+}
+
+[sub_resource type="Animation" id="Animation_tf43b"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/SaveIcon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="6"]
+length = 5.0
+step = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/SaveIcon:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1.5, 3.5, 4.5, 5),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_brywx"]
+_data = {
+"RESET": SubResource("Animation_tf43b"),
+"default": SubResource("6")
+}
+
+[sub_resource type="FontFile" id="7"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/48/0 = Vector2(0, 0)
+cache/0/48/0/ascent = 0.0
+cache/0/48/0/descent = 0.0
+cache/0/48/0/underline_position = 0.0
+cache/0/48/0/underline_thickness = 0.0
+cache/0/48/0/scale = 1.0
+cache/0/48/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/48/0/kerning_overrides/48/0 = Vector2(0, 0)
+
+[sub_resource type="Animation" id="8"]
+resource_name = "Fade"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5, 3, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ulsy3"]
+resource_name = "RESET"
+length = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_asx7i"]
+_data = {
+"Fade": SubResource("8"),
+"RESET": SubResource("Animation_ulsy3")
+}
+
+[node name="LoadingScreen" type="CanvasLayer"]
+layer = 50
+script = ExtResource("4")
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Panel" parent="UI"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("1")
+
+[node name="Clock" type="PanelContainer" parent="UI"]
+material = SubResource("3")
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_styles/panel = SubResource("4")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/Clock"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_3qxx5")
+}
+
+[node name="SaveIcon" type="TextureRect" parent="UI"]
+modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1248.0
+offset_top = -80.0
+offset_right = -1200.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2")
+expand_mode = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/SaveIcon"]
+root_node = NodePath("../../..")
+autoplay = "default"
+libraries = {
+"": SubResource("AnimationLibrary_brywx")
+}
+
+[node name="ChapterTransitionLabel" type="Label" parent="UI"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 28.0
+offset_right = -1036.0
+offset_bottom = -626.0
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = SubResource("7")
+theme_override_font_sizes/font_size = 48
+text = "Chapter 1"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="UI/ChapterTransitionLabel"]
+libraries = {
+"": SubResource("AnimationLibrary_asx7i")
+}

@@ -1,0 +1,404 @@
+[gd_scene load_steps=46 format=3 uid="uid://cygkh5vt58qeu"]
+
+[ext_resource type="Texture2D" uid="uid://b8nx2gmgnaaii" path="res://scenes/_main/ch5sc1/Metronome/assets/glass_deets.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://gr7wqm1qqrd7" path="res://scenes/_main/ch5sc1/Metronome/assets/metronome_base.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://qtq4te4f4d0l" path="res://scenes/_main/ch5sc1/Metronome/assets/pendulum.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bluclmpnuhhrb" path="res://scenes/_main/ch5sc1/Metronome/assets/sliding_weight.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://datfmqsgufm88" path="res://scenes/_main/ch5sc1/Metronome/assets/winding_key.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://db502xsitv4ni" path="res://scenes/_main/ch5sc1/Metronome/assets/tone_selector.png" id="6"]
+[ext_resource type="PackedScene" uid="uid://pbb13vhi2ohf" path="res://ui/components/Game/FocusableButton/FocusableButton.tscn" id="7"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc1/Metronome/Metronome.gd" id="9"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc1/Metronome/script/Pendulum.gd" id="10"]
+[ext_resource type="AudioStream" uid="uid://qghuredur7d1" path="res://scenes/_main/ch5sc1/Metronome/assets/Beat-Tick-1.ogg" id="11"]
+[ext_resource type="AudioStream" uid="uid://ckx2l6o3uflee" path="res://scenes/_main/ch5sc1/Metronome/assets/Full-Measure-Tick-1.ogg" id="12"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc1/Metronome/script/ToneSelector.gd" id="13"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc1/Metronome/script/WindingKey.gd" id="14"]
+[ext_resource type="AudioStream" uid="uid://cvxomlxv37af7" path="res://scenes/_main/ch5sc1/Metronome/assets/Metronome-Wind-Up.ogg" id="15"]
+[ext_resource type="FontFile" uid="uid://cgsnpibqgvabu" path="res://fonts/NunitoSans-Regular.ttf" id="15_36ds6"]
+[ext_resource type="Texture2D" uid="uid://b6tsexsc232lx" path="res://scenes/_main/ch5sc1/Metronome/assets/metronome_lower_base.png" id="15_kgera"]
+[ext_resource type="PackedScene" uid="uid://cng5pa21vpc74" path="res://ui/components/Pointer/Pointer.tscn" id="16_6wpl8"]
+[ext_resource type="PackedScene" uid="uid://i8b3fudxxx58" path="res://ui/components/FlatButton/FlatButton.tscn" id="16_nmn4g"]
+[ext_resource type="Texture2D" uid="uid://xdubcwdqcwu1" path="res://assets/ui/ic_play.png" id="17_bpek6"]
+
+[sub_resource type="AtlasTexture" id="1"]
+atlas = ExtResource("6")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="2"]
+atlas = ExtResource("6")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="3"]
+atlas = ExtResource("6")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="4"]
+atlas = ExtResource("6")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("1")
+}, {
+"duration": 1.0,
+"texture": SubResource("2")
+}, {
+"duration": 1.0,
+"texture": SubResource("3")
+}, {
+"duration": 1.0,
+"texture": SubResource("4")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="14"]
+size = Vector2(12.25, 12.25)
+
+[sub_resource type="AtlasTexture" id="16"]
+atlas = ExtResource("5")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="6"]
+atlas = ExtResource("5")
+region = Rect2(0, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="7"]
+atlas = ExtResource("5")
+region = Rect2(48, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="8"]
+atlas = ExtResource("5")
+region = Rect2(96, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="9"]
+atlas = ExtResource("5")
+region = Rect2(144, 0, 48, 32)
+
+[sub_resource type="SpriteFrames" id="10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("16")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("6")
+}, {
+"duration": 1.0,
+"texture": SubResource("7")
+}, {
+"duration": 1.0,
+"texture": SubResource("8")
+}, {
+"duration": 1.0,
+"texture": SubResource("9")
+}, {
+"duration": 1.0,
+"texture": SubResource("6")
+}],
+"loop": false,
+"name": &"turn",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="15"]
+size = Vector2(20, 19.25)
+
+[sub_resource type="Animation" id="Animation_mk652"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Front/PendulumPivot/Beat:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Front/PendulumPivot/BeatEmphasis:volume_db")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_d8wu0"]
+resource_name = "fade_out_vol"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Front/PendulumPivot/Beat:volume_db")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Front/PendulumPivot/BeatEmphasis:volume_db")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_dd16g"]
+_data = {
+"RESET": SubResource("Animation_mk652"),
+"fade_out_vol": SubResource("Animation_d8wu0")
+}
+
+[sub_resource type="Curve2D" id="12"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 639, 101, 0, 0, 0, 0, 639, 507)
+}
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="13"]
+
+[sub_resource type="FontVariation" id="FontVariation_fwwy7"]
+base_font = ExtResource("15_36ds6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c6yu"]
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gne04"]
+bg_color = Color(0, 0, 0, 0.815686)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ygbgo"]
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xhuf7"]
+bg_color = Color(0, 0, 0, 0.203922)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ajknb"]
+bg_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 24.0
+expand_margin_top = 8.0
+expand_margin_right = 24.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="FontVariation" id="FontVariation_8rwyn"]
+base_font = ExtResource("15_36ds6")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ov3pp"]
+content_margin_left = 24.0
+content_margin_right = 24.0
+bg_color = Color(0, 0, 0, 0.588235)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[node name="Metronome" type="Node2D"]
+texture_filter = 1
+script = ExtResource("9")
+
+[node name="Back" type="Node2D" parent="."]
+
+[node name="ToneSelector" type="Area2D" parent="Back"]
+position = Vector2(800, 577)
+scale = Vector2(4, 4)
+script = ExtResource("13")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Back/ToneSelector"]
+sprite_frames = SubResource("5")
+frame = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back/ToneSelector"]
+position = Vector2(12.125, 0.875)
+shape = SubResource("14")
+
+[node name="WindingKey" type="Area2D" parent="Back"]
+position = Vector2(864, 641)
+scale = Vector2(4, 4)
+script = ExtResource("14")
+
+[node name="AnimatedSprite" type="AnimatedSprite2D" parent="Back/WindingKey"]
+sprite_frames = SubResource("10")
+animation = &"idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Back/WindingKey"]
+position = Vector2(2.75, 2.625)
+shape = SubResource("15")
+
+[node name="WindUpAudio" type="AudioStreamPlayer2D" parent="Back/WindingKey"]
+stream = ExtResource("15")
+bus = &"SFX"
+
+[node name="Base" type="Sprite2D" parent="."]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("2")
+
+[node name="Front" type="Node2D" parent="."]
+
+[node name="PendulumPivot" type="Node2D" parent="Front"]
+position = Vector2(640, 583)
+script = ExtResource("10")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Front/PendulumPivot"]
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_dd16g")
+}
+
+[node name="Pendulum" type="Sprite2D" parent="Front/PendulumPivot"]
+position = Vector2(0, -223)
+scale = Vector2(4, 4)
+texture = ExtResource("3")
+
+[node name="Path2D" type="Path2D" parent="Front/PendulumPivot"]
+position = Vector2(-640, -583)
+curve = SubResource("12")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Front/PendulumPivot/Path2D"]
+position = Vector2(639, 101)
+rotation = 1.5708
+loop = false
+
+[node name="SlidingWeight" type="Area2D" parent="Front/PendulumPivot/Path2D/PathFollow2D"]
+position = Vector2(-35.0001, -6.10352e-05)
+rotation = -1.57038
+scale = Vector2(4, 4)
+
+[node name="Sprite" type="Sprite2D" parent="Front/PendulumPivot/Path2D/PathFollow2D/SlidingWeight"]
+position = Vector2(-1.52588e-05, 0)
+texture = ExtResource("4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Front/PendulumPivot/Path2D/PathFollow2D/SlidingWeight"]
+position = Vector2(0.00733948, 17)
+shape = SubResource("13")
+
+[node name="Beat" type="AudioStreamPlayer2D" parent="Front/PendulumPivot"]
+stream = ExtResource("11")
+bus = &"SFX"
+
+[node name="BeatEmphasis" type="AudioStreamPlayer2D" parent="Front/PendulumPivot"]
+stream = ExtResource("12")
+bus = &"SFX"
+
+[node name="GlassDeets" type="Sprite2D" parent="Front"]
+position = Vector2(640, 360)
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+
+[node name="LowerBase" type="Sprite2D" parent="Front"]
+position = Vector2(640, 652)
+scale = Vector2(4, 4)
+texture = ExtResource("15_kgera")
+
+[node name="BackButton" parent="." instance=ExtResource("7")]
+offset_left = 52.0
+offset_top = 33.0
+offset_right = 185.0
+offset_bottom = 78.0
+theme_override_fonts/font = SubResource("FontVariation_fwwy7")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5c6yu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_gne04")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ygbgo")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_xhuf7")
+theme_override_styles/focus = SubResource("StyleBoxFlat_ajknb")
+text = "UI_BACK"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = -0.551
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 948.0
+offset_top = 33.0
+offset_right = 1255.0
+offset_bottom = 94.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 8
+alignment = 2
+
+[node name="StartButton" parent="HBoxContainer" instance=ExtResource("16_nmn4g")]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="HBoxContainer/StartButton"]
+layout_mode = 2
+texture = ExtResource("17_bpek6")
+expand_mode = 2
+stretch_mode = 5
+
+[node name="TempoLabel" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_fonts/font = SubResource("FontVariation_8rwyn")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxFlat_ov3pp")
+text = "3/4 208 BPM"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Pointer" parent="." instance=ExtResource("16_6wpl8")]

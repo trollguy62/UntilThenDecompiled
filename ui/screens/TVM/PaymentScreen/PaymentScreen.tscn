@@ -1,0 +1,253 @@
+[gd_scene load_steps=20 format=3 uid="uid://bx4ub47q0tkwo"]
+
+[ext_resource type="Script" path="res://ui/screens/TVM/PaymentScreen/PaymentScreen.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://mnqw5d1komab" path="res://fonts/DejaVuSans.ttf" id="2_gy8l1"]
+[ext_resource type="Texture2D" uid="uid://bdah1dw8ogb7t" path="res://ui/screens/TVM/PaymentScreen/accepted_denoms.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://dwigenykngch3" path="res://ui/screens/TVM/PaymentScreen/info.png" id="7"]
+[ext_resource type="PackedScene" uid="uid://todv5gh6eieu" path="res://ui/screens/TVM/WindowsButton.tscn" id="9"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71tuk"]
+bg_color = Color(0, 0.835294, 1, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_cl6tx"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="FontVariation" id="FontVariation_gav0p"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="FontVariation" id="FontVariation_grfg7"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_33vor"]
+bg_color = Color(0.862745, 0.913725, 1, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_embjp"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fsvrw"]
+
+[sub_resource type="FontVariation" id="FontVariation_bs8ha"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="FontVariation" id="FontVariation_ety1x"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="FontVariation" id="FontVariation_fm2ss"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="FontVariation" id="FontVariation_xrcsl"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="FontVariation" id="FontVariation_3rgn3"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="FontVariation" id="FontVariation_7qu0t"]
+base_font = ExtResource("2_gy8l1")
+
+[sub_resource type="FontVariation" id="FontVariation_mfj5d"]
+base_font = ExtResource("2_gy8l1")
+
+[node name="PaymentScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = -24.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+
+[node name="Main" type="HBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 46.0
+theme_override_constants/separation = 32
+
+[node name="Payment" type="VBoxContainer" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.24
+theme_override_constants/separation = 0
+
+[node name="Header" type="PanelContainer" parent="Main/Payment"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.9
+theme_override_styles/panel = SubResource("StyleBoxFlat_71tuk")
+
+[node name="Container" type="MarginContainer" parent="Main/Payment/Header"]
+layout_mode = 2
+theme_override_constants/margin_top = 16
+theme_override_constants/margin_bottom = 16
+
+[node name="VBox" type="VBoxContainer" parent="Main/Payment/Header/Container"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="Label1" type="Label" parent="Main/Payment/Header/Container/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_cl6tx")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_PAY_TRIP_TO"
+horizontal_alignment = 1
+
+[node name="StationName" type="Label" parent="Main/Payment/Header/Container/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_gav0p")
+theme_override_font_sizes/font_size = 32
+text = "Bonifacio"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="Main/Payment/Header/Container/VBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_grfg7")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_PAY_INSERT_CASH"
+horizontal_alignment = 1
+
+[node name="AmountReq" type="PanelContainer" parent="Main/Payment"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_33vor")
+
+[node name="Margin" type="MarginContainer" parent="Main/Payment/AmountReq"]
+layout_mode = 2
+
+[node name="Amount" type="Label" parent="Main/Payment/AmountReq/Margin"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_embjp")
+theme_override_font_sizes/font_size = 80
+text = "P20.00"
+horizontal_alignment = 1
+
+[node name="Spacer" type="PanelContainer" parent="Main/Payment"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.11
+theme_override_styles/panel = SubResource("StyleBoxEmpty_fsvrw")
+
+[node name="AmountIns" type="HBoxContainer" parent="Main/Payment"]
+layout_mode = 2
+size_flags_vertical = 2
+
+[node name="Title" type="Label" parent="Main/Payment/AmountIns"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_bs8ha")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_PAY_AMOUNT_INSERTED"
+
+[node name="Amount" type="Label" parent="Main/Payment/AmountIns"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_ety1x")
+theme_override_font_sizes/font_size = 60
+text = "P0.00"
+
+[node name="Info" type="VBoxContainer" parent="Main"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 26
+
+[node name="Spacer1" type="PanelContainer" parent="Main/Info"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TicketInfo" type="Label" parent="Main/Info"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_fm2ss")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_PAY_INFO_TICKET"
+horizontal_alignment = 1
+
+[node name="PurchaseValue" type="HBoxContainer" parent="Main/Info"]
+layout_mode = 2
+theme_override_constants/separation = 0
+
+[node name="Title" type="Label" parent="Main/Info/PurchaseValue"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_xrcsl")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_PAY_PURCHASE_VAL"
+
+[node name="Amount" type="Label" parent="Main/Info/PurchaseValue"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_3rgn3")
+theme_override_font_sizes/font_size = 28
+text = "P20.00"
+
+[node name="AcceptedDenomsTitle" type="Label" parent="Main/Info"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_7qu0t")
+theme_override_font_sizes/font_size = 28
+text = "TVM_LABEL_PAY_NOTES_ACCEPTED"
+
+[node name="AcceptedDenoms" type="MarginContainer" parent="Main/Info"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.55
+theme_override_constants/margin_left = 16
+
+[node name="TextureRect" type="TextureRect" parent="Main/Info/AcceptedDenoms"]
+layout_mode = 2
+texture = ExtResource("6")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="MaxChargeInfo" type="MarginContainer" parent="Main/Info"]
+layout_mode = 2
+size_flags_vertical = 2
+size_flags_stretch_ratio = 2.04
+
+[node name="HBox" type="HBoxContainer" parent="Main/Info/MaxChargeInfo"]
+layout_mode = 2
+theme_override_constants/separation = 15
+
+[node name="Spacer1" type="PanelContainer" parent="Main/Info/MaxChargeInfo/HBox"]
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="TextureRect" type="TextureRect" parent="Main/Info/MaxChargeInfo/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.35
+texture = ExtResource("7")
+expand_mode = 4
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="Main/Info/MaxChargeInfo/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 4.43
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_mfj5d")
+theme_override_font_sizes/font_size = 22
+text = "TVM_LABEL_PAY_MAX_CHARGE"
+
+[node name="ConfirmBtn" parent="." instance=ExtResource("9")]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+offset_left = -313.0
+offset_top = -112.0
+offset_right = -54.0
+offset_bottom = -46.0
+grow_horizontal = 0
+grow_vertical = 0
+disabled = true
+text = "TVM_BUTTON_CANCEL"
+text_overrun_behavior = 3

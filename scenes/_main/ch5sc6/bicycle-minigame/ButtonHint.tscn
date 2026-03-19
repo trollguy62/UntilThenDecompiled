@@ -1,0 +1,25 @@
+[gd_scene load_steps=4 format=3 uid="uid://chtqg57rett5f"]
+
+[ext_resource type="Texture2D" uid="uid://c6bv4oyju7hpe" path="res://scenes/_main/ch5sc6/bicycle-minigame/assets/space_button_down.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://cyhv86hi87usl" path="res://scenes/_main/ch5sc6/bicycle-minigame/assets/space_button_up.png" id="2"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc6/bicycle-minigame/scripts/ButtonHint.gd" id="3"]
+
+[node name="ButtonHint" type="TextureButton"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -32.0
+offset_top = -20.0
+offset_right = 32.0
+offset_bottom = 20.0
+scale = Vector2(4, 4)
+pivot_offset = Vector2(32, 20)
+mouse_filter = 2
+toggle_mode = true
+texture_normal = ExtResource("2")
+texture_pressed = ExtResource("1")
+script = ExtResource("3")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true

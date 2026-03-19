@@ -1,0 +1,357 @@
+[gd_scene load_steps=30 format=3 uid="uid://5iros0lf6au8"]
+
+[ext_resource type="ArrayMesh" uid="uid://dw47pu1l1y34o" path="res://scenes/bedroom_mark/assets/bedroom.obj" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://cckm1wy0m23j" path="res://scenes/bedroom_mark/assets/window_cage.obj" id="2"]
+[ext_resource type="Texture2D" uid="uid://0fx8uejfycaa" path="res://scenes/bedroom_mark/assets/bedroom.png" id="3"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="4"]
+[ext_resource type="Texture2D" uid="uid://7sag1h4w4abx" path="res://scenes/bedroom_mark/assets/blinds_up.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://b6gkd1j470nol" path="res://scenes/bedroom_mark/assets/bedroom_rm.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://ctox6xys7fjme" path="res://scenes/bedroom_mark/assets/window_cage.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://b41e0ut7it3rt" path="res://scenes/bedroom_mark/assets/bedroom_back.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://by1lp0hgss1w0" path="res://scenes/bedroom_mark/assets/glass_in.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://bi45kqc3frhs1" path="res://scenes/bedroom_mark/assets/blinds_down.png" id="10"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="11"]
+[ext_resource type="Texture2D" uid="uid://d0030vprgxr5q" path="res://scenes/bedroom_mark/assets/blinds_down_n.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://h2pux6di6mnf" path="res://scenes/bedroom_mark/assets/blinds_up_n.png" id="13"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("11")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 0.2
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+shader_parameter/texture_roughness_metallic = ExtResource("6")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("4")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("8")
+
+[sub_resource type="QuadMesh" id="3"]
+size = Vector2(3.78, 1.6)
+
+[sub_resource type="ShaderMaterial" id="19"]
+render_priority = 0
+shader = ExtResource("11")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+shader_parameter/texture_normal = ExtResource("13")
+
+[sub_resource type="ShaderMaterial" id="20"]
+render_priority = 0
+shader = ExtResource("11")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("5")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_gy6w4"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.75002, 0.59, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("20"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 64, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 64, 63, 61, 10, 23, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 61, 10, 23, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ShaderMaterial" id="22"]
+render_priority = 0
+shader = ExtResource("11")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.5
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10")
+shader_parameter/texture_normal = ExtResource("12")
+
+[sub_resource type="ShaderMaterial" id="23"]
+render_priority = 0
+shader = ExtResource("11")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("10")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_bo4u0"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.75002, 0.59, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("23"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(168, 0, 64, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 168, 0, 64, 63, 61, 10, 23, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 61, 10, 23, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="Shader" id="25"]
+code = "shader_type spatial;
+render_mode diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color = vec4(1.0f);
+uniform sampler2D texture_albedo : source_color;
+uniform sampler2D texture_normal : hint_normal;
+
+uniform float metallic : hint_range(0, 1) = 0.0f;
+uniform float roughness : hint_range(0, 1) = 1.0f;
+uniform float specular : hint_range(0, 1) = 0.5f;
+uniform sampler2D texture_roughness_metallic : hint_default_white;
+
+uniform vec4 emission : source_color = vec4(0.0, 0.0, 0.0, 1.0);
+uniform float emission_energy : hint_range(0, 16) = 1.0f;
+uniform sampler2D texture_emission : hint_default_black;
+
+uniform vec3 uv1_scale = vec3(1.0);
+uniform vec3 uv1_offset;
+
+void vertex() {
+	UV = UV * uv1_scale.xy + uv1_offset.xy;
+}
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+void fragment() {
+	vec2 px_size = 1.0f / vec2(textureSize(texture_albedo, 0));
+
+	vec4 albedo_tex = texturePointSmooth(texture_albedo, UV, px_size);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	ALPHA = albedo.a * albedo_tex.a;
+
+	vec2 roughness_metallic_tex = texturePointSmooth(texture_roughness_metallic, UV, px_size).rg;
+	ROUGHNESS = roughness_metallic_tex.r * roughness;
+	METALLIC = roughness_metallic_tex.g * metallic;
+
+	NORMAL_MAP = texturePointSmooth(texture_normal, UV, px_size).rgb;
+	SPECULAR = specular;
+
+	vec4 emission_tex = texturePointSmooth(texture_emission, UV, px_size);
+	EMISSION = ((emission_tex.rgb * emission_tex.a) + (emission.rgb * emission.a)) * emission_energy;
+
+	ALPHA = 0.5f;
+}"
+
+[sub_resource type="ShaderMaterial" id="26"]
+render_priority = 0
+shader = SubResource("25")
+shader_parameter/albedo = Color(0.862745, 0.92549, 1, 0.388235)
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = Vector3(0, 0, 0)
+shader_parameter/texture_albedo = ExtResource("9")
+
+[sub_resource type="QuadMesh" id="27"]
+size = Vector2(0.7, 0.5)
+
+[sub_resource type="StandardMaterial3D" id="28"]
+transparency = 4
+albedo_color = Color(0.572549, 0.572549, 0.572549, 0.0980392)
+disable_receive_shadows = true
+
+[sub_resource type="QuadMesh" id="29"]
+size = Vector2(0.8, 0.6)
+
+[sub_resource type="ShaderMaterial" id="17"]
+render_priority = 0
+shader = ExtResource("11")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("7")
+
+[sub_resource type="BoxShape3D" id="18"]
+size = Vector3(1.6, 0.06, 3.78)
+
+[node name="Bedroom" type="MeshInstance3D"]
+material_override = SubResource("1")
+cast_shadow = 2
+mesh = ExtResource("1")
+
+[node name="Back" type="MeshInstance3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -1.57, 0.8, 1.89)
+material_override = SubResource("2")
+mesh = SubResource("3")
+
+[node name="Window" type="Node3D" parent="."]
+
+[node name="BlindsUp" type="MeshInstance3D" parent="Window"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.002, 0.69, 2.19)
+visible = false
+material_override = SubResource("19")
+cast_shadow = 2
+mesh = SubResource("ArrayMesh_gy6w4")
+
+[node name="BlindsDown" type="MeshInstance3D" parent="Window"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, -0.002, 0.69, 2.19)
+material_override = SubResource("22")
+cast_shadow = 2
+mesh = SubResource("ArrayMesh_bo4u0")
+
+[node name="GlassIn" type="MeshInstance3D" parent="Window"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 0.02, 0.95, 2.59)
+material_override = SubResource("26")
+cast_shadow = 0
+mesh = SubResource("27")
+
+[node name="GlassOut" type="MeshInstance3D" parent="Window"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0.0486403, 0.95, 2.62)
+material_override = SubResource("28")
+cast_shadow = 0
+mesh = SubResource("29")
+
+[node name="WindowCage" type="MeshInstance3D" parent="Window"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0560662, 0.65, 2.95249)
+material_override = SubResource("17")
+mesh = ExtResource("2")
+
+[node name="Floor" type="StaticBody3D" parent="."]
+
+[node name="Collider" type="CollisionShape3D" parent="Floor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.8, -0.03, 1.89)
+shape = SubResource("18")

@@ -1,0 +1,75 @@
+[gd_resource type="ShaderMaterial" load_steps=7 format=3 uid="uid://e4me7d12ilnf"]
+
+[ext_resource type="Texture2D" uid="uid://ccro6kv13iagj" path="res://scenes/house_mark/past/assets/crt_tv_display/01.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://dvnc1vk62uyqq" path="res://scenes/house_mark/past/assets/crt_tv_display/02.png" id="2_2xnnr"]
+[ext_resource type="Texture2D" uid="uid://b0bdbel6db02r" path="res://scenes/house_mark/past/assets/crt_tv_display/03.png" id="3_k4bl2"]
+[ext_resource type="Texture2D" uid="uid://7o78drjlb7uk" path="res://scenes/house_mark/past/assets/crt_tv_display/04.png" id="4_fuha7"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type spatial;
+render_mode depth_draw_opaque, diffuse_burley, specular_schlick_ggx, cull_disabled;
+
+uniform float power : hint_range(0., 1.) = 1.0;
+uniform float metallic : hint_range(0., 1.) = 0.1;
+uniform float roughness : hint_range(0., 1.) = 0.2;
+
+uniform sampler2D tex_background : source_color;
+
+float sin_bounded(float x, float a, float b) {
+	float n = (b - a) / 2.;
+	return n * sin(x) + n + a;
+}
+
+float scanline(float t, vec2 uv) {
+	float c = 1. - pow(abs(0.5 - uv.y), power);
+	c *= sin_bounded(t * 15. + uv.y * 200., 0.7, 1.0);
+	return c;
+}
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5f);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5f)) * pixel_size / lxy + vec2(0.5f), 0.0f, 1.0f);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+void fragment() {
+	vec2 px_size = 1.0f / vec2(textureSize(tex_background, 0));
+	vec2 uv = UV;
+
+	vec4 bg = texturePointSmooth(tex_background, uv, px_size);
+	float sl = scanline(TIME, uv);
+
+	ALBEDO = bg.rgb * sl;
+	EMISSION = bg.rgb * 1.5 * sl;
+
+	METALLIC = metallic;
+	ROUGHNESS = roughness;
+}
+"
+
+[sub_resource type="AnimatedTexture" id="AnimatedTexture_gb6g5"]
+frames = 4
+frame_0/texture = ExtResource("1")
+frame_0/duration = 0.2
+frame_1/texture = ExtResource("2_2xnnr")
+frame_1/duration = 0.2
+frame_2/texture = ExtResource("3_k4bl2")
+frame_2/duration = 0.2
+frame_3/texture = ExtResource("4_fuha7")
+frame_3/duration = 0.2
+
+[resource]
+render_priority = 0
+shader = SubResource("1")
+shader_parameter/power = 0.67
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.25
+shader_parameter/tex_background = SubResource("AnimatedTexture_gb6g5")

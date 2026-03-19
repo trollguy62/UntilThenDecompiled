@@ -1,0 +1,113 @@
+[gd_scene load_steps=10 format=3 uid="uid://cgn1va3ghkoda"]
+
+[ext_resource type="Texture2D" uid="uid://dlm0j6blk80yg" path="res://scenes/_main/ch2sc5a/MinigamePlatformer/assets/characters.png" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch2sc5a/MinigamePlatformer/scripts/Player.gd" id="2"]
+[ext_resource type="AudioStream" uid="uid://ce3bdybws68b0" path="res://scenes/_main/ch2sc5a/MinigamePlatformer/assets/sfx/dead.wav" id="3"]
+[ext_resource type="AudioStream" uid="uid://cung5annabnui" path="res://scenes/_main/ch2sc5a/MinigamePlatformer/assets/sfx/jump.wav" id="4"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "dead"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [65]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Color(10, 10, 10, 1), Color(1, 1, 1, 1), Color(10, 10, 10, 1), Color(1, 1, 1, 1), Color(10, 10, 10, 1), Color(1, 1, 1, 1), Color(10, 10, 10, 1), Color(1, 1, 1, 1), Color(10, 10, 10, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="2"]
+resource_name = "jump"
+length = 0.15
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [50, 51, 52, 53]
+}
+
+[sub_resource type="Animation" id="3"]
+resource_name = "walk"
+length = 0.6
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.15, 0.3, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [46, 47, 48, 49]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s1f0u"]
+_data = {
+"dead": SubResource("1"),
+"jump": SubResource("2"),
+"walk": SubResource("3")
+}
+
+[sub_resource type="RectangleShape2D" id="4"]
+size = Vector2(16.2472, 23.5106)
+
+[node name="Player" type="CharacterBody2D"]
+position = Vector2(227.998, 400.698)
+scale = Vector2(4, 4)
+collision_layer = 16384
+collision_mask = 32768
+script = ExtResource("2")
+run_speed = 200
+jump_speed = -600
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_s1f0u")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-10.8627, 0.374573)
+shape = SubResource("4")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(-8.4792, -0.354507)
+texture = ExtResource("1")
+offset = Vector2(-1.93438, -3.48157)
+hframes = 23
+vframes = 4
+frame = 46
+
+[node name="Jump" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4")
+volume_db = -7.72
+bus = &"Digital"
+
+[node name="Dead" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3")
+volume_db = -5.718
+bus = &"Digital"

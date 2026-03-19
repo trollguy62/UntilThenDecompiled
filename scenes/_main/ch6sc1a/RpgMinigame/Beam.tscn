@@ -1,0 +1,81 @@
+[gd_scene load_steps=7 format=3 uid="uid://62c3x27ydfgx"]
+
+[ext_resource type="Texture2D" uid="uid://bl7ci32jlpobv" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/Nicole/beam_parta_n.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://df1x1m7gbq8lv" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/Nicole/beam_start_n.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://b36etof6t1b3l" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/Nicole/beam_partb_n-export.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://ch7gaa7orsfbf" path="res://scenes/_main/ch6sc1a/RpgMinigame/assets/Nicole/beam_end_n-export.png" id="5"]
+
+[sub_resource type="GDScript" id="GDScript_vnomg"]
+script/source = "extends Node2D
+
+@onready var arrowhead = $ArrowHead
+@onready var debug_label = $CanvasLayer/Label
+
+var anchor = Vector2()
+var target = Vector2()
+
+var _length: float = 0
+var _t = 0
+var _d_base_pos
+
+
+func _ready():
+	anchor = self.position
+	_d_base_pos = arrowhead.position
+
+
+func _process(delta):
+	_t += delta
+	_length = anchor.distance_to(arrowhead.global_position)
+	arrowhead.position = sin(_t) * Vector2(25, 0) + _d_base_pos
+	debug_label.rect_global_position = arrowhead.global_position + Vector2(10, 100)
+	debug_label.text = str(_length)
+	queue_redraw()
+
+
+func _input(event):
+	if event.is_action_pressed(\"ui_cancel\"):
+		print(\"a\")
+		print(_length)
+
+
+func _draw():
+	draw_circle(Vector2(), 5, Color.AQUA)
+	draw_line(Vector2(), arrowhead.position, Color.AQUA, 5.0, false)
+"
+
+[sub_resource type="RectangleShape2D" id="1"]
+
+[node name="Beam" type="Node2D"]
+position = Vector2(304, 288)
+scale = Vector2(4, 4)
+script = SubResource("GDScript_vnomg")
+
+[node name="BeamStartN" type="Sprite2D" parent="."]
+texture = ExtResource("3")
+
+[node name="Sections" type="Node2D" parent="."]
+
+[node name="BeamPartbN" type="Sprite2D" parent="Sections"]
+position = Vector2(34.5, 8.74638e-05)
+texture = ExtResource("4")
+
+[node name="BeamPartAN" type="Sprite2D" parent="Sections"]
+visible = false
+position = Vector2(51.5, 0.000130562)
+texture = ExtResource("2")
+
+[node name="ArrowHead" type="Area2D" parent="."]
+position = Vector2(51.25, -1.75)
+scale = Vector2(1, -1)
+
+[node name="BeamEndN" type="Sprite2D" parent="ArrowHead"]
+texture = ExtResource("5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ArrowHead"]
+shape = SubResource("1")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+text = "text"

@@ -1,0 +1,176 @@
+[gd_scene load_steps=19 format=3 uid="uid://cjd2kabfvyqew"]
+
+[ext_resource type="Texture2D" uid="uid://c6pra0nmaek04" path="res://modules/rhythm-minigame/assets/mania/arrows/arrow_unfilled_left.png" id="1"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/mania/arrow_frame/ArrowVisual.gd" id="2"]
+[ext_resource type="PackedScene" uid="uid://bqqwduiorfhk1" path="res://modules/rhythm-minigame/scenes/mania/four_key_play_area/JudgmentText.tscn" id="3"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/mania/four_key_play_area/judgmentHighlight.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://5e0ocdvj4yx5" path="res://modules/rhythm-minigame/assets/effects/assets/spotlight_1_transparent.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://d30wbvc8tnc8n" path="res://modules/rhythm-minigame/assets/effects/assets/floaty_64_transparent.png" id="6"]
+[ext_resource type="FontFile" uid="uid://s02vc2v5phul" path="res://fonts/PTSans-Regular.ttf" id="7"]
+
+[sub_resource type="Animation" id="1"]
+resource_name = "pop"
+length = 0.15
+step = 0.01
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.01, 0.15),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(1.2, 1.2), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w05cf"]
+_data = {
+"pop": SubResource("1")
+}
+
+[sub_resource type="Gradient" id="2"]
+offsets = PackedFloat32Array(0, 0.112, 0.721, 1)
+colors = PackedColorArray(0.576471, 0.713726, 0.54902, 0, 1, 1, 1, 1, 1, 1, 1, 0.47451, 0.576471, 0.713726, 0.54902, 0)
+
+[sub_resource type="GradientTexture1D" id="3"]
+gradient = SubResource("2")
+width = 2048
+
+[sub_resource type="CanvasItemMaterial" id="9"]
+
+[sub_resource type="Curve" id="4"]
+_data = [Vector2(0.016835, 0), 0.0, 0.0, 0, 0, Vector2(0.306397, 0.1), 1.8, 1.8, 0, 0, Vector2(0.569024, 1), 0.0, 0.0, 0, 0, Vector2(0.99495, 0.536364), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="5"]
+curve = SubResource("4")
+
+[sub_resource type="ParticleProcessMaterial" id="6"]
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("5")
+
+[sub_resource type="CanvasItemMaterial" id="7"]
+particles_animation = true
+particles_anim_h_frames = 7
+particles_anim_v_frames = 7
+particles_anim_loop = false
+
+[sub_resource type="ParticleProcessMaterial" id="8"]
+spread = 180.0
+gravity = Vector3(0, 0, 0)
+
+[sub_resource type="FontFile" id="10"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("7")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="ArrowVisual" type="TextureRect"]
+custom_minimum_size = Vector2(64, 64)
+offset_left = -104.0
+offset_top = -32.0
+offset_right = -40.0
+offset_bottom = 32.0
+pivot_offset = Vector2(32, 32)
+texture = ExtResource("1")
+expand_mode = 1
+script = ExtResource("2")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 0
+offset_left = -36.0
+offset_top = -46.0
+offset_right = 38.0
+offset_bottom = 69.0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w05cf")
+}
+
+[node name="Anchor" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = 35.0
+offset_right = 20.0
+offset_bottom = 75.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="JudgmentText" parent="Anchor" instance=ExtResource("3")]
+layout_mode = 1
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+text = "PERFECT"
+text_overrun_behavior = 0
+
+[node name="judgmentHighlight" type="Sprite2D" parent="."]
+self_modulate = Color(0.721569, 0.827451, 0.670588, 0.415686)
+show_behind_parent = true
+position = Vector2(31, 32)
+rotation = 1.5708
+scale = Vector2(0.071, 73)
+texture = SubResource("3")
+script = ExtResource("4")
+
+[node name="Timer" type="Timer" parent="judgmentHighlight"]
+wait_time = 0.67
+one_shot = true
+
+[node name="HitEffect" type="Node2D" parent="."]
+position = Vector2(32, 32)
+
+[node name="Flare" type="GPUParticles2D" parent="HitEffect"]
+modulate = Color(0, 1, 0.227451, 1)
+material = SubResource("9")
+scale = Vector2(0.3, 0.3)
+emitting = false
+amount = 1
+process_material = SubResource("6")
+texture = ExtResource("5")
+lifetime = 0.4
+one_shot = true
+
+[node name="SmallParticles" type="GPUParticles2D" parent="HitEffect"]
+modulate = Color(0.556863, 1, 0.678431, 1)
+material = SubResource("7")
+emitting = false
+amount = 10
+process_material = SubResource("8")
+texture = ExtResource("6")
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+
+[node name="ControlLabel" type="Label" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 2.0
+offset_top = 20.7041
+offset_right = 66.0
+offset_bottom = 52.7041
+theme_override_fonts/font = SubResource("10")
+text = "F"
+horizontal_alignment = 1

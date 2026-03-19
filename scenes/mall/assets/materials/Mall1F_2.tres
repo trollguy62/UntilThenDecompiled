@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://esyt8oru7hyc"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialTransparent.gdshader" id="1"]
+[ext_resource type="Texture2D" uid="uid://4kqha1hkie0n" path="res://scenes/mall/assets/mall_structure_1F.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://bbenotwj61n81" path="res://scenes/mall/assets/mall_structure_1F_em.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://ddtfewmpgfs4h" path="res://scenes/mall/assets/mall_structure_1F_rm.png" id="4"]
+[ext_resource type="Material" uid="uid://b7wotf5kuy6ef" path="res://scenes/mall/assets/materials/Mall1F_1.tres" id="5"]
+
+[resource]
+render_priority = 0
+next_pass = ExtResource("5")
+shader = ExtResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/metallic = 1.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 4.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+shader_parameter/texture_roughness_metallic = ExtResource("4")
+shader_parameter/texture_emission = ExtResource("3")

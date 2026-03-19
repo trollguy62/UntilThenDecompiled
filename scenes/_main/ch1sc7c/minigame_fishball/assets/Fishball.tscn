@@ -1,0 +1,35 @@
+[gd_scene load_steps=9 format=3 uid="uid://d1avdq7awr4c7"]
+
+[ext_resource type="Texture2D" uid="uid://drbbjl802hrbo" path="res://scenes/_main/ch1sc7c/minigame_fishball/assets/fishball_1.png" id="1"]
+[ext_resource type="Shader" path="res://assets/shaders/Smooth2D.gdshader" id="2"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc7c/minigame_fishball/scripts/Fishball.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://dn8g8xibxiwx1" path="res://scenes/_main/ch1sc7c/minigame_fishball/assets/fishball_2.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://g0korgxbbbwv" path="res://scenes/_main/ch1sc7c/minigame_fishball/assets/fishball_3.png" id="5"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_quwwj"]
+shader = ExtResource("2")
+shader_parameter/texture_albedo = ExtResource("1")
+
+[sub_resource type="CircleShape2D" id="2"]
+radius = 44.7214
+
+[sub_resource type="CircleShape2D" id="3"]
+radius = 28.0
+
+[node name="Fishball" type="RigidBody2D"]
+can_sleep = false
+script = ExtResource("3")
+sprite_variants = Array[Texture]([ExtResource("1"), ExtResource("4"), ExtResource("5")])
+
+[node name="Sprite" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_quwwj")
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("2")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("3")

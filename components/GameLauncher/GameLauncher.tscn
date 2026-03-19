@@ -1,0 +1,44 @@
+[gd_scene load_steps=7 format=3 uid="uid://klk62wejqa4v"]
+
+[ext_resource type="Script" path="res://components/GameLauncher/GameLauncher.gd" id="1_pg0pv"]
+[ext_resource type="PackedScene" uid="uid://gmvclmbwvkp3" path="res://ui/screens/Game/SplashScreen/SplashScreen.tscn" id="2_ji48v"]
+[ext_resource type="PackedScene" uid="uid://gp5mv46fbi0p" path="res://ui/screens/Game/OldVkWarning/OldVulkanWarning.tscn" id="3_wwpjo"]
+[ext_resource type="PackedScene" uid="uid://dtmtno5llg3ij" path="res://ui/screens/Game/ContentWarningScreen/ContentWarningScreen.tscn" id="4_trrqw"]
+[ext_resource type="PackedScene" uid="uid://cknj41bv32g6j" path="res://ui/screens/Game/ContentWarningListScreen/ContentWarningListScreen.tscn" id="5_vrmlr"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dmj5i"]
+
+[node name="GameLauncher" type="PanelContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_dmj5i")
+script = ExtResource("1_pg0pv")
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="BG" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0, 0, 1)
+metadata/_edit_lock_ = true
+
+[node name="OldVulkanWarning" parent="." instance=ExtResource("3_wwpjo")]
+visible = false
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="SplashScreen" parent="." instance=ExtResource("2_ji48v")]
+layout_mode = 2
+fade_duration = 0.75
+
+[node name="ContentWarningScreen" parent="." instance=ExtResource("4_trrqw")]
+visible = false
+layout_mode = 2
+metadata/_edit_lock_ = true
+
+[node name="ContentWarningListScreen" parent="." instance=ExtResource("5_vrmlr")]
+visible = false
+layout_mode = 2
+metadata/_edit_lock_ = true

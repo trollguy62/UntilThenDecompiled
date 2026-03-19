@@ -1,0 +1,50 @@
+extends Node
+
+@export var look_at_spatial: NodePath
+@export var use_x = false
+@onready var parent = get_parent()
+@onready var sprite = $"../Sprite"
+@onready var state = Utils.get_state_container_of(sprite.alias) as StateContainer
+@onready var follower = $"../AnchorFollower"
+@onready var sfx_footsteps = $Footsteps
+
+@onready var look_at: Node3D = get_node(look_at_spatial)
+
+var _last_pos := Vector3.ZERO
+
+
+func _ready():
+	follower.enabled = false
+	state.changed.connect(_on_state_changed)
+
+
+func _on_state_changed():
+	var mode = state.dict.get_value("mode", "standby")
+	var follower_enabled = mode == "follow"
+	if follower.enabled != follower_enabled:
+		follower.enabled = follower_enabled
+
+
+func _process(_delta):
+	if follower.enabled:
+		_process_flip_h()
+		_process_state()
+
+func _process_flip_h():
+	var dx = look_at.global_transform.origin.x - parent.global_transform.origin.x
+	var dz = look_at.global_transform.origin.z - parent.global_transform.origin.z
+	sprite.flip_h = dx > 0 if use_x else dz > 0
+
+
+func _process_state():
+	var current_pos = sprite.global_transform.origin
+
+	if _last_pos.distance_to(current_pos) > Constants.EPSILON:
+		state.flags.add("walk")
+		if not sfx_footsteps.playing:
+			sfx_footsteps.play()
+	else:
+		state.flags.remove("walk")
+		sfx_footsteps.stop()
+
+	_last_pos = current_pos

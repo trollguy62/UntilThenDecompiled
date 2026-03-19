@@ -1,0 +1,67 @@
+[gd_scene load_steps=6 format=3 uid="uid://u6o5i3v0frgf"]
+
+[ext_resource type="FontFile" uid="uid://dc3c5fb1j687x" path="res://modules/rhythm-minigame/assets/fonts/Noto_Sans_JP/NotoSansJP-Medium.otf" id="1"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeLyricsOutlined.gd" id="2"]
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/KaraokeLyrics.gd" id="3"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="2"]
+fallbacks = Array[Font]([ExtResource("1")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+
+[node name="LyricsBase" type="Label"]
+offset_right = 319.0
+offset_bottom = 35.0
+size_flags_horizontal = 4
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 24
+text = "Lorem ipsum dolor sit amet"
+script = ExtResource("3")
+
+[node name="LyricsOutlined" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -154.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.133333, 0.113725, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("2")
+theme_override_font_sizes/font_size = 24
+text = "Lorem ipsum dolor sit amet"
+clip_text = true
+script = ExtResource("2")

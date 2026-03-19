@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=3 uid="uid://c2mpm1q6fyl0b"]
+
+[ext_resource type="Script" path="res://ui/screens/FbPictureScreen/FbPictureScreen.gd" id="1"]
+[ext_resource type="PackedScene" uid="uid://cbmmyidgbhbyf" path="res://ui/components/PictureComponent/PictureComponent.tscn" id="2_qcx7b"]
+[ext_resource type="PackedScene" uid="uid://dcje2jofo46a6" path="res://ui/components/FbMediaStatsBar/FbMediaStatsBar.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://cr7cbv753bex5" path="res://ui/components/FbMenuBar/FbMenuBar.tscn" id="4_akimf"]
+
+[node name="FbPictureScreen" type="Control" node_paths=PackedStringArray("focus_on_enter")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+focus_on_enter = NodePath("FbMediaStatsBar/Main/LikeBtn")
+disable_focus_enter_on_no_controller = true
+
+[node name="PictureComponent" parent="." instance=ExtResource("2_qcx7b")]
+layout_mode = 1
+
+[node name="FbMediaStatsBar" parent="." instance=ExtResource("3")]
+layout_mode = 1
+offset_top = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="MenuBar" parent="." instance=ExtResource("4_akimf")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+title = ""
+
+[editable path="FbMediaStatsBar"]
+[editable path="MenuBar"]

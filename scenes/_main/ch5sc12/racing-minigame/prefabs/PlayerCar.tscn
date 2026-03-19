@@ -1,0 +1,132 @@
+[gd_scene load_steps=36 format=3 uid="uid://c6ggg0pq4yy8a"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch5sc12/racing-minigame/scripts/CarPlayerController.gd" id="1"]
+[ext_resource type="AudioStream" uid="uid://d4mbkxw2xyvri" path="res://scenes/_main/ch5sc12/racing-minigame/assets/audio/collisions/Collision 1 (Short).ogg" id="2"]
+[ext_resource type="PackedScene" uid="uid://bgck8o6au5spd" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Car3.tscn" id="3"]
+[ext_resource type="PackedScene" uid="uid://b2uej7h8vtuyd" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Car1.tscn" id="4"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc12/racing-minigame/scripts/CarSelector.gd" id="5"]
+[ext_resource type="PackedScene" uid="uid://6ib1rfpw6r5o" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Car2.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://diwcprvdpvxl0" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Car7.tscn" id="7"]
+[ext_resource type="AudioStream" uid="uid://d060hpnmkcevf" path="res://scenes/_main/ch5sc12/racing-minigame/assets/audio/revving/RacingEngineLoExt.wav" id="7_alcy6"]
+[ext_resource type="Texture2D" uid="uid://bhmvydub372xw" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car3_orange.png" id="8"]
+[ext_resource type="AudioStream" uid="uid://d3hbw6h4eqolp" path="res://scenes/_main/ch5sc12/racing-minigame/assets/audio/revving/RacingEngineMidExt.wav" id="8_2j801"]
+[ext_resource type="Shader" path="res://scenes/_main/ch5sc12/racing-minigame/shaders/OpaqueCar.gdshader" id="8_wjhox"]
+[ext_resource type="Texture2D" uid="uid://dyblaulw2c1ej" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car2_yellow.png" id="9"]
+[ext_resource type="AudioStream" uid="uid://i1p3x7llbse3" path="res://scenes/_main/ch5sc12/racing-minigame/assets/audio/revving/RacingEngineHiExt.wav" id="9_cmesb"]
+[ext_resource type="Texture2D" uid="uid://3dql4hxyi4x7" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car1_olive.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cee48prnlnh4m" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car1_blue.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://ck1b50ambrxny" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car1_brown.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://7hox1e3d6oo1" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car2_blue.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://dbmvtquusds61" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car1_green.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://cfyyypelru7xb" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car3_blue.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://rmrhhhewwekp" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car2_purple.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://dp1fq53bfanj6" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car2_orange.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://bnqgbmxrph2xh" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car3_green.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://balqdgrenab1y" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car3_red.png" id="19"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc12/racing-minigame/scripts/Car.gd" id="20"]
+[ext_resource type="Texture2D" uid="uid://dbmw0baqjg0r8" path="res://scenes/_main/ch5sc12/racing-minigame/assets/Car/Textures/car4_yellow.png" id="21"]
+[ext_resource type="Material" uid="uid://ckrocpfplxtcu" path="res://scenes/_main/ch5sc12/racing-minigame/assets/shaders/transparent.tres" id="22"]
+[ext_resource type="AudioStream" uid="uid://cgkob7tsjxbev" path="res://scenes/_main/ch5sc12/racing-minigame/assets/audio/collisions/Collision 4 (Short).ogg" id="24"]
+[ext_resource type="AudioStream" uid="uid://csb32ko0j0buy" path="res://scenes/_main/ch5sc12/racing-minigame/assets/audio/collisions/Collision 3 (Short).ogg" id="25"]
+[ext_resource type="AudioStream" uid="uid://b13r0ijdcr7c6" path="res://scenes/_main/ch5sc12/racing-minigame/assets/audio/collisions/Collision 2 (Long).ogg" id="26"]
+[ext_resource type="AudioStream" uid="uid://owunlau73cl3" path="res://scenes/_main/ch5sc12/racing-minigame/assets/audio/collisions/Collision 5 (Short).ogg" id="27"]
+[ext_resource type="FontFile" uid="uid://7gdw5s8e3mk0" path="res://fonts/Pixeled.ttf" id="28"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0ibom"]
+render_priority = 0
+shader = ExtResource("8_wjhox")
+shader_parameter/jitter = 0.5
+shader_parameter/jitter_z_coordinate = false
+shader_parameter/jitter_depth_independent = false
+shader_parameter/affine_texture_mapping = false
+shader_parameter/alpha_scissor = 1.0
+
+[sub_resource type="FontVariation" id="FontVariation_ip725"]
+base_font = ExtResource("28")
+
+[sub_resource type="PhysicsMaterial" id="11"]
+
+[sub_resource type="SphereShape3D" id="12"]
+radius = 3.0
+
+[node name="PlayerCar" type="Node3D"]
+script = ExtResource("1")
+collision_sounds_enabled = true
+collision_sounds = [ExtResource("2"), ExtResource("26"), ExtResource("25"), ExtResource("24"), ExtResource("27")]
+car_model = 1
+color_variation = 3
+
+[node name="CarMesh" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
+
+[node name="CarSelector" type="Node3D" parent="CarMesh"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("5")
+opaque_mat = SubResource("ShaderMaterial_0ibom")
+transparent_mat = ExtResource("22")
+
+[node name="Car1" parent="CarMesh/CarSelector" instance=ExtResource("4")]
+script = ExtResource("20")
+textures = Array[Texture]([ExtResource("11"), ExtResource("12"), ExtResource("14"), ExtResource("10")])
+
+[node name="Car2" parent="CarMesh/CarSelector" instance=ExtResource("6")]
+visible = false
+script = ExtResource("20")
+textures = Array[Texture]([ExtResource("13"), ExtResource("17"), ExtResource("16"), ExtResource("9")])
+
+[node name="Car3" parent="CarMesh/CarSelector" instance=ExtResource("3")]
+visible = false
+script = ExtResource("20")
+textures = Array[Texture]([ExtResource("15"), ExtResource("18"), ExtResource("8"), ExtResource("19")])
+
+[node name="Car7" parent="CarMesh/CarSelector" instance=ExtResource("7")]
+visible = false
+script = ExtResource("20")
+textures = Array[Texture]([ExtResource("21")])
+
+[node name="RayCast" type="RayCast3D" parent="CarMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.30886, 0)
+target_position = Vector3(0, -1.5, 0)
+collision_mask = 4
+debug_shape_custom_color = Color(1, 0, 0, 1)
+
+[node name="Label3D" type="Label3D" parent="CarMesh"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.93477, 0)
+pixel_size = 0.01
+text = "CPU1"
+font = SubResource("FontVariation_ip725")
+font_size = 60
+outline_size = 0
+
+[node name="Ball" type="RigidBody3D" parent="."]
+collision_mask = 6
+mass = 1.05
+center_of_mass_mode = 1
+physics_material_override = SubResource("11")
+gravity_scale = 5.0
+max_contacts_reported = 4
+can_sleep = false
+linear_damp = 0.5
+angular_damp = 50.0
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Ball"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.8, 0)
+shape = SubResource("12")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = 24.0
+
+[node name="LoEngine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_alcy6")
+volume_db = -43.34
+autoplay = true
+
+[node name="MidEngine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_2j801")
+volume_db = -43.34
+autoplay = true
+
+[node name="HiEngine" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_cmesb")
+volume_db = -43.34
+autoplay = true

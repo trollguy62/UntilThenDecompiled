@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://f1k6hqggq7sa"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="1_yik4h"]
+[ext_resource type="Texture2D" uid="uid://cihuqd8q6tpig" path="res://scenes/house_nicole/assets/box_jnf.png" id="2_7pxyq"]
+[ext_resource type="ArrayMesh" uid="uid://bofrq2mnkywb8" path="res://scenes/house_nicole/assets/box_jnf.obj" id="3_e0m2e"]
+[ext_resource type="ArrayMesh" uid="uid://bb70o7g2h1a8p" path="res://scenes/house_nicole/assets/box_flap_jnf.obj" id="4_0h182"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1qlfr"]
+render_priority = 0
+shader = ExtResource("1_yik4h")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2_7pxyq")
+
+[node name="BoxMed" type="MeshInstance3D"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 2.89676, -0.44, 0.77037)
+material_override = SubResource("ShaderMaterial_1qlfr")
+mesh = ExtResource("3_e0m2e")
+
+[node name="Flap1" type="MeshInstance3D" parent="."]
+transform = Transform3D(0.995, -1.19209e-07, 1.3411e-07, -1.45121e-07, -0.965926, 0.258819, 1.19209e-07, -0.258819, -0.965926, 0.228999, 0.2, 0.26)
+material_override = SubResource("ShaderMaterial_1qlfr")
+mesh = ExtResource("4_0h182")
+
+[node name="Flap2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-0.995, 2.38419e-07, 1.78814e-07, -1.30112e-07, -0.866025, 0.5, 2.68221e-07, 0.5, 0.866025, 0.000999689, 0.2, -1.19209e-07)
+material_override = SubResource("ShaderMaterial_1qlfr")
+mesh = ExtResource("4_0h182")

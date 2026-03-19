@@ -1,0 +1,273 @@
+[gd_scene load_steps=18 format=3 uid="uid://d3ihyck5u1uy"]
+
+[ext_resource type="Texture2D" uid="uid://dqp0unbjugv3q" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/assets/char_sprites/npc/adult1.png" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/scripts/PathFinder.gd" id="2"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/Minigames/AswangWorld2/scripts/NPC.gd" id="3"]
+[ext_resource type="EventAsset" uid="uid://bi5ln5ey287x1" path="res://addons/fmod/editor/resources/events/{66ed8efa-e5ea-4aeb-8455-3c434e28ed38}.tres" id="4_rx3hl"]
+
+[sub_resource type="CircleShape2D" id="1"]
+
+[sub_resource type="CircleShape2D" id="2"]
+radius = 96.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yqu0v"]
+bg_color = Color(0.109804, 0.109804, 0.109804, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x5ttj"]
+bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Animation" id="5"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="6"]
+resource_name = "b_chase_walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [16, 17, 18, 19]
+}
+
+[sub_resource type="Animation" id="7"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="8"]
+resource_name = "f_chase_walk"
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="9"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="10"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="11"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="12"]
+length = 0.8
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [20, 21, 22, 23]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite:flip_h")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cjw1y"]
+_data = {
+"b_idle_walk": SubResource("5"),
+"b_scared_walk": SubResource("6"),
+"f_idle_walk": SubResource("7"),
+"f_scared_walk": SubResource("8"),
+"l_idle_walk": SubResource("9"),
+"l_scared_walk": SubResource("10"),
+"r_idle_walk": SubResource("11"),
+"r_scared_walk": SubResource("12")
+}
+
+[node name="NPC_Adult1" type="CharacterBody2D"]
+position = Vector2(55, 100)
+scale = Vector2(0.15, 0.15)
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("3")
+speed_patrol = 30
+speed_run_away = 60
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -62.901)
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+flip_h = true
+hframes = 4
+vframes = 6
+frame = 4
+
+[node name="PathFinder" type="Node" parent="Sprite"]
+script = ExtResource("2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(2.5, 2.5)
+shape = SubResource("1")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -50.9218)
+shape = SubResource("2")
+
+[node name="TimerRunAway" type="Timer" parent="."]
+wait_time = 2.0
+one_shot = true
+
+[node name="TimerSelectPoint" type="Timer" parent="."]
+wait_time = 0.001
+one_shot = true
+
+[node name="TimerReduceFear" type="Timer" parent="."]
+wait_time = 0.01
+autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -52.777
+offset_top = -141.932
+offset_right = 59.223
+offset_bottom = -127.932
+theme_override_styles/background = SubResource("StyleBoxFlat_yqu0v")
+theme_override_styles/fill = SubResource("StyleBoxFlat_x5ttj")
+value = 100.0
+show_percentage = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_cjw1y")
+}
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 5
+
+[node name="Scream" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("4_rx3hl")

@@ -1,0 +1,156 @@
+[gd_scene load_steps=4 format=3 uid="uid://ba5xi3j2x4w7w"]
+
+[ext_resource type="Script" path="res://addons/record-replay/RecordReplayPanel.gd" id="1_h3x6u"]
+[ext_resource type="Texture2D" uid="uid://cwafoli71fioc" path="res://assets/ui/ic_refresh.png" id="2_7j2px"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1i3mt"]
+
+[node name="RecordReplayPanel" type="Control"]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h3x6u")
+metadata/_edit_lock_ = true
+
+[node name="HBox" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBox" type="HBoxContainer" parent="HBox/VBox"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBox/VBox/HBox"]
+layout_mode = 2
+text = "Scenes"
+
+[node name="Refresh" type="Button" parent="HBox/VBox/HBox"]
+custom_minimum_size = Vector2(31, 31)
+layout_mode = 2
+icon = ExtResource("2_7j2px")
+expand_icon = true
+
+[node name="SceneList" type="ItemList" parent="HBox/VBox"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox2" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HBox" type="HBoxContainer" parent="HBox/VBox2"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="HBox/VBox2/HBox"]
+layout_mode = 2
+text = "Recordings"
+
+[node name="Spacer" type="Panel" parent="HBox/VBox2/HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/panel = SubResource("StyleBoxEmpty_1i3mt")
+
+[node name="NewRecording" type="Button" parent="HBox/VBox2/HBox"]
+layout_mode = 2
+text = "+ New"
+
+[node name="DeleteRecording" type="Button" parent="HBox/VBox2/HBox"]
+layout_mode = 2
+text = "Delete"
+
+[node name="RecordingList" type="ItemList" parent="HBox/VBox2"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBox3" type="VBoxContainer" parent="HBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBox/VBox3"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+text = "Info"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="HBox/VBox3"]
+layout_mode = 2
+
+[node name="RecordReplay" type="Button" parent="HBox/VBox3/HBoxContainer"]
+layout_mode = 2
+text = "Record"
+
+[node name="RunScene" type="Button" parent="HBox/VBox3/HBoxContainer"]
+layout_mode = 2
+text = "Run Scene"
+
+[node name="OpenScene" type="Button" parent="HBox/VBox3/HBoxContainer"]
+layout_mode = 2
+text = "Open Scene"
+
+[node name="Inspect" type="Button" parent="HBox/VBox3/HBoxContainer"]
+layout_mode = 2
+text = "Inspect"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="HBox/VBox3"]
+layout_mode = 2
+
+[node name="Name" type="LineEdit" parent="HBox/VBox3/HBoxContainer2"]
+layout_mode = 2
+size_flags_horizontal = 3
+placeholder_text = "Name"
+
+[node name="MouseKeyboard" type="Button" parent="HBox/VBox3/HBoxContainer2"]
+layout_mode = 2
+text = "M"
+
+[node name="Gamepad" type="Button" parent="HBox/VBox3/HBoxContainer2"]
+layout_mode = 2
+text = "G"
+
+[node name="SaveName" type="Button" parent="HBox/VBox3/HBoxContainer2"]
+layout_mode = 2
+text = "Save"
+
+[node name="Duration" type="Label" parent="HBox/VBox3"]
+layout_mode = 2
+text = "Duration: 6m 9s"
+
+[node name="InputEvents" type="Label" parent="HBox/VBox3"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+text = "Input events: 420"
+
+[node name="ManualCount" type="Label" parent="HBox/VBox3"]
+custom_minimum_size = Vector2(0, 31)
+layout_mode = 2
+text = "Manual count: 69"
+
+[node name="Blocker" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.67451)
+
+[node name="Label" type="Label" parent="Blocker"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "DISABLED IN PLAY MODE"
+horizontal_alignment = 1
+vertical_alignment = 1

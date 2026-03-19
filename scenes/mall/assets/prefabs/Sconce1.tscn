@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=3 uid="uid://tphtso6lx5ue"]
+
+[ext_resource type="Texture2D" uid="uid://sujuc06su4u2" path="res://scenes/mall/assets/sconce_1.png" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://6ii07elbfwli" path="res://scenes/mall/assets/sconce.obj" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://duxbxk7ixfopq" path="res://scenes/mall/assets/sconce_1_em.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://bjuwedlx1xytd" path="res://scenes/mall/assets/sconce_1_bleed_decal.png" id="6"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 0.94902, 0.47451, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("1")
+shader_parameter/texture_emission = ExtResource("4")
+
+[node name="Sconce1" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.7, 0.92, -3.5)
+mesh = ExtResource("2")
+surface_material_override/0 = SubResource("1")
+
+[node name="BleedTop" type="Decal" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0.0650005, 0.276, 0)
+size = Vector3(0.08, 0.02, 0.08)
+texture_albedo = ExtResource("6")
+emission_energy = 0.4
+modulate = Color(1, 0.964706, 0.635294, 1)
+
+[node name="BleedBottom" type="Decal" parent="."]
+transform = Transform3D(-1, -6.60024e-15, -1.50996e-07, -1.50996e-07, 4.37114e-08, 1, 0, 1, -4.37114e-08, 0.0650005, -0.0550002, 0)
+size = Vector3(0.08, 0.02, 0.08)
+texture_albedo = ExtResource("6")
+emission_energy = 0.4
+modulate = Color(1, 0.964706, 0.635294, 1)

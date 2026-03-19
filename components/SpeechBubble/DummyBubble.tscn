@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://udsiuca4u26i"]
+
+[ext_resource type="PackedScene" uid="uid://cvd6iir5bhwqf" path="res://components/SpeechBubble/Label.tscn" id="2_st1ug"]
+[ext_resource type="Script" path="res://components/SpeechBubble/DummyBubble.gd" id="3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3rhx4"]
+content_margin_left = 20.0
+content_margin_top = 20.0
+content_margin_right = 16.0
+content_margin_bottom = 16.0
+
+[node name="DummyBubble" type="PanelContainer"]
+modulate = Color(1, 1, 1, 0)
+light_mask = 65
+use_parent_material = true
+offset_right = 37.0
+offset_bottom = 38.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_3rhx4")
+script = ExtResource("3")
+
+[node name="Label" parent="." instance=ExtResource("2_st1ug")]
+layout_mode = 2

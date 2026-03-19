@@ -1,0 +1,82 @@
+[gd_scene load_steps=12 format=3 uid="uid://knxos6klu71f"]
+
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="1"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="2"]
+[ext_resource type="Texture2D" uid="uid://bvhs00o0tcpo5" path="res://scenes/_main/ch1sc7c/characters/KuyaSorbetero/lb_stand^lb_default_idle/03.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://d1tjplr3k60jj" path="res://scenes/_main/ch1sc7c/characters/KuyaSorbetero/lb_stand^lb_default_idle/02.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://xtdfxneeapdc" path="res://scenes/_main/ch1sc7c/characters/KuyaSorbetero/lb_stand^lb_default_idle/01.png" id="5"]
+[ext_resource type="Texture2D" uid="uid://dfrfnoabc8lgq" path="res://scenes/_main/ch1sc7c/characters/KuyaSorbetero/lb_stand^lb_default_idle/05.png" id="6"]
+[ext_resource type="Texture2D" uid="uid://kqlm1e2b4vrw" path="res://scenes/_main/ch1sc7c/characters/KuyaSorbetero/lb_stand^lb_default_idle/04.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://btu1ay8ks0x6f" path="res://scenes/_main/ch1sc7c/characters/KuyaSorbetero/lb_stand^lb_default_idle/06.png" id="8"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("2")
+shader_parameter/scale = Vector3(0.576, 1.096, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("5")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_r0o8o"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("1"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.0
+}]
+
+[node name="KuyaSorbetero" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8, 0.08, 0.47)
+layers = 33
+mesh = SubResource("ArrayMesh_r0o8o")
+script = ExtResource("1")
+texture_frames = SubResource("3")
+animation = "default"
+random_initial = true
+alias = "KuyaSorbetero"
+pixel_size = 0.008

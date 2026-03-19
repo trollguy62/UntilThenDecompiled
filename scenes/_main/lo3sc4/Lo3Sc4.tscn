@@ -1,0 +1,2055 @@
+[gd_scene load_steps=164 format=3 uid="uid://5s424sq1qwhj"]
+
+[ext_resource type="Script" path="res://components/Scene.gd" id="1_vc6sh"]
+[ext_resource type="Texture2D" uid="uid://dyrjrv5titp82" path="res://scenes/_main/lo3sc4/assets/envi/sky.png" id="2_d1l3n"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc4d/scripts/EnvironmentSwapper.gd" id="2_livyu"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="3_2o6wi"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="3_ym48f"]
+[ext_resource type="Texture2D" uid="uid://cpgdpqvjgg66v" path="res://scenes/_main/lo3sc4/assets/envi/footbridge_main/footbridge_main.png" id="4_0abkb"]
+[ext_resource type="Script" path="res://components/Skit/SkitContainer.gd" id="4_6pyf8"]
+[ext_resource type="ArrayMesh" uid="uid://d0cavckpvc1cc" path="res://scenes/_main/lo3sc4/assets/envi/footbridge_main/footbridge_main.obj" id="5_8krci"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="5_vgigx"]
+[ext_resource type="Texture2D" uid="uid://d3j7bss5dlg2n" path="res://scenes/_main/lo3sc4/assets/envi/footbridge_main/footbridge_sign.png" id="6_8qq22"]
+[ext_resource type="Script" path="res://scenes/_main/lo3sc4/scripts/SidewalkTEMP.gd" id="6_33lr1"]
+[ext_resource type="Texture2D" uid="uid://g6758nq46npj" path="res://scenes/_main/lo3sc4/assets/envi/footbridge_main/street_light.png" id="6_gga5f"]
+[ext_resource type="PackedScene" uid="uid://dwr0qw3ghfykx" path="res://scenes/_main/lo3sc4/minigame_carving/MinigameCarving.tscn" id="6_k8a2e"]
+[ext_resource type="Script" path="res://scenes/_main/lo3sc4/scripts/MinigameCarvinController.gd" id="7_3uu2g"]
+[ext_resource type="Script" path="res://components/Paper3D/Paper3D.gd" id="7_e30et"]
+[ext_resource type="Script" path="res://components/ShotVisibilityController.gd" id="7_q2437"]
+[ext_resource type="Script" path="res://components/audio/CommandAudioTrigger.gd" id="7_x7ohh"]
+[ext_resource type="Texture2D" uid="uid://b31ickbnufblg" path="res://scenes/_main/lo3sc4/assets/envi/footbridge_main/street_light_em.png" id="7_xxs3g"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="9_l730t"]
+[ext_resource type="PackedScene" uid="uid://cng5pa21vpc74" path="res://ui/components/Pointer/Pointer.tscn" id="10_iatmp"]
+[ext_resource type="Texture2D" uid="uid://dde6tu6j1u841" path="res://scenes/_main/lo3sc4/assets/envi/temp/temp_tree.png" id="11_g5qi5"]
+[ext_resource type="Script" path="res://components/TriggerArea.gd" id="11_sbebu"]
+[ext_resource type="PackedScene" uid="uid://dlpapt6dlhvln" path="res://scenes/_main/lo3sc4/assets/envi/side/Side.tscn" id="12_bplui"]
+[ext_resource type="Texture2D" uid="uid://t1d6mu2qi22b" path="res://scenes/_main/lo3sc4/assets/envi/cheap_knife.png" id="12_w1j3f"]
+[ext_resource type="Texture2D" uid="uid://saqlk0s13xag" path="res://scenes/_main/lo3sc4/assets/envi/temp/temp_tree_earth_decal.png" id="13_m8rtb"]
+[ext_resource type="Script" path="res://components/StateDictVisibilityController.gd" id="14_3y6u4"]
+[ext_resource type="Script" path="res://components/Skit/SkitExternalRef.gd" id="15_lmgv0"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="16_7xvgg"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="17_4bggl"]
+[ext_resource type="Script" path="res://components/SceneManager.gd" id="17_6foyd"]
+[ext_resource type="PackedScene" uid="uid://cpucavqwbckm8" path="res://scenes/_main/lo3sc4/assets/characters/prefabs/MarkStand.tscn" id="17_22my6"]
+[ext_resource type="PackedScene" uid="uid://bqsioxsm7bjil" path="res://scenes/_main/lo3sc4/assets/characters/prefabs/NicoleStand.tscn" id="18_3o1y5"]
+[ext_resource type="Script" path="res://components/DialogueHandler.gd" id="18_f6ykc"]
+[ext_resource type="PackedScene" uid="uid://e3hu5waf2v3u" path="res://components/ThoughtBubble/ThoughtBubble.tscn" id="19_d72va"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="19_dxjlg"]
+[ext_resource type="Shader" path="res://assets/shaders/Vignette.gdshader" id="20_uekwh"]
+[ext_resource type="Script" path="res://scenes/_main/ch10sc8/scripts/MovingLight.gd" id="20_vxw2q"]
+[ext_resource type="Texture2D" uid="uid://cj06qi2kqs4ei" path="res://scenes/_main/lo3sc4/assets/envi/footbridge_main/footbridge_ascent.png" id="20_ya6l2"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="21_8tpyr"]
+[ext_resource type="ArrayMesh" uid="uid://vpnldi22xtb0" path="res://scenes/_main/lo3sc4/assets/envi/footbridge_main/footbridge_ascent.obj" id="21_rnnfp"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="23_q4ri0"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="24_vtbwr"]
+[ext_resource type="EventAsset" uid="uid://b12q35vesamw7" path="res://addons/fmod/editor/resources/events/{d24b77bf-14f1-4f7c-8728-8c7c018fa5e6}.tres" id="26_alfq1"]
+[ext_resource type="Texture2D" uid="uid://dcankydjp0gvt" path="res://scenes/_main/lo3sc4/assets/envi/temp/light_footbridge.png" id="29_hkmp3"]
+[ext_resource type="Texture2D" uid="uid://1xlpmmb1081d" path="res://scenes/_main/lo3sc4/assets/envi/temp/light_footbridge_em.png" id="30_ypxot"]
+[ext_resource type="Texture2D" uid="uid://dx46qhfifdmqd" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/01.tres" id="35_cbo2e"]
+[ext_resource type="Texture2D" uid="uid://b6egc7dr6dt3c" path="res://scenes/_main/lo3sc4/assets/envi/footbridge_main/bottom/car_tops.png" id="35_wo4uh"]
+[ext_resource type="Texture2D" uid="uid://djbigdos27jxt" path="res://scenes/_main/ch5sc6/assets/envi/bikeloop/road.png" id="36_3ny6o"]
+[ext_resource type="Texture2D" uid="uid://cjbbf6lpsp5eg" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/01.tres" id="37_5ilu2"]
+[ext_resource type="Texture2D" uid="uid://cta5cl3l0y8dx" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/02.tres" id="38_1elme"]
+[ext_resource type="Texture2D" uid="uid://kiclt63sqet" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/03.tres" id="39_h1wfn"]
+[ext_resource type="Texture2D" uid="uid://dks7lxux5bb7d" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/04.tres" id="40_ydb3c"]
+[ext_resource type="Texture2D" uid="uid://ccbfr36vj1qrl" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/05.tres" id="41_5pqum"]
+[ext_resource type="Texture2D" uid="uid://ex3mea7oxtqx" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/06.tres" id="42_68yoo"]
+[ext_resource type="Texture2D" uid="uid://dccxyfukmcoi6" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/07.tres" id="43_u20y2"]
+[ext_resource type="Texture2D" uid="uid://mo0s7886n71e" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/08.tres" id="44_wfpg4"]
+[ext_resource type="Texture2D" uid="uid://i3y8f7u4neg1" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/09.tres" id="45_fwdqs"]
+[ext_resource type="Texture2D" uid="uid://dkdy03t8que6o" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tobothhug/10.tres" id="46_5ehev"]
+[ext_resource type="Texture2D" uid="uid://dv4hvdflrjrxr" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/02.tres" id="47_u7hoo"]
+[ext_resource type="Texture2D" uid="uid://bx4uq1qw6f05w" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/03.tres" id="48_iec32"]
+[ext_resource type="Texture2D" uid="uid://bleufg4ougvor" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/04.tres" id="49_co6y6"]
+[ext_resource type="Texture2D" uid="uid://bmteyvcif8fc8" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/05.tres" id="50_o1qt2"]
+[ext_resource type="Texture2D" uid="uid://dw1hk78yh16wm" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/06.tres" id="51_qwvn7"]
+[ext_resource type="Texture2D" uid="uid://d3nxs605ml5ea" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/07.tres" id="52_uakof"]
+[ext_resource type="Texture2D" uid="uid://drpw7r4dk21wk" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/08.tres" id="53_7hyps"]
+[ext_resource type="Texture2D" uid="uid://25856hjd5vt0" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/09.tres" id="54_morcc"]
+[ext_resource type="Texture2D" uid="uid://qiqg233rdn4m" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/10.tres" id="55_yhqux"]
+[ext_resource type="Texture2D" uid="uid://c1ciacumkxc3l" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/11.tres" id="56_d31so"]
+[ext_resource type="Texture2D" uid="uid://bg0s3gb2ioi0h" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/12.tres" id="57_clh5j"]
+[ext_resource type="Texture2D" uid="uid://bqmkpc4uulb38" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/13.tres" id="58_ixgfi"]
+[ext_resource type="Texture2D" uid="uid://boi5lmskxmspf" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/14.tres" id="59_wkfje"]
+[ext_resource type="Texture2D" uid="uid://cy2ud2jlj1px6" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/15.tres" id="60_rd5nx"]
+[ext_resource type="Texture2D" uid="uid://c5nfxs7wcstiw" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/16.tres" id="61_aam0e"]
+[ext_resource type="Texture2D" uid="uid://biy8nhuso6hg6" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/tonicolehug/17.tres" id="62_2rlxl"]
+[ext_resource type="Texture2D" uid="uid://c1st675dtiajv" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/01.tres" id="63_5y1k5"]
+[ext_resource type="Texture2D" uid="uid://87qab2451e61" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/02.tres" id="64_mko6x"]
+[ext_resource type="Texture2D" uid="uid://d4jm6gl5fcf2h" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/03.tres" id="65_rn86i"]
+[ext_resource type="Texture2D" uid="uid://etra0qku07e1" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/04.tres" id="66_lddqt"]
+[ext_resource type="Texture2D" uid="uid://buwnrxq25am4g" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/05.tres" id="67_xgy5k"]
+[ext_resource type="Texture2D" uid="uid://c0ywaqmikp7t8" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/06.tres" id="68_7vyrx"]
+[ext_resource type="Texture2D" uid="uid://b1b775dfarnjw" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/07.tres" id="69_16ca3"]
+[ext_resource type="Texture2D" uid="uid://xejjb80clx2l" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/08.tres" id="70_tp6js"]
+[ext_resource type="Texture2D" uid="uid://csa5eira03wae" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/09.tres" id="71_ii6tf"]
+[ext_resource type="Texture2D" uid="uid://dl30dmj1j7vjy" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/10.tres" id="72_5rrrr"]
+[ext_resource type="Texture2D" uid="uid://dhk33r40v1a1r" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/11.tres" id="73_m6l0r"]
+[ext_resource type="Texture2D" uid="uid://bvqb32ph0qj8u" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/12.tres" id="74_roh5b"]
+[ext_resource type="Texture2D" uid="uid://6jjudcrpeme7" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/13.tres" id="75_8csg5"]
+[ext_resource type="Texture2D" uid="uid://dw80q1iyvmicc" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/14.tres" id="76_1bfii"]
+[ext_resource type="Texture2D" uid="uid://me6iexakk0rw" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/15.tres" id="77_j56jd"]
+[ext_resource type="Texture2D" uid="uid://b5frewmeigut0" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/unhug/16.tres" id="78_pdyfh"]
+[ext_resource type="Script" path="res://data/AnimationTransition.gd" id="81_auggk"]
+[ext_resource type="AudioStream" uid="uid://bdkw6qgxcdfvd" path="res://assets/sfx/clothes_slow_1.ogg" id="106_fhxus"]
+[ext_resource type="Script" path="res://components/AudioStreamPlayer.gd" id="107_pxg53"]
+[ext_resource type="BankAsset" uid="uid://du1m5edltxun2" path="res://addons/fmod/editor/resources/banks/{131ac4c6-e84b-4fe3-86b6-f1829167c586}.tres" id="108_nti0h"]
+[ext_resource type="BankAsset" uid="uid://d3lydlboxnfox" path="res://addons/fmod/editor/resources/banks/{6362d4f9-9c93-4571-b1a1-026c32a2971d}.tres" id="109_ocrm2"]
+[ext_resource type="Texture2D" uid="uid://y4d76l63felw" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_talk/01.tres" id="639_k78sj"]
+[ext_resource type="Texture2D" uid="uid://cmwd5yx3dx5if" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_idle/01.tres" id="640_l4ck0"]
+[ext_resource type="Texture2D" uid="uid://danpg1ewb127" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_idle/02.tres" id="641_a5bs0"]
+[ext_resource type="Texture2D" uid="uid://26fvqrurcdni" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_idle/03.tres" id="642_uqfhv"]
+[ext_resource type="Texture2D" uid="uid://udufy20r0ewp" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_idle/04.tres" id="643_vwpaf"]
+[ext_resource type="Texture2D" uid="uid://df1d3rtq307y0" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_idle/05.tres" id="644_ph1a5"]
+[ext_resource type="Texture2D" uid="uid://cn1yi7rrhhpd7" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_idle/06.tres" id="645_xs2ek"]
+[ext_resource type="Texture2D" uid="uid://bvnho78q8mxrc" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_talk/02.tres" id="646_qfokr"]
+[ext_resource type="Texture2D" uid="uid://bih2igugdqg2a" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_talk/03.tres" id="647_geyy3"]
+[ext_resource type="Texture2D" uid="uid://c5csho8xsnn0n" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_talk/04.tres" id="648_4a8rp"]
+[ext_resource type="Texture2D" uid="uid://chni1eis0sa7l" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_talk/05.tres" id="649_1ok57"]
+[ext_resource type="Texture2D" uid="uid://beyah8l8b3nb7" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/bothhug_talk/06.tres" id="650_l46km"]
+[ext_resource type="Texture2D" uid="uid://c4fsywx7e85a8" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/nicolehug_idle/01.tres" id="651_03kl8"]
+[ext_resource type="Texture2D" uid="uid://bc0dsl44hlnx8" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/nicolehug_idle/02.tres" id="652_vn4pe"]
+[ext_resource type="Texture2D" uid="uid://c66wh0bdd33cm" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/nicolehug_idle/03.tres" id="653_wwol2"]
+[ext_resource type="Texture2D" uid="uid://bmh6unlrhhj6f" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/nicolehug_idle/04.tres" id="654_6swhx"]
+[ext_resource type="Texture2D" uid="uid://3f2eubn3kjmu" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/nicolehug_idle/05.tres" id="655_m5nyk"]
+[ext_resource type="Texture2D" uid="uid://7dud4qgjmagw" path="res://scenes/_main/lo3sc4/assets/characters/Mark+Nicole/nicolehug_idle/06.tres" id="656_wgm8s"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_huv1g"]
+panorama = ExtResource("2_d1l3n")
+filter = false
+
+[sub_resource type="Sky" id="Sky_qdpac"]
+sky_material = SubResource("PanoramaSkyMaterial_huv1g")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_uuaw0"]
+background_mode = 2
+background_energy_multiplier = 0.16
+sky = SubResource("Sky_qdpac")
+sky_rotation = Vector3(0, 3.14159, 0)
+ambient_light_color = Color(0.701961, 0.756863, 1, 1)
+ambient_light_sky_contribution = 0.9
+ambient_light_energy = 0.7
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.0
+fog_enabled = true
+fog_light_color = Color(0.415686, 0.470588, 0.611765, 1)
+fog_light_energy = 0.1
+fog_sky_affect = 0.35
+adjustment_enabled = true
+adjustment_contrast = 1.12
+adjustment_saturation = 0.9
+
+[sub_resource type="Sky" id="Sky_l00eu"]
+sky_material = SubResource("PanoramaSkyMaterial_huv1g")
+radiance_size = 2
+
+[sub_resource type="Environment" id="Environment_h5ok2"]
+background_mode = 2
+background_energy_multiplier = 0.5
+sky = SubResource("Sky_l00eu")
+sky_rotation = Vector3(0, 1.95477, -0.0523599)
+ambient_light_source = 3
+ambient_light_color = Color(0.145098, 0.145098, 0.360784, 1)
+ambient_light_sky_contribution = 0.7
+ambient_light_energy = 0.6
+tonemap_mode = 2
+ssao_enabled = true
+glow_enabled = true
+glow_normalized = true
+glow_intensity = 1.0
+glow_bloom = 0.2
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02
+adjustment_enabled = true
+adjustment_contrast = 1.04
+adjustment_saturation = 1.02
+
+[sub_resource type="EventAsset" id="EventAsset_xfdw8"]
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT3/Lo3/Sc4/Traffic"
+guid = "{8c06b775-af11-42c0-a1c7-b551997e0dc0}"
+name = "Traffic"
+
+[sub_resource type="EventAsset" id="EventAsset_ncfg8"]
+is_3d = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT3/Lo3/Sc4/CarBeeps"
+guid = "{c7156a50-ef2c-484c-924a-cb9144769360}"
+name = "CarBeeps"
+
+[sub_resource type="EventAsset" id="EventAsset_hwxve"]
+is_oneshot = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT3/Lo3/Sc4/DogsBarking"
+guid = "{85d9a460-a1ea-4b4e-bda0-ca1b1c678950}"
+name = "DogsBarking"
+
+[sub_resource type="ViewportTexture" id="ViewportTexture_fr8v4"]
+viewport_path = NodePath("Skits/Sidewalk/World/Sidewalk/Spawnables/Tree/SubViewport")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ryymd"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("11_g5qi5")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_foo1s"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 3.32, 2.96, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_ryymd"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 225, 122, 84, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 225, 122, 84, 64, 164, 112, 61, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 164, 112, 61, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bm0ce"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("12_w1j3f")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2ywb1"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.14, 0.11, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_bm0ce"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 15, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 15, 62, 174, 71, 225, 61, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 174, 71, 225, 61, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_fku3m"]
+size = Vector3(1, 1, 1.45)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_a2ef8"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.0
+dof_blur_far_transition = 0.01
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uiewb"]
+render_priority = 0
+shader = ExtResource("19_dxjlg")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("20_ya6l2")
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_lb356"]
+size = Vector3(1, 1, 1.45)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ljcbd"]
+dof_blur_far_enabled = true
+dof_blur_amount = 0.08
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_mfbf1"]
+size = Vector3(0.24, 1, 0.02)
+
+[sub_resource type="EventAsset" id="EventAsset_o4ars"]
+is_3d = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT3/Lo3/Sc4/FootstepsConcrete"
+guid = "{ba22cd5a-221e-4f0b-8d4b-e99cdc941b83}"
+name = "FootstepsConcrete"
+
+[sub_resource type="Animation" id="Animation_odecn"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/MarkBorja/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(8, 0.33, 0.479)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/NicoleLacsamana/Stand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(8.24, 0.33, 0.48)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite/SpriteController:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Characters/MarkBorja/Stand/Sprite/SpriteController:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Characters/MarkBorja/Stand/Sprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Characters/MarkBorja/Stand/Sprite/Footsteps:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite/Footsteps:playing")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_nui8g"]
+resource_name = "walk_1"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/MarkBorja/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(8, 0.33, 0.479), Vector3(2, 0.33, 0.479)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/NicoleLacsamana/Stand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(8.24, 0.33, 0.48), Vector3(5.57, 0.33, 0.48)]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../..")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(3.5, 8),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": ["walk_1_nicole_done"],
+"method": &"emit_story_signal"
+}, {
+"args": ["walk_1_all_done"],
+"method": &"emit_story_signal"
+}]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Characters/MarkBorja/Stand/Sprite/Footsteps:playing")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite/Footsteps:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 3.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_xd21g"]
+resource_name = "walk_2"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/NicoleLacsamana/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(5.57, 0.33, 0.48), Vector3(2.2, 0.33, 0.48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/MarkBorja/Stand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(2, 0.33, 0.479)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite/Footsteps:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ucu25"]
+resource_name = "walk_3"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/NicoleLacsamana/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(2.14, 0.33, 0.48), Vector3(4.44, 0.33, 0.48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite/Footsteps:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_yikcb"]
+resource_name = "walk_final"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/NicoleLacsamana/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6.8, 9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(4.44, 0.33, 0.48), Vector3(6.54, 0.33, 0.48), Vector3(6.54, 0.33, 0.48), Vector3(8.01, 0.33, 0.48)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/MarkBorja/Stand:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2.4, 3.6, 10, 12),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector3(2, 0.33, 0.479), Vector3(2, 0.33, 0.479), Vector3(1.46, 0.33, 0.479), Vector3(1.46, 0.33, 0.479), Vector3(0.22, 0.33, 0.479)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite/SpriteController:enabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Characters/MarkBorja/Stand/Sprite/SpriteController:enabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite:flip_h")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Characters/MarkBorja/Stand/Sprite:flip_h")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.9, 5, 8.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite:animation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 3, 5.6, 6.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["neutralteary+walk_idle", "neutralteary=r_idle", "neutralteary_idle", "neutralteary+walk_idle"]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Characters/MarkBorja/Stand/Sprite:animation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 2.4, 3.6, 4.1, 5, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": ["smirkteary_idle", "defaultteary+walk_idle", "defaultteary_idle", "defaultteary=r_idle", "defaultteary_idle", "defaultteary+walk_idle"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Characters/NicoleLacsamana/Stand/Sprite/Footsteps:playing")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 3, 6.8),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Characters/MarkBorja/Stand/Sprite/Footsteps:playing")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 2.4, 3.6, 10),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8bfoc"]
+_data = {
+"RESET": SubResource("Animation_odecn"),
+"walk_1": SubResource("Animation_nui8g"),
+"walk_2": SubResource("Animation_xd21g"),
+"walk_3": SubResource("Animation_ucu25"),
+"walk_final": SubResource("Animation_yikcb")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hv2r1"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4_0abkb")
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_41roj"]
+frequency = 0.004
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_htt3d"]
+width = 78
+height = 45
+as_normal_map = true
+noise = SubResource("FastNoiseLite_41roj")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7dfy4"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_8qq22")
+shader_parameter/texture_normal = SubResource("NoiseTexture2D_htt3d")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_a802p"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.0998, 0.6345, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_7dfy4"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 63, 198, 140, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 63, 198, 140, 63, 152, 110, 34, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 152, 110, 34, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_otwh5"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0.709804, 0.870588, 1, 1)
+shader_parameter/emission_energy = 3.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("29_hkmp3")
+shader_parameter/texture_emission = ExtResource("30_ypxot")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_j0cry"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 0.2227, 1.0873, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_otwh5"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 120, 11, 100, 62, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 120, 11, 100, 62, 166, 44, 139, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 166, 44, 139, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c60tx"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0.709804, 0.870588, 1, 1)
+shader_parameter/emission_energy = 3.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("29_hkmp3")
+shader_parameter/texture_emission = ExtResource("30_ypxot")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iq1g2"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 0.952941, 0.741176, 1)
+shader_parameter/emission_energy = 1.5
+shader_parameter/emission_saturation = 1.294
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_gga5f")
+shader_parameter/texture_emission = ExtResource("7_xxs3g")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_aiu0m"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.62, 4.21, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_iq1g2"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 207, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 41, 92, 207, 63, 82, 184, 134, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 82, 184, 134, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ahatt"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 0.952941, 0.741176, 1)
+shader_parameter/emission_energy = 2.0
+shader_parameter/emission_saturation = 1.5
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_gga5f")
+shader_parameter/texture_emission = ExtResource("7_xxs3g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ekaqp"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 0.952941, 0.741176, 1)
+shader_parameter/emission_energy = 1.5
+shader_parameter/emission_saturation = 1.294
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_gga5f")
+shader_parameter/texture_emission = ExtResource("7_xxs3g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qys37"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 0.952941, 0.741176, 1)
+shader_parameter/emission_energy = 1.5
+shader_parameter/emission_saturation = 1.294
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("6_gga5f")
+shader_parameter/texture_emission = ExtResource("7_xxs3g")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_sa8yc"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(1.3, 1.3, 1.1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("35_wo4uh")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_mj03m"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 5.43, 0.4, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_sa8yc"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 173, 64, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 143, 194, 173, 64, 204, 204, 204, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 204, 204, 204, 62, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_kpax6"]
+render_priority = 0
+shader = ExtResource("3_ym48f")
+shader_parameter/albedo = Color(0.764706, 0.764706, 0.764706, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("36_3ny6o")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_iockm"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 11.33, 5.42, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 3, 0, 2, 0, 0, 0, 2, 0, 1, 0),
+"material": SubResource("ShaderMaterial_kpax6"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 174, 71, 53, 65, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 174, 71, 53, 65, 164, 112, 173, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 164, 112, 173, 64, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pxnax"]
+render_priority = 0
+shader = ExtResource("16_7xvgg")
+shader_parameter/scale = Vector3(1.0773, 1.0611, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("35_cbo2e")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_kt2y6"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_pxnax"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uvaiu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_5ilu2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_1elme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_h1wfn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_ydb3c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_5pqum")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_68yoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_u20y2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_wfpg4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_fwdqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_5ehev")
+}],
+"loop": false,
+"name": &"_tobothhug",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_cbo2e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_u7hoo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_iec32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_co6y6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_o1qt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_qwvn7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_uakof")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_7hyps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_morcc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_yhqux")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_d31so")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_clh5j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_ixgfi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_wkfje")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_rd5nx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_aam0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_2rlxl")
+}],
+"loop": false,
+"name": &"_tonicolehug",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("640_l4ck0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("641_a5bs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("642_uqfhv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("643_vwpaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("644_ph1a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("645_xs2ek")
+}],
+"loop": true,
+"name": &"bothhug_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("639_k78sj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("646_qfokr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("647_geyy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("648_4a8rp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("649_1ok57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("650_l46km")
+}],
+"loop": true,
+"name": &"bothhug_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_cbo2e")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("651_03kl8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("652_vn4pe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("653_wwol2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("654_6swhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("655_m5nyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("656_wgm8s")
+}],
+"loop": true,
+"name": &"nicolehug_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("63_5y1k5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_mko6x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_rn86i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_lddqt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_xgy5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_7vyrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_16ca3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_tp6js")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71_ii6tf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_5rrrr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_m6l0r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_roh5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_8csg5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_1bfii")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77_j56jd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_pdyfh")
+}],
+"loop": false,
+"name": &"unhug",
+"speed": 6.0
+}]
+
+[sub_resource type="Resource" id="Resource_0lnlq"]
+script = ExtResource("81_auggk")
+anim = "_tonicolehug"
+from_anim = "default_idle"
+to_anim = "nicolehug_idle"
+reversible = false
+
+[sub_resource type="Resource" id="Resource_teefe"]
+script = ExtResource("81_auggk")
+anim = "_tobothhug"
+from_anim = "nicolehug_idle"
+to_anim = "bothhug_idle"
+reversible = false
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jjqf4"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 7.0
+dof_blur_far_transition = 8.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 5.0
+dof_blur_near_transition = 0.0
+dof_blur_amount = 0.3
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_e4pdd"]
+shader = ExtResource("20_uekwh")
+shader_parameter/inner_radius = 0.2
+shader_parameter/outer_radius = 1.25
+shader_parameter/opacity = 0.75
+
+[node name="Root" type="Node3D"]
+script = ExtResource("1_vc6sh")
+fade_out_duration = 0.0
+metadata/_edit_lock_ = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_uuaw0")
+script = ExtResource("2_livyu")
+state_key = "envi"
+lighting_env_map = {
+"footbridge": SubResource("Environment_h5ok2"),
+"sidewalk": SubResource("Environment_uuaw0")
+}
+
+[node name="Characters" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="MarkBorja" type="Node3D" parent="Characters"]
+metadata/_edit_lock_ = true
+
+[node name="State" type="Node" parent="Characters/MarkBorja"]
+script = ExtResource("3_2o6wi")
+alias = "MarkBorja"
+
+[node name="NicoleLacsamana" type="Node3D" parent="Characters"]
+metadata/_edit_lock_ = true
+
+[node name="State" type="Node" parent="Characters/NicoleLacsamana"]
+script = ExtResource("3_2o6wi")
+alias = "NicoleLacsamana"
+
+[node name="Audio" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="Audio"]
+preload_sample_data = true
+num_banks = 2
+bank_0 = ExtResource("108_nti0h")
+bank_1 = ExtResource("109_ocrm2")
+
+[node name="Traffic" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_xfdw8")
+
+[node name="CarBeeps" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_ncfg8")
+
+[node name="DogsBarking" type="StudioEventEmitter2D" parent="Audio"]
+event = SubResource("EventAsset_hwxve")
+
+[node name="CommandAudioTrigger" type="Node" parent="Audio/DogsBarking"]
+script = ExtResource("7_x7ohh")
+
+[node name="Skits" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Sidewalk" type="Node3D" parent="Skits"]
+script = ExtResource("4_6pyf8")
+id = "Sidewalk"
+entrypoint = "lo.3.4.Sidewalk"
+free_on_finish = true
+metadata/_edit_lock_ = true
+
+[node name="Root2D" type="Node2D" parent="Skits/Sidewalk"]
+metadata/_edit_lock_ = true
+
+[node name="MinigameCarving" parent="Skits/Sidewalk/Root2D" instance=ExtResource("6_k8a2e")]
+script = ExtResource("7_3uu2g")
+
+[node name="VisibilityController" type="Node" parent="Skits/Sidewalk/Root2D/MinigameCarving"]
+script = ExtResource("7_q2437")
+visible_on_shots = Array[String](["MinigameCarving"])
+
+[node name="Background" type="Sprite2D" parent="Skits/Sidewalk/Root2D/MinigameCarving"]
+show_behind_parent = true
+scale = Vector2(2, 2)
+texture = SubResource("ViewportTexture_fr8v4")
+centered = false
+
+[node name="SbPivotMark" type="Marker2D" parent="Skits/Sidewalk/Root2D/MinigameCarving"]
+position = Vector2(1327, 784)
+script = ExtResource("24_vtbwr")
+alias = "MarkBorja"
+orientation = 1
+force_show = true
+metadata/_edit_lock_ = true
+
+[node name="SbPivotNicole" type="Marker2D" parent="Skits/Sidewalk/Root2D/MinigameCarving"]
+position = Vector2(1335, 368)
+script = ExtResource("24_vtbwr")
+alias = "NicoleLacsamana"
+orientation = 2
+force_show = true
+metadata/_edit_lock_ = true
+
+[node name="Pointer" parent="Skits/Sidewalk/Root2D/MinigameCarving" instance=ExtResource("10_iatmp")]
+
+[node name="World" type="Node3D" parent="Skits/Sidewalk"]
+metadata/_edit_lock_ = true
+
+[node name="Sidewalk" type="Node3D" parent="Skits/Sidewalk/World"]
+script = ExtResource("6_33lr1")
+move_speed = 0.8
+metadata/_edit_lock_ = true
+
+[node name="Sidewalk" type="Node3D" parent="Skits/Sidewalk/World/Sidewalk"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14, 0, 0)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Side1" parent="Skits/Sidewalk/World/Sidewalk/Sidewalk" instance=ExtResource("12_bplui")]
+
+[node name="Side2" parent="Skits/Sidewalk/World/Sidewalk/Sidewalk" instance=ExtResource("12_bplui")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 37.43, 0, 0)
+
+[node name="Spawnables" type="Node3D" parent="Skits/Sidewalk/World/Sidewalk"]
+metadata/_edit_lock_ = true
+
+[node name="Tree" type="Node3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables"]
+metadata/_edit_group_ = true
+
+[node name="Tree" type="MeshInstance3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.04, 0, 0.48)
+mesh = SubResource("ArrayMesh_foo1s")
+script = ExtResource("7_e30et")
+texture = ExtResource("11_g5qi5")
+metadata/mat_opaque = SubResource("ShaderMaterial_ryymd")
+metadata/_edit_lock_ = true
+
+[node name="CheapKnife" type="MeshInstance3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Tree/Tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.26, -0.01, 0.02)
+mesh = SubResource("ArrayMesh_2ywb1")
+skeleton = NodePath("../..")
+script = ExtResource("7_e30et")
+texture = ExtResource("12_w1j3f")
+metadata/mat_opaque = SubResource("ShaderMaterial_bm0ce")
+metadata/_edit_lock_ = true
+
+[node name="TriggerArea" type="Area3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.92, 0, 0.57)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("11_sbebu")
+max_trigger_count = 1
+story_signal = "tree_reached"
+metadata/_edit_group_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Tree/TriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_fku3m")
+metadata/_edit_lock_ = true
+
+[node name="Decal" type="Decal" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.94, 0, 0.45)
+size = Vector3(1.14, 0.01, 0.8)
+texture_albedo = ExtResource("13_m8rtb")
+
+[node name="RemoteTransformCam" type="RemoteTransform3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Tree"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.909, 0.675, 1.465)
+remote_path = NodePath("../SubViewport/CameraBG")
+
+[node name="SubViewport" type="SubViewport" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Tree"]
+size = Vector2i(640, 360)
+
+[node name="CameraBG" type="Camera3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Tree/SubViewport"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.909, 0.675, 1.465)
+attributes = SubResource("CameraAttributesPractical_a2ef8")
+fov = 30.0
+near = 1.0
+metadata/_edit_lock_ = true
+
+[node name="Footbridge" type="Node3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.57)
+metadata/_edit_group_ = true
+
+[node name="FootbridgeAscent" type="MeshInstance3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Footbridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.08, 0, 0.123)
+material_override = SubResource("ShaderMaterial_uiewb")
+mesh = ExtResource("21_rnnfp")
+skeleton = NodePath("../../../../../../..")
+
+[node name="TriggerArea" type="Area3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Footbridge"]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("11_sbebu")
+max_trigger_count = 1
+story_signal = "footbridge_reached"
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Skits/Sidewalk/World/Sidewalk/Spawnables/Footbridge/TriggerArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_lb356")
+metadata/_edit_lock_ = true
+
+[node name="Lighting" type="Node3D" parent="Skits/Sidewalk/World"]
+metadata/_edit_lock_ = true
+
+[node name="Moving" type="Node3D" parent="Skits/Sidewalk/World/Lighting"]
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D1" type="SpotLight3D" parent="Skits/Sidewalk/World/Lighting/Moving"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 19.2966, 0.610542, 1.93166)
+light_color = Color(1, 1, 0.760784, 1)
+light_energy = 2.0
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 3.0
+shadow_enabled = true
+shadow_bias = 0.01
+spot_range = 10.0
+spot_angle = 50.0
+script = ExtResource("20_vxw2q")
+direction = Vector3(0, 0, -1)
+velocity = 3.0
+max_distance = 40.0
+random_interval_max = 5.0
+metadata/_edit_lock_ = true
+
+[node name="Car" type="StudioEventEmitter3D" parent="Skits/Sidewalk/World/Lighting/Moving/SpotLight3D1"]
+play_event = 1
+event = ExtResource("26_alfq1")
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Skits/Sidewalk/World/Lighting/Moving"]
+transform = Transform3D(1.31134e-07, 0, -1, 0, 1, 0, 1, 0, 1.31134e-07, -11.0634, 0.610542, 2.74166)
+light_color = Color(1, 0.847059, 0.458824, 1)
+light_energy = 1.5
+light_indirect_energy = 2.0
+light_volumetric_fog_energy = 3.0
+shadow_enabled = true
+shadow_bias = 0.01
+spot_range = 10.0
+spot_angle = 50.0
+script = ExtResource("20_vxw2q")
+direction = Vector3(0, 0, -1)
+velocity = 4.0
+max_distance = 50.0
+random_interval_min = 1.0
+random_interval_max = 7.0
+metadata/_edit_lock_ = true
+
+[node name="Car" type="StudioEventEmitter3D" parent="Skits/Sidewalk/World/Lighting/Moving/SpotLight3D2"]
+play_event = 1
+event = ExtResource("26_alfq1")
+
+[node name="Cameras" type="Node3D" parent="Skits/Sidewalk"]
+metadata/_edit_lock_ = true
+
+[node name="CamMain" type="Camera3D" parent="Skits/Sidewalk/Cameras"]
+transform = Transform3D(0.999391, 0, -0.0348995, 0, 1, 0, 0.0348995, 0, 0.999391, 4.411, 0.974, 2.859)
+attributes = SubResource("CameraAttributesPractical_ljcbd")
+fov = 60.0
+script = ExtResource("9_l730t")
+wiggle_offset = Vector2(0.01, 0.01)
+wiggle_speed = 0.5
+c = 0.0
+
+[node name="Characters" type="Node3D" parent="Skits/Sidewalk"]
+metadata/_edit_lock_ = true
+
+[node name="MarkBorja" type="Node3D" parent="Skits/Sidewalk/Characters"]
+metadata/_edit_lock_ = true
+
+[node name="StateRef" type="Node" parent="Skits/Sidewalk/Characters/MarkBorja"]
+script = ExtResource("15_lmgv0")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Stand" type="Node3D" parent="Skits/Sidewalk/Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.6, 0, 0.77)
+metadata/_edit_group_ = true
+
+[node name="Sprite" parent="Skits/Sidewalk/Characters/MarkBorja/Stand" instance=ExtResource("17_22my6")]
+custom_aabb = AABB(0, 0, 0, 0, 0, 0)
+animation = "default+walk=d_idle"
+frame = 0
+random_initial = true
+
+[node name="Area" type="Area3D" parent="Skits/Sidewalk/Characters/MarkBorja/Stand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.23, 0, 0)
+collision_layer = 2
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Sidewalk/Characters/MarkBorja/Stand/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0)
+shape = SubResource("BoxShape3D_mfbf1")
+
+[node name="VisibilityController" type="Node" parent="Skits/Sidewalk/Characters/MarkBorja/Stand"]
+script = ExtResource("7_q2437")
+visible_on_shots = Array[String](["MinigameCarving"])
+invert = true
+
+[node name="NicoleLacsamana" type="Node3D" parent="Skits/Sidewalk/Characters"]
+metadata/_edit_lock_ = true
+
+[node name="StateRef" type="Node" parent="Skits/Sidewalk/Characters/NicoleLacsamana"]
+script = ExtResource("15_lmgv0")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/State")
+
+[node name="Stand" type="Node3D" parent="Skits/Sidewalk/Characters/NicoleLacsamana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.71, 0, 0.81)
+metadata/_edit_group_ = true
+
+[node name="Sprite" parent="Skits/Sidewalk/Characters/NicoleLacsamana/Stand" instance=ExtResource("18_3o1y5")]
+custom_aabb = AABB(0, 0, 0, 0, 0, 0)
+animation = "persuasive+walk_idle"
+frame = 0
+random_initial = true
+
+[node name="VisibilityController" type="Node" parent="Skits/Sidewalk/Characters/NicoleLacsamana/Stand"]
+script = ExtResource("7_q2437")
+visible_on_shots = Array[String](["MinigameCarving"])
+invert = true
+
+[node name="Audio" type="Node3D" parent="Skits/Sidewalk"]
+
+[node name="DogsBarking" type="Node" parent="Skits/Sidewalk/Audio"]
+script = ExtResource("15_lmgv0")
+reference = NodePath("../../../../Audio/DogsBarking")
+extra_coverage = 1
+
+[node name="FootstepsMark" type="StudioEventEmitter3D" parent="Skits/Sidewalk/Audio"]
+event = SubResource("EventAsset_o4ars")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84, 0, 0.76)
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/Sidewalk/Audio/FootstepsMark"]
+script = ExtResource("7_x7ohh")
+
+[node name="FootstepsNicole" type="StudioEventEmitter3D" parent="Skits/Sidewalk/Audio"]
+event = SubResource("EventAsset_o4ars")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.26, 0, 0.76)
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/Sidewalk/Audio/FootstepsNicole"]
+script = ExtResource("7_x7ohh")
+
+[node name="Goodbye" type="Node3D" parent="Skits"]
+visible = false
+script = ExtResource("4_6pyf8")
+id = "Goodbye"
+entrypoint = "lo.3.4.Goodbye"
+metadata/_edit_lock_ = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/Goodbye"]
+libraries = {
+"": SubResource("AnimationLibrary_8bfoc")
+}
+script = ExtResource("5_vgigx")
+
+[node name="World" type="Node3D" parent="Skits/Goodbye"]
+metadata/_edit_lock_ = true
+
+[node name="FootbridgeMain" type="MeshInstance3D" parent="Skits/Goodbye/World"]
+material_override = SubResource("ShaderMaterial_hv2r1")
+mesh = ExtResource("5_8krci")
+skeleton = NodePath("../../../..")
+metadata/_edit_lock_ = true
+
+[node name="FootbridgeMain2" type="MeshInstance3D" parent="Skits/Goodbye/World"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.84, 0, 0)
+material_override = SubResource("ShaderMaterial_hv2r1")
+mesh = ExtResource("5_8krci")
+skeleton = NodePath("../../../..")
+metadata/_edit_lock_ = true
+
+[node name="Sign" type="MeshInstance3D" parent="Skits/Goodbye/World/FootbridgeMain2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.29, -0.35, 0.807)
+mesh = SubResource("ArrayMesh_a802p")
+skeleton = NodePath("../..")
+metadata/mat_opaque = SubResource("ShaderMaterial_7dfy4")
+metadata/_edit_lock_ = true
+
+[node name="Lighting" type="Node3D" parent="Skits/Goodbye/World"]
+metadata/_edit_lock_ = true
+
+[node name="Footbridge" type="Node3D" parent="Skits/Goodbye/World/Lighting"]
+metadata/_edit_lock_ = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/Footbridge"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 2.367, 1.974, 0.719)
+light_color = Color(0.690196, 0.831373, 1, 1)
+light_volumetric_fog_energy = 16.0
+shadow_enabled = true
+shadow_bias = 0.02
+shadow_opacity = 0.8
+spot_range = 2.7
+spot_attenuation = 1.2
+spot_angle = 40.0
+spot_angle_attenuation = 2.2974
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/Footbridge"]
+transform = Transform3D(1, 0, 0, 0, 0.258819, 0.965926, 0, -0.965926, 0.258819, 6.583, 1.974, 0.719)
+light_color = Color(0.690196, 0.831373, 1, 1)
+light_volumetric_fog_energy = 16.0
+shadow_enabled = true
+shadow_bias = 0.02
+shadow_opacity = 0.8
+spot_range = 2.7
+spot_attenuation = 1.2
+spot_angle = 40.0
+spot_angle_attenuation = 2.2974
+
+[node name="Paper3D" type="MeshInstance3D" parent="Skits/Goodbye/World/Lighting/Footbridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02, 1.05, 0)
+mesh = SubResource("ArrayMesh_j0cry")
+script = ExtResource("7_e30et")
+texture = ExtResource("29_hkmp3")
+pixel_size = 0.0131
+emission = Color(0.709804, 0.870588, 1, 1)
+emission_texture = ExtResource("30_ypxot")
+emission_energy = 3.0
+emission_blend_add = false
+metadata/mat_opaque = SubResource("ShaderMaterial_c60tx")
+
+[node name="Paper3D2" type="MeshInstance3D" parent="Skits/Goodbye/World/Lighting/Footbridge"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.596, 1.05, 0)
+mesh = SubResource("ArrayMesh_j0cry")
+script = ExtResource("7_e30et")
+texture = ExtResource("29_hkmp3")
+pixel_size = 0.0131
+emission = Color(0.709804, 0.870588, 1, 1)
+emission_texture = ExtResource("30_ypxot")
+emission_energy = 3.0
+emission_blend_add = false
+metadata/mat_opaque = SubResource("ShaderMaterial_otwh5")
+
+[node name="CarsFake" type="Node3D" parent="Skits/Goodbye/World/Lighting"]
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/CarsFake"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.47035e-08, 0, -4.47035e-08, 1, 6.767, -1.456, 2.569)
+light_color = Color(0.85098, 0.560784, 0.560784, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+shadow_bias = 0.02
+shadow_opacity = 0.8
+spot_range = 2.7
+spot_attenuation = 1.2
+spot_angle = 52.0312
+spot_angle_attenuation = 2.2974
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/CarsFake"]
+transform = Transform3D(1, 0, 0, 0, 1, 4.47035e-08, 0, -4.47035e-08, 1, 1.867, -1.456, 2.569)
+light_color = Color(0.85098, 0.560784, 0.560784, 1)
+light_energy = 2.0
+light_volumetric_fog_energy = 0.0
+shadow_enabled = true
+shadow_bias = 0.02
+shadow_opacity = 0.8
+spot_range = 2.7
+spot_attenuation = 1.2
+spot_angle = 52.0312
+spot_angle_attenuation = 2.2974
+
+[node name="StreetLight" type="MeshInstance3D" parent="Skits/Goodbye/World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.58, -1.33, 1.927)
+mesh = SubResource("ArrayMesh_aiu0m")
+skeleton = NodePath("../..")
+script = ExtResource("7_e30et")
+texture = ExtResource("6_gga5f")
+emission = Color(1, 0.952941, 0.741176, 1)
+emission_texture = ExtResource("7_xxs3g")
+emission_energy = 2.0
+emission_saturation = 1.5
+emission_blend_add = false
+metadata/mat_opaque = SubResource("ShaderMaterial_ahatt")
+metadata/_edit_group_ = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/StreetLight"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.09, 4.16, 0)
+light_color = Color(1, 0.92549, 0.8, 1)
+light_energy = 2.5
+light_volumetric_fog_energy = 1.5
+spot_range = 6.0
+spot_angle = 25.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/StreetLight"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.48, 4.16, 0)
+light_color = Color(1, 0.92549, 0.8, 1)
+light_energy = 2.5
+light_volumetric_fog_energy = 1.5
+spot_range = 6.0
+spot_angle = 25.0
+
+[node name="StreetLight3" type="MeshInstance3D" parent="Skits/Goodbye/World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.512, -1.33, -1.306)
+mesh = SubResource("ArrayMesh_aiu0m")
+skeleton = NodePath("../..")
+script = ExtResource("7_e30et")
+texture = ExtResource("6_gga5f")
+emission = Color(1, 0.952941, 0.741176, 1)
+emission_texture = ExtResource("7_xxs3g")
+emission_energy = 1.5
+emission_saturation = 1.294
+emission_blend_add = false
+metadata/mat_opaque = SubResource("ShaderMaterial_ekaqp")
+metadata/_edit_group_ = true
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/StreetLight3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.09, 4.16, 0)
+light_color = Color(1, 0.92549, 0.8, 1)
+light_energy = 2.5
+light_volumetric_fog_energy = 1.5
+spot_range = 6.0
+spot_angle = 25.0
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/StreetLight3"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.48, 4.16, 0)
+light_color = Color(1, 0.92549, 0.8, 1)
+light_energy = 2.5
+light_volumetric_fog_energy = 1.5
+spot_range = 6.0
+spot_angle = 25.0
+
+[node name="StreetLight4" type="MeshInstance3D" parent="Skits/Goodbye/World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.382, -1.33, -3.686)
+mesh = SubResource("ArrayMesh_aiu0m")
+skeleton = NodePath("../..")
+script = ExtResource("7_e30et")
+texture = ExtResource("6_gga5f")
+emission = Color(1, 0.952941, 0.741176, 1)
+emission_texture = ExtResource("7_xxs3g")
+emission_energy = 1.5
+emission_saturation = 1.294
+emission_blend_add = false
+metadata/mat_opaque = SubResource("ShaderMaterial_qys37")
+metadata/_edit_group_ = true
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/StreetLight4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 1.48, 4.16, 0)
+light_color = Color(1, 0.92549, 0.8, 1)
+light_energy = 2.5
+light_volumetric_fog_energy = 1.5
+spot_range = 4.5
+spot_angle = 25.0
+
+[node name="SpotLight3D" type="SpotLight3D" parent="Skits/Goodbye/World/Lighting/StreetLight4"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.09, 4.16, 0)
+light_color = Color(1, 0.92549, 0.8, 1)
+light_energy = 2.5
+light_volumetric_fog_energy = 1.5
+spot_range = 4.5
+spot_angle = 25.0
+
+[node name="StreetLight5" type="MeshInstance3D" parent="Skits/Goodbye/World/Lighting"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.532, -1.33, -8.076)
+mesh = SubResource("ArrayMesh_aiu0m")
+skeleton = NodePath("../..")
+script = ExtResource("7_e30et")
+texture = ExtResource("6_gga5f")
+emission = Color(1, 0.952941, 0.741176, 1)
+emission_texture = ExtResource("7_xxs3g")
+emission_energy = 1.5
+emission_saturation = 1.294
+emission_blend_add = false
+metadata/mat_opaque = SubResource("ShaderMaterial_iq1g2")
+metadata/_edit_group_ = true
+
+[node name="Bottom" type="Node3D" parent="Skits/Goodbye/World"]
+
+[node name="CarTops" type="MeshInstance3D" parent="Skits/Goodbye/World/Bottom"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.61897, -0.908322, -0.652692)
+mesh = SubResource("ArrayMesh_mj03m")
+script = ExtResource("7_e30et")
+texture = ExtResource("35_wo4uh")
+modulate = Color(1.3, 1.3, 1.1, 1)
+metadata/mat_opaque = SubResource("ShaderMaterial_sa8yc")
+
+[node name="Road" type="MeshInstance3D" parent="Skits/Goodbye/World/Bottom"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -1.32, -1.27, -2.017)
+mesh = SubResource("ArrayMesh_iockm")
+script = ExtResource("7_e30et")
+texture = ExtResource("36_3ny6o")
+modulate = Color(0.764706, 0.764706, 0.764706, 1)
+metadata/mat_opaque = SubResource("ShaderMaterial_kpax6")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="Skits/Goodbye/World/Bottom/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.25, 0.599999, 0.270001)
+light_color = Color(1, 0.54902, 0.54902, 1)
+light_energy = 0.2
+light_indirect_energy = 0.0
+omni_range = 2.0
+omni_attenuation = 0.5
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="Skits/Goodbye/World/Bottom/Road"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.85, 1.26, 0.150001)
+light_color = Color(1, 0.54902, 0.54902, 1)
+light_energy = 0.2
+light_indirect_energy = 0.0
+omni_range = 2.0
+omni_attenuation = 0.5
+
+[node name="Characters" type="Node3D" parent="Skits/Goodbye"]
+metadata/_edit_lock_ = true
+
+[node name="MarkBorja" type="Node3D" parent="Skits/Goodbye/Characters"]
+metadata/_edit_lock_ = true
+
+[node name="StateRef" type="Node" parent="Skits/Goodbye/Characters/MarkBorja"]
+script = ExtResource("15_lmgv0")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="VisibilityController" type="Node" parent="Skits/Goodbye/Characters/MarkBorja"]
+script = ExtResource("14_3y6u4")
+state_container_alias = "Mark+Nicole"
+dict_values = {
+"show": false
+}
+
+[node name="Stand" type="Node3D" parent="Skits/Goodbye/Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8, 0.33, 0.479)
+metadata/_edit_group_ = true
+
+[node name="Sprite" parent="Skits/Goodbye/Characters/MarkBorja/Stand" instance=ExtResource("17_22my6")]
+custom_aabb = AABB(0, 0, 0, 0, 0, 0)
+frame = 0
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Skits/Goodbye/Characters/MarkBorja/Stand/Sprite"]
+event = SubResource("EventAsset_o4ars")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.24, 0, 0)
+
+[node name="NicoleLacsamana" type="Node3D" parent="Skits/Goodbye/Characters"]
+metadata/_edit_lock_ = true
+
+[node name="StateRef" type="Node" parent="Skits/Goodbye/Characters/NicoleLacsamana"]
+script = ExtResource("15_lmgv0")
+reference = NodePath("../../../../../Characters/NicoleLacsamana/State")
+
+[node name="VisibilityController" type="Node" parent="Skits/Goodbye/Characters/NicoleLacsamana"]
+script = ExtResource("14_3y6u4")
+state_container_alias = "Mark+Nicole"
+dict_values = {
+"show": false
+}
+
+[node name="Stand" type="Node3D" parent="Skits/Goodbye/Characters/NicoleLacsamana"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.24, 0.33, 0.48)
+metadata/_edit_group_ = true
+
+[node name="Sprite" parent="Skits/Goodbye/Characters/NicoleLacsamana/Stand" instance=ExtResource("18_3o1y5")]
+custom_aabb = AABB(0, 0, 0, 0, 0, 0)
+frame = 0
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Skits/Goodbye/Characters/NicoleLacsamana/Stand/Sprite"]
+event = SubResource("EventAsset_o4ars")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+
+[node name="Mark+Nicole" type="Node3D" parent="Skits/Goodbye/Characters"]
+metadata/_edit_lock_ = true
+
+[node name="State" type="Node" parent="Skits/Goodbye/Characters/Mark+Nicole"]
+script = ExtResource("3_2o6wi")
+alias = "Mark+Nicole"
+initial_dict = {
+"show": false
+}
+
+[node name="VisibilityController" type="Node" parent="Skits/Goodbye/Characters/Mark+Nicole"]
+script = ExtResource("14_3y6u4")
+state_container_alias = "Mark+Nicole"
+dict_values = {
+"show": true
+}
+
+[node name="Hug" type="Node3D" parent="Skits/Goodbye/Characters/Mark+Nicole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.02, 0.33, 0.479)
+metadata/_edit_group_ = true
+metadata/_edit_lock_ = true
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/Goodbye/Characters/Mark+Nicole/Hug"]
+mesh = SubResource("ArrayMesh_kt2y6")
+script = ExtResource("17_4bggl")
+texture_frames = SubResource("SpriteFrames_uvaiu")
+sync_all = true
+animation = "default_idle"
+alias = "AnimatedPaper3D"
+transitions = Array[ExtResource("81_auggk")]([SubResource("Resource_0lnlq"), SubResource("Resource_teefe")])
+pixel_size = 0.0081
+debug_add_anim_str = "nicolehug_(idle)"
+metadata/_edit_lock_ = true
+
+[node name="SpriteController" type="Node" parent="Skits/Goodbye/Characters/Mark+Nicole/Hug/Sprite"]
+script = ExtResource("23_q4ri0")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "nicolehug"
+standalone_anims = Array[String](["_tobothhug", "_tonicolehug", "unhug"])
+idle_talk_anims = Array[String](["bothhug", "default", "nicolehug"])
+
+[node name="SbPivotMark" type="Marker3D" parent="Skits/Goodbye/Characters/Mark+Nicole/Hug/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.26, 1.06, 0)
+script = ExtResource("24_vtbwr")
+alias = "MarkBorja"
+
+[node name="SbPivotNicole" type="Marker3D" parent="Skits/Goodbye/Characters/Mark+Nicole/Hug/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.42, 1.05, 0)
+script = ExtResource("24_vtbwr")
+alias = "NicoleLacsamana"
+
+[node name="ClothesSlow1" type="AudioStreamPlayer3D" parent="Skits/Goodbye/Characters/Mark+Nicole/Hug/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.48, 0.6, 0)
+stream = ExtResource("106_fhxus")
+max_db = -1.0
+bus = &"SFX"
+script = ExtResource("107_pxg53")
+
+[node name="Cameras" type="Node3D" parent="Skits/Goodbye"]
+metadata/_edit_lock_ = true
+
+[node name="CamMain" type="Camera3D" parent="Skits/Goodbye/Cameras"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.341, 1.398, 7.667)
+attributes = SubResource("CameraAttributesPractical_jjqf4")
+fov = 30.0
+script = ExtResource("9_l730t")
+wiggle_offset = Vector2(0.012, 0.012)
+wiggle_speed = 0.6
+metadata/_edit_lock_ = true
+
+[node name="Main" type="Node3D" parent="."]
+metadata/_edit_lock_ = true
+
+[node name="Services" type="Node" parent="Main"]
+
+[node name="$SceneManager" type="Node" parent="Main/Services"]
+script = ExtResource("17_6foyd")
+scene_id = "lo.3.4"
+
+[node name="$SceneState" type="Node" parent="Main/Services"]
+script = ExtResource("3_2o6wi")
+alias = "scene"
+
+[node name="$DialogueHandler" type="Node" parent="Main/Services"]
+script = ExtResource("18_f6ykc")
+
+[node name="$ThoughtBubble" parent="Main" instance=ExtResource("19_d72va")]
+metadata/_edit_lock_ = true
+
+[node name="Vignette" type="TextureRect" parent="Main"]
+material = SubResource("ShaderMaterial_e4pdd")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+mouse_filter = 2
+texture = ExtResource("21_8tpyr")
+expand_mode = 1
+metadata/_edit_lock_ = true

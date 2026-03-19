@@ -1,0 +1,68 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkxi64ccdx1kp"]
+
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="1_q58dc"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_d645i"]
+bounce = 0.1
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_wxyw3"]
+radius = 0.015
+
+[sub_resource type="Gradient" id="Gradient_77fcr"]
+colors = PackedColorArray(0.74, 0.74, 0.74, 1, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_5mkib"]
+seed = 1118
+frequency = 0.034
+fractal_type = 3
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_65hnq"]
+width = 16
+height = 16
+color_ramp = SubResource("Gradient_77fcr")
+noise = SubResource("FastNoiseLite_5mkib")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qe3ot"]
+render_priority = 0
+shader = ExtResource("1_q58dc")
+shader_parameter/albedo = Color(1, 0.639216, 0.231373, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = SubResource("NoiseTexture2D_65hnq")
+
+[sub_resource type="SphereMesh" id="SphereMesh_owdme"]
+radius = 0.015
+height = 0.03
+radial_segments = 12
+rings = 12
+
+[node name="Marble" type="RigidBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0270214, 0.0786809, -0.0180592)
+physics_material_override = SubResource("PhysicsMaterial_d645i")
+gravity_scale = 0.6
+continuous_cd = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_wxyw3")
+
+[node name="Mesh" type="MeshInstance3D" parent="."]
+material_override = SubResource("ShaderMaterial_qe3ot")
+mesh = SubResource("SphereMesh_owdme")
+skeleton = NodePath("../../PetriDish")

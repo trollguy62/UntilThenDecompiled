@@ -1,0 +1,75 @@
+[gd_scene load_steps=8 format=3 uid="uid://b4fheth3sn34i"]
+
+[ext_resource type="Texture2D" uid="uid://xy7tdw764pnk" path="res://scenes/lms/prom/assets/circle_table.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://yhj5qaf2enye" path="res://scenes/lms/prom/assets/circle_tablecloth_1.png" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://blk2ugdxn2e5u" path="res://scenes/lms/prom/assets/circle_tablecloth.obj" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://d0djemqixsfaw" path="res://scenes/lms/prom/assets/circle_table.obj" id="4"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaqueCulled.gdshader" id="5"]
+
+[sub_resource type="ShaderMaterial" id="37"]
+render_priority = 0
+shader = ExtResource("5")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("1")
+
+[sub_resource type="ShaderMaterial" id="38"]
+render_priority = 0
+shader = ExtResource("5")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+
+[node name="CircleTable1" type="MeshInstance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.45, 0, -0.98)
+material_override = SubResource("37")
+use_in_baked_light = true
+mesh = ExtResource("4")
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Cloth" type="MeshInstance" parent="."]
+material_override = SubResource("38")
+use_in_baked_light = true
+mesh = ExtResource("3")
+skeleton = NodePath("../..")
+__meta__ = {
+"_edit_lock_": true
+}

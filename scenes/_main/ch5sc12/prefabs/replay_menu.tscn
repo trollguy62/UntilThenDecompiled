@@ -1,0 +1,526 @@
+[gd_scene load_steps=29 format=3 uid="uid://c4tuttrur6nys"]
+
+[ext_resource type="Texture2D" uid="uid://du6126ufxlanx" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/choice_shadow.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://5cv4rxkts555" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/choice_normal.png" id="2"]
+[ext_resource type="Texture2D" uid="uid://we80wj1v6x6q" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/press_exit.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cm7mdn1ymbijv" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/replay_shadow.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://cbg5w4nm2euxd" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/menu_skip_click.png" id="5"]
+[ext_resource type="FontFile" uid="uid://c0adfygnbbphk" path="res://scenes/_main/ch5sc12/assets/UI/PressStart2P-vaV7.ttf" id="6"]
+[ext_resource type="Texture2D" uid="uid://bq2nikcca47j1" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/replay.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://dxvpt4mspvdbq" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/background.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cbp31k6r3fcn5" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/menu_controller.png" id="9"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc12/scripts/ReplayMenu.gd" id="10"]
+[ext_resource type="Texture2D" uid="uid://dho7f6ctruky5" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/menu_skip_unclicked.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://byp0yvomorb1b" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/animated_car2.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://dtpn50mkl7u4q" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/animated_car1.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://cqk7mq6vgr1ue" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/menu_skip_hover.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://oywv1e46wq8v" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/choice_hover.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://byw2220clxxvx" path="res://scenes/_main/ch5sc12/assets/UI/replay_menu/choice_click.png" id="16"]
+
+[sub_resource type="Animation" id="7"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ReadyMenu/Panel/VBoxContainer2:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ReadyMenu:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ReadyMenu/SkipButton/Click:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Choice1/Click:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="8"]
+resource_name = "select_replay"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Choice1/Click:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="9"]
+resource_name = "waiting_for_cathy"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ReadyMenu:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ReadyMenu/Panel/VBoxContainer:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ReadyMenu/SkipButton/Click:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ReadyMenu/Panel/VBoxContainer2:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uf1vp"]
+_data = {
+"RESET": SubResource("7"),
+"select_replay": SubResource("8"),
+"waiting_for_cathy": SubResource("9")
+}
+
+[sub_resource type="SpriteFrames" id="10"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="FontFile" id="1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("6")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="2"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("6")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="3"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("6")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="FontFile" id="4"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("6")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="SpriteFrames" id="6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="SpriteFrames" id="11"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="FontFile" id="5"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+fallbacks = Array[Font]([ExtResource("6")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[node name="ReplayMenu" type="Control"]
+layout_mode = 3
+anchor_right = 0.5
+anchor_bottom = 0.667
+offset_bottom = -0.240051
+script = ExtResource("10")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_uf1vp")
+}
+
+[node name="Tween" type="Threen" parent="."]
+
+[node name="BG" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("8")
+
+[node name="Replay" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 211.834
+offset_top = 45.057
+offset_right = -226.166
+offset_bottom = -380.943
+texture = ExtResource("7")
+
+[node name="Shadow" type="TextureRect" parent="Replay"]
+modulate = Color(0.317647, 0.317647, 0.317647, 1)
+show_behind_parent = true
+layout_mode = 0
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -104.0
+offset_top = 3.0
+offset_right = 98.0
+offset_bottom = 57.0
+texture = ExtResource("4")
+
+[node name="Choices" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 114.0
+offset_right = 415.0
+offset_bottom = 400.0
+texture = ExtResource("2")
+
+[node name="Shadow" type="TextureRect" parent="Choices"]
+self_modulate = Color(0.203922, 0.203922, 0.203922, 0.713726)
+show_behind_parent = true
+layout_mode = 0
+offset_left = -5.332
+offset_top = 3.976
+offset_right = 347.668
+offset_bottom = 289.976
+texture = ExtResource("1")
+
+[node name="Choice1" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 62.0
+offset_top = 114.0
+offset_right = 415.0
+offset_bottom = 193.0
+
+[node name="Hover" type="AnimatedSprite2D" parent="Choice1"]
+sprite_frames = SubResource("10")
+centered = false
+
+[node name="Click" type="TextureRect" parent="Choice1"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+texture = ExtResource("16")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Choice1"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = -11.0
+offset_bottom = -8.0
+
+[node name="Player" type="Label" parent="Choice1/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0627451, 0.0627451, 1)
+theme_override_fonts/font = SubResource("1")
+text = "MRK 1ST, CTH X"
+
+[node name="Date" type="Label" parent="Choice1/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("2")
+text = "2014-11-23    21:07"
+
+[node name="Choice2" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 62.0
+offset_top = 216.0
+offset_right = 415.0
+offset_bottom = 295.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Choice2"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = -11.0
+offset_bottom = -8.0
+
+[node name="Player" type="Label" parent="Choice2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0627451, 0.0627451, 1)
+theme_override_fonts/font = SubResource("1")
+text = "CTH 1ST, MRK 3RD"
+
+[node name="Date" type="Label" parent="Choice2/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("2")
+text = "2014-11-23    21:02"
+
+[node name="Choice3" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 62.0
+offset_top = 319.0
+offset_right = 415.0
+offset_bottom = 398.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Choice3"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 18.0
+offset_top = 16.0
+offset_right = -11.0
+offset_bottom = -8.0
+
+[node name="Player" type="Label" parent="Choice3/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.0627451, 0.0627451, 1)
+theme_override_fonts/font = SubResource("1")
+text = "CTH 1ST, MRK 5TH"
+
+[node name="Date" type="Label" parent="Choice3/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = SubResource("2")
+text = "2014-11-23    20:55"
+
+[node name="Exit" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 200.0
+offset_top = 426.0
+offset_right = -200.0
+offset_bottom = -36.9999
+texture = ExtResource("3")
+
+[node name="ReadyMenu" type="Control" parent="."]
+visible = false
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 118.0
+offset_top = 168.0
+offset_right = -127.0
+offset_bottom = -85.0
+
+[node name="Panel" type="TextureRect" parent="ReadyMenu"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -36.0
+texture = ExtResource("9")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ReadyMenu/Panel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -78.5
+offset_right = 175.5
+offset_bottom = 89.5
+theme_override_constants/separation = 35
+
+[node name="Player" type="Label" parent="ReadyMenu/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("3")
+text = "PLAYER 1 - MRK
+           Ready!"
+
+[node name="Player2" type="Label" parent="ReadyMenu/Panel/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("4")
+text = "PLAYER 2 - CTH
+           Waiting..."
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ReadyMenu/Panel"]
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -78.5
+offset_right = 175.5
+offset_bottom = 89.5
+theme_override_constants/separation = 35
+
+[node name="Player" type="Label" parent="ReadyMenu/Panel/VBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = SubResource("3")
+text = "SKIP, 1P ONLY"
+
+[node name="Car" type="Control" parent="ReadyMenu/Panel"]
+clip_contents = true
+custom_minimum_size = Vector2(385, 50)
+anchors_preset = 0
+offset_left = 5.0
+offset_top = 137.0
+offset_right = 390.0
+offset_bottom = 187.0
+
+[node name="CarSprite" type="AnimatedSprite2D" parent="ReadyMenu/Panel/Car"]
+position = Vector2(344.835, 16.712)
+sprite_frames = SubResource("6")
+
+[node name="SkipButton" type="TextureRect" parent="ReadyMenu"]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 193.0
+offset_right = 185.0
+offset_bottom = 226.0
+texture = ExtResource("11")
+
+[node name="Hover" type="AnimatedSprite2D" parent="ReadyMenu/SkipButton"]
+sprite_frames = SubResource("11")
+centered = false
+
+[node name="Click" type="TextureRect" parent="ReadyMenu/SkipButton"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = 1.0
+texture = ExtResource("5")
+
+[node name="Label" type="Label" parent="ReadyMenu/SkipButton"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+auto_translate = false
+theme_override_fonts/font = SubResource("5")
+text = "SKIP"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ExitButton" type="TextureRect" parent="ReadyMenu"]
+layout_mode = 0
+offset_left = 190.0
+offset_top = 193.0
+offset_right = 318.0
+offset_bottom = 226.0
+texture = ExtResource("11")
+
+[node name="Label" type="Label" parent="ReadyMenu/ExitButton"]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+auto_translate = false
+theme_override_fonts/font = SubResource("5")
+text = "EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1

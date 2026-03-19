@@ -1,0 +1,48 @@
+[gd_scene load_steps=8 format=3 uid="uid://in2b4vrl1h0g"]
+
+[ext_resource type="Texture2D" uid="uid://d2svnr075wvop" path="res://scenes/lms/prom_outside/assets/sidewalk1_1.png" id="1"]
+[ext_resource type="Texture2D" uid="uid://2ehbb17150m2" path="res://scenes/lms/prom_outside/assets/sidewalk1_1_wet.png" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://d6xghcelx0sa" path="res://scenes/lms/prom_outside/assets/sidewalk1.obj" id="3"]
+[ext_resource type="Shader" path="res://assets/shaders/Wet.gdshader" id="4"]
+[ext_resource type="Texture2D" uid="uid://cfwpo0nkiflpt" path="res://scenes/lms/prom_outside/assets/sidewalk1_1_n.png" id="5"]
+
+[sub_resource type="ShaderMaterial" id="6"]
+render_priority = 0
+shader = ExtResource("4")
+shader_parameter/albedo_mult = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/global_wet_roughness = 0.44
+shader_parameter/normal_smooth_sampling = true
+shader_parameter/distort = 1.0
+shader_parameter/max_normal_depth = 1.5
+shader_parameter/tex_albedo = ExtResource("1")
+shader_parameter/tex_wetmap = ExtResource("2")
+shader_parameter/tex_normal = ExtResource("5")
+
+[sub_resource type="BoxShape3D" id="7"]
+size = Vector3(3.63, 0.06, 0.9)
+
+[node name="Sidewalk1_1" type="MeshInstance"]
+material_override = SubResource("6")
+use_in_baked_light = true
+mesh = ExtResource("3")
+skeleton = NodePath("../..")
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="StaticBody" type="StaticBody" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.815, 0.03, 0.45)
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
+shape = SubResource("7")
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.94, 0.08, 0.3)
+visible = false

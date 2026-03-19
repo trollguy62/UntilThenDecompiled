@@ -1,0 +1,93 @@
+[gd_scene load_steps=14 format=3 uid="uid://t8qh437w6pwe"]
+
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1_f2erc"]
+[ext_resource type="Texture2D" uid="uid://dien6jm30b3jj" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/doctors/male_var2_walk/03.png" id="2_4b1ot"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="3_juwik"]
+[ext_resource type="Texture2D" uid="uid://chv82yxw8iie3" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/doctors/male_var2_walk/01.png" id="4_1yiab"]
+[ext_resource type="Texture2D" uid="uid://bahrwh072atba" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/doctors/male_var2_walk/02.png" id="5_81tgg"]
+[ext_resource type="Texture2D" uid="uid://clprt7clq8oi5" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/doctors/male_var2_walk/04.png" id="6_pwfkb"]
+[ext_resource type="Texture2D" uid="uid://rk5rb2pm4qqp" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/doctors/male_var2_walk/05.png" id="7_270xr"]
+[ext_resource type="Texture2D" uid="uid://br10c67w3jqaj" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/doctors/male_var2_walk/06.png" id="8_jb3uq"]
+[ext_resource type="Texture2D" uid="uid://7l84b6qesqhc" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/doctors/male_var2_walk/07.png" id="9_thf8c"]
+[ext_resource type="Texture2D" uid="uid://csjy4rqps6e6" path="res://scenes/_main/ch3sc1/assets/characters/NPCs/doctors/male_var2_walk/08.png" id="10_7uarl"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7nrdn"]
+render_priority = 0
+shader = ExtResource("1_f2erc")
+shader_parameter/scale = Vector3(0.8019, 1.215, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("2_4b1ot")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_2ilwa"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_7nrdn"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wumhi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_1yiab")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_81tgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_4b1ot")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_pwfkb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_270xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jb3uq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_thf8c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7uarl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[node name="DoctorMale2" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.2796, 4.70153, -2.2561)
+
+[node name="Sprite" type="MeshInstance3D" parent="."]
+custom_aabb = AABB(0, 0, 0, 0.8019, 1.215, 0)
+mesh = SubResource("ArrayMesh_2ilwa")
+script = ExtResource("3_juwik")
+texture_frames = SubResource("SpriteFrames_wumhi")
+sync_all = true
+animation = "default"
+frame = 2
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081

@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://hgqvko0wyw6c"]
+
+[ext_resource type="Script" path="res://ui/components/CoolLabel/CoolLabel.gd" id="1"]
+[ext_resource type="Script" path="res://ui/components/Clickable.gd" id="2_jkbtj"]
+
+[sub_resource type="StyleBoxEmpty" id="1"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+
+[sub_resource type="ShaderMaterial" id="2"]
+
+[sub_resource type="StyleBoxFlat" id="3"]
+content_margin_left = 16.0
+content_margin_top = 12.0
+content_margin_right = 16.0
+content_margin_bottom = 12.0
+bg_color = Color(0.937255, 0.454902, 0.658824, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="Label" type="Label"]
+light_mask = 2
+texture_filter = 4
+clip_contents = true
+offset_right = 215.0
+offset_bottom = 47.0
+size_flags_horizontal = 6
+size_flags_vertical = 0
+theme_override_constants/line_spacing = 0
+theme_override_styles/normal = SubResource("1")
+text = "sdakflfdsfgsdtg eres"
+autowrap_mode = 3
+script = ExtResource("1")
+
+[node name="TextBackground" type="Panel" parent="."]
+show_behind_parent = true
+light_mask = 2
+texture_filter = 1
+material = SubResource("2")
+clip_contents = true
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+offset_right = 40.0
+offset_bottom = 40.0
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+theme_override_styles/panel = SubResource("3")
+script = ExtResource("2_jkbtj")

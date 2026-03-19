@@ -1,0 +1,25 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dk4a6qwlhsfq6"]
+
+[ext_resource type="Texture2D" uid="uid://cuptgcgbshs8g" path="res://scenes/_main/ch10sc8/assets/envi/satara_night_2k.hdr" id="1_tnbkg"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_beni8"]
+panorama = ExtResource("1_tnbkg")
+
+[sub_resource type="Sky" id="Sky_7cg1w"]
+sky_material = SubResource("PanoramaSkyMaterial_beni8")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.01
+sky = SubResource("Sky_7cg1w")
+reflected_light_source = 2
+tonemap_exposure = 2.0
+ssao_enabled = true
+sdfgi_enabled = true
+sdfgi_bounce_feedback = 1.0
+sdfgi_min_cell_size = 0.05
+sdfgi_y_scale = 0
+glow_enabled = true
+glow_bloom = 0.08
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.02

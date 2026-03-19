@@ -1,0 +1,51 @@
+[gd_scene load_steps=6 format=3 uid="uid://b011uqwahrdsi"]
+
+[ext_resource type="ArrayMesh" uid="uid://dciic2i2oytq" path="res://scenes/house_nicole/assets/box_flap_balikbayan_3.obj" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://bhn1f7ui4ypi3" path="res://scenes/house_nicole/assets/box_balikbayan_3.obj" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://cfadrrr15tf8k" path="res://scenes/house_nicole/assets/box_balikbayan_3.png" id="4"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+
+[node name="BoxBalikbayan3" type="MeshInstance"]
+material_override = SubResource("1")
+use_in_baked_light = true
+mesh = ExtResource("2")
+surface_material_override/0 = null
+
+[node name="Flap1" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 0.996, 0.4, 0.36, 0.000999928)
+material_override = SubResource("1")
+use_in_baked_light = true
+mesh = ExtResource("1")
+surface_material_override/0 = null
+
+[node name="Flap2" type="MeshInstance" parent="."]
+transform = Transform3D(-1, 0, -8.70731e-08, 0, 1, 0, 8.74228e-08, 0, -0.996, 0, 0.36, 0.399)
+material_override = SubResource("1")
+use_in_baked_light = true
+mesh = ExtResource("1")
+surface_material_override/0 = null

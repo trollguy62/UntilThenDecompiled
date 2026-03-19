@@ -1,0 +1,52 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://c3vnulqax0q0f"]
+
+[ext_resource type="Texture2D" uid="uid://7wa687k7xigw" path="res://scenes/_main/ch1sc1c/assets/led_sign_disp_liamson.png" id="1"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type spatial;
+render_mode depth_draw_always, cull_back, diffuse_burley, specular_schlick_ggx;
+
+uniform vec4 albedo : source_color = vec4(1.0f);
+uniform sampler2D texture_albedo : source_color, repeat_disable;
+uniform int display_width = 75;
+uniform float speed = 15.0;
+uniform float emission_energy = 4.0;
+
+vec4 texturePointSmooth(sampler2D smp, vec2 uv, vec2 pixel_size) {
+	vec2 ddx = dFdx(uv);
+	vec2 ddy = dFdy(uv);
+	vec2 lxy = sqrt(ddx * ddx + ddy * ddy);
+
+	vec2 uv_pixels = uv / pixel_size;
+	vec2 uv_pixels_floor = round(uv_pixels) - vec2(0.5);
+	vec2 uv_dxy_pixels = uv_pixels - uv_pixels_floor;
+
+	uv_dxy_pixels = clamp((uv_dxy_pixels - vec2(0.5)) * pixel_size / lxy + vec2(0.5), 0.0, 1.0);
+	uv = uv_pixels_floor * pixel_size;
+	return textureGrad(smp, uv + uv_dxy_pixels * pixel_size, ddx, ddy);
+}
+
+void fragment() {
+	ivec2 tex_size = textureSize(texture_albedo, 0);
+	vec2 px_size = 1.0 / vec2(tex_size);
+
+	int t = int(TIME * speed);
+	int x_offset = tex_size.x - abs(t % (tex_size.x * 2));
+	float uv_x = (UV.x * px_size.x * float(display_width)) - (px_size.x * float(x_offset));
+	vec2 uv = vec2(uv_x, UV.y);
+
+	vec4 albedo_tex = texturePointSmooth(texture_albedo, uv, px_size);
+	ALBEDO = albedo.rgb * albedo_tex.rgb;
+	ALPHA = albedo.a * albedo_tex.a;
+	ALPHA_SCISSOR_THRESHOLD = 1.0;
+	EMISSION = ALBEDO * emission_energy;
+}"
+
+[resource]
+render_priority = 0
+shader = SubResource("1")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/display_width = 75
+shader_parameter/speed = 15.0
+shader_parameter/emission_energy = 4.0
+shader_parameter/texture_albedo = ExtResource("1")

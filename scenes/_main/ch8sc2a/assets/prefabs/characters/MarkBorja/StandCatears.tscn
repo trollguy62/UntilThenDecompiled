@@ -1,0 +1,577 @@
+[gd_scene load_steps=115 format=3 uid="uid://cevyklll73gtm"]
+
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://dvrv2rca5tw1f" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_talk/03.tres" id="3"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="4"]
+[ext_resource type="Texture2D" uid="uid://ck4r7yurldsd3" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_idle/06.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://cebubmeq0gje3" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_talk/01.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://hogbx0gnlmsy" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_talk/02.png" id="7"]
+[ext_resource type="Texture2D" uid="uid://cfo2tio37s6hr" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_talk/05.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://d21vlhcmegwni" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_idle/04.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://2sodche02go0" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_talk/04.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://c6c6qepp46obh" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_idle/06.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://p35rcjgiyhqg" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_talk/03.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://qde83uk4alut" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_idle/06.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://rvgtxqhnh42g" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_idle/01.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://dvhwj6ug1m1j8" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_idle/01.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://viu2p2txqyyh" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_default_idle/03.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://psn4yjlcejnr" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_default_idle/07.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://dqtusvlk2ikc3" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_positive_idle/04.png" id="18"]
+[ext_resource type="Texture2D" uid="uid://05w3cfsko3ep" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_default_idle/04.png" id="19"]
+[ext_resource type="Texture2D" uid="uid://bg04tu0skqgtu" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_idle/03.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://0bg4dy5m6cdx" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_talk/03.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://doi6emcihffwc" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_talk/03.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://b341g8q6hci41" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_idle/04.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://87r5mbaoge16" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_idle/03.png" id="24"]
+[ext_resource type="Texture2D" uid="uid://d387h5yf7afx1" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_idle/01.png" id="25"]
+[ext_resource type="Texture2D" uid="uid://d01e0fpxbh0t6" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_talk/02.tres" id="26"]
+[ext_resource type="Texture2D" uid="uid://c087b31keral7" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_idle/04.png" id="27"]
+[ext_resource type="Texture2D" uid="uid://b2bljxd1fh4pa" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_positive_idle/03.png" id="28"]
+[ext_resource type="Texture2D" uid="uid://dxbspjgscgkc0" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_positive_idle/02.png" id="29"]
+[ext_resource type="Texture2D" uid="uid://moiqq7g0sfbj" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_talk/01.png" id="30"]
+[ext_resource type="Texture2D" uid="uid://dq1boc8q3a0bu" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_talk/05.png" id="31"]
+[ext_resource type="Texture2D" uid="uid://dwbbcj2oqi6l" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_talk/04.png" id="32"]
+[ext_resource type="Texture2D" uid="uid://nomoiw0l1rga" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_talk/03.png" id="33"]
+[ext_resource type="Texture2D" uid="uid://di5qytdh3maws" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_talk/01.png" id="34"]
+[ext_resource type="Texture2D" uid="uid://donfwxpgljwj3" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_positive_idle/08.png" id="35"]
+[ext_resource type="Texture2D" uid="uid://cxrwqbpmy1r4y" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_idle/05.png" id="36"]
+[ext_resource type="Texture2D" uid="uid://b3l7ioecsjuql" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_idle/02.png" id="37"]
+[ext_resource type="Texture2D" uid="uid://c50lu2ecjmhg6" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_talk/03.png" id="38"]
+[ext_resource type="Texture2D" uid="uid://7ukp2u0s1a32" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_idle/02.png" id="39"]
+[ext_resource type="Texture2D" uid="uid://c7ctwe7am8wmg" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_default_idle/01.png" id="40"]
+[ext_resource type="Texture2D" uid="uid://cqk82vup0lm01" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_default_idle/08.png" id="41"]
+[ext_resource type="Texture2D" uid="uid://ctmmd322cjx0n" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_talk/06.png" id="42"]
+[ext_resource type="Texture2D" uid="uid://oh0dfhp8o0lo" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_talk/03.tres" id="43"]
+[ext_resource type="Texture2D" uid="uid://ciwa8daiwx28g" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_talk/06.png" id="44"]
+[ext_resource type="Texture2D" uid="uid://pfxnwl2sy2xu" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_idle/05.png" id="45"]
+[ext_resource type="Texture2D" uid="uid://risfwew14ero" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_idle/01.png" id="46"]
+[ext_resource type="Texture2D" uid="uid://cfggrhc2ds81a" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_idle/05.png" id="47"]
+[ext_resource type="Texture2D" uid="uid://ctv08ywwxs3y3" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_talk/05.png" id="48"]
+[ext_resource type="Texture2D" uid="uid://dcfg8ycwhxltg" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_talk/04.tres" id="49"]
+[ext_resource type="Texture2D" uid="uid://cys07tksrpqor" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_talk/02.png" id="50"]
+[ext_resource type="Texture2D" uid="uid://b1hkykfwbwjae" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_idle/01.png" id="51"]
+[ext_resource type="Texture2D" uid="uid://caq3n13kjg7yt" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_talk/04.png" id="52"]
+[ext_resource type="Texture2D" uid="uid://cdi2fb567h88x" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_idle/02.tres" id="53"]
+[ext_resource type="Texture2D" uid="uid://cm1j7gilnvtg5" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_idle/03.tres" id="54"]
+[ext_resource type="Texture2D" uid="uid://dcphaagyxvgw4" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_positive_idle/07.png" id="55"]
+[ext_resource type="Texture2D" uid="uid://b4la54i6s4xka" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_talk/05.tres" id="56"]
+[ext_resource type="Texture2D" uid="uid://c67mfvd5h4cbe" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_smirk_idle/07.tres" id="57"]
+[ext_resource type="Texture2D" uid="uid://cj5rb1j7shesm" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_smirk_idle/01.tres" id="58"]
+[ext_resource type="Texture2D" uid="uid://jywgqqyrsutk" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_smirk_idle/06.tres" id="59"]
+[ext_resource type="Texture2D" uid="uid://dxnd7oa7kr1ia" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_idle/06.png" id="60"]
+[ext_resource type="Texture2D" uid="uid://o58nird8oa7u" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_talk/04.png" id="61"]
+[ext_resource type="Texture2D" uid="uid://dynu64albh0ms" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_idle/06.png" id="62"]
+[ext_resource type="Texture2D" uid="uid://dywi852xv0tqg" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_idle/06.png" id="63"]
+[ext_resource type="Texture2D" uid="uid://pylpjllaa2iw" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_idle/03.png" id="64"]
+[ext_resource type="Texture2D" uid="uid://cdulrrgchyj18" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_talk/01.png" id="65"]
+[ext_resource type="Texture2D" uid="uid://ci3iq6nehwkqo" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_idle/04.png" id="66"]
+[ext_resource type="Texture2D" uid="uid://bt6r4u4755nmj" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_idle/05.tres" id="67"]
+[ext_resource type="Texture2D" uid="uid://bclrfivumajm4" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_idle/01.tres" id="68"]
+[ext_resource type="Texture2D" uid="uid://dh0d7x8m50np2" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_talk/06.tres" id="69"]
+[ext_resource type="Texture2D" uid="uid://cbjg8bygxxudx" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_talk/04.tres" id="70"]
+[ext_resource type="Texture2D" uid="uid://m410kgroa5jb" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_idle/06.tres" id="71"]
+[ext_resource type="Texture2D" uid="uid://c2hd23x22vgmn" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_talk/05.tres" id="72"]
+[ext_resource type="Texture2D" uid="uid://d36ds5sorr4i7" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_idle/04.tres" id="73"]
+[ext_resource type="Texture2D" uid="uid://bhnpypuoxvfbv" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_smirk_idle/04.tres" id="74"]
+[ext_resource type="Texture2D" uid="uid://cr6duye7yl8xi" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_idle/03.tres" id="75"]
+[ext_resource type="Texture2D" uid="uid://gomy7pjmuu37" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_smirk_idle/03.tres" id="76"]
+[ext_resource type="Texture2D" uid="uid://c276ooni07eph" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_talk/06.png" id="77"]
+[ext_resource type="Texture2D" uid="uid://ct86dmgu5r40f" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_idle/02.png" id="78"]
+[ext_resource type="Texture2D" uid="uid://bspv4lgm6rxv7" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smirk_talk/01.png" id="79"]
+[ext_resource type="Texture2D" uid="uid://ctr4f7dcn85d5" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_idle/02.png" id="80"]
+[ext_resource type="Texture2D" uid="uid://qt31jaxjrbqk" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_talk/02.png" id="81"]
+[ext_resource type="Texture2D" uid="uid://ivl8oins8s2a" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_default_idle/05.png" id="82"]
+[ext_resource type="Texture2D" uid="uid://x1yihk245hyf" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_idle/03.png" id="83"]
+[ext_resource type="Texture2D" uid="uid://b2f6mfaiproq5" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_default_idle/06.png" id="84"]
+[ext_resource type="Texture2D" uid="uid://4uw87jtem2gw" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_positive_idle/05.png" id="85"]
+[ext_resource type="Texture2D" uid="uid://bl3aa2q45d7j6" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_smirk_idle/02.tres" id="86"]
+[ext_resource type="Texture2D" uid="uid://ck00j5rbhehnd" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_default_idle/02.png" id="87"]
+[ext_resource type="Texture2D" uid="uid://mns3qsom405t" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_idle/05.png" id="88"]
+[ext_resource type="Texture2D" uid="uid://ddq446nvjcv7a" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_positive_idle/01.png" id="89"]
+[ext_resource type="Texture2D" uid="uid://ntc3y4107mqg" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_idle/04.png" id="90"]
+[ext_resource type="Texture2D" uid="uid://d2q3nybtlc316" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_talk/05.png" id="91"]
+[ext_resource type="Texture2D" uid="uid://bqh6kc5gmo305" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_positive_talk/02.png" id="92"]
+[ext_resource type="Texture2D" uid="uid://oqeguxj5sq6" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_smirk_idle/05.tres" id="93"]
+[ext_resource type="Texture2D" uid="uid://j8rha6mmyr82" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_idle/02.tres" id="94"]
+[ext_resource type="Texture2D" uid="uid://ce8mpidqua314" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_smirk_idle/08.tres" id="95"]
+[ext_resource type="Texture2D" uid="uid://cgghpg3enj5v2" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_talk/06.png" id="96"]
+[ext_resource type="Texture2D" uid="uid://cgh37cbq5rhhu" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_idle/03.png" id="97"]
+[ext_resource type="Texture2D" uid="uid://cbfrvlf6ap5uc" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_talk/04.png" id="98"]
+[ext_resource type="Texture2D" uid="uid://ran0hofpbl2f" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_talk/01.png" id="99"]
+[ext_resource type="Texture2D" uid="uid://bcxahpcw013qc" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_talk/02.png" id="100"]
+[ext_resource type="Texture2D" uid="uid://dsy4x1hayfh2w" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_confused_idle/05.png" id="101"]
+[ext_resource type="Texture2D" uid="uid://bnukq4rahbw0t" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_talk/06.tres" id="102"]
+[ext_resource type="Texture2D" uid="uid://yn8n6bik37jo" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_talk/05.png" id="103"]
+[ext_resource type="Texture2D" uid="uid://dacqdr2udcxqu" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_default_talk/06.png" id="104"]
+[ext_resource type="Texture2D" uid="uid://cjtq6dblfc4y5" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_smug_idle/02.png" id="105"]
+[ext_resource type="Texture2D" uid="uid://di0n2u8ddvw8e" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_positive_idle/06.png" id="106"]
+[ext_resource type="Texture2D" uid="uid://d1h4g2rshr8a3" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_idle/04.tres" id="107"]
+[ext_resource type="Texture2D" uid="uid://1fvbfhmuiukv" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_idle/05.tres" id="108"]
+[ext_resource type="Texture2D" uid="uid://ck51shfuibs53" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_idle/01.tres" id="109"]
+[ext_resource type="Texture2D" uid="uid://dogcf1fuueo67" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_cheeky_talk/02.tres" id="110"]
+[ext_resource type="Texture2D" uid="uid://clb1mjnjqvj33" path="res://scenes/_main/ch8sc2a/assets/characters/MarkBorja/lf_standactive+catears^lf_giggle_talk/01.tres" id="111"]
+
+[sub_resource type="ShaderMaterial" id="941"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("68")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_hj0tx"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("941"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="940"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("109")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}],
+"loop": true,
+"name": &"cheeky_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("110")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69")
+}],
+"loop": true,
+"name": &"cheeky_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63")
+}],
+"loop": true,
+"name": &"confused_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}, {
+"duration": 1.0,
+"texture": ExtResource("96")
+}],
+"loop": true,
+"name": &"confused_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("99")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("40")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41")
+}],
+"loop": true,
+"name": &"default_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("68")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("71")
+}],
+"loop": true,
+"name": &"giggle_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72")
+}, {
+"duration": 1.0,
+"texture": ExtResource("102")
+}],
+"loop": true,
+"name": &"giggle_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60")
+}],
+"loop": true,
+"name": &"positive_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}],
+"loop": true,
+"name": &"positive_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}],
+"loop": true,
+"name": &"positive_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62")
+}],
+"loop": true,
+"name": &"smirk_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("79")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}],
+"loop": true,
+"name": &"smirk_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("95")
+}],
+"loop": true,
+"name": &"smirk_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13")
+}],
+"loop": true,
+"name": &"smug_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("77")
+}],
+"loop": true,
+"name": &"smug_talk",
+"speed": 6.0
+}]
+
+[node name="Sprite" type="MeshInstance3D"]
+mesh = SubResource("ArrayMesh_hj0tx")
+script = ExtResource("2")
+texture_frames = SubResource("940")
+sync_all = true
+sync_all_except = Array[String](["smirk_walk", "default_walk", "positive_walk"])
+animation = "giggle_idle"
+alias = "MarkBorja"
+pixel_size = 0.008
+flip_h = true
+
+[node name="SpriteController" type="Node" parent="."]
+script = ExtResource("4")
+state_container_alias = "MarkBorja"
+fallback_idle_talk_anim = "smirk"
+idle_talk_anims = Array[String](["cheeky", "confused", "default", "giggle", "positive", "smirk", "smug"])

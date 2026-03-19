@@ -1,0 +1,127 @@
+[gd_scene load_steps=13 format=3 uid="uid://0c007udbquaq"]
+
+[ext_resource type="Texture2D" uid="uid://bgj5cg1uhoa8e" path="res://scenes/_main/ch4sc1b/MinigameBooks/assets/Books.png" id="1"]
+[ext_resource type="Script" path="res://scenes/_main/ch4sc1b/MinigameBooks/MinigameBooks.gd" id="2"]
+[ext_resource type="BankAsset" uid="uid://c3vwstsyvms28" path="res://addons/fmod/editor/resources/banks/{bd0116b4-9999-4609-a162-09eb86b6ba01}.tres" id="2_mdtmk"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="3"]
+[ext_resource type="EventAsset" uid="uid://blq3wi4xmgad" path="res://addons/fmod/editor/resources/events/{7f937b73-c7c7-4115-9a88-df3d0007ad3b}.tres" id="3_a4g6k"]
+[ext_resource type="Texture2D" uid="uid://b5bxp23iidhei" path="res://scenes/_main/ch4sc1b/MinigameBooks/assets/skyatlasopen.png" id="4"]
+[ext_resource type="EventAsset" uid="uid://boepvtn2lb31d" path="res://addons/fmod/editor/resources/events/{b771f77a-1706-45b5-a38f-a9fe7a6d541e}.tres" id="4_2oduu"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="5"]
+[ext_resource type="Script" path="res://scenes/_main/ch4sc1b/MinigameBooks/ClickableObject.gd" id="6"]
+[ext_resource type="EventAsset" uid="uid://brjq78bikwvqo" path="res://addons/fmod/editor/resources/events/{e839d83d-c5bb-496f-93d2-d25860d6c8fc}.tres" id="6_8cddn"]
+[ext_resource type="Script" path="res://components/audio/CommandAudioTrigger.gd" id="8"]
+[ext_resource type="PackedScene" uid="uid://cng5pa21vpc74" path="res://ui/components/Pointer/Pointer.tscn" id="12_2e5fg"]
+
+[node name="MinigameBooks" type="Node2D"]
+texture_filter = 1
+script = ExtResource("2")
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="."]
+num_banks = 1
+bank_0 = ExtResource("2_mdtmk")
+
+[node name="OpeningNotebook" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("3_a4g6k")
+
+[node name="ClickingKeys" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("4_2oduu")
+
+[node name="CommandAudioTrigger" type="Node" parent="ClickingKeys"]
+script = ExtResource("8")
+
+[node name="PokingCrumpledPaper" type="StudioEventEmitter2D" parent="."]
+event = ExtResource("6_8cddn")
+
+[node name="CommandAudioTrigger" type="Node" parent="PokingCrumpledPaper"]
+script = ExtResource("8")
+
+[node name="Focus" type="Node" parent="."]
+script = ExtResource("3")
+focus_name = "MinigameBooks"
+
+[node name="Default" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1")
+centered = false
+
+[node name="SkyAtlasOpen" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(4, 4)
+texture = ExtResource("4")
+centered = false
+
+[node name="BookScience" type="Area2D" parent="."]
+script = ExtResource("6")
+short_knot = "vo_books_journals"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BookScience"]
+polygon = PackedVector2Array(5, 85, 250, 0, 270, 50, 160, 75, 210, 530, 110, 570, 0, 275)
+
+[node name="BookChemistry" type="Area2D" parent="."]
+script = ExtResource("6")
+short_knot = "vo_books_journals"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BookChemistry"]
+polygon = PackedVector2Array(230, 590, 175, 110, 190, 75, 515, 60, 580, 530, 570, 550)
+
+[node name="BookPsych" type="Area2D" parent="."]
+script = ExtResource("6")
+short_knot = "vo_books_journals"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="BookPsych"]
+polygon = PackedVector2Array(440, 630, 445, 580, 595, 565, 550, 205, 795, 235, 775, 445, 710, 460, 675, 565, 715, 610, 760, 620, 760, 670)
+
+[node name="Keys" type="Area2D" parent="."]
+script = ExtResource("6")
+short_knot = "vo_keys"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Keys"]
+polygon = PackedVector2Array(770.269, 450.679, 715, 475, 685, 550, 720, 600, 815, 605, 818.377, 523.943, 903.261, 498.743, 908.394, 470.745, 889.728, 453.479, 807.6, 479.144)
+
+[node name="Notebook" type="Area2D" parent="."]
+script = ExtResource("6")
+short_knot = "vo_notebook"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Notebook"]
+polygon = PackedVector2Array(840, 35, 860, 365, 974.122, 353.526, 975.441, 329.109, 1085.32, 316.57, 1070, 30)
+
+[node name="SkyAtlas" type="Area2D" parent="."]
+script = ExtResource("6")
+short_knot = "sky_atlas_open"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="SkyAtlas"]
+polygon = PackedVector2Array(1010, 645, 980, 335, 1190, 315, 1230, 605)
+
+[node name="CrumpledPaperA" type="Area2D" parent="."]
+script = ExtResource("6")
+short_knot = "vo_crumpled_paper"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CrumpledPaperA"]
+polygon = PackedVector2Array(0, 605, 260, 615, 235, 720, 0, 720)
+
+[node name="CrumpledPaperB" type="Area2D" parent="."]
+script = ExtResource("6")
+short_knot = "vo_crumpled_paper"
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CrumpledPaperB"]
+polygon = PackedVector2Array(1090, 5, 1085, 85, 1105, 295, 1275, 270, 1275, 5)
+
+[node name="SbPivotMark" type="Marker2D" parent="."]
+position = Vector2(635, 690)
+script = ExtResource("5")
+alias = "MarkBorja"
+
+[node name="SbPivotLouise" type="Marker2D" parent="."]
+position = Vector2(53.5, 690)
+script = ExtResource("5")
+alias = "LouiseOrdunia"
+orientation = 7
+
+[node name="InputBlocker" type="PanelContainer" parent="."]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(1280, 720)
+offset_right = 14.0
+offset_bottom = 14.0
+
+[node name="Pointer" parent="." instance=ExtResource("12_2e5fg")]

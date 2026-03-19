@@ -1,0 +1,75 @@
+[gd_scene load_steps=9 format=3 uid="uid://cf5o6j3yn52yu"]
+
+[ext_resource type="ArrayMesh" uid="uid://cbj83nhbn5ytb" path="res://scenes/bedroom_mark/assets/mattress.obj" id="1"]
+[ext_resource type="ArrayMesh" uid="uid://cfbmq1e33pm3f" path="res://scenes/bedroom_mark/assets/frame.obj" id="2"]
+[ext_resource type="Texture2D" uid="uid://c1p2odsirro0t" path="res://scenes/bedroom_mark/assets/frame.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://bpk3f16gbdmdw" path="res://scenes/bedroom_mark/assets/mattress.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://b2sjcydwh3ar8" path="res://scenes/bedroom_mark/assets/mattress_n.png" id="5"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="6"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("6")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("3")
+
+[sub_resource type="ShaderMaterial" id="2"]
+render_priority = 0
+shader = ExtResource("6")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 0.01
+shader_parameter/normal_depth = 0.33
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.0
+shader_parameter/roughness = 1.0
+shader_parameter/specular = 0.0
+shader_parameter/emission = Color(0, 0, 0, 1)
+shader_parameter/emission_energy = 1.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = true
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("4")
+shader_parameter/texture_normal = ExtResource("5")
+
+[node name="Bed" type="Spatial"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.04, 0, 0.59)
+
+[node name="Frame" type="MeshInstance" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.00999999)
+material_override = SubResource("1")
+use_in_baked_light = true
+mesh = ExtResource("2")
+material/0 = null
+
+[node name="Mattress" type="MeshInstance" parent="."]
+material_override = SubResource("2")
+use_in_baked_light = true
+mesh = ExtResource("1")
+material/0 = null

@@ -1,0 +1,2096 @@
+[gd_scene load_steps=157 format=3 uid="uid://cexxi5ev7u0nb"]
+
+[ext_resource type="PackedScene" uid="uid://djbojlc2luu8v" path="res://scenes/perya/Scene.tscn" id="1"]
+[ext_resource type="Environment" uid="uid://b80bf2knu3wxm" path="res://scenes/_main/ch3sc2a/Environment.tres" id="2"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="3"]
+[ext_resource type="Script" path="res://components/SceneManager.gd" id="4"]
+[ext_resource type="Script" path="res://components/Scene.gd" id="5"]
+[ext_resource type="BankAsset" uid="uid://dtmphgawau0s0" path="res://addons/fmod/editor/resources/banks/{859f575d-64a7-4c45-b56a-34ca4053584a}.tres" id="5_64r1n"]
+[ext_resource type="PackedScene" uid="uid://da0ppgkx2d538" path="res://components/Vignette.tscn" id="6"]
+[ext_resource type="BankAsset" uid="uid://bbs0lykgmh36o" path="res://addons/fmod/editor/resources/banks/{87e3efbf-5cb9-40e3-b23b-29993eb983c9}.tres" id="6_eikll"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="7"]
+[ext_resource type="EventAsset" uid="uid://dtai7wroviop7" path="res://addons/fmod/editor/resources/events/{d4f22079-bcda-4e0e-94a5-67195d0ad047}.tres" id="8_bxhwf"]
+[ext_resource type="Script" path="res://components/DialogueHandler.gd" id="9"]
+[ext_resource type="EventAsset" uid="uid://m44muw5si8dk" path="res://addons/fmod/editor/resources/events/{89b32715-d6ef-4f50-a444-c323ee879016}.tres" id="9_3lhpt"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="10"]
+[ext_resource type="EventAsset" uid="uid://c67y67wjxfsyk" path="res://addons/fmod/editor/resources/events/{c8c65006-5aab-4547-b11c-0b7339ef9629}.tres" id="10_mbwk4"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/VisibilityController.gd" id="11"]
+[ext_resource type="EventAsset" uid="uid://rrxtkmypv2xc" path="res://addons/fmod/editor/resources/events/{248c5ba2-28cf-41db-8989-2f1281261c70}.tres" id="11_cjtlw"]
+[ext_resource type="Script" path="res://components/InteractiveAreaHandler.gd" id="12"]
+[ext_resource type="EventAsset" uid="uid://8drc5mxg6sqk" path="res://addons/fmod/editor/resources/events/{fe33215c-1ae4-47c0-8bce-cc94864cbe1b}.tres" id="12_pxo31"]
+[ext_resource type="Script" path="res://components/PathGrounder.gd" id="13"]
+[ext_resource type="EventAsset" uid="uid://ctqlvh4axt27x" path="res://addons/fmod/editor/resources/events/{38f9bef0-3d7b-4b42-9ba4-815babd117eb}.tres" id="13_1o4sn"]
+[ext_resource type="PackedScene" uid="uid://cod1m2aorr2w0" path="res://scenes/_main/ch3sc2a/assets/prefabs/characters/MarkBorja/Stand.tscn" id="14"]
+[ext_resource type="EventAsset" uid="uid://6jxvscwh6jdj" path="res://addons/fmod/editor/resources/events/{98bbe0db-5d0c-4c91-8d4f-f8f8c2846fdc}.tres" id="14_f1y1b"]
+[ext_resource type="PackedScene" uid="uid://ccxopd4fx8nlf" path="res://components/ChromaticAberration/ChromaticAberration.tscn" id="15"]
+[ext_resource type="EventAsset" uid="uid://rhnexx1y4oqv" path="res://addons/fmod/editor/resources/events/{e2c1f04a-1684-4f5b-bfdb-9be8564fa2ca}.tres" id="15_me4ad"]
+[ext_resource type="PackedScene" uid="uid://e3hu5waf2v3u" path="res://components/ThoughtBubble/ThoughtBubble.tscn" id="16"]
+[ext_resource type="EventAsset" uid="uid://d06oqm07twxmo" path="res://addons/fmod/editor/resources/events/{310e98b8-5693-47c9-b6ea-7fad22596a05}.tres" id="16_2kopx"]
+[ext_resource type="Script" path="res://components/Pivot.gd" id="17"]
+[ext_resource type="Script" path="res://components/PlayerTarget.gd" id="18"]
+[ext_resource type="EventAsset" uid="uid://b3j0ji8og3glh" path="res://addons/fmod/editor/resources/events/{28be2474-5bba-4782-85ba-4b9432b52936}.tres" id="18_0om7a"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/scripts/PlayerController.gd" id="19"]
+[ext_resource type="EventAsset" uid="uid://bhdb6tntpl7ne" path="res://addons/fmod/editor/resources/events/{d73fcd9f-376f-4e8d-b26e-f6a537193ab8}.tres" id="19_hcu1y"]
+[ext_resource type="PackedScene" uid="uid://bwui4xudoh5uq" path="res://scenes/_main/ch3sc2b/assets/prefabs/NPCs.tscn" id="20"]
+[ext_resource type="EventAsset" uid="uid://cqpwnasnnvcmg" path="res://addons/fmod/editor/resources/events/{48631d62-4227-4175-8a36-f41303944883}.tres" id="20_fsq0n"]
+[ext_resource type="Script" path="res://components/CameraEffects.gd" id="21"]
+[ext_resource type="EventAsset" uid="uid://c1g1l6yjs4xoq" path="res://addons/fmod/editor/resources/events/{d9ffebb0-c56f-4277-ad50-0ae86a97c738}.tres" id="21_cnctj"]
+[ext_resource type="Script" path="res://components/Skit/SkitContainer.gd" id="22"]
+[ext_resource type="EventAsset" uid="uid://dmto18rnjflr0" path="res://addons/fmod/editor/resources/events/{31c9c3d9-dd0a-41bb-bdef-17f44958e49c}.tres" id="22_wbpu3"]
+[ext_resource type="Script" path="res://components/TriggerArea.gd" id="23"]
+[ext_resource type="EventAsset" uid="uid://cptml7en8sjmv" path="res://addons/fmod/editor/resources/events/{1e89af00-02d6-4595-96fa-94c23301041f}.tres" id="23_er4iy"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="24"]
+[ext_resource type="EventAsset" uid="uid://ccxwlyiwrvfqg" path="res://addons/fmod/editor/resources/events/{db74ff0d-153b-4332-b6a3-76baa1dcdf85}.tres" id="24_q87i5"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="25"]
+[ext_resource type="EventAsset" uid="uid://nce2mbnqodxy" path="res://addons/fmod/editor/resources/events/{dd76dc50-02b2-404e-8564-78f0b71973ce}.tres" id="25_drgoh"]
+[ext_resource type="PackedScene" uid="uid://sydqx2udta0a" path="res://scenes/_main/ch3sc2a/assets/prefabs/characters/CathyPortillo/Stand.tscn" id="26"]
+[ext_resource type="EventAsset" uid="uid://bjlgqflo8r275" path="res://addons/fmod/editor/resources/events/{7716f686-e17c-43bb-9688-cd87429fb5d9}.tres" id="26_j0k6o"]
+[ext_resource type="EventAsset" uid="uid://ynh31kfo8x57" path="res://addons/fmod/editor/resources/events/{7d44950e-c513-465b-8f12-7783588c63df}.tres" id="27_vcqyo"]
+[ext_resource type="PackedScene" uid="uid://dlg8xs783q0xl" path="res://scenes/_main/ch3sc2a/assets/prefabs/characters/RidelGonzales/Stand.tscn" id="28"]
+[ext_resource type="EventAsset" uid="uid://dwko5l0ki5dvl" path="res://addons/fmod/editor/resources/events/{5dd8ef3d-088d-41b8-b2eb-68b577e3aca0}.tres" id="28_u3cdm"]
+[ext_resource type="PackedScene" uid="uid://d4kscnj1sy5r8" path="res://scenes/_main/ch3sc2b/MinigameFindTheBall/MinigameFindTheBall.tscn" id="29"]
+[ext_resource type="Texture2D" uid="uid://b38giufsbnh0h" path="res://scenes/_main/ch3sc2a/assets/ward_flashback.png" id="30"]
+[ext_resource type="Script" path="res://components/PlayerTargetPosition.gd" id="31"]
+[ext_resource type="PackedScene" uid="uid://cpa5o4mryry5y" path="res://scenes/_main/ch3sc2a/assets/prefabs/characters/MarkBorja/SitLF.tscn" id="32"]
+[ext_resource type="PackedScene" uid="uid://bpyrroo1yk2f0" path="res://scenes/_main/ch3sc2a/assets/prefabs/characters/RidelGonzales/Sit.tscn" id="33"]
+[ext_resource type="PackedScene" uid="uid://bdoxmliwhnmxw" path="res://scenes/_main/ch3sc2a/assets/prefabs/characters/CathyPortillo/StandCatears3.tscn" id="34"]
+[ext_resource type="PackedScene" uid="uid://dbnnnk6nq0moo" path="res://scenes/_main/ch3sc2a/assets/prefabs/characters/MarkBorja/StandCatears.tscn" id="35"]
+[ext_resource type="Texture2D" uid="uid://bjnn52n70negs" path="res://scenes/_main/ch3sc2a/Minigames/temp/Coin Toss.png" id="36"]
+[ext_resource type="PackedScene" uid="uid://ciwe1dxnp822k" path="res://scenes/_main/ch3sc2b/MinigameCoinToss/MinigameCoinToss.tscn" id="39"]
+[ext_resource type="PackedScene" uid="uid://b1myvkwvnotwi" path="res://components/InteractiveArea/InteractiveArea.tscn" id="40"]
+[ext_resource type="PackedScene" uid="uid://2i7xcaafps0h" path="res://scenes/_main/ch3sc2a/assets/prefabs/characters/CathyPortillo/StandCatears.tscn" id="41"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_idle/01.tres" id="41_23fc8"]
+[ext_resource type="PackedScene" uid="uid://c1h0ose4bc0id" path="res://scenes/_main/ch3sc2a/assets/prefabs/characters/RidelGonzales/StandCatears.tscn" id="42"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="42_a8at2"]
+[ext_resource type="Script" path="res://scenes/lms/ch1sc7/scripts/AnchorFollower.gd" id="43"]
+[ext_resource type="EventAsset" uid="uid://dq6eo6erlphkj" path="res://addons/fmod/editor/resources/events/{2345ed0a-77a7-4ac1-9a7d-fb735c71ec1e}.tres" id="43_26gjd"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_idle/01.tres" id="43_cddg3"]
+[ext_resource type="PackedScene" uid="uid://df8xj5sr05ldw" path="res://scenes/_main/ch3sc2b/MinigameBalloon/MinigameBalloon.tscn" id="44"]
+[ext_resource type="EventAsset" uid="uid://mndcxiocc1fq" path="res://addons/fmod/editor/resources/events/{ddf02106-f06c-44b3-ad73-47788ec6c142}.tres" id="44_dr274"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_idle/02.tres" id="44_nedw1"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_idle/03.tres" id="45_wch6w"]
+[ext_resource type="EventAsset" uid="uid://bf6ypptej2rbr" path="res://addons/fmod/editor/resources/events/{f6faf1e6-f76d-4dca-bf5c-87e356a5d0f2}.tres" id="46_jt3vc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_idle/04.tres" id="46_walta"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/scripts/FollowingController.gd" id="47"]
+[ext_resource type="EventAsset" uid="uid://4eo0wsej0oyx" path="res://addons/fmod/editor/resources/events/{4e0bbc8a-c42f-41f2-8abd-ffd4655f50bf}.tres" id="47_0t6fj"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_idle/05.tres" id="47_wvys4"]
+[ext_resource type="Script" path="res://components/Skit/SkitExternalRef.gd" id="48"]
+[ext_resource type="EventAsset" uid="uid://db5q5isyvq6ag" path="res://addons/fmod/editor/resources/events/{87e6b139-51bb-4b28-be29-10c8f673c32c}.tres" id="48_boaf4"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_idle/06.tres" id="48_x5drd"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_talk/01.tres" id="49_8kybw"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_talk/02.tres" id="50_tlraf"]
+[ext_resource type="PackedScene" uid="uid://7gf1iyda2t5w" path="res://scenes/_main/ch3sc2a/assets/chibis/ChibiMark.tscn" id="51"]
+[ext_resource type="Texture2D" uid="uid://2xgt42tatymn" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_sit^lf_bothered_idle/01.png" id="51_2hajj"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_talk/03.tres" id="51_bcspe"]
+[ext_resource type="PackedScene" uid="uid://b73jbngwlnocj" path="res://scenes/_main/ch3sc2a/assets/chibis/ChibiRidel.tscn" id="52"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_talk/04.tres" id="52_n1m45"]
+[ext_resource type="PackedScene" uid="uid://b0l3umcfgtnnh" path="res://scenes/_main/ch3sc2a/assets/chibis/ChibiCathy.tscn" id="53"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_talk/05.tres" id="53_7pge0"]
+[ext_resource type="Script" path="res://components/ShotVisibilityController.gd" id="54"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_default_talk/06.tres" id="54_7017h"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_idle/02.tres" id="55_vwtcq"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="56_42ex5"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_idle/03.tres" id="56_vf26s"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_idle/04.tres" id="57_1o24d"]
+[ext_resource type="Texture2D" uid="uid://c7ctwe7am8wmg" path="res://scenes/_main/ch3sc2a/assets/characters/MarkBorja/lf_walkactive+catears^lf_default_idle/01.png" id="57_2k5rx"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_idle/05.tres" id="58_7j28e"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_idle/06.tres" id="59_3ogdd"]
+[ext_resource type="Texture2D" uid="uid://dnuan13m6wlw1" path="res://scenes/_main/ch3sc2a/assets/characters/CathyPortillo/lf_standactive+catears^lf_joyful_talk/01.png" id="59_m8ifl"]
+[ext_resource type="PackedScene" uid="uid://m4rg3c6gka5a" path="res://scenes/_main/ch3sc2a/scripts/ScoreLabel/ScoreLabel.tscn" id="60"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_talk/01.tres" id="60_xuw8m"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_talk/02.tres" id="61_dghft"]
+[ext_resource type="Script" path="res://components/audio/CommandAudioTrigger.gd" id="62"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_talk/03.tres" id="62_7na7j"]
+[ext_resource type="Script" path="res://components/audio/AudioGlobalParameter.gd" id="63"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_talk/04.tres" id="63_4c01r"]
+[ext_resource type="Texture2D" uid="uid://cxxprb0w0k7ks" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_standphone+catears^lf_neutral_talk/01.png" id="63_nxwmn"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2a/scripts/Exploration.gd" id="64"]
+[ext_resource type="Texture2D" uid="uid://dtkqm5pol16h6" path="res://scenes/_main/ch3sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_neutral_idle/01.png" id="64_6150j"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_talk/05.tres" id="64_qjpnx"]
+[ext_resource type="Texture2D" path="res://scenes/_main/ch3sc2a/assets/characters/RyanSoriano/rf_stand^lf_showoff_talk/06.tres" id="65_8bjma"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="66_jibmg"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/scripts/MinigameBalloonController.gd" id="69_0ep6y"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/scripts/MinigameCoinTossController.gd" id="76_k268o"]
+[ext_resource type="Script" path="res://scenes/_main/ch3sc2b/scripts/MinigameFindTheBallController.gd" id="78_xhoaa"]
+
+[sub_resource type="Animation" id="75"]
+resource_name = "WardFlashback_flash"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/WardFlashback:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.9, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Skits/RidelArrival/Audio/StaticNoise:playing")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.93, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qyov1"]
+_data = {
+"WardFlashback_flash": SubResource("75")
+}
+
+[sub_resource type="Animation" id="Animation_dhu8y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audio/AudioGlobalParameterSfxMainLowPass:param_value")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/ChromaticAberration:inner_radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Main/ChromaticAberration:outer_radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.2]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Main/Vignette:material:shader_parameter/outer_radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Main/Vignette:material:shader_parameter/inner_radius")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.1]
+}
+
+[sub_resource type="Animation" id="8"]
+resource_name = "SpaceOut_loop"
+length = 3.0
+loop_mode = 2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Vignette:material:shader_parameter/inner_radius")
+tracks/0/interp = 2
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 2,
+"values": [0.1, 0.0, 0.1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/Vignette:material:shader_parameter/outer_radius")
+tracks/1/interp = 2
+tracks/1/loop_wrap = false
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 2,
+"values": [1.0, 0.7, 1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Main/ChromaticAberration:inner_radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = false
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 2,
+"values": [0.3, 0.1, 0.3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Main/ChromaticAberration:outer_radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = false
+tracks/3/keys = {
+"times": PackedFloat32Array(1, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 2,
+"values": [1.2, 1.0, 1.2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Audio/AudioGlobalParameterSfxMainLowPass:param_value")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 2,
+"values": [1.0, 1.0]
+}
+
+[sub_resource type="Animation" id="9"]
+resource_name = "SpaceOut_stop"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Main/Vignette:material:shader_parameter/inner_radius")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.1]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/Vignette:material:shader_parameter/outer_radius")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [1.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Main/ChromaticAberration:inner_radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.3]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Main/ChromaticAberration:outer_radius")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [1.2]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Audio/AudioGlobalParameterSfxMainLowPass:param_value")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"update": 2,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vyu2t"]
+_data = {
+"RESET": SubResource("Animation_dhu8y"),
+"SpaceOut_loop": SubResource("8"),
+"SpaceOut_stop": SubResource("9")
+}
+
+[sub_resource type="Curve3D" id="10"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.31, 0, 0.4, 0, 0, 0, 0, 0, 0, 0.13, 0, 0.4),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="Curve3D" id="11"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -7.29, 0, 0.4, 0, 0, 0, 0, 0, 0, 1.58, 0, 0.4),
+"tilts": PackedFloat32Array(0, 0)
+}
+point_count = 2
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_702ya"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.5
+dof_blur_far_transition = 4.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.75
+
+[sub_resource type="BoxShape3D" id="22"]
+size = Vector3(0.26, 0.96, 0.02)
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_vb30p"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.291
+dof_blur_far_transition = 0.5
+dof_blur_near_distance = 0.01
+dof_blur_near_transition = 0.1
+dof_blur_amount = 0.12
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_d8h3y"]
+render_priority = 0
+shader = ExtResource("56_42ex5")
+shader_parameter/scale = Vector3(0.6561, 1.0935, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("41_23fc8")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ec1kn"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_d8h3y"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0wtm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_cddg3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_nedw1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_wch6w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_walta")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_wvys4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_x5drd")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("49_8kybw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_tlraf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_bcspe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_n1m45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_7pge0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_7017h")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_23fc8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_vwtcq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_vf26s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_1o24d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_7j28e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_3ogdd")
+}],
+"loop": true,
+"name": &"showoff_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("60_xuw8m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_dghft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_7na7j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_4c01r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_qjpnx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("65_8bjma")
+}],
+"loop": true,
+"name": &"showoff_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="Animation" id="31"]
+resource_name = "Cathy_enter"
+length = 3.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Characters/CathyPortillo/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-4.89, 0, 2.39), Vector3(-1.64, 0, 2.39)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fxquh"]
+_data = {
+"Cathy_enter": SubResource("31")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_0ijc2"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.3
+dof_blur_far_transition = 0.55
+dof_blur_near_distance = 1.75
+
+[sub_resource type="BoxShape3D" id="12"]
+size = Vector3(0.16, 0.68, 0.62)
+
+[sub_resource type="Animation" id="37"]
+resource_name = "CamMarkPlane1_Stand_disable_follow"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Cameras/CamMarkPlane1_Stand:enabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="38"]
+resource_name = "CathyStandCatears3_enter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/CathyPortillo/Plane1_StandCatears3:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.4, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-3.16, 0, 2.51), Vector3(-4.157, 0, 2.51), Vector3(-4.49, 0, 2.73)]
+}
+
+[sub_resource type="Animation" id="39"]
+resource_name = "Ridel_enter"
+length = 4.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/RidelGonzales/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-5.08, 0, 2.45), Vector3(-0.81, 0, 2.45)]
+}
+
+[sub_resource type="Animation" id="40"]
+resource_name = "Ridel_pre_sit_down"
+length = 1.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/RidelGonzales/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.81, 0, 2.45), Vector3(-2.29, 0, 2.45)]
+}
+
+[sub_resource type="Animation" id="41"]
+resource_name = "Ridel_sit_down"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/RidelGonzales/Stand:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-2.29, 0, 2.45), Vector3(-4.23, 0, 2.45)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_y6sgu"]
+_data = {
+"CamMarkPlane1_Stand_disable_follow": SubResource("37"),
+"CathyStandCatears3_enter": SubResource("38"),
+"Ridel_enter": SubResource("39"),
+"Ridel_pre_sit_down": SubResource("40"),
+"Ridel_sit_down": SubResource("41")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_tetlf"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 2.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.262
+dof_blur_near_transition = 0.01
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_udaqh"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.773
+dof_blur_far_transition = 0.5
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.0
+dof_blur_near_transition = 0.5
+dof_blur_amount = 0.11
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_cy7rf"]
+render_priority = 0
+shader = ExtResource("56_42ex5")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("51_2hajj")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_i0ix6"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0),
+"material": SubResource("ShaderMaterial_cy7rf"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 6,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_xvk6q"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.291
+dof_blur_far_transition = 0.5
+dof_blur_near_distance = 0.01
+dof_blur_near_transition = 0.1
+dof_blur_amount = 0.12
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_ulqwo"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.5
+dof_blur_far_transition = 4.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.75
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_i78vc"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.5
+dof_blur_far_transition = 4.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.75
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yg7nu"]
+render_priority = 0
+shader = ExtResource("56_42ex5")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("57_2k5rx")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_c1g35"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0),
+"material": SubResource("ShaderMaterial_yg7nu"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 6,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_7t84r"]
+render_priority = 0
+shader = ExtResource("56_42ex5")
+shader_parameter/scale = Vector3(0.528, 1.064, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("57_2k5rx")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sxbpd"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("ShaderMaterial_7t84r"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u8e51"]
+render_priority = 0
+shader = ExtResource("56_42ex5")
+shader_parameter/scale = Vector3(0.792, 1.232, 1)
+shader_parameter/offset = Vector3(0.088, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("59_m8ifl")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_ec50c"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0),
+"material": SubResource("ShaderMaterial_u8e51"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 6,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jl6us"]
+render_priority = 0
+shader = ExtResource("56_42ex5")
+shader_parameter/scale = Vector3(0.792, 1.232, 1)
+shader_parameter/offset = Vector3(0.088, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("59_m8ifl")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_rd2f6"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("ShaderMaterial_jl6us"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_q4i1j"]
+render_priority = 0
+shader = ExtResource("56_42ex5")
+shader_parameter/scale = Vector3(0.56, 1.08, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("63_nxwmn")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_col3v"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 3, 0, 4, 0, 5, 0),
+"material": SubResource("ShaderMaterial_q4i1j"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 6,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jkrya"]
+render_priority = 0
+shader = ExtResource("56_42ex5")
+shader_parameter/scale = Vector3(0.56, 1.08, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("64_6150j")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_icn3s"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("ShaderMaterial_jkrya"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="BoxShape3D" id="13"]
+size = Vector3(0.32, 0.68, 0.62)
+
+[node name="Root" type="Node3D"]
+script = ExtResource("5")
+fade_in_duration = 2.0
+fade_in_delay = 2.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = ExtResource("2")
+
+[node name="AnimationPlayerFlashback" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qyov1")
+}
+script = ExtResource("24")
+
+[node name="AnimationPlayerSpaceOut" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_vyu2t")
+}
+script = ExtResource("24")
+
+[node name="World" type="Node3D" parent="."]
+
+[node name="Perya" parent="World" instance=ExtResource("1")]
+
+[node name="Paths" type="Node3D" parent="World"]
+
+[node name="Plane1" type="Path3D" parent="World/Paths"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.85)
+curve = SubResource("10")
+
+[node name="Plane2" type="Path3D" parent="World/Paths"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.26)
+curve = SubResource("11")
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="StudioBankLoaderSc2" type="StudioBankLoader" parent="Audio"]
+num_banks = 1
+bank_0 = ExtResource("5_64r1n")
+
+[node name="StudioBankLoaderSc2a" type="StudioBankLoader" parent="Audio"]
+num_banks = 1
+bank_0 = ExtResource("6_eikll")
+
+[node name="AudioGlobalParameterSfxMainLowPass" type="Node" parent="Audio"]
+script = ExtResource("63")
+param_name = "sfx_main_low_pass"
+param_value = 1.0
+
+[node name="SFX" type="Node3D" parent="Audio"]
+
+[node name="Ambience" type="Node3D" parent="Audio/SFX"]
+
+[node name="Crowd" type="StudioEventEmitter2D" parent="Audio/SFX/Ambience"]
+play_event = 2
+event = ExtResource("8_bxhwf")
+
+[node name="CrowdScream" type="StudioEventEmitter3D" parent="Audio/SFX/Ambience"]
+play_event = 2
+event = ExtResource("9_3lhpt")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.06865, 1.58709, -5.77351)
+
+[node name="CrowdLaugh" type="StudioEventEmitter2D" parent="Audio/SFX/Ambience"]
+play_event = 2
+event = ExtResource("10_mbwk4")
+
+[node name="Traffic" type="StudioEventEmitter2D" parent="Audio/SFX/Ambience"]
+play_event = 2
+event = ExtResource("11_cjtlw")
+
+[node name="Envi" type="Node3D" parent="Audio/SFX"]
+
+[node name="OilSizzle1" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("12_pxo31")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.597, 0.675297, 1.84598)
+
+[node name="OilSizzle2" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("12_pxo31")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.74551, 0.662636, -2.66812)
+
+[node name="Kitchen" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("13_1o4sn")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.00255, 0.675297, 1.40769)
+
+[node name="Microwave" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("14_f1y1b")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.60929, 0.591951, -2.66841)
+
+[node name="Vikings" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("15_me4ad")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.83495, 1.47184, -5.76395)
+
+[node name="FerrisWheel" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("16_2kopx")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.14436, 0.201457, -9.23388)
+
+[node name="CommandAudioTrigger" type="Node" parent="Audio/SFX/Envi/FerrisWheel"]
+script = ExtResource("62")
+
+[node name="BingoBallsShaking" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("18_0om7a")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.96029, 0.686299, -3.00412)
+
+[node name="JingleBellsToyLowBat" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("19_hcu1y")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.02188, 0.686299, 1.94113)
+
+[node name="JingleBellsToyFullBat" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("20_fsq0n")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.715097, 0.686299, 1.83139)
+
+[node name="TossTheCoin" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("21_cnctj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.32626, 0.626941, -0.691174)
+
+[node name="AswangWorld" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("22_wbpu3")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.51827, 0.847751, -5.58547)
+
+[node name="FishingBooth" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("23_er4iy")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.37825, 0.847751, -3.10203)
+
+[node name="FrogBooth" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("24_q87i5")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.613096, 0.847751, -0.879077)
+
+[node name="DartPunkBooth1" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("25_drgoh")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.111197, 0.847751, -2.78417)
+
+[node name="DartPunkBooth2" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+event = ExtResource("26_j0k6o")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0251272, 0.847751, -2.78095)
+
+[node name="BasketballBooth" type="StudioEventEmitter3D" parent="Audio/SFX/Envi"]
+play_event = 2
+event = ExtResource("27_vcqyo")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.7658, 0.602317, -0.428542)
+
+[node name="ChristmasMedley" type="StudioEventEmitter3D" parent="Audio/SFX"]
+play_event = 2
+event = ExtResource("28_u3cdm")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.47436, 1.58709, -11.9757)
+
+[node name="Lighting" type="Node3D" parent="."]
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="Lighting"]
+transform = Transform3D(0.939693, -0.234709, -0.248776, -0.0980923, -0.881763, 0.461381, -0.327652, -0.409153, -0.851609, -1.71, 6.93, -5.22)
+light_color = Color(1, 0.686275, 0.462745, 1)
+light_energy = 1.25
+shadow_enabled = true
+shadow_bias = 0.05
+directional_shadow_blend_splits = true
+
+[node name="Cameras" type="Node3D" parent="."]
+
+[node name="CamMarkPlane1_Stand" type="InterpolatedCamera3D" parent="Cameras"]
+target = NodePath("../../Characters/MarkBorja/Stand/CamPivotBasis/CamPivot")
+speed = 2.0
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.91, 0.82, 4.79)
+attributes = SubResource("CameraAttributesPractical_702ya")
+fov = 40.0
+script = ExtResource("10")
+
+[node name="CameraEffects" type="Node" parent="Cameras/CamMarkPlane1_Stand"]
+script = ExtResource("21")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.5
+dof_blur_far_transition = 4.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.75
+dof_blur_near_transition = 1.0
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="MarkBorja" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/MarkBorja"]
+script = ExtResource("3")
+alias = "MarkBorja"
+
+[node name="Stand" type="Node3D" parent="Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.68, 0, 2.25)
+
+[node name="Sprite" parent="Characters/MarkBorja/Stand" instance=ExtResource("14")]
+animation = "bothered_idle"
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Characters/MarkBorja/Stand/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 1.04, 0)
+script = ExtResource("25")
+alias = "MarkBorja"
+
+[node name="VisibilityController" type="Node" parent="Characters/MarkBorja/Stand"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane1_Stand"])
+
+[node name="Controller" type="Node" parent="Characters/MarkBorja/Stand"]
+script = ExtResource("19")
+
+[node name="Focus" type="Node" parent="Characters/MarkBorja/Stand/Controller"]
+script = ExtResource("7")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Characters/MarkBorja/Stand/Controller"]
+
+[node name="PathGrounder" type="Node" parent="Characters/MarkBorja/Stand"]
+script = ExtResource("13")
+path_node = NodePath("../../../../World/Paths/Plane1")
+
+[node name="RayCast" type="RayCast3D" parent="Characters/MarkBorja/Stand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 0.31, 0)
+
+[node name="Area" type="Area3D" parent="Characters/MarkBorja/Stand"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Characters/MarkBorja/Stand/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27, 0.48, 0)
+shape = SubResource("22")
+
+[node name="CamPivotBasis" type="Marker3D" parent="Characters/MarkBorja/Stand"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.82, 2.54)
+
+[node name="CamPivot" type="Node3D" parent="Characters/MarkBorja/Stand/CamPivotBasis"]
+script = ExtResource("17")
+fixed_z = true
+min_position = Vector3(-6, -9999, -9999)
+max_position = Vector3(-0.75, 9999, 9999)
+
+[node name="CathyPortillo" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/CathyPortillo"]
+script = ExtResource("3")
+alias = "CathyPortillo"
+
+[node name="Stand" type="Node3D" parent="Characters/CathyPortillo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.89, 0, 2.39)
+
+[node name="Sprite" parent="Characters/CathyPortillo/Stand" instance=ExtResource("26")]
+animation = "concerned_talk"
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Characters/CathyPortillo/Stand/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.439999, 0.94, 0)
+script = ExtResource("25")
+alias = "CathyPortillo"
+force_show = true
+
+[node name="VisibilityController" type="Node" parent="Characters/CathyPortillo/Stand"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane1_Stand", "CamCathyPlane1"])
+visible_on_parts = Array[String](["CathyEnter"])
+
+[node name="CamCathyPlane1" type="Camera3D" parent="Characters/CathyPortillo/Stand"]
+transform = Transform3D(0.999657, 0, 0.0261769, 0, 1, 0, -0.0261769, 0, 0.999657, 0.312, 0.806, 1.065)
+attributes = SubResource("CameraAttributesPractical_vb30p")
+fov = 40.0
+script = ExtResource("10")
+
+[node name="CameraEffects" type="Node" parent="Characters/CathyPortillo/Stand/CamCathyPlane1"]
+script = ExtResource("21")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.291
+dof_blur_far_transition = 0.5
+dof_blur_far_amount = 0.12
+dof_blur_near_distance = 0.01
+
+[node name="RidelGonzales" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/RidelGonzales"]
+script = ExtResource("3")
+alias = "RidelGonzales"
+
+[node name="RyanSoriano" type="Node3D" parent="Characters"]
+
+[node name="StateContainer" type="Node" parent="Characters/RyanSoriano"]
+script = ExtResource("3")
+alias = "RyanSoriano"
+
+[node name="Main" type="Node3D" parent="Characters/RyanSoriano"]
+metadata/_edit_group_ = true
+
+[node name="Sprite" type="MeshInstance3D" parent="Characters/RyanSoriano/Main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.84812, 0, -0.0739342)
+mesh = SubResource("ArrayMesh_ec1kn")
+script = ExtResource("42_a8at2")
+texture_frames = SubResource("SpriteFrames_0wtm5")
+sync_all = true
+animation = "showoff_idle"
+alias = "RyanSoriano"
+pixel_size = 0.0081
+metadata/_edit_lock_ = true
+
+[node name="SpriteController" type="Node" parent="Characters/RyanSoriano/Main/Sprite"]
+script = ExtResource("66_jibmg")
+state_container_alias = "RyanSoriano"
+fallback_idle_talk_anim = "showoff"
+idle_talk_anims = Array[String](["default", "showoff"])
+
+[node name="SbPivot" type="Marker3D" parent="Characters/RyanSoriano/Main/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.355752, 1.09086, 0)
+script = ExtResource("25")
+alias = "RyanSoriano"
+
+[node name="NPCs" parent="Characters" instance=ExtResource("20")]
+
+[node name="Skits" type="Node3D" parent="."]
+
+[node name="Meetup" type="Node3D" parent="Skits"]
+script = ExtResource("22")
+id = "Meetup"
+entrypoint = "3.2a.Meetup"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/Meetup"]
+libraries = {
+"": SubResource("AnimationLibrary_fxquh")
+}
+script = ExtResource("24")
+
+[node name="AnimationPlayerSpaceOut" type="Node" parent="Skits/Meetup"]
+script = ExtResource("48")
+reference = NodePath("../../../AnimationPlayerSpaceOut")
+
+[node name="Audio" type="Node3D" parent="Skits/Meetup"]
+
+[node name="CornyCreak" type="StudioEventEmitter2D" parent="Skits/Meetup/Audio"]
+event = ExtResource("43_26gjd")
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/Meetup/Audio/CornyCreak"]
+script = ExtResource("62")
+
+[node name="GulamanSequence" type="StudioEventEmitter2D" parent="Skits/Meetup/Audio"]
+event = ExtResource("44_dr274")
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/Meetup/Audio/GulamanSequence"]
+script = ExtResource("62")
+
+[node name="Camera" type="Node3D" parent="Skits/Meetup"]
+
+[node name="CamMarkPlane1_Stand" type="Node" parent="Skits/Meetup/Camera"]
+script = ExtResource("48")
+reference = NodePath("../../../../Cameras/CamMarkPlane1_Stand")
+
+[node name="CamPlane1_Caterpillar" type="Camera3D" parent="Skits/Meetup/Camera"]
+transform = Transform3D(0.978148, 0.0108813, -0.207627, 0, 0.99863, 0.052336, 0.207912, -0.0511923, 0.976807, -7.25, 1.57, 4.07)
+attributes = SubResource("CameraAttributesPractical_0ijc2")
+fov = 30.0
+script = ExtResource("10")
+
+[node name="CameraEffects" type="Node" parent="Skits/Meetup/Camera/CamPlane1_Caterpillar"]
+script = ExtResource("21")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.3
+dof_blur_far_transition = 0.55
+dof_blur_near_distance = 1.75
+dof_blur_near_transition = 1.0
+
+[node name="Characters" type="Node3D" parent="Skits/Meetup"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/Meetup/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Meetup/Characters/MarkBorja"]
+script = ExtResource("48")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Stand" type="Node3D" parent="Skits/Meetup/Characters/MarkBorja"]
+
+[node name="Sprite" type="Node" parent="Skits/Meetup/Characters/MarkBorja/Stand"]
+script = ExtResource("48")
+reference = NodePath("../../../../../../Characters/MarkBorja/Stand/Sprite")
+
+[node name="SbPivot" type="Node" parent="Skits/Meetup/Characters/MarkBorja/Stand"]
+script = ExtResource("48")
+reference = NodePath("../../../../../../Characters/MarkBorja/Stand/Sprite/SbPivot")
+
+[node name="CathyPortillo" type="Node3D" parent="Skits/Meetup/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Meetup/Characters/CathyPortillo"]
+script = ExtResource("48")
+reference = NodePath("../../../../../Characters/CathyPortillo/State")
+
+[node name="Stand" type="Node3D" parent="Skits/Meetup/Characters/CathyPortillo"]
+
+[node name="Sprite" type="Node" parent="Skits/Meetup/Characters/CathyPortillo/Stand"]
+script = ExtResource("48")
+reference = NodePath("../../../../../../Characters/CathyPortillo/Stand/Sprite")
+
+[node name="SbPivot" type="Node" parent="Skits/Meetup/Characters/CathyPortillo/Stand"]
+script = ExtResource("48")
+reference = NodePath("../../../../../../Characters/CathyPortillo/Stand/Sprite/SbPivot")
+
+[node name="Misc" type="Node3D" parent="Skits/Meetup"]
+
+[node name="TriggerAreas" type="Node3D" parent="Skits/Meetup/Misc"]
+
+[node name="TaCathyEnter" type="Area3D" parent="Skits/Meetup/Misc/TriggerAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.61, 0, 2.21)
+script = ExtResource("23")
+max_trigger_count = 1
+story_signal = "cathy_enter"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Meetup/Misc/TriggerAreas/TaCathyEnter"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999999, 0.34, 0)
+shape = SubResource("12")
+
+[node name="RidelArrival" type="Node3D" parent="Skits"]
+script = ExtResource("22")
+id = "RidelArrival"
+entrypoint = "3.2a.RidelArrival"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/RidelArrival"]
+libraries = {
+"": SubResource("AnimationLibrary_y6sgu")
+}
+script = ExtResource("24")
+
+[node name="AnimationPlayerSpaceOut" type="Node" parent="Skits/RidelArrival"]
+script = ExtResource("48")
+reference = NodePath("../../../AnimationPlayerSpaceOut")
+
+[node name="AnimationPlayerFlashback" type="Node" parent="Skits/RidelArrival"]
+script = ExtResource("48")
+reference = NodePath("../../../AnimationPlayerFlashback")
+
+[node name="Audio" type="Node3D" parent="Skits/RidelArrival"]
+
+[node name="RidelRingtone" type="StudioEventEmitter3D" parent="Skits/RidelArrival/Audio"]
+event = ExtResource("46_jt3vc")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75094, 0.569401, 2.82564)
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/RidelArrival/Audio/RidelRingtone"]
+script = ExtResource("62")
+
+[node name="RidelHangup1" type="StudioEventEmitter3D" parent="Skits/RidelArrival/Audio"]
+event = ExtResource("47_0t6fj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.128676, 0.569401, 2.7399)
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/RidelArrival/Audio/RidelHangup1"]
+script = ExtResource("62")
+
+[node name="RidelHangup2" type="StudioEventEmitter3D" parent="Skits/RidelArrival/Audio"]
+event = ExtResource("47_0t6fj")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.75094, 0.569401, 2.82564)
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/RidelArrival/Audio/RidelHangup2"]
+script = ExtResource("62")
+
+[node name="StaticNoise" type="StudioEventEmitter2D" parent="Skits/RidelArrival/Audio"]
+event = ExtResource("48_boaf4")
+
+[node name="CommandAudioTrigger" type="Node" parent="Skits/RidelArrival/Audio/StaticNoise"]
+script = ExtResource("62")
+
+[node name="Camera" type="Node3D" parent="Skits/RidelArrival"]
+
+[node name="CamPlane2_Balloons" type="Camera3D" parent="Skits/RidelArrival/Camera"]
+transform = Transform3D(0.996195, 0, 0.0871557, 0, 1, 0, -0.0871557, 0, 0.996195, 1.99, 0.71, 1.6)
+attributes = SubResource("CameraAttributesPractical_tetlf")
+fov = 40.0
+near = 1.0
+script = ExtResource("10")
+
+[node name="CameraEffects" type="Node" parent="Skits/RidelArrival/Camera/CamPlane2_Balloons"]
+script = ExtResource("21")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.0
+dof_blur_far_transition = 2.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.262
+dof_blur_near_transition = 0.01
+
+[node name="CamMarkPlane1_Stand" type="Node" parent="Skits/RidelArrival/Camera"]
+script = ExtResource("48")
+reference = NodePath("../../../../Cameras/CamMarkPlane1_Stand")
+
+[node name="CamMarkPlane1_SitDown" type="Camera3D" parent="Skits/RidelArrival/Camera"]
+transform = Transform3D(1, 0, 0, 0, 0.99863, 0.052336, 0, -0.052336, 0.99863, -4.11248, 0.777688, 4.27589)
+attributes = SubResource("CameraAttributesPractical_udaqh")
+fov = 40.0
+script = ExtResource("10")
+
+[node name="CameraEffects" type="Node" parent="Skits/RidelArrival/Camera/CamMarkPlane1_SitDown"]
+script = ExtResource("21")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.773
+dof_blur_far_transition = 0.5
+dof_blur_far_amount = 0.12
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.0
+dof_blur_near_transition = 0.5
+
+[node name="Characters" type="Node3D" parent="Skits/RidelArrival"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/RidelArrival/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/RidelArrival/Characters/MarkBorja"]
+script = ExtResource("48")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Stand" type="Node3D" parent="Skits/RidelArrival/Characters/MarkBorja"]
+
+[node name="Sprite" type="Node" parent="Skits/RidelArrival/Characters/MarkBorja/Stand"]
+script = ExtResource("48")
+reference = NodePath("../../../../../../Characters/MarkBorja/Stand/Sprite")
+
+[node name="SbPivot" type="Node" parent="Skits/RidelArrival/Characters/MarkBorja/Stand"]
+script = ExtResource("48")
+reference = NodePath("../../../../../../Characters/MarkBorja/Stand/Sprite/SbPivot")
+
+[node name="Plane1_SitDown" type="Node3D" parent="Skits/RidelArrival/Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.62, -0.01, 2.94)
+
+[node name="Sprite" parent="Skits/RidelArrival/Characters/MarkBorja/Plane1_SitDown" instance=ExtResource("32")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = SubResource("ArrayMesh_i0ix6")
+animation = "bothered_idle"
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Skits/RidelArrival/Characters/MarkBorja/Plane1_SitDown/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2, 0.93, 0)
+script = ExtResource("25")
+alias = "MarkBorja"
+
+[node name="VisibilityController" type="Node" parent="Skits/RidelArrival/Characters/MarkBorja/Plane1_SitDown"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane1_SitDown"])
+
+[node name="CathyPortillo" type="Node3D" parent="Skits/RidelArrival/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/RidelArrival/Characters/CathyPortillo"]
+script = ExtResource("48")
+reference = NodePath("../../../../../Characters/CathyPortillo/State")
+
+[node name="Stand" type="Node3D" parent="Skits/RidelArrival/Characters/CathyPortillo"]
+
+[node name="Sprite" type="Node" parent="Skits/RidelArrival/Characters/CathyPortillo/Stand"]
+script = ExtResource("48")
+reference = NodePath("../../../../../../Characters/CathyPortillo/Stand/Sprite")
+
+[node name="SbPivot" type="Node" parent="Skits/RidelArrival/Characters/CathyPortillo/Stand"]
+script = ExtResource("48")
+reference = NodePath("../../../../../../Characters/CathyPortillo/Stand/Sprite/SbPivot")
+
+[node name="Plane1_StandCatears3" type="Node3D" parent="Skits/RidelArrival/Characters/CathyPortillo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.16, 0, 2.51)
+
+[node name="Sprite" parent="Skits/RidelArrival/Characters/CathyPortillo/Plane1_StandCatears3" instance=ExtResource("34")]
+animation = "positive_talk"
+
+[node name="SbPivot" type="Marker3D" parent="Skits/RidelArrival/Characters/CathyPortillo/Plane1_StandCatears3/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.439999, 0.94, 0)
+script = ExtResource("25")
+alias = "CathyPortillo"
+
+[node name="VisibilityController" type="Node" parent="Skits/RidelArrival/Characters/CathyPortillo/Plane1_StandCatears3"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane1_SitDown"])
+visible_on_parts = Array[String](["RidelSitDown"])
+
+[node name="RidelGonzales" type="Node3D" parent="Skits/RidelArrival/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/RidelArrival/Characters/RidelGonzales"]
+script = ExtResource("48")
+reference = NodePath("../../../../../Characters/RidelGonzales/State")
+
+[node name="Stand" type="Node3D" parent="Skits/RidelArrival/Characters/RidelGonzales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.08, 0, 2.45)
+
+[node name="Sprite" parent="Skits/RidelArrival/Characters/RidelGonzales/Stand" instance=ExtResource("28")]
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Skits/RidelArrival/Characters/RidelGonzales/Stand/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 1.06, 0)
+script = ExtResource("25")
+alias = "RidelGonzales"
+
+[node name="VisibilityController" type="Node" parent="Skits/RidelArrival/Characters/RidelGonzales/Stand"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane1_Stand", "CamRidelPlane1"])
+visible_on_parts = Array[String](["CathyEnter"])
+
+[node name="CamRidelPlane1" type="Camera3D" parent="Skits/RidelArrival/Characters/RidelGonzales/Stand"]
+transform = Transform3D(0.999657, 0, -0.0261769, 0, 1, 0, 0.0261769, 0, 0.999657, 0.422, 0.946, 0.945)
+attributes = SubResource("CameraAttributesPractical_xvk6q")
+fov = 40.0
+script = ExtResource("10")
+
+[node name="CameraEffects" type="Node" parent="Skits/RidelArrival/Characters/RidelGonzales/Stand/CamRidelPlane1"]
+script = ExtResource("21")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 1.291
+dof_blur_far_transition = 0.5
+dof_blur_far_amount = 0.12
+dof_blur_near_distance = 0.01
+
+[node name="Plane1_SitDown" type="Node3D" parent="Skits/RidelArrival/Characters/RidelGonzales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.02, -0.01, 2.84)
+
+[node name="Sprite" parent="Skits/RidelArrival/Characters/RidelGonzales/Plane1_SitDown" instance=ExtResource("33")]
+animation = "concerned_talk"
+
+[node name="SbPivot" type="Marker3D" parent="Skits/RidelArrival/Characters/RidelGonzales/Plane1_SitDown/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.349999, 0.91, 0)
+script = ExtResource("25")
+alias = "RidelGonzales"
+
+[node name="VisibilityController" type="Node" parent="Skits/RidelArrival/Characters/RidelGonzales/Plane1_SitDown"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane1_SitDown"])
+visible_on_parts = Array[String](["RidelSitDown"])
+
+[node name="Misc" type="Node3D" parent="Skits/RidelArrival"]
+
+[node name="PlayerTargets" type="Node3D" parent="Skits/RidelArrival/Misc"]
+
+[node name="PtMarkPreSitDown" type="Marker3D" parent="Skits/RidelArrival/Misc/PlayerTargets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45, 0, 2.25)
+script = ExtResource("31")
+
+[node name="PtMarkSitDown" type="Marker3D" parent="Skits/RidelArrival/Misc/PlayerTargets"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.26, 0, 2.25)
+script = ExtResource("31")
+
+[node name="Exploration" type="Node3D" parent="Skits"]
+script = ExtResource("64")
+id = "Exploration"
+entrypoint = "3.2a.Exploration"
+
+[node name="AnimationPlayerFlashback" type="Node" parent="Skits/Exploration"]
+script = ExtResource("48")
+reference = NodePath("../../../AnimationPlayerFlashback")
+
+[node name="Audio" type="Node3D" parent="Skits/Exploration"]
+
+[node name="Camera" type="Node3D" parent="Skits/Exploration"]
+
+[node name="CamMarkPlane1_StandCatears" type="InterpolatedCamera3D" parent="Skits/Exploration/Camera"]
+target = NodePath("../../Characters/MarkBorja/Plane1_StandCatears/CamPivotBasis/CamPivot")
+speed = 2.0
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.32, 0.82, 4.87)
+attributes = SubResource("CameraAttributesPractical_ulqwo")
+fov = 40.0
+script = ExtResource("10")
+
+[node name="CameraEffects" type="Node" parent="Skits/Exploration/Camera/CamMarkPlane1_StandCatears"]
+script = ExtResource("21")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.5
+dof_blur_far_transition = 4.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.75
+dof_blur_near_transition = 1.0
+
+[node name="CamMarkPlane2_StandCatears" type="InterpolatedCamera3D" parent="Skits/Exploration/Camera"]
+target = NodePath("../../Characters/MarkBorja/Plane2_StandCatears/CamPivotBasis/CamPivot")
+speed = 2.0
+enabled = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0499997, 0.82, 2.73)
+attributes = SubResource("CameraAttributesPractical_i78vc")
+fov = 40.0
+near = 2.0
+script = ExtResource("10")
+
+[node name="CameraEffects" type="Node" parent="Skits/Exploration/Camera/CamMarkPlane2_StandCatears"]
+script = ExtResource("21")
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.5
+dof_blur_far_transition = 4.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.75
+dof_blur_near_transition = 1.0
+
+[node name="Characters" type="Node3D" parent="Skits/Exploration"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/Exploration/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Exploration/Characters/MarkBorja"]
+script = ExtResource("48")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Plane1_StandCatears" type="Node3D" parent="Skits/Exploration/Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.96, 0, 2.33)
+
+[node name="Sprite" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears" instance=ExtResource("35")]
+mesh = SubResource("ArrayMesh_c1g35")
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 1.04, 0)
+script = ExtResource("25")
+alias = "MarkBorja"
+
+[node name="VisibilityController" type="Node" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane1_StandCatears"])
+
+[node name="Controller" type="Node" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears"]
+script = ExtResource("19")
+
+[node name="Focus" type="Node" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears/Controller"]
+script = ExtResource("7")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears/Controller"]
+
+[node name="PathGrounder" type="Node" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears"]
+script = ExtResource("13")
+path_node = NodePath("../../../../../../World/Paths/Plane1")
+path_offset = 3.0
+
+[node name="RayCast" type="RayCast3D" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 0.31, 0)
+
+[node name="Area" type="Area3D" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27, 0.48, 0)
+shape = SubResource("22")
+
+[node name="CamPivotBasis" type="Marker3D" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.82, 2.54)
+
+[node name="CamPivot" type="Node3D" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears/CamPivotBasis"]
+script = ExtResource("17")
+fixed_z = true
+min_position = Vector3(-6, -9999, -9999)
+max_position = Vector3(-0.75, 9999, 9999)
+
+[node name="AnchorPivot" type="Marker3D" parent="Skits/Exploration/Characters/MarkBorja/Plane1_StandCatears"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 0, 0)
+
+[node name="Plane2_StandCatears" type="Node3D" parent="Skits/Exploration/Characters/MarkBorja"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49, 0, 0.19)
+
+[node name="Sprite" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears" instance=ExtResource("35")]
+mesh = SubResource("ArrayMesh_sxbpd")
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 1.04, 0)
+script = ExtResource("25")
+alias = "MarkBorja"
+
+[node name="VisibilityController" type="Node" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane2_StandCatears"])
+
+[node name="Controller" type="Node" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears"]
+script = ExtResource("19")
+
+[node name="Focus" type="Node" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears/Controller"]
+script = ExtResource("7")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears/Controller"]
+
+[node name="PathGrounder" type="Node" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears"]
+script = ExtResource("13")
+path_node = NodePath("../../../../../../World/Paths/Plane2")
+path_offset = 6.7
+
+[node name="RayCast" type="RayCast3D" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 0.31, 0)
+
+[node name="Area" type="Area3D" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears"]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears/Area"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27, 0.48, 0)
+shape = SubResource("22")
+
+[node name="CamPivotBasis" type="Marker3D" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.64, 0.82, 2.54)
+
+[node name="CamPivot" type="Node3D" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears/CamPivotBasis"]
+script = ExtResource("17")
+fixed_z = true
+min_position = Vector3(-6, -9999, -9999)
+max_position = Vector3(0.6, 9999, 9999)
+
+[node name="AnchorPivot" type="Marker3D" parent="Skits/Exploration/Characters/MarkBorja/Plane2_StandCatears"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28, 0, 0)
+
+[node name="CathyPortillo" type="Node3D" parent="Skits/Exploration/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Exploration/Characters/CathyPortillo"]
+script = ExtResource("48")
+reference = NodePath("../../../../../Characters/CathyPortillo/State")
+
+[node name="Plane1_StandCatears" type="Node3D" parent="Skits/Exploration/Characters/CathyPortillo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.76, 0, 2.25)
+
+[node name="Sprite" parent="Skits/Exploration/Characters/CathyPortillo/Plane1_StandCatears" instance=ExtResource("41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43, 0, 0)
+mesh = SubResource("ArrayMesh_ec50c")
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Exploration/Characters/CathyPortillo/Plane1_StandCatears/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.439999, 0.94, 0)
+script = ExtResource("25")
+alias = "CathyPortillo"
+
+[node name="VisibilityController" type="Node" parent="Skits/Exploration/Characters/CathyPortillo/Plane1_StandCatears"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane1_StandCatears"])
+
+[node name="FollowingController" type="Node" parent="Skits/Exploration/Characters/CathyPortillo/Plane1_StandCatears"]
+script = ExtResource("47")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Skits/Exploration/Characters/CathyPortillo/Plane1_StandCatears/FollowingController"]
+
+[node name="AnchorFollower" type="Node" parent="Skits/Exploration/Characters/CathyPortillo/Plane1_StandCatears"]
+script = ExtResource("43")
+enabled = true
+anchor_path = NodePath("../../../MarkBorja/Plane1_StandCatears/AnchorPivot")
+min_follow_distance = 0.35
+follow_speed = 0.98
+keep_z_offset = true
+
+[node name="Plane2_StandCatears" type="Node3D" parent="Skits/Exploration/Characters/CathyPortillo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.29, 0, 0.11)
+
+[node name="Sprite" parent="Skits/Exploration/Characters/CathyPortillo/Plane2_StandCatears" instance=ExtResource("41")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.43, 0, 0)
+mesh = SubResource("ArrayMesh_rd2f6")
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Exploration/Characters/CathyPortillo/Plane2_StandCatears/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.439999, 0.94, 0)
+script = ExtResource("25")
+alias = "CathyPortillo"
+
+[node name="VisibilityController" type="Node" parent="Skits/Exploration/Characters/CathyPortillo/Plane2_StandCatears"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane2_StandCatears"])
+
+[node name="FollowingController" type="Node" parent="Skits/Exploration/Characters/CathyPortillo/Plane2_StandCatears"]
+script = ExtResource("47")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Skits/Exploration/Characters/CathyPortillo/Plane2_StandCatears/FollowingController"]
+
+[node name="AnchorFollower" type="Node" parent="Skits/Exploration/Characters/CathyPortillo/Plane2_StandCatears"]
+script = ExtResource("43")
+enabled = true
+anchor_path = NodePath("../../../MarkBorja/Plane2_StandCatears/AnchorPivot")
+min_follow_distance = 0.35
+follow_speed = 0.98
+keep_z_offset = true
+
+[node name="RidelGonzales" type="Node3D" parent="Skits/Exploration/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Exploration/Characters/RidelGonzales"]
+script = ExtResource("48")
+reference = NodePath("../../../../../Characters/RidelGonzales/State")
+
+[node name="Plane1_StandCatears" type="Node3D" parent="Skits/Exploration/Characters/RidelGonzales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.3, 0, 2.17)
+
+[node name="Sprite" parent="Skits/Exploration/Characters/RidelGonzales/Plane1_StandCatears" instance=ExtResource("42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0, 0)
+mesh = SubResource("ArrayMesh_col3v")
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Exploration/Characters/RidelGonzales/Plane1_StandCatears/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 1.06, 0)
+script = ExtResource("25")
+alias = "RidelGonzales"
+
+[node name="VisibilityController" type="Node" parent="Skits/Exploration/Characters/RidelGonzales/Plane1_StandCatears"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane1_StandCatears"])
+
+[node name="FollowingController" type="Node" parent="Skits/Exploration/Characters/RidelGonzales/Plane1_StandCatears"]
+script = ExtResource("47")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Skits/Exploration/Characters/RidelGonzales/Plane1_StandCatears/FollowingController"]
+
+[node name="AnchorFollower" type="Node" parent="Skits/Exploration/Characters/RidelGonzales/Plane1_StandCatears"]
+script = ExtResource("43")
+enabled = true
+anchor_path = NodePath("../../../MarkBorja/Plane1_StandCatears/AnchorPivot")
+min_follow_distance = 0.7
+follow_speed = 0.925
+keep_z_offset = true
+
+[node name="Plane2_StandCatears" type="Node3D" parent="Skits/Exploration/Characters/RidelGonzales"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.83, 0, 0.03)
+
+[node name="Sprite" parent="Skits/Exploration/Characters/RidelGonzales/Plane2_StandCatears" instance=ExtResource("42")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0, 0)
+mesh = SubResource("ArrayMesh_icn3s")
+animation = "neutral_idle"
+flip_h = true
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Exploration/Characters/RidelGonzales/Plane2_StandCatears/Sprite"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.29, 1.06, 0)
+script = ExtResource("25")
+alias = "RidelGonzales"
+
+[node name="VisibilityController" type="Node" parent="Skits/Exploration/Characters/RidelGonzales/Plane2_StandCatears"]
+script = ExtResource("11")
+visible_on_shots = Array[String](["CamMarkPlane2_StandCatears"])
+
+[node name="FollowingController" type="Node" parent="Skits/Exploration/Characters/RidelGonzales/Plane2_StandCatears"]
+script = ExtResource("47")
+
+[node name="Footsteps" type="AudioStreamPlayer" parent="Skits/Exploration/Characters/RidelGonzales/Plane2_StandCatears/FollowingController"]
+
+[node name="AnchorFollower" type="Node" parent="Skits/Exploration/Characters/RidelGonzales/Plane2_StandCatears"]
+script = ExtResource("43")
+enabled = true
+anchor_path = NodePath("../../../MarkBorja/Plane2_StandCatears/AnchorPivot")
+min_follow_distance = 0.7
+follow_speed = 0.925
+keep_z_offset = true
+
+[node name="Misc" type="Node3D" parent="Skits/Exploration"]
+
+[node name="InteractiveAreas" type="Node3D" parent="Skits/Exploration/Misc"]
+
+[node name="IaMvP1-2" parent="Skits/Exploration/Misc/InteractiveAreas" instance=ExtResource("40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.39, 0, 2.17)
+preset = 4
+short_knot = "mv_p1_to_p2"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Exploration/Misc/InteractiveAreas/IaMvP1-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999999, 0.34, 0)
+shape = SubResource("13")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Exploration/Misc/InteractiveAreas/IaMvP1-2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 0.7, 0)
+
+[node name="IaBalloonsGame" parent="Skits/Exploration/Misc/InteractiveAreas" instance=ExtResource("40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52, 0, 0.15)
+max_interact_count = 1
+story_signal = "game_balloons"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Exploration/Misc/InteractiveAreas/IaBalloonsGame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999999, 0.34, 0)
+shape = SubResource("13")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Exploration/Misc/InteractiveAreas/IaBalloonsGame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 1.14, 0)
+
+[node name="IaCupsGame" parent="Skits/Exploration/Misc/InteractiveAreas" instance=ExtResource("40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.82, 0, 0.15)
+max_interact_count = 1
+story_signal = "game_cups"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Exploration/Misc/InteractiveAreas/IaCupsGame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999999, 0.34, 0)
+shape = SubResource("13")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Exploration/Misc/InteractiveAreas/IaCupsGame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 1.14, 0)
+
+[node name="IaCoinTossGame" parent="Skits/Exploration/Misc/InteractiveAreas" instance=ExtResource("40")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.07, 0, 0.15)
+max_interact_count = 1
+story_signal = "game_coin_toss"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Exploration/Misc/InteractiveAreas/IaCoinTossGame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999999, 0.34, 0)
+shape = SubResource("13")
+
+[node name="Anchor" type="Marker3D" parent="Skits/Exploration/Misc/InteractiveAreas/IaCoinTossGame"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.04, 1.14, 0)
+
+[node name="TriggerAreas" type="Node3D" parent="Skits/Exploration/Misc"]
+
+[node name="TaRyanTime" type="Area3D" parent="Skits/Exploration/Misc/TriggerAreas"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.15487, 1.19209e-07, 0.19677)
+script = ExtResource("23")
+max_trigger_count = 1
+short_knot = "ryan_time"
+
+[node name="CollisionShape" type="CollisionShape3D" parent="Skits/Exploration/Misc/TriggerAreas/TaRyanTime"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00999999, 0.34, 0)
+shape = SubResource("12")
+
+[node name="Minigames" type="Node2D" parent="Skits/Exploration"]
+
+[node name="GameBalloons" type="Node2D" parent="Skits/Exploration/Minigames"]
+visible = false
+
+[node name="VisibilityController" type="Node" parent="Skits/Exploration/Minigames/GameBalloons"]
+script = ExtResource("54")
+visible_on_shots = Array[String](["GameBalloons"])
+
+[node name="MinigameBalloon" parent="Skits/Exploration/Minigames/GameBalloons" instance=ExtResource("44")]
+player_crosshair_tug_duration = 0.25
+
+[node name="MinigameBalloonController" type="Node" parent="Skits/Exploration/Minigames/GameBalloons/MinigameBalloon"]
+script = ExtResource("69_0ep6y")
+
+[node name="ChibiMark" parent="Skits/Exploration/Minigames/GameBalloons" instance=ExtResource("51")]
+position = Vector2(1122, 148)
+
+[node name="SbPivot" type="Marker2D" parent="Skits/Exploration/Minigames/GameBalloons/ChibiMark"]
+position = Vector2(-28.5, 0)
+script = ExtResource("25")
+alias = "MarkBorja"
+orientation = 2
+
+[node name="ScoreLabel" parent="Skits/Exploration/Minigames/GameBalloons/ChibiMark" instance=ExtResource("60")]
+state_container_alias = "MarkBorja"
+dict_score_key = "balloon_pop_score"
+
+[node name="ChibiCathy" parent="Skits/Exploration/Minigames/GameBalloons" instance=ExtResource("53")]
+position = Vector2(1126, 364)
+
+[node name="SbPivot" type="Marker2D" parent="Skits/Exploration/Minigames/GameBalloons/ChibiCathy"]
+position = Vector2(-28.5, 0)
+script = ExtResource("25")
+alias = "CathyPortillo"
+orientation = 2
+
+[node name="ScoreLabel" parent="Skits/Exploration/Minigames/GameBalloons/ChibiCathy" instance=ExtResource("60")]
+state_container_alias = "CathyPortillo"
+dict_score_key = "balloon_pop_score"
+
+[node name="ChibiRidel" parent="Skits/Exploration/Minigames/GameBalloons" instance=ExtResource("52")]
+position = Vector2(1130, 580)
+
+[node name="SbPivot" type="Marker2D" parent="Skits/Exploration/Minigames/GameBalloons/ChibiRidel"]
+position = Vector2(-28.5, 0)
+script = ExtResource("25")
+alias = "RidelGonzales"
+orientation = 2
+
+[node name="ScoreLabel" parent="Skits/Exploration/Minigames/GameBalloons/ChibiRidel" instance=ExtResource("60")]
+state_container_alias = "RidelGonzales"
+dict_score_key = "balloon_pop_score"
+
+[node name="GameCoinToss" type="Node2D" parent="Skits/Exploration/Minigames"]
+
+[node name="VisibilityController" type="Node" parent="Skits/Exploration/Minigames/GameCoinToss"]
+script = ExtResource("54")
+visible_on_shots = Array[String](["GameCoinToss"])
+
+[node name="Background" type="Sprite2D" parent="Skits/Exploration/Minigames/GameCoinToss"]
+scale = Vector2(3.2, 3.2)
+texture = ExtResource("36")
+centered = false
+
+[node name="MinigameCoinToss" parent="Skits/Exploration/Minigames/GameCoinToss" instance=ExtResource("39")]
+player_strength_meter_speed_factor = 1.5
+
+[node name="MinigameCoinTossController" type="Node" parent="Skits/Exploration/Minigames/GameCoinToss/MinigameCoinToss"]
+script = ExtResource("76_k268o")
+
+[node name="ChibiMark" parent="Skits/Exploration/Minigames/GameCoinToss" instance=ExtResource("51")]
+position = Vector2(1162, 148)
+
+[node name="SbPivot" type="Marker2D" parent="Skits/Exploration/Minigames/GameCoinToss/ChibiMark"]
+position = Vector2(-28.5, 0)
+script = ExtResource("25")
+alias = "MarkBorja"
+orientation = 2
+
+[node name="ScoreLabel" parent="Skits/Exploration/Minigames/GameCoinToss/ChibiMark" instance=ExtResource("60")]
+state_container_alias = "MarkBorja"
+dict_score_key = "cointoss_score"
+
+[node name="ChibiCathy" parent="Skits/Exploration/Minigames/GameCoinToss" instance=ExtResource("53")]
+position = Vector2(1166, 364)
+
+[node name="SbPivot" type="Marker2D" parent="Skits/Exploration/Minigames/GameCoinToss/ChibiCathy"]
+position = Vector2(-28.5, 0)
+script = ExtResource("25")
+alias = "CathyPortillo"
+orientation = 2
+
+[node name="ScoreLabel" parent="Skits/Exploration/Minigames/GameCoinToss/ChibiCathy" instance=ExtResource("60")]
+state_container_alias = "CathyPortillo"
+dict_score_key = "cointoss_score"
+
+[node name="ChibiRidel" parent="Skits/Exploration/Minigames/GameCoinToss" instance=ExtResource("52")]
+position = Vector2(1170, 580)
+
+[node name="SbPivot" type="Marker2D" parent="Skits/Exploration/Minigames/GameCoinToss/ChibiRidel"]
+position = Vector2(-28.5, 0)
+script = ExtResource("25")
+alias = "RidelGonzales"
+orientation = 2
+
+[node name="ScoreLabel" parent="Skits/Exploration/Minigames/GameCoinToss/ChibiRidel" instance=ExtResource("60")]
+state_container_alias = "RidelGonzales"
+dict_score_key = "cointoss_score"
+
+[node name="GameCups" type="Node2D" parent="Skits/Exploration/Minigames"]
+visible = false
+
+[node name="VisibilityController" type="Node" parent="Skits/Exploration/Minigames/GameCups"]
+script = ExtResource("54")
+visible_on_shots = Array[String](["GameCups"])
+
+[node name="MinigameFindTheBall" parent="Skits/Exploration/Minigames/GameCups" instance=ExtResource("29")]
+cup_swap_y_trans_peak = 8.0
+
+[node name="MinigameFindTheBallController" type="Node" parent="Skits/Exploration/Minigames/GameCups/MinigameFindTheBall"]
+script = ExtResource("78_xhoaa")
+
+[node name="ChibiMark" parent="Skits/Exploration/Minigames/GameCups" instance=ExtResource("51")]
+position = Vector2(1122, 148)
+
+[node name="SbPivot" type="Marker2D" parent="Skits/Exploration/Minigames/GameCups/ChibiMark"]
+position = Vector2(-28.5, 0)
+script = ExtResource("25")
+alias = "MarkBorja"
+orientation = 2
+
+[node name="ChibiCathy" parent="Skits/Exploration/Minigames/GameCups" instance=ExtResource("53")]
+position = Vector2(1126, 364)
+
+[node name="SbPivot" type="Marker2D" parent="Skits/Exploration/Minigames/GameCups/ChibiCathy"]
+position = Vector2(-28.5, 0)
+script = ExtResource("25")
+alias = "CathyPortillo"
+orientation = 2
+
+[node name="ChibiRidel" parent="Skits/Exploration/Minigames/GameCups" instance=ExtResource("52")]
+position = Vector2(1130, 580)
+
+[node name="SbPivot" type="Marker2D" parent="Skits/Exploration/Minigames/GameCups/ChibiRidel"]
+position = Vector2(-28.5, 0)
+script = ExtResource("25")
+alias = "RidelGonzales"
+orientation = 2
+
+[node name="Main" type="Node3D" parent="."]
+
+[node name="Services" type="Node" parent="Main"]
+
+[node name="$SceneManager" type="Node" parent="Main/Services"]
+script = ExtResource("4")
+scene_id = "3.2a"
+shot = "CamMarkPlane1_Stand"
+
+[node name="$DialogueHandler" type="Node" parent="Main/Services"]
+script = ExtResource("9")
+
+[node name="$SceneState" type="Node" parent="Main/Services"]
+script = ExtResource("3")
+alias = "scene"
+
+[node name="$InteractiveAreaHandler" type="Node" parent="Main/Services"]
+script = ExtResource("12")
+
+[node name="$PlayerTarget" type="Node3D" parent="Main/Services"]
+script = ExtResource("18")
+
+[node name="WardFlashback" type="TextureRect" parent="Main"]
+visible = false
+offset_right = 1280.0
+offset_bottom = 720.0
+texture = ExtResource("30")
+
+[node name="ChromaticAberration" parent="Main" instance=ExtResource("15")]
+strength = 4.0
+
+[node name="Vignette" parent="Main" instance=ExtResource("6")]
+offset_bottom = 1.0
+
+[node name="$ThoughtBubble" parent="Main" instance=ExtResource("16")]

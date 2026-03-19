@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://cdbh4y48v3351"]
+
+[ext_resource type="ArrayMesh" uid="uid://2vwbx45qxavb" path="res://scenes/mondragon_hospital/assets/cafeteria/coke_chiller.obj" id="1"]
+[ext_resource type="Texture2D" uid="uid://cwjocko46qctw" path="res://scenes/mondragon_hospital/assets/cafeteria/coke_chiller.png" id="2"]
+[ext_resource type="Shader" path="res://assets/shaders/SmoothSpatialOpaque.gdshader" id="3"]
+[ext_resource type="Texture2D" uid="uid://0jydts5vhrc5" path="res://scenes/mondragon_hospital/assets/cafeteria/coke_chiller_em.png" id="4"]
+
+[sub_resource type="ShaderMaterial" id="1"]
+render_priority = 0
+shader = ExtResource("3")
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/alpha_scissor = 1.0
+shader_parameter/normal_depth = 1.0
+shader_parameter/normal_linear_sampling = false
+shader_parameter/metallic = 0.1
+shader_parameter/roughness = 0.4
+shader_parameter/specular = 0.5
+shader_parameter/emission = Color(1, 0.835294, 0.584314, 1)
+shader_parameter/emission_energy = 2.0
+shader_parameter/emission_saturation = 1.0
+shader_parameter/emission_blend_add = false
+shader_parameter/glow_color = Color(0, 0, 0, 1)
+shader_parameter/transmission = Color(0, 0, 0, 1)
+shader_parameter/displacement_strength = 0.0
+shader_parameter/wet_metallic = 0.5
+shader_parameter/wet_linear_sampling = false
+shader_parameter/uv1_scale = Vector3(1, 1, 1)
+shader_parameter/uv1_scale_mult = Vector3(1, 1, 1)
+shader_parameter/uv1_offset = null
+shader_parameter/y_billboard = false
+shader_parameter/texture_albedo = ExtResource("2")
+shader_parameter/texture_emission = ExtResource("4")
+
+[node name="CokeChiller" type="MeshInstance"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.51, 0, -0.21)
+material_override = SubResource("1")
+mesh = ExtResource("1")
+surface_material_override/0 = null

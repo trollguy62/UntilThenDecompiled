@@ -1,0 +1,32 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://dkpwfqkn6o8w3"]
+
+[ext_resource type="Texture2D" uid="uid://dolcu6rmqfubs" path="res://scenes/_main/ch4sc2b/assets/sky_rainy.png" id="1_3tqe7"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_tw6vm"]
+panorama = ExtResource("1_3tqe7")
+filter = false
+
+[sub_resource type="Sky" id="1"]
+sky_material = SubResource("PanoramaSkyMaterial_tw6vm")
+
+[resource]
+background_mode = 2
+background_color = Color(0.0470588, 0.0705882, 0.188235, 1)
+background_energy_multiplier = 0.75
+sky = SubResource("1")
+sky_rotation = Vector3(0, 1.5708, 0)
+ambient_light_color = Color(0.168627, 0.188235, 0.25098, 1)
+ambient_light_sky_contribution = 0.5
+ambient_light_energy = 2.0
+tonemap_mode = 2
+ssr_enabled = true
+ssr_max_steps = 128
+ssao_enabled = true
+ssil_radius = 2.5
+sdfgi_use_occlusion = true
+glow_enabled = true
+fog_enabled = true
+fog_light_color = Color(0.1058, 0.16997, 0.23, 1)
+fog_density = 0.08
+fog_aerial_perspective = 0.7
+volumetric_fog_density = 0.01

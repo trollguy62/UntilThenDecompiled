@@ -1,0 +1,1706 @@
+[gd_scene load_steps=221 format=3 uid="uid://ct0l6ldi6wrjk"]
+
+[ext_resource type="Script" path="res://components/Scene.gd" id="1_yi7kb"]
+[ext_resource type="AudioStream" uid="uid://bdsunaonwkwpu" path="res://assets/sfx/static_noise.ogg" id="4_hfy5j"]
+[ext_resource type="Script" path="res://components/AnimationPlayer/AnimationPlayer.gd" id="4_nfs2y"]
+[ext_resource type="Script" path="res://components/AudioStreamPlayer.gd" id="5_r7bmu"]
+[ext_resource type="PackedScene" uid="uid://cuavcq0me4e82" path="res://scenes/_main/lo8sc2/assets/prefabs/Section1.tscn" id="6_l6lg4"]
+[ext_resource type="Sky" uid="uid://0gpxmtwi27e7" path="res://scenes/_main/ch5sc10a/assets/envi/skyboxes/SkyMiddle.tres" id="6_q3asm"]
+[ext_resource type="Script" path="res://components/StateContainer.gd" id="8_iufva"]
+[ext_resource type="Script" path="res://components/Skit/SkitContainer.gd" id="9_td1j4"]
+[ext_resource type="Script" path="res://components/Skit/SkitExternalRef.gd" id="11_a44xg"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc10b/scripts/SectionScroller.gd" id="15_w0tpd"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^lf_scared_idle/01.tres" id="17_fhxxk"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc10b/scripts/SectionScrollerCommandHandler.gd" id="18_ww5hd"]
+[ext_resource type="Texture2D" uid="uid://cgmp5gycjhc5d" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/01.tres" id="19_f8yis"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_idle/01.tres" id="19_wvjij"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_idle/02.tres" id="20_54guu"]
+[ext_resource type="Texture2D" uid="uid://bkc2ged27xpl7" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/02.tres" id="20_prvqc"]
+[ext_resource type="Texture2D" uid="uid://cp284dap1tlas" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/03.tres" id="21_1p43l"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_idle/03.tres" id="21_e61ms"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_idle/04.tres" id="22_81scj"]
+[ext_resource type="Texture2D" uid="uid://bggwpr6m84yxr" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/04.tres" id="22_c6hy5"]
+[ext_resource type="Texture2D" uid="uid://ct2kpshv8o0t8" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/05.tres" id="23_dua6v"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_idle/05.tres" id="23_kw0aw"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_idle/06.tres" id="24_clxo1"]
+[ext_resource type="Texture2D" uid="uid://bja28sbwvqtro" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/06.tres" id="24_p2t6j"]
+[ext_resource type="Texture2D" uid="uid://dqaru4phhsrdj" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/07.tres" id="25_psyoq"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_talk/01.tres" id="25_uw3ss"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_talk/02.tres" id="26_3ijry"]
+[ext_resource type="Texture2D" uid="uid://8rdayjhnx468" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/08.tres" id="26_5retk"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_talk/03.tres" id="27_nb1ym"]
+[ext_resource type="Texture2D" uid="uid://cqkfccc4hykgk" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/09.tres" id="27_qaeip"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_talk/04.tres" id="28_26ddp"]
+[ext_resource type="Texture2D" uid="uid://drjos5u4co7j3" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/10.tres" id="28_t1hqr"]
+[ext_resource type="Script" path="res://components/SceneCamera.gd" id="29_7vtuu"]
+[ext_resource type="Texture2D" uid="uid://breshu0k78j7m" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/11.tres" id="29_bpu1j"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_talk/05.tres" id="29_qno2y"]
+[ext_resource type="Texture2D" uid="uid://djgw2v7wty4h6" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/12.tres" id="30_46pv8"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^rf_dazed_talk/06.tres" id="30_um12w"]
+[ext_resource type="Texture2D" uid="uid://cm8q7h4eq6vmu" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/13.tres" id="31_0jffq"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_idle/01.tres" id="31_swnnv"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="32_cwp41"]
+[ext_resource type="Texture2D" uid="uid://bdiai2gyu0yrg" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/14.tres" id="32_dtg80"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_idle/02.tres" id="32_k2n8b"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_idle/03.tres" id="33_svnmj"]
+[ext_resource type="Texture2D" uid="uid://01ui7dul1lml" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/15.tres" id="33_u7n5i"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_idle/04.tres" id="34_8gny4"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="34_13gpc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/17.tres" id="34_fxt0f"]
+[ext_resource type="Texture2D" uid="uid://ci1qwqyhuhes4" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/16.tres" id="34_wjnsg"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_idle/05.tres" id="35_1j180"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/18.tres" id="35_l746n"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/19.tres" id="36_hmcg6"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_idle/06.tres" id="36_mvrj3"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/20.tres" id="37_ufcfg"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_talk/01.tres" id="37_x55bm"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/21.tres" id="38_4nknp"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_talk/02.tres" id="38_rtk3s"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/22.tres" id="39_0mkla"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_talk/03.tres" id="39_mb4ej"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_talk/04.tres" id="40_mk777"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/23.tres" id="40_uu8b6"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_talk/05.tres" id="41_mn02n"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/24.tres" id="41_v5p65"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_dazed_talk/06.tres" id="42_1r606"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/25.tres" id="42_782nr"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic^dlf_scared_idle/01.tres" id="43_6hxs8"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/26.tres" id="43_ean5n"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/27.tres" id="44_7wr3u"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic^dlf_scared_idle/02.tres" id="44_c82ef"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic^dlf_scared_idle/03.tres" id="45_o7apl"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/28.tres" id="45_ylskg"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic^dlf_scared_idle/04.tres" id="46_bc3nr"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/29.tres" id="46_nip4n"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic^dlf_scared_idle/05.tres" id="47_l2fy1"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/30.tres" id="47_t05tu"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic^dlf_scared_idle/06.tres" id="48_2r5yr"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/31.tres" id="48_7t2va"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/32.tres" id="49_aefir"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic^dlf_scared_idle/07.tres" id="49_cq5rs"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic to kneel panic^dlf to d_scared_idle/33.tres" id="50_3e5d6"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkpanic^dlf_scared_idle/08.tres" id="50_y3f8l"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^d_scared_idle/01.tres" id="51_adqhl"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^d_scared_idle/02.tres" id="52_vmc0u"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^d_scared_idle/03.tres" id="53_5oxu7"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^d_scared_idle/04.tres" id="54_ysfoc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^d_scared_idle/05.tres" id="55_ojva8"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^d_scared_idle/06.tres" id="56_7j0l2"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^dlf_scared_idle/01.tres" id="57_nn6d6"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^dlf_scared_idle/02.tres" id="58_dnq1t"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^dlf_scared_idle/03.tres" id="59_o4cnq"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^dlf_scared_idle/04.tres" id="60_e4ax5"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^dlf_scared_idle/05.tres" id="61_a120s"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^dlf_scared_idle/06.tres" id="62_5hxps"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^dlf_scared_idle/07.tres" id="63_weyqa"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^dlf_scared_idle/08.tres" id="64_3dmww"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^dlf_scared_idle/01.tres" id="65_xo7qf"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^dlf_scared_idle/02.tres" id="66_rgyro"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^dlf_scared_idle/03.tres" id="67_wjktu"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^dlf_scared_idle/04.tres" id="68_et2u6"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^dlf_scared_idle/05.tres" id="69_g4pk0"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^dlf_scared_idle/06.tres" id="70_syr8f"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_idle/01.tres" id="71_usbli"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_idle/02.tres" id="72_0b4ts"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_idle/03.tres" id="73_01wb2"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_idle/04.tres" id="74_ftlsb"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_idle/05.tres" id="75_qu52s"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_idle/06.tres" id="76_ct0rv"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_talk/01.tres" id="77_0r465"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_talk/02.tres" id="78_c1ysp"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_talk/03.tres" id="79_w85qq"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_talk/04.tres" id="80_f2772"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="80_pya2s"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_talk/05.tres" id="81_npb1t"]
+[ext_resource type="Script" path="res://components/SpeechBubblePivot.gd" id="81_to7js"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_kneelpanic^f_scared_talk/06.tres" id="82_a8cu1"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^lf_scared_idle/02.tres" id="83_jkuvh"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^lf_scared_idle/03.tres" id="84_by3p7"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^lf_scared_idle/04.tres" id="85_fm8e7"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^lf_scared_idle/05.tres" id="86_ohsya"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^lf_scared_idle/06.tres" id="87_nni2f"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^lf_scared_idle/07.tres" id="88_q86l5"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/MarkBorja/lf_walkactive^lf_scared_idle/08.tres" id="89_r84bc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_idle/01.tres" id="95_owyou"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_idle/01.tres" id="96_0bu51"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_idle/02.tres" id="97_r3lcs"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_idle/03.tres" id="98_msb1e"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_idle/04.tres" id="99_uv4t7"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_idle/05.tres" id="100_wn5ft"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_idle/06.tres" id="101_p1gys"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_sprint+bagofcookies_concerned_idle/01.tres" id="102_x6vus"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_sprint+bagofcookies_concerned_idle/02.tres" id="103_fjonv"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_sprint+bagofcookies_concerned_idle/03.tres" id="104_lq1a1"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_sprint+bagofcookies_concerned_idle/04.tres" id="105_v0wgg"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_sprint+bagofcookies_concerned_idle/05.tres" id="106_ccwwe"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_sprint+bagofcookies_concerned_idle/06.tres" id="107_jm14g"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_sprint+bagofcookies_concerned_idle/07.tres" id="108_kl8np"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_sprint+bagofcookies_concerned_idle/08.tres" id="109_h4mtb"]
+[ext_resource type="Texture2D" uid="uid://dewshidrmf6gs" path="res://scenes/_main/lo6sc1/assets/C3D/cathy_happy.png" id="110_8mixt"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_talk/01.tres" id="110_667p6"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_talk/02.tres" id="111_iahhs"]
+[ext_resource type="Texture2D" uid="uid://dc8i6y4d6doq0" path="res://scenes/_main/lo6sc1/assets/C3D/mark_running.png" id="112_14jjx"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_talk/03.tres" id="112_wdts5"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_talk/04.tres" id="113_fsm7n"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_talk/05.tres" id="114_7tqrv"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/lf_stand+bagofcookies^lf_concerned_talk/06.tres" id="115_qmojj"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_idle/01.tres" id="116_qo522"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_idle/02.tres" id="117_55wfc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_idle/03.tres" id="118_b4atc"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_idle/04.tres" id="119_2cnhg"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_idle/05.tres" id="120_kvlho"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_idle/06.tres" id="121_r0t1g"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_talk/01.tres" id="122_w5ftd"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_talk/02.tres" id="123_xgrix"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_talk/03.tres" id="124_xiy0n"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_talk/04.tres" id="125_41gy5"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_talk/05.tres" id="126_6maqf"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_stand^f_confused_talk/06.tres" id="127_gxpap"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_idle/02.tres" id="128_lf6rs"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_idle/03.tres" id="129_d2aqy"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_idle/04.tres" id="130_n8gkd"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_idle/05.tres" id="131_57atu"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_idle/06.tres" id="132_wkojf"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_sprint^f_excited_idle/01.tres" id="133_td2fu"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_sprint^f_excited_idle/02.tres" id="134_2nvld"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_sprint^f_excited_idle/03.tres" id="135_xp36v"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_sprint^f_excited_idle/04.tres" id="136_px306"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_sprint^f_excited_idle/05.tres" id="137_ipv16"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_sprint^f_excited_idle/06.tres" id="138_hgwns"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_sprint^f_excited_idle/07.tres" id="139_ficrk"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_sprint^f_excited_idle/08.tres" id="140_wivj1"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_talk/01.tres" id="141_j450d"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_talk/02.tres" id="142_cc362"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_talk/03.tres" id="143_q7wqg"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_talk/04.tres" id="144_04bba"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_talk/05.tres" id="145_2hhy3"]
+[ext_resource type="Texture2D" path="res://scenes/_main/lo8sc2/assets/characters/CathyPortillo/f_standexcited^f_excited_talk/06.tres" id="146_hpqiv"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/RainController.gd" id="173_7mjap"]
+[ext_resource type="Script" path="res://components/ShotVisibilityController.gd" id="188_47kbb"]
+[ext_resource type="Shader" path="res://assets/shaders/SsfxGlitch.gdshader" id="188_nonhv"]
+[ext_resource type="Texture2D" uid="uid://bpo0rlukn14cq" path="res://assets/ui/hint_white.png" id="189_dc8ep"]
+[ext_resource type="PackedScene" uid="uid://ccxopd4fx8nlf" path="res://components/ChromaticAberration/ChromaticAberration.tscn" id="190_2uepb"]
+[ext_resource type="Shader" path="res://assets/shaders/Vignette.gdshader" id="192_ary5w"]
+[ext_resource type="Script" path="res://addons/SIsilicon.vfx.godrays/GodRays.gd" id="204_5hn0g"]
+[ext_resource type="PackedScene" uid="uid://i2fuebpd1nxr" path="res://scenes/_main/lo8sc2/assets/prefabs/SectionEnd.tscn" id="442_4l24f"]
+[ext_resource type="Script" path="res://components/SceneManager.gd" id="575_6rmbv"]
+[ext_resource type="Script" path="res://components/DialogueHandler.gd" id="577_88xw7"]
+[ext_resource type="Script" path="res://components/InteractiveAreaHandler.gd" id="578_abfgw"]
+[ext_resource type="Script" path="res://components/PlayerTarget.gd" id="579_tj8e0"]
+[ext_resource type="PackedScene" uid="uid://da0ppgkx2d538" path="res://components/Vignette.tscn" id="582_gxc06"]
+[ext_resource type="PackedScene" uid="uid://e3hu5waf2v3u" path="res://components/ThoughtBubble/ThoughtBubble.tscn" id="583_5chyh"]
+
+[sub_resource type="Environment" id="Environment_vhpy2"]
+background_mode = 2
+background_energy_multiplier = 0.25
+sky = ExtResource("6_q3asm")
+sky_custom_fov = 58.0
+sky_rotation = Vector3(0, 1.0472, 0)
+ambient_light_color = Color(0.172549, 0.215686, 0.270588, 1)
+ambient_light_sky_contribution = 0.0
+tonemap_mode = 2
+ssr_enabled = true
+ssr_max_steps = 128
+ssao_enabled = true
+glow_enabled = true
+glow_intensity = 3.6
+fog_enabled = true
+fog_light_color = Color(0.0352941, 0.0705882, 0.113725, 1)
+fog_density = 0.16
+fog_aerial_perspective = 0.32
+
+[sub_resource type="Animation" id="Animation_wa513"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audio/Static:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-80.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/Vignette:material:shader_parameter/outer_radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.25]
+}
+
+[sub_resource type="Animation" id="Animation_ckqkd"]
+resource_name = "intensify"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Audio/Static:volume_db")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [-80.0, 0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Main/Vignette:material:shader_parameter/outer_radius")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.25, 0.72]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_e2ap1"]
+_data = {
+"RESET": SubResource("Animation_wa513"),
+"intensify": SubResource("Animation_ckqkd")
+}
+
+[sub_resource type="BankAsset" id="BankAsset_xts8i"]
+file_path = "res://assets/soundbanks/Desktop/Lo8Sc2.bank"
+modified_time = 1717754135
+path = "bank:/PT3/Lo8Sc2"
+guid = "{a7a72da9-937f-4c4f-b457-3a2f5e1e3976}"
+name = "Lo8Sc2"
+
+[sub_resource type="EventAsset" id="EventAsset_eyctn"]
+min_distance = 1.0
+max_distance = 10.0
+path = "event:/PT3/Lo8/Sc2/LeavesShuffle"
+guid = "{e9553e93-3bc6-4159-9158-ae14e2a51c82}"
+name = "LeavesShuffle"
+
+[sub_resource type="EventAsset" id="EventAsset_lodnw"]
+is_3d = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT3/Lo8/Sc2/PopoOutside"
+guid = "{94708b44-b41a-43ff-9add-e13b5f8eba52}"
+name = "PopoOutside"
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_jvp5p"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 4.0
+dof_blur_far_transition = 3.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 2.3
+dof_blur_amount = 0.11
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_hc2w3"]
+render_priority = 0
+shader = ExtResource("32_cwp41")
+shader_parameter/scale = Vector3(0.5346, 1.0773, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("17_fhxxk")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_of5cu"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_hc2w3"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gy138"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_f8yis")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_prvqc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1p43l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_c6hy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_dua6v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_p2t6j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_psyoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_5retk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_qaeip")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_t1hqr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_bpu1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_46pv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_0jffq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_dtg80")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_u7n5i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_wjnsg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_fxt0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_l746n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_hmcg6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ufcfg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_4nknp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_0mkla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_uu8b6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_v5p65")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_782nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_ean5n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_7wr3u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_ylskg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_nip4n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_t05tu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_7t2va")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_aefir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_3e5d6")
+}],
+"loop": true,
+"name": &"_kneel",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_wvjij")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_54guu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_e61ms")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_81scj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_kw0aw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_clxo1")
+}],
+"loop": true,
+"name": &"dazed=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_uw3ss")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_3ijry")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_nb1ym")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_26ddp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_qno2y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_um12w")
+}],
+"loop": true,
+"name": &"dazed=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31_swnnv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_k2n8b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_svnmj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_8gny4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_1j180")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_mvrj3")
+}],
+"loop": true,
+"name": &"dazed_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("37_x55bm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_rtk3s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_mb4ej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_mk777")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_mn02n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_1r606")
+}],
+"loop": true,
+"name": &"dazed_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("43_6hxs8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_c82ef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_o7apl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46_bc3nr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_l2fy1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_2r5yr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_cq5rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_y3f8l")
+}],
+"loop": true,
+"name": &"panic_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51_adqhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52_vmc0u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_5oxu7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_ysfoc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_ojva8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_7j0l2")
+}],
+"loop": true,
+"name": &"scared=d_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("57_nn6d6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("58_dnq1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("59_o4cnq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("60_e4ax5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("61_a120s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("62_5hxps")
+}, {
+"duration": 1.0,
+"texture": ExtResource("63_weyqa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("64_3dmww")
+}],
+"loop": true,
+"name": &"scared=d_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("65_xo7qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("66_rgyro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("67_wjktu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("68_et2u6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("69_g4pk0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("70_syr8f")
+}],
+"loop": true,
+"name": &"scared=dl_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("71_usbli")
+}, {
+"duration": 1.0,
+"texture": ExtResource("72_0b4ts")
+}, {
+"duration": 1.0,
+"texture": ExtResource("73_01wb2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("74_ftlsb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("75_qu52s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("76_ct0rv")
+}],
+"loop": true,
+"name": &"scared_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("77_0r465")
+}, {
+"duration": 1.0,
+"texture": ExtResource("78_c1ysp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("79_w85qq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("80_f2772")
+}, {
+"duration": 1.0,
+"texture": ExtResource("81_npb1t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_a8cu1")
+}],
+"loop": true,
+"name": &"scared_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_fhxxk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_jkuvh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_by3p7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_fm8e7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_ohsya")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_nni2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_q86l5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("89_r84bc")
+}],
+"loop": true,
+"name": &"scared_walk",
+"speed": 7.0
+}]
+
+[sub_resource type="EventAsset" id="EventAsset_w0ini"]
+is_3d = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT3/Lo8/Sc2/FootstepsBare"
+guid = "{db087db3-8f3e-4287-a993-a26d411dc9b5}"
+name = "FootstepsBare"
+
+[sub_resource type="Animation" id="5526"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/MarkBorja/Main:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.85859, 0.0130128, 4.119)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/CathyPortillo/Main:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-1.15284, 0.02, -4.1561)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Main/BackBufferCopy/Glitch:material:shader_parameter/strength")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Characters/CathyPortillo/Main/Sprite:glitch_fac")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Characters/CathyPortillo/Main/Sprite/Footsteps:playing")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Characters/MarkBorja/Main/Sprite/Footsteps:playing")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_fypd8"]
+resource_name = "cathy_cross"
+length = 1.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/CathyPortillo/Main:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.6, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector3(-3.9508, 0.02, -4.1561), Vector3(-3.9508, 0.02, -4.1561), Vector3(-3.9508, 0.02, -3.41252)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/CathyPortillo/Main/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["excited_idle", "excited_sprint"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../../Main/BackBufferCopy/Glitch:material:shader_parameter/strength")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.5]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Characters/CathyPortillo/Main/Sprite:glitch_fac")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.1, 0.7]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../../Audio/Static:pitch_scale")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.05, 0.1]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../../Audio/Static:volume_db")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 2.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Characters/CathyPortillo/Main/Sprite/Footsteps:playing")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.6, 1.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_338bp"]
+resource_name = "cathy_enter"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/CathyPortillo/Main:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.15284, 0.02, -4.1561), Vector3(-3.9508, 0.02, -4.1561)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/CathyPortillo/Main/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["concerned_sprint", "concerned_idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/CathyPortillo/Main/Sprite/Footsteps:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_sbpu6"]
+resource_name = "mark_walk_transition"
+length = 4.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/MarkBorja/Main:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-1.85859, 0.0130128, 4.119), Vector3(-2.88657, 0.0130128, 4.119)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Characters/MarkBorja/Main/Sprite:animation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.6, 4.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["panic_walk", "_kneel", "scared=d_idle"]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Characters/MarkBorja/Main/Sprite/Footsteps:playing")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_biqab"]
+resource_name = "cathy_before_enter"
+length = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Characters/CathyPortillo/Main/Sprite/Footsteps:playing")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s2oyv"]
+_data = {
+"RESET": SubResource("5526"),
+"cathy_before_enter": SubResource("Animation_biqab"),
+"cathy_cross": SubResource("Animation_fypd8"),
+"cathy_enter": SubResource("Animation_338bp"),
+"mark_walk_transition": SubResource("Animation_sbpu6")
+}
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_5vbp1"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.2
+dof_blur_far_transition = 1.0
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.89
+dof_blur_amount = 0.11
+
+[sub_resource type="CameraAttributesPractical" id="CameraAttributesPractical_b3hk7"]
+dof_blur_far_enabled = true
+dof_blur_far_distance = 2.5
+dof_blur_far_transition = 1.5
+dof_blur_near_enabled = true
+dof_blur_near_distance = 1.89
+dof_blur_amount = 0.11
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lak15"]
+render_priority = 0
+shader = ExtResource("32_cwp41")
+shader_parameter/scale = Vector3(0.5346, 1.0773, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("43_6hxs8")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cgr6u"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_lak15"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8tbug"]
+render_priority = 0
+shader = ExtResource("32_cwp41")
+shader_parameter/scale = Vector3(0.8019, 1.2474, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("95_owyou")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_s73kf"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_8tbug"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_248ee"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("96_0bu51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("97_r3lcs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("98_msb1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("99_uv4t7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("100_wn5ft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("101_p1gys")
+}],
+"loop": true,
+"name": &"concerned_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("102_x6vus")
+}, {
+"duration": 1.0,
+"texture": ExtResource("103_fjonv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("104_lq1a1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("105_v0wgg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("106_ccwwe")
+}, {
+"duration": 1.0,
+"texture": ExtResource("107_jm14g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("108_kl8np")
+}, {
+"duration": 1.0,
+"texture": ExtResource("109_h4mtb")
+}],
+"loop": true,
+"name": &"concerned_sprint",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("110_667p6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("111_iahhs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("112_wdts5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("113_fsm7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("114_7tqrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("115_qmojj")
+}],
+"loop": true,
+"name": &"concerned_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("116_qo522")
+}, {
+"duration": 1.0,
+"texture": ExtResource("117_55wfc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("118_b4atc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("119_2cnhg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("120_kvlho")
+}, {
+"duration": 1.0,
+"texture": ExtResource("121_r0t1g")
+}],
+"loop": true,
+"name": &"confused_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("122_w5ftd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("123_xgrix")
+}, {
+"duration": 1.0,
+"texture": ExtResource("124_xiy0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("125_41gy5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("126_6maqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("127_gxpap")
+}],
+"loop": true,
+"name": &"confused_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("95_owyou")
+}, {
+"duration": 1.0,
+"texture": ExtResource("128_lf6rs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("129_d2aqy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("130_n8gkd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("131_57atu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("132_wkojf")
+}],
+"loop": true,
+"name": &"excited_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("133_td2fu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("134_2nvld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("135_xp36v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("136_px306")
+}, {
+"duration": 1.0,
+"texture": ExtResource("137_ipv16")
+}, {
+"duration": 1.0,
+"texture": ExtResource("138_hgwns")
+}, {
+"duration": 1.0,
+"texture": ExtResource("139_ficrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("140_wivj1")
+}],
+"loop": true,
+"name": &"excited_sprint",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("141_j450d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("142_cc362")
+}, {
+"duration": 1.0,
+"texture": ExtResource("143_q7wqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("144_04bba")
+}, {
+"duration": 1.0,
+"texture": ExtResource("145_2hhy3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("146_hpqiv")
+}],
+"loop": true,
+"name": &"excited_talk",
+"speed": 6.0
+}]
+
+[sub_resource type="EventAsset" id="EventAsset_cuiny"]
+is_3d = true
+min_distance = 1.0
+max_distance = 20.0
+path = "event:/PT3/Lo8/Sc2/FootstepsSlippers"
+guid = "{5b3614ce-bd9f-4fa8-95a0-fcb245156aaf}"
+name = "FootstepsSlippers"
+
+[sub_resource type="Animation" id="Animation_6uasy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:strength")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [2.0]
+}
+
+[sub_resource type="Animation" id="Animation_xu24k"]
+resource_name = "swing"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:strength")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [2.0, 0.5, 2.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n2ddy"]
+_data = {
+"RESET": SubResource("Animation_6uasy"),
+"swing": SubResource("Animation_xu24k")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nx5aw"]
+shader = ExtResource("188_nonhv")
+shader_parameter/strength = 0.0
+shader_parameter/glitch = 0.015
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pbrm0"]
+shader = ExtResource("192_ary5w")
+shader_parameter/inner_radius = 0.2
+shader_parameter/outer_radius = 1.25
+shader_parameter/opacity = 0.75
+
+[node name="Root" type="Node3D"]
+script = ExtResource("1_yi7kb")
+fade_in_duration = 0.0
+fade_out_duration = 0.0
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_vhpy2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_e2ap1")
+}
+script = ExtResource("4_nfs2y")
+
+[node name="Characters" type="Node3D" parent="."]
+
+[node name="MarkBorja" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/MarkBorja"]
+script = ExtResource("8_iufva")
+alias = "MarkBorja"
+
+[node name="CathyPortillo" type="Node3D" parent="Characters"]
+
+[node name="State" type="Node" parent="Characters/CathyPortillo"]
+script = ExtResource("8_iufva")
+alias = "CathyPortillo"
+
+[node name="Audio" type="Node3D" parent="."]
+
+[node name="StudioBankLoader" type="StudioBankLoader" parent="Audio"]
+preload_sample_data = true
+num_banks = 1
+bank_0 = SubResource("BankAsset_xts8i")
+
+[node name="LeavesShuffle" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_eyctn")
+
+[node name="PopoOutside" type="StudioEventEmitter2D" parent="Audio"]
+play_event = 1
+event = SubResource("EventAsset_lodnw")
+
+[node name="Static" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("4_hfy5j")
+volume_db = -80.0
+pitch_scale = 0.05
+autoplay = true
+bus = &"SFX"
+script = ExtResource("5_r7bmu")
+
+[node name="Skits" type="Node3D" parent="."]
+
+[node name="Cliffside" type="Node3D" parent="Skits"]
+visible = false
+script = ExtResource("9_td1j4")
+id = "Cliffside"
+entrypoint = "lo.8.2.Cliffside"
+free_on_finish = true
+
+[node name="AnimationPlayer" type="Node" parent="Skits/Cliffside"]
+script = ExtResource("11_a44xg")
+reference = NodePath("../../../AnimationPlayer")
+
+[node name="World" type="Node3D" parent="Skits/Cliffside"]
+
+[node name="SectionScroller" type="Node3D" parent="Skits/Cliffside/World"]
+script = ExtResource("15_w0tpd")
+enabled = true
+speed = 2.5
+reverse = true
+default_sections = Array[PackedScene]([ExtResource("6_l6lg4")])
+
+[node name="+CommandHandler" type="Node" parent="Skits/Cliffside/World/SectionScroller"]
+script = ExtResource("18_ww5hd")
+
+[node name="Lighting" type="Node3D" parent="Skits/Cliffside/World"]
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="Skits/Cliffside/World/Lighting"]
+transform = Transform3D(-0.965926, -0.12941, -0.224144, 0, -0.866025, 0.5, -0.258819, 0.482963, 0.836516, 0, 1.86, 1.96)
+light_color = Color(0.72549, 0.760784, 1, 1)
+light_energy = 0.09
+shadow_enabled = true
+shadow_bias = 0.08
+
+[node name="GodRays" type="Node3D" parent="Skits/Cliffside/World/Lighting/DirectionalLight"]
+script = ExtResource("204_5hn0g")
+exposure = 1.5
+light_size = 0.6
+
+[node name="Cameras" type="Node3D" parent="Skits/Cliffside"]
+
+[node name="CamMain" type="Camera3D" parent="Skits/Cliffside/Cameras"]
+transform = Transform3D(-0.996195, 0, 0.0871556, 0, 1, 0, -0.0871556, 0, -0.996195, -3.31071, 0.641, 1.13098)
+attributes = SubResource("CameraAttributesPractical_jvp5p")
+current = true
+fov = 50.0
+script = ExtResource("29_7vtuu")
+wiggle_offset = Vector2(0.012, 0.012)
+wiggle_speed = 1.8
+
+[node name="Characters" type="Node3D" parent="Skits/Cliffside"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/Cliffside/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/Cliffside/Characters/MarkBorja"]
+script = ExtResource("11_a44xg")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Main" type="Node3D" parent="Skits/Cliffside/Characters/MarkBorja"]
+transform = Transform3D(-1, 0, -8.66252e-07, 0, 1, 0, 8.66252e-07, 0, -1, -2.235, 0.0130128, 4.119)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/Cliffside/Characters/MarkBorja/Main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.439984, 0, 4.76837e-07)
+mesh = SubResource("ArrayMesh_of5cu")
+skeleton = NodePath("../..")
+script = ExtResource("34_13gpc")
+texture_frames = SubResource("SpriteFrames_gy138")
+sync_all = true
+animation = "scared_walk"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+flip_h = true
+debug_add_anim_str = "(scared/scared=d/panic)_(walk)"
+
+[node name="SpriteController" type="Node" parent="Skits/Cliffside/Characters/MarkBorja/Main/Sprite"]
+script = ExtResource("80_pya2s")
+state_container_alias = "MarkBorja"
+fallback_standalone_anim = "scared"
+fallback_idle_talk_anim = "scared"
+standalone_anims = Array[String](["panic_walk", "scared", "scared_walk"])
+idle_talk_anims = Array[String](["dazed", "scared"])
+
+[node name="SbPivot" type="Marker3D" parent="Skits/Cliffside/Characters/MarkBorja/Main/Sprite"]
+transform = Transform3D(-1, 0, 2.14569e-07, 0, 1, 0, -2.14569e-07, 0, -1, 0.280016, 1.03, -9.53674e-07)
+script = ExtResource("81_to7js")
+alias = "MarkBorja"
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Skits/Cliffside/Characters/MarkBorja/Main/Sprite"]
+play_event = 1
+event = SubResource("EventAsset_w0ini")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287174, 0, -9.53674e-07)
+
+[node name="Flashback" type="Node2D" parent="Skits/Cliffside"]
+
+[node name="Cathy" type="Sprite2D" parent="Skits/Cliffside/Flashback"]
+visible = false
+position = Vector2(640, 360)
+scale = Vector2(0.668, 0.668)
+texture = ExtResource("110_8mixt")
+
+[node name="VisibilityController" type="Node" parent="Skits/Cliffside/Flashback/Cathy"]
+script = ExtResource("188_47kbb")
+visible_on_shots = Array[String](["flashback_cathy"])
+
+[node name="Mark" type="Sprite2D" parent="Skits/Cliffside/Flashback"]
+visible = false
+position = Vector2(640, 360)
+scale = Vector2(0.668, 0.668)
+texture = ExtResource("112_14jjx")
+
+[node name="VisibilityController" type="Node" parent="Skits/Cliffside/Flashback/Mark"]
+script = ExtResource("188_47kbb")
+visible_on_shots = Array[String](["flashback_mark"])
+
+[node name="WaitingShed" type="Node3D" parent="Skits"]
+script = ExtResource("9_td1j4")
+id = "WaitingShed"
+entrypoint = "lo.8.2.WaitingShed"
+free_on_finish = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Skits/WaitingShed"]
+libraries = {
+"": SubResource("AnimationLibrary_s2oyv")
+}
+script = ExtResource("4_nfs2y")
+
+[node name="World" type="Node3D" parent="Skits/WaitingShed"]
+
+[node name="SectionEnd" parent="Skits/WaitingShed/World" instance=ExtResource("442_4l24f")]
+
+[node name="Lighting" type="Node3D" parent="Skits/WaitingShed/World"]
+
+[node name="DirectionalLight" type="DirectionalLight3D" parent="Skits/WaitingShed/World/Lighting"]
+transform = Transform3D(-0.965926, -0.12941, -0.224144, 0, -0.866025, 0.5, -0.258819, 0.482963, 0.836516, 0, 1.86, 1.96)
+light_color = Color(0.72549, 0.760784, 1, 1)
+light_energy = 0.09
+shadow_enabled = true
+shadow_bias = 0.08
+
+[node name="GodRays" type="Node3D" parent="Skits/WaitingShed/World/Lighting/DirectionalLight"]
+script = ExtResource("204_5hn0g")
+exposure = 1.5
+light_size = 0.6
+
+[node name="Cameras" type="Node3D" parent="Skits/WaitingShed"]
+
+[node name="CamMain" type="Camera3D" parent="Skits/WaitingShed/Cameras"]
+transform = Transform3D(-0.996195, 0, 0.0871556, 0, 1, 0, -0.0871556, 0, -0.996195, -3.31071, 0.641, 1.13098)
+attributes = SubResource("CameraAttributesPractical_jvp5p")
+current = true
+fov = 50.0
+script = ExtResource("29_7vtuu")
+wiggle_offset = Vector2(0.012, 0.012)
+wiggle_speed = 1.5
+
+[node name="CamMark" type="Camera3D" parent="Skits/WaitingShed/Cameras"]
+transform = Transform3D(-1, 0, -1.50996e-07, 0, 1, 0, 1.50996e-07, 0, -1, -3.481, 0.525, 1.979)
+attributes = SubResource("CameraAttributesPractical_5vbp1")
+fov = 50.0
+script = ExtResource("29_7vtuu")
+wiggle_offset = Vector2(0.008, 0.008)
+wiggle_speed = 1.5
+
+[node name="CamCathy" type="Camera3D" parent="Skits/WaitingShed/Cameras"]
+transform = Transform3D(1, 0, 2.38419e-07, 0, 1, 0, -2.38419e-07, 0, 1, -3.31965, 0.607582, -1.58943)
+attributes = SubResource("CameraAttributesPractical_b3hk7")
+fov = 50.0
+script = ExtResource("29_7vtuu")
+wiggle_offset = Vector2(0.008, 0.008)
+wiggle_speed = 1.5
+
+[node name="Characters" type="Node3D" parent="Skits/WaitingShed"]
+
+[node name="MarkBorja" type="Node3D" parent="Skits/WaitingShed/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/WaitingShed/Characters/MarkBorja"]
+script = ExtResource("11_a44xg")
+reference = NodePath("../../../../../Characters/MarkBorja/State")
+
+[node name="Main" type="Node3D" parent="Skits/WaitingShed/Characters/MarkBorja"]
+transform = Transform3D(-1, 0, -8.66252e-07, 0, 1, 0, 8.66252e-07, 0, -1, -1.85859, 0.0130128, 4.119)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/WaitingShed/Characters/MarkBorja/Main"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.439984, 0, 4.76837e-07)
+mesh = SubResource("ArrayMesh_cgr6u")
+skeleton = NodePath("")
+script = ExtResource("34_13gpc")
+texture_frames = SubResource("SpriteFrames_gy138")
+sync_all = true
+animation = "panic_walk"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+flip_h = true
+
+[node name="SpriteController" type="Node" parent="Skits/WaitingShed/Characters/MarkBorja/Main/Sprite"]
+script = ExtResource("80_pya2s")
+state_container_alias = "MarkBorja"
+fallback_standalone_anim = "scared"
+fallback_idle_talk_anim = "scared"
+standalone_anims = Array[String](["_kneel", "panic_walk", "scared", "scared_walk"])
+idle_talk_anims = Array[String](["dazed", "scared"])
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Skits/WaitingShed/Characters/MarkBorja/Main/Sprite"]
+event = SubResource("EventAsset_w0ini")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.287174, 0, -9.53674e-07)
+
+[node name="SbPivot" type="Marker3D" parent="Skits/WaitingShed/Characters/MarkBorja/Main"]
+transform = Transform3D(-1, 0, 2.14569e-07, 0, 1, 0, -2.14569e-07, 0, -1, 0.820901, 0.716665, 2.86102e-06)
+script = ExtResource("81_to7js")
+alias = "MarkBorja"
+
+[node name="VisibilityController" type="Node" parent="Skits/WaitingShed/Characters/MarkBorja/Main"]
+script = ExtResource("188_47kbb")
+visible_on_shots = Array[String](["CamMain", "CamMark"])
+
+[node name="SbPivotCathy" type="Marker3D" parent="Skits/WaitingShed/Characters/MarkBorja/Main"]
+transform = Transform3D(-1, 0, 2.14569e-07, 0, 1, 0, -2.14569e-07, 0, -1, 0.45232, -0.0347166, 2.85322)
+script = ExtResource("81_to7js")
+alias = "CathyPortillo"
+force_show = true
+
+[node name="CathyPortillo" type="Node3D" parent="Skits/WaitingShed/Characters"]
+
+[node name="StateRef" type="Node" parent="Skits/WaitingShed/Characters/CathyPortillo"]
+script = ExtResource("11_a44xg")
+reference = NodePath("../../../../../Characters/CathyPortillo/State")
+
+[node name="Main" type="Node3D" parent="Skits/WaitingShed/Characters/CathyPortillo"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.15284, 0.02, -4.1561)
+
+[node name="Sprite" type="MeshInstance3D" parent="Skits/WaitingShed/Characters/CathyPortillo/Main"]
+mesh = SubResource("ArrayMesh_s73kf")
+skeleton = NodePath("")
+script = ExtResource("34_13gpc")
+texture_frames = SubResource("SpriteFrames_248ee")
+sync_all = true
+animation = "excited_idle"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+debug_add_anim_str = "(concerned/excited)_(sprint)"
+debug_add_anim_fps = 7.0
+
+[node name="SpriteController" type="Node" parent="Skits/WaitingShed/Characters/CathyPortillo/Main/Sprite"]
+script = ExtResource("80_pya2s")
+state_container_alias = "CathyPortillo"
+fallback_idle_talk_anim = "concerned"
+standalone_anims = Array[String](["concerned_sprint", "excited_sprint"])
+idle_talk_anims = Array[String](["concerned", "confused", "excited"])
+
+[node name="Footsteps" type="StudioEventEmitter3D" parent="Skits/WaitingShed/Characters/CathyPortillo/Main/Sprite"]
+event = SubResource("EventAsset_cuiny")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.444913, 0, 0)
+
+[node name="SbPivot" type="Marker3D" parent="Skits/WaitingShed/Characters/CathyPortillo/Main"]
+transform = Transform3D(-1, 0, 2.14569e-07, 0, 1, 0, -2.14569e-07, 0, -1, 0.452322, 0.969564, -9.53674e-07)
+script = ExtResource("81_to7js")
+alias = "CathyPortillo"
+force_show = true
+
+[node name="VisibilityController" type="Node" parent="Skits/WaitingShed/Characters/CathyPortillo/Main"]
+script = ExtResource("188_47kbb")
+visible_on_shots = Array[String](["CamCathy"])
+
+[node name="Main" type="Node3D" parent="."]
+
+[node name="Services" type="Node" parent="Main"]
+
+[node name="$SceneManager" type="Node" parent="Main/Services"]
+script = ExtResource("575_6rmbv")
+scene_id = "lo.8.2"
+
+[node name="$SceneState" type="Node" parent="Main/Services"]
+script = ExtResource("8_iufva")
+alias = "scene"
+
+[node name="$DialogueHandler" type="Node" parent="Main/Services"]
+script = ExtResource("577_88xw7")
+
+[node name="$InteractiveAreaHandler" type="Node" parent="Main/Services"]
+script = ExtResource("578_abfgw")
+
+[node name="$PlayerTarget" type="Node3D" parent="Main/Services"]
+script = ExtResource("579_tj8e0")
+
+[node name="$RainController" type="Node" parent="Main/Services"]
+script = ExtResource("173_7mjap")
+
+[node name="ChromaticAberration" parent="Main" instance=ExtResource("190_2uepb")]
+strength = 2.0
+inner_radius = 0.2
+outer_radius = 1.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Main/ChromaticAberration"]
+autoplay = "swing"
+libraries = {
+"": SubResource("AnimationLibrary_n2ddy")
+}
+
+[node name="BackBufferCopy" type="BackBufferCopy" parent="Main"]
+copy_mode = 2
+
+[node name="Glitch" type="TextureRect" parent="Main/BackBufferCopy"]
+material = SubResource("ShaderMaterial_nx5aw")
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 6.9
+anchor_bottom = 4.1
+offset_left = -100.0
+offset_top = -100.0
+offset_right = -100.0
+offset_bottom = -100.0
+mouse_filter = 2
+texture = ExtResource("189_dc8ep")
+expand_mode = 1
+
+[node name="Vignette" parent="Main" instance=ExtResource("582_gxc06")]
+material = SubResource("ShaderMaterial_pbrm0")
+metadata/_edit_lock_ = true
+
+[node name="$ThoughtBubble" parent="Main" instance=ExtResource("583_5chyh")]
+metadata/_edit_lock_ = true

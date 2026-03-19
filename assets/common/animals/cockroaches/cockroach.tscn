@@ -1,0 +1,95 @@
+[gd_scene load_steps=12 format=3 uid="uid://ddhe8t6bch1ag"]
+
+[ext_resource type="Script" path="res://components/Animals/AnimalMovement.gd" id="1_52tkf"]
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="2_j2esi"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/cockroaches/cockroaches_cockroach_on_wall/01.tres" id="3_jy5v2"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="4_j2335"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/cockroaches/cockroaches_cockroach_on_wall/02.tres" id="5_bg7gy"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/cockroaches/cockroaches_cockroach_on_wall/03.tres" id="6_im8r3"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/cockroaches/cockroaches_cockroach_on_wall/04.tres" id="7_ebbgs"]
+[ext_resource type="Texture2D" path="res://assets/common/animals/cockroaches/cockroaches_cockroach_on_wall/05.tres" id="8_dc73o"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rtw2k"]
+render_priority = 0
+shader = ExtResource("2_j2esi")
+shader_parameter/scale = Vector3(1.215, 0.81, 1)
+shader_parameter/offset = Vector3(-0.627102, -0.380497, 0)
+shader_parameter/flip_h = false
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("3_jy5v2")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_g0of2"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00001, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 2, 0, 1, 0, 3, 0),
+"material": SubResource("ShaderMaterial_rtw2k"),
+"name": "None",
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5l06e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jy5v2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_jy5v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_bg7gy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_im8r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ebbgs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dc73o")
+}],
+"loop": true,
+"name": &"move",
+"speed": 6.0
+}]
+
+[node name="Cockroach" type="PathFollow3D"]
+transform = Transform3D(-4.37111e-08, 1, -4.37111e-08, 0, -4.37114e-08, -0.999994, -0.999994, -4.37114e-08, 1.91067e-15, 0, 0, 0)
+
+[node name="Cockroach" type="Node3D" parent="."]
+script = ExtResource("1_52tkf")
+speed = 0.1
+move_animations = Array[String](["move"])
+
+[node name="Sprite" type="MeshInstance3D" parent="Cockroach"]
+transform = Transform3D(-1, 8.74227e-08, 4.37114e-08, -4.37114e-08, 1.91068e-15, -1, -8.74228e-08, -1, 1.91068e-15, 0, 0, 0)
+mesh = SubResource("ArrayMesh_g0of2")
+skeleton = NodePath("../../../..")
+script = ExtResource("4_j2335")
+texture_frames = SubResource("SpriteFrames_5l06e")
+animation = "move"
+alias = "AnimatedPaper3D"
+pixel_size = 0.0081
+offset = Vector3(-77.42, -46.975, 0)

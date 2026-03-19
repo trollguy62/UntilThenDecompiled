@@ -1,0 +1,28 @@
+[gd_scene load_steps=8 format=3 uid="uid://df0mh4mx5y4ew"]
+
+[ext_resource type="Script" path="res://scenes/lis/cafeteria/assets/ceiling_fan/Blade.gd" id="1"]
+[ext_resource type="Material" uid="uid://drp3n6yu3hl3" path="res://scenes/lis/cafeteria/assets/ceiling_fan/Blade.tres" id="2"]
+[ext_resource type="Material" path="res://scenes/lis/cafeteria/assets/ceiling_fan/Downrod.tres" id="3"]
+[ext_resource type="Material" path="res://scenes/lis/cafeteria/assets/ceiling_fan/Motor.tres" id="4"]
+[ext_resource type="ArrayMesh" uid="uid://ctmorn83g454b" path="res://scenes/lis/cafeteria/assets/ceiling_fan/motor.obj" id="5"]
+[ext_resource type="ArrayMesh" uid="uid://k8h24vswf26f" path="res://scenes/lis/cafeteria/assets/ceiling_fan/blade.obj" id="6"]
+[ext_resource type="Texture2D" uid="uid://1g8wb1mxtlej" path="res://scenes/lis/cafeteria/assets/ceiling_fan/downrod.png" id="7"]
+
+[node name="CeilingFan" type="Node3D"]
+
+[node name="Downrod" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.111176, 0)
+material_override = ExtResource("3")
+texture = ExtResource("7")
+
+[node name="Motor" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1.62921e-07, 0, -1, 0, 1, 0, 1, 0, -1.62921e-07, -0.00470543, 0.0405884, 0)
+material_override = ExtResource("4")
+mesh = ExtResource("5")
+
+[node name="Blade" type="MeshInstance3D" parent="Motor"]
+transform = Transform3D(-0.995096, 0, 0.0989158, 0, 1, 0, -0.0989158, 0, -0.995096, 0, 0, 0)
+material_override = ExtResource("2")
+mesh = ExtResource("6")
+script = ExtResource("1")
+speed = -3.0

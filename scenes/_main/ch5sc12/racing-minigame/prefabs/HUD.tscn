@@ -1,0 +1,423 @@
+[gd_scene load_steps=36 format=3 uid="uid://chwvu12crxeao"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch5sc12/racing-minigame/scripts/HUD.gd" id="1"]
+[ext_resource type="FontFile" uid="uid://7gdw5s8e3mk0" path="res://fonts/Pixeled.ttf" id="2"]
+[ext_resource type="FontFile" uid="uid://dcmbptumwbxm5" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/bitmap_font/laps time.txt.fnt" id="2_6c3qf"]
+[ext_resource type="Texture2D" uid="uid://bkgdspncem7y5" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/fuel_meter/arrow.png" id="3"]
+[ext_resource type="Texture2D" uid="uid://cidanqvn3rd7r" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/fuel_meter/fuel_meter.png" id="4"]
+[ext_resource type="Texture2D" uid="uid://t8wyxvknkka3" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/1.png" id="5"]
+[ext_resource type="Script" path="res://scenes/_main/ch5sc12/racing-minigame/scripts/Ranking.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://ccxqfq7xpjnga" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/10.png" id="8"]
+[ext_resource type="Texture2D" uid="uid://cfmw57mudoisl" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/9.png" id="9"]
+[ext_resource type="Texture2D" uid="uid://clowvnsu2je0v" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/6.png" id="10"]
+[ext_resource type="Texture2D" uid="uid://cdhxl60hxxw6h" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/8.png" id="11"]
+[ext_resource type="Texture2D" uid="uid://cvkf3dkduwgc1" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/7.png" id="12"]
+[ext_resource type="Texture2D" uid="uid://buf7n5hpdh7l1" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/5.png" id="13"]
+[ext_resource type="Texture2D" uid="uid://5vjjw0fdit0g" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/2.png" id="14"]
+[ext_resource type="Texture2D" uid="uid://duqxk0omjehvq" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/3.png" id="15"]
+[ext_resource type="Texture2D" uid="uid://crwscn1yii5qk" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/11.png" id="16"]
+[ext_resource type="Texture2D" uid="uid://bq5vah0xdxota" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/12.png" id="17"]
+[ext_resource type="Texture2D" uid="uid://b832xcr5duhtv" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/ranking/4.png" id="18"]
+[ext_resource type="FontFile" uid="uid://bubeybfhebpl6" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/bitmap_font/fuelmeter_font.txt.fnt" id="19_dljpl"]
+[ext_resource type="Texture2D" uid="uid://dl4qgthl78x11" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/stopsign/lights_base.png" id="20"]
+[ext_resource type="Texture2D" uid="uid://b0xft65rbogf5" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/stopsign/lights_stop.png" id="21"]
+[ext_resource type="Texture2D" uid="uid://d3lh6ggq85xmt" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/stopsign/lights_amber.png" id="22"]
+[ext_resource type="Texture2D" uid="uid://bjjfgmomjccss" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/stopsign/lights_go.png" id="23"]
+[ext_resource type="Texture2D" uid="uid://cic6q1unq41ho" path="res://scenes/_main/ch5sc12/racing-minigame/assets/UI/fuel_meter/h.png" id="25"]
+
+[sub_resource type="Animation" id="20"]
+resource_name = "Countdown"
+length = 6.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Countdown/light_base:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 5.3, 6.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(400, 0), Vector2(0, 0), Vector2(0, 0), Vector2(450, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Countdown/light_base/red:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Countdown/light_base/yellow:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.8, 2),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Countdown/light_base/green:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 2.8, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="18"]
+resource_name = "RESET"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Countdown/light_base/red:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Countdown/light_base/yellow:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Countdown/light_base/green:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="19"]
+resource_name = "wrong_way"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("WrongWay:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 0.949856)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qjcv1"]
+_data = {
+"Countdown": SubResource("20"),
+"RESET": SubResource("18"),
+"wrong_way": SubResource("19")
+}
+
+[sub_resource type="FontVariation" id="FontVariation_mbr4t"]
+base_font = ExtResource("2_6c3qf")
+
+[sub_resource type="FontVariation" id="FontVariation_gkdi2"]
+base_font = ExtResource("2_6c3qf")
+
+[sub_resource type="FontVariation" id="FontVariation_p3ixd"]
+base_font = ExtResource("2_6c3qf")
+
+[sub_resource type="FontVariation" id="FontVariation_n0bsm"]
+base_font = ExtResource("2")
+
+[sub_resource type="FontVariation" id="FontVariation_fbq7j"]
+base_font = ExtResource("2")
+
+[sub_resource type="FontVariation" id="FontVariation_63tbb"]
+base_font = ExtResource("2")
+
+[sub_resource type="FontVariation" id="FontVariation_uut0e"]
+base_font = ExtResource("19_dljpl")
+
+[node name="HUD" type="Control"]
+texture_filter = 1
+layout_mode = 3
+anchors_preset = 0
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 1273.0
+offset_bottom = 351.0
+script = ExtResource("1")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qjcv1")
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 10.0
+offset_right = 116.0
+offset_bottom = 113.0
+scale = Vector2(1.5, 1.5)
+theme_override_constants/separation = -15
+
+[node name="Laps" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_mbr4t")
+theme_override_font_sizes/font_size = 32
+text = "LAPS :  01/03"
+vertical_alignment = 1
+
+[node name="LapTime" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_gkdi2")
+text = "LAP TIME"
+vertical_alignment = 1
+
+[node name="Time" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = SubResource("FontVariation_p3ixd")
+text = "0 ' 00 \" 000"
+vertical_alignment = 1
+
+[node name="Ranking" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_top = 10.0
+offset_right = -14.0
+offset_bottom = 34.0
+scale = Vector2(2, 2)
+pivot_offset = Vector2(41, 0)
+texture = ExtResource("5")
+stretch_mode = 2
+script = ExtResource("7")
+ranking_textures = Array[Texture]([ExtResource("5"), ExtResource("14"), ExtResource("15"), ExtResource("18"), ExtResource("13"), ExtResource("10"), ExtResource("12"), ExtResource("11"), ExtResource("9"), ExtResource("8"), ExtResource("16"), ExtResource("17")])
+
+[node name="WrongWay" type="Control" parent="."]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -56.0
+offset_right = 234.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="WrongWay"]
+visible = false
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("FontVariation_n0bsm")
+theme_override_font_sizes/font_size = 40
+text = "wrong way!"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Timeout" type="Control" parent="."]
+anchors_preset = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -56.0
+offset_right = 234.0
+offset_bottom = 56.0
+
+[node name="Label" type="Label" parent="Timeout"]
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -234.0
+offset_top = -84.0
+offset_right = 234.0
+offset_bottom = 84.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(1, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("FontVariation_fbq7j")
+theme_override_font_sizes/font_size = 60
+text = "OUT"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Finish" type="Control" parent="."]
+anchors_preset = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = -3.0
+offset_bottom = -2.0
+
+[node name="Label" type="Label" parent="Finish"]
+visible = false
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -633.0
+offset_top = -172.0
+offset_right = 633.0
+offset_bottom = 172.0
+theme_override_colors/font_color = Color(0.976471, 0.941176, 1, 1)
+theme_override_colors/font_outline_color = Color(0.282353, 0.615686, 0.254902, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = SubResource("FontVariation_63tbb")
+theme_override_font_sizes/font_size = 70
+text = "FINISH!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tachometer" type="TextureRect" parent="."]
+layout_mode = 0
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -174.0
+offset_top = -79.0
+scale = Vector2(1.2, 1.2)
+pivot_offset = Vector2(174, 79)
+texture = ExtResource("4")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="ArrowMeter" type="TextureRect" parent="Tachometer"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -3.126
+offset_top = -69.0
+offset_right = 1.874
+offset_bottom = -3.0
+pivot_offset = Vector2(2.5, 66)
+texture = ExtResource("3")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="KmLabel" type="Label" parent="Tachometer"]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 41.0
+offset_right = 96.0
+offset_bottom = 73.0
+theme_override_colors/font_color = Color(1, 1, 0, 1)
+theme_override_fonts/font = SubResource("FontVariation_uut0e")
+text = "1"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="km" type="TextureRect" parent="Tachometer"]
+layout_mode = 0
+offset_left = 97.0
+offset_top = 55.0
+offset_right = 117.0
+offset_bottom = 61.0
+texture = ExtResource("25")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Countdown" type="Control" parent="."]
+anchors_preset = 0
+anchor_left = 1.0
+anchor_top = 0.232
+anchor_right = 1.0
+anchor_bottom = 0.232
+offset_left = -300.0
+offset_top = -16.5
+offset_right = 1.0
+offset_bottom = 16.5
+
+[node name="light_base" type="TextureRect" parent="Countdown"]
+layout_mode = 0
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_left = 450.0
+offset_top = -16.5
+offset_right = 751.005
+offset_bottom = 16.5
+texture = ExtResource("20")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="red" type="TextureRect" parent="Countdown/light_base"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 57.0
+offset_bottom = 32.0
+texture = ExtResource("21")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="yellow" type="TextureRect" parent="Countdown/light_base"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 59.0
+offset_top = 2.0
+offset_right = 169.0
+offset_bottom = 32.0
+texture = ExtResource("22")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true
+
+[node name="green" type="TextureRect" parent="Countdown/light_base"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 171.313
+offset_top = 2.0
+offset_right = 226.313
+offset_bottom = 32.0
+texture = ExtResource("23")
+expand_mode = 1
+stretch_mode = 5
+metadata/_edit_lock_ = true

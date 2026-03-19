@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://d1sa1gxdo85x6"]
+
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/AirconFlap.gd" id="1"]
+[ext_resource type="Material" uid="uid://dr6438hlswlw2" path="res://scenes/_main/ch1sc8/assets/pharmacy/materials/Aircon.tres" id="2"]
+[ext_resource type="ArrayMesh" uid="uid://cbu1e2amsajoy" path="res://scenes/_main/ch1sc8/assets/pharmacy/aircon.obj" id="3"]
+[ext_resource type="ArrayMesh" uid="uid://ufsx7kn17hbx" path="res://scenes/_main/ch1sc8/assets/pharmacy/aircon_flap.obj" id="4"]
+
+[node name="Aircon" type="MeshInstance"]
+material_override = ExtResource("2")
+use_in_baked_light = true
+mesh = ExtResource("3")
+surface_material_override/0 = null
+
+[node name="Flap" type="MeshInstance" parent="."]
+transform = Transform3D(0.819155, -0.573572, 0, 0.573572, 0.819155, 0, 0, 0, 1, 0.0435592, 0.0178312, 0.46)
+material_override = ExtResource("2")
+use_in_baked_light = true
+mesh = ExtResource("4")
+surface_material_override/0 = null
+script = ExtResource("1")
+speed = 0.5

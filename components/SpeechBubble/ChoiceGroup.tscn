@@ -1,0 +1,264 @@
+[gd_scene load_steps=18 format=3 uid="uid://c0u05sc0gcovs"]
+
+[ext_resource type="Texture2D" uid="uid://tljp3e67878n" path="res://addons/controller_icons/assets/key/3.png" id="1"]
+[ext_resource type="StyleBox" uid="uid://c3pnmrje2m6jm" path="res://components/SpeechBubble/assets/StyleBoxBubble.tres" id="2_u5yf3"]
+[ext_resource type="Script" path="res://components/SpeechBubble/ChoiceGroup.gd" id="3"]
+[ext_resource type="PackedScene" uid="uid://udsiuca4u26i" path="res://components/SpeechBubble/DummyBubble.tscn" id="4"]
+[ext_resource type="PackedScene" uid="uid://cvd6iir5bhwqf" path="res://components/SpeechBubble/Label.tscn" id="4_lyh7x"]
+[ext_resource type="AudioStream" uid="uid://dbmwi5hl82wae" path="res://ui/sfx/hover.wav" id="5"]
+[ext_resource type="Script" path="res://ui/components/Clickable.gd" id="6"]
+[ext_resource type="Script" path="res://components/SpeechBubble/DummyBubbleManager.gd" id="7"]
+[ext_resource type="Texture2D" uid="uid://cyvt6g1pkcqfo" path="res://addons/controller_icons/assets/key/1.png" id="8"]
+[ext_resource type="Script" path="res://addons/controller_icons/objects/TextureRect.gd" id="9"]
+[ext_resource type="Texture2D" uid="uid://cp0j8cw8o6wvu" path="res://addons/controller_icons/assets/key/2.png" id="10"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufkif"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nulv8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_u1skq"]
+
+[sub_resource type="Shader" id="7"]
+code = "shader_type canvas_item;
+
+uniform float value : hint_range(0, 1) = 1.0;
+
+float circle(float r, vec2 uv) {
+	return smoothstep(r, r - 0.02, length(uv - vec2(0.5)));
+}
+
+float atan2(vec2 v) {
+    float x = v.x == 0.0 ? sign(v.y)*PI/2. : atan(v.y, v.x);
+	return x > 0. ? x : 2.*PI + x;
+}
+
+void fragment() {
+	float c = circle(0.5, UV);
+	c *= 1.0 - circle(0.35, UV);
+	float t = mod(-atan2(UV - vec2(0.5)) - (PI / 2.), 2.*PI) / (2.*PI);
+	t = step(t, value);
+	c *= t;
+	COLOR = vec4(c);
+}"
+
+[sub_resource type="ShaderMaterial" id="8"]
+shader = SubResource("7")
+shader_parameter/value = 1.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bduli"]
+
+[node name="ChoiceGroup" type="PanelContainer"]
+light_mask = 65
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ufkif")
+script = ExtResource("3")
+
+[node name="VBox" type="VBoxContainer" parent="."]
+light_mask = 65
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 8
+mouse_filter = 2
+
+[node name="ContainerC" type="PanelContainer" parent="VBox"]
+light_mask = 65
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nulv8")
+
+[node name="Bubble" type="PanelContainer" parent="VBox/ContainerC"]
+light_mask = 65
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_u5yf3")
+script = ExtResource("6")
+
+[node name="Label" parent="VBox/ContainerC/Bubble" instance=ExtResource("4_lyh7x")]
+layout_mode = 2
+
+[node name="KeyContainer" type="MarginContainer" parent="VBox/ContainerC"]
+light_mask = 65
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+mouse_filter = 2
+theme_override_constants/margin_bottom = -24
+script = ExtResource("6")
+
+[node name="ControllerTextureRect" type="TextureRect" parent="VBox/ContainerC/KeyContainer"]
+texture_filter = 2
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("10")
+expand_mode = 1
+script = ExtResource("9")
+path = "choice_2"
+prioritize_controller = true
+
+[node name="SpacerV" type="PanelContainer" parent="VBox"]
+modulate = Color(1, 1, 1, 0)
+light_mask = 65
+custom_minimum_size = Vector2(0, 28)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_u1skq")
+
+[node name="HBox" type="HBoxContainer" parent="VBox"]
+light_mask = 65
+layout_mode = 2
+mouse_filter = 2
+
+[node name="ContainerA" type="PanelContainer" parent="VBox/HBox"]
+light_mask = 65
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nulv8")
+
+[node name="Bubble" type="PanelContainer" parent="VBox/HBox/ContainerA"]
+light_mask = 65
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 8
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_u5yf3")
+script = ExtResource("6")
+
+[node name="Label" parent="VBox/HBox/ContainerA/Bubble" instance=ExtResource("4_lyh7x")]
+layout_mode = 2
+
+[node name="KeyContainer" type="MarginContainer" parent="VBox/HBox/ContainerA"]
+light_mask = 65
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/margin_right = -24
+script = ExtResource("6")
+
+[node name="ControllerTextureRect" type="TextureRect" parent="VBox/HBox/ContainerA/KeyContainer"]
+texture_filter = 2
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("8")
+expand_mode = 1
+script = ExtResource("9")
+path = "choice_1"
+prioritize_controller = true
+
+[node name="SpacerH" type="PanelContainer" parent="VBox/HBox"]
+light_mask = 65
+custom_minimum_size = Vector2(110, 0)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_ufkif")
+
+[node name="TimerDisplay" type="Panel" parent="VBox/HBox/SpacerH"]
+material = SubResource("8")
+custom_minimum_size = Vector2(50, 50)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="ContainerB" type="PanelContainer" parent="VBox/HBox"]
+light_mask = 65
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_nulv8")
+
+[node name="Bubble" type="PanelContainer" parent="VBox/HBox/ContainerB"]
+light_mask = 65
+use_parent_material = true
+layout_mode = 2
+size_flags_horizontal = 0
+mouse_filter = 2
+theme_override_styles/panel = ExtResource("2_u5yf3")
+script = ExtResource("6")
+
+[node name="Label" parent="VBox/HBox/ContainerB/Bubble" instance=ExtResource("4_lyh7x")]
+layout_mode = 2
+
+[node name="KeyContainer" type="MarginContainer" parent="VBox/HBox/ContainerB"]
+light_mask = 65
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_constants/margin_left = -24
+script = ExtResource("6")
+
+[node name="ControllerTextureRect" type="TextureRect" parent="VBox/HBox/ContainerB/KeyContainer"]
+texture_filter = 2
+custom_minimum_size = Vector2(40, 40)
+layout_mode = 2
+texture = ExtResource("1")
+expand_mode = 1
+script = ExtResource("9")
+path = "choice_3"
+prioritize_controller = true
+
+[node name="SpacerBottom" type="PanelContainer" parent="VBox"]
+light_mask = 65
+custom_minimum_size = Vector2(0, 48)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bduli")
+
+[node name="Control" type="Control" parent="."]
+light_mask = 65
+layout_mode = 2
+mouse_filter = 2
+
+[node name="DummyBubbleManager" type="Control" parent="Control"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+script = ExtResource("7")
+
+[node name="DummyBubble" parent="Control/DummyBubbleManager" instance=ExtResource("4")]
+use_parent_material = false
+layout_mode = 0
+text_allowance = 1
+
+[node name="DummyBubble2" parent="Control/DummyBubbleManager" instance=ExtResource("4")]
+use_parent_material = false
+layout_mode = 0
+text_allowance = 3
+
+[node name="DummyBubble3" parent="Control/DummyBubbleManager" instance=ExtResource("4")]
+use_parent_material = false
+layout_mode = 0
+text_allowance = 5
+
+[node name="DummyBubble4" parent="Control/DummyBubbleManager" instance=ExtResource("4")]
+use_parent_material = false
+layout_mode = 0
+text_allowance = 7
+
+[node name="DummyBubble5" parent="Control/DummyBubbleManager" instance=ExtResource("4")]
+use_parent_material = false
+layout_mode = 0
+text_allowance = 10
+
+[node name="DummyBubble6" parent="Control/DummyBubbleManager" instance=ExtResource("4")]
+use_parent_material = false
+layout_mode = 0
+text_allowance = 15
+
+[node name="BaseDummyBubble" parent="Control/DummyBubbleManager" instance=ExtResource("4")]
+use_parent_material = false
+layout_mode = 0
+text_allowance = 20
+
+[node name="SoundHover" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5")
+bus = &"UI"

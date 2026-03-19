@@ -1,0 +1,533 @@
+[gd_scene load_steps=99 format=3 uid="uid://csul5lwopn5im"]
+
+[ext_resource type="Shader" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gdshader" id="1"]
+[ext_resource type="Script" path="res://components/AnimatedPaper3D/AnimatedPaper3D.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://cjgl3kttmqcb3" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_idle/01.tres" id="3"]
+[ext_resource type="Texture2D" uid="uid://swavpa33ypux" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_idle/05.tres" id="4"]
+[ext_resource type="Texture2D" uid="uid://bl5vw68q1oo0g" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_idle/02.tres" id="5"]
+[ext_resource type="Texture2D" uid="uid://dbrdmqlug2ltq" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_talk/02.tres" id="6"]
+[ext_resource type="Texture2D" uid="uid://02go1y8g162m" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_talk/05.tres" id="7"]
+[ext_resource type="Texture2D" uid="uid://daifnepc1uqhc" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_talk/01.tres" id="8"]
+[ext_resource type="Texture2D" uid="uid://diof440i6ftns" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_idle/05.tres" id="10"]
+[ext_resource type="Texture2D" uid="uid://j1xlwmx1p4s7" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_idle/04.tres" id="11"]
+[ext_resource type="Script" path="res://scenes/_main/ch1sc8/scripts/CharacterSpriteController.gd" id="12"]
+[ext_resource type="Texture2D" uid="uid://cq2shqq47ht8c" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_talk/03.tres" id="14"]
+[ext_resource type="Texture2D" uid="uid://damptqcboimsg" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_idle/03.tres" id="15"]
+[ext_resource type="Texture2D" uid="uid://djvqh3xxhelhi" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_idle/06.tres" id="17"]
+[ext_resource type="Texture2D" uid="uid://dcjroafvhc0ng" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^rf_default_idle/02.tres" id="17_lopem"]
+[ext_resource type="Texture2D" uid="uid://1g2m7s0jmmvq" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_talk/01.tres" id="18"]
+[ext_resource type="Texture2D" uid="uid://dhl2ru30bd75n" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^rf_default_idle/03.tres" id="18_sdh3t"]
+[ext_resource type="Texture2D" uid="uid://cdssbgkjcrlk6" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_talk/01.tres" id="19"]
+[ext_resource type="Texture2D" uid="uid://cep2p41foli0n" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^rf_default_idle/04.tres" id="19_tsxxx"]
+[ext_resource type="Texture2D" uid="uid://bttr7pko1rgu4" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_talk/05.tres" id="20"]
+[ext_resource type="Texture2D" uid="uid://diamagle8m5tp" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^rf_default_idle/05.tres" id="20_s05qf"]
+[ext_resource type="Texture2D" uid="uid://clbup6vrwcup8" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_talk/02.tres" id="21"]
+[ext_resource type="Texture2D" uid="uid://ci3ojqtkfx81t" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^rf_default_idle/06.tres" id="21_r0mv4"]
+[ext_resource type="Texture2D" uid="uid://d2vvnqwy5blif" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_talk/06.tres" id="23"]
+[ext_resource type="Texture2D" uid="uid://hs8soqbfqm6m" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_idle/02.tres" id="23_21omf"]
+[ext_resource type="Texture2D" uid="uid://cuschnxmm1w4t" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_idle/03.tres" id="24_xm6s1"]
+[ext_resource type="Texture2D" uid="uid://dkra0y8r4ntht" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_idle/01.tres" id="25"]
+[ext_resource type="Texture2D" uid="uid://b022e7kxj6lf7" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_idle/04.tres" id="25_umte2"]
+[ext_resource type="Texture2D" uid="uid://djvkxay3b64eq" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_idle/05.tres" id="26_1wt8t"]
+[ext_resource type="Texture2D" uid="uid://bbinmwera0bmk" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_idle/03.tres" id="27"]
+[ext_resource type="Texture2D" uid="uid://0twdec46api6" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_idle/06.tres" id="27_q8i05"]
+[ext_resource type="Texture2D" uid="uid://ci6e3b0ecbdx6" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_idle/03.tres" id="28"]
+[ext_resource type="Texture2D" uid="uid://dewtatrumffns" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_talk/04.tres" id="29"]
+[ext_resource type="Texture2D" uid="uid://lmdjtsjgsjuo" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_talk/02.tres" id="29_41aa5"]
+[ext_resource type="Texture2D" uid="uid://bqkxyylcjwnx3" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_idle/01.tres" id="30"]
+[ext_resource type="Texture2D" uid="uid://tt84ff3hua1r" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_talk/03.tres" id="30_fff2w"]
+[ext_resource type="Texture2D" uid="uid://bntwloyjs5ghd" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^rf_default_idle/01.tres" id="31"]
+[ext_resource type="Texture2D" uid="uid://d2rr1rgo3ckj6" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_talk/04.tres" id="31_4gj5s"]
+[ext_resource type="Texture2D" uid="uid://dnsrt0qad8xxv" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_talk/02.tres" id="32"]
+[ext_resource type="Texture2D" uid="uid://cgud0yeomsop7" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_talk/05.tres" id="32_lj53k"]
+[ext_resource type="Texture2D" uid="uid://c7ceotv5c37oa" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_talk/01.tres" id="33"]
+[ext_resource type="Texture2D" uid="uid://w5utq425s370" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_talk/06.tres" id="33_c37t1"]
+[ext_resource type="Texture2D" uid="uid://bh1axfwbr332g" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_talk/06.tres" id="34"]
+[ext_resource type="Texture2D" uid="uid://dokv1ccdgwwoo" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_idle/02.tres" id="35"]
+[ext_resource type="Texture2D" uid="uid://c7dkvcsdvud5u" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_idle/02.tres" id="35_22pxn"]
+[ext_resource type="Texture2D" uid="uid://ckjblxe512d8p" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_talk/04.tres" id="36"]
+[ext_resource type="Texture2D" uid="uid://cisyrhuvm3dqb" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_idle/03.tres" id="36_2k4v2"]
+[ext_resource type="Texture2D" uid="uid://br6xjeoyv7xt5" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_idle/04.tres" id="37_bhkdf"]
+[ext_resource type="Texture2D" uid="uid://bqv7ycirj5p4a" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_idle/01.tres" id="38"]
+[ext_resource type="Texture2D" uid="uid://bc1wvb3w6bsa6" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_idle/05.tres" id="38_ddjby"]
+[ext_resource type="Texture2D" uid="uid://boe2wettbjdrq" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_talk/06.tres" id="39"]
+[ext_resource type="Texture2D" uid="uid://s0w8xvrr8r1w" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_idle/06.tres" id="39_uubce"]
+[ext_resource type="Texture2D" uid="uid://dm1ejo8krat37" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_talk/01.tres" id="41"]
+[ext_resource type="Texture2D" uid="uid://civcyeol0q46a" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_talk/02.tres" id="41_3xydl"]
+[ext_resource type="Texture2D" uid="uid://orw3j3wejtd3" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_talk/05.tres" id="42"]
+[ext_resource type="Texture2D" uid="uid://cbtleydp3cbcg" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_talk/03.tres" id="42_adndv"]
+[ext_resource type="Texture2D" uid="uid://cvvc5r40wxxy8" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_talk/04.tres" id="43_cracn"]
+[ext_resource type="Texture2D" uid="uid://c1mjlgb6pp4j0" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_idle/04.tres" id="44"]
+[ext_resource type="Texture2D" uid="uid://ct4mb0xsp3oqi" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_talk/05.tres" id="44_hp44m"]
+[ext_resource type="Texture2D" uid="uid://bukqaqq1knwg0" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_talk/03.tres" id="45"]
+[ext_resource type="Texture2D" uid="uid://fpl81nqyfusn" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_talk/06.tres" id="45_rhmw0"]
+[ext_resource type="Texture2D" uid="uid://ti8cm30ccl1p" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_talk/04.tres" id="46"]
+[ext_resource type="Texture2D" uid="uid://bb0a0r3h66h66" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default_talk/03.tres" id="47"]
+[ext_resource type="Texture2D" uid="uid://xiilvwl38v5" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_idle/02.tres" id="47_k663i"]
+[ext_resource type="Texture2D" uid="uid://di8ewqfa0fbqy" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_idle/06.tres" id="48"]
+[ext_resource type="Texture2D" uid="uid://hbhhp2x2fwsy" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_idle/03.tres" id="48_a5oj4"]
+[ext_resource type="Texture2D" uid="uid://b4kq646r34gfa" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_idle/06.tres" id="49"]
+[ext_resource type="Texture2D" uid="uid://pu2qdscc444i" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_idle/04.tres" id="49_uvprx"]
+[ext_resource type="Texture2D" uid="uid://ctsh1nywiyhnd" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^rf_default_talk/01.tres" id="50"]
+[ext_resource type="Texture2D" uid="uid://cf01ds6cya5lc" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_idle/05.tres" id="50_nlngh"]
+[ext_resource type="Texture2D" uid="uid://dfuqjsst8qbd7" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standholdcamera+catears^lf_default_idle/01.tres" id="51"]
+[ext_resource type="Texture2D" uid="uid://pel6edjblfev" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_idle/06.tres" id="51_nntrl"]
+[ext_resource type="Texture2D" uid="uid://c4td0skrapi8p" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_idle/04.tres" id="52"]
+[ext_resource type="Texture2D" uid="uid://c5g5tw8ruwgx1" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_confused_idle/02.tres" id="53"]
+[ext_resource type="Texture2D" uid="uid://cryub0f7vsrf5" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_talk/02.tres" id="53_thcwl"]
+[ext_resource type="Texture2D" uid="uid://fnelc48dg6bo" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_default=r_idle/05.tres" id="54"]
+[ext_resource type="Texture2D" uid="uid://b0l0tl2b83fpy" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_talk/03.tres" id="54_c27nt"]
+[ext_resource type="Texture2D" uid="uid://c6lplnwvk668" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_idle/01.tres" id="55"]
+[ext_resource type="Texture2D" uid="uid://va4vg1641628" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_talk/04.tres" id="55_bpxr3"]
+[ext_resource type="Texture2D" uid="uid://3hni61e33o2e" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_talk/05.tres" id="56_kv8mn"]
+[ext_resource type="Texture2D" uid="uid://c8m75sllumo40" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_standshootcamera+catears^lf_default_talk/06.tres" id="57_g4ikp"]
+[ext_resource type="Texture2D" uid="uid://cbx7tpy805hu2" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_walk+catears^lf_default_idle/01.tres" id="81_7gk8q"]
+[ext_resource type="Texture2D" uid="uid://b4rplhi0ew8ps" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_walk+catears^lf_default_idle/02.tres" id="82_yuap3"]
+[ext_resource type="Texture2D" uid="uid://3krruyyygrd5" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_walk+catears^lf_default_idle/03.tres" id="83_uhub5"]
+[ext_resource type="Texture2D" uid="uid://wvahemkfusc0" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_walk+catears^lf_default_idle/04.tres" id="84_4e577"]
+[ext_resource type="Texture2D" uid="uid://87mymkpjcfal" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_walk+catears^lf_default_idle/05.tres" id="85_qhr4q"]
+[ext_resource type="Texture2D" uid="uid://db5qh7hc67swf" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_walk+catears^lf_default_idle/06.tres" id="86_rn8bf"]
+[ext_resource type="Texture2D" uid="uid://cp4sb7kkklfai" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_walk+catears^lf_default_idle/07.tres" id="87_vtoch"]
+[ext_resource type="Texture2D" uid="uid://b4ux3rsfxoxo" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_walk+catears^lf_default_idle/08.tres" id="88_0qekr"]
+[ext_resource type="Texture2D" uid="uid://r4cqtmhswv2p" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_giggle_idle/01.tres" id="89_lb7cg"]
+[ext_resource type="Texture2D" uid="uid://c32mtuuqokbdk" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_giggle_idle/02.tres" id="90_56lby"]
+[ext_resource type="Texture2D" uid="uid://civoqhqcdah1i" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_giggle_idle/03.tres" id="91_fclyb"]
+[ext_resource type="Texture2D" uid="uid://oli0gkeix3du" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_giggle_idle/04.tres" id="92_1rbp4"]
+[ext_resource type="Texture2D" uid="uid://6leghj6avqfm" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_giggle_idle/05.tres" id="93_pprtm"]
+[ext_resource type="Texture2D" uid="uid://cr7alkoypc4sc" path="res://scenes/_main/ch8sc2a/assets/characters/RidelGonzales/lf_stand+catears^lf_giggle_idle/06.tres" id="94_4m7g4"]
+
+[sub_resource type="ShaderMaterial" id="4"]
+render_priority = 0
+shader = ExtResource("1")
+shader_parameter/scale = Vector3(0.56, 1.08, 1)
+shader_parameter/offset = Vector3(0, 0, 0)
+shader_parameter/flip_h = true
+shader_parameter/flip_v = false
+shader_parameter/albedo = Color(1, 1, 1, 1)
+shader_parameter/normal_depth = 1.0
+shader_parameter/emission_mult = Color(1, 1, 1, 1)
+shader_parameter/emission_strength = 0.0
+shader_parameter/region_albedo = Vector4(0, 0, 1, 1)
+shader_parameter/region_normal = Vector4(0, 0, 1, 1)
+shader_parameter/region_emission = Vector4(0, 0, 1, 1)
+shader_parameter/margin_albedo = Vector4(0, 0, 0, 0)
+shader_parameter/margin_normal = Vector4(0, 0, 0, 0)
+shader_parameter/margin_emission = Vector4(0, 0, 0, 0)
+shader_parameter/glitch_fac = 0.0
+shader_parameter/debug_show_frame = false
+shader_parameter/texture_albedo = ExtResource("30")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_u6abx"]
+_surfaces = [{
+"aabb": AABB(0, 0, 0, 1.00002, 1, 1e-05),
+"attribute_data": PackedByteArray(0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"format": 4119,
+"index_count": 6,
+"index_data": PackedByteArray(0, 0, 1, 0, 2, 0, 1, 0, 3, 0, 2, 0),
+"material": SubResource("4"),
+"primitive": 3,
+"vertex_count": 4,
+"vertex_data": PackedByteArray(84, 0, 128, 63, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 84, 0, 128, 63, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191, 0, 0, 0, 0, 0, 0, 128, 63, 0, 0, 0, 0, 255, 127, 255, 127, 255, 255, 255, 191)
+}]
+metadata/_ = 1
+
+[sub_resource type="SpriteFrames" id="3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27")
+}, {
+"duration": 1.0,
+"texture": ExtResource("52")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49")
+}],
+"loop": true,
+"name": &"confused_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39")
+}],
+"loop": true,
+"name": &"confused_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lopem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sdh3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tsxxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_s05qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r0mv4")
+}],
+"loop": true,
+"name": &"default+camhold=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("31")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_lopem")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_sdh3t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_tsxxx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_s05qf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_r0mv4")
+}],
+"loop": true,
+"name": &"default+camhold=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_21omf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_xm6s1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_umte2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_1wt8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_q8i05")
+}],
+"loop": true,
+"name": &"default+camhold_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_41aa5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_fff2w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_4gj5s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_lj53k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_c37t1")
+}],
+"loop": true,
+"name": &"default+camhold_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_22pxn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_2k4v2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_bhkdf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_ddjby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_uubce")
+}],
+"loop": true,
+"name": &"default+camshoot=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_3xydl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_adndv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("43_cracn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44_hp44m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("45_rhmw0")
+}],
+"loop": true,
+"name": &"default+camshoot=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("55")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47_k663i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48_a5oj4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("49_uvprx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("50_nlngh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("51_nntrl")
+}],
+"loop": true,
+"name": &"default+camshoot_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("33")
+}, {
+"duration": 1.0,
+"texture": ExtResource("53_thcwl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54_c27nt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("55_bpxr3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("56_kv8mn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("57_g4ikp")
+}],
+"loop": true,
+"name": &"default+camshoot_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11")
+}, {
+"duration": 1.0,
+"texture": ExtResource("54")
+}, {
+"duration": 1.0,
+"texture": ExtResource("48")
+}],
+"loop": true,
+"name": &"default=r_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("46")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34")
+}],
+"loop": true,
+"name": &"default=r_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("30")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15")
+}, {
+"duration": 1.0,
+"texture": ExtResource("44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17")
+}],
+"loop": true,
+"name": &"default_idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("47")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23")
+}],
+"loop": true,
+"name": &"default_talk",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("81_7gk8q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("82_yuap3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("83_uhub5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("84_4e577")
+}, {
+"duration": 1.0,
+"texture": ExtResource("85_qhr4q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("86_rn8bf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("87_vtoch")
+}, {
+"duration": 1.0,
+"texture": ExtResource("88_0qekr")
+}],
+"loop": true,
+"name": &"default_walk",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("89_lb7cg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("90_56lby")
+}, {
+"duration": 1.0,
+"texture": ExtResource("91_fclyb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("92_1rbp4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("93_pprtm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("94_4m7g4")
+}],
+"loop": true,
+"name": &"giggle_idle",
+"speed": 6.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"giggle_talk",
+"speed": 6.0
+}]
+
+[node name="Sprite" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28, 0, 0)
+mesh = SubResource("ArrayMesh_u6abx")
+script = ExtResource("2")
+texture_frames = SubResource("3")
+sync_all = true
+sync_all_except = Array[String](["default_walk"])
+animation = "default_idle"
+alias = "RidelGonzales"
+pixel_size = 0.008
+flip_h = true
+
+[node name="SpriteController" type="Node" parent="."]
+script = ExtResource("12")
+state_container_alias = "RidelGonzales"
+fallback_idle_talk_anim = "default"
+standalone_anims = Array[String](["default_walk"])
+idle_talk_anims = Array[String](["confused", "default", "giggle"])

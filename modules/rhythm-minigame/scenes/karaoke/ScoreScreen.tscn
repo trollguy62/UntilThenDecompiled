@@ -1,0 +1,73 @@
+[gd_scene load_steps=5 format=3 uid="uid://cqoq8m8k8s013"]
+
+[ext_resource type="Script" path="res://modules/rhythm-minigame/scenes/karaoke/ScoreScreen.gd" id="2"]
+[ext_resource type="FontFile" uid="uid://bm2rb6rn0lscd" path="res://modules/rhythm-minigame/assets/fonts/Roboto/Roboto-Medium.ttf" id="3"]
+[ext_resource type="FontVariation" uid="uid://creygg1hordty" path="res://modules/rhythm-minigame/assets/fonts/Noto_Sans_JP/NotoSans.tres" id="3_7h608"]
+
+[sub_resource type="FontFile" id="1"]
+fallbacks = Array[Font]([ExtResource("3")])
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/96/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/96/0/ascent = 0.0
+cache/0/96/0/descent = 0.0
+cache/0/96/0/underline_position = 0.0
+cache/0/96/0/underline_thickness = 0.0
+cache/0/96/0/scale = 1.0
+cache/0/96/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/96/0/kerning_overrides/96/0 = Vector2(0, 0)
+cache/0/96/0/kerning_overrides/24/0 = Vector2(0, 0)
+cache/0/24/0/ascent = 0.0
+cache/0/24/0/descent = 0.0
+cache/0/24/0/underline_position = 0.0
+cache/0/24/0/underline_thickness = 0.0
+cache/0/24/0/scale = 1.0
+cache/0/24/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/96/0 = Vector2(0, 0)
+cache/0/24/0/kerning_overrides/24/0 = Vector2(0, 0)
+
+[node name="ScoreScreen" type="VBoxContainer"]
+custom_minimum_size = Vector2(496, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -784.0
+offset_bottom = -567.0
+script = ExtResource("2")
+
+[node name="Score" type="Label" parent="."]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.113725, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = SubResource("1")
+theme_override_font_sizes/font_size = 96
+text = "96"
+horizontal_alignment = 1
+clip_text = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 2
+theme_override_constants/margin_left = 48
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 48
+theme_override_constants/margin_bottom = 0
+
+[node name="Caption" type="Label" parent="MarginContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.133333, 0.113725, 1, 1)
+theme_override_constants/outline_size = 4
+theme_override_fonts/font = ExtResource("3_7h608")
+theme_override_font_sizes/font_size = 24
+text = "You're a natural born singer!"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="RollTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="MessageDelay" type="Timer" parent="."]

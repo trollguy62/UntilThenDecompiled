@@ -1,0 +1,285 @@
+[gd_scene load_steps=25 format=3 uid="uid://d3s4cddwn1m76"]
+
+[ext_resource type="Script" path="res://ui/screens/ChatScreen/ChatScreen.gd" id="1"]
+[ext_resource type="Script" path="res://ui/screens/ChatScreen/ChoiceList.gd" id="2"]
+[ext_resource type="Texture2D" uid="uid://blgyywhfkjm6r" path="res://assets/misc/icon.png" id="3"]
+[ext_resource type="FontFile" uid="uid://dlxdxcvfgn8t5" path="res://fonts/PTSans-Bold.tres" id="4"]
+[ext_resource type="FontFile" uid="uid://bbh5yjqf2l5q7" path="res://fonts/PTSans-Regular.tres" id="5"]
+[ext_resource type="PackedScene" uid="uid://c0akflks2desm" path="res://ui/components/CoolVScrollContainer/CoolVScrollContainer.tscn" id="6"]
+[ext_resource type="PackedScene" uid="uid://bj6pdngeskqeg" path="res://ui/screens/ChatScreen/ChoiceTextField.tscn" id="7"]
+[ext_resource type="FontFile" uid="uid://sghb20e60wif" path="res://fonts/PTSans-Bold-Small.tres" id="10"]
+[ext_resource type="FontFile" uid="uid://dhcnjnvquq3am" path="res://fonts/PTSans-Regular-Small.tres" id="11"]
+[ext_resource type="Script" path="res://ui/screens/ChatScreen/TypingIndicator.gd" id="12"]
+[ext_resource type="PackedScene" uid="uid://dyjpla5bera8e" path="res://ui/components/BackButton/BackButton.tscn" id="13"]
+[ext_resource type="PackedScene" uid="uid://pbb13vhi2ohf" path="res://ui/components/Game/FocusableButton/FocusableButton.tscn" id="13_4m606"]
+[ext_resource type="Texture2D" uid="uid://pwosy8qahyb1" path="res://assets/ui/ic_info.png" id="15"]
+[ext_resource type="Script" path="res://ui/components/CircularPicture/CircularPicture.gd" id="16"]
+[ext_resource type="Texture2D" uid="uid://d1qmfc6m07elg" path="res://assets/ui/ic_arrow_down.png" id="17"]
+[ext_resource type="Script" path="res://ui/screens/ChatScreen/NewMessagesButton.gd" id="18"]
+[ext_resource type="AudioStream" uid="uid://ddd7s3h0lffx4" path="res://ui/sfx/pop.wav" id="20"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i6uih"]
+bg_color = Color(1, 1, 1, 0)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fmqnq"]
+bg_color = Color(1, 1, 1, 0.0627451)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yh823"]
+bg_color = Color(1, 1, 1, 0.0784314)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_iintd"]
+bg_color = Color(1, 1, 1, 0.188235)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+corner_detail = 12
+expand_margin_left = 8.0
+expand_margin_top = 8.0
+expand_margin_right = 8.0
+expand_margin_bottom = 8.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_hs5ut"]
+
+[sub_resource type="StyleBoxFlat" id="1"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+content_margin_right = 16.0
+content_margin_bottom = 8.0
+bg_color = Color(1, 0.937255, 0.756863, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+expand_margin_left = 8.0
+expand_margin_right = 4.0
+shadow_color = Color(0, 0, 0, 0.313726)
+shadow_size = 8
+shadow_offset = Vector2(0, 4)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b86pt"]
+content_margin_left = 0.0
+content_margin_right = 12.0
+
+[node name="ChatScreen" type="Control" node_paths=PackedStringArray("focus_on_enter")]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 32.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1")
+persist_focus = true
+focus_on_enter = NodePath("Main/ChoiceTextField")
+
+[node name="DummyChoiceList" type="VBoxContainer" parent="."]
+modulate = Color(1, 1, 1, 0)
+clip_contents = true
+layout_mode = 0
+size_flags_vertical = 0
+theme_override_constants/separation = 2
+script = ExtResource("2")
+
+[node name="Main" type="VBoxContainer" parent="."]
+layout_mode = 0
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_constants/separation = 0
+
+[node name="ProfilePicture" type="TextureRect" parent="Main"]
+light_mask = 524289
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+texture = ExtResource("3")
+expand_mode = 1
+script = ExtResource("16")
+
+[node name="NameContainer" type="MarginContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_bottom = 2
+
+[node name="Name" type="Label" parent="Main/NameContainer"]
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("4")
+theme_override_font_sizes/font_size = 20
+text = "Nicole Lacsamana"
+horizontal_alignment = 1
+
+[node name="StatusContainer" type="MarginContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 8
+
+[node name="Status" type="Label" parent="Main/StatusContainer"]
+texture_filter = 6
+layout_mode = 2
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("5")
+text = "CHAT_ACTIVE_NOW"
+horizontal_alignment = 1
+
+[node name="Chatbox" parent="Main" instance=ExtResource("6")]
+clip_contents = true
+layout_mode = 2
+padding_top = 12
+padding_bottom = 12
+
+[node name="ChoiceTextField" parent="Main" instance=ExtResource("7")]
+layout_mode = 2
+focus_neighbor_left = NodePath("../../BackButton")
+focus_neighbor_top = NodePath("../../NewMessagesButton")
+focus_neighbor_right = NodePath("../../InfoButton")
+
+[node name="TIContainer" type="MarginContainer" parent="Main"]
+layout_mode = 2
+theme_override_constants/margin_left = 16
+theme_override_constants/margin_top = 4
+theme_override_constants/margin_right = 64
+
+[node name="TypingIndicator" type="RichTextLabel" parent="Main/TIContainer"]
+custom_minimum_size = Vector2(0, 21)
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("11")
+theme_override_fonts/bold_font = ExtResource("10")
+bbcode_enabled = true
+scroll_active = false
+script = ExtResource("12")
+
+[node name="BackButton" parent="." instance=ExtResource("13")]
+layout_mode = 0
+offset_top = 16.0
+offset_bottom = 40.0
+focus_neighbor_bottom = NodePath("../NewMessagesButton")
+
+[node name="InfoButton" parent="." instance=ExtResource("13_4m606")]
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -36.0
+offset_top = 16.0
+offset_right = -8.0
+offset_bottom = 44.0
+grow_horizontal = 0
+size_flags_horizontal = 1
+focus_neighbor_left = NodePath("../BackButton")
+focus_neighbor_bottom = NodePath("../Main/ChoiceTextField")
+theme_override_constants/icon_max_width = 28
+theme_override_styles/normal = SubResource("StyleBoxFlat_i6uih")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fmqnq")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_yh823")
+theme_override_styles/focus = SubResource("StyleBoxFlat_iintd")
+text = ""
+icon = ExtResource("15")
+icon_alignment = 1
+expand_icon = true
+
+[node name="NewMessagesButton" type="PanelContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.795
+anchor_right = 1.0
+anchor_bottom = 0.795
+offset_top = -20.14
+offset_bottom = 19.86
+grow_horizontal = 2
+grow_vertical = 2
+focus_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxEmpty_hs5ut")
+script = ExtResource("18")
+
+[node name="Button" type="Button" parent="NewMessagesButton"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/normal = SubResource("1")
+theme_override_styles/hover = SubResource("1")
+theme_override_styles/pressed = SubResource("1")
+theme_override_styles/disabled = SubResource("1")
+theme_override_styles/focus = SubResource("1")
+vertical_icon_alignment = 2
+
+[node name="HBox" type="HBoxContainer" parent="NewMessagesButton"]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 4
+mouse_filter = 2
+theme_override_constants/separation = 4
+
+[node name="Spacer" type="PanelContainer" parent="NewMessagesButton/HBox"]
+layout_mode = 2
+
+[node name="Icon" type="TextureRect" parent="NewMessagesButton/HBox"]
+modulate = Color(0, 0, 0, 1)
+custom_minimum_size = Vector2(24, 24)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("17")
+expand_mode = 4
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="NewMessagesButton/HBox"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("10")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_b86pt")
+text = "CHAT_NEW_MESSAGES_HINT"
+
+[node name="SeenByContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_right = 73.0
+offset_bottom = 40.0
+size_flags_horizontal = 3
+mouse_filter = 2
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 0
+
+[node name="SeenBy" type="Label" parent="SeenByContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/line_spacing = 0
+theme_override_fonts/font = ExtResource("11")
+horizontal_alignment = 2
+
+[node name="SoundPop" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20")
+bus = &"UI"

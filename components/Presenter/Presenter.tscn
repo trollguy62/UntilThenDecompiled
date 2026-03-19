@@ -1,0 +1,211 @@
+[gd_scene load_steps=16 format=3 uid="uid://chdnp28a5y0ad"]
+
+[ext_resource type="Script" path="res://components/Presenter/Presenter.gd" id="2"]
+[ext_resource type="Script" path="res://components/Focus.gd" id="3"]
+[ext_resource type="Theme" uid="uid://cm4iq2rnf2ofd" path="res://ui/default.tres" id="3_2k0y1"]
+[ext_resource type="FontFile" uid="uid://s02vc2v5phul" path="res://fonts/PTSans-Regular.ttf" id="3_dj1xp"]
+[ext_resource type="Script" path="res://ui/components/CoolScrollContainer.gd" id="3_im5kb"]
+[ext_resource type="FontFile" uid="uid://b5tilnrcn6x2i" path="res://fonts/PTSans-Bold.ttf" id="4_5tkn5"]
+
+[sub_resource type="Shader" id="1"]
+code = "shader_type canvas_item;
+
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
+
+uniform float blur : hint_range(0, 8) = 2.0;
+uniform float brightness : hint_range(0, 1) = 0.5;
+uniform vec4 modulate : source_color = vec4(0);
+
+void fragment() {
+	vec4 c = textureLod(SCREEN_TEXTURE, SCREEN_UV, blur);
+	COLOR = vec4(c.rgb * brightness, c.a) * modulate;
+}"
+
+[sub_resource type="ShaderMaterial" id="2"]
+shader = SubResource("1")
+shader_parameter/blur = 2.0
+shader_parameter/brightness = 0.5
+shader_parameter/modulate = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_kq0ee"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Control:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.7, 0.7)]
+}
+
+[sub_resource type="Animation" id="4"]
+resource_name = "hide"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.7, 0.7)]
+}
+
+[sub_resource type="Animation" id="5"]
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = false
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Control:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.7, 0.7), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ne7xs"]
+_data = {
+"RESET": SubResource("Animation_kq0ee"),
+"hide": SubResource("4"),
+"show": SubResource("5")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_oipt4"]
+content_margin_left = 32.0
+content_margin_top = 32.0
+content_margin_right = 32.0
+content_margin_bottom = 32.0
+bg_color = Color(0, 0, 0, 0.501961)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="FontVariation" id="FontVariation_2skam"]
+base_font = ExtResource("3_dj1xp")
+
+[sub_resource type="FontVariation" id="FontVariation_s2y5w"]
+base_font = ExtResource("4_5tkn5")
+
+[node name="$Presenter" type="ColorRect"]
+texture_filter = 1
+material = SubResource("2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(640, 360)
+mouse_filter = 2
+script = ExtResource("2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_ne7xs")
+}
+
+[node name="Focus" type="Node" parent="."]
+script = ExtResource("3")
+focus_name = "Presenter"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.7, 0.7)
+pivot_offset = Vector2(640, 360)
+mouse_filter = 2
+
+[node name="TextureRectContainer" type="PanelContainer" parent="Control"]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control/TextureRectContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="SceneContainer" type="Node2D" parent="Control"]
+
+[node name="RichTextLabelContainer" type="MarginContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 256
+theme_override_constants/margin_top = 64
+theme_override_constants/margin_right = 256
+theme_override_constants/margin_bottom = 64
+
+[node name="PanelContainer" type="PanelContainer" parent="Control/RichTextLabelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_oipt4")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Control/RichTextLabelContainer/PanelContainer"]
+layout_mode = 2
+theme = ExtResource("3_2k0y1")
+script = ExtResource("3_im5kb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/RichTextLabelContainer/PanelContainer/ScrollContainer"]
+texture_filter = 6
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+mouse_filter = 2
+theme_override_fonts/normal_font = SubResource("FontVariation_2skam")
+theme_override_fonts/bold_font = SubResource("FontVariation_s2y5w")
+theme_override_font_sizes/normal_font_size = 20
+theme_override_font_sizes/bold_font_size = 20
+bbcode_enabled = true
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ridiculus mus mauris vitae ultricies leo integer. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Porta lorem mollis aliquam ut porttitor leo a diam sollicitudin. Malesuada pellentesque elit eget gravida cum. Porttitor lacus luctus accumsan tortor posuere ac ut. Sed felis eget velit aliquet sagittis id consectetur purus. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Nisl pretium fusce id velit. Neque laoreet suspendisse interdum consectetur libero id faucibus nisl.
+
+Enim nec dui nunc mattis. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat. Tellus orci ac auctor augue mauris augue neque gravida in. Vel fringilla est ullamcorper eget nulla. Adipiscing diam donec adipiscing tristique risus nec feugiat in fermentum. Sagittis aliquam malesuada bibendum arcu vitae elementum curabitur. Arcu cursus vitae congue mauris rhoncus aenean vel elit scelerisque. Interdum consectetur libero id faucibus nisl. Potenti nullam ac tortor vitae. Eget nulla facilisi etiam dignissim diam quis enim lobortis scelerisque. Nibh praesent tristique magna sit amet purus. Consectetur adipiscing elit ut aliquam purus sit amet. Nam at lectus urna duis convallis convallis. Massa placerat duis ultricies lacus sed. Lorem dolor sed viverra ipsum nunc aliquet bibendum enim facilisis. Risus viverra adipiscing at in. Orci eu lobortis elementum nibh tellus molestie."
+fit_content = true
+scroll_active = false
+shortcut_keys_enabled = false
