@@ -24,6 +24,6 @@ Open the project(project.godot) in Godot Engine v4.1.4
 Once Godot finished loading the project, head over to "Project -> Export" and select Windows. Then "Export Project...". For me, it took ~30 minutes to compile
 
 # NOTE
-If you compiled it in Debug mode, you need to rename the dlls from "fmodL.dll" to "fmod.dll", "fmod.debug.dll" to "fmod.release.dll", "godotsteam.debug.x86_64.dll" to "godotsteam.dll", "internal.debug.dll" to "internal.dll", etc. Idk how to fix this because I'm not familiar with the Godot Engine, if you know, please open a PR!
+If you compiled it in Debug mode, you need to rename "fmodL.dll" to "fmod.dll", "fmodstudioL.dll" to "fmodstudio". Idk how to fix this because I'm not familiar with the Godot Engine, if you know, please open a PR!
 
 Oh and this source has a problem with the fonts, for some reason it will spam a bunch of "Condition "!fd" is true. Returning: 0.0" errors so much that it causes lag spikes, let me know if you can fix this issue by opening a PR!
